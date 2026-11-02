@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+
+# Data (media must never be committed)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Web
+web/node_modules/
+web/dist/
+
+# Env / secrets
+.env
+config.local.json

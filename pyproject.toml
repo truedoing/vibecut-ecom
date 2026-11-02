@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vibecut-ecom"
+version = "0.1.0"
+description = "VibeCut 电商素材台：素材库、去字幕、任务台账、版本与审核"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.29",
+  "python-multipart>=0.0.9",
+  "requests>=2.31",
+  "numpy>=1.24",
+  "Pillow>=10.0",
+  "opencv-python>=4.8",
+  "onnxruntime>=1.16",
+  "rapidocr-onnxruntime>=1.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+vibecut = "vibecut.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
