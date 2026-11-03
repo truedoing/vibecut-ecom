@@ -38,7 +38,9 @@
     "voice_id": "",
     "desc": "48岁上下的中国城市男性，中低音，说话松弛：语速中等、常停一下再说，尾音收得随意不拖腔，咬字带一点松弛的含糊感，离话筒近有轻微气声，语气是心里有数的判断而不是推销，带一点笑意。不要播音腔，不要字正腔圆，不要广告配音的抑扬顿挫",
     "sample": "voice.mp3",
-    "sample_note": "sample 即音色锚：正式配音用 voiceclone 传这份样本"
+    "sample_note": "sample 即音色锚：正式配音用 voiceclone 传这份样本",
+    "ref_sample": "voice_ref_5s.mp3",
+    "ref_sample_note": "给视频生成当音色参考的 5 秒短样本（完整 voice.mp3 两条合计会超参考音频预算）；voice.mp3 仍是 TTS 克隆锚"
   },
   "used_in": [
     "hjg_T2_003_真香素材版（丈夫）"
