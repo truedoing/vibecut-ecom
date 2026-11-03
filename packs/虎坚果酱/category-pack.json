@@ -1,0 +1,798 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "category": "虎坚果酱",
+    "pack_version": "1.0-draft",
+    "created_at": "2026-11-03",
+    "created_by": "WorkBuddy（按 ecommerce-category-pack 技能 v1.0 生成）",
+    "source_materials": [
+      "包装正面标实拍 ×1（品名 / 净含量）",
+      "包装背面标实拍 ×1（营养成分表 / 配料表结尾 / 保质期 / 委托方 / 致敏物质）",
+      "厂商详情卖点图 ×8（配料自述 / 数值 / 换算 / 产地 / 工艺 / 吃法 / 价格 / 招商话术）"
+    ],
+    "review": {
+      "self_check": "passed",
+      "human_review": "passed",
+      "published_to_tdrive": true,
+      "published_path": "品类包/虎坚果酱/",
+      "published_at": "2026-11-03"
+    },
+    "consumers": [
+      "ecommerce-script-gen（改造后）",
+      "vibecut UI 审核视图"
+    ]
+  },
+  "product_facts": [
+    {
+      "id": "pf_001",
+      "field": "product_name",
+      "label": "正式品名",
+      "value": "虎坚果酱",
+      "source": {
+        "type": "official_label",
+        "ref": "包装正面标实拍"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_002",
+      "field": "brand",
+      "label": "品牌",
+      "value": "沙漠一号",
+      "source": {
+        "type": "official_label",
+        "ref": "包装正面标实拍"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_003",
+      "field": "net_weight",
+      "label": "净含量 / 规格",
+      "value": "150g",
+      "source": {
+        "type": "official_label",
+        "ref": "包装正面标实拍"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_004",
+      "field": "ingredients",
+      "label": "配料表",
+      "value": "脱皮油莎豆、冷榨油莎豆油、食用盐（共三样）",
+      "source": {
+        "type": "detail_page",
+        "ref": "厂商卖点图（自述）；背面标仅可见结尾「…冷榨油莎豆油、食用盐」"
+      },
+      "verified": false,
+      "usable_in_copy": true,
+      "blocking": true,
+      "placeholder": "【配料表全文】"
+    },
+    {
+      "id": "pf_005",
+      "field": "nutrition",
+      "label": "营养成分表（每 100g）",
+      "value": "能量 2449kJ / 蛋白质 3.9g / 脂肪 44.9g（单不饱和 33.1g） / 碳水 38.1g / 膳食纤维 9.2g / 钠 95mg / 维生素E 7.32mg / 十六种氨基酸 2.1g",
+      "source": {
+        "type": "official_label",
+        "ref": "包装背面标实拍"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_006",
+      "field": "process",
+      "label": "工艺",
+      "value": "135° 低温慢烘、整颗研磨",
+      "source": {
+        "type": "detail_page",
+        "ref": "厂商卖点图"
+      },
+      "verified": false,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_007",
+      "field": "origin",
+      "label": "产地故事",
+      "value": "新疆图木舒克 / 塔克拉玛干沙漠绿洲，2017 年做种源研究；莎草科块茎；古埃及「黄金豆」",
+      "source": {
+        "type": "detail_page",
+        "ref": "厂商卖点图"
+      },
+      "verified": false,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_008",
+      "field": "shelf_life",
+      "label": "保质期 / 贮存",
+      "value": "9 个月；开封后冷藏，建议 2 周内吃完",
+      "source": {
+        "type": "official_label",
+        "ref": "包装背面标实拍"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_009",
+      "field": "allergen",
+      "label": "致敏物质",
+      "value": "生产线也加工花生、芝麻、坚果制品，过敏者不建议食用",
+      "source": {
+        "type": "official_label",
+        "ref": "包装背面标实拍"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "pf_010",
+      "field": "price",
+      "label": "价格",
+      "value": null,
+      "source": {
+        "type": "detail_page",
+        "ref": "厂商卖点图：日常 59.9/瓶；直播 99.9 拍一发四（≈25/瓶）"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": true,
+      "placeholder": "【到手价】【单瓶价】"
+    },
+    {
+      "id": "pf_011",
+      "field": "usage",
+      "label": "吃法",
+      "value": "涂面包 / 拌面 / 火锅蘸酱 / 拌沙拉 / 酸奶碗 / 空口吃",
+      "source": {
+        "type": "script_design",
+        "ref": "厂商卖点图的吃法清单，按场景设计素材使用"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_012",
+      "field": "certification",
+      "label": "SC / 标准号 / 专利号",
+      "value": null,
+      "source": {
+        "type": "unknown",
+        "ref": "卖点图提「已获国家发明专利」，编号看不清；SC 完整号、产品标准号均未见"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false,
+      "placeholder": "【SC证号】【产品标准号】【专利号】"
+    },
+    {
+      "id": "pf_013",
+      "field": "manufacturer",
+      "label": "委托 / 受委托方",
+      "value": "委托方上海；受委托方江苏如皋",
+      "source": {
+        "type": "official_label",
+        "ref": "包装背面标实拍"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "pf_014",
+      "field": "claims_zero_add",
+      "label": "0 添加五条 / 无麸质无胆固醇",
+      "value": "不加白砂糖 / 防腐剂 / 乳化剂 / 反式脂肪酸；无麸质、无胆固醇",
+      "source": {
+        "type": "detail_page",
+        "ref": "厂商卖点图"
+      },
+      "verified": false,
+      "usable_in_copy": true,
+      "blocking": false
+    }
+  ],
+  "selling_point_map": [
+    {
+      "id": "sp_001",
+      "vendor_claim": "减脂期解馋 / 轻盈无负担 / 饱腹感强",
+      "risk_type": "身体功效结论",
+      "usable_rewrite": "减脂期解馋 / 轻盈无负担 / 饱腹感强",
+      "condition": "不得延伸为代餐、掉秤、减脂效果承诺；「轻盈无负担」与标签脂肪 44.9g/100g 矛盾，投放前与厂商确认口径",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_003",
+      "vendor_claim": "每日营养 / 一口满足每日营养 / 营养丰富",
+      "risk_type": "健康暗示",
+      "usable_rewrite": "每日营养 / 一口满足每日营养 / 营养丰富",
+      "condition": "不得宣称满足每日营养素需要量；涉及数值一律以 pf_005 正式标签为准",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_004",
+      "vendor_claim": "补充健康能量 / 健康新选择 / 解馋又健康",
+      "risk_type": "健康暗示",
+      "usable_rewrite": "补充健康能量 / 健康新选择 / 解馋又健康",
+      "condition": "普通食品口径，不得作保健功能、疾病预防或身体改善宣称",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_005",
+      "vendor_claim": "富含高膳食纤维 / 富含维E / omega-9 含量高",
+      "risk_type": "营养声称需数值支撑",
+      "usable_rewrite": "每 100g 有 9.2g 膳食纤维、7.32mg 维生素E、33.1g 单不饱和脂肪",
+      "condition": "数值以包装背面标为准，不得四舍五入改写",
+      "status": "ready"
+    },
+    {
+      "id": "sp_006",
+      "vendor_claim": "一勺维E ≈ 15 颗松子仁 / 一勺 omega-9 ≈ 半个牛油果",
+      "risk_type": "无依据换算",
+      "usable_rewrite": "按《中国食物成分表》折算，一勺的维E差不多 15 颗松子仁；按 USDA/FSANZ 折算，一勺的 omega-9 差不多半个牛油果",
+      "condition": "出处与 15g 勺定义必须与卖点图一致，投放前复核",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_007",
+      "vendor_claim": "omega-9 媲美橄榄油",
+      "risk_type": "比较宣称",
+      "usable_rewrite": "冷榨油莎豆油，每 100g omega-9 33.1g",
+      "condition": "数值以 pf_005 为准",
+      "status": "ready"
+    },
+    {
+      "id": "sp_008",
+      "vendor_claim": "好吃不上火",
+      "risk_type": "中医功效",
+      "usable_rewrite": "好吃不上火",
+      "condition": "不得延伸为「吃了不上火」的功效承诺；135° 低温慢烘另见 pf_006，须核实后方可单独使用",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_009",
+      "vendor_claim": "不施肥不打农药 / 100% 天然甜",
+      "risk_type": "无认证宣称 + 绝对化用语",
+      "usable_rewrite": "新疆图木舒克沙漠绿洲种出来的，甜是油莎豆自己的，没加白砂糖",
+      "condition": "「没加白砂糖」须与配料表核对（pf_014）",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_010",
+      "vendor_claim": "每一口都安心",
+      "risk_type": "泛安全暗示",
+      "usable_rewrite": "配料表就三样：脱皮油莎豆、冷榨油莎豆油、食用盐",
+      "condition": "配料表全文核实后（pf_004）",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_011",
+      "vendor_claim": "3 岁以上人群都能吃",
+      "risk_type": "涉儿童表述",
+      "usable_rewrite": "家里常备一罐，早饭抹面包、中午拌面，谁想抹就抹",
+      "condition": "不得出现儿童、宝宝、孩子、辅食等词",
+      "status": "ready"
+    },
+    {
+      "id": "sp_012",
+      "vendor_claim": "已获国家发明专利 / 一瓶 200+ 颗",
+      "risk_type": "无认证宣称 / 无依据换算",
+      "usable_rewrite": "已获国家发明专利 / 一瓶 200+ 颗",
+      "condition": "专利号与颗数出处补齐前不进口播；不得把颗数折算成用量或性价比",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_013",
+      "vendor_claim": "0 白砂糖 / 0 防腐剂 / 0 乳化剂 / 0 反式脂肪酸 / 无麸质 / 无胆固醇",
+      "risk_type": "厂商自述（可与标签核对后使用）",
+      "usable_rewrite": "配料表干干净净，没加白砂糖，也没加防腐剂",
+      "condition": "配料表全文 + 标签核对（pf_004 / pf_014）",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_014",
+      "vendor_claim": "降三高 / 增强免疫 / 减肥 / 治便秘（品类潜在风险词，非本厂商原话）",
+      "risk_type": "疾病功效",
+      "usable_rewrite": null,
+      "condition": "—",
+      "status": "blocked"
+    },
+    {
+      "id": "sp_015",
+      "vendor_claim": "有机 / 零农残 / 蓝帽子 / 不含坚果 / 坚果过敏也能吃",
+      "risk_type": "无认证宣称",
+      "usable_rewrite": null,
+      "condition": "—",
+      "status": "blocked"
+    },
+    {
+      "id": "sp_016",
+      "vendor_claim": "库存不多 / 错过再等一年 / 最后一天",
+      "risk_type": "虚假价格稀缺",
+      "usable_rewrite": "先买一瓶，别一上来囤半年",
+      "condition": "价格落地后可用",
+      "status": "ready"
+    }
+  ],
+  "compliance_ext": {
+    "category_specific": [
+      {
+        "term": "不含坚果 / 坚果过敏也能吃 / 无坚果",
+        "reason": "正式标签写明生产线也加工花生、芝麻、坚果制品；品名带「坚果酱」更容易让人误判。安全底线，不是促销限制",
+        "action": "forbid",
+        "scope": "all"
+      },
+      {
+        "term": "3 岁以上 / 宝宝 / 孩子 / 辅食 / 儿童",
+        "reason": "涉儿童表述，与实际投放人群（视频号中老年 / 中年女性）不符，且母婴是功效红线重灾区",
+        "action": "forbid",
+        "scope": "all"
+      },
+      {
+        "term": "一勺≈15颗松子仁 / ≈半个牛油果 / 一瓶 200+ 颗",
+        "reason": "换算宣称，须带「按…折算」+ 可查出处 + 1 勺 = 15g 定义；「一瓶 200+ 颗」无出处，不用",
+        "action": "conditional",
+        "scope": "all"
+      },
+      {
+        "term": "富含 / 高膳食纤维 / 高维E / 营养丰富",
+        "reason": "营养声称须按 GB 28050 与正式标签数值；已核实数值可直接念，形容词不用",
+        "action": "conditional",
+        "scope": "all"
+      },
+      {
+        "term": "不施肥不打农药 / 有机 / 零农残 / 已获发明专利（无编号）",
+        "reason": "无认证宣称；专利号、认证编号拿不到就不能写",
+        "action": "forbid_until_verified",
+        "scope": "all"
+      },
+      {
+        "term": "100% 天然甜 / 纯天然 / 0 添加（绝对化）",
+        "reason": "绝对化用语；改成「没加白砂糖，甜是油莎豆自己的」",
+        "action": "conditional",
+        "scope": "all"
+      },
+      {
+        "term": "减脂效果 / 代餐 / 掉秤 / 治疗肥胖",
+        "reason": "减肥效果承诺，不得出现。厂商原话「减脂期解馋 / 轻盈无负担 / 饱腹感强」已在 sp_001 逐字保留，只作体感自述，不得延伸为功效结论；与标签脂肪 44.9g/100g 矛盾",
+        "action": "forbid",
+        "scope": "all"
+      }
+    ],
+    "shared_overlay_ref": "技能自带 references/platform-audience.md（中老年 / 中年女性 / 给妈妈买三张人群红线表，属人群属性，不进品类包）",
+    "base_redline_ref": "技能自带 references/compliance-base.md（疾病功效、无依据虚假比较、无认证宣称、虚假价格稀缺四类）"
+  },
+  "elements": {
+    "hooks": [
+      {
+        "type": "认人认事认场景",
+        "structure": "早上 X 的时候，我先…",
+        "example": "早上烤片面包，我先抹一勺这个",
+        "source": "技能自带型 / 本品实例化",
+        "status": "可用（视频号中老年）"
+      },
+      {
+        "type": "人群切入",
+        "structure": "直接点名人群",
+        "example": "家里那罐沙拉酱，你多久没动过了",
+        "source": "本品实例化",
+        "status": "可用"
+      },
+      {
+        "type": "反常识",
+        "structure": "别再 X 了",
+        "example": "别再买那些一瓶几百的抹酱了",
+        "source": "本品实例化",
+        "status": "可用"
+      },
+      {
+        "type": "冲突",
+        "structure": "怕的不是 A，是 B",
+        "example": "怕的不是不好吃，是开封两周吃不完",
+        "source": "由 pf_008 长出来",
+        "status": "可用"
+      },
+      {
+        "type": "数字冲击",
+        "structure": "一 X 顶 Y",
+        "example": "一勺能抹满一片面包",
+        "source": "厂商吃法 + 品类常识（用量画面，与饱腹无关）",
+        "status": "可用"
+      },
+      {
+        "type": "共谋",
+        "structure": "如果你实在改不了…那就…",
+        "example": "改不了早饭凑合的习惯，那就抹一勺",
+        "source": "技能自带型 / 本品实例化",
+        "status": "可用"
+      },
+      {
+        "type": "发现秘密",
+        "structure": "关键我发现了一个…",
+        "example": "关键我发现配料表就三样",
+        "source": "本品实例化（待 pf_004 核实）",
+        "status": "⚠️ 待核"
+      },
+      {
+        "type": "身份反差",
+        "structure": "年龄 X 还天天…",
+        "example": "我这个年纪，还天天抹面包片",
+        "source": "技能自带型 / 本品实例化",
+        "status": "可用"
+      }
+    ],
+    "pains": [
+      {
+        "pain": "抹酱开封吃不完",
+        "wording": "开封后冷藏、两周内吃完，一罐总剩半瓶",
+        "source": "由 pf_008 长出来",
+        "status": "未用 · 本品最真实"
+      },
+      {
+        "pain": "面包没味道",
+        "wording": "早饭那片面包，干巴巴的",
+        "source": "品类常识",
+        "status": "未用"
+      },
+      {
+        "pain": "沙拉酱太甜 / 添加剂多",
+        "wording": "家里那瓶沙拉酱，配料表一长串",
+        "source": "品类常识",
+        "status": "未用"
+      },
+      {
+        "pain": "想吃点甜的又怕腻",
+        "wording": "想吃点甜的，又怕齁",
+        "source": "厂商口感描述延伸",
+        "status": "未用"
+      },
+      {
+        "pain": "贵的抹酱吃不起天天吃",
+        "wording": "一瓶几百的，舍不得天天挖",
+        "source": "厂商价格口径延伸",
+        "status": "未用"
+      },
+      {
+        "pain": "买回家放进冰箱忘了",
+        "wording": "买回去塞进冰箱，想起来已经过期",
+        "source": "品类常识",
+        "status": "未用"
+      },
+      {
+        "pain": "给家人吃想先看配料",
+        "wording": "给家里人吃的，先翻到背面看一眼",
+        "source": "品类常识",
+        "status": "未用"
+      },
+      {
+        "pain": "坚果酱怕过敏 / 怕踩雷",
+        "wording": "写着坚果酱，家里有人过敏就不敢买",
+        "source": "由 pf_009 长出来",
+        "status": "⚠️ 只能陈述，不得反向宣称安全"
+      },
+      {
+        "pain": "一瓶 200+ 颗听着多但没概念",
+        "wording": "说一瓶多少颗，其实不知道能吃多久",
+        "source": "由 sp_012 长出来",
+        "status": "未用"
+      }
+    ],
+    "scenes": [
+      {
+        "time": "早餐",
+        "usage": "抹面包 / 吐司",
+        "source": "厂商吃法"
+      },
+      {
+        "time": "午餐",
+        "usage": "拌面",
+        "source": "厂商吃法"
+      },
+      {
+        "time": "晚餐",
+        "usage": "拌酸奶碗 / 拌沙拉",
+        "source": "厂商吃法"
+      },
+      {
+        "time": "聚餐",
+        "usage": "火锅蘸酱",
+        "source": "厂商吃法"
+      },
+      {
+        "time": "下午茶",
+        "usage": "空口吃 / 配茶",
+        "source": "厂商吃法"
+      },
+      {
+        "time": "办公室",
+        "usage": "抽屉里常备一罐",
+        "source": "品类常识"
+      }
+    ],
+    "proofs": [
+      {
+        "level": "L1",
+        "claim": "每 100g 膳食纤维 9.2g、维生素E 7.32mg、单不饱和脂肪 33.1g",
+        "source": "正式标签 pf_005",
+        "note": "✅ 已核实，可直接念"
+      },
+      {
+        "level": "L1",
+        "claim": "配料表就三样：脱皮油莎豆、冷榨油莎豆油、食用盐",
+        "source": "厂商自述 pf_004",
+        "note": "⚠️ 待完整背面标核实"
+      },
+      {
+        "level": "L1",
+        "claim": "150g / 保质期 9 个月 / 开封后冷藏 2 周内吃完",
+        "source": "正式标签 pf_003/pf_008",
+        "note": "✅ 已核实"
+      },
+      {
+        "level": "L1",
+        "claim": "135° 低温慢烘、整颗研磨",
+        "source": "厂商自述 pf_006",
+        "note": "工艺故事，不作认证"
+      },
+      {
+        "level": "L2",
+        "claim": "咸甜口，丝滑，空口吃也不腻",
+        "source": "厂商口感描述",
+        "note": "体感，安全"
+      },
+      {
+        "level": "L2",
+        "claim": "一勺能抹满一片面包",
+        "source": "品类常识 / 用量观察",
+        "note": "用量画面，非功效结论；与「饱腹感强」无关"
+      },
+      {
+        "level": "L2",
+        "claim": "温水不用，挖一勺直接抹",
+        "source": "品类常识",
+        "note": "方便，安全"
+      },
+      {
+        "level": "L3",
+        "claim": "按《中国食物成分表》折算，一勺的维E差不多 15 颗松子仁",
+        "source": "sp_006",
+        "note": "须带出处与 15g 勺定义"
+      },
+      {
+        "level": "L3",
+        "claim": "按 USDA/FSANZ 折算，一勺的 omega-9 差不多半个牛油果",
+        "source": "sp_006",
+        "note": "须带出处"
+      },
+      {
+        "level": "L3",
+        "claim": "一勺就够，一罐能吃很久",
+        "source": "sp_012",
+        "note": "用量对比，接算账型"
+      },
+      {
+        "level": "L4",
+        "claim": "早抹面包 / 午拌面 / 晚拌酸奶碗",
+        "source": "sp_003",
+        "note": "一日三餐承接"
+      }
+    ],
+    "trust": [
+      {
+        "level": "T1",
+        "content": "配料表就三样（待核）",
+        "status": "弱，但随时可用；核实后说服力明显上升"
+      },
+      {
+        "level": "T1",
+        "content": "0 白砂糖 / 0 防腐剂 / 0 乳化剂 / 0 反式脂肪酸（待核）",
+        "status": "须与配料表标签核对"
+      },
+      {
+        "level": "T1",
+        "content": "已获国家发明专利（编号看不清）",
+        "status": "⚠️ 拿到编号前不进口播"
+      },
+      {
+        "level": "T2",
+        "content": "SC 证号 / 产品标准号 / 检测报告",
+        "status": "❌ 未见资料；核到可作 T2，核不到不提"
+      },
+      {
+        "level": "T3",
+        "content": "销量 / 复购 / 真实反馈",
+        "status": "❌ 缺口，新品类无市场验证素材"
+      }
+    ],
+    "ctas": [
+      {
+        "type": "引导尝试",
+        "wording": "先买一瓶，别一上来囤半年",
+        "source": "逆向 CTA（sp_016）",
+        "status": "可用 · 推荐"
+      },
+      {
+        "type": "场景试用",
+        "wording": "明早烤片面包，抹一勺试试",
+        "source": "本品实例化",
+        "status": "可用"
+      },
+      {
+        "type": "家庭常备",
+        "wording": "家里常备一罐，谁想抹就抹",
+        "source": "sp_004",
+        "status": "可用"
+      },
+      {
+        "type": "库存催促（反例）",
+        "wording": "虚假稀缺型催促，不采用",
+        "source": "compliance-base.md D 类",
+        "status": "❌ 不用；改用 sp_016 的逆向 CTA"
+      }
+    ],
+    "golden_quotes": [
+      {
+        "quote": "一勺就够，抹得开，一罐能吃很久",
+        "source": "品类常识 / 用量话术",
+        "reuse": "高 · 可跨人群复用"
+      },
+      {
+        "quote": "没加白砂糖，甜是油莎豆自己的",
+        "source": "sp_009",
+        "reuse": "高"
+      },
+      {
+        "quote": "早抹面包、午拌面、晚拌酸奶碗",
+        "source": "sp_003",
+        "reuse": "中 · 绑定场景型"
+      },
+      {
+        "quote": "家里常备一罐，谁想抹就抹",
+        "source": "sp_004",
+        "reuse": "中"
+      }
+    ],
+    "price_talk": [
+      {
+        "structure": "单瓶价",
+        "wording": "日常 59.9 一瓶",
+        "source": "厂商卖点图"
+      },
+      {
+        "structure": "拍 N 发 M",
+        "wording": "直播 99.9 拍一发四（≈25/瓶）",
+        "source": "厂商卖点图"
+      }
+    ]
+  },
+  "pending": [
+    {
+      "id": "pd_001",
+      "item": "【配料表全文】完整开头与顺序",
+      "why": "背面标只拍到结尾「…冷榨油莎豆油、食用盐」；四句以上文案要念「配料表就三样」",
+      "blocking": true,
+      "owner": "厂商",
+      "how_to_resolve": "补一张完整清晰的背面标实拍"
+    },
+    {
+      "id": "pd_002",
+      "item": "【到手价】【单瓶价】与 SKU 对应关系",
+      "why": "两档价格分别对应什么口径未明；促销价须投放当天实时核实",
+      "blocking": true,
+      "owner": "运营",
+      "how_to_resolve": "投放当天截商品页，按实际 SKU 填"
+    },
+    {
+      "id": "pd_004",
+      "item": "【SC证号】【产品标准号】【专利号】",
+      "why": "核不到编号就不能写认证与专利；不卡配音，删掉即可",
+      "blocking": false,
+      "owner": "厂商",
+      "how_to_resolve": "提供证照与专利证书"
+    },
+    {
+      "id": "pd_005",
+      "item": "0 添加五条 / 无麸质无胆固醇与标签核对",
+      "why": "pf_014 是厂商自述",
+      "blocking": false,
+      "owner": "厂商",
+      "how_to_resolve": "与配料表、标签核对"
+    },
+    {
+      "id": "pd_006",
+      "item": "产地正式标注 / 种源研究出处",
+      "why": "产地故事可作记忆点，但不能当产地认证",
+      "blocking": false,
+      "owner": "厂商",
+      "how_to_resolve": "提供标签产地栏或不出"
+    },
+    {
+      "id": "pd_007",
+      "item": "换算出处复核（1 勺 = 15g、《中国食物成分表》第六版、USDA/FSANZ）",
+      "why": "sp_006 依赖「按…折算」保留卖点",
+      "blocking": false,
+      "owner": "厂商 / 运营",
+      "how_to_resolve": "核对卖点图原始标注，投放前复核"
+    },
+    {
+      "id": "pd_008",
+      "item": "厂商素材是否已 assets ingest 入库",
+      "why": "mode=vendor_provided，本品类素材尚未入库",
+      "blocking": false,
+      "owner": "运营",
+      "how_to_resolve": "assets ingest → 回填 vendor_assets"
+    },
+    {
+      "id": "pd_009",
+      "item": "T3 市场验证素材（销量 / 复购 / 真实反馈）",
+      "why": "新品类 T3 必然为空，信任段只能靠 T1",
+      "blocking": false,
+      "owner": "运营",
+      "how_to_resolve": "积累真实反馈；素材缺口不是文案问题"
+    }
+  ],
+  "asset_index": {
+    "mode": "vendor_provided",
+    "layers": [
+      {
+        "code": "A",
+        "name": "厂商提供素材",
+        "share": "~45%",
+        "covers": "产品镜头 / 涂抹动作 / 产地与工艺画面 / 吃法场景",
+        "note": "授权范围须确认；包里只放 id 与索引"
+      },
+      {
+        "code": "B",
+        "name": "自有产品镜头",
+        "share": "~30%",
+        "covers": "包装正面 / 背面配料表 / 瓶内质地 / 抹开特写 / 与面包并置",
+        "hard_constraint": true
+      },
+      {
+        "code": "C",
+        "name": "AI 生成",
+        "share": "~15%",
+        "covers": "开头钩子 AI 视频（用户流程指定）"
+      },
+      {
+        "code": "D",
+        "name": "自有录屏",
+        "share": "~10%",
+        "covers": "商品页价格区 / 下单页 / 认证详情页",
+        "note": "必须实时真实，不得生成"
+      }
+    ],
+    "hard_constraints": [
+      "产品本体镜头（包装、配料表、质地、抹开）只能来自厂商素材或自有拍摄——用别家同类产品的画面就是虚假背书",
+      "厂商素材须明确授权范围；未授权的画面不进成片",
+      "价格与认证画面必须实时录屏，AI 生成的界面是虚构信息",
+      "产品本体镜头须来自厂商授权素材；不得自建拍摄，不得借用别家同类产品画面"
+    ],
+    "consistency_anchors": {
+      "台面": "浅木色 / 早餐桌统一",
+      "光线": "暖调窗光，同侧打光",
+      "餐具": "同一只面包盘与抹刀",
+      "色温": "酱体棕调统一，别一条偏红一条偏灰"
+    },
+    "vendor_assets": [],
+    "ingest_status": "未入库"
+  },
+  "conflicts": []
+}

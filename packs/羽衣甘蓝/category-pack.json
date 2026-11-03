@@ -1,0 +1,688 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "category": "羽衣甘蓝",
+    "pack_version": "1.0-draft",
+    "created_at": "2026-11-03",
+    "created_by": "WorkBuddy（迁移自 VIBECAP 既有资产）",
+    "source_materials": [
+      "VIBECAP/projects/羽衣甘蓝.json",
+      "VIBECAP/docs/文案策略/电商带货脚本方法论_v1.md",
+      "VIBECAP/羽衣甘蓝/文案资产/元素库.md",
+      "VIBECAP/羽衣甘蓝/文案资产/角度×人群矩阵.md",
+      "VIBECAP/羽衣甘蓝/文案资产/素材获取清单.md",
+      "VIBECAP/羽衣甘蓝/文案资产/羽衣甘蓝_三条口播文案*.md（四版）",
+      "VIBECAP/羽衣甘蓝/tasks/Task2–Task7/*.json",
+      "VIBECAP/羽衣甘蓝/semantic_metas.json（164 条：90 vlm / 74 asr）"
+    ],
+    "review": {
+      "self_check": "passed",
+      "human_review": "passed",
+      "published_to_tdrive": true,
+      "published_path": "品类包/羽衣甘蓝/",
+      "published_at": "2026-11-03"
+    },
+    "consumers": [
+      "ecommerce-script-gen（改造后）",
+      "vibecut UI 审核视图"
+    ]
+  },
+  "product_facts": [
+    {
+      "id": "pf_001",
+      "field": "product_name",
+      "label": "品类／产品称呼",
+      "value": "羽衣甘蓝粉",
+      "source": {
+        "type": "project_config",
+        "ref": "projects/羽衣甘蓝.json"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_002",
+      "field": "product_type",
+      "label": "产品类别（正式）",
+      "value": null,
+      "source": {
+        "type": "vendor_claim",
+        "ref": "product_text「冲调饮品」推断"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "pf_003",
+      "field": "ingredients",
+      "label": "配料表",
+      "value": "配料表就一行：羽衣甘蓝",
+      "source": {
+        "type": "script_design",
+        "ref": "竞 ep2 台词 + 自 Task4/Task7/四版文案档反复引用"
+      },
+      "verified": false,
+      "usable_in_copy": true,
+      "blocking": true,
+      "placeholder": "【配料表全文】"
+    },
+    {
+      "id": "pf_004",
+      "field": "nutrition",
+      "label": "营养成分数值",
+      "value": "膳食纤维 + 维生素（无数值）",
+      "source": {
+        "type": "vendor_claim",
+        "ref": "product_text"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false,
+      "placeholder": "【营养成分表】"
+    },
+    {
+      "id": "pf_005",
+      "field": "net_weight",
+      "label": "规格（一盒几条）",
+      "value": null,
+      "source": {
+        "type": "unknown",
+        "ref": "脚本中一直用占位符"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": true,
+      "placeholder": "【规格】"
+    },
+    {
+      "id": "pf_006",
+      "field": "price",
+      "label": "价格",
+      "value": null,
+      "source": {
+        "type": "unknown",
+        "ref": "脚本中一直用占位符"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": true,
+      "placeholder": "【到手价】【单条价】"
+    },
+    {
+      "id": "pf_007",
+      "field": "certification",
+      "label": "PICC 承保",
+      "value": "中国人保承保",
+      "source": {
+        "type": "reference_video",
+        "ref": "竞 ep3 台词；自 Task4/Task6 引用"
+      },
+      "verified": false,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_008",
+      "field": "origin",
+      "label": "自有种植基地",
+      "value": "自有种植基地",
+      "source": {
+        "type": "reference_video",
+        "ref": "竞 ep3；自 Task6"
+      },
+      "verified": false,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_009",
+      "field": "usage",
+      "label": "食用方式",
+      "value": "温水冲 / 兑牛奶 / 拌酸奶 / 做茶饮",
+      "source": {
+        "type": "script_design",
+        "ref": "竞 ep2/ep3 + 自 Task7 + 四版文案档"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "pf_010",
+      "field": "allergen",
+      "label": "过敏原 / 致敏物质",
+      "value": null,
+      "source": {
+        "type": "unknown",
+        "ref": "无资料"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    }
+  ],
+  "selling_point_map": [
+    {
+      "id": "sp_001",
+      "vendor_claim": "补膳食纤维 / 清肠控卡（已修掉的源头污染）",
+      "risk_type": "身体功效结论",
+      "usable_rewrite": "不爱吃蔬菜的时候，冲一杯配着饭喝",
+      "condition": "无需数值即可用",
+      "status": "ready"
+    },
+    {
+      "id": "sp_002",
+      "vendor_claim": "满满的膳食纤维和高蛋白",
+      "risk_type": "营养声称需数值支撑",
+      "usable_rewrite": "配料表就一行字，看得懂",
+      "condition": "配料表核实后才可念（见 pf_003）",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_003",
+      "vendor_claim": "这一条就顶半斤蔬菜",
+      "risk_type": "无依据换算",
+      "usable_rewrite": "按营养成分表折算，一条的膳食纤维差不多一小碗青菜",
+      "condition": "营养成分表核实 + 换算比可查",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_004",
+      "vendor_claim": "仙女饮品（product_text 原词）",
+      "risk_type": "人群口径不符",
+      "usable_rewrite": "早上冲一杯，温水一冲就好",
+      "condition": "平台×人群参数由技能自带表注入，不写进包",
+      "status": "ready"
+    },
+    {
+      "id": "sp_005",
+      "vendor_claim": "减脂期解馋 / 代餐 / 代替晚饭",
+      "risk_type": "减肥功效宣称",
+      "usable_rewrite": "下午馋了冲一杯，配着点心吃",
+      "condition": "不得出现减脂、代餐、断食、掉秤等词",
+      "status": "ready"
+    },
+    {
+      "id": "sp_006",
+      "vendor_claim": "一天比一杯奶茶便宜",
+      "risk_type": "价格对比（自造金句，可保留）",
+      "usable_rewrite": "一天比一杯奶茶便宜",
+      "condition": "【单条价】落地后才能念",
+      "status": "conditional"
+    },
+    {
+      "id": "sp_007",
+      "vendor_claim": "清肠 / 排毒 / 治便秘 / 降三高 / 增强免疫",
+      "risk_type": "疾病功效（四类红线之一）",
+      "usable_rewrite": null,
+      "condition": "—",
+      "status": "blocked"
+    },
+    {
+      "id": "sp_008",
+      "vendor_claim": "有机 / 零农残 / 蓝帽子 / 医生推荐 / 营养师认证",
+      "risk_type": "无认证宣称",
+      "usable_rewrite": null,
+      "condition": "若厂商补齐认证材料，可转为 verified 事实后再评估",
+      "status": "blocked"
+    }
+  ],
+  "compliance_ext": {
+    "category_specific": [
+      {
+        "term": "清肠 / 排毒 / 通便 / 治便秘",
+        "reason": "蔬菜粉类最易滑向的疾病功效暗示，且中老年是监管重点人群",
+        "action": "forbid",
+        "scope": "all"
+      },
+      {
+        "term": "减脂 / 代餐 / 断晚餐 / 掉秤 / 轻断食",
+        "reason": "减肥功效宣称；产品是普通食品",
+        "action": "forbid",
+        "scope": "all"
+      },
+      {
+        "term": "一条顶半斤蔬菜 / 相当于一大碗蔬菜",
+        "reason": "换算宣称，须有营养成分表与可查折算依据",
+        "action": "conditional",
+        "scope": "all"
+      },
+      {
+        "term": "不含 X / 过敏也能吃 / 无任何添加",
+        "reason": "配料表未核实前，反向宣称与绝对化用语均不可用",
+        "action": "forbid_until_verified",
+        "scope": "all"
+      },
+      {
+        "term": "有机 / 零农残 / 蓝帽子 / PICC（未核编号）",
+        "reason": "无认证宣称；PICC 若核到主体与编号可转 T2 使用",
+        "action": "forbid_until_verified",
+        "scope": "all"
+      }
+    ],
+    "shared_overlay_ref": "技能自带 references/platform-audience.md（中老年 / 中年女性 / 给妈妈买三张人群红线表，属人群属性，不进品类包）",
+    "base_redline_ref": "技能自带 references/compliance-base.md（疾病功效、无依据虚假比较、无认证宣称、虚假价格稀缺四类）"
+  },
+  "elements": {
+    "hooks": [
+      {
+        "type": "共谋",
+        "structure": "如果你实在改不了…那就…",
+        "example": "改不了晚上吃东西的习惯",
+        "source": "竞 ep2",
+        "status": "可用"
+      },
+      {
+        "type": "身份反差",
+        "structure": "年龄／月薪 X 你还天天…",
+        "example": "我已经 61 岁了",
+        "source": "竞 ep4/ep11",
+        "status": "可用"
+      },
+      {
+        "type": "发现秘密",
+        "structure": "关键我发现了一个…漏洞",
+        "example": "支付漏洞",
+        "source": "竞 ep2",
+        "status": "⚠️ 擦边"
+      },
+      {
+        "type": "数字冲击",
+        "structure": "一 X 顶 Y",
+        "example": "这一条就顶半斤蔬菜",
+        "source": "竞 ep2",
+        "status": "自 Task4 已用"
+      },
+      {
+        "type": "反常识",
+        "structure": "别再 X 了",
+        "example": "别再吃草",
+        "source": "自 Task3",
+        "status": "已用"
+      },
+      {
+        "type": "冲突",
+        "structure": "怕的不是 A，是 B",
+        "example": "怕的不是不好喝，是放到过期",
+        "source": "自 Task7",
+        "status": "已用"
+      },
+      {
+        "type": "人群切入",
+        "structure": "直接点名人群",
+        "example": "外卖党",
+        "source": "自 Task2",
+        "status": "已用"
+      },
+      {
+        "type": "夸张结果",
+        "structure": "每天一杯 X，我怕你…",
+        "example": "我怕你前男友跪地不起",
+        "source": "竞 ep1",
+        "status": "⚠️ 易越红线"
+      }
+    ],
+    "pains": [
+      {
+        "pain": "改不掉宵夜",
+        "wording": "晚上吃东西的习惯",
+        "source": "竞 ep2",
+        "status": "未用"
+      },
+      {
+        "pain": "上班没菜吃",
+        "wording": "平时工作忙没有蔬菜",
+        "source": "竞 ep3",
+        "status": "未用"
+      },
+      {
+        "pain": "节食断晚餐",
+        "wording": "常年不吃晚餐",
+        "source": "竞 ep4",
+        "status": "未用 ⚠️ 减肥口径"
+      },
+      {
+        "pain": "外卖重油重盐",
+        "wording": "外卖 App 列表划过去全是",
+        "source": "自 Task6",
+        "status": "已用"
+      },
+      {
+        "pain": "买回家闲置",
+        "wording": "放到过期",
+        "source": "自 Task7",
+        "status": "已用"
+      },
+      {
+        "pain": "吃草难坚持",
+        "wording": "别再吃草",
+        "source": "自 Task3",
+        "status": "已用"
+      },
+      {
+        "pain": "补纤维成本高",
+        "wording": "轻食沙拉三十多一份",
+        "source": "自 Task4",
+        "status": "已用"
+      },
+      {
+        "pain": "办公室跟风",
+        "wording": "我们整个办公室都好疯了",
+        "source": "竞 ep11",
+        "status": "未用"
+      },
+      {
+        "pain": "不畅／便秘",
+        "wording": "竞品暗示但不明说",
+        "source": "—",
+        "status": "❌ 红线区，不开发"
+      }
+    ],
+    "scenes": [
+      {
+        "time": "早起空腹",
+        "usage": "温水一冲",
+        "source": "竞 ep2"
+      },
+      {
+        "time": "早餐替代",
+        "usage": "一包搞定一顿早餐",
+        "source": "竞 ep5"
+      },
+      {
+        "time": "下午茶",
+        "usage": "兑牛奶 = 抹茶拿铁",
+        "source": "竞 ep3 / 自 Task7"
+      },
+      {
+        "time": "晚餐代餐",
+        "usage": "代替晚饭",
+        "source": "竞 ep4 ⚠️ 减肥口径"
+      },
+      {
+        "time": "宵夜搭档",
+        "usage": "配奇亚籽",
+        "source": "竞 ep5"
+      },
+      {
+        "time": "办公室打卡",
+        "usage": "替代咖啡奶茶",
+        "source": "竞 ep11"
+      }
+    ],
+    "proofs": [
+      {
+        "level": "L1",
+        "claim": "配料干净到就只有羽衣甘蓝",
+        "source": "竞 ep2",
+        "note": "未核实"
+      },
+      {
+        "level": "L1",
+        "claim": "满满的膳食纤维和高蛋白",
+        "source": "竞 ep5",
+        "note": "营养声称需数值"
+      },
+      {
+        "level": "L1",
+        "claim": "特别添加了奇亚籽",
+        "source": "竞 ep5",
+        "note": "未核实"
+      },
+      {
+        "level": "L2",
+        "claim": "一打开就能闻到浓郁的香味",
+        "source": "竞 ep2",
+        "note": "体感，安全"
+      },
+      {
+        "level": "L2",
+        "claim": "就像在喝清新抹茶",
+        "source": "竞 ep2",
+        "note": "体感，安全"
+      },
+      {
+        "level": "L2",
+        "claim": "温水一冲就可以喝了",
+        "source": "竞 ep2",
+        "note": "体感，安全"
+      },
+      {
+        "level": "L3",
+        "claim": "这一条就顶半斤蔬菜",
+        "source": "竞 ep2",
+        "note": "需按营养成分表核实"
+      },
+      {
+        "level": "L3",
+        "claim": "一天比一杯奶茶便宜",
+        "source": "自 Task4",
+        "note": "价格落地后可用"
+      },
+      {
+        "level": "L4",
+        "claim": "早温水 / 午兑牛奶 / 晚拌酸奶",
+        "source": "自 Task7"
+      }
+    ],
+    "trust": [
+      {
+        "level": "T1",
+        "content": "配料表只有羽衣甘蓝",
+        "status": "弱，但随时可用（待核实）"
+      },
+      {
+        "level": "T2",
+        "content": "自有种植基地",
+        "status": "竞 ep3 / 自 Task6 已用，出处未核"
+      },
+      {
+        "level": "T2",
+        "content": "PICC 承保",
+        "status": "⚠️ 主体与编号须核实，核不到就删整段"
+      },
+      {
+        "level": "T3",
+        "content": "销量 / 复购 / 真实反馈",
+        "status": "❌ 缺口，无素材。靠写解决不了"
+      }
+    ],
+    "ctas": [
+      {
+        "type": "引导尝试",
+        "wording": "还没喝过的一定要试试",
+        "source": "竞 ep1",
+        "status": "可用"
+      },
+      {
+        "type": "批量引导",
+        "wording": "下单时把数量改成 4",
+        "source": "竞 ep4/ep11",
+        "status": "可用"
+      },
+      {
+        "type": "囤货",
+        "wording": "快屯起来吧",
+        "source": "竞 ep3",
+        "status": "⚠️ 与逆向 CTA 冲突"
+      },
+      {
+        "type": "库存催促",
+        "wording": "刷到的赶紧看看还能不能拍",
+        "source": "竞 ep2",
+        "status": "❌ 虚假稀缺，不用"
+      }
+    ],
+    "golden_quotes": [
+      {
+        "quote": "一天比一杯奶茶便宜",
+        "source": "自 Task4",
+        "reuse": "高，可跨人群复用"
+      },
+      {
+        "quote": "怕的不是不好喝，是买回家放到过期",
+        "source": "自 Task7",
+        "reuse": "中，绑定场景型"
+      },
+      {
+        "quote": "别再吃草了",
+        "source": "自 Task3",
+        "reuse": "中，绑定反常识型"
+      },
+      {
+        "quote": "有羊毛为什么不薅",
+        "source": "竞 ep11",
+        "reuse": "高"
+      }
+    ],
+    "price_talk": [
+      {
+        "structure": "加量立减",
+        "wording": "加到 6 直接立减 200 多",
+        "source": "竞 ep2"
+      },
+      {
+        "structure": "拍 N 发 M",
+        "wording": "现在拍 2 发 40",
+        "source": "竞 ep4"
+      },
+      {
+        "structure": "单元对比",
+        "wording": "一代是 35 块 9，加到 4 省 100 多",
+        "source": "竞 ep11"
+      },
+      {
+        "structure": "清仓价",
+        "wording": "清仓加到 4 只要 29.9",
+        "source": "竞 ep2"
+      }
+    ]
+  },
+  "pending": [
+    {
+      "id": "pd_001",
+      "item": "【规格】一盒几条",
+      "why": "四版文案与 Task4/Task7 共用的占位符，从未填实",
+      "blocking": true,
+      "owner": "厂商 / 运营",
+      "how_to_resolve": "拿正式包装或商品页规格填实"
+    },
+    {
+      "id": "pd_002",
+      "item": "【到手价】【单条价】",
+      "why": "算账型金句与所有价格段都依赖它，且须与平台实时一致",
+      "blocking": true,
+      "owner": "运营",
+      "how_to_resolve": "投放当天截图商品页，按实际 SKU 填"
+    },
+    {
+      "id": "pd_003",
+      "item": "配料表是否真的只有羽衣甘蓝",
+      "why": "pf_003 未核实，但四个版本文案都在念这句",
+      "blocking": true,
+      "owner": "厂商",
+      "how_to_resolve": "提供包装背面标实拍；对不上则四版全部改写"
+    },
+    {
+      "id": "pd_004",
+      "item": "营养成分表数值与「一条≈一大碗蔬菜」换算比",
+      "why": "L3 对比段与「顶半斤蔬菜」话术的依据",
+      "blocking": false,
+      "owner": "厂商",
+      "how_to_resolve": "提供正式营养成分表；换算按可查出处折算"
+    },
+    {
+      "id": "pd_005",
+      "item": "PICC 承保主体与保单编号",
+      "why": "pf_007 未核实",
+      "blocking": false,
+      "owner": "厂商",
+      "how_to_resolve": "详情页可查则保留，核不到就整段删"
+    },
+    {
+      "id": "pd_006",
+      "item": "自有种植基地出处",
+      "why": "pf_008 来自竞品台词转用",
+      "blocking": false,
+      "owner": "厂商",
+      "how_to_resolve": "提供基地证明或改成不提"
+    },
+    {
+      "id": "pd_007",
+      "item": "T3 市场验证素材（销量 / 复购 / 真实反馈）",
+      "why": "信任段长期只能靠 T1+T2，中老年尤其吃社会认同",
+      "blocking": false,
+      "owner": "运营",
+      "how_to_resolve": "积累真实用户反馈；这是素材缺口，不是文案问题"
+    },
+    {
+      "id": "pd_008",
+      "item": "过敏原 / 致敏物质标注",
+      "why": "pf_010 无资料，反向宣称一律不可用",
+      "blocking": false,
+      "owner": "厂商",
+      "how_to_resolve": "提供标签致敏物质栏"
+    }
+  ],
+  "asset_index": {
+    "mode": "legacy_competitor_clips",
+    "layers": [
+      {
+        "code": "A",
+        "name": "通用素材站（CC0）",
+        "share": "~45%",
+        "covers": "痛点画面 / 空镜 / 对照物 / 通用动作",
+        "keywords": [
+          "salad bowl overhead",
+          "wilted lettuce",
+          "takeout container empty",
+          "kitchen counter sunlight",
+          "pouring water",
+          "fresh kale"
+        ]
+      },
+      {
+        "code": "B",
+        "name": "自有产品镜头",
+        "share": "~30%",
+        "covers": "包装 / 配料表 / 堆头 / 撕条 / 成品杯",
+        "hard_constraint": true
+      },
+      {
+        "code": "C",
+        "name": "AI 生成",
+        "share": "~15%",
+        "covers": "前 15 秒差异化镜头 / 等量揭示"
+      },
+      {
+        "code": "D",
+        "name": "自有录屏",
+        "share": "~10%",
+        "covers": "商品页价格区 / 下单页 / 承保详情页",
+        "note": "必须实时真实，不得生成"
+      }
+    ],
+    "hard_constraints": [
+      "自有产品镜头 5 类（包装正面 / 背面配料表 / 堆头 / 撕条 / 条装与成品并置）无法从任何外部渠道获得——用别人的就是虚假背书 + 引流",
+      "画面里出现别人的产品、包装、价格、认证、脸，一律不借；只借环境、食材、通用动作",
+      "冲调过程要拆开取：倒水／搅拌／水流走素材站，倒绿粉／液体变绿属产品本体"
+    ],
+    "consistency_anchors": {
+      "台面": "浅木色统一",
+      "光线": "暖调窗光，同侧打光",
+      "杯子": "透明玻璃杯（带竖纹那只）",
+      "色温": "绿色饮品统一调色"
+    },
+    "vendor_assets": [],
+    "semantic_index": {
+      "file": "VIBECAP/羽衣甘蓝/semantic_metas.json",
+      "total": 164,
+      "vlm": 90,
+      "asr": 74,
+      "note": "用前先按 type 分开，混用会把台词当成画面"
+    }
+  },
+  "conflicts": []
+}

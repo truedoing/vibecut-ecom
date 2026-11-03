@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "category": "",
+    "pack_version": "1.0-draft",
+    "created_at": "",
+    "created_by": "",
+    "source_materials": [],
+    "review": {
+      "self_check": "pending",
+      "human_review": "pending",
+      "published_to_tdrive": false
+    },
+    "consumers": ["ecommerce-script-gen", "vibecut UI"],
+    "notes": ""
+  },
+  "product_facts": [
+    {
+      "id": "pf_001",
+      "field": "product_name",
+      "label": "",
+      "value": null,
+      "source": { "type": "official_label", "ref": "" },
+      "verified": false,
+      "verified_note": "",
+      "usable_in_copy": false,
+      "blocking": false,
+      "placeholder": ""
+    }
+  ],
+  "selling_point_map": [
+    {
+      "id": "sp_001",
+      "vendor_claim": "",
+      "risk_type": "",
+      "usable_rewrite": "",
+      "basis": "",
+      "condition": "",
+      "status": "ready"
+    }
+  ],
+  "compliance_ext": {
+    "category_specific": [
+      { "term": "", "reason": "", "action": "forbid", "scope": "all" }
+    ],
+    "shared_overlay_ref": "技能自带 references/platform-audience.md",
+    "base_redline_ref": "技能自带 references/compliance-base.md",
+    "note": "禁词表是兜底检查，不是写作起点。"
+  },
+  "elements": {
+    "hooks": [],
+    "pains": [],
+    "scenes": [],
+    "proofs": [],
+    "trust": [],
+    "ctas": [],
+    "golden_quotes": [],
+    "price_talk": [],
+    "note": ""
+  },
+  "pending": [
+    {
+      "id": "pd_001",
+      "item": "",
+      "why": "",
+      "blocking": false,
+      "owner": "",
+      "how_to_resolve": ""
+    }
+  ],
+  "asset_index": {
+    "mode": "vendor_provided",
+    "layers": [
+      { "code": "A", "name": "", "share": "", "covers": "" },
+      { "code": "B", "name": "自有产品镜头", "share": "", "covers": "", "hard_constraint": true },
+      { "code": "C", "name": "AI 生成", "share": "", "covers": "" },
+      { "code": "D", "name": "自有录屏", "share": "", "covers": "" }
+    ],
+    "hard_constraints": [],
+    "consistency_anchors": {},
+    "vendor_assets": []
+  },
+  "conflicts": [
+    {
+      "id": "cf_001",
+      "field": "",
+      "field_label": "",
+      "values": [
+        { "value": "", "source": "" },
+        { "value": "", "source": "" }
+      ],
+      "resolution": "待定",
+      "status": "open",
+      "rule": "冲突不自动选值"
+    }
+  ]
+}
