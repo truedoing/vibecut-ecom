@@ -1,0 +1,5193 @@
+{
+ "label": "虎坚果酱",
+ "asset_root": "/Users/zgl/AAA官方素材",
+ "videos": {
+  "桌拍素材/4.10/C5306.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 3.5,
+    "size_bytes": 67254302
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792747646,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 3.5,
+     "tag": {
+      "desc": "木桌上摆放虎坚果酱罐体，周围散落虎坚果颗粒原料，罐体标签文字清晰可读",
+      "subject": "罐体",
+      "shot_size": "近景",
+      "scene": "室内桌拍",
+      "text": "虎坚果酱 Cyperus Esculentus 源自新疆图木舒克沙漠绿洲 阳光香浓原生甜 (图片仅供参考) 净含量:150g",
+      "usage": [
+       "product"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5315.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 7.51,
+    "size_bytes": 67256654
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792747702,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.51,
+     "tag": {
+      "desc": "室内桌面上摆放多罐虎坚果酱，左侧放置颗粒状原料，背景为米色布料。",
+      "subject": "罐体/包装",
+      "shot_size": "中景",
+      "scene": "室内桌拍",
+      "text": "虎坚果酱 Cyperus Esculentus 净含量：155g",
+      "usage": [
+       "product",
+       "other"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5319.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 39.54,
+    "size_bytes": 335710928
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792747828,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 39.54,
+     "tag": {
+      "desc": "手用勺子从虎坚果酱罐体中舀酱，罐体下方还放着两个同款罐体，罐体有文字标签",
+      "subject": "罐体/酱体特写",
+      "shot_size": "近景",
+      "scene": "室内桌拍",
+      "text": "虎坚果酱 Cyperus Esculentus 净含量:150g",
+      "usage": [
+       "product",
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5321.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 12.01,
+    "size_bytes": 134368162
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792747832,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 12.01,
+     "tag": {
+      "desc": "虎坚果酱玻璃罐体放置在木质展示台面上，周围散落几颗虎坚果颗粒，背景有柔化的装饰植物与包装盒，罐身标签文字清晰可见。",
+      "subject": "罐体/包装",
+      "shot_size": "近景",
+      "scene": "室内桌拍",
+      "text": "虎坚果酱\nCyperus Esculentus\n沙漠绿洲\n酥香原生甜\n净含量135g",
+      "usage": [
+       "product",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5325.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 14.51,
+    "size_bytes": 134369634
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792747906,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 14.51,
+     "tag": {
+      "desc": "一只手拿着长柄勺子伸入玻璃罐中，舀起浓稠的浅褐色虎坚果酱。",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "虎坚果 酱 perus Esculentus",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5332.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 5.51,
+    "size_bytes": 67255478
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792747936,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 5.51,
+     "tag": {
+      "desc": "室内木质台面上摆放虎坚果酱罐体，罐体旁散落少量虎坚果颗粒",
+      "subject": "罐体",
+      "shot_size": "中景",
+      "scene": "室内桌拍",
+      "text": "虎坚果酱 CYPYRUS ESCULENTUS 沙漠绿洲 新疆阿克苏 沙漠绿洲 晒太阳浓缩生甜 净含量150g",
+      "usage": [
+       "product",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5384.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 25.53,
+    "size_bytes": 268593832
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792748144,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 25.53,
+     "tag": {
+      "desc": "手持木勺从打开的玻璃罐中舀起虎坚果酱，罐体贴有产品标签，背景叠放多罐同款产品。",
+      "subject": "酱体特写",
+      "shot_size": "近景",
+      "scene": "室内桌拍",
+      "text": "虎坚果酱 Cyperus Esculentus 净含量:150g 源自新疆图木舒克 沙漠绿洲 阳光香浓原生甜(图片仅供参考)",
+      "usage": [
+       "product",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5388.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 23.02,
+    "size_bytes": 201483496
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792748432,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 23.02,
+     "tag": {
+      "desc": "手持虎坚果酱罐，金属勺舀起酱料，酱料呈拉伸状悬在罐口上方",
+      "subject": "虎坚果酱酱体特写+产品罐体",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "虎坚果酱",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5391.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 17.52,
+    "size_bytes": 201480264
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792748588,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 17.52,
+     "tag": {
+      "desc": "手拿着虎坚果酱罐子，将酱体挤到白色碟子里，形成螺旋状酱体堆。",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "未识别",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5394.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 28.03,
+    "size_bytes": 268595300
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792748626,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 28.03,
+     "tag": {
+      "desc": "手持工具将浓稠的酱体从碗中舀起，酱体缓缓流下，背景有产品罐体和绿植，背景模糊",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5396.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.51,
+    "size_bytes": 134366106
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792748688,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.51,
+     "tag": {
+      "desc": "近景镜头中，小刀正将棕褐色酱体涂抹在半片全麦餐包上，餐包旁放着两颗草莓和几颗蓝莓。",
+      "subject": "酱体特写",
+      "shot_size": "近景",
+      "scene": "室内桌拍",
+      "text": "",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5397.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 13.01,
+    "size_bytes": 134368750
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792748724,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 13.01,
+     "tag": {
+      "desc": "一只手正伸向一盘涂满棕色酱的贝果，贝果上放有蓝莓和草莓。",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "桌拍素材/4.10/C5400.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 5.0,
+    "size_bytes": 67255103
+   },
+   "category": "桌拍素材/4.10",
+   "src_mtime": 1792748750,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 5.0,
+     "tag": {
+      "desc": "黑色盘子上有沾白色粉末的圆形食品和三颗蓝莓，旁边放着两颗草莓。",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "",
+      "usage": [
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "磨酱/C1397.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 12.01,
+    "size_bytes": 134368083
+   },
+   "category": "磨酱",
+   "src_mtime": 1792818152,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 12.01,
+     "tag": {
+      "desc": "棕色颗粒原料从金属容器中倾倒出来，正堆积在下方，颗粒形态清晰可见",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "磨酱/C1398.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 18.02,
+    "size_bytes": 201480477
+   },
+   "category": "磨酱",
+   "src_mtime": 1792818204,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 18.02,
+     "tag": {
+      "desc": "棕色颗粒原料在金属机械槽口中倾泻滑落，颗粒密集堆积成流",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "磨酱/C1420.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 4.0,
+    "size_bytes": 67254515
+   },
+   "category": "磨酱",
+   "src_mtime": 1792818174,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 4.0,
+     "tag": {
+      "desc": "棕褐色虎坚果酱呈流动状滴落，覆盖在带有深色纹理的物体表面，底部有金属器具。",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "",
+      "usage": [
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "磨酱/C1421.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 12.51,
+    "size_bytes": 134368379
+   },
+   "category": "磨酱",
+   "src_mtime": 1792818238,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 12.51,
+     "tag": {
+      "desc": "棕褐色虎坚果酱体在金属分层装置上缓缓流动，表面泛有光泽，凹槽处有酱体垂落。",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "texture",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "磨酱/C1424.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 9.51,
+    "size_bytes": 134366615
+   },
+   "category": "磨酱",
+   "src_mtime": 1792818238,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 9.51,
+     "tag": {
+      "desc": "金属料槽中的浅棕色虎坚果酱体持续流出，形成流畅的液柱",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "磨酱/C1425.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 5.51,
+    "size_bytes": 67255399
+   },
+   "category": "磨酱",
+   "src_mtime": 1792818264,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 5.51,
+     "tag": {
+      "desc": "浓稠的橙棕色酱体从金属导流槽中呈流线型向下倾倒，画面聚焦酱体流动状态",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1300.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 15.52,
+    "size_bytes": 134370143
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792817894,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 15.52,
+     "tag": {
+      "desc": "多罐装满棕色酱料的玻璃罐在生产线上整齐排列，随传送带缓慢移动。",
+      "subject": "灌装线",
+      "shot_size": "近景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1301.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 29.03,
+    "size_bytes": 268595809
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792817910,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 29.03,
+     "tag": {
+      "desc": "灌装好的虎坚果酱玻璃罐在生产线传送带上依次移动",
+      "subject": "灌装线",
+      "shot_size": "特写",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "product",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1304.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.01,
+    "size_bytes": 67256867
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792817918,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.01,
+     "tag": {
+      "desc": "车间灌装机的金属注料嘴正向传送带上的玻璃空罐内注入棕褐色酱体",
+      "subject": "灌装线",
+      "shot_size": "近景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1318.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 12.51,
+    "size_bytes": 134368379
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792817950,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 12.51,
+     "tag": {
+      "desc": "金属灌装头正在车间产线的玻璃罐内灌注虎坚果酱，传送带上的酱罐排成队列",
+      "subject": "灌装线",
+      "shot_size": "近景",
+      "scene": "车间",
+      "text": "EM112-200-0411/16",
+      "usage": [
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1319.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.01,
+    "size_bytes": 67256867
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792817952,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.01,
+     "tag": {
+      "desc": "多只玻璃罐盛装浅棕色虎坚果酱，沿不锈钢传送带依次排列移动",
+      "subject": "灌装线",
+      "shot_size": "近景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1327.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 13.51,
+    "size_bytes": 134368967
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792818074,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 13.51,
+     "tag": {
+      "desc": "装满酱体的透明玻璃罐在自动化灌装线的传送带上依次排列并向前移动。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1331.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.01,
+    "size_bytes": 67256867
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792817984,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.01,
+     "tag": {
+      "desc": "多个玻璃罐装褐色虎坚果酱在工厂传送带上依次排列移动，背景可见灌装机械设备",
+      "subject": "灌装线",
+      "shot_size": "近景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "product"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1361.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 22.02,
+    "size_bytes": 201482908
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792818038,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 22.02,
+     "tag": {
+      "desc": "车间内三名穿白大褂戴蓝帽的工人在工作台前整理并叠放黄色产品包装盒",
+      "subject": "产品包装",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "product",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1362.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.01,
+    "size_bytes": 67256946
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792818056,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.01,
+     "tag": {
+      "desc": "两名穿白色工服、戴蓝色发帽的工人在生产线旁操作，前景堆放着黄绿色产品包装盒。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "product"
+      ]
+     }
+    }
+   ]
+  },
+  "流水线罐装/C1363.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 19.02,
+    "size_bytes": 201481065
+   },
+   "category": "流水线罐装",
+   "src_mtime": 1792818116,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 19.02,
+     "tag": {
+      "desc": "两位穿白色工作服戴蓝色帽套和口罩的工人在生产车间工作台旁整理黄色包装盒，周围堆放大量同款包装盒。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/20240715-113145.700-11(1).mp4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 29.0,
+    "duration": 2.76,
+    "size_bytes": 1025207
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833852,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 2.76,
+     "tag": {
+      "desc": "田间一台红黄相间的播种机后方，两名穿迷彩服的人员正在搬运袋装颗粒原料并投放料斗。",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/20240715-113145.700-2.mp4": {
+   "manifest": {
+    "width": 1280,
+    "height": 720,
+    "fps": 23.0,
+    "duration": 9.26,
+    "size_bytes": 6337093
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833854,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 9.26,
+     "tag": {
+      "desc": "一只手在绿色作物田中握着带泥土的细长根须，背景是大片草状作物田地",
+      "subject": "种植产地",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/20240715-113145.700-40.mp4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 29.0,
+    "duration": 12.24,
+    "size_bytes": 4166866
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833858,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 12.24,
+     "tag": {
+      "desc": "三名工人在沙地田间操作带有黑色卷盘的农机，沿垄沟铺设滴灌带。",
+      "subject": "种植产地",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/20240715-113145.700-55.mp4": {
+   "manifest": {
+    "width": 2560,
+    "height": 1440,
+    "fps": 50.0,
+    "duration": 19.68,
+    "size_bytes": 18342484
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833880,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 19.68,
+     "tag": {
+      "desc": "田间作物幼苗成行种植，垄间铺设多条滴灌管线，远处有树木和土路。",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/20240715-113145.700-6.mp4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 29.0,
+    "duration": 20.91,
+    "size_bytes": 7115801
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833884,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 20.91,
+     "tag": {
+      "desc": "工作人员将袋装颗粒原料倒入田间播种机上的多个透明塑料料斗中。",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/20240715-113145.700-70.mp4": {
+   "manifest": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24.0,
+    "duration": 18.0,
+    "size_bytes": 10925350
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833888,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 0.88,
+     "tag": {
+      "desc": "沙质土壤地面特写，散落干枯草茎与细碎土粒，光影投射在松散沙土上",
+      "subject": "沙质土壤",
+      "shot_size": "特写",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "texture"
+      ]
+     }
+    },
+    {
+     "start": 0.88,
+     "end": 18.0,
+     "tag": {
+      "desc": "沙质土壤地面特写，散落干枯草茎与细碎土粒，光影投射在松散沙土上",
+      "subject": "沙质土壤",
+      "shot_size": "特写",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0394.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 30.53,
+    "size_bytes": 268596687
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833950,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 30.53,
+     "tag": {
+      "desc": "田间农用采收机械被牵引着作业，扬起大量尘土，地面留有作物残留秸秆。",
+      "subject": "田间采收机械",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0395.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 7.51,
+    "size_bytes": 67256569
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792833968,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.51,
+     "tag": {
+      "desc": "绿色拖拉机牵引橙色农用设备在收割后的田间作业，扬起大量灰尘。",
+      "subject": "种植产地农机作业",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0411.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 84.58,
+    "size_bytes": 738390576
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834130,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 84.58,
+     "tag": {
+      "desc": "戴草帽的人用双手在田间的干枯作物秸秆上翻动、捏起沙土，呈现种植土壤细节。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0412.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 18.52,
+    "size_bytes": 201480777
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834226,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 18.52,
+     "tag": {
+      "desc": "一双手在干枯的植株残骸中，一手捏着颗粒状物体，一手拿着植株根部，背景是沙土和枯草",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0413.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 19.52,
+    "size_bytes": 201481365
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834200,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 19.52,
+     "tag": {
+      "desc": "画面中一双手正在拔取带有泥土的颗粒原料，背景是干枯的秸秆",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0414.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 20.02,
+    "size_bytes": 201481736
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834278,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 20.02,
+     "tag": {
+      "desc": "一双手在铺满干草的田间地面上捧握并揉搓小颗粒原料，展示原料收集场景。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0415.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 20.02,
+    "size_bytes": 201481736
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834292,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 20.02,
+     "tag": {
+      "desc": "双手捧起一把带根须的棕褐色颗粒原料，背景为覆盖干秸秆的田地",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0416.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 23.02,
+    "size_bytes": 201483500
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834334,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 23.02,
+     "tag": {
+      "desc": "男子戴草帽站在干燥田间，双手捧着颗粒原料低头查看挑选",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0417.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 6.51,
+    "size_bytes": 67256070
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834336,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 6.51,
+     "tag": {
+      "desc": "一只手将深色颗粒原料送入口中，背景为沙漠地貌。",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "other"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0418.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 10.51,
+    "size_bytes": 134367286
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834384,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 10.51,
+     "tag": {
+      "desc": "一名男子双手捧起棕褐色颗粒原料，拇指与食指捏起一粒细看，背景为干旱沙地",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0419.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 10.51,
+    "size_bytes": 134367286
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834406,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 10.51,
+     "tag": {
+      "desc": "一只手捏着单个深棕色颗粒原料，另一只手捧着多颗同款颗粒，背景是沙质荒地与土路",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0420.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 33.53,
+    "size_bytes": 335707404
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834534,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 33.53,
+     "tag": {
+      "desc": "男子站在沙漠里低头查看手心中的颗粒原料，并用手指捏起一颗端详",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0422.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 53.05,
+    "size_bytes": 469936596
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834526,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 53.05,
+     "tag": {
+      "desc": "一辆绿色拖拉机在干燥的田间行驶作业，拖拉着红色农机具，车后扬起大量白色尘土。",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0423.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 7.51,
+    "size_bytes": 67256658
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834550,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.51,
+     "tag": {
+      "desc": "沙漠中的田地垄行整齐，垄沟间散落着干枯的作物秸秆，远处可见模糊的作业车辆与塔架。",
+      "subject": "沙漠绿洲种植田",
+      "shot_size": "全景",
+      "scene": "沙漠种植产地",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0424.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 21.02,
+    "size_bytes": 201482324
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834602,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 21.02,
+     "tag": {
+      "desc": "干旱沙地上的枯黄作物秸秆，远处矗立输电塔，前景沙面有一黑色弯曲条状物。",
+      "subject": "沙漠田地",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "other"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0426.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.51,
+    "size_bytes": 134366110
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834600,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.51,
+     "tag": {
+      "desc": "低角度拍摄收获后的农田，地面残留干枯茬秆与碎草，土壤开裂干燥，远处地平线模糊，天空晴朗",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0427.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 26.53,
+    "size_bytes": 268594424
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834692,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 26.53,
+     "tag": {
+      "desc": "镜头低角度拍摄沙漠地面上枯黄的干草茎秆，背景为模糊的沙地与淡蓝色天空。",
+      "subject": "沙漠绿洲",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0428.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 6.01,
+    "size_bytes": 67255774
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834652,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 6.01,
+     "tag": {
+      "desc": "大片干枯杂草覆盖的沙质土地延伸至远方，远处可见零星树木与电线杆",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "沙漠/田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0429.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 17.52,
+    "size_bytes": 201480268
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834694,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 17.52,
+     "tag": {
+      "desc": "一位头戴宽檐帽的人员背对镜头，行走在收割后的干枯田地的田垄间，远处是平坦地平线与晴朗天空。",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0430.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 13.51,
+    "size_bytes": 134369050
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834812,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 13.51,
+     "tag": {
+      "desc": "戴宽檐草帽的人蹲在农田中，双手处理地面的作物秸秆，背景是开阔的田野与淡蓝色天空",
+      "subject": "种植产地",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0431.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 11.51,
+    "size_bytes": 134367874
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834734,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 11.51,
+     "tag": {
+      "desc": "戴草帽的人蹲在收割后的田间，双手在干枯秸秆中触地劳作",
+      "subject": "种植农户",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0432.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 21.52,
+    "size_bytes": 201482541
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834790,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 21.52,
+     "tag": {
+      "desc": "戴草帽的人蹲在收割后的田地里，双手整理作物残留，地面泥泞且布满干枯秸秆",
+      "subject": "种植田间的劳作场景",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0433.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 11.51,
+    "size_bytes": 134367874
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834848,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 11.51,
+     "tag": {
+      "desc": "双手握住带泥土的油莎豆根茎簇，抖落根须上附着的沙土",
+      "subject": "油莎豆颗粒",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0435.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 21.02,
+    "size_bytes": 201482245
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834870,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 21.02,
+     "tag": {
+      "desc": "一双手在沙漠环境中抓起带根须的沙土，沙土从指缝间持续散落。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0436.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 10.01,
+    "size_bytes": 134366990
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834918,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 10.01,
+     "tag": {
+      "desc": "一双手握住带有根茎的油莎豆植株，根茎上附着细长的须根和圆形油莎豆颗粒，背景为蓝天",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "天空",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0437.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 5.0,
+    "size_bytes": 67255107
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834888,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 5.0,
+     "tag": {
+      "desc": "一只手握住带根须的植株，根系上挂满圆形颗粒原料，背景为干燥农田",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0438.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 19.52,
+    "size_bytes": 201481365
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834954,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 19.52,
+     "tag": {
+      "desc": "一双手捧着带根须的颗粒原料，背景是模糊的农田，展示刚从土壤中采收的原料状态",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0439.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 17.02,
+    "size_bytes": 201480013
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792834988,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 17.02,
+     "tag": {
+      "desc": "一只手在浅蓝色天空背景下，用拇指和手指捏着一根带有两个干枯球状果实的细枝",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "天空",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0442.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 16.52,
+    "size_bytes": 201479719
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835018,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 16.52,
+     "tag": {
+      "desc": "一只手捏住带须根的虎坚果颗粒，颗粒沾有泥土，背景为晴朗蓝天",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "天空",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0443.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 14.01,
+    "size_bytes": 134369383
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835022,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 14.01,
+     "tag": {
+      "desc": "一只手的拇指和食指捏着一根细长的茎，茎的末端悬挂着一个干燥的颗粒原料",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "天空",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0444.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 33.53,
+    "size_bytes": 335707404
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835228,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 33.53,
+     "tag": {
+      "desc": "前景有模糊的颗粒状原料，背景是开阔的田野和远处的树木，整体为静态场景。",
+      "subject": "颗粒原料",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0446.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 10.01,
+    "size_bytes": 134366990
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835066,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 10.01,
+     "tag": {
+      "desc": "双手捧起装有颗粒原料的透明塑料瓶，背景为带有干草的沙地",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0447.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 7.51,
+    "size_bytes": 67256699
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835096,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.51,
+     "tag": {
+      "desc": "一只手掌紧握，细小的沙状颗粒从指缝间持续漏下，背景是渐变浅蓝色天空",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "天空",
+      "text": "",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0449.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 29.97,
+    "duration": 54.55,
+    "size_bytes": 369250963
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835176,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 54.55,
+     "tag": {
+      "desc": "一只手摊开，颗粒原料从指缝间持续洒落，背景为沙漠户外环境。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0451.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.01,
+    "size_bytes": 67256950
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835192,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.01,
+     "tag": {
+      "desc": "枯黄的田地里铺满收割后的秸秆，远处沙漠边缘立着白色电线杆，天空呈现灰蓝色",
+      "subject": "田间产地",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0453.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 18.52,
+    "size_bytes": 201480856
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835228,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 18.52,
+     "tag": {
+      "desc": "田间收割后干燥的秸秆成排铺在地上，远处一人在田地中行走。",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0456.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 8.01,
+    "size_bytes": 67256861
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835292,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.01,
+     "tag": {
+      "desc": "逆光下沙漠绿洲中的细长野草穗子在微风中轻轻摇曳，背景是模糊的绿植区域",
+      "subject": "沙漠绿洲",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0457.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 20.52,
+    "size_bytes": 201481943
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835272,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 20.52,
+     "tag": {
+      "desc": "近景拍摄户外草穗植物，前景草穗舒展纹理清晰，背景模糊，呈现种植区域的自然植物景观",
+      "subject": "未识别草穗植物",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0458.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 17.52,
+    "size_bytes": 201480179
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835326,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 17.52,
+     "tag": {
+      "desc": "一株长着蓬松穗状花序的草本植株立于画面中央，背景为晴朗天空，穗头似随风摆动",
+      "subject": "未识别",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0459.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 7.51,
+    "size_bytes": 67256639
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835320,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.51,
+     "tag": {
+      "desc": "沙漠沙地上分布着成排的黄褐色干枯草本作物，画面底部散落着干枯草茎。",
+      "subject": "沙漠绿洲",
+      "shot_size": "中景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0499.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 19.02,
+    "size_bytes": 201481069
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835390,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 19.02,
+     "tag": {
+      "desc": "戴草帽的人弯腰在沙地农田里，用工具翻动沙土，脚下是干枯的作物残茬。",
+      "subject": "沙漠绿洲",
+      "shot_size": "中景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0500.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 21.02,
+    "size_bytes": 201482245
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835420,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 21.02,
+     "tag": {
+      "desc": "一双手从沙地里拔出带有大量根系和沙土的植物，根系上附着细密须根与土团。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0501.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 20.02,
+    "size_bytes": 201481657
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835468,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 20.02,
+     "tag": {
+      "desc": "一只手握着刚从沙土中拔出的植物根系，根系上附着颗粒状块茎与泥沙",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0503.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 19.02,
+    "size_bytes": 201481148
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835470,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 19.02,
+     "tag": {
+      "desc": "一双手在沙土地上托举并捏起一粒黄色颗粒原料，背景为沙土与干枯根茎。",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0504.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 34.53,
+    "size_bytes": 335707992
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835630,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.63,
+     "sampled": true,
+     "tag": {
+      "desc": "一只手用塑料瓶向另一只手心的少量颗粒原料浇水，背景为沙质地",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "texture"
+      ]
+     }
+    },
+    {
+     "start": 8.63,
+     "end": 17.27,
+     "sampled": true,
+     "tag": {
+      "desc": "一只手用塑料瓶向另一只手心的少量颗粒原料浇水，背景为沙质地",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "texture"
+      ]
+     }
+    },
+    {
+     "start": 17.27,
+     "end": 25.9,
+     "sampled": true,
+     "tag": {
+      "desc": "手心握持一堆颗粒原料，塑料瓶向其浇水，水珠从手部落下，背景是沙地",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "texture"
+      ]
+     }
+    },
+    {
+     "start": 25.9,
+     "end": 34.53,
+     "sampled": true,
+     "tag": {
+      "desc": "手心摊开放置多颗带少量沙土的颗粒原料，无浇水动作，背景为沙质地",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0505.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 30.03,
+    "size_bytes": 268596480
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835584,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.51,
+     "sampled": true,
+     "tag": {
+      "desc": "戴草帽穿迷彩外套的人站在干草田间，手持少量黄色颗粒原料靠近嘴部。",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    },
+    {
+     "start": 7.51,
+     "end": 15.02,
+     "sampled": true,
+     "tag": {
+      "desc": "戴草帽穿迷彩外套的人站在干草田间，手持少量黄色颗粒原料靠近嘴部。",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    },
+    {
+     "start": 15.02,
+     "end": 22.52,
+     "sampled": true,
+     "tag": {
+      "desc": "戴草帽穿迷彩外套的人站在干草田间，双手交握在身前，手中握有颗粒原料。",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    },
+    {
+     "start": 22.52,
+     "end": 30.03,
+     "sampled": true,
+     "tag": {
+      "desc": "戴草帽穿迷彩外套的人站在干草田间，双手捏着一个圆形深色物体进行操作。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0506.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 22.02,
+    "size_bytes": 201482912
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835636,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 22.02,
+     "tag": {
+      "desc": "双手的拇指与食指捏住一颗浅色颗粒原料，背景为干枯的草地植被",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0508.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 24.02,
+    "size_bytes": 201484088
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835716,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 24.02,
+     "tag": {
+      "desc": "近景拍摄沙质土壤上生长的枯黄草本植物茎秆，部分茎秆带有绿色叶片，背景模糊延伸至远处田地",
+      "subject": "种植产地",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0507.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 22.52,
+    "size_bytes": 201483208
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835704,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 22.52,
+     "tag": {
+      "desc": "戴草帽和眼镜的女子站在荒地中，左手掌心托着几颗黄色颗粒原料，右手正将其中一颗送入口中。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0514.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 16.02,
+    "size_bytes": 134370518
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835758,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 16.02,
+     "tag": {
+      "desc": "双手捧着沙土颗粒，细沙从指缝间向下漏出，背景是干燥的荒漠地面。",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0516.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 15.02,
+    "size_bytes": 134369930
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975108,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 15.02,
+     "tag": {
+      "desc": "人物双手捧着一堆沾满泥土的圆形颗粒原料，背景为干燥的田地地面。",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "hand",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0515.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 16.02,
+    "size_bytes": 134370518
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792835758,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 16.02,
+     "tag": {
+      "desc": "一双沾有沙尘的手合拢，掌心的细颗粒原料正从指缝间漏下，背景是干燥的荒草地",
+      "subject": "颗粒原料",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0566.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 9.01,
+    "size_bytes": 134366402
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975146,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 9.01,
+     "tag": {
+      "desc": "田间干燥开裂的土壤中，几株被修剪过的绿色细长植物生长，部分叶片枯黄",
+      "subject": "油莎豆植株",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0565.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 14.51,
+    "size_bytes": 134369638
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975148,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 14.51,
+     "tag": {
+      "desc": "沙质土壤上生长着几株绿色与枯黄的细草，背景为模糊的沙地纹理",
+      "subject": "种植田间植被",
+      "shot_size": "近景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0567.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 6.01,
+    "size_bytes": 67255695
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975176,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 6.01,
+     "tag": {
+      "desc": "穿蓝色牛仔裤的人站在田间高草作物中，镜头从低角度拍摄作物与腿部",
+      "subject": "种植产地",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin",
+       "other"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0582.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 10.01,
+    "size_bytes": 134366911
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975248,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 10.01,
+     "tag": {
+      "desc": "大量褐色颗粒原料平铺晾晒于地面，混有秸秆，一只塑料水瓶躺在颗粒上",
+      "subject": "颗粒原料",
+      "shot_size": "中景",
+      "scene": "田间晒场",
+      "text": "",
+      "usage": [
+       "origin",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/C0583.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 3.0,
+    "size_bytes": 67253931
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975206,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 3.0,
+     "tag": {
+      "desc": "近距离拍摄大量棕色油莎豆颗粒原料，混杂少量干草碎，展示原料真实质感。",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "室内桌拍",
+      "text": "",
+      "usage": [
+       "texture",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/VID20251027142920.mp4": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 11.75,
+    "size_bytes": 99863958
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975232,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 11.75,
+     "tag": {
+      "desc": "浅棕色油莎豆颗粒散落在灰白色沙地上，颗粒带深色斑纹，阳光下投出阴影",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/VID20251027143019.mp4": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 11.44,
+    "size_bytes": 97636829
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975288,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 11.44,
+     "tag": {
+      "desc": "一只手托着几颗浅褐色的油莎豆颗粒，背景沙地上散落着更多同类颗粒。",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "hand",
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111028_K812.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 8.58,
+    "size_bytes": 58982481
+   },
+   "category": "通用",
+   "src_mtime": 1792752096,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.58,
+     "tag": {
+      "desc": "车间生产线上，白色圆形盖体沿轨道输送，下方罐体依次通过灌装设备进行生产作业。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "沙漠素材/VID20251027143111.mp4": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 18.53,
+    "size_bytes": 158270270
+   },
+   "category": "沙漠素材",
+   "src_mtime": 1792975292,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 18.53,
+     "tag": {
+      "desc": "手持一颗带有褐色斑点的圆形颗粒原料，背景是沙地和散落的多颗同类颗粒。",
+      "subject": "油莎豆颗粒",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "texture",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111029_K813.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 24.34,
+    "size_bytes": 166440808
+   },
+   "category": "通用",
+   "src_mtime": 1792752162,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 24.34,
+     "tag": {
+      "desc": "生产车间内，酱料罐体在输送带上排队前进，上方轨道排列着待放置的盖子。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "product"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111037_K817.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 7.1,
+    "size_bytes": 47863046
+   },
+   "category": "通用",
+   "src_mtime": 1792752176,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.1,
+     "tag": {
+      "desc": "车间内一台不锈钢上料机将空罐体提升后送至传送带，旁挂电气控制箱与警示标识。",
+      "subject": "灌装线",
+      "shot_size": "全景",
+      "scene": "车间",
+      "text": "小心触电",
+      "usage": [
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111037_K815.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 14.72,
+    "size_bytes": 101008473
+   },
+   "category": "通用",
+   "src_mtime": 1792752146,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 14.72,
+     "tag": {
+      "desc": "金属搅拌杆深入褐色酱体中搅拌，酱面形成同心圆旋涡纹路",
+      "subject": "酱体特写",
+      "shot_size": "特写",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111039_K820.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 6.29,
+    "size_bytes": 43652244
+   },
+   "category": "通用",
+   "src_mtime": 1792752186,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 6.29,
+     "tag": {
+      "desc": "自动灌装机喷嘴正向传送带上的玻璃罐中灌装浅褐色浓稠虎坚果酱",
+      "subject": "灌装线",
+      "shot_size": "近景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "texture"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111039_K822.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 7.33,
+    "size_bytes": 50655551
+   },
+   "category": "通用",
+   "src_mtime": 1792752214,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.33,
+     "tag": {
+      "desc": "生产线上整齐排列的多个玻璃罐装虎坚果酱，正在传送带上向前输送",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111046_K825.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 4.7,
+    "size_bytes": 31820690
+   },
+   "category": "通用",
+   "src_mtime": 1792752286,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 4.7,
+     "tag": {
+      "desc": "车间灌装线旁，工人手部正在处理罐装酱品，托盘里整齐摆放着多袋膏状酱料。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111047_K826.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 13.66,
+    "size_bytes": 93610806
+   },
+   "category": "通用",
+   "src_mtime": 1792752288,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 13.66,
+     "tag": {
+      "desc": "车间传送带上黄色包装盒有序传输，工人操作产线，前景手部指向装有同款包装的纸箱",
+      "subject": "产品包装盒",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "process",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111050_K832.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 14.08,
+    "size_bytes": 95356746
+   },
+   "category": "通用",
+   "src_mtime": 1792752344,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 14.08,
+     "tag": {
+      "desc": "三名身着白色工作服、戴蓝色帽子和口罩的工人在车间工作台上手动包装产品纸盒",
+      "subject": "产品包装盒",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "未识别",
+      "usage": [
+       "process",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111048_K828.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 14.71,
+    "size_bytes": 100831371
+   },
+   "category": "通用",
+   "src_mtime": 1792752318,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 14.71,
+     "tag": {
+      "desc": "Conveyor belt transports cardboard boxes labeled \"沙漠一号虎坚果酱\", a worker's arm places a box into a large carton, with packaging equipment above.",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "沙漠一号虎坚果酱 净含量：150g*24盒",
+      "usage": [
+       "process",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111051_K835.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 13.89,
+    "size_bytes": 93146037
+   },
+   "category": "通用",
+   "src_mtime": 1792752372,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 13.89,
+     "tag": {
+      "desc": "车间流水线上，一罐虎坚果酱置于传送带上，周围是整齐摆放的同款产品纸箱，工人正在操作。",
+      "subject": "罐体",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "虎坚果酱 冷渍一号",
+      "usage": [
+       "product",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111053_K837.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 7.81,
+    "size_bytes": 52949480
+   },
+   "category": "通用",
+   "src_mtime": 1792752414,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.81,
+     "tag": {
+      "desc": "车间不锈钢设备旁多箱虎坚果酱包装盒堆放在货架上，工人戴发网口罩在旁作业。",
+      "subject": "罐体/包装",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "沙漠一号 虎坚果酱 288 28.8",
+      "usage": [
+       "product",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111058_K842.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 7.71,
+    "size_bytes": 55186934
+   },
+   "category": "通用",
+   "src_mtime": 1792752442,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.71,
+     "tag": {
+      "desc": "堆叠的虎坚果酱外包装纸箱被塑料膜整体包裹，放置在木质托盘上",
+      "subject": "产品外包装纸箱",
+      "shot_size": "中景",
+      "scene": "室内仓库",
+      "text": "沙漠一号虎坚果酱 净含量: 150g*24盒 乐陆（靖湖）有限公司",
+      "usage": [
+       "product"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111107_K846.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 13.43,
+    "size_bytes": 89373853
+   },
+   "category": "通用",
+   "src_mtime": 1792752484,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 13.43,
+     "tag": {
+      "desc": "自动化生产线正在通过红色机械滚轮对盛有黄色酱料的玻璃罐进行封盖作业。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "油莎一号；虎坚果酱",
+      "usage": [
+       "process",
+       "product"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111107_K847.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 14.44,
+    "size_bytes": 98122661
+   },
+   "category": "通用",
+   "src_mtime": 1792752480,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 14.44,
+     "tag": {
+      "desc": "生产车间内多名工人在流水线旁操作灌装设备，传送带上有酱料罐，旁放纸箱与瓶盖材料。",
+      "subject": "生产车间",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "小心轻放 马口铁瓶盖 虎坚果酱",
+      "usage": [
+       "process",
+       "other"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111110_K851.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 13.84,
+    "size_bytes": 93468974
+   },
+   "category": "通用",
+   "src_mtime": 1792752514,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 13.84,
+     "tag": {
+      "desc": "车间流水线区域，多名穿戴防护装备的工人正在作业，流水线旁放置有带文字标识的纸箱，处理虎坚果酱产品。",
+      "subject": "灌装线",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "小心轻放 马口铁瓶盖 虎坚果酱 TIGERNUT BUTTER",
+      "usage": [
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111501_K894.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 7.18,
+    "size_bytes": 48082392
+   },
+   "category": "通用",
+   "src_mtime": 1792752530,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.18,
+     "tag": {
+      "desc": "穿白色工作服戴口罩的人员手持橙色包装盒，背景堆放纸箱",
+      "subject": "产品包装",
+      "shot_size": "近景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "product",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111506_K903.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 8.66,
+    "size_bytes": 58836518
+   },
+   "category": "通用",
+   "src_mtime": 1792752566,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.66,
+     "tag": {
+      "desc": "身穿白色工作服的人员手持虎坚果酱罐体，背景为生产车间内部场景",
+      "subject": "罐体",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "",
+      "usage": [
+       "product",
+       "hand",
+       "process"
+      ]
+     }
+    }
+   ]
+  },
+  "通用/A001_05111501_K895.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 7.46,
+    "size_bytes": 49968864
+   },
+   "category": "通用",
+   "src_mtime": 1792752532,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.46,
+     "tag": {
+      "desc": "穿着白大褂的工人正在车间里将虎坚果酱产品装入标有规格的纸箱中",
+      "subject": "产品包装",
+      "shot_size": "中景",
+      "scene": "车间",
+      "text": "沙漠一号虎坚果酱 净含量:150g*24盒",
+      "usage": [
+       "process",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "9.2种植基地/A001_08292036_D689.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 8.06,
+    "size_bytes": 57516910
+   },
+   "category": "9.2种植基地",
+   "src_mtime": 1792826658,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.06,
+     "tag": {
+      "desc": "画面展示一片绿色农田，远处有连绵山脉，天空呈暖黄色渐变，前景是泥土地面",
+      "subject": "种植田地",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "9.2种植基地/A001_08292123_D709.mov": {
+   "manifest": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60.0,
+    "duration": 9.36,
+    "size_bytes": 66777691
+   },
+   "category": "9.2种植基地",
+   "src_mtime": 1792826692,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 9.36,
+     "tag": {
+      "desc": "双手捧起带根须和颗粒的沙土作物，背景是沙土地与绿植，展示作物根部细节",
+      "subject": "颗粒原料",
+      "shot_size": "特写",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0363.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 33.0,
+    "size_bytes": 164303452
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823096,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.25,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下，笔直跑道两侧是大片绿色农田，远处连绵沙丘与灰蒙天空相接。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 8.25,
+     "end": 16.5,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下，笔直跑道两侧是大片绿色农田，远处连绵沙丘与灰蒙天空相接。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 16.5,
+     "end": 24.75,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍镜头向前推进，左侧为笔直跑道，右侧是成排种植的绿色作物与沙土相间。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 24.75,
+     "end": 33.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍俯视沙地农田，可见成行生长的绿色作物幼苗，沙质土壤间夹杂绿意。",
+      "subject": "种植田",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0364.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 49.0,
+    "size_bytes": 243909924
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823158,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.17,
+     "sampled": true,
+     "tag": {
+      "desc": "Aerial view of a vast cultivated field with rows of young plants, mixed green patches and dry soil, under an overcast hazy sky.",
+      "subject": "desert oasis field",
+      "shot_size": "aerial",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 8.17,
+     "end": 16.33,
+     "sampled": true,
+     "tag": {
+      "desc": "Aerial view of a vast cultivated field with rows of young plants, mixed green patches and dry soil, under an overcast hazy sky.",
+      "subject": "desert oasis field",
+      "shot_size": "aerial",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 16.33,
+     "end": 24.5,
+     "sampled": true,
+     "tag": {
+      "desc": "Aerial shot of a large agricultural field with planted rows, showing more extensive dry soil between green patches, under a hazy overcast sky.",
+      "subject": "desert oasis field",
+      "shot_size": "aerial",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 24.5,
+     "end": 32.67,
+     "sampled": true,
+     "tag": {
+      "desc": "Aerial view of a large field with neatly planted rows, some green vegetation and dry soil, with distant desert dunes visible under a hazy sky.",
+      "subject": "desert oasis field",
+      "shot_size": "aerial",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 32.67,
+     "end": 40.83,
+     "sampled": true,
+     "tag": {
+      "desc": "Aerial shot of a large cultivated field with rows of young plants, a dirt path cutting through, and distant dunes under a hazy sky.",
+      "subject": "desert oasis field",
+      "shot_size": "aerial",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 40.83,
+     "end": 49.0,
+     "sampled": true,
+     "tag": {
+      "desc": "Aerial view of a large agricultural field with rows of young plants, dry soil between green patches, and a dirt path in the distance under a hazy sky.",
+      "subject": "desert oasis field",
+      "shot_size": "aerial",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0365.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 59.0,
+    "size_bytes": 291583353
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823210,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.43,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠绿洲田地，纵横道路延伸至远方雾气中，田地分布整齐",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 8.43,
+     "end": 16.86,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠绿洲田地，纵横道路延伸至远方雾气中，田地分布整齐",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 16.86,
+     "end": 25.29,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠田地道路，道路上有车辆行驶，田地与沙漠相邻分布",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 25.29,
+     "end": 33.71,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠绿洲道路交叉口，附近有小型建筑，田地规整分布",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 33.71,
+     "end": 42.14,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠田间道路，路面有修补痕迹，路边有水池等设施",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 42.14,
+     "end": 50.57,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠绿洲道路交叉口，有车辆停放，路边有蓄水池设施",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 50.57,
+     "end": 59.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下，沙漠中分布着规整的绿色种植田，道路交错，远处植被稀疏，展现沙漠绿洲种植区域",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0368.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 17.0,
+    "size_bytes": 82841693
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823266,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 17.0,
+     "tag": {
+      "desc": "航拍沙漠中整齐划一的绿色农田方块，土路纵横交错，边缘可见灌溉水渠及几辆小型车辆",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0370.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 22.0,
+    "size_bytes": 105877026
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823330,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 22.0,
+     "tag": {
+      "desc": "高空俯瞰大地，一条笔直的公路穿过田地，远处是荒漠和零星的植被。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0369.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 45.0,
+    "size_bytes": 222781616
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823270,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.5,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠中的大面积种植田，作物沿田垄成排生长，远处可见连绵的沙丘",
+      "subject": "沙漠种植田",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 7.5,
+     "end": 15.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠中的大面积种植田，作物沿田垄成排生长，远处可见连绵的沙丘",
+      "subject": "沙漠种植田",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 15.0,
+     "end": 22.5,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠种植田，作物整齐分布在田垄间，旁侧有开阔的灌溉水道，远处沙丘隐约可见",
+      "subject": "沙漠种植田",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 22.5,
+     "end": 30.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠种植田，田垄间作物成排，一名人员在田边区域活动作业",
+      "subject": "沙漠种植田",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "hand"
+      ]
+     }
+    },
+    {
+     "start": 30.0,
+     "end": 37.5,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠种植田，田垄间作物成排生长，地面上放置有一个绿色的圆形标识物",
+      "subject": "沙漠种植田",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 37.5,
+     "end": 45.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠中的种植田，作物沿覆盖浅色地膜的田垄成排生长，远处可见沙丘",
+      "subject": "沙漠种植田",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0371.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 33.0,
+    "size_bytes": 164547981
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823398,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.25,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍荒漠中的网格状农田，道路分割地块，部分长出稀疏绿草，沙尘天气能见度低。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 8.25,
+     "end": 16.5,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍荒漠中的网格状农田，道路分割地块，部分长出稀疏绿草，沙尘天气能见度低。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 16.5,
+     "end": 24.75,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍荒漠农田，网格地块交错，道路交汇处停放数辆白色车辆，周围沙尘弥漫。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 24.75,
+     "end": 33.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角，一辆货车沿田间公路行驶，左侧为荒漠地带，右侧是矩形绿化农田。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0372.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 22.0,
+    "size_bytes": 109637448
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823370,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 22.0,
+     "tag": {
+      "desc": "无人机高空俯瞰，大片规整矩形田块被道路与灌溉水渠分割，远处笼罩在雾气中。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0373.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 97.08,
+    "size_bytes": 485290488
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823560,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 12.13,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角俯瞰干旱农田，土垄间稀疏生长着绿色作物，远处可见平坦道路与连片绿地。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 12.13,
+     "end": 24.27,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角俯瞰干旱农田，土垄间稀疏生长着绿色作物，远处可见平坦道路与连片绿地。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 24.27,
+     "end": 36.41,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍镜头向前推进，掠过稀疏作物田块，中部横穿一条土路，远处道路上有车辆行驶。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 36.41,
+     "end": 48.54,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍俯瞰呈方格状分布的田块，裸露土壤间杂生绿色作物，向远处地平线延伸。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 48.54,
+     "end": 60.67,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍画面中田块呈网格状排列，中部一条横向土路贯穿，远处可见树木与建筑轮廓。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 60.67,
+     "end": 72.81,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍镜头越过农田，画面下方立有一根电线杆，前方田块作物稀疏呈格状分布。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 72.81,
+     "end": 84.94,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角俯瞰沙漠绿洲中的方形种植地块，草地呈网格状分布，四周为荒漠与道路",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 84.94,
+     "end": 97.08,
+     "sampled": true,
+     "tag": {
+      "desc": "无人机高空航拍沙漠边缘的农田地块，网格状草场与土路交错，远处为荒漠平原",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0374.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 57.0,
+    "size_bytes": 284132071
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823536,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.14,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍俯瞰大片规整的种植农田，田垄交错延伸至远处沙地与树木",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 8.14,
+     "end": 16.29,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍俯瞰大片规整的种植农田，田垄交错延伸至远处沙地与树木",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 16.29,
+     "end": 24.43,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍镜头沿笔直的田间道路缓缓前行，两侧为矩形农田地块",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 24.43,
+     "end": 32.57,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍画面中农田被道路分割成方块，远处道路上有小型车辆行驶",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 32.57,
+     "end": 40.71,
+     "sampled": true,
+     "tag": {
+      "desc": "高空航拍展现广阔农田，作物行列清晰，地平线处弥漫薄雾沙地",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 40.71,
+     "end": 48.86,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍镜头移动掠过田间作物行列，道路上可见小型车辆行驶",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 48.86,
+     "end": 57.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下，沙漠绿洲中成片矩形农田被道路分隔，远处可见沙丘与雾霭。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0375.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 28.0,
+    "size_bytes": 138852553
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823606,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 28.0,
+     "tag": {
+      "desc": "航拍视角俯瞰大片规整农田，田块间有十字形道路，远处为模糊的沙地与绿植边界",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0376.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 18.0,
+    "size_bytes": 89826747
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823606,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 18.0,
+     "tag": {
+      "desc": "沙漠沙地上整齐种植着成排绿色作物幼苗，地面可见黑色滴灌管线。",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0378.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 22.0,
+    "size_bytes": 109669420
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823676,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 22.0,
+     "tag": {
+      "desc": "俯拍沙漠种植地块，规整田垄间散布矮小绿植，局部有茂密灌丛，地面铺有滴灌管道",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0377.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 15.0,
+    "size_bytes": 74469134
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823688,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 15.0,
+     "tag": {
+      "desc": "沙漠沙地中整齐排列的虎坚果幼苗，绿苗稀疏分布于沙土行间，呈现种植产地景象",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0379.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 34.0,
+    "size_bytes": 169073630
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823756,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.5,
+     "sampled": true,
+     "tag": {
+      "desc": "镜头航拍沙漠区域，可见起伏沙丘与零星植被，远处有水域和建筑群",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 8.5,
+     "end": 17.0,
+     "sampled": true,
+     "tag": {
+      "desc": "镜头航拍沙漠区域，可见起伏沙丘与零星植被，远处有水域和建筑群",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 17.0,
+     "end": 25.5,
+     "sampled": true,
+     "tag": {
+      "desc": "镜头航拍沙漠区域，展示连绵沙丘与分散的低矮植被，沙丘形态起伏柔和",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 25.5,
+     "end": 34.0,
+     "sampled": true,
+     "tag": {
+      "desc": "镜头航拍沙漠区域，聚焦沙丘边缘凹陷处的植被与沙土细节，植被簇状分布",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0380.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 23.0,
+    "size_bytes": 112532343
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823754,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 23.0,
+     "tag": {
+      "desc": "航拍沙漠绿洲全景，沙地上有稀疏植被，远处水边立着红色塔状建筑，背景是连绵山脉。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0381.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 67.0,
+    "size_bytes": 334145265
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823936,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 8.38,
+     "sampled": true,
+     "tag": {
+      "desc": "沙漠沙丘间散布稀疏植被，远处左侧有一红色塔状结构，镜头缓慢向前推进",
+      "subject": "沙漠绿洲",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 8.38,
+     "end": 16.75,
+     "sampled": true,
+     "tag": {
+      "desc": "沙漠沙丘间散布稀疏植被，远处左侧有一红色塔状结构，镜头缓慢向前推进",
+      "subject": "沙漠绿洲",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 16.75,
+     "end": 25.12,
+     "sampled": true,
+     "tag": {
+      "desc": "大片平缓沙丘起伏，沙面上散布零星小植被，镜头平缓移动掠过沙面",
+      "subject": "沙漠绿洲",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 25.12,
+     "end": 33.5,
+     "sampled": true,
+     "tag": {
+      "desc": "沙丘连绵起伏，沙坡上有少量深色植被，远景地平线处隐约可见结构物",
+      "subject": "沙漠绿洲",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 33.5,
+     "end": 41.88,
+     "sampled": true,
+     "tag": {
+      "desc": "柔和沙丘曲线形成流畅沙脊，前景沙坡上有一小簇干枯植被，镜头向前滑行",
+      "subject": "沙漠绿洲",
+      "shot_size": "中景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 41.88,
+     "end": 50.25,
+     "sampled": true,
+     "tag": {
+      "desc": "沙漠沙丘向远方延伸，中远景处可见零星植被与模糊物体，镜头平缓推进",
+      "subject": "沙漠绿洲",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 50.25,
+     "end": 58.62,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下沙漠沙丘连绵起伏，远处可见水域及低矮建筑，地表散布少量枯草",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 58.62,
+     "end": 67.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下沙漠沙丘间散布低矮灌木与杂草，远处可见大片农田与树林带",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0383.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 31.0,
+    "size_bytes": 155033237
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824006,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.75,
+     "sampled": true,
+     "tag": {
+      "desc": "两人在沙漠沙地上用树枝书写“沙县”字样，一人坐着记录，一人书写",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "沙县",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 7.75,
+     "end": 15.5,
+     "sampled": true,
+     "tag": {
+      "desc": "两人在沙漠沙地上继续书写“沙县”后续字迹，一人抬脚，一人执树枝书写",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "沙县",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 15.5,
+     "end": 23.25,
+     "sampled": true,
+     "tag": {
+      "desc": "两人在沙漠沙地上完成“沙县”字样书写，一人拿着手机，一人执树枝写字",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "沙县",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 23.25,
+     "end": 31.0,
+     "sampled": true,
+     "tag": {
+      "desc": "两人在沙漠沙地上完成“沙县”字样书写，下方可见两人的腿部，坐在沙地上",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "沙县",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0382.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 82.0,
+    "size_bytes": 405987625
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792823966,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 10.25,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下，广阔沙丘上零星分布着低矮灌木，远处延伸至农田与林地。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 10.25,
+     "end": 20.5,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍视角下，广阔沙丘上零星分布着低矮灌木，远处延伸至农田与林地。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 20.5,
+     "end": 30.75,
+     "sampled": true,
+     "tag": {
+      "desc": "俯视沙丘地形，沙面上散布着稀疏的小灌木，右下角有一处明显的凹陷沙坑。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 30.75,
+     "end": 41.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍镜头掠过起伏的沙丘，沙地上散布着零星的绿色矮小灌木丛。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 41.0,
+     "end": 51.25,
+     "sampled": true,
+     "tag": {
+      "desc": "俯瞰沙漠地貌，沙丘表面有风吹出的波纹，散落着几株小树与灌木。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 51.25,
+     "end": 61.5,
+     "sampled": true,
+     "tag": {
+      "desc": "近距离俯拍沙丘表面，沙粒纹理清晰可见，沙坡上点缀着几株绿色植物。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 61.5,
+     "end": 71.75,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠沙丘与稀疏植被，远处可见水域和朦胧山脉，左侧分布低矮建筑群",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    },
+    {
+     "start": 71.75,
+     "end": 82.0,
+     "sampled": true,
+     "tag": {
+      "desc": "航拍沙漠湿地旁矗立粉红色塔状建筑，周围分布水塘与草地，远处山脉雾气笼罩",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0385.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 15.0,
+    "size_bytes": 72510705
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824046,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 15.0,
+     "tag": {
+      "desc": "浅色粗糙墙面上用细线刻写着沙漠一号四个字，字迹为手写刻痕。",
+      "subject": "墙面刻字",
+      "shot_size": "特写",
+      "scene": "田间",
+      "text": "沙漠一号",
+      "usage": [
+       "origin",
+       "other"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0386.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 29.0,
+    "size_bytes": 142489136
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824048,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 29.0,
+     "tag": {
+      "desc": "沙漠沙面上留有弯曲的线条痕迹，两侧可见细密平行的沙纹，无人物活动。",
+      "subject": "沙漠沙地",
+      "shot_size": "近景",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin",
+       "other"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0392.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 25.0,
+    "size_bytes": 121279356
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824128,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 25.0,
+     "tag": {
+      "desc": "沙地表面写有汉字，字间摆放两颗发光小灯，左侧有弯曲车辙印痕迹",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "沙漠夜",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0395.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 12.0,
+    "size_bytes": 59863527
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824094,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 12.0,
+     "tag": {
+      "desc": "田间竖立着种植基地宣传牌，后方是大片绿油油的种植作物与远处的沙地。",
+      "subject": "种植基地宣传牌",
+      "shot_size": "中景",
+      "scene": "田间",
+      "text": "沙漠一号新疆油莎豆种植基地\n让荒漠变绿洲 让戈壁变粮仓",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0396.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 17.0,
+    "size_bytes": 82344054
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824180,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 17.0,
+     "tag": {
+      "desc": "沙漠田地中立着一块白色标牌，牌面印有种植基地名称及标语，四周是绿色作物与沙地。",
+      "subject": "种植基地标牌",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "劲牌 沙漠一号新疆油莎豆种植基地 让沙漠更绿洲 让空气更清新",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0397.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 27.0,
+    "size_bytes": 131757884
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824166,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 27.0,
+     "tag": {
+      "desc": "沙漠边缘的沙地种植基地，沙土中成排绿色作物幼苗生长，右侧立有白色标识牌",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "沙漠",
+      "text": "沙漠一号…种植基地",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0398.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 16.0,
+    "size_bytes": 78441479
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824196,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 16.0,
+     "tag": {
+      "desc": "航拍广阔的绿色农田与沙地相间，远处有山脉和树木，作物稀疏种植",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0403.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 20.0,
+    "size_bytes": 97693360
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824228,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 20.0,
+     "tag": {
+      "desc": "沙漠边缘一片绿色作物种植基地航拍画面，田间立有一块白色标识牌，旁边是沙地",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0405.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 7.0,
+    "size_bytes": 35112355
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824224,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 7.0,
+     "tag": {
+      "desc": "航拍沙漠与绿洲交界处，大片绿色种植地旁沙地上竖立一块白色标识牌。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "沙漠一号……种植基地",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0406.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 24.0,
+    "size_bytes": 116646561
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824292,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 24.0,
+     "tag": {
+      "desc": "航拍视角拍摄沙漠边缘的种植田，沙地上成排栽种绿色作物，左侧立有一块白色标牌。",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "未识别",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0411.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 20.0,
+    "size_bytes": 100204656
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824306,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 20.0,
+     "tag": {
+      "desc": "绿色的油莎豆种植田地中央立着一块白色标牌，远处是山脉，展示了种植基地的全貌。",
+      "subject": "种植产地",
+      "shot_size": "航拍",
+      "scene": "田间",
+      "text": "中源亿海油莎豆种植基地 种植面积300余亩",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0413.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 17.0,
+    "size_bytes": 82436620
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824342,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 17.0,
+     "tag": {
+      "desc": "沙漠边缘的田地里，整齐排列着低矮的绿色作物，远处是开阔的荒漠",
+      "subject": "沙漠绿洲",
+      "shot_size": "航拍",
+      "scene": "沙漠",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  },
+  "种植基地航拍素材/DJI_0412.MP4": {
+   "manifest": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94,
+    "duration": 19.0,
+    "size_bytes": 90539950
+   },
+   "category": "种植基地航拍素材",
+   "src_mtime": 1792824342,
+   "status": "done",
+   "shots": [
+    {
+     "start": 0.0,
+     "end": 19.0,
+     "tag": {
+      "desc": "一片田地里种植着稀疏的绿色作物，远处有树木和山丘，天空灰蒙无字迹。",
+      "subject": "种植产地",
+      "shot_size": "全景",
+      "scene": "田间",
+      "text": "",
+      "usage": [
+       "origin"
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

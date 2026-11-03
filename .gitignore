@@ -26,3 +26,6 @@ config.local.json
 
 # WorkBuddy local state (memory / handoff) — never commit
 .workbuddy/
+
+# 素材抽帧缓存（可随时删，不占原片）
+assets/*/frames/
