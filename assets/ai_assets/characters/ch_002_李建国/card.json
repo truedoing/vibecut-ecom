@@ -1,0 +1,24 @@
+{
+  "id": "ch_002",
+  "name": "李建国",
+  "role_type": "退休职工",
+  "gender": "男",
+  "age_feel": "55-62",
+  "region": "北方（华北）",
+  "temperament": "嘴硬、爱翻旧账、其实怕老婆",
+  "figure": "微胖，短发花白",
+  "wardrobe": "深蓝色旧棉质套头衫，深色长裤",
+  "target_audience": ["视频号中老年", "给妈妈买"],
+  "portraits": {
+    "side": "portrait_side.jpg"
+  },
+  "voice": {
+    "platform": "",
+    "voice_id": "",
+    "desc": "中老年男声，偏低沉，语速慢，北方口音，带点不服气的劲",
+    "sample": ""
+  },
+  "used_in": ["hjg_T2_003_真香素材版（丈夫）"],
+  "status": "ready",
+  "created_at": "2026-11-03"
+}
