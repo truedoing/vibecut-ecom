@@ -1,6 +1,6 @@
 # ecommerce-ai-assets
 
-description: "管理 AI 视频的角色与环境资产：AI 生成定妆图（生活照风格侧身 + 面部细节，避开三视图触发真人限制）、登记 TTS 音色、环境参考图。角色卡（人物+语音+服装+人群）是一套，编号全局递增、按需生长、可跨脚本复用。触发词：建角色、定妆图、AI 资产、角色库、环境参考。"
+description: "管理 AI 视频的角色与环境资产：AI 生成单图双联定妆照（侧身+服装细节）、MiMo TTS 音色锚（voicedesign 造音色，voiceclone 固定）、环境参考图。角色卡（人物+语音+服装+人群）是一套，编号全局递增、按需生长、可跨脚本复用。触发词：建角色、定妆图、音色、AI 资产、角色库、环境参考。"
 
 ## 核心原则
 
@@ -14,37 +14,39 @@ description: "管理 AI 视频的角色与环境资产：AI 生成定妆图（�
 ```
 assets/ai_assets/
   characters/ch_NNN_中文名/
-    portrait_side.jpg    主参考：3/4 侧身生活照（喂 Seedance 人物参考位）
-    detail_face.jpg      面部细节：正面特写（锁五官，image-to-image 从主参考生成）
-    voice.mp3            语音样本（可选，统一文本朗读）
+    portrait.jpg         定妆图：单图双联（左 3/4 侧身半身 + 右服装细节）
+    voice.mp3            音色锚样本（voiceclone 的输入，丢了=嗓子丢了）
     card.json            角色卡
   environments/env_NNN_中文名/
     ref.jpg              场景参考
     card.json            环境卡（必须记光线）
 ```
 
-## 生成定妆图（ImageGen，两张就够）
+## 生成定妆图（ImageGen，一张双联就够）
 
-**不要生成标准三视图**——设定稿式内容容易触发真人内容限制。
-用"生活照"描述路径，两张：
+**一张竖版双联图**：左格 3/4 侧身半身像（人物参考），右格同套衣服领口袖口细节（服装参考），
+中间白色分隔条，像手机相册里拼好的两张照片。人物消费气质配产品客单价，城市场景。
+提示词模板、生成后处理（裁水印 60px）、自检清单见 `references/character-spec.md`。
 
-| 图 | 要点 |
-|---|---|
-| `portrait_side.jpg` | 3/4 侧身全身，家常服装（就是片中要穿的），自然光，中性表情，手机随手拍质感 |
-| `detail_face.jpg` | 用 image-to-image 基于主参考生成正面特写，锁住同一张脸 |
+- 描述路径写「手机相册里拼好的两张照片」，**别写**「三视图」「character sheet」「设定稿」。
+- 年龄写具体中值（42岁左右）+「显年轻」，只写区间会生成到上限。
+- **不要生成标准三视图**——设定稿式内容容易触发真人内容限制。
+- 观感年龄超卡的上限就重生成，不要改卡迁就图。
 
-提示词模板与反例见 `references/character-spec.md`。
+## 音色（MiMo TTS：voicedesign 造锚 + voiceclone 固定）
 
-- 提示词里写「真实手机随手拍」「皮肤有自然纹理」「不是影楼照」，**别写**「三视图」「character sheet」「设定稿」。
-- 生成后**裁掉水印**：`ffmpeg -i in.png -vf "crop=iw:ih-56:0:0" -q:v 2 portrait_side.jpg`。
-- 年龄感写区间（50-58），图上实际观感可能偏区间上限，选角色时以图为准。
+voicedesign 每次现造音色、不返回 voice_id，直接配音会漂。**锚 = voice.mp3 样本**：
 
-## 音色（TTS 固定音色方案）
+```bash
+# ① 造锚（按 card.json 的 voice.desc 生成 19 秒固定文本，人耳审听）
+python3 skills/ecommerce-ai-assets/scripts/gen_voice.py --card assets/ai_assets/characters/ch_001_林岚/card.json
+# ② 正式配音（voiceclone 传锚样本，音色一致）
+python3 skills/ecommerce-ai-assets/scripts/gen_voice.py --card ... --clone --text "台词" -o out.mp3
+```
 
-`card.json` 的 `voice` 块：`platform` / `voice_id` / `desc` / `sample`。
-- 音色描述（年龄/音区/语速/口音/说话劲头）**现在就写**，这是换平台也能重建的根。
-- voice_id 定了平台再填。换平台时按 desc 重挑，角色身份不断。
-- 样本音频若录，全角色念同一段固定文本，便于横向比较。
+- `voice.desc`（年龄/音区/语速/劲头）现在就写，换锚、跨平台都靠它重建。
+- 换锚后旧台词重配，别新旧混用。clone 的 voice 参数必须 DataURL（脚本已处理）。
+- key 在 `.env`：MIMO_API_KEY / MIMO_BASE_URL。
 
 ## 环境卡
 

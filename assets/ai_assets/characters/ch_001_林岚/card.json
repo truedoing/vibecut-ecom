@@ -1,0 +1,40 @@
+{
+  "id": "ch_001",
+  "name": "林岚",
+  "role_type": "中学教师（都市白领）",
+  "gender": "女",
+  "age_feel": "42-46",
+  "region": "城市（华北地级市）",
+  "temperament": "清爽干练、从容笃定、利落不拖沓",
+  "figure": "匀称，齐肩短发梳理利落，淡妆",
+  "wardrobe": "燕麦色羊绒混纺圆领针织衫，内露白衬衫尖领，浅灰直筒裤（即定妆照这套，换装等于换人）",
+  "consumption_level": "中高（城市有房，注重品质，愿为配料干净买单）",
+  "target_audience": [
+    "视频号中老年",
+    "中年女性"
+  ],
+  "portraits": {
+    "portrait": "portrait.jpg"
+  },
+  "portrait_note": "单图双联：左格 3/4 侧身半身（喂 Seedance 人物参考以此格为准），右格同套衣服领口袖口细节（仅作服装款式参考）",
+  "voice": {
+    "platform": "mimo",
+    "model": "mimo-v2.5-tts-voicedesign",
+    "clone_model": "mimo-v2.5-tts-voiceclone",
+    "voice_id": "",
+    "desc": "45岁上下中国城市女性，中音区偏亮，吐字清晰，语速中等偏快，从容笃定，像跟熟龄闺蜜聊天，温和利落不拖沓",
+    "sample": "voice.mp3",
+    "sample_note": "sample 即音色锚：正式配音用 voiceclone 传这份样本"
+  },
+  "used_in": [
+    "hjg_T2_003_真香素材版（妻子）"
+  ],
+  "revisions": [
+    {
+      "date": "2026-11-03",
+      "note": "v2 重定：原「王秀兰 50-58 家庭主妇」太老、家常感重，与产品客单价不匹配；改为 42-46 都市教师，定妆照改单图双联（侧身+服装细节）"
+    }
+  ],
+  "status": "ready",
+  "created_at": "2026-11-03"
+}
