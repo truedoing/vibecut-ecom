@@ -36,6 +36,30 @@ def portrait_files(c):
     return list(p.values()) if p else ["portrait.jpg"]
 
 
+def banned_hits(text, ban):
+    """按句判断禁词：句中含禁词且没有否定词才算违规（"不要…的抑扬顿挫"是合法写法）。"""
+    import re
+    hits = []
+    for seg in re.split(r"[，。；、,.;]", text or ""):
+        if any(w in seg for w in ban) and not any(n in seg for n in ("不要", "别", "不是", "禁")):
+            hits += [w for w in ban if w in seg]
+    return hits
+
+
+def image_size(path):
+    """用 ffprobe 取宽高；取不到返回 (0, 0) 不阻塞校验。"""
+    import json as _json, subprocess
+    try:
+        out = subprocess.run(
+            ["ffprobe", "-v", "error", "-select_streams", "v:0",
+             "-show_entries", "stream=width,height", "-of", "json", str(path)],
+            capture_output=True, text=True, timeout=15).stdout
+        s = _json.loads(out)["streams"][0]
+        return int(s["width"]), int(s["height"])
+    except Exception:
+        return 0, 0
+
+
 def show_card(c):
     v = c.get("voice", {})
     print(f"{c['id']} {c['name']}  {c.get('gender','')}/{c.get('age_feel','')}  "
@@ -114,25 +138,52 @@ def main():
     elif a.cmd == "validate":
         errs = []
         seen = set()
+        LOOK_KEYS = ("action", "wardrobe_wear", "grooming", "skin", "expression", "sight")
+        VOICE_BAN = ("吐字清晰", "字正腔圆", "抑扬顿挫", "亲切热情", "从容笃定", "播音强调", "播音腔强调")
+        ENV_BAN = ("现代简约", "样板间", "北欧风", "侘寂")
         for c in load_cards():
             if c["id"] in seen:
                 errs.append(f"{c['id']} 重复")
             seen.add(c["id"])
             d = LIB / "characters" / c["_dir"]
             for f in portrait_files(c):
-                if not (d / f).exists():
+                p = d / f
+                if not p.exists():
                     errs.append(f"{c['id']} 缺定妆图 {f}")
+                else:
+                    w, h = image_size(p)
+                    if w and h and w >= h:
+                        errs.append(f"{c['id']} {f} 不是竖版（{w}x{h}；竖版才够放双联）")
             vs = c.get("voice", {}).get("sample", "")
             if vs and not (d / vs).exists():
                 errs.append(f"{c['id']} voice.sample={vs} 不存在")
             for k in ("id", "name", "age_feel", "region", "temperament", "wardrobe"):
                 if not c.get(k):
                     errs.append(f"{c['id']} card.json 缺 {k}")
-            if not c.get("voice", {}).get("desc"):
+            desc = c.get("voice", {}).get("desc", "")
+            if not desc:
                 errs.append(f"{c['id']} voice.desc 未填（换平台重建的根，必须写）")
+            else:
+                hit = banned_hits(desc, VOICE_BAN)
+                if hit:
+                    errs.append(f"{c['id']} voice.desc 含播音腔词 {hit}（会生成播音员，改生活化写法）")
+            look = c.get("look") or {}
+            miss = [k for k in LOOK_KEYS if not look.get(k)]
+            if miss:
+                errs.append(f"{c['id']} look 缺 {miss}（六维缺项会退化成摆拍/显老）")
+            if not c.get("home_env"):
+                errs.append(f"{c['id']} 缺 home_env（定妆照的场景与光线取自环境卡）")
         for c in load_cards("environments"):
             if not c.get("light"):
                 errs.append(f"{c['id']} 环境卡缺 light（混剪对齐要用）")
+            if not c.get("place"):
+                errs.append(f"{c['id']} 环境卡缺 place（定妆照背景要用）")
+            place = c.get("place", "")
+            hit = banned_hits(place, ENV_BAN)
+            if hit:
+                errs.append(f"{c['id']} place 含 {hit}（容易出样板间，改'住了几年的普通家庭'）")
+            if not c.get("props"):
+                errs.append(f"{c['id']} 环境卡缺 props（生活痕迹清单，决定有没有烟火气）")
         print("OK" if not errs else "\n".join(errs))
         sys.exit(1 if errs else 0)
 
