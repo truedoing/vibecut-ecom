@@ -119,13 +119,15 @@ python3 $Q $I --usage texture,hand --min-len 3 --limit 8   # 按条件取镜头
 
    **钩子与混剪的衔接**：钩子最后一镜（餐桌/手/人脸）→ 混剪首镜头，用产品特写或同场景
    转场接住；不要从室内对话直接切到航拍沙漠。
-4. **定 AI 结构**（和写口播一起做，别事后补）：≤ 2 条，默认都落在前 15 秒钩子段。
-   AI-1 主 10–15s 音画一体覆盖段 1；AI-2 副 5–8s 补反转 / 产品特写。
+4. **定 AI 结构**（和写口播一起做，别事后补）：默认**一条 15 秒**跑完钩子四拍，
+   内部切 4 个分镜、正反打各露一人；≤ 2 条只在确需补产品特写时才用。
    定 `sound_plan`（双人对白 / 单人自述，是否留旁白）。
-   **人物与场景引用资产库**：`character_ref` / `env_ref` 填 `ch_NNN` / `env_NNN`，
-   用 `ecommerce-ai-assets` 的 registry.py 查库，没有合适角色就先建卡再回来写。
-   **提示词下一步再生成**：`prompt` 留空、`negative_prompt` 现在填固定经验值、
-   `prompts_pending: true`。这不是全实拍。
+   **人物与场景引用资产库**：`character_ref` / `env_ref` 填 `ch_NNN` / `env_NNN`
+   （双人写 `ch_001,ch_002`），用 `ecommerce-ai-assets` 的 registry.py 查库，
+   没有合适角色就先建卡再回来写。
+   **提示词与音色**：`prompt` 写满（参考图分工 + 分镜 + 台词 + 场景光线 + 约束），
+   `prompts_pending: false`；台词不预生成音轨，传角色 `voice_ref_5s.mp3` 作音色参考。
+   钩子里的人物可以当后半段解说（声音在、画面不在），比换一个人念更像回事。
 5. **出两份产物**，格式见 `references/output-spec.md`。
 6. **可选自查**：`python3 scripts/validate.py {id}.json` —— 只查 4 条硬红线（见下）。
 

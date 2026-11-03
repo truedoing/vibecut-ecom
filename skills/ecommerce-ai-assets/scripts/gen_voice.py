@@ -63,6 +63,8 @@ def main():
     ap.add_argument("--clone", action="store_true",
                     help="voiceclone 模式：用 sample.mp3 做音色锚合成 --text")
     ap.add_argument("-o", "--out", default="", help="输出音频路径（clone 模式用；造锚时可指定候选名）")
+    ap.add_argument("--style", default="",
+                    help="风格指令（放 role=user，不出声）：控制语速/情绪/口吻，如「语速略快，像跟熟人聊天，不赶但利落」")
     ap.add_argument("--no-write", action="store_true", help="造候选时不回写 card.json（选定后才回写）")
     ap.add_argument("--model", default="", help="覆盖模型（默认读 .env MIMO_TTS_MODEL）")
     args = ap.parse_args()
@@ -81,8 +83,12 @@ def main():
         b64 = base64.b64encode(sample.read_bytes()).decode()
         data_url = f"data:audio/mpeg;base64,{b64}"  # 官方要求 DataURL，裸 base64 会 400
         out = Path(args.out) if args.out else char_dir / f"clone_{int(time.time())}.mp3"
-        audio = call_tts(model, [{"role": "assistant", "content": args.text}],
-                         {"format": "mp3", "voice": data_url})
+        msgs = []
+        if args.style:
+            # 官方：风格指令放 user，不进音频；文本必须放 assistant
+            msgs.append({"role": "user", "content": args.style})
+        msgs.append({"role": "assistant", "content": args.text})
+        audio = call_tts(model, msgs, {"format": "mp3", "voice": data_url})
         out.write_bytes(audio)
         print(f"OK(clone) {out} {len(audio)} bytes, model={model}, anchor={sample.name}")
         return
