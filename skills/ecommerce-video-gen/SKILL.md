@@ -95,3 +95,20 @@ python3 skills/ecommerce-video-gen/scripts/seedance.py \
   --ref-audio <夫.mp3> --ref-audio <妻.mp3> \
   --duration 15 --ratio 9:16 --resolution 720p -o out.mp4
 ```
+
+## 混剪合成（mix_final.py，11-03 实战定案）
+
+`scripts/mix_final.py --hook AI1.mp4 --segments segs.json --vo vo.mp3 -o final.mp4`
+
+**核心设计：段切换点 = 旁白句边界**。每句说完立刻切画面，音画对位 + 节奏紧凑一次达成。
+段长不是拍脑袋：旁白先 `silencedetect=noise=-37dB:d=0.22` 找停顿，再按文本对应出句边界
+（21 处停顿对应 9 句，歧义处用 AudioTranscribe 的块边界交叉验证）。
+
+- 段内多镜头按执行单比例分（如句1 的 5.7s = 航拍 3.4 + 手摊颗粒 2.3）。
+- 末段 = 最后一句时长 + 片尾停留 2s（拉丝收尾定格）。
+- 素材 1920x1080 横版 → `crop=608:1080` 中心裁 → `scale=720:1280,fps=24`，与 AI 钩子同参。
+- 旁白 gain 1.41（+3dB）对齐钩子响度；`adelay` 到钩子尾；片尾 video fade 0.6s + audio fade 1s。
+- 账要平：旁白时长 ≤ 混剪总长（脚本会拦），整片 = 钩子 + 旁白 + 停留 ≈ 56.6s。
+- 实战首片：hjg_T2_004_真香_成片.mp4（56.6s / -14.6 LUFS / 九句全部对位：
+  说产地配沙漠标识牌、说配料表配标签特写、说转给他看看配拉丝收尾）。
+- ⚠️ 留意点：C0449 手摊颗粒段偏暗（素材原样）；C5388/C5319 有紫色美甲出镜（厂商素材原样）。
