@@ -49,6 +49,9 @@ python3 skills/ecommerce-ai-assets/scripts/registry.py validate
 ```
 
 正式配音（音色固定）：`gen_voice.py --card ... --clone --text "台词" -o out.mp3`。
+**要「有精神」必须带 `--style`**（放 role=user，不出声）：语速、停顿密度、强弱都靠它；
+不加 style 出来一定是平调念稿。细节见 `references/character-spec.md` 的「有精神 vs 死气沉沉」节——
+**LRA 由锚决定、clone 改不了**，拖沓先查停顿占比（>20% 就要砍），语速用 `atempo` 微调而不是重跑。
 查库：`registry.py list` / `query --audience 中老年 --gender 女 --kw 教师` / `show ch_001`。
 
 ## 生活感三条铁律
