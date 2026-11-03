@@ -16,7 +16,7 @@
   "portraits": {
     "portrait": "portrait.jpg"
   },
-  "portrait_note": "单图双联：左格 3/4 侧身半身（喂 Seedance 人物参考以此格为准），右格外套翻领袖口细节（仅作服装款式参考）",
+  "portrait_note": "单图双联：左格接近正侧面侧身、不看镜头、望向窗外光（喂 Seedance 人物参考以此格为准），右格外套翻领袖口细节（仅作服装款式参考）",
   "voice": {
     "platform": "mimo",
     "model": "mimo-v2.5-tts-voicedesign",
