@@ -30,14 +30,22 @@ def load_cards(kind="characters"):
     return out
 
 
+def portrait_files(c):
+    """卡里 portraits 声明的图；没声明则默认 portrait.jpg（单图双联）。"""
+    p = c.get("portraits", {})
+    return list(p.values()) if p else ["portrait.jpg"]
+
+
 def show_card(c):
     v = c.get("voice", {})
     print(f"{c['id']} {c['name']}  {c.get('gender','')}/{c.get('age_feel','')}  "
           f"{c.get('region','')} · {c.get('role_type','')}")
     print(f"  气质: {c.get('temperament','')} | 服装: {c.get('wardrobe','')}")
     print(f"  人群: {'/'.join(c.get('target_audience', []))}")
-    print(f"  音色: {v.get('desc','')}" + (f" [{v.get('platform','')}:{v.get('voice_id','')}]" if v.get("voice_id") else " [未绑定]"))
-    missing = [k for k, f in (("side", "portrait_side.jpg"),) if not (LIB / "characters" / c["_dir"] / f).exists()]
+    print(f"  音色: {v.get('desc','')}"
+          + (f" [{v.get('platform','')}:{v.get('voice_id','')}]" if v.get("voice_id") else " [未绑定]")
+          + (" [有锚样本]" if (LIB / "characters" / c["_dir"] / v.get("sample", "voice.mp3")).exists() else ""))
+    missing = [f for f in portrait_files(c) if not (LIB / "characters" / c["_dir"] / f).exists()]
     if missing:
         print(f"  ⚠ 缺图: {missing}")
     if c.get("used_in"):
@@ -96,8 +104,13 @@ def main():
                 return
         sys.exit(f"找不到 {a.id}")
     elif a.cmd == "next-id":
-        n = len(load_cards()) + 1
-        print(f"ch_{n:03d}")
+        import re
+        used = [0]
+        for p in (LIB / "characters").rglob("*"):
+            m = re.match(r"ch_(\d+)", p.name)
+            if m:
+                used.append(int(m.group(1)))
+        print(f"ch_{max(used) + 1:03d}")
     elif a.cmd == "validate":
         errs = []
         seen = set()
@@ -106,8 +119,12 @@ def main():
                 errs.append(f"{c['id']} 重复")
             seen.add(c["id"])
             d = LIB / "characters" / c["_dir"]
-            if not (d / "portrait_side.jpg").exists():
-                errs.append(f"{c['id']} 缺 portrait_side.jpg")
+            for f in portrait_files(c):
+                if not (d / f).exists():
+                    errs.append(f"{c['id']} 缺定妆图 {f}")
+            vs = c.get("voice", {}).get("sample", "")
+            if vs and not (d / vs).exists():
+                errs.append(f"{c['id']} voice.sample={vs} 不存在")
             for k in ("id", "name", "age_feel", "region", "temperament", "wardrobe"):
                 if not c.get(k):
                     errs.append(f"{c['id']} card.json 缺 {k}")

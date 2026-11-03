@@ -1,0 +1,40 @@
+{
+  "id": "ch_002",
+  "name": "郑海涛",
+  "role_type": "设计院工程师（城市中产，临近内退）",
+  "gender": "男",
+  "age_feel": "46-50",
+  "region": "城市（华北地级市）",
+  "temperament": "沉稳斯文、嘴上不饶人但讲理、有点小得意",
+  "figure": "匀称偏壮，短发鬓角少量白发，修剪整齐",
+  "wardrobe": "藏青色细针织Polo衫，深灰薄款休闲西装外套，深灰休闲裤（即定妆照这套）",
+  "consumption_level": "中高（城市有房，习惯为品质与省心付费）",
+  "target_audience": [
+    "视频号中老年",
+    "给妈妈买"
+  ],
+  "portraits": {
+    "portrait": "portrait.jpg"
+  },
+  "portrait_note": "单图双联：左格 3/4 侧身半身（喂 Seedance 人物参考以此格为准），右格外套翻领袖口细节（仅作服装款式参考）",
+  "voice": {
+    "platform": "mimo",
+    "model": "mimo-v2.5-tts-voicedesign",
+    "clone_model": "mimo-v2.5-tts-voiceclone",
+    "voice_id": "",
+    "desc": "48岁上下中国城市男性，中低音，沉稳不紧不慢，语速中等，吐字清楚，带一点笃定和幽默的劲",
+    "sample": "voice.mp3",
+    "sample_note": "sample 即音色锚：正式配音用 voiceclone 传这份样本"
+  },
+  "used_in": [
+    "hjg_T2_003_真香素材版（丈夫）"
+  ],
+  "revisions": [
+    {
+      "date": "2026-11-03",
+      "note": "v2 重定：原「李建国 55-62 退休职工」偏老；改为 46-50 城市工程师，与 ch_001 夫妻差 4 岁内；定妆照改单图双联（侧身+服装细节）"
+    }
+  ],
+  "status": "ready",
+  "created_at": "2026-11-03"
+}
