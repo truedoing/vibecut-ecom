@@ -122,6 +122,8 @@ python3 $Q $I --usage texture,hand --min-len 3 --limit 8   # 按条件取镜头
 4. **定 AI 结构**（和写口播一起做，别事后补）：≤ 2 条，默认都落在前 15 秒钩子段。
    AI-1 主 10–15s 音画一体覆盖段 1；AI-2 副 5–8s 补反转 / 产品特写。
    定 `sound_plan`（双人对白 / 单人自述，是否留旁白）。
+   **人物与场景引用资产库**：`character_ref` / `env_ref` 填 `ch_NNN` / `env_NNN`，
+   用 `ecommerce-ai-assets` 的 registry.py 查库，没有合适角色就先建卡再回来写。
    **提示词下一步再生成**：`prompt` 留空、`negative_prompt` 现在填固定经验值、
    `prompts_pending: true`。这不是全实拍。
 5. **出两份产物**，格式见 `references/output-spec.md`。

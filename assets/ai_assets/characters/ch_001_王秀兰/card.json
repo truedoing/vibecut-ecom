@@ -1,0 +1,25 @@
+{
+  "id": "ch_001",
+  "name": "王秀兰",
+  "role_type": "家庭主妇",
+  "gender": "女",
+  "age_feel": "50-58",
+  "region": "北方（华北）",
+  "temperament": "干练、嗓门不小、心软嘴硬",
+  "figure": "微胖，齐耳短发",
+  "wardrobe": "深灰色针织开衫，深色长裤，家常",
+  "target_audience": ["视频号中老年", "中年女性"],
+  "portraits": {
+    "side": "portrait_side.jpg",
+    "detail_face": "detail_face.jpg"
+  },
+  "voice": {
+    "platform": "",
+    "voice_id": "",
+    "desc": "中年女声，中低音，语速偏慢，略带北方口音，说话直",
+    "sample": ""
+  },
+  "used_in": ["hjg_T2_003_真香素材版（妻子）"],
+  "status": "ready",
+  "created_at": "2026-11-03"
+}

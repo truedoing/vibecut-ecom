@@ -31,9 +31,8 @@
   "ai_settings": {"prompts_pending": true, "sound_plan": "双人对白，无旁白"},
   "ai_shots": [
     {"shot_id": "AI-1", "covers": [1], "duration_sec": 15,
-     "prompt": "", "negative_prompt": "文字，logo，多余手指"},
-    {"shot_id": "AI-2", "covers": [1], "duration_sec": 8,
-     "prompt": "", "negative_prompt": "文字，logo"}
+     "character_ref": "ch_001", "env_ref": "env_001",
+     "prompt": "", "negative_prompt": "文字，logo，多余手指"}
   ],
   "pending": ["厂商素材未入库"]
 }
@@ -42,7 +41,10 @@
 - `creative_brief` 只在创意钩子时填：人物 / 冲突 / 反转 / 产品道具 / 声音；不填就是 `null`。
 - `speaker` 默认「旁白」，混剪段一律「旁白」。多角色对白可放 `dialogue` 数组（仅钩子段），
   `content` 仍填对白合写文本供字数统计。
-- `ai_shots` 固定 5 字段，别加。`prompt` 为空＝提示词下一步生成。
+- `ai_shots` 固定 7 字段，别加。`prompt` 为空＝提示词下一步生成。
+  `character_ref` / `env_ref` 填 AI 资产库的角色/环境 id（`ch_001` / `env_001`），
+  用 `registry.py list` 查；库里没有合适角色 → 先跑 `ecommerce-ai-assets` 建卡，**别引用不存在的 id**。
+  同一脚本多个角色年龄感气质要搭。
 - **混剪段必带 `visuals`**：每段 1–3 个，字段只有 `shot_id` / `src` / `in` / `out`。
   `shot_id` 与 `src` 直接从 `query.py` 输出抄，`in`/`out` 是取用秒数（镜头长，只截需要的部分）。
   缺画面写 `{"missing": true, "want": "想要什么画面"}`，不许编素材。
