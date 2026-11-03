@@ -21,9 +21,8 @@ import urllib.request
 from pathlib import Path
 
 DEFAULT_TEXT = (
-    "人到中年才明白，吃得对比吃得多重要。就像这罐酱，配料就三样，"
-    "看着简单，吃着踏实。你要是也没找到顺口的那一口，可以先试一罐，"
-    "合口味咱们再继续。"
+    "哎，你看这个啊……就这么一小罐。我一开始也没当回事，后来一尝，还真行。"
+    "配料表我看了，就三样，没别的。你要是也吃腻了那些甜的，可以先试试。"
 )
 
 
@@ -63,7 +62,8 @@ def main():
     ap.add_argument("--text", default=DEFAULT_TEXT, help="合成文本（造锚样本时也用它）")
     ap.add_argument("--clone", action="store_true",
                     help="voiceclone 模式：用 sample.mp3 做音色锚合成 --text")
-    ap.add_argument("-o", "--out", default="", help="输出音频路径（clone 模式用）")
+    ap.add_argument("-o", "--out", default="", help="输出音频路径（clone 模式用；造锚时可指定候选名）")
+    ap.add_argument("--no-write", action="store_true", help="造候选时不回写 card.json（选定后才回写）")
     ap.add_argument("--model", default="", help="覆盖模型（默认读 .env MIMO_TTS_MODEL）")
     args = ap.parse_args()
 
@@ -95,8 +95,11 @@ def main():
         {"role": "user", "content": desc},
         {"role": "assistant", "content": args.text},
     ], {"format": "mp3"})
-    out = char_dir / "voice.mp3"
+    out = Path(args.out) if args.out else char_dir / "voice.mp3"
     out.write_bytes(audio)
+    if args.no_write:
+        print(f"OK(candidate) {out} {len(audio)} bytes, model={model}, 未回写 card.json")
+        return
     voice.update({"platform": "mimo", "model": model,
                   "clone_model": voice.get("clone_model", "mimo-v2.5-tts-voiceclone"),
                   "sample": out.name,
