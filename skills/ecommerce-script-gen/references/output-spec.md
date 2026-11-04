@@ -16,6 +16,13 @@
   "hook_type": "冲突型",
   "hook_line": "又买？柜子里那些瓶瓶罐罐还没动呢",
   "selling_point": "咸甜不腻，一勺能抹开",
+  "back_half": {
+    "lead": "配料",
+    "chain": ["配料", "数值", "吃法"],
+    "close": "低门槛先一罐",
+    "proof_style": ["翻罐读配料表", "数值特写", "抹开成品镜头"],
+    "number_treat": "原值直读"
+  },
   "creative_brief": null,
   "segments": [
     {"seq": 1, "section_role": "hook", "speaker": "丈夫", "content": "又买？这回不一样。",
@@ -39,6 +46,10 @@
 ```
 
 - `creative_brief` 只在创意钩子时填：人物 / 冲突 / 反转 / 产品道具 / 声音；不填就是 `null`。
+- `back_half` 记这一条后半段走的是哪个组合（`lead` 卖点主角 / `chain` 举证顺序 /
+  `close` 逼单 / `proof_style` 证据形态 / `number_treat` 数字处理），
+  由 `scripts/back_half_ideas.py` 出、人挑。**查重靠它**：近 3 条三元组不得相同。
+  取值一览见 `references/back-half-patterns.md`。
 - `speaker` 默认「旁白」，混剪段一律「旁白」。多角色对白可放 `dialogue` 数组（仅钩子段），
   `content` 仍填对白合写文本供字数统计。
 - `ai_shots` 固定 7 字段，别加。`prompt` 为空＝提示词下一步生成。
@@ -60,6 +71,7 @@
 # {id} 拍摄执行单
 ## 片子的两段式   0–15s 钩子（AI·人物）/ 15–60s 混剪（素材·旁白）
 ## 卖点三自测     需要感 / 可信度 / 唯一性，各一行
+## 后半段组合     主角=X · 顺序=A→B→C · 逼单=Y（与近 3 条不同指纹，写清凭什么不同）
 ## 口播文案       逐段：### 段N（role） · 结构 · 口播 · 画面方向
 ## 画面清单       逐段：shot_id · 取 X–Y 秒 · 画面是什么（照抄台账描述）
 ## 缺的画面       只列 missing 的，写清想要什么、用哪类顶
