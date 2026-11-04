@@ -21,7 +21,8 @@ import sys
 import tempfile
 from pathlib import Path
 
-VF = "crop=608:1080:(iw-608)/2:0,scale=720:1280,fps=24,setsar=1"
+# 按高度算竖切宽度，兼容 1080p 与 4K：1080p→607，4K→1215。写死 608 会让 4K 素材裁错区域。
+VF = "crop=ih*9/16:ih,scale=720:1280,fps=24,setsar=1"
 # 钩子是 480p（实测 496x864），与素材段尺寸不同，concat 前必须统一到 720x1280。
 # 用 increase+crop 而不是直接 scale，避免 496/864 与 9:16 的 2% 差被拉变形。
 HOOK_VF = "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,fps=24,setsar=1"
