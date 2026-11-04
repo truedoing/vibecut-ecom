@@ -38,20 +38,32 @@ python3 skills/ecommerce-ai-assets/scripts/build_prompt.py --card ch_003
 # ③ 裁水印落正式名
 ffmpeg -i in.png -vf "crop=iw:ih-60:0:0" -q:v 2 <角色目录>/portrait.jpg
 
-# ④ 造音色锚（出两版候选，人耳选定后改名 voice.mp3）
+# ④ 造音色锚（抽 5 条自动择优；改 desc 试验用 --desc，都不回写卡）
 python3 skills/ecommerce-ai-assets/scripts/gen_voice.py --card <角色目录>/card.json \
-  --out <角色目录>/voice_cand_a.mp3 --no-write
-python3 skills/ecommerce-ai-assets/scripts/gen_voice.py --card <角色目录>/card.json \
-  --out <角色目录>/voice_cand_b.mp3 --no-write
+  --tries 5 --keep-cands --no-write -o <角色目录>/voice_v2.mp3
+python3 skills/ecommerce-ai-assets/scripts/voice_audit.py <角色目录>/voice_v2*.mp3
+# 再跑 ASR 咬字验收（含易混词），过了才改名 voice.mp3
 
 # ⑤ 校验（禁词、六维、竖版、锚样本、环境清单）
 python3 skills/ecommerce-ai-assets/scripts/registry.py validate
 ```
 
-正式配音（音色固定）：`gen_voice.py --card ... --clone --text "台词" -o out.mp3`。
-**要「有精神」必须带 `--style`**（放 role=user，不出声）：语速、停顿密度、强弱都靠它；
-不加 style 出来一定是平调念稿。细节见 `references/character-spec.md` 的「有精神 vs 死气沉沉」节——
-**LRA 由锚决定、clone 改不了**，拖沓先查停顿占比（>20% 就要砍），语速用 `atempo` 微调而不是重跑。
+## 旁白与句边界已拆出去
+
+| 要做什么 | 去哪个技能 |
+|---|---|
+| 正式旁白（每片一次、TTS、要达标） | `ecommerce-narration` |
+| 句边界、段清单、混剪 | `ecommerce-mix` |
+
+本技能只管**音色锚**（`voice.mp3`）：锚在，嗓子才在。锚丢了无法复现（voicedesign 每次现造音色、不返回 voice_id）。
+**锚决定音色与咬字下限，不决定配音起伏**（实测锚 LRA 7.3 的 clone 只有 2.9）。
+所以这里要根治的是咬字：desc 去掉「连读吞音 / 含糊感 / 尾音往下掉 / 句间自然换气」，
+改写「辅音交代到位、不吞字不含糊 + 音量有明确的强弱对比」；起伏与方差归
+`narration.py --energy high --tries N` 自动择优。详见 `character-spec.md`「松弛 ≠ 含糊」节。
+
+**成片级旁白不要在这里手搓。** `gen_voice.py --clone` 只用于短句试听和造锚，配音进 `narration.py`。
+
+短句试听 / 造锚才用 `gen_voice.py --clone --text "一句" --style "..."`。
 查库：`registry.py list` / `query --audience 中老年 --gender 女 --kw 教师` / `show ch_001`。
 
 ## 生活感三条铁律
@@ -72,10 +84,16 @@ python3 skills/ecommerce-ai-assets/scripts/registry.py validate
 
 voicedesign 每次现造音色、不返回固定 voice_id，直接配音会漂。**锚 = voice.mp3 样本**。
 
-- **禁用词**（写进 desc 就废）：吐字清晰、字正腔圆、抑扬顿挫、亲切热情、从容笃定、播音强调。
-  校验器会拦。
-- 生活感要写：语速不匀、句子间真换气、尾音下掉、近场气声、咬字放松允许连读、情绪是判断不是推销。
+- **禁用词**：吐字清晰、字正腔圆、抑扬顿挫、亲切热情、从容笃定、播音强调（registry 拦），
+  **外加发音缺陷词**：连读吞音 / 含糊感 / 尾音往下掉 / 自然换气和小停顿（造锚时自检告警）。
+- ✅ **松弛 ≠ 含糊**：该写「句子连着走、句间不加换气和小停顿」「辅音交代到位、不吞字不含糊」
+  「音量有明确的强弱对比」「收尾往前推不往下掉」「真觉得好、急着告诉人」「近场轻微气声」。
+- ❌ 别再写「允许连读吞音」「判断而不是推销」「不要热情上扬」——11-03 版这么写，
+  造成锚 LRA 1.5、停顿 17.4%、ASR 把「虎坚果」听成「福坚果」。
 - `sample` 不是试听，是 voiceclone 的输入；换锚后旧台词要重配。
+- **造锚后必须过 `voice_audit.py` + ASR 咬字验收**，声学指标判不了发音变形。
+- ⚠️ voicedesign 输出天然平稳（同一新 desc 造 5 条 LRA 全在 1.5–1.9）。要高 LRA 锚，
+  从已出片的高起伏配音里裁一段，用 `--ref-audio` 试锚，别在 desc 上死磕。
 - 踩坑：clone 的 `audio.voice` 必须 DataURL（`data:audio/mpeg;base64,...`），裸 base64 报 400。
 - key 在 `.env`：MIMO_API_KEY / MIMO_BASE_URL。
 
@@ -93,8 +111,11 @@ voicedesign 每次现造音色、不返回固定 voice_id，直接配音会漂�
 |---|---|
 | `new_character.py` | 建角色目录 + 卡骨架（预置生活感默认值）+ 打印后续命令 |
 | `build_prompt.py` | 从卡生成定妆照/环境图提示词（`--save` 存 card 目录） |
-| `gen_voice.py` | 造锚样本（`--no-write` 出候选）/ `--clone` 正式配音 |
+| `gen_voice.py` | 造锚样本（`--tries` 自动择优 / `--desc` 试验 / `--ref-audio` 试锚 / `--no-write`）/ `--clone` 短句试听 |
+| `voice_audit.py` | 锚的客观验收：LRA / 停顿 / 响度 / 峰值，出表并判合格（**仍需 ASR 补咬字**） |
 | `registry.py` | `list` / `query` / `show` / `validate` / `next-id` |
+
+正式旁白与句边界不在本技能：旁白见 `ecommerce-narration`，混剪见 `ecommerce-mix`。
 
 ## 脚本怎么引用
 
@@ -111,5 +132,5 @@ voicedesign 每次现造音色、不返回固定 voice_id，直接配音会漂�
 ## 别做
 
 不为凑数先建角色；不用厂商素材里的真人当角色基础（肖像权红线）；
-不做视频生成、不写分镜提示词（那是 script-gen 和视频生成的事）；
+不做视频生成、不写分镜提示词（那是 script-gen 和 video-gen 的事）；不出旁白、不算句边界（已拆到 narration / mix）；
 不改卡迁就图（观感不对重生成图）。

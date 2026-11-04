@@ -133,7 +133,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prompt-file", required=True, help="提示词文件（UTF-8）")
     ap.add_argument("--model", default="mini", choices=sorted(MODELS))
-    ap.add_argument("--resolution", default="720p", choices=("480p", "720p", "1080p"))
+    ap.add_argument("--resolution", default="480p", choices=("480p", "720p", "1080p"),
+                    help="默认 480p 省钱：竖屏 480p 放大到 720x1280 混剪，手机端看无感差异")
     ap.add_argument("--ratio", default="9:16", choices=RATIOS)
     ap.add_argument("--duration", type=int, default=15)
     ap.add_argument("--ref-image", action="append", default=[], help="参考图，可重复（顺序对应 @Image1/2/3）")
