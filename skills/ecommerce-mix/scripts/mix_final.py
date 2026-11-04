@@ -22,6 +22,9 @@ import tempfile
 from pathlib import Path
 
 VF = "crop=608:1080:(iw-608)/2:0,scale=720:1280,fps=24,setsar=1"
+# 钩子是 480p（实测 496x864），与素材段尺寸不同，concat 前必须统一到 720x1280。
+# 用 increase+crop 而不是直接 scale，避免 496/864 与 9:16 的 2% 差被拉变形。
+HOOK_VF = "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,fps=24,setsar=1"
 HOOK_FPS = 24  # AI 钩子的帧率，全部段与之对齐
 
 
@@ -39,7 +42,8 @@ def main():
     ap.add_argument("--vo", required=True, help="旁白 mp3")
     ap.add_argument("--vo-gain", type=float, default=1.41,
                     help="旁白增益（默认 +3dB，对齐钩子 -14 LUFS）")
-    ap.add_argument("--tail-hold", type=float, default=2.0, help="片尾停留秒数")
+    ap.add_argument("--tail-hold", type=float, default=0.0,
+                    help="额外片尾停留（默认 0：停留已写进末段 dur，两处相加会重复）")
     ap.add_argument("--crf", type=int, default=18)
     ap.add_argument("-o", "--out", required=True)
     args = ap.parse_args()
@@ -47,7 +51,7 @@ def main():
     segs = json.loads(Path(args.segments).read_text(encoding="utf-8"))
     hook_len = probe_duration(args.hook)
     vo_len = probe_duration(args.vo)
-    mix_len = sum(s["dur"] for s in segs)
+    mix_len = sum(s["dur"] for s in segs) + args.tail_hold
     total = hook_len + mix_len
     print(f"钩子 {hook_len:.2f}s + 混剪 {mix_len:.2f}s = {total:.2f}s；旁白 {vo_len:.2f}s")
     if vo_len > mix_len:
@@ -76,7 +80,10 @@ def main():
         fade_v = total - 0.7
         fade_a = hook_len + vo_len - 0.5
         fc = (
-            f"[0:v]setpts=PTS-STARTPTS[v0];[1:v]setpts=PTS-STARTPTS[v1];"
+            f"[0:v]{HOOK_VF},setpts=PTS-STARTPTS[v0];"
+            f"[1:v]{HOOK_VF}"
+            + (f",tpad=stop_mode=clone:stop_duration={args.tail_hold}" if args.tail_hold else "")
+            + ",setpts=PTS-STARTPTS[v1];"
             f"[v0][v1]concat=n=2:v=1:a=0,fade=t=out:st={fade_v:.2f}:d=0.6[vout];"
             f"[0:a]aresample=48000[a0];"
             f"[2:a]volume={args.vo_gain},aresample=48000,"
