@@ -144,10 +144,13 @@ def main():
     ap.add_argument("--top", type=int, default=3)
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--check", default="", help='校验候选：--check "配料|数值→配料→吃法|拍一发四折算"')
+    ap.add_argument("--self", default="", help="当前正在编辑的脚本文件名，查重时排除（否则自指误报撞车）")
     a = ap.parse_args()
 
     pack = json.loads(find_pack(a.pack).read_text(encoding="utf-8"))
     rows = scan_used(a.scripts_dir)
+    if a.self:
+        rows = [r for r in rows if Path(r["file"]).name != Path(a.self).name]
     recent = rows[-3:]
     recent_fp = {r["fp"] for r in recent}
     recent_leads = {r["lead"] for r in recent}
