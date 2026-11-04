@@ -48,6 +48,10 @@ POLL_FIRST_DELAY = 25
 POLL_INTERVAL = 15
 POLL_TIMEOUT = 20 * 60
 
+# 写实人物参考图必被真人审核拒（实测 v8 零图通过、T2_005 首次带 3 图被 400）。
+# 审核往返要 2–3 分钟，白烧一次比本地拦下来贵得多，所以在提交前就挡。
+HUMAN_REF_HINTS = ("/characters/", "ref_video.", "portrait.", "定妆", "定装")
+
 
 def load_env():
     """向上找 .env（技能目录 → 仓库根），补齐 MIMO/APIYI 之类的 key。"""
@@ -96,6 +100,14 @@ def as_source(src, default_mime):
     return f"data:{mime};base64,{base64.b64encode(p.read_bytes()).decode()}"
 
 
+def looks_like_human_ref(src):
+    """本地路径里带人物定妆照特征 → 判为会被真人审核拒的图（URL/data 一律放行）。"""
+    if str(src).startswith(("http://", "https://", "data:", "asset://")):
+        return False
+    p = str(src).replace("\\", "/").lower()
+    return any(h.lower() in p for h in HUMAN_REF_HINTS)
+
+
 def audio_seconds(path):
     """读时长（只用于预算校验，读不到就跳过，不阻塞出片）。"""
     try:
@@ -138,6 +150,8 @@ def main():
     ap.add_argument("--ratio", default="9:16", choices=RATIOS)
     ap.add_argument("--duration", type=int, default=15)
     ap.add_argument("--ref-image", action="append", default=[], help="参考图，可重复（顺序对应 @Image1/2/3）")
+    ap.add_argument("--allow-human-ref", action="store_true",
+                    help="允许提交人物定妆照（默认拦截：实测必被真人审核 400，往返白等 2-3 分钟）")
     ap.add_argument("--ref-audio", action="append", default=[], help="参考音频，可重复（顺序对应 @Audio1/2）")
     ap.add_argument("--no-audio", action="store_true", help="关闭模型生成的音频")
     ap.add_argument("--seed", type=int, default=None)
@@ -160,6 +174,19 @@ def main():
         sys.exit(f"{args.model} 时长只支持 4-{MAX_DURATION[args.model]} 秒")
     if args.resolution not in MODEL_CAPS[args.model]:
         sys.exit(f"{args.model} 最高 {MODEL_CAPS[args.model][-1]}")
+
+    human_refs = [s for s in args.ref_image if looks_like_human_ref(s)]
+    if human_refs and not args.allow_human_ref:
+        msg = ("拒绝提交：参考图里有写实人物图——\n"
+               + "\n".join(f"  - {s}" for s in human_refs)
+               + "\nSeedance 必报 InputImageSensitiveContentDetected.PrivacyInformation，"
+                 "审核往返 2-3 分钟，纯白等。\n"
+                 "改法：人物写纯文字（角色卡 look/wardrobe 抄进提示词），只留无人环境图；\n"
+                 "确实要试就加 --allow-human-ref。见 SKILL.md「真人审核」节。")
+        if args.dry_run:
+            print("[dry-run ⚠️] " + msg + "\n（dry-run 不拦，正式提交会被拦）\n")
+        else:
+            sys.exit(msg)
 
     total_audio = 0.0
     for a in args.ref_audio:
