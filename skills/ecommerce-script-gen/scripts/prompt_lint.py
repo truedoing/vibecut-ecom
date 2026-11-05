@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""出片前的提示词体检。花那 10 元之前先跑这个。
+"""出片前的提示词体检。花那 3 元之前先跑这个。
 
 用法：
   python3 prompt_lint.py --prompt-file p.txt --duration 15 --reverse-word 还真香
@@ -42,8 +42,9 @@ def net_len(text):
 
 
 def read_prompt(args):
+    """返回 (提示词文本, 整份文案 doc 或 None)"""
     if args.prompt_file:
-        return io.open(args.prompt_file, encoding="utf-8").read()
+        return io.open(args.prompt_file, encoding="utf-8").read(), None
     d = json.load(io.open(args.json, encoding="utf-8"))
     shots = d.get("ai_shots") or []
     if not shots:
@@ -51,7 +52,7 @@ def read_prompt(args):
     p = (shots[0].get("prompt") or "").strip()
     if not p:
         sys.exit("✗ ai_shots[0].prompt 是空的（prompts_pending: true？先写提示词）")
-    return p
+    return p, d
 
 
 def parse_shots(text):
@@ -72,8 +73,49 @@ def parse_shots(text):
     return shots
 
 
+PRODUCT_MENTION = re.compile(r"产品|罐|瓶|包装|酱料|标签")
+TEXT_IN_VIDEO = re.compile(r"文字|字幕|标语|价格牌|大字|弹出字")
+
+
+def check_doc(doc, E, W):
+    """JSON 层检查（--json 时才跑）：结构模式 + 产品参考图 + 文字特效。"""
+    if not doc:
+        return
+    for sh in doc.get("ai_shots") or []:
+        p = sh.get("prompt") or ""
+        sid = sh.get("shot_id", "?")
+        if PRODUCT_MENTION.search(p) and not sh.get("product_ref"):
+            E(
+                f"{sid} 提示词提到产品但没挂 product_ref——"
+                f"AI 自由发挥的产品＝别人的产品（标签必画错），"
+                f"必须指向 assets/{{品类}}/product_refs/ 主参考图"
+            )
+        if TEXT_IN_VIDEO.search(p):
+            W(
+                f"{sid} 提示词里要求 AI 生成文字——出片后第一件事查错字"
+                f"（只许短数字/短语 ≤2 处，长文案仍走后期叠）"
+            )
+        if (sh.get("character_ref") is None) and (not sh.get("product_ref")):
+            E(f"{sid} character_ref 与 product_ref 都是空——这条镜头没有任何参考锚，画面必漂")
+    if doc.get("video_structure") == "hook_plus_convert":
+        tail = (doc.get("ai_shots") or [])[-1]
+        d = tail.get("duration_sec") or 0
+        if not (6 <= d <= 10):
+            W(f"尾段副视频 {tail.get('shot_id')} 时长 {d}s，建议 8–10s（转化段够用就行，秒数就是钱）")
+        covers = tail.get("covers") or []
+        segs = doc.get("segments") or []
+        last_ai = [s for s in segs if s.get("shot_source") == "AI" and s.get("seq") not in
+                   ([c for c in covers] or [])]
+        if covers and covers[0] <= (segs[-2]["seq"] if len(segs) >= 2 else 0):
+            pass  # 覆盖倒数几句由写作时定，这里不硬卡
+        tail_roles = [s.get("section_role") for s in segs if s.get("shot_source") == "AI"
+                      and s.get("seq") in covers]
+        if tail_roles and not any(r in ("convert", "cta", "close") for r in tail_roles):
+            W(f"尾段副视频覆盖段 role={tail_roles}，不含转化/逼单段——副视频存在的意义就是逼单")
+
+
 def run(args):
-    text = read_prompt(args)
+    text, doc = read_prompt(args)
     shots = parse_shots(text)
     errs, warns, infos = [], [], []
 
@@ -86,29 +128,36 @@ def run(args):
     def I(m):
         infos.append(m)
 
+    check_doc(doc, E, W)
+
     if not shots:
         E("没有解析到任何「镜头N（a–b秒）：」片段——提示词结构不规范，模型会自由发挥")
         return errs, warns, infos, text, shots
+
+    nd = args.no_dialogue  # 纯画面副视频：无台词，旁白后期配
 
     all_lines = [l for s in shots for l in s["lines"]]
     total = sum(net_len(l) for l in all_lines)
 
     # ── E1 台词总量 ──
-    if total < args.min_chars:
+    if nd:
+        I("纯画面模式（--no-dialogue）：台词类检查跳过，旁白后期配")
+    elif total < args.min_chars:
         E(
             f"台词总共 {total} 字，低于 {args.min_chars} 字。"
             f"{int(args.duration)} 秒片实测 45 字只念到 65% 就停，后半程空转（v1 事故）"
         )
 
     # ── E2 每拍台词 ──
-    for s in shots:
-        n = sum(net_len(l) for l in s["lines"])
-        if not s["lines"]:
-            E(f"镜头{s['idx']} 没有 {{}} 台词块——纯画面拍没有信息量，除非刻意留白")
-        elif n < args.min_beat:
-            E(f"镜头{s['idx']} 台词只有 {n} 字，低于 {args.min_beat} 字，这一拍撑不住")
-        elif n < 10:
-            I(f"镜头{s['idx']} 台词 {n} 字，偏短（语气短句可以，凑数不行）")
+    if not nd:
+        for s in shots:
+            n = sum(net_len(l) for l in s["lines"])
+            if not s["lines"]:
+                E(f"镜头{s['idx']} 没有 {{}} 台词块——纯画面拍没有信息量，除非刻意留白")
+            elif n < args.min_beat:
+                E(f"镜头{s['idx']} 台词只有 {n} 字，低于 {args.min_beat} 字，这一拍撑不住")
+            elif n < 10:
+                I(f"镜头{s['idx']} 台词 {n} 字，偏短（语气短句可以，凑数不行）")
 
     # ── E3 花括号配对 ──
     if text.count("{") != text.count("}"):
@@ -122,9 +171,7 @@ def run(args):
         if re.search(r"\d+\s*[–—\-~]\s*\d+\s*秒|第[一二三四五]秒", l):
             E(f"台词里出现时间码：「{l[:18]}…」——模型不认，会念出来")
         if len(l) > 60:
-            W(f"单句台词 {len(l)} 字偏长，一口气念不完容易吞字：「{l[:18]}…」")
-
-    # ── E5 时间轴 ──
+            W(f"单句台词 {len(l)} 字偏长，一口气念不完容易吞字：「{l[:18]}…」")    # ── E5 时间轴 ──
     if shots[0]["start"] > 0.3:
         W(f"第一镜从 {shots[0]['start']}s 起，前 {shots[0]['start']}s 是空的")
     if abs(shots[-1]["end"] - args.duration) > 0.6:
@@ -139,7 +186,7 @@ def run(args):
             W(f"镜头{s['idx']} 只有 {s['end'] - s['start']:.1f}s，短于 2 秒，切点会显得跳")
 
     # ── E6 反转落点 ──
-    if args.reverse_word:
+    if args.reverse_word and not nd:
         last = " ".join(shots[-1]["lines"])
         if args.reverse_word not in last:
             E(
@@ -174,13 +221,14 @@ def run(args):
             W(f"镜头{s['idx']} 出现「{hit.group(0)}」这类抽象指令，模型无法执行，要换成动作/音量/表情")
 
     # ── W5 一致性声明 ──
-    if "自始至终" not in text and "同一个人" not in text:
-        W("没写人物一致性声明（「自始至终是同一个人」「五官不要混淆」）——多拍正反打最容易换脸")
-    if "第三人" not in text and len(shots) >= 3:
-        W("没写「不要第三人」——多人场景容易出现背景闲人，出片后要人工挡")
+    if not nd:
+        if "自始至终" not in text and "同一个人" not in text:
+            W("没写人物一致性声明（「自始至终是同一个人」「五官不要混淆」）——多拍正反打最容易换脸")
+        if "第三人" not in text and len(shots) >= 3:
+            W("没写「不要第三人」——多人场景容易出现背景闲人，出片后要人工挡")
 
     # ── W6 产品穿帮 ──
-    if not re.search(r"标签不可读|标签.{0,4}虚焦|虚焦.{0,6}罐", text):
+    if not re.search(r"标签.{0,14}(不可读|不必清晰|不可辨认|虚焦|虚化)|虚[焦化].{0,6}罐", text):
         W("没约束产品标签可读性——AI 造的包装文字是乱的，一旦清晰就是穿帮")
 
     # ── I 情绪外化程度 ──
@@ -202,6 +250,8 @@ def main():
     ap.add_argument("--min-chars", type=int, default=60, help="台词总字数下限（15s 片）")
     ap.add_argument("--min-beat", type=int, default=6, help="单拍台词字数下限（反转句通常很短，别卡太死）")
     ap.add_argument("--reverse-word", default="", help="最后一拍必须出现的反转词")
+    ap.add_argument("--no-dialogue", action="store_true",
+                    help="纯画面副视频（无台词，旁白后期配）：跳过台词类检查")
     ap.add_argument("--strict", action="store_true", help="WARN 也算不通过")
     ap.add_argument("--quiet", action="store_true", help="只输出结论行")
     args = ap.parse_args()
@@ -225,7 +275,7 @@ def main():
             print()
 
     if errs:
-        print(f"✗ 不通过 · {len(errs)} ERROR / {len(warns)} WARN —— 改完再提交，这一版别花那 10 元")
+        print(f"✗ 不通过 · {len(errs)} ERROR / {len(warns)} WARN —— 改完再提交，这一版别花那 3 元")
         return 1
     if warns and args.strict:
         print(f"✗ 严格模式不通过 · {len(warns)} WARN")

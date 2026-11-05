@@ -45,6 +45,9 @@ def main():
                     help="旁白增益（默认 +3dB，对齐钩子 -14 LUFS）")
     ap.add_argument("--tail-hold", type=float, default=0.0,
                     help="额外片尾停留（默认 0：停留已写进末段 dur，两处相加会重复）")
+    ap.add_argument("--tail", default="",
+                    help="AI 副视频（hook_plus_convert 转化段），接在素材段之后；"
+                         "素材段清单只留到副视频起点，秒数在 segs 里截好")
     ap.add_argument("--crf", type=int, default=18)
     ap.add_argument("-o", "--out", required=True)
     args = ap.parse_args()
@@ -52,11 +55,15 @@ def main():
     segs = json.loads(Path(args.segments).read_text(encoding="utf-8"))
     hook_len = probe_duration(args.hook)
     vo_len = probe_duration(args.vo)
+    tail_len = probe_duration(args.tail) if args.tail else 0.0
     mix_len = sum(s["dur"] for s in segs) + args.tail_hold
-    total = hook_len + mix_len
-    print(f"钩子 {hook_len:.2f}s + 混剪 {mix_len:.2f}s = {total:.2f}s；旁白 {vo_len:.2f}s")
-    if vo_len > mix_len:
-        sys.exit(f"⚠️ 旁白 {vo_len:.2f}s 超过混剪 {mix_len:.2f}s，最后一句会被截——加长末段")
+    total = hook_len + mix_len + tail_len
+    print(f"钩子 {hook_len:.2f}s + 混剪 {mix_len:.2f}s"
+          + (f" + AI尾段 {tail_len:.2f}s" if tail_len else "")
+          + f" = {total:.2f}s；旁白 {vo_len:.2f}s")
+    if vo_len > mix_len + tail_len:
+        sys.exit(f"⚠️ 旁白 {vo_len:.2f}s 超过混剪+尾段 {mix_len + tail_len:.2f}s，"
+                 f"最后一句会被截——加长末段或尾段")
 
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
@@ -71,21 +78,28 @@ def main():
             subprocess.run(cmd, check=True)
             seg_files.append(f)
             print(f"  段{i:02d} {s['vid']} {s['dur']}s ok")
-        # 2. concat
+        # 2. concat（钩子 + 素材混剪 [+ AI 尾段]）
         lst = td / "list.txt"
         lst.write_text("".join(f"file '{f}'\n" for f in seg_files))
         mix = td / "mix.mp4"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat",
                         "-safe", "0", "-i", str(lst), "-c", "copy", str(mix)], check=True)
-        # 3. 合成：钩子 + 混剪；旁白 delay 到钩子尾；片尾淡出
+        # 3. 合成：钩子 + 混剪 [+ 尾段]；旁白 delay 到钩子尾；片尾淡出
         fade_v = total - 0.7
         fade_a = hook_len + vo_len - 0.5
+        tail_v = ""
+        n_parts = 2
+        if tail_len:
+            tail_v = f"[3:v]{HOOK_VF},setpts=PTS-STARTPTS[v2];"
+            n_parts = 3
         fc = (
             f"[0:v]{HOOK_VF},setpts=PTS-STARTPTS[v0];"
             f"[1:v]{HOOK_VF}"
             + (f",tpad=stop_mode=clone:stop_duration={args.tail_hold}" if args.tail_hold else "")
             + ",setpts=PTS-STARTPTS[v1];"
-            f"[v0][v1]concat=n=2:v=1:a=0,fade=t=out:st={fade_v:.2f}:d=0.6[vout];"
+            + tail_v
+            + (f"[v0][v1][v2]concat=n=3:v=1:a=0" if tail_len else f"[v0][v1]concat=n=2:v=1:a=0")
+            + f",fade=t=out:st={fade_v:.2f}:d=0.6[vout];"
             f"[0:a]aresample=48000[a0];"
             f"[2:a]volume={args.vo_gain},aresample=48000,"
             f"adelay={int(hook_len*1000)}|{int(hook_len*1000)}[vo];"
@@ -95,7 +109,8 @@ def main():
         )
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", args.hook, "-i", str(mix),
-             "-i", args.vo, "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]",
+             "-i", args.vo] + (["-i", args.tail] if tail_len else []) +
+            ["-filter_complex", fc, "-map", "[vout]", "-map", "[aout]",
              "-c:v", "libx264", "-crf", str(args.crf), "-preset", "medium",
              "-c:a", "aac", "-b:a", "192k", "-shortest", args.out], check=True)
     final_len = probe_duration(args.out)
