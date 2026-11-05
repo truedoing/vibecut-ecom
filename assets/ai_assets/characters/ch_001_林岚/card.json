@@ -42,7 +42,8 @@
     "ref_sample": "voice_ref_5s.mp3",
     "ref_sample_note": "给视频生成当音色参考的 5 秒短样本（与 sample 同一新锚裁出）",
     "anchor_source": "2026-11-04 换锚：从 hjg_T2_005 激情版旁白 16–30s 裁出 + 纯增益 2.4dB（不用 loudnorm，会压掉 LRA）；14.06s，LRA 7.3 / 停顿 5.8% / -19.4 LUFS / peak -1.6，voice_audit 全项通过，ASR 易混词咬字全对。非 voicedesign 生成，desc 仅作文字说明，照 desc 重造锚会得到平锚",
-    "previous_anchor": "旧 voice.mp3（LRA 1.5 / 停顿 17.4%，ASR 把「虎坚果」听成「福坚果」），备份 /tmp/ch001_voice_v1_backup.mp3"
+    "previous_anchor": "旧 voice.mp3（LRA 1.5 / 停顿 17.4%，ASR 把「虎坚果」听成「福坚果」），备份 /tmp/ch001_voice_v1_backup.mp3",
+    "note": " | v4 换音色锚（2026-11-05）：voice.mp3 与 voice_ref_5s.mp3 改为从 T2_005 过审 AI 钩子按台词位置截取的女主音样（妻子第2+4句，4.70s，F0跨度17.9/跳变0.71）——voicedesign 造的锚是标准朗读，实测把克隆压在≈13半音念稿水平；提取工具 ecommerce-voice-anchor。旧锚备份 voice_v3_voicedesign_backup.mp3 / voice_ref5s_v3_backup.mp3"
   },
   "used_in": [
     "hjg_T2_003_真香素材版（妻子）"

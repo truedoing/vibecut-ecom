@@ -11,6 +11,7 @@
   "script_id": "hjg_T1_001_真香",
   "product": "虎坚果酱",
   "angle_type": "场景型·反常识（真香反转）",
+  "video_structure": "single_hook",
   "speech_rate": 3.8,
   "aspect_ratio": "9:16",
   "hook_type": "冲突型",
@@ -38,8 +39,12 @@
   "ai_settings": {"prompts_pending": true, "sound_plan": "双人对白，无旁白"},
   "ai_shots": [
     {"shot_id": "AI-1", "covers": [1], "duration_sec": 15,
-     "character_ref": "ch_001", "env_ref": "env_001",
-     "prompt": "", "negative_prompt": "文字，logo，多余手指"}
+     "character_ref": "ch_001", "env_ref": "env_001", "product_ref": null,
+     "prompt": "", "negative_prompt": "文字，logo，多余手指"},
+    {"shot_id": "AI-2", "covers": [8, 9], "duration_sec": 10,
+     "character_ref": null, "env_ref": "env_002",
+     "product_ref": "assets/虎坚果酱/product_refs/product_front_C5306.jpg",
+     "prompt": "", "negative_prompt": "人脸，文字，logo，多余手指"}
   ],
   "pending": ["厂商素材未入库"]
 }
@@ -52,10 +57,15 @@
   取值一览见 `references/back-half-patterns.md`。
 - `speaker` 默认「旁白」，混剪段一律「旁白」。多角色对白可放 `dialogue` 数组（仅钩子段），
   `content` 仍填对白合写文本供字数统计。
-- `ai_shots` 固定 7 字段，别加。`prompt` 为空＝提示词下一步生成。
+- `video_structure`：`single_hook`（单钩子，默认）| `hook_plus_convert`（钩子+转化双 AI）。
+  双结构时最后 2–3 句（价格+CTA）标 `shot_source: "AI"` 并挂尾段 `ai_shot_id`，
+  其余混剪段不变。
+- `ai_shots` 固定 8 字段，别加。`prompt` 为空＝提示词下一步生成。
   `character_ref` / `env_ref` 填 AI 资产库的角色/环境 id（`ch_001` / `env_001`），
   用 `registry.py list` 查；库里没有合适角色 → 先跑 `ecommerce-ai-assets` 建卡，**别引用不存在的 id**。
   同一脚本多个角色年龄感气质要搭。
+  `product_ref`：AI 镜头画面里出现产品时**必填**，指向 `assets/{品类}/product_refs/` 主参考图
+  （不涉及产品填 `null`）；`character_ref` 与 `product_ref` 至少一个非 null。
 - **混剪段必带 `visuals`**：每段 1–3 个，字段只有 `shot_id` / `src` / `in` / `out`。
   `shot_id` 与 `src` 直接从 `query.py` 输出抄，`in`/`out` 是取用秒数（镜头长，只截需要的部分）。
   缺画面写 `{"missing": true, "want": "想要什么画面"}`，不许编素材。
