@@ -13,12 +13,16 @@ import re
 import sys
 from pathlib import Path
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
+# 1.0 的包仍可校验（story_arc 可选）；1.1 起 story_arc 必填
+SCHEMA_VERSIONS = {"1.0", "1.1"}
 KIND = "short_drama"
-TOP_KEYS = {
+TOP_KEYS_V10 = {
     "meta", "drama_facts", "characters", "hook_map",
     "compliance", "elements", "pending", "asset_index", "conflicts",
 }
+TOP_KEYS_V11 = TOP_KEYS_V10 | {"story_arc"}
+MIN_ACTS = 3
 EIGHT_LIBS = ["hooks", "pains", "scenes", "proofs", "trust", "ctas", "golden_quotes", "audiences"]
 PROOF_LEVELS = {"E1", "E2", "E3", "E4"}
 TRUST_LEVELS = {"T1", "T2", "T3"}
@@ -81,20 +85,23 @@ def main() -> int:
 
     # 1. schema 与顶层
     meta = d.get("meta") or {}
-    if meta.get("schema_version") != SCHEMA_VERSION:
-        err("SCHEMA", f"schema_version 是 {meta.get('schema_version')!r}，应为 {SCHEMA_VERSION}")
+    ver = meta.get("schema_version")
+    if ver not in SCHEMA_VERSIONS:
+        err("SCHEMA", f"schema_version 是 {ver!r}，应为 {SCHEMA_VERSION}（兼容 {sorted(SCHEMA_VERSIONS)}）")
+        ver = SCHEMA_VERSION
     else:
-        ok(f"schema_version {SCHEMA_VERSION}")
+        ok(f"schema_version {ver}" + ("" if ver == SCHEMA_VERSION else "（旧版，story_arc 可缺）"))
     if meta.get("kind") != KIND:
         err("SCHEMA", f"meta.kind 应为 {KIND!r}，实际 {meta.get('kind')!r}")
-    missing = TOP_KEYS - set(d.keys())
+    top_keys = TOP_KEYS_V11 if ver == "1.1" else TOP_KEYS_V10
+    missing = top_keys - set(d.keys())
     if missing:
         err("SHAPE", f"顶层缺块: {sorted(missing)}")
-    extra = set(d.keys()) - TOP_KEYS
+    extra = set(d.keys()) - top_keys
     if extra:
         warn("SHAPE", f"顶层多出未约定字段 {sorted(extra)}")
     if not missing:
-        ok(f"顶层 {len(TOP_KEYS)} 键齐备")
+        ok(f"顶层 {len(top_keys)} 键齐备")
 
     # 2. 反向检查：不许混入商品字段
     hit = PRODUCT_FIELDS & set(d.keys())
@@ -143,6 +150,87 @@ def main() -> int:
             err("FACTS", f"drama_facts 缺关键字段 {need}")
     if fields_seen:
         ok(f"drama_facts {len(facts)} 条，关键字段齐备")
+
+    # 4b. story_arc —— 剧情概要（1.1 起必填）
+    series_len = None
+    for f in facts:
+        if f.get("field") == "series_length" and isinstance(f.get("value"), int):
+            series_len = f["value"]
+    sa = d.get("story_arc")
+    if sa is None:
+        if ver == "1.1":
+            err("STORY", "schema 1.1 缺 story_arc —— 剧情概要必须建档，否则下游只能翻全部台词")
+    elif not isinstance(sa, dict):
+        err("STORY", f"story_arc 应为对象，实际 {type(sa).__name__}")
+    else:
+        # 概要含结局，绝不可进口播/字幕 —— 这是结构性红线，不靠人记
+        if sa.get("usable_in_copy") is not False:
+            err("STORY", "story_arc.usable_in_copy 必须显式为 false —— 概要含结局，进口播就是剧透")
+        acts = sa.get("acts") or []
+        if not isinstance(acts, list):
+            err("STORY", "story_arc.acts 应为数组")
+            acts = []
+        if len(acts) < MIN_ACTS:
+            err("STORY", f"story_arc.acts 只有 {len(acts)} 幕，至少 {MIN_ACTS} 幕")
+        spans = []
+        for a in acts:
+            ano = a.get("no", "?")
+            for key in ("no", "name", "ep_from", "ep_to", "summary", "payoff", "evidence"):
+                if key not in a:
+                    err("STORY", f"act {ano} 缺字段 {key}")
+            ef, et = a.get("ep_from"), a.get("ep_to")
+            if not isinstance(ef, int) or not isinstance(et, int):
+                err("STORY", f"act {ano} ep_from/ep_to 必须是整数集号")
+            elif ef > et:
+                err("STORY", f"act {ano} ep_from({ef}) > ep_to({et})")
+            else:
+                if ef < 1:
+                    err("STORY", f"act {ano} ep_from({ef}) < 1")
+                if series_len and et > series_len:
+                    err("STORY", f"act {ano} ep_to({et}) 超出总集数 {series_len}")
+                spans.append((ef, et, ano))
+            ev = a.get("evidence") or []
+            if not ev:
+                err("STORY", f"act {ano} 没有 evidence —— 概要每一幕都要有台词可回溯")
+            for e in ev:
+                if e.get("ep") is None or e.get("t") is None or not e.get("quote"):
+                    err("STORY", f"act {ano} 的某条 evidence 缺 ep/t/quote")
+                else:
+                    check_time(e.get("t"), f"act{ano}.evidence")
+        # 幕次必须铺满、不重叠（有缺口或重叠说明分幕拍脑袋了）
+        spans.sort()
+        for (ef1, et1, n1), (ef2, et2, n2) in zip(spans, spans[1:]):
+            if ef2 > et1 + 1:
+                warn("STORY", f"act {n1}(至 {et1}) 与 act {n2}(自 {ef2}) 之间有集数缺口")
+            elif ef2 <= et1:
+                warn("STORY", f"act {n1}(至 {et1}) 与 act {n2}(自 {ef2}) 集数重叠")
+        if spans and series_len and max(s[1] for s in spans) < series_len:
+            warn("STORY",
+                 f"幕次只覆盖到第 {max(s[1] for s in spans)} 集，总集数 {series_len} —— 结尾未纳入概要")
+        tps = sa.get("turning_points") or []
+        if not tps:
+            warn("STORY", "story_arc 没有 turning_points —— 转折点是二创选段的落点，建议至少 2 条")
+        for tp in tps:
+            if tp.get("ep") is None or tp.get("t") is None or not tp.get("quote") or not tp.get("beat"):
+                err("STORY", "turning_points 某项缺 ep/t/beat/quote")
+                continue
+            check_time(tp.get("t"), "turning_point")
+            if spans and not any(ef <= tp["ep"] <= et for ef, et, _ in spans):
+                err("STORY", f"转折点落在第 {tp['ep']} 集，但不在任何一幕的集号范围内")
+        pat = sa.get("episode_pattern")
+        if not isinstance(pat, dict) or not (pat.get("loop") or []):
+            warn("STORY", "story_arc.episode_pattern.loop 为空 —— 单集循环结构不明，选段时没有依据")
+        src = sa.get("source") or {}
+        if not src.get("type") or not src.get("ref"):
+            err("STORY", "story_arc.source 需含 type 与 ref")
+        elif src.get("type") not in SOURCE_TYPES:
+            err("STORY", f"story_arc.source.type 非法: {src.get('type')!r}")
+        if sa.get("verified") is True and src.get("type") not in VERIFIABLE_SOURCES:
+            err("STORY", f"story_arc 标 verified:true 但来源是 {src.get('type')!r}")
+        if sa.get("verified") is not True:
+            warn("STORY", "story_arc 未标 verified —— 人审通过后再置 true")
+        if acts:
+            ok(f"story_arc {len(acts)} 幕 / 转折点 {len(tps)} 个 / usable_in_copy=false")
 
     # 5. characters
     chars = d.get("characters") or []
