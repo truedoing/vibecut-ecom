@@ -28,5 +28,5 @@ config.local.json
 .workbuddy/
 
 # 素材抽帧缓存（可随时删，不占原片）
-assets/*/frames/
-assets/*/edge_frames/
+assets/**/frames/
+assets/**/edge_frames/
