@@ -1,0 +1,20 @@
+{
+ "file": "/Users/zgl/vibecut-ecom/runs/八零憨妻/D1_第1条/vo/S07.mp3",
+ "chars": 16,
+ "atempo": 0.774,
+ "gain_db": 6.0,
+ "rate": 4.04,
+ "metrics": {
+  "sec": 3.96,
+  "sil_n": 2,
+  "sil_sec": 0.84,
+  "sil_pct": 21.2,
+  "lufs": -19.1,
+  "lra": 1.3,
+  "peak": -1.0
+ },
+ "issues": [
+  "停顿 21.2% > 15.0%：断句碎，语气会平——重生成",
+  "LRA 1.3 < 3.5：起伏不够，检查 style 是否写了「放慢/清晰」"
+ ]
+}

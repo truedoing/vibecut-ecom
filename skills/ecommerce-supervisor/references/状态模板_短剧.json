@@ -1,0 +1,120 @@
+{
+  "_readme": "短剧二创线专用状态模板（2026-11-08）。轻食/图书线继续用 状态模板.json。line 字段决定 status_overview.py 用哪套流水线；旧文件没有 line 时默认 light-food，不用回填。",
+  "task": "D1_第N条_简短名",
+  "category": "剧名",
+  "line": "short-drama",
+  "intent": "钩型 × 解说形态一句话（如：冲突前置 × 原生与解说交替，王婶出镜 1 段）",
+  "structure": "native_narration_alternating",
+  "updated_at": "2026-11-08T13:50",
+  "rules": {
+    "draft": "产物在，自检没跑。只有写它的技能能读",
+    "ready": "自检 0E，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话。下游可以依赖",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实。卡在谁必须写清",
+    "stale": "upstream 的 rev 变了。谁都别用，必须重跑"
+  },
+  "artifacts": {
+    "structure": {
+      "skill": "ecommerce-supervisor",
+      "path": null,
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "evidence": ["张老师拍板：原生段与解说段交替，孪生解说角色出镜 N 段"],
+      "by": "张老师",
+      "at": "2026-11-08",
+      "_note": "短剧语义＝解说形态与交替结构，不是轻食的 single_hook / hook_plus_convert"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/{剧名}/drama-pack.json",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [],
+      "evidence": ["validate_pack: 0E/0W", "冲突清单 / pending / 结局策略"],
+      "by": "WorkBuddy",
+      "at": "2026-11-08",
+      "_note": "G0 人审停点；剧集包是这一部剧的事实，不含跨剧角色"
+    },
+    "script": {
+      "skill": "short-drama-script（未建，暂由执行单承载）",
+      "path": "runs/{剧名}/{task}/{id}_执行单.md",
+      "state": "blocked",
+      "rev": 1,
+      "depends_on": ["structure", "pack"],
+      "evidence": ["原生段时间轴 + 解说段台词 + 可截断点 + 单条耗时"],
+      "by": "WorkBuddy",
+      "at": "2026-11-08"
+    },
+    "hook_AI1_v1": {
+      "skill": "short-drama-video（未建）",
+      "path": "runs/{剧名}/{task}/{id}_孪生段_v1.mp4",
+      "state": "blocked",
+      "rev": 0,
+      "depends_on": ["script"],
+      "evidence": ["孪生解说段：角色卡 ref_video.jpg + 场景参考图", "不与剧中人同框 / 不说剧中原台词"],
+      "by": "WorkBuddy",
+      "at": "2026-11-08",
+      "_note": "键名沿用轻食 hook_AI1_v1，语义是「王婶 AI 出镜的解说段」，不是商品钩子"
+    },
+    "anchor": {
+      "skill": "ecommerce-voice-anchor",
+      "path": null,
+      "state": "blocked",
+      "rev": 0,
+      "depends_on": ["hook_AI1_v1"],
+      "evidence": ["王婶音色锚；跨剧复用同一音色"],
+      "by": "WorkBuddy",
+      "at": "2026-11-08"
+    },
+    "narration": {
+      "skill": "short-drama-narration（未建）",
+      "path": null,
+      "state": "blocked",
+      "rev": 0,
+      "depends_on": ["anchor", "script"],
+      "evidence": ["解说旁白：只说自己的词，绝不说剧中原台词"],
+      "by": "WorkBuddy",
+      "at": "2026-11-08"
+    },
+    "final_mix": {
+      "skill": "short-drama-mix（未建）",
+      "path": null,
+      "state": "blocked",
+      "rev": 0,
+      "depends_on": ["narration", "hook_AI1_v1"],
+      "evidence": ["原生段/解说段交替时间轴 + 去字幕 + AI 标识 + 挂组件"],
+      "by": "WorkBuddy",
+      "at": "2026-11-08"
+    }
+  },
+  "g0_category_assets": {
+    "note": "品类级一次性资产，不占片级 stage 位（11-06 实测：挂进片级会让扫描器每条线误报待人审）。状态家在 G0 门禁里，片级 depends_on 只引用片内环节。gate=hard 卡 G0，gate=soft 只提示不拦下一步。",
+    "character_ch003": {
+      "state": "approved",
+      "gate": "hard",
+      "path": "assets/ai_assets/characters/ch_003_王婶/card.json",
+      "evidence": ["张老师人审通过", "孪生解说定义 + 跨剧识别特征"],
+      "by": "张老师",
+      "at": "2026-11-08",
+      "_note": "跨剧独立解说 IP，不进任何剧集包；无它就没有孪生解说段，故为硬卡"
+    },
+    "asset_index": {
+      "state": "blocked",
+      "gate": "soft",
+      "due": "第 3 条前",
+      "note": "1–19 集抽帧/台词索引（排除大结局）；前 2 条用前 5 集台词稿够用"
+    },
+    "twin_world_scene": {
+      "state": "blocked",
+      "gate": "soft",
+      "due": "W2 融入式出镜前",
+      "note": "孪生院门口场景参考图；第一条在自家院门口，不进剧内场景"
+    }
+  },
+  "notes": [
+    "line 必填 short-drama，否则 status_overview.py 按轻食流水线算，品类级资产全部看不见",
+    "剧集包的状态只由 artifacts.pack 承载；不要在 g0_category_assets 里再放一份 drama_pack（两个真源）",
+    "硬卡必须显式写 gate=hard；漏写按 soft 处理，避免一项没标就把试水盘卡死"
+  ]
+}

@@ -103,16 +103,20 @@ def main():
             f"[0:a]aresample=48000[a0];"
             f"[2:a]volume={args.vo_gain},aresample=48000,"
             f"adelay={int(hook_len*1000)}|{int(hook_len*1000)}[vo];"
-            f"[a0]apad=pad_dur=45[ap];"
-            f"[ap][vo]amix=inputs=2:duration=first:normalize=0,"
-            f"afade=t=out:st={fade_a:.2f}:d=1.0[aout]"
+        f"[a0]apad=pad_dur=45[ap];"
+        f"[ap][vo]amix=inputs=2:duration=first:normalize=0,"
+        f"afade=t=out:st={fade_a:.2f}:d=1.0[aout]"
         )
+        # 2026-11-06 修 bug：原用 -shortest，但 filter_complex 下 -shortest 失效，
+        # apad(45s) 把音频轨拖到比视频长 ~6s，成片尾部静音冻结帧（T2_006 实测 50.11s vs 44.21s）。
+        # 改为显式 -t total 截断输出，音频视频同长。
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", args.hook, "-i", str(mix),
              "-i", args.vo] + (["-i", args.tail] if tail_len else []) +
             ["-filter_complex", fc, "-map", "[vout]", "-map", "[aout]",
+             "-t", f"{total:.3f}",
              "-c:v", "libx264", "-crf", str(args.crf), "-preset", "medium",
-             "-c:a", "aac", "-b:a", "192k", "-shortest", args.out], check=True)
+             "-c:a", "aac", "-b:a", "192k", args.out], check=True)
     final_len = probe_duration(args.out)
     print(f"成片 {args.out}  {final_len:.2f}s")
     print("核对清单：①15s 处钩子→混剪切点 ②旁白句边界=画面切换 ③末段停留+淡出 ④整片响度")

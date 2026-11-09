@@ -1,0 +1,428 @@
+{
+  "script_id": "sd_001_A",
+  "title": "门口退婚·出镜版",
+  "series": "隔壁那家人 · 家长里短 第01期",
+  "drama": "八零憨妻的甜蜜日常",
+  "episode_scope": "ep01",
+  "mode": "mode_a_oncamera",
+  "type": "这一下",
+  "aspect_ratio": "9:16",
+  "target_seconds": 56.7,
+  "ai_budget": {
+    "clips": 2,
+    "total_sec": 10.0,
+    "reason": "AI 是全链最贵的一环。第一轮只用最小量验证『王婶这张脸值不值钱』，不做空镜、不做场景铺陈——空镜能用原片和剪辑手法替代。"
+  },
+  "core_insight": "她不是在跟人吵，她是在一个字一个字把自己名字说清楚",
+  "core_insight_detail": "不给答案，只给话头：门到底进没进，全片不说。观众带走的是「这姑娘到底想干啥」，不是「哦原来是这样」。",
+  "anchor_set": [
+    {
+      "anchor_id": "E104",
+      "ep": 1,
+      "start": 29.0,
+      "end": 42.7,
+      "role": "support",
+      "use": "S03 解说画面（她执意要去）"
+    },
+    {
+      "anchor_id": "E106",
+      "ep": 1,
+      "start": 51.0,
+      "end": 56.7,
+      "role": "support",
+      "use": "S05 解说画面（田里那句「你别不要我」）"
+    },
+    {
+      "anchor_id": "E107",
+      "ep": 1,
+      "start": 59.0,
+      "end": 78.7,
+      "role": "hook",
+      "use": "S02/S04/S06 原声三断"
+    },
+    {
+      "anchor_id": "E108",
+      "ep": 1,
+      "start": 79.0,
+      "end": 99.7,
+      "role": "climax",
+      "use": "S07 解说画面（门口全景）+ S08/S10 原声"
+    },
+    {
+      "anchor_id": "E109",
+      "ep": 1,
+      "start": 99.7,
+      "end": 124.7,
+      "role": "payoff",
+      "use": "S09/S11 解说画面（蹲在门槛外）"
+    },
+    {
+      "anchor_id": "E110",
+      "ep": 1,
+      "start": 125.0,
+      "end": 132.9,
+      "role": "cutoff",
+      "use": "S12 原声（狠话封门）+ S14 定格"
+    }
+  ],
+  "segments": [
+    {
+      "id": "S01",
+      "start": 0.0,
+      "end": 5.0,
+      "dur": 5.0,
+      "type": "ai_shot",
+      "role": "hook",
+      "visual": "王婶自家院门口，手里拎着刚洗完的衣裳往绳上搭，听见隔壁方向的声音，手停在半空，侧头看。",
+      "audio": "那天我在院里晾衣裳，听见隔壁门口吵起来了。",
+      "chars": 21,
+      "cps": 4.2,
+      "subtitle": true,
+      "insert_mode": "开头立人",
+      "note": "全片唯一必须出镜的地方：让观众第一眼认人。口型由 TTS 音频直接驱动，不做前置小样。",
+      "visual_source": "ai"
+    },
+    {
+      "id": "S02",
+      "start": 5.0,
+      "end": 7.5,
+      "dur": 2.5,
+      "type": "dialogue",
+      "role": "hook",
+      "src": "ep01 60.0–62.5",
+      "audio": "建军哥！建军哥！我是小满！",
+      "visual": "门外，小满对着门板喊；门板特写。",
+      "subtitle": false,
+      "function": "引爆",
+      "visual_source": "official"
+    },
+    {
+      "id": "S03",
+      "start": 7.5,
+      "end": 12.5,
+      "dur": 5.0,
+      "type": "narration",
+      "role": "develop",
+      "visual": "原片 ep01 30–38（她非要走，家里人拦），原声压到 -22dB 只留气口。",
+      "audio": "一个姑娘家，走了几十里地，就为喊这一声。",
+      "chars": 20,
+      "cps": 4.0,
+      "subtitle": true,
+      "visual_source": "official"
+    },
+    {
+      "id": "S04",
+      "start": 12.5,
+      "end": 15.0,
+      "dur": 2.5,
+      "type": "dialogue",
+      "role": "develop",
+      "src": "ep01 70.6–73.1",
+      "audio": "这门亲事退了，以后别来了。",
+      "visual": "婆婆张桂芬正脸，抱臂站在门口。",
+      "subtitle": false,
+      "function": "钉人",
+      "visual_source": "official"
+    },
+    {
+      "id": "S05",
+      "start": 15.0,
+      "end": 21.0,
+      "dur": 6.0,
+      "type": "narration",
+      "role": "develop",
+      "visual": "原片 ep01 51–57（田里，她一个人蹲着），静音。",
+      "audio": "彩礼退回来了，人还堵在门口。我活五十多，头回见。",
+      "chars": 24,
+      "cps": 4.0,
+      "subtitle": true,
+      "visual_source": "official"
+    },
+    {
+      "id": "S06",
+      "start": 21.0,
+      "end": 24.0,
+      "dur": 3.0,
+      "type": "dialogue",
+      "role": "develop",
+      "src": "ep01 74.0–77.0",
+      "audio": "不退。我要跟建军哥回家。",
+      "visual": "小满正脸，麻花辫，夕阳。",
+      "subtitle": false,
+      "function": "引爆",
+      "visual_source": "official"
+    },
+    {
+      "id": "S07",
+      "start": 24.0,
+      "end": 29.0,
+      "dur": 5.0,
+      "type": "narration",
+      "role": "develop",
+      "visual": "原片 ep01 79–84（门口全景，几个人堵在门槛内外），静音 + 局部推近。",
+      "audio": "你说她不懂事吧，这话回得一点不含糊。",
+      "chars": 20,
+      "cps": 4.0,
+      "subtitle": true,
+      "note": "原来是 AI 空镜组（5.5s），砍掉了：空镜用原片加推近、定格就能替代，不值得花 AI 的钱。",
+      "visual_source": "official"
+    },
+    {
+      "id": "S08",
+      "start": 29.0,
+      "end": 31.5,
+      "dur": 2.5,
+      "type": "dialogue",
+      "role": "develop",
+      "src": "ep01 96.4–98.4",
+      "audio": "还真追上门来了。",
+      "visual": "邻居刘婶卷发、端着碗站在人堆里。",
+      "subtitle": false,
+      "function": "引爆",
+      "note": "原句前半「这不是苏家那傻姑娘吗」已切掉，只留后半，旁白与原声都避开「傻」字。",
+      "visual_source": "official"
+    },
+    {
+      "id": "S09",
+      "start": 31.5,
+      "end": 36.0,
+      "dur": 4.5,
+      "type": "narration",
+      "role": "develop",
+      "visual": "原片 ep01 88–92.5（刘婶端碗站在人群后），静音。",
+      "audio": "门口围了一圈人，看热闹的比劝架的多。",
+      "chars": 19,
+      "cps": 4.2,
+      "subtitle": true,
+      "visual_source": "official"
+    },
+    {
+      "id": "S10",
+      "start": 36.0,
+      "end": 38.2,
+      "dur": 2.2,
+      "type": "dialogue",
+      "role": "climax",
+      "src": "ep01 98.8–101.0",
+      "audio": "我不是傻姑娘，我叫苏小满。",
+      "visual": "小满正脸，直视。",
+      "subtitle": false,
+      "function": "锚定",
+      "note": "全片最强一句，原样保留（含「傻姑娘」，是剧中台词，不是我方表述）。",
+      "visual_source": "official"
+    },
+    {
+      "id": "S11",
+      "start": 38.2,
+      "end": 43.7,
+      "dur": 5.5,
+      "type": "narration",
+      "role": "climax",
+      "visual": "原片 ep01 104–109.5（她蹲坐在门槛外），静音。",
+      "audio": "她不是跟人吵，她是一个字一个字把自己名字说清楚。",
+      "chars": 24,
+      "cps": 4.4,
+      "subtitle": true,
+      "visual_source": "official"
+    },
+    {
+      "id": "S12",
+      "start": 43.7,
+      "end": 47.7,
+      "dur": 4.0,
+      "type": "dialogue",
+      "role": "cutoff",
+      "src": "ep01 125.8–129.8",
+      "audio": "我告诉你，只要我活着，你就别想进这个门！",
+      "visual": "桂芬面部特写，手指画外。",
+      "subtitle": false,
+      "function": "引爆",
+      "note": "停在这句的尾音，不给「门到底进没进」。这是全片唯一的截断点，剪辑时不要往后多留 0.5 秒。",
+      "visual_source": "official"
+    },
+    {
+      "id": "S13",
+      "start": 47.7,
+      "end": 52.7,
+      "dur": 5.0,
+      "type": "ai_shot",
+      "role": "cutoff",
+      "visual": "王婶还在自家院里，手里那件衣裳垂着，没往绳上搭；抬眼往隔壁墙头看了一眼，没说话。",
+      "audio": "我站了半天，手里那件衣裳，一直没晾上去。",
+      "chars": 20,
+      "cps": 4.0,
+      "subtitle": true,
+      "insert_mode": "结尾收束",
+      "note": "与 S01 同场景、同服装、同道具，首尾闭环。收束不是总结，是「我也没答案」；禁止「后来」「下一集」这类预告词。",
+      "visual_source": "ai"
+    },
+    {
+      "id": "S14",
+      "start": 52.7,
+      "end": 56.7,
+      "dur": 4.0,
+      "type": "narration",
+      "role": "guide",
+      "visual": "S12 最后一帧定格 + 半透明压暗，右下角角标淡入「隔壁那家人 · 01」。",
+      "audio": "这家人往后咋样，底下那个合集里有。",
+      "chars": 17,
+      "cps": 4.3,
+      "subtitle": true,
+      "note": "引导 4.0s / 全片 56.7s = 7.1%，低于任务第 4 条的 30% 上限。图标不做大、不做闪烁。",
+      "visual_source": "official_freeze"
+    }
+  ],
+  "hook_chain": [
+    {
+      "stage": "起疑",
+      "at": 0.0,
+      "what": "隔壁门口吵起来了——谁、为什么，都没说"
+    },
+    {
+      "stage": "加码",
+      "at": 15.0,
+      "what": "彩礼退了、人还堵在门口、看热闹的围一圈"
+    },
+    {
+      "stage": "截断",
+      "at": 43.7,
+      "what": "「只要我活着你就别想进这个门」——门进没进，不给"
+    }
+  ],
+  "climax_second": 47.7,
+  "golden_quotes": [
+    "你说她不懂事吧，这话回得一点不含糊。",
+    "她不是跟人吵，她是一个字一个字把自己名字说清楚。"
+  ],
+  "ai_shots": [
+    {
+      "model": "mini",
+      "resolution": "480p",
+      "aspect_ratio": "9:16",
+      "seed": 20261108,
+      "audio": false,
+      "ref_images": [
+        "assets/ai_assets/environments/env_002_王婶院门口/ref.jpg",
+        "assets/ai_assets/wardrobe/w_003_玫红碎花袄/ref.jpg"
+      ],
+      "ref_note": "@Image1=场景（无人）锚空间与光线，@Image2=服装（无脸）锚碎花与领口；人物长相走文字锚 + 同 seed，不用人脸参考图（会触发真人审核）",
+      "lint": "0 ERROR / 1 WARN（产品标签检查不适用）",
+      "status": "prompt_ready_not_submitted",
+      "shot_id": "ai_a1",
+      "covers": [
+        "S01"
+      ],
+      "duration_sec": 5.0,
+      "prompt": "镜头1（0-5秒）：中景，固定机位，极缓推近。\n\n【人物】一位五十出头的中国北方农村妇女，圆脸微胖，普通农妇身形，不是模特，不是明星脸。黑发在脑后挽成圆髻，鬓角有几缕碎发，额前没有刘海，几乎不化妆。皮肤偏黑、粗糙，有真实毛孔和眼角细纹，不过度磨皮。穿玫红色小碎花缎面立领盘扣棉袄，一字盘扣扣得整齐，棉袄有穿出来的自然褶皱，缎面轻微反光，袖口挽起一道。人物自始至终是同一个人，画面里只有她一个人。\n\n【场景】1980 年代北方农村的院门口，黄昏偏暖的斜光从右后方照进来。右侧是一面黄土坯墙，墙上一扇半开的旧木门，门板有裂纹、木色发暗；墙头探出几枝稀疏的枣树枝；院墙内侧拉着一根旧铁丝晾衣绳，绳上已经挂着一件土黄色的粗布旧衣裳；她身后低矮的墙头上搁着一把边缘磨损的旧蒲扇，扇面朝上、扇柄朝外。\n\n【动作】开场她两手抬起来，把一件洗旧的灰蓝色粗布衣裳往绳上搭，左脚往前挪半步，肩膀跟着使了一下劲，衣裳往下一沉。搭到一半，她的手腕停住，衣裳一角垂下来，人不动，头慢慢偏向画右（隔壁院子的方向），眼睛往那边瞟，眉头皱起来又松开。最后她把头转回来，视线落回绳上，手仍停在半空，那件衣裳没有搭上去，嘴角抿了一下。\n\n【镜头】一镜到底，不切镜，速度很慢，中途不加速。她始终不看镜头。她不说话，嘴部放松。\n\n【质感】写实纪实摄影，轻微胶片颗粒，自然光，色调偏暖偏旧，四角轻微暗角；比她身后那面墙的黄昏再暖半档。",
+      "negative_prompt": "字幕，文字，logo，水印，AI生成字样，第三人，路人，背景有人，多余手指，六指，五官变形，五官混淆，脸部扭曲，明星脸，模特脸，浓妆，美颜，过度磨皮，影棚背景，现代服装，塑料质感，画面发灰去色，正脸直视镜头，大笑，张嘴说话，快切，镜头抖动，白天正午硬光，冷色调",
+      "prompt_pending": false,
+      "beats": [
+        {
+          "sec": "0-1.5",
+          "what": "抬两手把灰蓝衣裳往绳上搭，左脚前挪半步"
+        },
+        {
+          "sec": "1.5-3.5",
+          "what": "手腕停住，头偏向画右（隔壁），眼睛瞟过去"
+        },
+        {
+          "sec": "3.5-5.0",
+          "what": "视线回到绳上，手仍在半空，嘴角抿一下"
+        }
+      ],
+      "note": "开头立人。一镜到底，不切镜。蒲扇搁在身后矮墙上而非手持——手上有活，举扇不合理。不写台词，口型后期对 TTS。"
+    },
+    {
+      "model": "mini",
+      "resolution": "480p",
+      "aspect_ratio": "9:16",
+      "seed": 20261108,
+      "audio": false,
+      "ref_images": [
+        "assets/ai_assets/environments/env_002_王婶院门口/ref.jpg",
+        "assets/ai_assets/wardrobe/w_003_玫红碎花袄/ref.jpg"
+      ],
+      "ref_note": "@Image1=场景（无人）锚空间与光线，@Image2=服装（无脸）锚碎花与领口；人物长相走文字锚 + 同 seed，不用人脸参考图（会触发真人审核）",
+      "lint": "0 ERROR / 1 WARN（产品标签检查不适用）",
+      "status": "prompt_ready_not_submitted",
+      "shot_id": "ai_a2",
+      "covers": [
+        "S13"
+      ],
+      "duration_sec": 5.0,
+      "prompt": "镜头1（0-5秒）：中景，固定机位，极缓推近，与上一镜同机位、同景别、同光线。\n\n【人物】同一位五十出头的北方农村妇女，同一个发型，同一件玫红色小碎花缎面立领盘扣棉袄，同一件袖口挽起一道。皮肤偏黑、粗糙，有真实毛孔和眼角细纹，不过度磨皮。画面里只有她一个人。\n\n【场景】同一处院门口，同一个黄昏斜光。晾衣绳上只剩那件土黄色的粗布旧衣裳，被风轻轻掀起一角；她手里攥着那件灰蓝色的衣裳，没搭上去。她身后低矮的墙头上仍搁着那把边缘磨损的旧蒲扇。\n\n【动作】开场她站着不动，那件衣裳垂在手里，肩膀塌着一点。接着她抬起下巴，眼睛往画右上方的墙头看过去（隔壁那边的方向），看住不动。最后她低下头，视线落到手里那件衣裳上，手指在布边捻了一下，肩膀松下来，把那件衣裳往怀里收了收。\n\n【镜头】一镜到底，不切镜，速度很慢，中途不加速。她始终不看镜头。她不说话，嘴部放松。\n\n【质感】写实纪实摄影，轻微胶片颗粒，自然光，色调偏暖偏旧，四角轻微暗角；与上一镜完全一致的光比和色温。",
+      "negative_prompt": "字幕，文字，logo，水印，AI生成字样，第三人，路人，背景有人，多余手指，六指，五官变形，五官混淆，脸部扭曲，明星脸，模特脸，浓妆，美颜，过度磨皮，影棚背景，现代服装，塑料质感，画面发灰去色，正脸直视镜头，大笑，张嘴说话，快切，镜头抖动，白天正午硬光，冷色调",
+      "prompt_pending": false,
+      "beats": [
+        {
+          "sec": "0-1.5",
+          "what": "站着不动，衣裳垂在手里，绳上只剩土黄那件被风掀起"
+        },
+        {
+          "sec": "1.5-3.5",
+          "what": "抬下巴，眼睛往画右上墙头看，看住不动"
+        },
+        {
+          "sec": "3.5-5.0",
+          "what": "低头看手里衣裳，手指捻布边，肩膀松下来"
+        }
+      ],
+      "note": "结尾收束。与 ai_a1 同场景同服装同 seed，一图两用摊薄成本。不写台词；不做「后来」。"
+    }
+  ],
+  "rhythm_check": {
+    "longest_dialogue_run_sec": 4.0,
+    "longest_narration_run_sec": 6.0,
+    "dialogue_ratio": 0.295,
+    "narration_ratio": 0.635,
+    "ai_ratio": 0.176,
+    "guide_sec": 4.0,
+    "guide_ratio": 0.071,
+    "ends_at_critical": true,
+    "cps_overall": 4.11
+  },
+  "mix": {
+    "official_audio_sec": 16.7,
+    "official_visual_silent_sec": 26.0,
+    "ai_sec": 10.0,
+    "freeze_sec": 4.0,
+    "total": 56.7
+  },
+  "compliance": {
+    "task_rules": [
+      {
+        "no": 1,
+        "verbatim": "发布必须带话题 #快来看短剧，不聚合、不加进现有合集",
+        "status": "ok",
+        "action": "发布页首话题 #快来看短剧；不建平台合集。「第01期」角标是内容标记，不是合集。"
+      },
+      {
+        "no": 2,
+        "verbatim": "禁止使用活动提供素材之外视频生产；禁止大段拼接/原片",
+        "status": "risk",
+        "action": "AI 生成仅 10.0s（17.6%），两段都是人物镜头。最长连续原声 4.0s、最长连续原片画面 6.0s，无「大段」。是否驳回取决于甲方对「素材之外」的字面解释 → 已登记 cf_001，与 B 版对照。"
+      },
+      {
+        "no": 3,
+        "verbatim": "不超出片单、不得让用户看完全集",
+        "status": "ok",
+        "action": "全片只取 ep01，第 20 集从未进入素材池，无结局泄露。结尾停在狠话尾音。"
+      },
+      {
+        "no": 4,
+        "verbatim": "可引导点击底部合集，但口播+画面提示合计 < 全片 30%",
+        "status": "ok",
+        "action": "引导 4.0s / 56.7s = 7.1%；图标不做大。"
+      }
+    ],
+    "spoiler_check": "无。仅 ep01，且不给「门进没进」。",
+    "banned_word_check": "我方文案零出现「傻/病/治/康复/残」；原声含「傻姑娘」1 处（S10，剧中台词原样）。",
+    "ai_label": "发布页勾选 AI 生成标识",
+    "external_link": "无"
+  },
+  "open_questions": [
+    "S14「底下那个合集」是否被甲方算作「聚合」（任务第 1 条）→ 与第 4 条冲突，需按实测口径确认。",
+    "10 秒 AI 够不够让观众认人：若 S01 太短认不住，解法是换成更抓人的动作，不是加秒（加秒就是加钱）。"
+  ],
+  "ai_prompt_doc": "runs/八零憨妻/D1_第1条/sd_001_AI提示词.md"
+}

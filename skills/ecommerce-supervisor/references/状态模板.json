@@ -1,0 +1,125 @@
+{
+  "task": "T2_00N_简短名",
+  "category": "品类名",
+  "intent": "角度一句话（写清钩型 × 拒绝理由）",
+  "structure": "single_hook",
+  "updated_at": "2026-11-06T10:00",
+  "rules": {
+    "draft": "产物在，自检没跑。只有写它的技能能读",
+    "ready": "自检 0E，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话。下游可以依赖",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实。卡在谁必须写清",
+    "stale": "upstream 的 rev 变了。谁都别用，必须重跑"
+  },
+  "artifacts": {
+    "structure": {
+      "skill": "ecommerce-supervisor",
+      "path": null,
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "evidence": [
+        "张老师选定：single_hook（单钩子）"
+      ],
+      "by": "张老师",
+      "at": "2026-11-06"
+    },
+    "pack": {
+      "skill": "ecommerce-category-pack",
+      "path": "packs/{品类}/category-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "evidence": [
+        "validate_pack: 0E/0W",
+        "G0 人审通过"
+      ],
+      "by": "张老师",
+      "at": "2026-11-06"
+    },
+    "script": {
+      "skill": "ecommerce-script-gen",
+      "path": "runs/{品类}/{task}/{id}.json",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "structure",
+        "pack",
+        "asset_index"
+      ],
+      "evidence": [
+        "validate: OK · N 段 / M 条 AI / 无禁词",
+        "prompt_lint: 0E / 0W",
+        "角度查重：未与近 3 条同型"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "hook_AI1_v1": {
+      "skill": "ecommerce-video-gen",
+      "path": "runs/{品类}/{task}/{id}_AI1_v1.mp4",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "script"
+      ],
+      "evidence": [
+        "Seedance 参数 + 耗时 + 计费 tokens + task_id",
+        "ASR 逐字稿与脚本 diff 结论",
+        "抽帧 N 帧：五官/第三人/虚焦/切点 初检结论"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "anchor": {
+      "skill": "ecommerce-voice-anchor",
+      "path": "runs/{品类}/{task}/{角色}_锚.mp3",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "hook_AI1_v1"
+      ],
+      "evidence": [
+        "采样段位置 Xs–Ys（中段、情绪中性）",
+        "report.json: F0 跨度 / 跳变 / 时长"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "narration": {
+      "skill": "ecommerce-narration",
+      "path": "runs/{品类}/{task}/vo_v1.mp3",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "script",
+        "anchor"
+      ],
+      "evidence": [
+        "时长 / 字数 / 字每秒",
+        "LUFS / 峰值 / LRA",
+        "情绪档与钩子弧线一致"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "final_mix": {
+      "skill": "ecommerce-mix",
+      "path": "runs/{品类}/{task}/{id}_final_v1.mp4",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "hook_AI1_v1",
+        "narration"
+      ],
+      "evidence": [
+        "总时长 = 钩子 + 素材段（音视频差 <0.1s）",
+        "LUFS / 峰值",
+        "镜头编排：同类不相邻，长句拆两镜",
+        "素材本体路径来源（仓库内 / 仓库外绝对路径）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    }
+  }
+}

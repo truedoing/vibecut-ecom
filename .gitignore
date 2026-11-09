@@ -29,3 +29,4 @@ config.local.json
 
 # 素材抽帧缓存（可随时删，不占原片）
 assets/*/frames/
+assets/*/edge_frames/

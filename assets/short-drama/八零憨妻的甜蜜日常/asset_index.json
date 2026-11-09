@@ -1,0 +1,6498 @@
+{
+  "schema_version": "2.0",
+  "line": "short-drama",
+  "category": "八零憨妻的甜蜜日常",
+  "source_root_env": "SHORT_DRAMA_ASSET_ROOT",
+  "unit": "conflict_segment",
+  "scope": {
+    "covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "excluded": [
+      20
+    ],
+    "excluded_reason": "大结局，任务要求第 3 条禁止让用户看完全集"
+  },
+  "method": {
+    "text": "内嵌硬字幕 OCR → lines/lines_epNN.json（508 句，带秒）",
+    "segment": "按台词间隔 >4.5s 或段长 >26s 切，段长落 12–26s（segment.py）",
+    "label": "人工逐段判读（label_anchor_pool.py），非模型自动生成",
+    "not_done": [
+      "画面描述 visual（待锚点筛完再做局部核验，不做全量 VLM）",
+      "说话人 speakers（需音频分离，字幕给不了语气）"
+    ]
+  },
+  "stats": {
+    "episodes": 19,
+    "segments": 97,
+    "anchors": 45,
+    "by_state": {
+      "临界": 23,
+      "已兑现": 43,
+      "铺垫": 31
+    },
+    "total_seconds": 1551.3,
+    "by_exit": {
+      "人出画": 14,
+      "边界物": 13,
+      "空镜": 2,
+      "自顾": 8,
+      "锁空间": 60
+    },
+    "expandable": 37
+  },
+  "themes": {
+    "T1": {
+      "name": "门槛",
+      "claim": "这家人一开始不让她进门",
+      "voice": "「那天她站在门口，我在院里晾着衣裳」",
+      "anchor_ids": [
+        "E106",
+        "E107",
+        "E110",
+        "E403",
+        "E404",
+        "E1004",
+        "E1201",
+        "E1202",
+        "E1203"
+      ],
+      "anchor_count": 9,
+      "ep_spread": [
+        1,
+        4,
+        10,
+        12
+      ],
+      "enough_for_one_episode": true
+    },
+    "T2": {
+      "name": "傻子的帽子",
+      "claim": "所有人都叫她傻子，她一次次自己把名字说回来",
+      "voice": "「傻？她比咱院里明白人都清楚」",
+      "anchor_ids": [
+        "E108",
+        "E203",
+        "E503",
+        "E1002",
+        "E1102",
+        "E1201",
+        "E1405",
+        "E1407",
+        "E1805"
+      ],
+      "anchor_count": 9,
+      "ep_spread": [
+        1,
+        2,
+        5,
+        10,
+        11,
+        12,
+        14,
+        18
+      ],
+      "enough_for_one_episode": true
+    },
+    "T3": {
+      "name": "借米不还",
+      "claim": "一个邻居的小恶，从一斗米滚到一垄菜苗",
+      "voice": "「咱村有些人，借东西不为穷，是习惯了占」",
+      "anchor_ids": [
+        "E203",
+        "E302",
+        "E504",
+        "E804",
+        "E1104",
+        "E1105",
+        "E1403",
+        "E1404",
+        "E1502",
+        "E1503",
+        "E1506"
+      ],
+      "anchor_count": 11,
+      "ep_spread": [
+        2,
+        3,
+        5,
+        8,
+        11,
+        14,
+        15
+      ],
+      "enough_for_one_episode": true
+    },
+    "T4": {
+      "name": "力气换来的位置",
+      "claim": "她没别的本钱，只有一身力气，可这身力气救了人",
+      "voice": "「那闺女一身力气，别人拿它当笑话，她拿它当本钱」",
+      "anchor_ids": [
+        "E404",
+        "E601",
+        "E901",
+        "E902",
+        "E1302",
+        "E1303",
+        "E1703"
+      ],
+      "anchor_count": 7,
+      "ep_spread": [
+        4,
+        6,
+        9,
+        13,
+        17
+      ],
+      "enough_for_one_episode": true
+    },
+    "T5": {
+      "name": "婆婆心软的三次",
+      "claim": "最狠的那个婆婆，是怎么一步步改口的",
+      "voice": "「当婆婆的也有当婆婆的难，可她的心是一点点化的」",
+      "anchor_ids": [
+        "E110",
+        "E405",
+        "E602",
+        "E703",
+        "E804",
+        "E901",
+        "E904",
+        "E1004",
+        "E1103",
+        "E1105",
+        "E1701",
+        "E1806",
+        "E1902"
+      ],
+      "anchor_count": 13,
+      "ep_spread": [
+        1,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        17,
+        18,
+        19
+      ],
+      "enough_for_one_episode": true
+    },
+    "T6": {
+      "name": "一碗粥的往返",
+      "claim": "一碗粥端过去、门口碗空了、灶上抹油，全是不说出口的",
+      "voice": "「这院里最亲的话，都是隔着门说的」",
+      "anchor_ids": [
+        "E702",
+        "E703"
+      ],
+      "anchor_count": 2,
+      "ep_spread": [
+        7
+      ],
+      "enough_for_one_episode": false
+    },
+    "T7": {
+      "name": "旧账上门",
+      "claim": "日子刚好起来，当年那些人就都回来了",
+      "voice": "「人一好起来，旧账就自己找上门」",
+      "anchor_ids": [
+        "E1802",
+        "E1803",
+        "E1804",
+        "E1805"
+      ],
+      "anchor_count": 4,
+      "ep_spread": [
+        18
+      ],
+      "enough_for_one_episode": false
+    },
+    "T8": {
+      "name": "从陪嫁到陪嫁",
+      "claim": "一份陪嫁从嫌弃到传给亲闺女，走完了全剧",
+      "voice": "「一样东西，从给不出去，到给得心疼」",
+      "anchor_ids": [
+        "E1202",
+        "E1701",
+        "E1902"
+      ],
+      "anchor_count": 3,
+      "ep_spread": [
+        12,
+        17,
+        19
+      ],
+      "enough_for_one_episode": true
+    }
+  },
+  "episodes": [
+    {
+      "ep": 1,
+      "duration": 132.89,
+      "segments": [
+        {
+          "id": "E101",
+          "ep": 1,
+          "start": 0.0,
+          "end": 4.7,
+          "duration": 4.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "小满....周家... ..把彩礼退回来了。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "退婚通知",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "娘家",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E102",
+          "ep": 1,
+          "start": 5.0,
+          "end": 14.7,
+          "duration": 9.7,
+          "lines": [
+            {
+              "t": 6,
+              "text": "退回来？为啥呀？"
+            },
+            {
+              "t": 8,
+              "text": "他们说....说你这病好不了，"
+            },
+            {
+              "t": 10,
+              "text": "那我去找建军哥，跟他说清楚，我好了。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "追问原因",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "娘家",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E103",
+          "ep": 1,
+          "start": 15.0,
+          "end": 28.7,
+          "duration": 13.7,
+          "lines": [
+            {
+              "t": 16,
+              "text": "周家欺人太甚！"
+            },
+            {
+              "t": 18,
+              "text": "当初小满是为了救建军才摔下山坡的"
+            },
+            {
+              "t": 20,
+              "text": "他们倒好，人一傻就翻脸不认！"
+            },
+            {
+              "t": 22,
+              "text": "你小声点，别吓着小满。"
+            },
+            {
+              "t": 24,
+              "text": "算了...人家不愿意， 咱不能强求。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "家人论理（救人才摔的）",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "娘家",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E104",
+          "ep": 1,
+          "start": 29.0,
+          "end": 42.7,
+          "duration": 13.7,
+          "lines": [
+            {
+              "t": 30,
+              "text": "小满！几十里路呢，你不认识道！"
+            },
+            {
+              "t": 34,
+              "text": "我认识，建军哥带我走过 顺着大路一直走，"
+            },
+            {
+              "t": 36,
+              "text": "过两个桥，再拐个弯就到了。"
+            },
+            {
+              "t": 38,
+              "text": "小满！你回来！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "走几十里路",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E105",
+          "ep": 1,
+          "start": 43.0,
+          "end": 50.7,
+          "duration": 7.7,
+          "lines": [
+            {
+              "t": 44,
+              "text": "让她去！"
+            },
+            {
+              "t": 46,
+              "text": "我倒要看看周家有没有脸把她赶出来！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "娘家放话",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "娘家",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "路上",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E106",
+          "ep": 1,
+          "start": 51.0,
+          "end": 56.7,
+          "duration": 5.7,
+          "lines": [
+            {
+              "t": 52,
+              "text": "建军·....我来了.. ....你别不要我..."
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "门口求助",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "田里",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『你别不要我』是终点情绪，只能当结尾锚，不能当开头钩子"
+        },
+        {
+          "id": "E107",
+          "ep": 1,
+          "start": 59.0,
+          "end": 78.7,
+          "duration": 19.7,
+          "lines": [
+            {
+              "t": 60,
+              "text": "建军哥！建军哥！我是小满！"
+            },
+            {
+              "t": 62,
+              "text": "你怎么来了？谁让你来的？"
+            },
+            {
+              "t": 66,
+              "text": "子，我来找建军哥。你们把彩礼退了，"
+            },
+            {
+              "t": 68,
+              "text": "是不是弄错了？"
+            },
+            {
+              "t": 70,
+              "text": "没错。你回去告诉你爹妈，"
+            },
+            {
+              "t": 72,
+              "text": "这门亲事退了，以后别来了。"
+            },
+            {
+              "t": 74,
+              "text": "不退。我要跟建军哥回家。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "当门被拒→她说不退",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "门口",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『这门亲事退了』落下后她只回两个字『不退』——结果未知，第一强锚"
+        },
+        {
+          "id": "E108",
+          "ep": 1,
+          "start": 79.0,
+          "end": 99.7,
+          "duration": 20.7,
+          "lines": [
+            {
+              "t": 80,
+              "text": "你这傻姑娘怎么说不通呢！你这样子"
+            },
+            {
+              "t": 82,
+              "text": "怎么配得上我家建军？"
+            },
+            {
+              "t": 86,
+              "text": "小满....你怎么走来的？"
+            },
+            {
+              "t": 88,
+              "text": "建军哥！我顺着大路走的，没走丢！"
+            },
+            {
+              "t": 90,
+              "text": "建军！你回屋去！"
+            },
+            {
+              "t": 94,
+              "text": "这不是苏家那傻姑娘吗？还真追上门来了，"
+            },
+            {
+              "t": 96,
+              "text": "脸皮可真厚。"
+            },
+            {
+              "t": 98,
+              "text": "我不是傻姑娘，我叫苏小满。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "当众贬低→自报姓名",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "苏小满",
+            "ch_002",
+            "ch_004"
+          ],
+          "space": "门口",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『我不是傻姑娘，我叫苏小满』说完之后满院没人接话"
+        },
+        {
+          "id": "E109",
+          "ep": 1,
+          "start": 99.7,
+          "end": 124.7,
+          "duration": 25.0,
+          "lines": [
+            {
+              "t": 100,
+              "text": "连自己傻都不承认，还不是傻？"
+            },
+            {
+              "t": 104,
+              "text": "你走吧，别在这丢人现眼了。"
+            },
+            {
+              "t": 106,
+              "text": "我不走。建军哥在哪，我就在哪。"
+            },
+            {
+              "t": 110,
+              "text": "你！你给我起来！"
+            },
+            {
+              "t": 114,
+              "text": "哎哟，这傻姑娘力气咋这么大？"
+            },
+            {
+              "t": 116,
+              "text": "妈！别拽了！"
+            },
+            {
+              "t": 118,
+              "text": "小满，你先回去，我 ...我过两天去看你。"
+            },
+            {
+              "t": 120,
+              "text": "你骗人。 你上次也说来看我，一直没来"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "拉扯入屋",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002",
+            "ch_003"
+          ],
+          "space": "门口",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E110",
+          "ep": 1,
+          "start": 125.0,
+          "end": 132.9,
+          "duration": 7.9,
+          "lines": [
+            {
+              "t": 126,
+              "text": "我告诉你，只要我活着，"
+            },
+            {
+              "t": 128,
+              "text": "你就别想进这个门！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "婆婆狠话封门",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T1",
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "门口",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『只要我活着你就别想进这个门』——门到底进没进，全剧最大悬念",
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 2,
+      "duration": 71.32,
+      "segments": [
+        {
+          "id": "E201",
+          "ep": 2,
+          "start": 1.0,
+          "end": 13.7,
+          "duration": 12.7,
+          "lines": [
+            {
+              "t": 2,
+              "text": "不走。我要等建军哥"
+            },
+            {
+              "t": 4,
+              "text": "好，你不走，我走！"
+            },
+            {
+              "t": 8,
+              "text": "子，你夹着我胳膊了。"
+            },
+            {
+              "t": 10,
+              "text": "桂芬啊，这傻姑娘力气可不小，"
+            },
+            {
+              "t": 12,
+              "text": "你一个人弄不动她。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "拒走",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "门口",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E202",
+          "ep": 2,
+          "start": 13.7,
+          "end": 28.7,
+          "duration": 15.0,
+          "lines": [
+            {
+              "t": 14,
+              "text": "你少说风凉话！"
+            },
+            {
+              "t": 18,
+              "text": "妈！你夹着她了！"
+            },
+            {
+              "t": 20,
+              "text": "建军哥，不疼。"
+            },
+            {
+              "t": 22,
+              "text": "小满，你听话，先回去，"
+            },
+            {
+              "t": 24,
+              "text": "你上次也是这么说的。我等了三天，"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "揭穿承诺",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "门口",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『你上次也说来看我，我等了三天』——傻人有账本"
+        },
+        {
+          "id": "E203",
+          "ep": 2,
+          "start": 29.0,
+          "end": 54.7,
+          "duration": 25.7,
+          "lines": [
+            {
+              "t": 30,
+              "text": "你跟她说这些干什么！她听不懂！"
+            },
+            {
+              "t": 32,
+              "text": "子，我听得懂。建军哥摔下山，"
+            },
+            {
+              "t": 36,
+              "text": "是我背他上来的。我摔了头，才变这样的。"
+            },
+            {
+              "t": 40,
+              "text": "这傻姑娘，嘴还挺利索。"
+            },
+            {
+              "t": 42,
+              "text": "我不傻。我记得你去年借了我家一斗米，"
+            },
+            {
+              "t": 44,
+              "text": "还没还。"
+            },
+            {
+              "t": 46,
+              "text": "你这孩子，胡说什么呢！"
+            },
+            {
+              "t": 48,
+              "text": "行了行了！建军，把她弄走！"
+            },
+            {
+              "t": 50,
+              "text": "妈....让她进屋坐会儿吧， 天黑了。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我听得懂→讨米",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2",
+            "T3"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "门口",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "全剧第一次反杀，用一斗米证明她记得住事"
+        },
+        {
+          "id": "E204",
+          "ep": 2,
+          "start": 55.0,
+          "end": 71.3,
+          "duration": 16.3,
+          "lines": [
+            {
+              "t": 56,
+              "text": "就坐一会儿。她走了几十里路。"
+            },
+            {
+              "t": 58,
+              "text": "...坐门口，不许进屋！"
+            },
+            {
+              "t": 60,
+              "text": "小满，你坐这儿，我去给你倒碗水。"
+            },
+            {
+              "t": 64,
+              "text": "建军哥，你别走。"
+            },
+            {
+              "t": 66,
+              "text": "我不走。我就在这儿。"
+            },
+            {
+              "t": 68,
+              "text": "建军哥，我就知道你不会不要我。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "坐门口不进屋",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1",
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002",
+            "ch_003"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 3,
+      "duration": 51.95,
+      "segments": [
+        {
+          "id": "E301",
+          "ep": 3,
+          "start": 1.0,
+          "end": 26.7,
+          "duration": 25.7,
+          "lines": [
+            {
+              "t": 2,
+              "text": "小满？你醒了？"
+            },
+            {
+              "t": 4,
+              "text": "建军哥，婶子起来了。我去帮婶子干活。"
+            },
+            {
+              "t": 8,
+              "text": "别去，我妈她..."
+            },
+            {
+              "t": 12,
+              "text": "谁让你进来的？"
+            },
+            {
+              "t": 14,
+              "text": "子，我帮你烧火。"
+            },
+            {
+              "t": 16,
+              "text": "不用你帮，你出去！"
+            },
+            {
+              "t": 18,
+              "text": "我说你这姑娘怎..."
+            },
+            {
+              "t": 20,
+              "text": "你.....你这力气是牛托生的？"
+            },
+            {
+              "t": 22,
+              "text": "子，我力气大。我帮你把水缸挑满吧。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "抢着干活",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T4"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "路上",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E302",
+          "ep": 3,
+          "start": 27.0,
+          "end": 40.7,
+          "duration": 13.7,
+          "lines": [
+            {
+              "t": 28,
+              "text": "哟，这不是周家那傻媳妇吗？还没走呢？"
+            },
+            {
+              "t": 30,
+              "text": "刘婶，你借我家的一斗米，什么时候还？"
+            },
+            {
+              "t": 32,
+              "text": "你这孩子，怎么见人就说这个"
+            },
+            {
+              "t": 34,
+              "text": "我娘说，借东西要还。"
+            },
+            {
+              "t": 36,
+              "text": "小满，好样的。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "当面讨米（刘婶）",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "院子",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "当着婆婆的面把刘婶的账摊开，位置第一次反转"
+        },
+        {
+          "id": "E303",
+          "ep": 3,
+          "start": 43.0,
+          "end": 52.0,
+          "duration": 9.0,
+          "lines": [
+            {
+              "t": 44,
+              "text": "谢谢婶子"
+            },
+            {
+              "t": 46,
+              "text": "看什么看，吃饭！"
+            },
+            {
+              "t": 48,
+              "text": "建军哥，你先吃。"
+            },
+            {
+              "t": 50,
+              "text": "都给我吃！吃完该干嘛干嘛！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "让饭",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002",
+            "ch_003"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 4,
+      "duration": 91.63,
+      "segments": [
+        {
+          "id": "E401",
+          "ep": 4,
+          "start": 3.0,
+          "end": 10.7,
+          "duration": 7.7,
+          "lines": [
+            {
+              "t": 4,
+              "text": "我不走。"
+            },
+            {
+              "t": 6,
+              "text": "小满，人家都退婚了，你赖在这儿干什么？"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我不走",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E402",
+          "ep": 4,
+          "start": 11.0,
+          "end": 23.7,
+          "duration": 12.7,
+          "lines": [
+            {
+              "t": 12,
+              "text": "苏强来了，正好，把你妹妹领回去。"
+            },
+            {
+              "t": 14,
+              "text": "子，我妹妹在你们家守了一夜，"
+            },
+            {
+              "t": 18,
+              "text": "什么话？退婚的话早就说清楚了！"
+            },
+            {
+              "t": 22,
+              "text": "强子，别吵。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "娘家哥来领人",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "苏强",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E403",
+          "ep": 4,
+          "start": 23.7,
+          "end": 35.7,
+          "duration": 12.0,
+          "lines": [
+            {
+              "t": 24,
+              "text": "小满，跟嫂子回家，嫂子给你做好吃的。"
+            },
+            {
+              "t": 28,
+              "text": "嫂子，我走了建军哥怎么办？"
+            },
+            {
+              "t": 32,
+              "text": "就是，傻姑娘赖着不走，"
+            },
+            {
+              "t": 34,
+              "text": "周家这是要自捡个劳力啊。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "走还是留",
+            "intensity": 3
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "嫂子",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『我走了建军哥怎么办』——她还没答走不走"
+        },
+        {
+          "id": "E404",
+          "ep": 4,
+          "start": 35.7,
+          "end": 60.7,
+          "duration": 25.0,
+          "lines": [
+            {
+              "t": 36,
+              "text": "刘婶，我家的事轮不到你插嘴！"
+            },
+            {
+              "t": 40,
+              "text": "行，你要留下也行"
+            },
+            {
+              "t": 42,
+              "text": "从今天起，"
+            },
+            {
+              "t": 44,
+              "text": "家里重活你全包。挑水、劈柴、下地，"
+            },
+            {
+              "t": 48,
+              "text": "沈子"
+            },
+            {
+              "t": 50,
+              "text": "子，你这不是欺负人吗！"
+            },
+            {
+              "t": 54,
+              "text": "我力气大，不怕。"
+            },
+            {
+              "t": 56,
+              "text": "妈，小满她 她是为了我才来的"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "留下条件：重活全包",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T1",
+            "T4"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E405",
+          "ep": 4,
+          "start": 61.0,
+          "end": 73.7,
+          "duration": 12.7,
+          "lines": [
+            {
+              "t": 62,
+              "text": "我说，小满的活，我帮她干。"
+            },
+            {
+              "t": 64,
+              "text": "建军哥"
+            },
+            {
+              "t": 66,
+              "text": "你....你翅膀硬了！"
+            },
+            {
+              "t": 70,
+              "text": "你这话我记下了。小满要是再受委屈，"
+            },
+            {
+              "t": 72,
+              "text": "小满要是再受委屈，我饶不了你"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "建军第一次顶娘",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『小满的活我帮她干』——婆婆当场炸，但拿他没辙"
+        },
+        {
+          "id": "E406",
+          "ep": 4,
+          "start": 73.7,
+          "end": 91.6,
+          "duration": 17.9,
+          "lines": [
+            {
+              "t": 74,
+              "text": "哥，你放心"
+            },
+            {
+              "t": 76,
+              "text": "小满，哥过两天再来看你。有事就回家。"
+            },
+            {
+              "t": 80,
+              "text": "嗯，哥，嫂子，你们路上慢点"
+            },
+            {
+              "t": 84,
+              "text": "小满，以后我妈让你干活，你叫我。"
+            },
+            {
+              "t": 88,
+              "text": "不用，我能干。建军哥，你刚才好厉害"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "哥嫂离开",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "苏强",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "屋内",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 5,
+      "duration": 75.78,
+      "segments": [
+        {
+          "id": "E501",
+          "ep": 5,
+          "start": 0.0,
+          "end": 16.7,
+          "duration": 16.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "小满，你歇会儿，我来。"
+            },
+            {
+              "t": 2,
+              "text": "不用，我能干。"
+            },
+            {
+              "t": 4,
+              "text": "你都劈了一早上了。"
+            },
+            {
+              "t": 6,
+              "text": "那你喝口水。"
+            },
+            {
+              "t": 8,
+              "text": "建军哥，你真好"
+            },
+            {
+              "t": 12,
+              "text": "谢谢子。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "互相体贴",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T4"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "院子",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E502",
+          "ep": 5,
+          "start": 17.0,
+          "end": 28.7,
+          "duration": 11.7,
+          "lines": [
+            {
+              "t": 18,
+              "text": "小满，下午喂猪的活我来，你别去了。"
+            },
+            {
+              "t": 20,
+              "text": "子说了，重活都归我。"
+            },
+            {
+              "t": 22,
+              "text": "那也不能全让你一个人干"
+            },
+            {
+              "t": 24,
+              "text": "建军哥，我不怕干活。 我就想留在这儿。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我就想留在这儿",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "院子",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E503",
+          "ep": 5,
+          "start": 29.0,
+          "end": 51.7,
+          "duration": 22.7,
+          "lines": [
+            {
+              "t": 30,
+              "text": "哟，桂芬，"
+            },
+            {
+              "t": 32,
+              "text": "你家这是请了个长工啊？不要工钱的那种。"
+            },
+            {
+              "t": 36,
+              "text": "喷，这傻姑娘力气是真大。桂芬，"
+            },
+            {
+              "t": 38,
+              "text": "你可捡着便宜了。"
+            },
+            {
+              "t": 42,
+              "text": "刘婶，我不是长工。我是建军哥的媳妇。"
+            },
+            {
+              "t": 46,
+              "text": "哟，还知道自己是媳妇呢？"
+            },
+            {
+              "t": 48,
+              "text": "我知道。建军哥对我好"
+            },
+            {
+              "t": 50,
+              "text": "子也让我吃饭。我干活，"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我不是长工",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "堂屋",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『我是建军哥的媳妇』——把身份说成事实，不是请求"
+        },
+        {
+          "id": "E504",
+          "ep": 5,
+          "start": 51.7,
+          "end": 75.8,
+          "duration": 24.1,
+          "lines": [
+            {
+              "t": 52,
+              "text": "是因为这是我家。"
+            },
+            {
+              "t": 56,
+              "text": "行了，我家的事不劳你操心。"
+            },
+            {
+              "t": 58,
+              "text": "我这不是关心你嘛..."
+            },
+            {
+              "t": 60,
+              "text": "关心我？上回你借我那半袋米，啥时候还？"
+            },
+            {
+              "t": 62,
+              "text": "哎呀，家里还烧着水呢"
+            },
+            {
+              "t": 66,
+              "text": "力气倒是真大。"
+            },
+            {
+              "t": 68,
+              "text": "晚上多做一个人的饭"
+            },
+            {
+              "t": 72,
+              "text": "谢谢子 哎！谢谢子！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "反将一军（半袋米）",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "门口",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 6,
+      "duration": 37.53,
+      "segments": [
+        {
+          "id": "E601",
+          "ep": 6,
+          "start": 0.0,
+          "end": 12.7,
+          "duration": 12.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "后山那块坡地"
+            },
+            {
+              "t": 2,
+              "text": "今天翻出来。你一个人拉犁，"
+            },
+            {
+              "t": 4,
+              "text": "干完了，就留下"
+            },
+            {
+              "t": 6,
+              "text": "妈！那块地硬得牛都费劲，"
+            },
+            {
+              "t": 8,
+              "text": "你闭嘴！我没跟你说话。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "干完才留下",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T4"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002",
+            "ch_003"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "把「留不留下」变成一个可验收的条件，最硬的钩子结构",
+          "head_from_zero": true
+        },
+        {
+          "id": "E602",
+          "ep": 6,
+          "start": 17.0,
+          "end": 37.5,
+          "duration": 20.5,
+          "lines": [
+            {
+              "t": 18,
+              "text": "你手都这样了，还拉？"
+            },
+            {
+              "t": 20,
+              "text": "建军哥，我还没干完"
+            },
+            {
+              "t": 22,
+              "text": "妈！她是我媳妇！我不许你这么对她！"
+            },
+            {
+              "t": 26,
+              "text": "建军哥，你护着我了。"
+            },
+            {
+              "t": 28,
+              "text": "以后都护着"
+            },
+            {
+              "t": 30,
+              "text": "....回家。地不翻了。"
+            },
+            {
+              "t": 34,
+              "text": "子是不是哭了？"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "建军爆发护妻→婆婆让步",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "ch_002",
+            "苏小满"
+          ],
+          "space": "田里",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『她是我媳妇！我不许你这么对她』——婆婆随后说『回家，地不翻了』",
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 7,
+      "duration": 58.52,
+      "segments": [
+        {
+          "id": "E701",
+          "ep": 7,
+          "start": 0.0,
+          "end": 10.7,
+          "duration": 10.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "你先坐，我去给你烧点热水"
+            },
+            {
+              "t": 2,
+              "text": "手上得处理一下。"
+            },
+            {
+              "t": 4,
+              "text": "建军哥你歇着，我去烧。"
+            },
+            {
+              "t": 6,
+              "text": "你手都这样了还烧什么水。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "给她泡手",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T6"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E702",
+          "ep": 7,
+          "start": 13.0,
+          "end": 33.7,
+          "duration": 20.7,
+          "lines": [
+            {
+              "t": 14,
+              "text": "手放进去，先泡泡。"
+            },
+            {
+              "t": 18,
+              "text": "不疼。建军哥，婶子吃饭了吗？"
+            },
+            {
+              "t": 20,
+              "text": "锅里还有粥，"
+            },
+            {
+              "t": 22,
+              "text": "你给婶子端一碗吧。她今天也没吃。"
+            },
+            {
+              "t": 24,
+              "text": "小满，你就不怨她？"
+            },
+            {
+              "t": 28,
+              "text": "妈，吃点东西。"
+            },
+            {
+              "t": 30,
+              "text": "不饿。"
+            },
+            {
+              "t": 32,
+              "text": "放门口了,饿了就吃。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "你就不怨她？",
+            "intensity": 3
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T6"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "屋内",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "问完她没答怨不怨，只说给婶子端一碗"
+        },
+        {
+          "id": "E703",
+          "ep": 7,
+          "start": 33.7,
+          "end": 54.7,
+          "duration": 21.0,
+          "lines": [
+            {
+              "t": 34,
+              "text": "..她手怎么样了？"
+            },
+            {
+              "t": 36,
+              "text": "灶上有灌油,抹上。"
+            },
+            {
+              "t": 38,
+              "text": "知道了。"
+            },
+            {
+              "t": 42,
+              "text": "建军哥，婶子吃了吗？"
+            },
+            {
+              "t": 44,
+              "text": ".门口那碗粥，没了"
+            },
+            {
+              "t": 46,
+              "text": "明天我给婶子做早饭。"
+            },
+            {
+              "t": 48,
+              "text": "你手这样怎么做。"
+            },
+            {
+              "t": 50,
+              "text": "傻姑娘。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "婆婆嘴硬心软（问手）",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T5",
+            "T6"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "ch_003"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『她手怎么样了』『灶上有灌油，抹上』——全剧婆婆第一道裂缝"
+        },
+        {
+          "id": "E704",
+          "ep": 7,
+          "start": 55.0,
+          "end": 58.5,
+          "duration": 3.5,
+          "lines": [
+            {
+              "t": 56,
+              "text": ".这傻丫头。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "这傻丫头",
+            "intensity": 2
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 8,
+      "duration": 72.98,
+      "segments": [
+        {
+          "id": "E801",
+          "ep": 8,
+          "start": 1.0,
+          "end": 20.7,
+          "duration": 19.7,
+          "lines": [
+            {
+              "t": 2,
+              "text": "你手还没好，谁让你起的？"
+            },
+            {
+              "t": 4,
+              "text": "我给婶子熬粥。 昨天那碗她吃了，"
+            },
+            {
+              "t": 6,
+              "text": "今天肯定也吃。"
+            },
+            {
+              "t": 8,
+              "text": "你去喂猪，我会。"
+            },
+            {
+              "t": 12,
+              "text": "婶子，吃早饭。"
+            },
+            {
+              "t": 14,
+              "text": "哪来的鸡蛋？"
+            },
+            {
+              "t": 16,
+              "text": "我跟隔壁王奶奶换的。用我劈的柴。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "换鸡蛋熬粥",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T6"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E802",
+          "ep": 8,
+          "start": 29.0,
+          "end": 34.7,
+          "duration": 5.7,
+          "lines": [
+            {
+              "t": 30,
+              "text": "看什么看，你也吃。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "看什么看，你也吃",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "苏小满"
+          ],
+          "space": "巷子",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E803",
+          "ep": 8,
+          "start": 35.0,
+          "end": 48.7,
+          "duration": 13.7,
+          "lines": [
+            {
+              "t": 36,
+              "text": "哟，桂芬嫂子，"
+            },
+            {
+              "t": 38,
+              "text": "你家这傻媳妇可真能干啊。白捡个劳力，"
+            },
+            {
+              "t": 40,
+              "text": "白捡个劳力，划算"
+            },
+            {
+              "t": 42,
+              "text": "刘水，我不是劳力"
+            },
+            {
+              "t": 44,
+              "text": "我是建军哥的媳妇。婶子说，媳妇要干活"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我不是劳力",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "巷子",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E804",
+          "ep": 8,
+          "start": 49.0,
+          "end": 73.0,
+          "duration": 24.0,
+          "lines": [
+            {
+              "t": 50,
+              "text": "桂芬嫂子，你听听，这傻丫头"
+            },
+            {
+              "t": 52,
+              "text": "她说的没错。"
+            },
+            {
+              "t": 54,
+              "text": "我这不是好心提醒你嘛 一个傻子..．"
+            },
+            {
+              "t": 58,
+              "text": "刘婶，你上次借的米，什么时候还？"
+            },
+            {
+              "t": 60,
+              "text": "你...你一个傻子管什么闲事！ 刘婶，你上次借的米，什么时候还？"
+            },
+            {
+              "t": 62,
+              "text": "她是我周家的人，怎么不能管？"
+            },
+            {
+              "t": 66,
+              "text": "家子都疯了"
+            },
+            {
+              "t": 68,
+              "text": "柴劈完了，把院子扫了。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "建军当众站队",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3",
+            "T5"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "ch_004"
+          ],
+          "space": "巷子",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『她是我周家的人，怎么不能管』——婆婆第一次没反驳",
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 9,
+      "duration": 50.56,
+      "segments": [
+        {
+          "id": "E901",
+          "ep": 9,
+          "start": 0.0,
+          "end": 16.7,
+          "duration": 16.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "娘,你喝口水。"
+            },
+            {
+              "t": 2,
+              "text": "这么烫！娘，我背你去卫生所！"
+            },
+            {
+              "t": 6,
+              "text": "你....你背不动我..."
+            },
+            {
+              "t": 8,
+              "text": "小满，你—一"
+            },
+            {
+              "t": 10,
+              "text": "不用你....傻丫头"
+            },
+            {
+              "t": 12,
+              "text": "建军哥，拿手电。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "背得动吗",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T4",
+            "T5"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "屋内",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E902",
+          "ep": 9,
+          "start": 17.0,
+          "end": 29.7,
+          "duration": 12.7,
+          "lines": [
+            {
+              "t": 18,
+              "text": "没事。"
+            },
+            {
+              "t": 20,
+              "text": "放我下来 你自己走..."
+            },
+            {
+              "t": 22,
+              "text": "不放。婶子病了，要去看大夫。"
+            },
+            {
+              "t": 24,
+              "text": "婶子,快到了!"
+            },
+            {
+              "t": 26,
+              "text": "你背不动。我能行"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "不放，要去看大夫",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T4"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "路上",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "背着一个一直赶她走的人走夜路，结果在路上"
+        },
+        {
+          "id": "E903",
+          "ep": 9,
+          "start": 29.7,
+          "end": 46.7,
+          "duration": 17.0,
+          "lines": [
+            {
+              "t": 30,
+              "text": "再晚点就麻烦了。1 你媳妇这力气"
+            },
+            {
+              "t": 32,
+              "text": "你媳妇这力气真不是一般人 再晚点就麻烦了。 你媳妇这力气，"
+            },
+            {
+              "t": 36,
+              "text": "婶子，你醒了！还难受吗?"
+            },
+            {
+              "t": 40,
+              "text": "你这傻丫头"
+            },
+            {
+              "t": 42,
+              "text": "子手凉，我给你捂捂。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "婆婆醒来",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "苏小满"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E904",
+          "ep": 9,
+          "start": 47.0,
+          "end": 50.6,
+          "duration": 3.6,
+          "lines": [
+            {
+              "t": 48,
+              "text": "这辈子，我护定她了"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我护定她了",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "可做全片收束句，短、狠、不留解释",
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 10,
+      "duration": 71.51,
+      "segments": [
+        {
+          "id": "E1001",
+          "ep": 10,
+          "start": 0.0,
+          "end": 10.7,
+          "duration": 10.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "腿还没好利索，谁让你下地的？"
+            },
+            {
+              "t": 4,
+              "text": "坐下，吃饭。"
+            },
+            {
+              "t": 6,
+              "text": "坐下吃，娘让你坐的。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "被逼坐下吃饭",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "苏小满"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E1002",
+          "ep": 10,
+          "start": 13.0,
+          "end": 38.7,
+          "duration": 25.7,
+          "lines": [
+            {
+              "t": 14,
+              "text": "桂芬嫂子，忙着呢？"
+            },
+            {
+              "t": 16,
+              "text": "听说你病了？"
+            },
+            {
+              "t": 18,
+              "text": "那傻丫头能背得动你去卫生所？"
+            },
+            {
+              "t": 20,
+              "text": "背得动背不动，跟你没关系"
+            },
+            {
+              "t": 24,
+              "text": "嫂子，她哥都来闹过了。你留个傻子，"
+            },
+            {
+              "t": 26,
+              "text": "建军以后咋办？我娘家有个姑娘一一"
+            },
+            {
+              "t": 30,
+              "text": "我家的儿媳妇，轮不到外人操心。"
+            },
+            {
+              "t": 34,
+              "text": "我这不是为你好一一"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "刘婶来劝换儿媳",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "ch_004",
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "外人当着婆婆说「留个傻子建军以后咋办」，婆婆怎么答是钩子"
+        },
+        {
+          "id": "E1003",
+          "ep": 10,
+          "start": 39.0,
+          "end": 53.7,
+          "duration": 14.7,
+          "lines": [
+            {
+              "t": 40,
+              "text": "以后刘来，你别理她。"
+            },
+            {
+              "t": 42,
+              "text": "嗯。她坏，说婶子坏话"
+            },
+            {
+              "t": 46,
+              "text": "她上次说建军哥坏话，我听见了"
+            },
+            {
+              "t": 50,
+              "text": "娘，我想跟你商量个事。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "小满说刘婶坏话",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1004",
+          "ep": 10,
+          "start": 53.7,
+          "end": 71.5,
+          "duration": 17.8,
+          "lines": [
+            {
+              "t": 54,
+              "text": "她那个样子，你想好了？"
+            },
+            {
+              "t": 56,
+              "text": "想好了。不管娘同不同意，我都要娶她。"
+            },
+            {
+              "t": 60,
+              "text": "娘，小满对你是真心的。"
+            },
+            {
+              "t": 62,
+              "text": "我再想想。"
+            },
+            {
+              "t": 64,
+              "text": "明天去镇上，给她扯块布做身新衣裳。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "不管娘同不同意我都要娶",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T1",
+            "T5"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "ch_002"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "儿子摊牌，婆婆只回「我再想想」，第二天却去扯布",
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 11,
+      "duration": 91.16,
+      "segments": [
+        {
+          "id": "E1101",
+          "ep": 11,
+          "start": 0.0,
+          "end": 12.7,
+          "duration": 12.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "行了，去镇上扯布，给你做身新衣裳。"
+            },
+            {
+              "t": 4,
+              "text": "别傻站着，换鞋去。"
+            },
+            {
+              "t": 6,
+              "text": "娘，我送你们去。"
+            },
+            {
+              "t": 8,
+              "text": "不用，你下地。 扯块布的事，我认得路。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "去镇上扯布",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E1102",
+          "ep": 11,
+          "start": 15.0,
+          "end": 34.7,
+          "duration": 19.7,
+          "lines": [
+            {
+              "t": 16,
+              "text": "那匹碎花的，扯一身。"
+            },
+            {
+              "t": 18,
+              "text": "好嘞，大姐眼光真好"
+            },
+            {
+              "t": 20,
+              "text": "哟，桂芬嫂子，给谁扯布呢？"
+            },
+            {
+              "t": 22,
+              "text": "就是那个傻 那个小满啊？"
+            },
+            {
+              "t": 26,
+              "text": "嫂子你可真舍得"
+            },
+            {
+              "t": 28,
+              "text": "傻子穿新衣裳，不也是傻子嘛"
+            },
+            {
+              "t": 30,
+              "text": "婶子，我不傻。我会干活，会背子看病"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "傻子穿新衣裳也是傻子",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『我不傻。我会干活，会背婶子看病』——把傻的定义改掉"
+        },
+        {
+          "id": "E1103",
+          "ep": 11,
+          "start": 35.0,
+          "end": 46.7,
+          "duration": 11.7,
+          "lines": [
+            {
+              "t": 36,
+              "text": "刘婶,我儿媳穿什么，"
+            },
+            {
+              "t": 38,
+              "text": "轮不到你说三道四。你管好自家的事。"
+            },
+            {
+              "t": 40,
+              "text": "包起来。"
+            },
+            {
+              "t": 42,
+              "text": "子，你帮我说话了。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "婆婆当众护（包起来）",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "ch_004"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1104",
+          "ep": 11,
+          "start": 47.0,
+          "end": 61.7,
+          "duration": 14.7,
+          "lines": [
+            {
+              "t": 48,
+              "text": "婶子，这个石头，原来在那边"
+            },
+            {
+              "t": 50,
+              "text": "你懂什么，界石本来就在这"
+            },
+            {
+              "t": 52,
+              "text": "不对。我天天来地里，我记得。"
+            },
+            {
+              "t": 54,
+              "text": "你一一你干什么！"
+            },
+            {
+              "t": 58,
+              "text": "你个傻子，给我搬回去！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "界石之争",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "田里",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1105",
+          "ep": 11,
+          "start": 61.7,
+          "end": 76.7,
+          "duration": 15.0,
+          "lines": [
+            {
+              "t": 62,
+              "text": "刘！你动我儿媳一下试试！"
+            },
+            {
+              "t": 66,
+              "text": "刘婶，界石原来在哪"
+            },
+            {
+              "t": 68,
+              "text": "村里人都知道。你要是不认，"
+            },
+            {
+              "t": 70,
+              "text": "我.我就是 拔两个萝卜….."
+            },
+            {
+              "t": 72,
+              "text": "萝卜放下，人走"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "刘桂香你动我儿媳试试",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T3",
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "ch_004"
+          ],
+          "space": "田里",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1106",
+          "ep": 11,
+          "start": 77.0,
+          "end": 82.7,
+          "duration": 5.7,
+          "lines": [
+            {
+              "t": 78,
+              "text": "婶子，萝卜没坏。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "萝卜没坏",
+            "intensity": 2
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "田里",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1107",
+          "ep": 11,
+          "start": 83.0,
+          "end": 91.2,
+          "duration": 8.2,
+          "lines": [
+            {
+              "t": 84,
+              "text": "婶子，好看。"
+            },
+            {
+              "t": 86,
+              "text": "娘？"
+            },
+            {
+              "t": 88,
+              "text": "娘！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "改口叫娘",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 12,
+      "duration": 55.49,
+      "segments": [
+        {
+          "id": "E1201",
+          "ep": 12,
+          "start": 1.0,
+          "end": 18.7,
+          "duration": 17.7,
+          "lines": [
+            {
+              "t": 2,
+              "text": "今天当着大伙的面，我把话说清楚。"
+            },
+            {
+              "t": 4,
+              "text": "苏小满，"
+            },
+            {
+              "t": 6,
+              "text": "从今往后就是我周家的儿媳。"
+            },
+            {
+              "t": 8,
+              "text": "谁再敢叫她一声傻子"
+            },
+            {
+              "t": 10,
+              "text": "就是跟我张桂芬过不去"
+            },
+            {
+              "t": 12,
+              "text": "桂芬嫂子，你可想好了，她这脑子一一"
+            },
+            {
+              "t": 14,
+              "text": "刘婶，人家家里的事，你少插嘴。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "当着大伙认儿媳",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1",
+            "T2"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『谁再敢叫她一声傻子，就是跟我张桂芬过不去』——帽子被摘掉"
+        },
+        {
+          "id": "E1202",
+          "ep": 12,
+          "start": 19.0,
+          "end": 37.7,
+          "duration": 18.7,
+          "lines": [
+            {
+              "t": 20,
+              "text": "我周建军今天当着全村"
+            },
+            {
+              "t": 22,
+              "text": "人的面说—一我娶你"
+            },
+            {
+              "t": 24,
+              "text": "建军哥，娶是啥？"
+            },
+            {
+              "t": 26,
+              "text": "娶就是，以后你天天跟我在一起，"
+            },
+            {
+              "t": 28,
+              "text": "我护着你。"
+            },
+            {
+              "t": 32,
+              "text": "这是我当年的陪嫁。戴上它，"
+            },
+            {
+              "t": 34,
+              "text": "你就是我周家的人。"
+            },
+            {
+              "t": 36,
+              "text": "娘给的，我戴好，不摘。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我娶你 / 娶是啥",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1",
+            "T8"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "苏小满"
+          ],
+          "space": "门口",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『娶是啥？』这三个字是全剧最好的钩子素材之一"
+        },
+        {
+          "id": "E1203",
+          "ep": 12,
+          "start": 37.7,
+          "end": 55.5,
+          "duration": 17.8,
+          "lines": [
+            {
+              "t": 38,
+              "text": "建军，我妹交给你了。"
+            },
+            {
+              "t": 40,
+              "text": "哥，你放心。"
+            },
+            {
+              "t": 42,
+              "text": "小满，嫂子替你高兴。"
+            },
+            {
+              "t": 44,
+              "text": "嫂子不哭，小满有家了。"
+            },
+            {
+              "t": 46,
+              "text": "好！今天是个好日子。"
+            },
+            {
+              "t": 48,
+              "text": "周建军和苏小满的婚事"
+            },
+            {
+              "t": 50,
+              "text": "我代表村里，认了！"
+            },
+            {
+              "t": 52,
+              "text": "我有娘了！我有建军哥了！我有家了！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "认亲，我有家了",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "村长",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 13,
+      "duration": 68.67,
+      "segments": [
+        {
+          "id": "E1301",
+          "ep": 13,
+          "start": 0.0,
+          "end": 14.7,
+          "duration": 14.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "吉时到！新郎掀盖头！"
+            },
+            {
+              "t": 2,
+              "text": "建军哥，你今天真好看。"
+            },
+            {
+              "t": 4,
+              "text": "光茶"
+            },
+            {
+              "t": 6,
+              "text": "我周建军今天娶苏小满为妻。这辈子"
+            },
+            {
+              "t": 8,
+              "text": "就认她一个人。"
+            },
+            {
+              "t": 10,
+              "text": "闺女，喝了这碗糖水，以后日子甜甜蜜蜜。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "掀盖头",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E1302",
+          "ep": 13,
+          "start": 15.0,
+          "end": 29.7,
+          "duration": 14.7,
+          "lines": [
+            {
+              "t": 16,
+              "text": "一个傻子，还办什么婚礼，"
+            },
+            {
+              "t": 20,
+              "text": "今天是周家大喜的日子。你要是不想吃席"
+            },
+            {
+              "t": 22,
+              "text": "现在就走。"
+            },
+            {
+              "t": 26,
+              "text": "这石碾少说三百斤，得四个人抬。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "三百斤石碾谁来搬",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T4"
+          ],
+          "viewpoint": "看客",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『得四个人抬』说完，还没人动"
+        },
+        {
+          "id": "E1303",
+          "ep": 13,
+          "start": 29.7,
+          "end": 44.7,
+          "duration": 15.0,
+          "lines": [
+            {
+              "t": 30,
+              "text": "这是我家的石碾！我来搬！"
+            },
+            {
+              "t": 32,
+              "text": "建军哥，放哪儿？"
+            },
+            {
+              "t": 36,
+              "text": "我的天....这力气，比牛还大。"
+            },
+            {
+              "t": 38,
+              "text": "北茶"
+            },
+            {
+              "t": 40,
+              "text": "我妹这力气，你家以后耕地都不用买牛了！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "单手搬石碾",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T4"
+          ],
+          "viewpoint": "看客",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1304",
+          "ep": 13,
+          "start": 47.0,
+          "end": 68.7,
+          "duration": 21.7,
+          "lines": [
+            {
+              "t": 48,
+              "text": "来来来，照张全家福！"
+            },
+            {
+              "t": 52,
+              "text": "闺女坐这儿。"
+            },
+            {
+              "t": 54,
+              "text": "都笑一笑——一 三!"
+            },
+            {
+              "t": 56,
+              "text": "照相就是，"
+            },
+            {
+              "t": 58,
+              "text": "把今天的好日子记下来。"
+            },
+            {
+              "t": 60,
+              "text": "嗯！天天都是好日子！"
+            },
+            {
+              "t": 64,
+              "text": "我的好闺女"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "全家福",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "空镜",
+          "exit_hint": "段落后可场景二扩：空镜最自由，直接换到王婶所在的空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 14,
+      "duration": 101.01,
+      "segments": [
+        {
+          "id": "E1401",
+          "ep": 14,
+          "start": 0.0,
+          "end": 20.7,
+          "duration": 20.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "这块地没人要 建军哥，这块地没人要，我种菜！"
+            },
+            {
+              "t": 2,
+              "text": "这地太硬了 这地太硬了，你一个人..·"
+            },
+            {
+              "t": 4,
+              "text": "我力气大！"
+            },
+            {
+              "t": 8,
+              "text": "我陪你"
+            },
+            {
+              "t": 10,
+              "text": "娘爱吃萝卜 种白菜，种萝卜，娘爱吃萝"
+            },
+            {
+              "t": 12,
+              "text": "小满"
+            },
+            {
+              "t": 16,
+              "text": "不累！多种点，娘和建军哥就能吃好！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "开荒种菜",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T6",
+            "T4"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "田里",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E1402",
+          "ep": 14,
+          "start": 21.0,
+          "end": 30.7,
+          "duration": 9.7,
+          "lines": [
+            {
+              "t": 22,
+              "text": "快快长，长大了给娘吃。"
+            },
+            {
+              "t": 24,
+              "text": "一个傻子，种什么菜。"
+            },
+            {
+              "t": 26,
+              "text": "刘婶，等菜长好了，给你也送点！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "给刘婶也送点",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "田里",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1403",
+          "ep": 14,
+          "start": 31.0,
+          "end": 36.7,
+          "duration": 5.7,
+          "lines": [
+            {
+              "t": 32,
+              "text": "拔了再种，种了就不许再拔了"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "种了就不许再拔了",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "路上",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "伏笔句，短到只能做插入，但语气是全剧最像「立规矩」的一次"
+        },
+        {
+          "id": "E1404",
+          "ep": 14,
+          "start": 37.0,
+          "end": 51.7,
+          "duration": 14.7,
+          "lines": [
+            {
+              "t": 38,
+              "text": "刘婶，出来！"
+            },
+            {
+              "t": 40,
+              "text": "干啥？"
+            },
+            {
+              "t": 42,
+              "text": "这菜苗，是不是你拔的？"
+            },
+            {
+              "t": 44,
+              "text": "谁、谁看见了？一个傻子说的话也能信？"
+            },
+            {
+              "t": 46,
+              "text": "我看见了。你昨天从地边走过去"
+            },
+            {
+              "t": 50,
+              "text": "刘婶，我媳妇种的菜"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "菜苗是不是你拔的",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "ch_004"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『一个傻子说的话也能信？』——对方先攻她的证词资格"
+        },
+        {
+          "id": "E1405",
+          "ep": 14,
+          "start": 51.7,
+          "end": 74.7,
+          "duration": 23.0,
+          "lines": [
+            {
+              "t": 52,
+              "text": "谁再动一根，我跟谁没完。"
+            },
+            {
+              "t": 56,
+              "text": "哎哟！周建军你翅膀硬了！"
+            },
+            {
+              "t": 58,
+              "text": "她不是傻子。她是我媳妇。"
+            },
+            {
+              "t": 62,
+              "text": "刘桂香！我儿媳种的菜你也敢动"
+            },
+            {
+              "t": 66,
+              "text": "桂芬姐，我...."
+            },
+            {
+              "t": 68,
+              "text": "你什么你!小满起早贪黑种的菜，"
+            },
+            {
+              "t": 70,
+              "text": "你手一伸就拔了！还要不要脸！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "她不是傻子，她是我媳妇",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "苏小满"
+          ],
+          "space": "门口",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1406",
+          "ep": 14,
+          "start": 75.0,
+          "end": 85.7,
+          "duration": 10.7,
+          "lines": [
+            {
+              "t": 76,
+              "text": "村长，你给评评理！刘拔我儿媳的菜苗，"
+            },
+            {
+              "t": 78,
+              "text": "还不认账！"
+            },
+            {
+              "t": 82,
+              "text": "赔菜苗钱，给苏小满道歉。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "村长评理，赔钱道歉",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "村长",
+          "characters": [
+            "ch_004",
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1407",
+          "ep": 14,
+          "start": 85.7,
+          "end": 101.0,
+          "duration": 15.3,
+          "lines": [
+            {
+              "t": 86,
+              "text": "对不住。"
+            },
+            {
+              "t": 90,
+              "text": "你买点菜种，自己种."
+            },
+            {
+              "t": 94,
+              "text": "走，闺女，回家。娘给你做好吃的。"
+            },
+            {
+              "t": 98,
+              "text": "什么傻姑娘，人家比谁都明白。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "人家比谁都明白",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "村民",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 15,
+      "duration": 124.16,
+      "segments": [
+        {
+          "id": "E1501",
+          "ep": 15,
+          "start": 1.0,
+          "end": 20.7,
+          "duration": 19.7,
+          "lines": [
+            {
+              "t": 2,
+              "text": "你们不知道吧？周家那个傻媳妇，"
+            },
+            {
+              "t": 6,
+              "text": "昨天把我推了个跟头！"
+            },
+            {
+              "t": 8,
+              "text": "我这腰到现在还疼呢！"
+            },
+            {
+              "t": 10,
+              "text": "真的假的？小满那姑娘看着挺老实的。"
+            },
+            {
+              "t": 12,
+              "text": "老实什么！她力气大得吓人，"
+            },
+            {
+              "t": 16,
+              "text": "一巴掌能把你扇飞！你们可离她远点！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "刘婶满村造谣",
+            "intensity": 4
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "ch_004",
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1502",
+          "ep": 15,
+          "start": 23.0,
+          "end": 45.7,
+          "duration": 22.7,
+          "lines": [
+            {
+              "t": 24,
+              "text": "周建军，我妹打人了？"
+            },
+            {
+              "t": 26,
+              "text": "刘婶满村，说小满把她推了个跟头！"
+            },
+            {
+              "t": 28,
+              "text": "哥!"
+            },
+            {
+              "t": 30,
+              "text": "小满，你跟哥说，你打刘了？"
+            },
+            {
+              "t": 32,
+              "text": "我没打人。我种菜。"
+            },
+            {
+              "t": 36,
+              "text": "小满没打人。昨天刘婶拔了小满的菜苗"
+            },
+            {
+              "t": 38,
+              "text": "我找她理论，她心虚，今天倒打一耙。"
+            },
+            {
+              "t": 42,
+              "text": "放屁！我闺女连鸡都不敢打，还打人?"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "哥问：你打人了？",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "苏强",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "最亲的人先怀疑，她只说『我没打人。我种菜』"
+        },
+        {
+          "id": "E1503",
+          "ep": 15,
+          "start": 45.7,
+          "end": 68.7,
+          "duration": 23.0,
+          "lines": [
+            {
+              "t": 46,
+              "text": "小满，哥信你。"
+            },
+            {
+              "t": 50,
+              "text": "刘婶，出来把话说清楚！"
+            },
+            {
+              "t": 52,
+              "text": "说、说什么？"
+            },
+            {
+              "t": 54,
+              "text": "你说小满推你，什么时候？在哪？"
+            },
+            {
+              "t": 56,
+              "text": "就....就...."
+            },
+            {
+              "t": 58,
+              "text": "昨天我在菜地浇水，没见你。"
+            },
+            {
+              "t": 60,
+              "text": "昨天小满一整天都在菜地"
+            },
+            {
+              "t": 62,
+              "text": "我和我娘都看着。刘，"
+            },
+            {
+              "t": 64,
+              "text": "你腰疼是拔菜苗闪的吧？"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "当众对质，她答不上来",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "ch_004"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『就……就……』卡在这里，是全剧最好的截断点之一"
+        },
+        {
+          "id": "E1504",
+          "ep": 15,
+          "start": 69.0,
+          "end": 76.7,
+          "duration": 7.7,
+          "lines": [
+            {
+              "t": 70,
+              "text": "刘桂香！你拔我闺女菜苗，"
+            },
+            {
+              "t": 72,
+              "text": "你倒先造谣！你还要不要脸！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "婆婆爆发护儿媳",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "ch_004"
+          ],
+          "space": "巷子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1505",
+          "ep": 15,
+          "start": 77.0,
+          "end": 99.7,
+          "duration": 22.7,
+          "lines": [
+            {
+              "t": 78,
+              "text": "刘婶,菜苗的事刚了，"
+            },
+            {
+              "t": 80,
+              "text": "你又造谣。再搬弄是非，"
+            },
+            {
+              "t": 84,
+              "text": "我.我错了。"
+            },
+            {
+              "t": 86,
+              "text": "刘婶，我妹心眼好，"
+            },
+            {
+              "t": 88,
+              "text": "不跟你计较。"
+            },
+            {
+              "t": 90,
+              "text": "但我把话放这一一谁再欺负她"
+            },
+            {
+              "t": 94,
+              "text": "刘婶，给你。"
+            },
+            {
+              "t": 96,
+              "text": "菜种。我昨天去镇上买的。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我错了 / 谁再欺负她",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "ch_004"
+          ],
+          "space": "路上",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1506",
+          "ep": 15,
+          "start": 99.7,
+          "end": 113.7,
+          "duration": 14.0,
+          "lines": [
+            {
+              "t": 100,
+              "text": "肯定是也想种菜。给你，你自己种。"
+            },
+            {
+              "t": 102,
+              "text": "给你你自己种种了就不许再拔了"
+            },
+            {
+              "t": 106,
+              "text": "小满婶儿对不住你"
+            },
+            {
+              "t": 110,
+              "text": "刘，这事过去了。以后还是邻居"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "给菜种，以德报怨",
+            "intensity": 4
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_004"
+          ],
+          "space": "路上",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1507",
+          "ep": 15,
+          "start": 113.7,
+          "end": 124.2,
+          "duration": 10.5,
+          "lines": [
+            {
+              "t": 114,
+              "text": "走，闺女，回家吃饭。"
+            },
+            {
+              "t": 116,
+              "text": "都看见了吧?"
+            },
+            {
+              "t": 118,
+              "text": "什么叫以德报怨？小满这姑娘"
+            },
+            {
+              "t": 120,
+              "text": "刘审"
+            },
+            {
+              "t": 122,
+              "text": "刘婶，菜长好了，给我送点！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "旁评以德报怨",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "村民",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "路上",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 16,
+      "duration": 103.17,
+      "segments": [
+        {
+          "id": "E1601",
+          "ep": 16,
+          "start": 0.0,
+          "end": 11.7,
+          "duration": 11.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "小满，你这菜种得真好"
+            },
+            {
+              "t": 2,
+              "text": "比婶子种得都齐整"
+            },
+            {
+              "t": 4,
+              "text": "刘婶，你家的菜也长得好"
+            },
+            {
+              "t": 6,
+              "text": "那是你给的菜种好。"
+            },
+            {
+              "t": 10,
+              "text": "刘婶，您歇会儿，我来浇。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "菜种得好",
+            "intensity": 1
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "刘婶",
+          "characters": [
+            "ch_004",
+            "ch_002"
+          ],
+          "space": "田里",
+          "exit_type": "自顾",
+          "exit_hint": "段落后可场景二扩：切到王婶做同类的事，同一片田野里最自然",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E1602",
+          "ep": 16,
+          "start": 11.7,
+          "end": 26.7,
+          "duration": 15.0,
+          "lines": [
+            {
+              "t": 12,
+              "text": "不用不用，你陪小满说说话，"
+            },
+            {
+              "t": 14,
+              "text": "婶子浇完这垄就回去"
+            },
+            {
+              "t": 18,
+              "text": "建军哥，刘婶现在不拔我的菜了。"
+            },
+            {
+              "t": 20,
+              "text": "嗯,她不敢了。"
+            },
+            {
+              "t": 22,
+              "text": "她要是再拔，我就再给她菜种"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "她再拔我就再给菜种",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "田里",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1603",
+          "ep": 16,
+          "start": 29.0,
+          "end": 45.7,
+          "duration": 16.7,
+          "lines": [
+            {
+              "t": 30,
+              "text": "这块布给小满做身新衣裳够不够？"
+            },
+            {
+              "t": 34,
+              "text": "你说干啥？娶小满时没办席"
+            },
+            {
+              "t": 36,
+              "text": "现在日子安稳了，得补上。"
+            },
+            {
+              "t": 40,
+              "text": "就是请全村人吃饭"
+            },
+            {
+              "t": 42,
+              "text": "告诉大家你是我周家明媒正娶的媳妇"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "决定补办婚宴",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1",
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "ch_003"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1604",
+          "ep": 16,
+          "start": 45.7,
+          "end": 62.7,
+          "duration": 17.0,
+          "lines": [
+            {
+              "t": 46,
+              "text": "建军哥，那是不是有很多好吃的？"
+            },
+            {
+              "t": 48,
+              "text": "嗯，很多好吃的。"
+            },
+            {
+              "t": 52,
+              "text": "娘，谢谢您"
+            },
+            {
+              "t": 54,
+              "text": "谢啥，我是怕人笑话。去，"
+            },
+            {
+              "t": 58,
+              "text": "把苏强和赵小慧叫来，商量商量日子"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "娘，谢谢您",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "屋内",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1605",
+          "ep": 16,
+          "start": 63.0,
+          "end": 75.7,
+          "duration": 12.7,
+          "lines": [
+            {
+              "t": 64,
+              "text": "建军，我妹的婚宴，"
+            },
+            {
+              "t": 66,
+              "text": "我这个当哥的不能空手。"
+            },
+            {
+              "t": 68,
+              "text": "哥，你太客气了"
+            },
+            {
+              "t": 70,
+              "text": "小满，嫂子给你做了双新鞋，"
+            },
+            {
+              "t": 74,
+              "text": "嫂子，真好看"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "哥嫂备礼",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "苏强",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1606",
+          "ep": 16,
+          "start": 75.7,
+          "end": 90.7,
+          "duration": 15.0,
+          "lines": [
+            {
+              "t": 76,
+              "text": "小慧，你来得正好"
+            },
+            {
+              "t": 78,
+              "text": "帮我看看这衣裳怎么裁"
+            },
+            {
+              "t": 80,
+              "text": "婶子，我来。"
+            },
+            {
+              "t": 82,
+              "text": "建军，我妹交给你，我放心了。"
+            },
+            {
+              "t": 86,
+              "text": "建军哥，你看！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我妹交给你我放心了",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "苏强",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "门口",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1607",
+          "ep": 16,
+          "start": 91.0,
+          "end": 103.2,
+          "duration": 12.2,
+          "lines": [
+            {
+              "t": 92,
+              "text": "都听好了！周家后天给小满补办婚宴！"
+            },
+            {
+              "t": 94,
+              "text": "有空的来帮忙，"
+            },
+            {
+              "t": 96,
+              "text": "没空的来吃席！"
+            },
+            {
+              "t": 98,
+              "text": "村长，您这是通知还是命令啊？"
+            },
+            {
+              "t": 100,
+              "text": "值得全村人给她热闹一回！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "村长通知全村",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "村长",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 17,
+      "duration": 91.61,
+      "segments": [
+        {
+          "id": "E1701",
+          "ep": 17,
+          "start": 0.0,
+          "end": 16.7,
+          "duration": 16.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "站直了，别乱动。"
+            },
+            {
+              "t": 2,
+              "text": "娘，真好看。"
+            },
+            {
+              "t": 4,
+              "text": "好看啥，凑合穿。"
+            },
+            {
+              "t": 6,
+              "text": "小满，今天你是新娘子，要笑。"
+            },
+            {
+              "t": 8,
+              "text": "娘，这是啥？"
+            },
+            {
+              "t": 10,
+              "text": "这是我当年的陪嫁。从今往后，"
+            },
+            {
+              "t": 12,
+              "text": "你就是我亲闺女。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "传陪嫁：你就是我亲闺女",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5",
+            "T8"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E1702",
+          "ep": 17,
+          "start": 17.0,
+          "end": 38.7,
+          "duration": 21.7,
+          "lines": [
+            {
+              "t": 18,
+              "text": "各位乡亲！今天周家补办婚宴，"
+            },
+            {
+              "t": 20,
+              "text": "我代表村里说两句。小满这姑娘，"
+            },
+            {
+              "t": 22,
+              "text": "用真心换来了全村的尊重"
+            },
+            {
+              "t": 24,
+              "text": "周家娶了个好媳妇！"
+            },
+            {
+              "t": 28,
+              "text": "哥，我敬你。"
+            },
+            {
+              "t": 32,
+              "text": "今天看到她被你们周家这么疼"
+            },
+            {
+              "t": 34,
+              "text": "我这个当哥的，心里踏实了。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "村长致辞：真心换来尊重",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T2"
+          ],
+          "viewpoint": "村长",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "门口",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1703",
+          "ep": 17,
+          "start": 39.0,
+          "end": 60.7,
+          "duration": 21.7,
+          "lines": [
+            {
+              "t": 40,
+              "text": "亲家，小满交给你们，我放心了。"
+            },
+            {
+              "t": 42,
+              "text": "嫂子，你放心。 小满是我闺女，"
+            },
+            {
+              "t": 44,
+              "text": "谁也不能欺负她"
+            },
+            {
+              "t": 46,
+              "text": "棚子要塌了！棚子要塌了！"
+            },
+            {
+              "t": 48,
+              "text": "小满，你干啥？"
+            },
+            {
+              "t": 50,
+              "text": "建军哥，压住了，不掉。"
+            },
+            {
+              "t": 52,
+              "text": "好！好力气！周家这媳妇"
+            },
+            {
+              "t": 54,
+              "text": "顶得上三个壮劳力！"
+            },
+            {
+              "t": 56,
+              "text": "小满，快来端菜！今天你是新娘子，"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "棚子要塌了→单手撑住",
+            "intensity": 5
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T4"
+          ],
+          "viewpoint": "看客",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "门口",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "『棚子要塌了』喊完之后的三秒，是全剧视觉最强的一下"
+        },
+        {
+          "id": "E1704",
+          "ep": 17,
+          "start": 61.0,
+          "end": 75.7,
+          "duration": 14.7,
+          "lines": [
+            {
+              "t": 62,
+              "text": "我周建军能娶到小满，"
+            },
+            {
+              "t": 64,
+              "text": "建军哥，我也是 是我这辈子最大的福气"
+            },
+            {
+              "t": 66,
+              "text": "建军哥，我也是"
+            },
+            {
+              "t": 68,
+              "text": "来来来，周家拍张全家福！"
+            },
+            {
+              "t": 72,
+              "text": "都看镜头！笑！"
+            },
+            {
+              "t": 74,
+              "text": "刘婶，你也来！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "最大的福气",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003",
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1705",
+          "ep": 17,
+          "start": 75.7,
+          "end": 91.6,
+          "duration": 15.9,
+          "lines": [
+            {
+              "t": 76,
+              "text": "我一个外人.."
+            },
+            {
+              "t": 78,
+              "text": "啥外人,过来！"
+            },
+            {
+              "t": 80,
+              "text": "娘说，今天有很多好吃的。 建军哥说"
+            },
+            {
+              "t": 84,
+              "text": "娘说：今天有很多好吃的。"
+            },
+            {
+              "t": 86,
+              "text": "建军哥说：今天我是新娘子。"
+            },
+            {
+              "t": 88,
+              "text": "」嫂子说：「今天要笑"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "刘婶也来合影",
+            "intensity": 2
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T3"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_004"
+          ],
+          "space": "院子",
+          "exit_type": "人出画",
+          "exit_hint": "段落后可场景二扩：顺着人物走的方向扩一个相邻空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 18,
+      "duration": 114.73,
+      "segments": [
+        {
+          "id": "E1801",
+          "ep": 18,
+          "start": 0.0,
+          "end": 11.7,
+          "duration": 11.7,
+          "lines": [
+            {
+              "t": 0,
+              "text": "建军哥，这个好看"
+            },
+            {
+              "t": 4,
+              "text": "捡那干啥扫了就是了"
+            },
+            {
+              "t": 6,
+              "text": "娘，留着，给娘看"
+            },
+            {
+              "t": 10,
+              "text": "哟，桂芬嫂子，忙着呢？"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "留红纸给娘看",
+            "intensity": 1
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "head_from_zero": true
+        },
+        {
+          "id": "E1802",
+          "ep": 18,
+          "start": 11.7,
+          "end": 28.7,
+          "duration": 17.0,
+          "lines": [
+            {
+              "t": 12,
+              "text": "这不是听说小满过得挺好"
+            },
+            {
+              "t": 14,
+              "text": "来看看嘛。赵四兄弟也一 直惦记着小满...."
+            },
+            {
+              "t": 18,
+              "text": "小满，你还记得我不？"
+            },
+            {
+              "t": 22,
+              "text": "不记得"
+            },
+            {
+              "t": 24,
+              "text": "当初王婆子还说要把你说给我"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "赵四上门提旧事",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T7"
+          ],
+          "viewpoint": "赵四",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "门口",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "当年差点被说给别人，如今来看热闹"
+        },
+        {
+          "id": "E1803",
+          "ep": 18,
+          "start": 29.0,
+          "end": 46.7,
+          "duration": 17.7,
+          "lines": [
+            {
+              "t": 30,
+              "text": "赵四，你再说一遍？"
+            },
+            {
+              "t": 32,
+              "text": "我......我就是来看看·.."
+            },
+            {
+              "t": 36,
+              "text": "王婆子！当初你骗小满爹娘，"
+            },
+            {
+              "t": 38,
+              "text": "我还没找你算账！今天还敢上门？"
+            },
+            {
+              "t": 42,
+              "text": "桂芬嫂子，误会，都是误会"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "王婆子也来了",
+            "intensity": 4
+          },
+          "critical_state": "临界",
+          "themes": [
+            "T7"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002"
+          ],
+          "space": "门口",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1804",
+          "ep": 18,
+          "start": 47.0,
+          "end": 63.7,
+          "duration": 16.7,
+          "lines": [
+            {
+              "t": 48,
+              "text": "王婆子，你还要不要脸了？小满都嫁人了"
+            },
+            {
+              "t": 50,
+              "text": "我这不是..."
+            },
+            {
+              "t": 54,
+              "text": "你啥你！当初退婚你跑得比谁都快"
+            },
+            {
+              "t": 56,
+              "text": "现在看人家过好了又想来占便宜？"
+            },
+            {
+              "t": 60,
+              "text": "小满是我周建军的媳妇。谁再敢打她主意"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "谁再敢打她主意",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T7"
+          ],
+          "viewpoint": "建军",
+          "characters": [
+            "ch_003"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1805",
+          "ep": 18,
+          "start": 63.7,
+          "end": 79.7,
+          "duration": 16.0,
+          "lines": [
+            {
+              "t": 64,
+              "text": "滚！再让我看见你进这个门"
+            },
+            {
+              "t": 68,
+              "text": "给你吃糖。我嫁人了，"
+            },
+            {
+              "t": 72,
+              "text": "你别来了"
+            },
+            {
+              "t": 74,
+              "text": "对不住。 ····"
+            },
+            {
+              "t": 78,
+              "text": "都听好了！小满是我张桂芬的闺女"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "给她糖：我嫁人了，你别来了",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T7",
+            "T2"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "anchor_note": "全剧最狠的一句，狠在她还在笑"
+        },
+        {
+          "id": "E1806",
+          "ep": 18,
+          "start": 79.7,
+          "end": 93.7,
+          "duration": 14.0,
+          "lines": [
+            {
+              "t": 80,
+              "text": "谁再敢提以前的事，我跟谁拼命！"
+            },
+            {
+              "t": 84,
+              "text": "建军哥，我做得对不对？"
+            },
+            {
+              "t": 86,
+              "text": "对。做得对。"
+            },
+            {
+              "t": 88,
+              "text": "小满！我听说王婆子来了？"
+            },
+            {
+              "t": 90,
+              "text": "哥，嫂子，我给她糖了，她走了。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "她是我张桂芬的闺女",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002"
+          ],
+          "space": "院子",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1807",
+          "ep": 18,
+          "start": 93.7,
+          "end": 114.7,
+          "duration": 21.0,
+          "lines": [
+            {
+              "t": 94,
+              "text": "这次你做得对。"
+            },
+            {
+              "t": 96,
+              "text": "小满，以后有人欺负你，就回家告诉嫂子。"
+            },
+            {
+              "t": 100,
+              "text": "嗯！嫂子，我有家，两个家。"
+            },
+            {
+              "t": 104,
+              "text": "这傻闺女"
+            },
+            {
+              "t": 108,
+              "text": "娘,这个给你。"
+            },
+            {
+              "t": 112,
+              "text": "这傻姑娘，比谁都精。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "我有家，两个家",
+            "intensity": 3
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T7"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    },
+    {
+      "ep": 19,
+      "duration": 86.68,
+      "segments": [
+        {
+          "id": "E1901",
+          "ep": 19,
+          "start": 1.0,
+          "end": 14.7,
+          "duration": 13.7,
+          "lines": [
+            {
+              "t": 2,
+              "text": "红纸，好看，留着。"
+            },
+            {
+              "t": 4,
+              "text": "小满，等开春，我带你去镇上拍结婚照"
+            },
+            {
+              "t": 8,
+              "text": "嗯，穿新衣裳，咱俩一起拍。"
+            },
+            {
+              "t": 10,
+              "text": "和建军哥拍照！娘！娘！"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "开春拍结婚照",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_003"
+          ],
+          "space": "屋内",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1902",
+          "ep": 19,
+          "start": 15.0,
+          "end": 39.7,
+          "duration": 24.7,
+          "lines": [
+            {
+              "t": 16,
+              "text": "娘！建军哥说，带我去拍照！"
+            },
+            {
+              "t": 18,
+              "text": "你跟她说了？"
+            },
+            {
+              "t": 20,
+              "text": "说了。开春就去"
+            },
+            {
+              "t": 22,
+              "text": "跟我来。"
+            },
+            {
+              "t": 24,
+              "text": "进来。"
+            },
+            {
+              "t": 28,
+              "text": "娘，这个亮，好看。"
+            },
+            {
+              "t": 30,
+              "text": "这镯子跟了我三十年。今天传给你，"
+            },
+            {
+              "t": 34,
+              "text": "行了，出去吧，我做饭。"
+            },
+            {
+              "t": 36,
+              "text": "傻闺女。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "镯子跟了我三十年，今天传给你",
+            "intensity": 5
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T5",
+            "T8"
+          ],
+          "viewpoint": "桂芬",
+          "characters": [
+            "ch_002",
+            "苏小满"
+          ],
+          "space": "屋内",
+          "exit_type": "边界物",
+          "exit_hint": "段落后可场景二扩：从画面里的门洞/路口/墙头切到对面",
+          "edge_verified": true,
+          "anchor_candidate": true,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1903",
+          "ep": 19,
+          "start": 39.7,
+          "end": 51.7,
+          "duration": 12.0,
+          "lines": [
+            {
+              "t": 40,
+              "text": "给，给小满的。"
+            },
+            {
+              "t": 42,
+              "text": "小满呢？"
+            },
+            {
+              "t": 44,
+              "text": "嫂子！你看！娘给的！"
+            },
+            {
+              "t": 46,
+              "text": "这是娘的陪嫁子，小满要好好戴着。"
+            },
+            {
+              "t": 50,
+              "text": "哥，不用，我有。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "这是娘的陪嫁",
+            "intensity": 3
+          },
+          "critical_state": "已兑现",
+          "themes": [
+            "T8"
+          ],
+          "viewpoint": "嫂子",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1904",
+          "ep": 19,
+          "start": 51.7,
+          "end": 72.7,
+          "duration": 21.0,
+          "lines": [
+            {
+              "t": 52,
+              "text": "拿着。我妹嫁给你，该有的都得有。"
+            },
+            {
+              "t": 56,
+              "text": "都着干啥？强子，小慧，留下吃饭。"
+            },
+            {
+              "t": 60,
+              "text": "桂芬嫂子，给小满补补身子！"
+            },
+            {
+              "t": 64,
+              "text": "不坐了，你们一家团圆，我凑啥热闹。"
+            },
+            {
+              "t": 68,
+              "text": "小满这姑娘，是咱们村的福气。"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "该有的都得有 / 咱村的福气",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T1"
+          ],
+          "viewpoint": "苏强",
+          "characters": [
+            "苏小满"
+          ],
+          "space": "院子",
+          "exit_type": "锁空间",
+          "exit_hint": "只能画外音插话或段前立人，不要在段落中间切出去",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false
+        },
+        {
+          "id": "E1905",
+          "ep": 19,
+          "start": 73.0,
+          "end": 86.7,
+          "duration": 13.7,
+          "lines": [
+            {
+              "t": 74,
+              "text": "建军哥！拍照的时候，"
+            },
+            {
+              "t": 76,
+              "text": "穿啥新衣裳，那件还没做完呢！"
+            },
+            {
+              "t": 80,
+              "text": "娘做，我等。"
+            },
+            {
+              "t": 84,
+              "text": "这傻闺女"
+            }
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "conflict": {
+            "type": "娘做，我等",
+            "intensity": 2
+          },
+          "critical_state": "铺垫",
+          "themes": [
+            "T5"
+          ],
+          "viewpoint": "小满",
+          "characters": [
+            "苏小满",
+            "ch_002"
+          ],
+          "space": "门口",
+          "exit_type": "空镜",
+          "exit_hint": "段落后可场景二扩：空镜最自由，直接换到王婶所在的空间",
+          "edge_verified": true,
+          "anchor_candidate": false,
+          "visual": null,
+          "visual_pending": true,
+          "ending": false,
+          "tail_to_end": true
+        }
+      ]
+    }
+  ],
+  "anchor_pool": [
+    {
+      "id": "E106",
+      "ep": 1,
+      "start": 51.0,
+      "end": 56.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T1"
+      ],
+      "viewpoint": "小满",
+      "why": "『你别不要我』是终点情绪，只能当结尾锚，不能当开头钩子",
+      "space": "田里",
+      "exit_type": "自顾",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E107",
+      "ep": 1,
+      "start": 59.0,
+      "end": 78.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T1"
+      ],
+      "viewpoint": "桂芬",
+      "why": "『这门亲事退了』落下后她只回两个字『不退』——结果未知，第一强锚",
+      "space": "门口",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E108",
+      "ep": 1,
+      "start": 79.0,
+      "end": 99.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T2"
+      ],
+      "viewpoint": "刘婶",
+      "why": "『我不是傻姑娘，我叫苏小满』说完之后满院没人接话",
+      "space": "门口",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E110",
+      "ep": 1,
+      "start": 125.0,
+      "end": 132.9,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T1",
+        "T5"
+      ],
+      "viewpoint": "桂芬",
+      "why": "『只要我活着你就别想进这个门』——门到底进没进，全剧最大悬念",
+      "space": "门口",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E203",
+      "ep": 2,
+      "start": 29.0,
+      "end": 54.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T2",
+        "T3"
+      ],
+      "viewpoint": "小满",
+      "why": "全剧第一次反杀，用一斗米证明她记得住事",
+      "space": "门口",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E302",
+      "ep": 3,
+      "start": 27.0,
+      "end": 40.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "刘婶",
+      "why": "当着婆婆的面把刘婶的账摊开，位置第一次反转",
+      "space": "院子",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E403",
+      "ep": 4,
+      "start": 23.7,
+      "end": 35.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 3,
+      "themes": [
+        "T1"
+      ],
+      "viewpoint": "嫂子",
+      "why": "『我走了建军哥怎么办』——她还没答走不走",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E404",
+      "ep": 4,
+      "start": 35.7,
+      "end": 60.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T1",
+        "T4"
+      ],
+      "viewpoint": "桂芬",
+      "why": "留下条件：重活全包",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E405",
+      "ep": 4,
+      "start": 61.0,
+      "end": 73.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T5"
+      ],
+      "viewpoint": "建军",
+      "why": "『小满的活我帮她干』——婆婆当场炸，但拿他没辙",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E503",
+      "ep": 5,
+      "start": 29.0,
+      "end": 51.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T2"
+      ],
+      "viewpoint": "刘婶",
+      "why": "『我是建军哥的媳妇』——把身份说成事实，不是请求",
+      "space": "堂屋",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E504",
+      "ep": 5,
+      "start": 51.7,
+      "end": 75.8,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "桂芬",
+      "why": "反将一军（半袋米）",
+      "space": "门口",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E601",
+      "ep": 6,
+      "start": 0.0,
+      "end": 12.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T4"
+      ],
+      "viewpoint": "桂芬",
+      "why": "把「留不留下」变成一个可验收的条件，最硬的钩子结构",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E602",
+      "ep": 6,
+      "start": 17.0,
+      "end": 37.5,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T5"
+      ],
+      "viewpoint": "建军",
+      "why": "『她是我媳妇！我不许你这么对她』——婆婆随后说『回家，地不翻了』",
+      "space": "田里",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E702",
+      "ep": 7,
+      "start": 13.0,
+      "end": 33.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 3,
+      "themes": [
+        "T6"
+      ],
+      "viewpoint": "建军",
+      "why": "问完她没答怨不怨，只说给婶子端一碗",
+      "space": "屋内",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E703",
+      "ep": 7,
+      "start": 33.7,
+      "end": 54.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T5",
+        "T6"
+      ],
+      "viewpoint": "桂芬",
+      "why": "『她手怎么样了』『灶上有灌油，抹上』——全剧婆婆第一道裂缝",
+      "space": "屋内",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E804",
+      "ep": 8,
+      "start": 49.0,
+      "end": 73.0,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T3",
+        "T5"
+      ],
+      "viewpoint": "建军",
+      "why": "『她是我周家的人，怎么不能管』——婆婆第一次没反驳",
+      "space": "巷子",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E901",
+      "ep": 9,
+      "start": 0.0,
+      "end": 16.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T4",
+        "T5"
+      ],
+      "viewpoint": "小满",
+      "why": "背得动吗",
+      "space": "屋内",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E902",
+      "ep": 9,
+      "start": 17.0,
+      "end": 29.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T4"
+      ],
+      "viewpoint": "小满",
+      "why": "背着一个一直赶她走的人走夜路，结果在路上",
+      "space": "路上",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E904",
+      "ep": 9,
+      "start": 47.0,
+      "end": 50.6,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T5"
+      ],
+      "viewpoint": "建军",
+      "why": "可做全片收束句，短、狠、不留解释",
+      "space": "屋内",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1002",
+      "ep": 10,
+      "start": 13.0,
+      "end": 38.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T2"
+      ],
+      "viewpoint": "刘婶",
+      "why": "外人当着婆婆说「留个傻子建军以后咋办」，婆婆怎么答是钩子",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1004",
+      "ep": 10,
+      "start": 53.7,
+      "end": 71.5,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T1",
+        "T5"
+      ],
+      "viewpoint": "建军",
+      "why": "儿子摊牌，婆婆只回「我再想想」，第二天却去扯布",
+      "space": "屋内",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1102",
+      "ep": 11,
+      "start": 15.0,
+      "end": 34.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T2"
+      ],
+      "viewpoint": "刘婶",
+      "why": "『我不傻。我会干活，会背婶子看病』——把傻的定义改掉",
+      "space": "屋内",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1103",
+      "ep": 11,
+      "start": 35.0,
+      "end": 46.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T5"
+      ],
+      "viewpoint": "桂芬",
+      "why": "婆婆当众护（包起来）",
+      "space": "屋内",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1104",
+      "ep": 11,
+      "start": 47.0,
+      "end": 61.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "小满",
+      "why": "界石之争",
+      "space": "田里",
+      "exit_type": "自顾",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1105",
+      "ep": 11,
+      "start": 61.7,
+      "end": 76.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T3",
+        "T5"
+      ],
+      "viewpoint": "桂芬",
+      "why": "刘桂香你动我儿媳试试",
+      "space": "田里",
+      "exit_type": "自顾",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1201",
+      "ep": 12,
+      "start": 1.0,
+      "end": 18.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T1",
+        "T2"
+      ],
+      "viewpoint": "桂芬",
+      "why": "『谁再敢叫她一声傻子，就是跟我张桂芬过不去』——帽子被摘掉",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1202",
+      "ep": 12,
+      "start": 19.0,
+      "end": 37.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T1",
+        "T8"
+      ],
+      "viewpoint": "建军",
+      "why": "『娶是啥？』这三个字是全剧最好的钩子素材之一",
+      "space": "门口",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1203",
+      "ep": 12,
+      "start": 37.7,
+      "end": 55.5,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T1"
+      ],
+      "viewpoint": "村长",
+      "why": "认亲，我有家了",
+      "space": "屋内",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1302",
+      "ep": 13,
+      "start": 15.0,
+      "end": 29.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T4"
+      ],
+      "viewpoint": "看客",
+      "why": "『得四个人抬』说完，还没人动",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1303",
+      "ep": 13,
+      "start": 29.7,
+      "end": 44.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T4"
+      ],
+      "viewpoint": "看客",
+      "why": "单手搬石碾",
+      "space": "院子",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1403",
+      "ep": 14,
+      "start": 31.0,
+      "end": 36.7,
+      "critical_state": "铺垫",
+      "anchor_role": "insert",
+      "intensity": 3,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "小满",
+      "why": "伏笔句，短到只能做插入，但语气是全剧最像「立规矩」的一次",
+      "space": "路上",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1404",
+      "ep": 14,
+      "start": 37.0,
+      "end": 51.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "建军",
+      "why": "『一个傻子说的话也能信？』——对方先攻她的证词资格",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1405",
+      "ep": 14,
+      "start": 51.7,
+      "end": 74.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T2"
+      ],
+      "viewpoint": "建军",
+      "why": "她不是傻子，她是我媳妇",
+      "space": "门口",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1407",
+      "ep": 14,
+      "start": 85.7,
+      "end": 101.0,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T2"
+      ],
+      "viewpoint": "村民",
+      "why": "人家比谁都明白",
+      "space": "院子",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1502",
+      "ep": 15,
+      "start": 23.0,
+      "end": 45.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "苏强",
+      "why": "最亲的人先怀疑，她只说『我没打人。我种菜』",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1503",
+      "ep": 15,
+      "start": 45.7,
+      "end": 68.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "建军",
+      "why": "『就……就……』卡在这里，是全剧最好的截断点之一",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1506",
+      "ep": 15,
+      "start": 99.7,
+      "end": 113.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 4,
+      "themes": [
+        "T3"
+      ],
+      "viewpoint": "小满",
+      "why": "给菜种，以德报怨",
+      "space": "路上",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1701",
+      "ep": 17,
+      "start": 0.0,
+      "end": 16.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T5",
+        "T8"
+      ],
+      "viewpoint": "桂芬",
+      "why": "传陪嫁：你就是我亲闺女",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1703",
+      "ep": 17,
+      "start": 39.0,
+      "end": 60.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 5,
+      "themes": [
+        "T4"
+      ],
+      "viewpoint": "看客",
+      "why": "『棚子要塌了』喊完之后的三秒，是全剧视觉最强的一下",
+      "space": "门口",
+      "exit_type": "人出画",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1802",
+      "ep": 18,
+      "start": 11.7,
+      "end": 28.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T7"
+      ],
+      "viewpoint": "赵四",
+      "why": "当年差点被说给别人，如今来看热闹",
+      "space": "门口",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1803",
+      "ep": 18,
+      "start": 29.0,
+      "end": 46.7,
+      "critical_state": "临界",
+      "anchor_role": "hook",
+      "intensity": 4,
+      "themes": [
+        "T7"
+      ],
+      "viewpoint": "桂芬",
+      "why": "王婆子也来了",
+      "space": "门口",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1804",
+      "ep": 18,
+      "start": 47.0,
+      "end": 63.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T7"
+      ],
+      "viewpoint": "建军",
+      "why": "谁再敢打她主意",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1805",
+      "ep": 18,
+      "start": 63.7,
+      "end": 79.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T7",
+        "T2"
+      ],
+      "viewpoint": "小满",
+      "why": "全剧最狠的一句，狠在她还在笑",
+      "space": "院子",
+      "exit_type": "锁空间",
+      "insert_options": [
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1806",
+      "ep": 18,
+      "start": 79.7,
+      "end": 93.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T5"
+      ],
+      "viewpoint": "桂芬",
+      "why": "她是我张桂芬的闺女",
+      "space": "院子",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    },
+    {
+      "id": "E1902",
+      "ep": 19,
+      "start": 15.0,
+      "end": 39.7,
+      "critical_state": "已兑现",
+      "anchor_role": "payoff",
+      "intensity": 5,
+      "themes": [
+        "T5",
+        "T8"
+      ],
+      "viewpoint": "桂芬",
+      "why": "镯子跟了我三十年，今天传给你",
+      "space": "屋内",
+      "exit_type": "边界物",
+      "insert_options": [
+        "场景二扩",
+        "中间插话",
+        "开头立人"
+      ]
+    }
+  ],
+  "pending": [
+    "苏强 / 赵小慧 / 村长 / 赵四 / 王婆子 未进 drama-pack.characters，锚点里只能写名字",
+    "段边界帧已核验（space / exit_type），但段中画面 visual 仍为空 —— 只对入选锚点逐段看几帧（L4），不做全量",
+    "speakers 全空，孪生解说只说自己词，但要知道这段画面里站的是谁才能判断能不能插",
+    "部分段内跨两个小事件（如 E1703 段内先『亲家托付』再『棚子要塌』），执行单取锚点须按 start 精确到秒，不能整段照搬"
+  ],
+  "status": "anchor_pool 待人工验收"
+}

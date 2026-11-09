@@ -1,0 +1,20 @@
+{
+ "anchor": "runs/被讨厌的勇气/S1_001_卖废品/anchor_片内.mp3",
+ "source_video": "runs/被讨厌的勇气/S1_001_卖废品/bydy_S1_001_AI1_v1.mp4",
+ "total_sec": 5.0,
+ "overall": {
+  "dur": 5.0,
+  "f0_span": 11.9,
+  "f0_jump": 0.691
+ },
+ "parts": [
+  {
+   "label": "手工段1 1.5-6.5s",
+   "start": 1.5,
+   "end": 6.5,
+   "dur": 5.0,
+   "f0_span": 11.9,
+   "f0_jump": 0.69
+  }
+ ]
+}

@@ -23,7 +23,7 @@ description: 电商短视频素材台。当需要查找/盘点已有素材、判
 vibecut --human task list            # 能返回 JSON 说明服务在跑
 ```
 
-如果提示 `command not found`，改用 `/opt/anaconda3/bin/vibecut` 或 `python -m vibecut.cli`。
+如果提示 `command not found`，改用 `python -m vibecut.cli`（在仓库根执行）。
 如果报"连接不上 VibeCut 服务"，告诉用户先执行 `vibecut serve`，不要自己启动。
 
 ## 核心用法

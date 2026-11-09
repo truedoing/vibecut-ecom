@@ -3,6 +3,9 @@ name: ecommerce-asset-analysis
 description: "分析商家官方素材库（原片视频目录）：ffprobe 摸底 → ffmpeg 场景检测切镜头 → 每镜头抽 1 帧 → MiMo/智谱 VLM 批量打标（画面描述/主体/景别/场景/画面文字/可用用途），产出 asset_index.json（机读，供文案技能选画面做音画同步）+ 素材台账.md（人看）。触发词：分析素材、素材打标、建素材库、素材台账、抽帧分析。"
 ---
 
+> **本技能不是入口。** 调度、进度、多线并发、门禁与状态台账一律走 `ecommerce-supervisor`；
+> 本技能只负责「把原始素材变成可检索的镜头库」，不判断「现在该不该做、做完该接谁」。
+
 # ecommerce-asset-analysis · 官方素材分析
 
 把商家给的原始素材（相机原片，文件名无意义、无台词）变成**可机读、可检索的镜头级素材库**，
@@ -28,10 +31,10 @@ description: "分析商家官方素材库（原片视频目录）：ffprobe 摸�
 ## 用法
 
 ```bash
-cd /Users/zgl/vibecut-ecom
-# 验证批次：桌拍+磨酱+罐装
+cd <仓库根>          # 即 skills/ 的上一级；.env 与 packs/ 都在这里
+# 验证批次：桌拍+磨酱+罐装（示例，--source 用 .env 里登记的素材根目录）
 python3 skills/ecommerce-asset-analysis/scripts/analyze.py \
-  --source /Users/zgl/AAA官方素材 \
+  --source "$ASSET_ROOT" \
   --categories "桌拍素材/4.10,磨酱,流水线罐装" \
   --out assets/虎坚果酱 \
   --category-label 虎坚果酱

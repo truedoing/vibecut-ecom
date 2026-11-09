@@ -162,6 +162,7 @@ def render(src, out, af):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--card", required=True, help="角色卡 card.json")
+    ap.add_argument("--sample", default="", help="音色锚覆盖路径（片内锚标准链路：从本片过审钩子提取，见 ecommerce-voice-anchor；不传则回退 card.json 的 voice.sample）")
     ap.add_argument("--text", default="", help="台词文本")
     ap.add_argument("--script-text", default="", help="台词文本文件")
     ap.add_argument("--script-json", default="", help="文案 JSON（取 seq>=2 的 content 串联）")
@@ -202,9 +203,10 @@ def main():
     n = chars_of(text)
     card = json.loads(Path(args.card).read_text(encoding="utf-8"))
     char_dir = Path(args.card).resolve().parent
-    sample = char_dir / card["voice"].get("sample", "voice.mp3")
+    sample = Path(args.sample) if args.sample else char_dir / card["voice"].get("sample", "voice.mp3")
     if not sample.exists():
-        sys.exit(f"错误：找不到音色锚 {sample}")
+        sys.exit(f"错误：找不到音色锚 {sample}" + ("" if args.sample else
+                 "——2026-11-06 起片内锚是标准链路：先跑 ecommerce-voice-anchor 从本片过审钩子提取，用 --sample 指进来"))
 
     base = STYLE_ENERGETIC if args.energy == "high" else STYLE_TEMPLATE
     style = args.style or (base + (("。" + args.style_extra) if args.style_extra else ""))

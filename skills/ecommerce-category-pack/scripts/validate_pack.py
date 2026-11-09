@@ -23,12 +23,15 @@ BLOCKABLE_RISKS = {
     "疾病功效", "无依据虚假比较", "无认证宣称", "虚假价格稀缺",
     "疾病功效宣称", "虚假比较", "无认证", "虚假稀缺",
 }
-STRONG_SOURCES = {"official_label", "product_page", "lab_report"}
+STRONG_SOURCES = {"official_label", "product_page", "lab_report", "official_web"}
+# official_web：出版社/百科/官方榜单页等网络官方一手来源（2026-11-06 图书包引入——
+# 食品包的 strong 三类全是「实拍/检测」思路，虚拟知识品只能以官方网页为一手来源）
 WEAK_SOURCES = {"vendor_claim", "detail_page", "reference_video", "script_design", "inferred", "unknown"}
 # 这两类可标 verified:true，但必须在 verified_note 里写明「不是厂商事实」
 SELF_CONFIRMED = {"script_design", "project_config"}
 ALLOWED_VERIFIED = STRONG_SOURCES | SELF_CONFIRMED
-MODES = {"vendor_provided", "legacy_competitor_clips"}
+# no_vendor_footage：无厂商素材的品类（图书/课程等知识品），四层比例重排（2026-11-06 图书包引入）
+MODES = {"vendor_provided", "legacy_competitor_clips", "no_vendor_footage"}
 CONFLICT_AUTO_WORDS = ["选定", "采用", "取值", "就按", "以…为准", "决定用"]
 
 # 兜底禁词（基础档）。人群专属档与品类专属档由各自文档/包提供，这里只做基础扫描。
