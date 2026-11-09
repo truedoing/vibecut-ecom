@@ -1,0 +1,19 @@
+{
+ "file": "runs/虎坚果酱/T2_007_老郑串门/vo_v1.mp3",
+ "chars": 136,
+ "atempo": 0.9055,
+ "gain_db": -5.0,
+ "rate": 4.8,
+ "metrics": {
+  "sec": 28.32,
+  "sil_n": 6,
+  "sil_sec": 2.487,
+  "sil_pct": 8.8,
+  "lufs": -18.7,
+  "lra": 2.6,
+  "peak": -2.6
+ },
+ "issues": [
+  "LRA 2.6 < 3.5：起伏不够，检查 style 是否写了「放慢/清晰」"
+ ]
+}

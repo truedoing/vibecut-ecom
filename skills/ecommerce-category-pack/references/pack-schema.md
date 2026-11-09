@@ -105,6 +105,11 @@
 `proofs` 用 `level: L1|L2|L3|L4`；`trust` 用 `level: T1|T2|T3`。
 `price_talk` 全部标明「竞品口径，仅供结构参考，数字不得编造」。
 
+**可选 `audiences[]`（人群不止一类时必填）**：`{id, name, scene, lang, hook_types, speed}`。
+一个包的钩子要**挂到具体人群**（hook 条目加 `audience`），否则下游只能默认按平台套模板。
+标的人群必须由**标的本身**决定（书=父母/自我成长/代际），不是由惯例套的
+（食品默认中老年 ≠ 所有品类默认中老年）。仅为测试保留的条目加 `test_only: true`。
+
 ## pending[]
 
 | 字段 | 说明 |
@@ -116,9 +121,14 @@
 
 ## asset_index
 
-必填 `mode`（`vendor_provided` / `legacy_competitor_clips`）、`layers`（A–D 四层，
-B 层标 `hard_constraint: true`）、`hard_constraints`、`consistency_anchors`、`vendor_assets`。
+必填 `mode`（`vendor_provided` / `legacy_competitor_clips` / `no_vendor_footage`）、
+`layers`（A–D 四层，B 层标 `hard_constraint: true`）、`hard_constraints`、
+`consistency_anchors`、`vendor_assets`。
 可选 `measured_finding` / `semantic_index`。**只放 id 与索引，不放媒体本体。**
+
+`no_vendor_footage`（图书/课程等无厂商素材品类）四层：A 通用素材库（自拍、跨单品复用）/
+B 单品素材（自拍、每单品一次，硬约束）/ C 网络空镜 CC0 / D AI 人物与情绪。
+该 mode 必须同时跑 `scripts/shotlist.py` 产出 `拍摄清单.md`，否则 A/B 两层无法执行。
 
 ## conflicts[]
 

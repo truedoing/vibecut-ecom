@@ -5,7 +5,7 @@ hook_ideas.py — 钩子创意「供给器」，不是「生成器」。
 
 只做三件机器能做的事：
   1. 从品类包推导 4 个拒绝理由槽位（不遗漏）
-  2. 从 hook-patterns.md 读 12 种冲突原型 + 强弱 + 适配的拒绝理由
+  2. 从 hook-patterns.md 读 13 种冲突原型 + 强弱 + 适配的拒绝理由
   3. 扫已有脚本的 hook_pattern 查重（不重复）
 
 把「候选池骨架」打印出来，交给 Agent 填台词、写四拍、打五维分。
@@ -81,8 +81,13 @@ def rejection_slots(pack):
         pool.insert(0, "本品价格 " + "；".join(
             " ".join(str(v) for v in r.values() if isinstance(v, str)) for r in price))
     blob = " ".join(pool)
+    # 槽位可被品类包覆盖（内容类标的不吃「吃不完/没味道」这套食品词）：
+    # elements.rejection_slots = [{"slot": "落灰", "keywords": [...], "hint": "..."}, ...]
+    slots = el.get("rejection_slots") or SLOTS
+    slots = [(s["slot"], s.get("keywords", []), s.get("hint", "")) for s in slots
+             if isinstance(s, dict) and s.get("slot")] or SLOTS
     out = []
-    for name, keys, hint in SLOTS:
+    for name, keys, hint in slots:
         hit = ""
         for line in pool:
             if any(k in line for k in keys):
@@ -111,7 +116,7 @@ def read_patterns():
         if m and rows:
             rows[-1]["fit"] = [x.strip() for x in re.split(r"[、,，/]", m.group(1)) if x.strip()]
     if len(rows) < 10:
-        sys.exit(f"✗ 原型库解析异常，只读到 {len(rows)} 种（应 12 种），检查 {PATTERNS_MD.name} 的标题格式")
+        sys.exit(f"✗ 原型库解析异常，只读到 {len(rows)} 种（应 ≥12 种），检查 {PATTERNS_MD.name} 的标题格式")
     return rows
 
 
@@ -119,8 +124,9 @@ def scan_used(scripts_dir):
     """扫已有文案 JSON 的 hook_pattern；缺字段就按反转词推断并标注。"""
     used, detail = {}, []
     base = Path(scripts_dir)
-    for f in sorted(base.glob("*.json")):
-        if "segs" in f.name or "bounds" in f.name or "asset_index" in f.name:
+    for f in sorted(base.rglob("*.json")):
+        # 2026-11-06 修：产物已固定进 runs/{品类}/{task}/ 子目录，平铺 glob 扫不到 → 查重失效（T2_007 实测）
+        if f.name == "状态.json" or "segs" in f.name or "bounds" in f.name or "asset_index" in f.name:
             continue
         try:
             d = json.loads(f.read_text(encoding="utf-8"))
@@ -130,7 +136,8 @@ def scan_used(scripts_dir):
         if not segs:
             continue
         hook = segs[0] or {}
-        pat = hook.get("hook_pattern")
+        # 2026-11-06 修：新脚本 hook_pattern 在顶层（如 hjg_T2_006），旧脚本在 segs[0]，两处都认
+        pat = hook.get("hook_pattern") or d.get("hook_pattern")
         inferred = False
         if not pat:
             # 钩子段可能把台词放在 dialogue 数组里；文件名也是强信号（历史脚本常叫 *_真香.json）

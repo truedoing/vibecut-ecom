@@ -1,0 +1,71 @@
+{
+  "source": "/Users/zgl/短剧/八零憨妻的甜蜜日常/八零憨妻的甜蜜日常 第1集_第一集无bgm版.mp4",
+  "label": "",
+  "out_dir": "/Users/zgl/vibecut-ecom/runs/八零憨妻/D1_第1条/desub_probe",
+  "start_sec": 96,
+  "end_sec": 106,
+  "duration_sec": 10,
+  "fps": 24.0,
+  "width": 720,
+  "height": 1280,
+  "frames": 240,
+  "sample_every": 6,
+  "subtitle_tracks": [
+    {
+      "tid": "T000",
+      "label": "subtitle",
+      "label_reason": "sub_frac=1.00 stroke=1.00 horiz=1.00 centered=1.00 h=0.032",
+      "n": 27,
+      "stroke_med": 1.005,
+      "h_ratio_med": 0.032,
+      "horizontal_frac": 1.0,
+      "centered_frac": 1.0,
+      "unique_texts": 4,
+      "texts": [
+        "我不是傻姑娘，我叫苏小满。",
+        "脸皮可真厚。",
+        "这不是苏家那傻姑娘吗？还真追上门来了",
+        "连自己傻都不承认，还不是傻？"
+      ],
+      "labels": {
+        "subtitle": 27
+      }
+    },
+    {
+      "tid": "T001",
+      "label": "subtitle",
+      "label_reason": "sub_frac=1.00 stroke=1.07 horiz=1.00 centered=1.00 h=0.030",
+      "n": 8,
+      "stroke_med": 1.068,
+      "h_ratio_med": 0.0305,
+      "horizontal_frac": 1.0,
+      "centered_frac": 1.0,
+      "unique_texts": 2,
+      "texts": [
+        "你走吧，别在这丢人现眼了",
+        "你走吧，别在这丢人现眼了。"
+      ],
+      "labels": {
+        "subtitle": 8
+      }
+    }
+  ],
+  "all_track_labels": {
+    "T000": "subtitle",
+    "T001": "subtitle"
+  },
+  "removed_texts": [
+    "你走吧，别在这丢人现眼了",
+    "你走吧，别在这丢人现眼了。",
+    "我不是傻姑娘，我叫苏小满。",
+    "脸皮可真厚。",
+    "这不是苏家那傻姑娘吗？还真追上门来了",
+    "连自己傻都不承认，还不是傻？"
+  ],
+  "packaging_texts": [],
+  "risk": "low",
+  "conflicts": [],
+  "analysis_only": true,
+  "elapsed_sec": 34.3,
+  "ok": true
+}

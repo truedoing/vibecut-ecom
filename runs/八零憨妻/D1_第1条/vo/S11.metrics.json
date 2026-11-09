@@ -1,0 +1,19 @@
+{
+ "file": "/Users/zgl/vibecut-ecom/runs/八零憨妻/D1_第1条/vo/S11.mp3",
+ "chars": 22,
+ "atempo": 0.742,
+ "gain_db": 2.0,
+ "rate": 4.41,
+ "metrics": {
+  "sec": 4.992,
+  "sil_n": 1,
+  "sil_sec": 0.449,
+  "sil_pct": 9.0,
+  "lufs": -18.7,
+  "lra": 1.1,
+  "peak": -4.0
+ },
+ "issues": [
+  "LRA 1.1 < 3.5：起伏不够，检查 style 是否写了「放慢/清晰」"
+ ]
+}

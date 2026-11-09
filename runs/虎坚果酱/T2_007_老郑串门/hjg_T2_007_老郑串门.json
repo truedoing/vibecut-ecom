@@ -1,0 +1,185 @@
+{
+ "script_id": "hjg_T2_007_老郑串门",
+ "product": "虎坚果酱",
+ "angle_type": "旁观型·熟人串门（拒绝理由：陌生）",
+ "video_structure": "single_hook",
+ "speech_rate": 3.8,
+ "aspect_ratio": "9:16",
+ "hook_type": "旁观型",
+ "hook_line": "老郑来串门，盯着灶台那罐子：这啥酱？",
+ "hook_pattern": "旁观",
+ "hook_reject_reason": "名字/原料没听过，不敢尝",
+ "selling_point": "配料三样、每100g膳食纤维9.2g、新疆油莎豆低温慢烘",
+ "back_half": {
+  "lead": "配料",
+  "chain": [
+   "配料",
+   "数值",
+   "产地工艺",
+   "吃法"
+  ],
+  "close": "低门槛先一罐",
+  "proof_style": [
+   "罐体+原料颗粒并置",
+   "数值直读",
+   "航拍+手捧豆",
+   "抹开成品"
+  ],
+  "number_treat": "原值直读"
+ },
+ "creative_brief": {
+  "人物": "林岚（ch_001）主人 + 郑海涛（ch_002）邻居老郑，env_001 城市餐厅晨光；一张脸都不用新建",
+  "冲突": "熟人看见不认识的酱，先质疑「酱不都一个味」",
+  "反转": "嚼完不吭声、自己又挖一勺，走的时候问哪买的——反转打在争嘴的动作上，不靠夸好",
+  "产品道具": "灶台上的罐子、抹刀、切片面包",
+  "声音": "钩子段两人对话（林岚主述），后半段旁白用本片钩子提取的片内锚"
+ },
+ "segments": [
+  {
+   "seq": 1,
+   "section_role": "hook",
+   "speaker": "林岚",
+   "content": "老郑来串门，盯着灶台那罐子：这啥酱？我说新疆豆子磨的。他撇嘴：酱不都一个味。我抹一片递过去，他嚼了半天没吭声，自己又伸手挖了一勺。他临走还问我一句：哪买的。",
+   "visual_hint": "厨房晨光，林岚背对灶台转身，老郑凑近看罐子、伸手抹一片塞嘴里，嚼时眼神乱瞟，最后又伸手；全程罐标签虚焦",
+   "shot_source": "AI",
+   "ai_shot_id": "AI-1",
+   "content_note": "提示词为过 60 字下限把尾句扩 9 字（65→74），脚本同步，保持单一口播真源"
+  },
+  {
+   "seq": 2,
+   "section_role": "proof",
+   "evidence_level": "L1",
+   "speaker": "旁白",
+   "content": "配料就三样：脱皮油莎豆、冷榨油莎豆油、盐。",
+   "shot_source": "SHOOT",
+   "visuals": [
+    {
+     "shot_id": "C5306#0",
+     "src": "桌拍素材/4.10/C5306.MP4",
+     "in": 0,
+     "out": 4
+    },
+    {
+     "shot_id": "C0583#0",
+     "src": "沙漠素材/C0583.MP4",
+     "in": 0,
+     "out": 3
+    }
+   ]
+  },
+  {
+   "seq": 3,
+   "section_role": "proof",
+   "evidence_level": "L1",
+   "speaker": "旁白",
+   "content": "每一百克有九点二克膳食纤维，七点三二毫克维生素E。",
+   "shot_source": "SHOOT",
+   "visuals": [
+    {
+     "shot_id": "C5321#0",
+     "src": "桌拍素材/4.10/C5321.MP4",
+     "in": 0,
+     "out": 5.5
+    }
+   ]
+  },
+  {
+   "seq": 4,
+   "section_role": "trust",
+   "evidence_level": "T1",
+   "speaker": "旁白",
+   "content": "豆子是新疆图木舒克的，沙漠边上种出来的，一百三十五度低温慢烘，现磨成酱。",
+   "shot_source": "SHOOT",
+   "visuals": [
+    {
+     "shot_id": "DJI_0369#0",
+     "src": "种植基地航拍素材/DJI_0369.MP4",
+     "in": 0,
+     "out": 4
+    },
+    {
+     "shot_id": "C0418#0",
+     "src": "沙漠素材/C0418.MP4",
+     "in": 0,
+     "out": 4
+    }
+   ]
+  },
+  {
+   "seq": 5,
+   "section_role": "proof",
+   "evidence_level": "L4",
+   "speaker": "旁白",
+   "content": "早上抹个面包，中午拌个面，晚上拌酸奶，一罐能吃不少顿。",
+   "shot_source": "SHOOT",
+   "visuals": [
+    {
+     "shot_id": "C5396#0",
+     "src": "桌拍素材/4.10/C5396.MP4",
+     "in": 0,
+     "out": 3.5
+    },
+    {
+     "shot_id": "C5391#0",
+     "src": "桌拍素材/4.10/C5391.MP4",
+     "in": 0,
+     "out": 3
+    }
+   ]
+  },
+  {
+   "seq": 6,
+   "section_role": "price",
+   "speaker": "旁白",
+   "content": "一瓶五十九块九，直播间拍一发四，合下来一瓶二十五块。",
+   "shot_source": "SHOOT",
+   "visuals": [
+    {
+     "shot_id": "C5315#0",
+     "src": "桌拍素材/4.10/C5315.MP4",
+     "in": 0,
+     "out": 5
+    }
+   ]
+  },
+  {
+   "seq": 7,
+   "section_role": "cta",
+   "speaker": "旁白",
+   "content": "家里备一罐，早上抹面包就用得上，先试一罐。",
+   "shot_source": "SHOOT",
+   "visuals": [
+    {
+     "shot_id": "C5319#0",
+     "src": "桌拍素材/4.10/C5319.MP4",
+     "in": 0,
+     "out": 5.5
+    }
+   ]
+  }
+ ],
+ "ai_settings": {
+  "prompts_pending": true,
+  "sound_plan": "钩子段双人对话（林岚主述）；后半段旁白用本片钩子提取的片内锚（挑林岚中段中性句，不取末句）"
+ },
+ "ai_shots": [
+  {
+   "shot_id": "AI-1",
+   "covers": [
+    1
+   ],
+   "duration_sec": 15,
+   "character_ref": "ch_001+ch_002",
+   "env_ref": "env_001",
+   "product_ref": "assets/虎坚果酱/product_refs/product_front_C5306.jpg",
+   "prompt": "",
+   "negative_prompt": "文字，logo，罐子标签清晰可读，第三个人，多余手指"
+  }
+ ],
+ "pending": [
+  "pd_001 配料表完整开头未核——本条只说『三样』+列名，未念顺序，不卡",
+  "pd_002 价格 59.9 / 拍一发四 / 合 25 —— 投放当天按实际 SKU 核实",
+  "pd_003 双人同框：零人物图配置下两人长相可能不稳；若出现第三人/崩脸，降级为『老郑只在画外说话』单人版",
+  "素材缺口：无背面标特写，seq3 用 C5321 罐体顶，数值建议后期叠字"
+ ]
+}

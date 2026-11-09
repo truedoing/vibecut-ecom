@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 VIDEO_EXT = {".mp4", ".mov"}
-ROOT = Path(__file__).resolve().parents[3]  # /Users/zgl/vibecut-ecom
+ROOT = Path(__file__).resolve().parents[3]  # 仓库根（按技能自身位置上溯三级，不写死机器路径）
 
 def log(msg):
     print(f"[{time.strftime('%H:%M:%S')}] {msg}", flush=True)

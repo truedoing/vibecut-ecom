@@ -1,0 +1,149 @@
+{
+  "task": "S1_001_卖废品",
+  "category": "被讨厌的勇气",
+  "intent": "待定（G0/G1 打包审批）",
+  "updated_at": "2026-11-06T13:10",
+  "rules": {
+    "draft": "产物在，自检没跑。只有写它的技能能读",
+    "ready": "自检 0E，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话。下游可以依赖",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实。卡在谁必须写清",
+    "stale": "upstream 的 rev 变了。谁都别用，必须重跑"
+  },
+  "artifacts": {
+    "structure": {
+      "skill": "ecommerce-supervisor",
+      "path": null,
+      "state": "approved",
+      "rev": 0,
+      "depends_on": [],
+      "evidence": [
+        "张老师拍板：本批测试线一律单钩（2026-11-06）",
+        "素材缺口支撑单钩：书线无实拍素材，双塔需再加 AI 副片，无必要"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "pack": {
+      "skill": "ecommerce-category-pack",
+      "path": "packs/被讨厌的勇气/category-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "evidence": [
+        "validate_pack: 0E / 0W（首个非食品包，schema 骨架零改动）",
+        "素材模式 no_vendor_footage（校验器扩枚举）",
+        "事实带出处：销量 560 万册=机工社 2025 官方口径；名人推荐 verified:false 不进口播",
+        "人审版：packs/被讨厌的勇气/品类包说明.md",
+        "G0 门禁：等张老师审",
+        "G0 人审通过：张老师『可以』（2026-11-06 12:33）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "script": {
+      "skill": "ecommerce-script-gen",
+      "path": "runs/被讨厌的勇气/S1_001_卖废品/bydy_S1_001_别老看脸色.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "structure",
+        "pack"
+      ],
+      "evidence": [
+        "validate: OK · 7 段 / 2 条 AI / 无禁词（12:35:19）",
+        "首轮被拦：AI 镜头 3 条 > 2，CTA 段改素材站+叠字后过",
+        "钩子角度：张老师挑 D（代际型×讨好）",
+        "两种产物齐：脚本 JSON + 拍摄执行单",
+        "张老师批三条 AI 出片 = 脚本事实批准（12:52「出片」）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "hook_AI1_v1": {
+      "skill": "ecommerce-video-gen",
+      "path": "runs/被讨厌的勇气/S1_001_卖废品/bydy_S1_001_AI1_v1.mp4",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "script"
+      ],
+      "evidence": [
+        "Seedance mini 141s 出片，151078 tokens，task_id=cgt-20261106125237-yu4o6",
+        "ASR：全程有声无空转，漂移仅同音字（章/张、她/他），听觉无差别",
+        "画面：书封全程不可读（防穿帮达成）；⚠️脸部具象度偏高待人审",
+        "歧义点：画面人物是女儿还是妈妈，观众可能困惑——待人审"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "proof_AI2_v1": {
+      "skill": "ecommerce-video-gen",
+      "path": "runs/被讨厌的勇气/S1_001_卖废品/bydy_S1_001_AI2_v1.mp4",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "script"
+      ],
+      "evidence": [
+        "Seedance mini 125s 出片，50638 tokens，task_id=cgt-20261106125236-xde0h",
+        "⚠️提示词写42岁，AI演成60岁——但画面（夜读/翻折角/肩沉）恰是脚本'妈妈'要的镜头",
+        "白捡的妈妈形象不可跨片复用（无定妆图）；是否接受这5秒露脸待人审"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "anchor": {
+      "skill": "ecommerce-voice-anchor",
+      "path": "runs/被讨厌的勇气/S1_001_卖废品/anchor_片内.mp3",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "hook_AI1_v1"
+      ],
+      "evidence": [
+        "片内锚 1.5-6.5s，5.0s / F0跨度11.9 / 跳变0.691——跨度偏低（旁白被压平的根因之一）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "narration": {
+      "skill": "ecommerce-narration",
+      "path": "runs/被讨厌的勇气/S1_001_卖废品/vo_v1.mp3",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "anchor",
+        "script"
+      ],
+      "evidence": [
+        "32.98s / 179字 / 5.43字/s（超目标4.8达6%，atempo 已到下限0.85仍追不上）",
+        "语速偏快根因：脚本台词 179 字过多，中老年受众建议删 30 字重生成（零成本）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "final_mix": {
+      "skill": "ecommerce-mix",
+      "path": "runs/被讨厌的勇气/S1_001_卖废品/bydy_S1_001_final_v1.mp4",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "narration",
+        "hook_AI1_v1"
+      ],
+      "evidence": [
+        "48.42s：钩子 AI-1 15.1s + 6 段（AI-2 + 5 张叠字卡）33.28s",
+        "叠字卡 PIL 生成（ffmpeg 无 drawtext 滤镜），6 张全对字",
+        "响度 -15.2 LUFS / -1.2 dBTP 达标；音视频同长",
+        "⚠️ 素材站 4 条镜头（书桌/翻书/床头/餐桌）缺，用叠字卡占位——内容类素材获取是真瓶颈"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    }
+  },
+  "notes": [
+    "AI-2（5s 夜读，无台词）不占 stage 位：属 proofs 段画面，dry-run 已核对（1 图 + 无音频 + 5s）",
+    "参考音频必须配至少一张参考图（Seedance 限制）——书线无产品图，改用环境图规避真人审核"
+  ]
+}

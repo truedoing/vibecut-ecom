@@ -1,0 +1,206 @@
+{
+ "script_id": "bydy_S1_001_别老看脸色",
+ "product": "《被讨厌的勇气》",
+ "angle_type": "代际型·女儿送书（拒绝理由：讨好）",
+ "video_structure": "single_hook",
+ "speech_rate": 3.8,
+ "aspect_ratio": "9:16",
+ "hook_type": "代际型",
+ "hook_line": "三个月前我把这书塞给我妈，她翻两页就放下了",
+ "hook_pattern": "代际",
+ "hook_reject_reason": "总在看别人脸色，委屈自己",
+ "selling_point": "五夜对话体讲课题分离，一晚一个难题",
+ "back_half": {
+  "lead": "书是什么+观点",
+  "chain": [
+   "书是什么",
+   "核心观点转述",
+   "销量佐证",
+   "读法",
+   "价格"
+  ],
+  "close": "给妈带一本",
+  "proof_style": [
+   "叠字书名卡",
+   "金句卡+夜读空镜",
+   "出版方数字",
+   "老花镜读法场景"
+  ],
+  "number_treat": "原值直读+出处"
+ },
+ "creative_brief": {
+  "人物": "林岚（ch_001），42-46，中学教师，第一人称讲自己给妈买书；妈妈全程不露脸，只在叙述与枕头下的书里出现",
+  "冲突": "女儿送书嫌她讨好，妈一句『都这岁数了还改啥』推开",
+  "反转": "三个月后书在妈枕头底下，折角到第三章；妈第一次在电话里说『我给推了』",
+  "产品道具": "书（封面一律虚焦，书名靠叠字）",
+  "声音": "钩子段林岚第一人称；后半段旁白同一音色（片内锚）"
+ },
+ "segments": [
+  {
+   "seq": 1,
+   "section_role": "hook",
+   "speaker": "林岚",
+   "content": "三个月前我把这书塞给我妈，她翻两页就放下了：都这岁数了，还改啥。她这辈子没跟人红过脸。前天我回家，书在她枕头底下，折角折到第三章。她说：闺女，你二姨那事儿，我给推了。",
+   "visual_hint": "客厅沙发，林岚把书递过去方向（画外），回身坐下；说到枕头下时低头一笑；最后一句轻微点头收住",
+   "shot_source": "AI",
+   "ai_shot_id": "AI-1"
+  },
+  {
+   "seq": 2,
+   "section_role": "proof",
+   "evidence_level": "L1",
+   "speaker": "旁白",
+   "content": "这书叫《被讨厌的勇气》，岸见一郎和古贺史健写的，讲阿德勒心理学。",
+   "shot_source": "TEXT",
+   "visuals": [
+    {
+     "shot_id": "TXT-1",
+     "src": "叠字卡",
+     "text": "《被讨厌的勇气》｜岸见一郎 × 古贺史健",
+     "in": 0,
+     "out": 4
+    },
+    {
+     "shot_id": "STK-1",
+     "src": "素材站",
+     "desc": "书桌/台灯空镜 竖版",
+     "in": 0,
+     "out": 3
+    }
+   ]
+  },
+  {
+   "seq": 3,
+   "section_role": "proof",
+   "evidence_level": "L1",
+   "speaker": "旁白",
+   "content": "书里是青年和哲人吵五个晚上，一晚一个难题。吵到第三晚，讲的是课题分离：别人怎么看你，那是别人的课题。",
+   "shot_source": "AI",
+   "ai_shot_id": "AI-2",
+   "visuals": [
+    {
+     "shot_id": "TXT-2",
+     "src": "叠字卡",
+     "text": "别人怎么看你，是别人的课题",
+     "in": 0,
+     "out": 3
+    }
+   ]
+  },
+  {
+   "seq": 4,
+   "section_role": "trust",
+   "evidence_level": "L1",
+   "speaker": "旁白",
+   "content": "中文版卖了五百六十多万册，重印一百一十五次，出版社的口径。",
+   "shot_source": "TEXT",
+   "visuals": [
+    {
+     "shot_id": "TXT-3",
+     "src": "叠字卡",
+     "text": "中文版 560 万册 · 重印 115 次（机械工业出版社口径）",
+     "in": 0,
+     "out": 4
+    }
+   ]
+  },
+  {
+   "seq": 5,
+   "section_role": "proof",
+   "evidence_level": "L4",
+   "speaker": "旁白",
+   "content": "一百九十四页，一晚一章，五个晚上读完。字不小，我妈戴着老花镜也能看。",
+   "shot_source": "STOCK",
+   "visuals": [
+    {
+     "shot_id": "STK-2",
+     "src": "素材站",
+     "desc": "台灯下翻书页 手部特写 竖版",
+     "in": 0,
+     "out": 4
+    },
+    {
+     "shot_id": "STK-3",
+     "src": "素材站",
+     "desc": "床头堆书 夜间 竖版",
+     "in": 0,
+     "out": 4
+    }
+   ]
+  },
+  {
+   "seq": 6,
+   "section_role": "price",
+   "speaker": "旁白",
+   "content": "定价五十五，按五个晚上折算，一晚十一块。",
+   "shot_source": "TEXT",
+   "visuals": [
+    {
+     "shot_id": "TXT-4",
+     "src": "叠字卡",
+     "text": "定价 55 元｜五晚读完，一晚 11 元",
+     "in": 0,
+     "out": 4
+    }
+   ]
+  },
+  {
+   "seq": 7,
+   "section_role": "cta",
+   "speaker": "旁白",
+   "content": "她这周在家庭群里第一次说了句『这事我不同意』。给妈带一本，或者你自己先看。",
+   "shot_source": "STOCK",
+   "visuals": [
+    {
+     "shot_id": "STK-4",
+     "src": "素材站",
+     "desc": "家里餐桌 手机放桌上 竖版",
+     "in": 0,
+     "out": 4
+    },
+    {
+     "shot_id": "TXT-5",
+     "src": "叠字卡",
+     "text": "给妈带一本，或者你自己先看",
+     "in": 0,
+     "out": 3
+    }
+   ]
+  }
+ ],
+ "ai_settings": {
+  "prompts_pending": true,
+  "sound_plan": "钩子段林岚第一人称；后半段旁白用本片钩子提取的片内锚（与钩子同源），情绪档 normal"
+ },
+ "ai_shots": [
+  {
+   "shot_id": "AI-1",
+   "covers": [
+    1
+   ],
+   "duration_sec": 15,
+   "character_ref": "ch_001",
+   "env_ref": "env_001",
+   "prompt": "",
+   "negative_prompt": "文字，logo，书封清晰可读，多余手指"
+  },
+  {
+   "shot_id": "AI-2",
+   "covers": [
+    3
+   ],
+   "duration_sec": 6,
+   "character_ref": "ch_001",
+   "env_ref": "env_001",
+   "prompt": "",
+   "negative_prompt": "文字，logo，书封清晰可读，第二个人的脸"
+  }
+ ],
+ "pending": [
+  "pd_001 无产品实拍图（asset_index vendor_assets 空）——书封一律虚焦，书名/数字全部靠叠字，不得让 AI 画封面",
+  "pd_002 销量 560 万册/重印 115 次为机械工业出版社 2025 口径，口播已带『出版社的口径』",
+  "pd_003 当当 196 万条评论/100% 好评会变，投放当天须重截；本条未使用",
+  "pd_004 名人推荐（蔡康永等）为自媒体口径 verified:false，本条不用",
+  "pd_005 定价 55 元为现行版（首版 2015 年 39.8 元），投放按实际 SKU 核实"
+ ]
+}

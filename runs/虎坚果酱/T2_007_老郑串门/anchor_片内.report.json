@@ -1,0 +1,20 @@
+{
+ "anchor": "runs/虎坚果酱/T2_007_老郑串门/anchor_片内.mp3",
+ "source_video": "runs/虎坚果酱/T2_007_老郑串门/hjg_T2_007_AI1_v1.mp4",
+ "total_sec": 5.0,
+ "overall": {
+  "dur": 5.0,
+  "f0_span": 16.4,
+  "f0_jump": 0.535
+ },
+ "parts": [
+  {
+   "label": "手工段1 2.3-7.3s",
+   "start": 2.3,
+   "end": 7.3,
+   "dur": 5.0,
+   "f0_span": 16.3,
+   "f0_jump": 0.534
+  }
+ ]
+}

@@ -122,10 +122,20 @@ def audio_seconds(path):
 
 def build_content(args):
     content = [{"type": "text", "text": args.prompt}]
+    # 参考图在前：@Image 编号按 content 中图片出现顺序，先传 ref_image
+    # 可让提示词里的 @Image1/2 与无首尾帧时保持同一指代
     for src in args.ref_image:
         content.append({"type": "image_url",
                         "image_url": {"url": as_source(src, "image/jpeg")},
                         "role": "reference_image"})
+    if args.first_frame:
+        content.append({"type": "image_url",
+                        "image_url": {"url": as_source(args.first_frame, "image/png")},
+                        "role": "first_frame"})
+    if args.last_frame:
+        content.append({"type": "image_url",
+                        "image_url": {"url": as_source(args.last_frame, "image/png")},
+                        "role": "last_frame"})
     for src in args.ref_audio:
         content.append({"type": "audio_url",
                         "audio_url": {"url": as_source(src, "audio/mpeg")},
@@ -150,6 +160,8 @@ def main():
     ap.add_argument("--ratio", default="9:16", choices=RATIOS)
     ap.add_argument("--duration", type=int, default=15)
     ap.add_argument("--ref-image", action="append", default=[], help="参考图，可重复（顺序对应 @Image1/2/3）")
+    ap.add_argument("--first-frame", default="", help="首帧图（role=first_frame；输出画幅锁定为其比例）")
+    ap.add_argument("--last-frame", default="", help="尾帧图（role=last_frame；必须与首帧成对传入）")
     ap.add_argument("--allow-human-ref", action="store_true",
                     help="允许提交人物定妆照（默认拦截：实测必被真人审核 400，往返白等 2-3 分钟）")
     ap.add_argument("--ref-audio", action="append", default=[], help="参考音频，可重复（顺序对应 @Audio1/2）")
@@ -164,12 +176,18 @@ def main():
     if not args.prompt:
         sys.exit("提示词为空")
 
-    if len(args.ref_image) > MAX_REF_IMAGES[args.model]:
-        sys.exit(f"{args.model} 参考图最多 {MAX_REF_IMAGES[args.model]} 张")
+    if bool(args.first_frame) != bool(args.last_frame):
+        sys.exit("首尾帧必须成对传入（API 不支持仅尾帧；只做首帧生视频用 --ref-image + 提示词指定）")
+    n_images = len(args.ref_image) + (2 if args.first_frame else 0)
+    if n_images > MAX_REF_IMAGES[args.model]:
+        sys.exit(f"{args.model} 图片总数（参考图+首尾帧）最多 {MAX_REF_IMAGES[args.model]} 张")
     if len(args.ref_audio) > MAX_REF_AUDIO:
         sys.exit(f"参考音频最多 {MAX_REF_AUDIO} 个")
-    if args.ref_audio and not args.ref_image:
+    if args.ref_audio and n_images == 0:
         sys.exit("参考音频必须搭配至少一张参考图（无音频单独模式）")
+    if args.first_frame:
+        print("[首尾帧模式] 输出画幅锁定为首帧比例；首尾帧含真人剧照时可能触发真人审核"
+              "（被 400 拒不扣费，重试即可）。")
     if args.duration != -1 and not 4 <= args.duration <= MAX_DURATION[args.model]:
         sys.exit(f"{args.model} 时长只支持 4-{MAX_DURATION[args.model]} 秒")
     if args.resolution not in MODEL_CAPS[args.model]:
@@ -219,7 +237,9 @@ def main():
                     u = item[k]["url"]
                     item[k]["url"] = u[:40] + f"...(len={len(u)})" if u.startswith("data:") else u
         print(json.dumps(preview, ensure_ascii=False, indent=2))
-        print(f"\n[dry-run] 参考图 {len(args.ref_image)} 张 / 参考音频 {len(args.ref_audio)} 个 "
+        print(f"\n[dry-run] 参考图 {len(args.ref_image)} 张"
+          + (" + 首尾帧 2 张" if args.first_frame else "")
+          + f" / 参考音频 {len(args.ref_audio)} 个 "
               f"（合计 {total_audio:.1f}s）/ {args.duration}s {args.resolution} {args.ratio} "
               f"/ model={MODELS[args.model]} / 提示词 {len(args.prompt)} 字")
         print("未提交，未计费。")

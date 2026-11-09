@@ -1,0 +1,576 @@
+{
+ "meta": {
+  "schema_version": "1.0",
+  "category": "被讨厌的勇气（图书·心理自助）",
+  "pack_version": "1.0-draft",
+  "created_at": "2026-11-06",
+  "created_by": "WorkBuddy（按 ecommerce-category-pack 技能生成；首个非食品大类包，兼作技能通用性第三验证点）",
+  "source_materials": [
+   "百度百科词条《被讨厌的勇气》（出版信息/内容概要，2026-11-06 查）",
+   "机械工业出版社 2025 年度「机工金齿轮奖」官方发布（销量口径，今日头条 2025）",
+   "当当网成功/励志好评榜（评论数/好评率/现价，2026-08 榜单快照）",
+   "岸见一郎百度百科（全球销量/日本纪录，2024-06 口径）"
+  ],
+  "review": {
+   "self_check": "passed",
+   "human_review": "pending",
+   "note": "G0 门禁：等张老师审。首个非食品包，schema 本身也在被验证"
+  }
+ },
+ "product_facts": [
+  {
+   "id": "pf_001",
+   "field": "product_name",
+   "label": "书名",
+   "value": "《被讨厌的勇气》(\"自我启发之父\"阿德勒的哲学课)",
+   "source": {
+    "type": "official_web",
+    "ref": "百度百科/出版社书目"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false
+  },
+  {
+   "id": "pf_002",
+   "field": "authors",
+   "label": "作者",
+   "value": "岸见一郎（日本阿德勒心理学会认定咨询师）× 古贺史健（日本畅销书作家），渠海霞 译",
+   "source": {
+    "type": "official_web",
+    "ref": "百度百科 + 图书馆书目"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false
+  },
+  {
+   "id": "pf_003",
+   "field": "publisher",
+   "label": "出版社",
+   "value": "机械工业出版社",
+   "source": {
+    "type": "official_web",
+    "ref": "版权页/多馆书目一致"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false
+  },
+  {
+   "id": "pf_004",
+   "field": "list_price",
+   "label": "平装定价",
+   "value": "55 元（194 页，ISBN 9787111495482；首版 2015 年 39.8 元，现行版 55 元）",
+   "source": {
+    "type": "official_web",
+    "ref": "当当在售价 55.00（2026-08 快照）+ 馆书目定价"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false,
+   "note": "到手价按投放当天 SKU 实时核实——版本多（平装/精装99.5/漫画版69），严禁混版本报价"
+  },
+  {
+   "id": "pf_005",
+   "field": "sales",
+   "label": "销量（带出处才可用）",
+   "value": "中文版销售超 560 万册、重印 115 次（机械工业出版社 2025 官方口径）；日本连续 300 天销售榜首、连续 10 年日本畅销商业书 Top10；全球销量 1180 万册（2024-06 口径）",
+   "source": {
+    "type": "official_web",
+    "ref": "机工金齿轮奖官方推荐语 + 岸见一郎百科"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false,
+   "note": "口播必须带「按出版社统计/截至…」；自媒体口径 1690 万册单一来源不采用"
+  },
+  {
+   "id": "pf_006",
+   "field": "reviews",
+   "label": "平台口碑",
+   "value": "当当该品累计约 196 万条评论、好评率 100%（2026-08 榜单快照）",
+   "source": {
+    "type": "official_web",
+    "ref": "当当好评榜页面"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false,
+   "note": "数字随时间变化，投放前重新截图核实；口播说「近两百万条评价」并带「截至…」"
+  },
+  {
+   "id": "pf_007",
+   "field": "core_concepts",
+   "label": "核心概念（书中内容，可转述不可承诺）",
+   "value": "阿德勒心理学（与弗洛伊德、荣格并称三大巨头）；目的论（否定心理创伤决定论）；一切烦恼来自人际关系；课题分离；横向关系（表扬是纵向、鼓励是横向）；自我接纳/他者信赖/他者贡献；「自由就是被别人讨厌」",
+   "source": {
+    "type": "official_web",
+    "ref": "百度百科内容概要 + 目录"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false
+  },
+  {
+   "id": "pf_008",
+   "field": "format",
+   "label": "体裁",
+   "value": "青年与哲人五夜对话体（古希腊对话篇形式），194 页，一晚一章",
+   "source": {
+    "type": "official_web",
+    "ref": "百度百科"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false,
+   "note": "「好读/像看小说」是合法卖点（形式描述），不是疗效承诺"
+  },
+  {
+   "id": "pf_009",
+   "field": "adaptations",
+   "label": "衍生背书",
+   "value": "2017 年富士电视台同名电视剧；2025 年中文漫画版出版；勇气系列（幸福的勇气等）",
+   "source": {
+    "type": "official_web",
+    "ref": "百科"
+   },
+   "verified": true,
+   "usable_in_copy": true,
+   "blocking": false
+  },
+  {
+   "id": "pf_010",
+   "field": "celebrity_endorsement",
+   "label": "名人推荐",
+   "value": "蔡康永、张德芬、陈文茜、曾宝仪等推荐（自媒体口径）",
+   "source": {
+    "type": "secondary",
+    "ref": "自媒体文章，未找到一手来源"
+   },
+   "verified": false,
+   "usable_in_copy": false,
+   "blocking": false,
+   "note": "未核实前不进口播——虚假背书红线"
+  }
+ ],
+ "selling_point_map": [
+  {
+   "id": "sp_001",
+   "vendor_claim": "「拥有改变人一生的力量」「获得幸福的可能」",
+   "risk_type": "心理疗效承诺",
+   "usable_rewrite": "阿德勒心理学的经典入门读物，讲「人怎么看待自己的不幸」",
+   "condition": "书是观点载体，不是药。只描述「它讲什么」，不承诺「读完会怎样」；「改变一生」类 publisher 原话不用",
+   "status": "conditional"
+  },
+  {
+   "id": "sp_002",
+   "vendor_claim": "「治愈自卑」「走出内耗」「告别讨好型人格」",
+   "risk_type": "疗效承诺（健康暗示）",
+   "usable_rewrite": "书里有一章专门讨论「为什么讨厌自己」，观点是：一切烦恼来自人际关系",
+   "condition": "内耗/自卑/讨好只能作为「话题」出现（你有没有这种时刻），不能作为「读完能解决」的承诺",
+   "status": "conditional"
+  },
+  {
+   "id": "sp_003",
+   "vendor_claim": "「心理学三大巨头之一阿德勒的思想」",
+   "risk_type": "无（学术事实）",
+   "usable_rewrite": "原样可用：与弗洛伊德、荣格并称心理学三大巨头",
+   "condition": "事实陈述，带「并称」即可",
+   "status": "ready"
+  },
+  {
+   "id": "sp_004",
+   "vendor_claim": "「畅销 560 万册」「全球 1180 万册」",
+   "risk_type": "数据宣称",
+   "usable_rewrite": "原样可用，但必须带出处与时间",
+   "condition": "「按出版社统计，中文版卖了五百多万册」；全球数据带「截至 2024 年」。不带出处 = 虚假宣传",
+   "status": "conditional"
+  },
+  {
+   "id": "sp_005",
+   "vendor_claim": "「像看小说一样好读」「对话体」",
+   "risk_type": "无（形式描述）",
+   "usable_rewrite": "原样可用：青年和哲人吵了五个晚上，一晚上吵一个人生难题",
+   "condition": "—",
+   "status": "ready"
+  },
+  {
+   "id": "sp_006",
+   "vendor_claim": "「真正的自由，就是被别人讨厌」",
+   "risk_type": "低（金句引用）",
+   "usable_rewrite": "短句引用可用（金句是书名同源的主题句），前后加「书里有句话说」",
+   "condition": "只引单句，不整段念原文（版权边界）；不延伸成「教你不管别人感受」",
+   "status": "conditional"
+  },
+  {
+   "id": "sp_007",
+   "vendor_claim": "「蔡康永等名人推荐」",
+   "risk_type": "无认证宣称（虚假背书）",
+   "usable_rewrite": "",
+   "condition": "名人推荐须一手来源（出版社官方页/腰封实拍）核实后才能用，且只能转述「××推荐过」，不代言效果；核实途径见 pd_002",
+   "status": "blocked"
+  }
+ ],
+ "compliance_ext": {
+  "category_specific": [
+   {
+    "term": "治好/治愈/根治 自卑·内耗·焦虑·抑郁·讨好型人格",
+    "reason": "心理疗效承诺。书是观点读物，不是治疗手段；抑郁焦虑类词汇本身涉医疗宣传",
+    "action": "forbid",
+    "scope": "all"
+   },
+   {
+    "term": "替代心理咨询 / 看书就不用看医生",
+    "reason": "涉医疗替代，安全底线",
+    "action": "forbid",
+    "scope": "all"
+   },
+   {
+    "term": "销量数字不带出处与时间",
+    "reason": "数据宣称须可查证：「按出版社统计」「截至某年」必须带",
+    "action": "conditional",
+    "scope": "all"
+   },
+   {
+    "term": "不同版本混着报价（平装55/精装99.5/漫画69）",
+    "reason": "版本混淆=虚假价格。到手价按投放当天实际 SKU，占位符兜底",
+    "action": "forbid",
+    "scope": "all"
+   },
+   {
+    "term": "整段朗读书中原文",
+    "reason": "版权边界：短句引用+注明出处可用，成段朗读不用",
+    "action": "conditional",
+    "scope": "all"
+   },
+   {
+    "term": "贬损其他书/作者（「比××好」「看完这本不用看××」）",
+    "reason": "无依据虚假比较",
+    "action": "forbid",
+    "scope": "all"
+   },
+   {
+    "term": "盗版/影印/电子版低价引流",
+    "reason": "图书类特有：只卖正版，盗版引流是平台与法律双重红线",
+    "action": "forbid",
+    "scope": "all"
+   },
+   {
+    "term": "「孩子读了成绩变好」「读完变自律」",
+    "reason": "教育效果承诺，同疗效承诺",
+    "action": "forbid",
+    "scope": "all"
+   }
+  ],
+  "shared_overlay_ref": "ecommerce-script-gen/references/constraints.md（人群专属红线）",
+  "base_redline_ref": "ecommerce-supervisor 平台×人群参数表（四类底线：疗效/虚假比较/无认证/虚假价格）"
+ },
+ "elements": {
+  "hooks": [
+   {
+    "id": "hk_001",
+    "text": "我妈把我买的书，二十块钱卖废品了",
+    "pattern": "争执型×浪费",
+    "note": "冲突具体到物（废品站/称重），反转落点在「她翻了一页没舍得卖」——行为反转，不做疗效证言",
+    "audience": "au_003",
+    "test_only": true
+   },
+   {
+    "id": "hk_002",
+    "text": "我买了三年的书，昨天才拆封",
+    "pattern": "自白型×落灰",
+    "note": "买书如山倒读书如抽丝，中年女性/中老年都认；反转落在「一晚上读完第一章」",
+    "audience": "au_002"
+   },
+   {
+    "id": "hk_003",
+    "text": "书里说：表扬孩子，其实是在控制孩子",
+    "pattern": "反常识型",
+    "note": "直击隔代育儿场景；注意只转述书中观点（「书里说」），不替书做效果承诺",
+    "audience": "au_001"
+   },
+   {
+    "id": "hk_004",
+    "text": "女儿把这书塞给我：妈，你别老看别人脸色",
+    "pattern": "代际型",
+    "note": "讨好/看脸色是中老年高频心理状态；反转落在「看完第一章给女儿打了电话」——行为，不落身体情绪改善",
+    "audience": "au_003",
+    "test_only": true
+   },
+   {
+    "id": "hk_005",
+    "text": "开会时我明明不同意，还是点了头",
+    "pattern": "痛点命名型",
+    "audience": "au_002",
+    "note": "命名心理状态，不说读完能改；反转落点在「书里把这种反应叫赏罚教育的结果」"
+   }
+  ],
+  "pains": [
+   {
+    "id": "pn_001",
+    "text": "书买了一堆，翻两页就放下了",
+    "level": "L4 场景",
+    "use": "自白/争执型钩子的拒绝理由槽位"
+   },
+   {
+    "id": "pn_002",
+    "text": "总在看别人脸色，委屈自己",
+    "level": "痛点命名（心理状态）",
+    "use": "只能命名状态，不能说读完能改善"
+   },
+   {
+    "id": "pn_003",
+    "text": "家里事儿再多，也想有自己的主意",
+    "level": "情感定位",
+    "use": "「关爱自己」落在想法与决定上，不落身体"
+   },
+   {
+    "id": "pn_004",
+    "text": "跟孩子/老伴说不通，各说各的",
+    "level": "L4 场景",
+    "use": "课题分离的话题入口"
+   }
+  ],
+  "scenes": [
+   {
+    "id": "sc_001",
+    "text": "晚上书桌/床头，一盏台灯",
+    "use": "钩子 AI 场景"
+   },
+   {
+    "id": "sc_002",
+    "text": "废品站/纸箱堆旧书",
+    "use": "争执型钩子"
+   },
+   {
+    "id": "sc_003",
+    "text": "给子女打电话",
+    "use": "代际型反转"
+   }
+  ],
+  "proofs": [
+   {
+    "id": "pr_001",
+    "text": "作者/出版社/页数/对话体形式",
+    "visual": "AI 书籍道具镜头（封面文字必须虚焦不可读——同酱罐规则，AI 画不准字）",
+    "level": "L1"
+   },
+   {
+    "id": "pr_002",
+    "text": "中文版销量五百多万册（按出版社统计）",
+    "visual": "后期叠字，不用 AI 生成数字",
+    "level": "L1"
+   },
+   {
+    "id": "pr_003",
+    "text": "翻页/便签/划线等真实阅读动作（自证「读进去了」，场景呈现）",
+    "visual": "素材缺口：本品类暂无实拍库，见 pending",
+    "level": "L4"
+   },
+   {
+    "id": "pr_004",
+    "text": "目录五夜结构（第一夜…第五夜）",
+    "visual": "拍目录页特写（目录页是自撰文字，可实拍不可 AI）",
+    "level": "L1"
+   }
+  ],
+  "trust": [
+   {
+    "id": "tr_001",
+    "text": "机械工业出版社（老牌社）+2015 年出版至今十次加印级别常销",
+    "visual": "出版社信息后期叠字",
+    "level": "T1"
+   },
+   {
+    "id": "tr_002",
+    "text": "日本连续 300 天销售榜首（可查记录）",
+    "visual": "叠字+出处",
+    "level": "T2"
+   }
+  ],
+  "ctas": [
+   {
+    "id": "ct_001",
+    "text": "给自己也添一本，睡前翻两页",
+    "note": "低门槛（翻两页），呼应落灰痛点"
+   },
+   {
+    "id": "ct_002",
+    "text": "让孩子帮你看一眼，别自己瞎买",
+    "note": "视频号代买动线，与虎坚果酱同款"
+   }
+  ],
+  "golden_quotes": [
+   {
+    "id": "gq_001",
+    "text": "「自由就是被别人讨厌」",
+    "rule": "单句+「书里有句话说」+不延伸"
+   },
+   {
+    "id": "gq_002",
+    "text": "「一切烦恼都来自人际关系」",
+    "rule": "同上"
+   }
+  ],
+  "price_talk": {
+   "list_price": "定价 55 元（平装）",
+   "promo": "【到手价】投放当天按实际 SKU 核实——版本多，严禁混版本",
+   "anchor_talk": "一顿饭钱/两杯奶茶钱换一本常销十年的书（换算自述，不虚构竞品比较）"
+  },
+  "rejection_slots": [
+   {
+    "slot": "落灰",
+    "keywords": [
+     "放下",
+     "一堆",
+     "拆封",
+     "落灰"
+    ],
+    "hint": "买了没读，书架积灰"
+   },
+   {
+    "slot": "没时间",
+    "keywords": [
+     "忙",
+     "时间",
+     "顾不上"
+    ],
+    "hint": "想读但总说忙"
+   },
+   {
+    "slot": "讨好",
+    "keywords": [
+     "脸色",
+     "委屈",
+     "说不通"
+    ],
+    "hint": "总在迁就别人"
+   },
+   {
+    "slot": "贵",
+    "keywords": [
+     "贵",
+     "块",
+     "价格"
+    ],
+    "hint": "一本书几十块值不值"
+   }
+  ],
+  "audiences": [
+   {
+    "id": "au_001",
+    "name": "父母（亲子教育，30–45）",
+    "scene": "辅导作业/说不通/隔代带娃",
+    "lang": "具体场景+承认自己失败",
+    "hook_types": [
+     "反常识型",
+     "争执型"
+    ],
+    "speed": "4.2 字/秒"
+   },
+   {
+    "id": "au_002",
+    "name": "自我成长（25–40，讨好型）",
+    "scene": "不敢拒绝/被评价/加班",
+    "lang": "说出他心里那句没说出口的话",
+    "hook_types": [
+     "洞察型",
+     "痛点命名型"
+    ],
+    "speed": "4.4 字/秒"
+   },
+   {
+    "id": "au_003",
+    "name": "代际（子女买给父母/父母自购）",
+    "scene": "女儿塞书/打电话/退休后",
+    "lang": "第三人称转述+行为反转",
+    "hook_types": [
+     "代际型",
+     "争执型"
+    ],
+    "speed": "3.8–4.0 字/秒"
+   }
+  ]
+ },
+ "pending": [
+  {
+   "id": "pd_001",
+   "item": "【到手价】与在售 SKU（平装/精装/漫画版）",
+   "why": "三个版本价格跨度 55–99.5，混版本报价是虚假价格",
+   "blocking": true,
+   "owner": "运营",
+   "how_to_resolve": "投放当天截图在售页面"
+  },
+  {
+   "id": "pd_002",
+   "item": "名人推荐名单一手来源",
+   "why": "现为自媒体口径，虚假背书红线",
+   "blocking": false,
+   "owner": "运营",
+   "how_to_resolve": "查出版社官方页面/腰封实拍"
+  },
+  {
+   "id": "pd_003",
+   "item": "通用书感素材库 GEN（19 条）未拍",
+   "why": "翻页/台灯/便签/书堆等通用镜头全品类共用，拍一次永久复用；当前完全空缺",
+   "blocking": false,
+   "owner": "拍摄",
+   "how_to_resolve": "按 packs/被讨厌的勇气/拍摄清单.md 第一节拍一轮（约 40 分钟）"
+  },
+  {
+   "id": "pd_004",
+   "item": "书籍封面参考图（用于 AI 道具虚焦）",
+   "why": "钩子出片需要产品参考图；用出版社官方宣传图，且提示词锁死封面文字虚焦不可读",
+   "blocking": false,
+   "owner": "运营",
+   "how_to_resolve": "取官方电商主图一张存 product_refs/"
+  },
+  {
+   "id": "pd_005",
+   "item": "单书素材 BK（24 条）未拍",
+   "why": "封面/书脊/目录页/版权页/金句页是 L1 举证底片，AI 生成不了可读汉字；缺它后半段举证只能靠叠字",
+   "blocking": false,
+   "owner": "拍摄",
+   "how_to_resolve": "按拍摄清单.md 第二节拍（约 25 分钟）；金句页按 golden_quotes 找真实页码"
+  }
+ ],
+ "asset_index": {
+  "mode": "no_vendor_footage",
+  "layers": [
+   {
+    "code": "A",
+    "name": "通用书感库 GEN（自拍，跨书永久复用）",
+    "share": "~25%",
+    "covers": "翻页/台灯/便签/书堆/床头/撕塑封等 19 条，画面里无可读书名",
+    "note": "一次拍完所有书共用；这是「非厂商品类」相对食品的结构性优势，见 拍摄清单.md",
+    "hard_constraint": false
+   },
+   {
+    "code": "B",
+    "name": "单书素材 BK（自拍，每书一次 24 条）",
+    "share": "~35%",
+    "covers": "封面/书脊/目录/版权页/金句页/划线/便签/递书",
+    "note": "成片必须含本书实拍镜头（封面与目录页是 L1 举证底片），AI 不可替代",
+    "hard_constraint": true
+   },
+   {
+    "code": "C",
+    "name": "网络空镜 NET（CC0 素材站）",
+    "share": "~10%",
+    "covers": "图书馆/雨窗/通勤/城市夜景",
+    "note": "只补自家拍不到的空镜；禁止他人可辨面孔与别人书封面可读"
+   },
+   {
+    "code": "D",
+    "name": "AI 生成（人物与情绪）",
+    "share": "~30%",
+    "covers": "钩子段主角 + 情绪特写；封面文字锁死虚焦",
+    "note": "书能实拍人不好实拍，所以 AI 只补人不补书"
+   }
+  ],
+  "note": "无厂商品类四层重排：通用层 A 可跨书复用是本品类结构性差别（食品 A 层是单产品不可复用）；后期叠字另计 ~20%，不进四层",
+  "vendor_assets": []
+ },
+ "conflicts": []
+}

@@ -25,6 +25,7 @@
 import argparse
 import json
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -182,9 +183,8 @@ def main():
         {"anchor": str(out), "source_video": str(args.video), "total_sec": round(total, 2),
          "overall": {"dur": round(dur, 2), "f0_span": span, "f0_jump": jump},
          "parts": report}, ensure_ascii=False, indent=1))
-    for p in tmp.iterdir():
-        p.unlink()
-    tmp.rmdir()
+    # 沙箱 shim 下 Path.rmdir() 会被映射成 rm（对目录报 EISDIR），用 shutil 更稳
+    shutil.rmtree(tmp, ignore_errors=True)
     print(f"OK {out} + .report.json")
 
 

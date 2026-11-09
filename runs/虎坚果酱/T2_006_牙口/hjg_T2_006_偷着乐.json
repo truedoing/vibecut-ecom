@@ -1,0 +1,86 @@
+{
+  "script_id": "hjg_T2_006_偷着乐",
+  "product": "虎坚果酱",
+  "angle_type": "自白型·偷偷享用（拒绝理由：浪费）",
+  "video_structure": "single_hook",
+  "speech_rate": 3.8,
+  "aspect_ratio": "9:16",
+  "hook_type": "自白型",
+  "hook_line": "我在柜子里藏了一罐酱，没告诉我闺女",
+  "hook_pattern": "自白",
+  "hook_reject_reason": "又买？家里那罐还没吃完",
+  "selling_point": "配料就三样，每100g膳食纤维9.2g",
+  "back_half": {
+    "lead": "配料",
+    "chain": ["配料", "数值", "产地工艺", "吃法"],
+    "close": "低门槛先一罐",
+    "proof_style": ["罐体+原料颗粒并置", "数值直读", "抹开成品镜头"],
+    "number_treat": "原值直读"
+  },
+  "creative_brief": {
+    "人物": "林岚（ch_001），42-46，中学教师，一个人演完",
+    "冲突": "瞒着女儿偷偷买酱偷偷吃，怕被说乱花钱",
+    "反转": "承认自己就馋这一口——自白型可信来自承认小气，不来自产品好",
+    "产品道具": "藏进柜子的罐子、抹面包",
+    "声音": "林岚压低声独白，半侧对镜头，无旁白"
+  },
+  "segments": [
+    {"seq": 1, "section_role": "hook", "speaker": "林岚",
+     "content": "我跟你说个事儿，我在柜子里藏了一罐酱，没告诉我闺女，怕她看见。她准得说我，都多大岁数了还乱花钱。可我就是馋这一口，早上就着面包抹两下，一罐能吃上一个月，谁也发现不了。",
+     "content_note": "已同步为 AI1_v1 实际口播（ASR 逐字核对）；原稿为『我藏了一罐酱…她看见了准得说我，又乱花钱…一罐能吃上一个月』，提示词 v3 为过 lint 扩到 73 字，模型照提示词念，故以实拍为准回写",
+     "visual_hint": "厨房晨光，林岚侧身开柜门取罐，回头看一眼门口，再转回来压低声音；最后一拍抹面包吃一口，放松下来",
+     "shot_source": "AI", "ai_shot_id": "AI-1"},
+    {"seq": 2, "section_role": "proof", "evidence_level": "L1", "speaker": "旁白",
+     "content": "配料就三样：脱皮油莎豆、冷榨油莎豆油、盐。没别的了。",
+     "shot_source": "SHOOT",
+     "visuals": [
+       {"shot_id": "C5306#0", "src": "桌拍素材/4.10/C5306.MP4", "in": 0, "out": 4},
+       {"shot_id": "C0583#0", "src": "沙漠素材/C0583.MP4", "in": 0, "out": 3}
+     ]},
+    {"seq": 3, "section_role": "proof", "evidence_level": "L1", "speaker": "旁白",
+     "content": "每一百克有九点二克膳食纤维，七点三二毫克维生素E。",
+     "shot_source": "SHOOT",
+     "visuals": [
+       {"shot_id": "C5321#0", "src": "桌拍素材/4.10/C5321.MP4", "in": 0, "out": 5.5}
+     ]},
+    {"seq": 4, "section_role": "trust", "evidence_level": "T1", "speaker": "旁白",
+     "content": "豆子是新疆图木舒克的，沙漠边上种出来的，一百三十五度低温慢烘，现磨成酱。",
+     "shot_source": "SHOOT",
+     "visuals": [
+       {"shot_id": "DJI_0369#0", "src": "种植基地航拍素材/DJI_0369.MP4", "in": 0, "out": 4},
+       {"shot_id": "C0418#0", "src": "沙漠素材/C0418.MP4", "in": 0, "out": 4}
+     ]},
+    {"seq": 5, "section_role": "proof", "evidence_level": "L4", "speaker": "旁白",
+     "content": "早上抹个面包，中午拌个面，晚上拌酸奶，一罐能吃不少顿。",
+     "shot_source": "SHOOT",
+     "visuals": [
+       {"shot_id": "C5396#0", "src": "桌拍素材/4.10/C5396.MP4", "in": 0, "out": 3.5},
+       {"shot_id": "C5391#0", "src": "桌拍素材/4.10/C5391.MP4", "in": 0, "out": 3}
+     ]},
+    {"seq": 6, "section_role": "price", "speaker": "旁白",
+     "content": "一瓶五十九块九，直播间拍一发四，合下来一瓶二十五块。",
+     "shot_source": "SHOOT",
+     "visuals": [
+       {"shot_id": "C5315#0", "src": "桌拍素材/4.10/C5315.MP4", "in": 0, "out": 5}
+     ]},
+    {"seq": 7, "section_role": "cta", "speaker": "旁白",
+     "content": "给家里添一罐，先试一罐，抹面包拌面都用得上。",
+     "shot_source": "SHOOT",
+     "visuals": [
+       {"shot_id": "C5319#0", "src": "桌拍素材/4.10/C5319.MP4", "in": 0, "out": 5.5}
+     ]}
+  ],
+  "ai_settings": {"prompts_pending": true, "sound_plan": "钩子段林岚独白；后半段旁白用林岚锚（与钩子同源）"},
+  "ai_shots": [
+    {"shot_id": "AI-1", "covers": [1], "duration_sec": 15,
+     "character_ref": "ch_001", "env_ref": "env_001",
+     "product_ref": "assets/虎坚果酱/product_refs/product_front_C5306.jpg",
+     "prompt": "",
+     "negative_prompt": "文字，logo，多余手指"}
+  ],
+  "pending": [
+    "pd_001 配料表完整开头未核——本条只说『三样』+列名，未念顺序，不卡",
+    "pd_002 价格 59.9 / 拍一发四 / 合 25 —— 投放当天按实际 SKU 核实",
+    "素材缺口：无背面标/营养成分表特写镜头，seq3 用 C5321 罐体顶，数值建议后期叠字"
+  ]
+}

@@ -140,20 +140,28 @@ def run(args):
     total = sum(net_len(l) for l in all_lines)
 
     # ── E1 台词总量 ──
+    # 首尾帧融合转场片（提示词同时含「首帧图」「尾帧图」特征）：台词密度天然低，
+    # 10s 里大半是镜头运动，带货念稿下限不适用——降为 W
+    fusion = args.fusion or ("首帧图" in text and "尾帧图" in text)
     if nd:
         I("纯画面模式（--no-dialogue）：台词类检查跳过，旁白后期配")
     elif total < args.min_chars:
-        E(
+        msg = (
             f"台词总共 {total} 字，低于 {args.min_chars} 字。"
             f"{int(args.duration)} 秒片实测 45 字只念到 65% 就停，后半程空转（v1 事故）"
         )
+        if fusion:
+            W(msg + "（首尾帧融合转场片，念稿下限不适用——确认台词覆盖说话区间即可）")
+        else:
+            E(msg)
 
     # ── E2 每拍台词 ──
     if not nd:
         for s in shots:
             n = sum(net_len(l) for l in s["lines"])
             if not s["lines"]:
-                E(f"镜头{s['idx']} 没有 {{}} 台词块——纯画面拍没有信息量，除非刻意留白")
+                E(f"镜头{s['idx']} 没有 {{}} 台词块——纯画面拍没有信息量，除非刻意留白"
+                  f"（格式：镜头{s['idx']}（0-3.5秒）：中景。动作描写{{台词}}，台词写在花括号里）")
             elif n < args.min_beat:
                 E(f"镜头{s['idx']} 台词只有 {n} 字，低于 {args.min_beat} 字，这一拍撑不住")
             elif n < 10:
@@ -252,6 +260,8 @@ def main():
     ap.add_argument("--reverse-word", default="", help="最后一拍必须出现的反转词")
     ap.add_argument("--no-dialogue", action="store_true",
                     help="纯画面副视频（无台词，旁白后期配）：跳过台词类检查")
+    ap.add_argument("--fusion", action="store_true",
+                    help="融合转场片（AI 只做镜头运动，台词密度天然低）：念稿下限降为提醒")
     ap.add_argument("--strict", action="store_true", help="WARN 也算不通过")
     ap.add_argument("--quiet", action="store_true", help="只输出结论行")
     args = ap.parse_args()

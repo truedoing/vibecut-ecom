@@ -1,0 +1,123 @@
+{
+  "task": "T2_007_老郑串门",
+  "created_at": "2026-11-06T12:39",
+  "updated_at": "2026-11-06T13:10",
+  "artifacts": {
+    "structure": {
+      "skill": "ecommerce-supervisor",
+      "path": null,
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "evidence": [
+        "张老师『按你的建议来』= 单钩（本批测试线一律单钩）"
+      ],
+      "by": "张老师",
+      "at": "2026-11-06"
+    },
+    "pack": {
+      "skill": "ecommerce-category-pack",
+      "path": "packs/虎坚果酱/category-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "evidence": [
+        "11-03 建成 0E/0W，已用于 T2_006 全流程"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-03"
+    },
+    "script": {
+      "skill": "ecommerce-script-gen",
+      "path": "runs/虎坚果酱/T2_007_老郑串门/hjg_T2_007_老郑串门.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "structure",
+        "pack"
+      ],
+      "evidence": [
+        "validate: OK · 7 段 / 1 条 AI / 无禁词（12:39:58）",
+        "钩子：旁观型×陌生（张老师选 B，零新增资产）",
+        "提示词 v1: 0E/0W，67 字/15s；为过 60 字下限尾句扩 3 字，脚本已同步",
+        "张老师选 B 且批出片 = 脚本事实批准（12:52「出片」）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "hook_AI1_v1": {
+      "skill": "ecommerce-video-gen",
+      "path": "runs/虎坚果酱/T2_007_老郑串门/hjg_T2_007_AI1_v1.mp4",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "script"
+      ],
+      "evidence": [
+        "Seedance mini 128s 出片，151078 tokens，task_id=cgt-20261106125235-h77p2",
+        "画面：8帧初检过（双人/五官正常/无第三人/标签虚焦）；⚠️老郑正脸具象度偏高待人审",
+        "❌声音：镜头4台词未念，7.8-14.2s共6.4s空白（-50~-60dB底噪）——根因：台词块混入第三人称叙述+双人直接引语，单女声锚无法演",
+        "重出方案已写进 AI1_v1_指标表.md：全改林岚第一人称叙述（T2_006 单叙述者结构），待批 ≈3元"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "anchor": {
+      "skill": "ecommerce-voice-anchor",
+      "path": "runs/虎坚果酱/T2_007_老郑串门/anchor_片内.mp3",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "hook_AI1_v1"
+      ],
+      "evidence": [
+        "片内锚首例：从本片钩子 2.3-7.3s 提取，5.0s / F0跨度16.4 / 跳变0.535",
+        "extract_voice.py 收尾清理 bug 已修（rmdir→shutil.rmtree）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "narration": {
+      "skill": "ecommerce-narration",
+      "path": "runs/虎坚果酱/T2_007_老郑串门/vo_v1.mp3",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "anchor",
+        "script"
+      ],
+      "evidence": [
+        "28.32s / 136字 / 4.80字/s（正中目标）/ -18.7 LUFS / LRA 2.6（偏平，片内锚特性）",
+        "首次用 --sample 片内锚参数"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    },
+    "final_mix": {
+      "skill": "ecommerce-mix",
+      "path": "runs/虎坚果酱/T2_007_老郑串门/hjg_T2_007_final_v1.mp4",
+      "state": "ready",
+      "rev": 1,
+      "depends_on": [
+        "narration",
+        "hook_AI1_v1"
+      ],
+      "evidence": [
+        "37.67s：钩子裁剪版 9.05s（裁掉 6.4s 无声段，保留 0-7.9 + 14.0-15.1）+ 7 段混剪 28.62s",
+        "镜头全换新：C5325/C5384/C0433/C0420/C5394/C1300/C5388——零重复 T2_006 素材",
+        "响度 -14.8 LUFS / -1.0 dBTP（比 T2_006 的 -16.9 更贴近标准）",
+        "音视频同长（bug 修复后 -t 生效）"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-06"
+    }
+  },
+  "notes": [
+    "双人同框且零人物图：两人长相可能不稳，出片后人审重点看是否崩脸/出第三人",
+    "男声由模型生成（锚只锚女声）：若男声太年轻或口音怪，改用『老郑只在画外说话』单人版",
+    "ai-assets 未新建角色，复用 ch_001 + ch_002",
+    "钩子 v1 画面保留（含 6.4s 无声段的完整版 hjg_T2_007_AI1_v1.mp4 未删）；裁剪版 AI1_trim8.9s.mp4 用于混剪。若人审后想恢复完整 15s 钩子 → 重出 ≈3 元"
+  ],
+  "category": "虎坚果酱",
+  "intent": "旁观型×陌生：熟人串门质疑不认识的酱，反转落在第三次伸手"
+}

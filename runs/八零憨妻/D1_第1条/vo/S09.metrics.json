@@ -1,0 +1,19 @@
+{
+ "file": "/Users/zgl/vibecut-ecom/runs/八零憨妻/D1_第1条/vo/S09.mp3",
+ "chars": 16,
+ "atempo": 0.8609,
+ "gain_db": 3.9,
+ "rate": 4.25,
+ "metrics": {
+  "sec": 3.768,
+  "sil_n": 1,
+  "sil_sec": 0.314,
+  "sil_pct": 8.3,
+  "lufs": -18.7,
+  "lra": 1.2,
+  "peak": -3.9
+ },
+ "issues": [
+  "LRA 1.2 < 3.5：起伏不够，检查 style 是否写了「放慢/清晰」"
+ ]
+}

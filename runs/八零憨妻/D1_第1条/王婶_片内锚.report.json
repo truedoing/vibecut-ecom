@@ -1,0 +1,36 @@
+{
+ "anchor": "runs/八零憨妻/D1_第1条/王婶_片内锚.mp3",
+ "source_video": "assets/ai_assets/shots/sd001_ai_10s_带声样片.mp4",
+ "total_sec": 6.46,
+ "overall": {
+  "dur": 6.46,
+  "f0_span": 11.9,
+  "f0_jump": 0.666
+ },
+ "parts": [
+  {
+   "label": "手工段1 0.3-2.94s",
+   "start": 0.3,
+   "end": 2.94,
+   "dur": 2.64,
+   "f0_span": 14.4,
+   "f0_jump": 0.66
+  },
+  {
+   "label": "手工段2 3.23-5.43s",
+   "start": 3.23,
+   "end": 5.43,
+   "dur": 2.2,
+   "f0_span": 11.2,
+   "f0_jump": 0.742
+  },
+  {
+   "label": "手工段3 5.75-7.37s",
+   "start": 5.75,
+   "end": 7.37,
+   "dur": 1.62,
+   "f0_span": 10.6,
+   "f0_jump": 0.527
+  }
+ ]
+}
