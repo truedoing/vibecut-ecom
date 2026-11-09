@@ -1,9 +1,13 @@
-# 剧集包 schema v1.0（短剧专用）
+# 剧集包 schema v1.1（短剧专用）
 
-骨架见 `assets/pack-template.json`。**顶层固定 9 个键**，一个不多一个不少。
+骨架见 `assets/pack-template.json`。**顶层固定 10 个键**，一个不多一个不少。
+
+> v1.1（2026-11-09）在 v1.0 九块基础上加 `story_arc`（剧情概要）。1.0 的包仍可校验，
+> `story_arc` 可缺；**新建包一律 1.1**。加它的理由：`logline` 到「分幕」之间原本是空的，
+> 下游要判断「这一集该点哪句题」只能回去翻全部台词。
 
 > 与商品包的差别：没有 `product_facts`、没有 `selling_point_map`、没有价格/配料/功效字段。
-> 多了 `characters`（人物关系）与 `hook_map`（钩子素材）。**两套 schema 不互认**，
+> 多了 `characters`（人物关系）、`hook_map`（钩子素材）与 `story_arc`（剧情概要）。**两套 schema 不互认**，
 > 剧集包里出现商品字段一律判 ERROR —— 防止从旧包抄错结构。
 
 ## 顶层
@@ -12,6 +16,7 @@
 |---|---|---|---|
 | `meta` | object | ✅ | 版本、剧名、平台、任务、审核状态 |
 | `drama_facts` | array | ✅ | 剧集事实，每条带来源与核实状态 |
+| `story_arc` | object | ✅（1.1 起） | 剧情概要：分幕 + 转折点 + 单集结构 |
 | `characters` | array | ✅ | 人物关系，至少 3 人，必须含主角与对立面 |
 | `hook_map` | array | ✅ | 高能节点 → 可截断点 → 开场白，至少 6 条 |
 | `compliance` | object | ✅ | 五类必查项 + 结局策略 + 旁白禁词 |
@@ -24,10 +29,10 @@
 
 ```json
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "kind": "short_drama",
   "drama": "八零憨妻的甜蜜日常",
-  "pack_version": "1.0-draft",
+  "pack_version": "1.1-draft",
   "platform": "kuaishou",
   "task_id": "平台任务 id 或 null",
   "created_at": "2026-11-08",
@@ -77,6 +82,45 @@
 
 > **`task_template` 与 `external_search` 永远不许标 `verified: true`。**
 > 已实证：任务介绍写【漫剧】，而本地抽帧是实拍；外部搜索返回同名不同剧。
+
+## story_arc — 剧情概要（v1.1 新增）
+
+```json
+{
+  "usable_in_copy": false,
+  "acts": [
+    { "no": 1, "name": "弃", "ep_from": 1, "ep_to": 2,
+      "summary": "这一幕讲什么",
+      "payoff": "这一幕的兑现点（结果落在哪句台词）",
+      "evidence": [{ "ep": 1, "t": 110, "quote": "我不走。建军哥在哪，我就在哪。" }] }
+  ],
+  "turning_points": [
+    { "ep": 9, "t": 22, "beat": "转折点是什么", "quote": "不放。婶子病了，要去看大夫。" }
+  ],
+  "episode_pattern": { "loop": ["挑衅", "直球", "护短"], "payoff_per_episode": true },
+  "source": { "type": "subtitle_ocr", "ref": "lines_ep01–ep19.json（19 集 508 句）" },
+  "verified": false
+}
+```
+
+| 字段 | 说明 |
+|---|---|
+| `usable_in_copy` | **必须显式 false**。概要含结局，进口播/字幕就是剧透。校验器对此判 ERROR |
+| `acts[]` | 至少 3 幕；`ep_from`/`ep_to` 整数集号；`summary` 一句话；`payoff` 该幕结果落在哪 |
+| `acts[].evidence` | **必填**，每条 `{ep, t, quote}`——幕次划分必须能回到某句台词，不许凭空概括 |
+| `turning_points[]` | 转折点：`{ep, t, beat, quote}`；`ep` 必须落在某一幕范围内 |
+| `episode_pattern.loop` | 单集循环结构（如「挑衅→直球→护短」），选段时用 |
+| `episode_pattern.payoff_per_episode` | 每集是否自带兑现点。为 true 时，跨集取高光成立；要留悬念就切在兑现前的临界帧 |
+| `verified` | 人审通过后再置 true；未核实时保持 false |
+
+**分幕的三条规矩**：
+
+1. **幕次必须铺满、不重叠**（有缺口或重叠说明分幕拍脑袋了，校验器出 WARN）。
+2. **`payoff` 写「结果」不写「感想」**——它决定下游切点：切在 payoff 之前吊人，切在 payoff 之后收情绪。
+3. **`usable_in_copy: false` 是硬约束**，不是建议。hook_map 管「从哪切」，story_arc 管「讲什么」，两者混用必剧透。
+
+> 同一部剧的 `episode_pattern` 属于**这部剧**的写法，放包里；
+> 「短剧普遍为什么这么写」属于技能层方法论，放 `SKILL.md`，不要混进包。
 
 ## characters[] — 每条 7 字段
 
