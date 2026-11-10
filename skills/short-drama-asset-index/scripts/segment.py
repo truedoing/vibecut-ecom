@@ -106,7 +106,7 @@ def segments_of(lines: list[dict], duration: float) -> list[dict]:
             "start": round(start, 1),
             "end": round(end, 1),
             "duration": round(end - start, 1),
-            "lines": [{"t": l["t"], "text": l["text"]} for l in ch],
+            "line_times": [l["t"] for l in ch],
             "speakers": None,
             "speakers_pending": True,
             **({"head_from_zero": True} if start == 0.0 else {}),
@@ -140,7 +140,7 @@ def main() -> int:
         total_seg += len(segs)
         lens = [s["duration"] for s in segs]
         print(f"EP{ep:02d} {d['duration']:6.1f}s -> {len(segs)} 段  "
-              f"段长 {min(lens):.0f}-{max(lens):.0f}s  句数 {[len(s['lines']) for s in segs]}")
+              f"段长 {min(lens):.0f}-{max(lens):.0f}s  句数 {[len(s['line_times']) for s in segs]}")
 
     print(f"\n合计 {len(eps)} 集 / {total_seg} 段 / 平均 {total_seg/len(eps):.1f} 段每集")
 
@@ -148,6 +148,9 @@ def main() -> int:
         out = root / "assets/short-drama/八零憨妻的甜蜜日常/segments_skeleton.json"
         out.write_text(json.dumps({"generated_by": "segment.py", "gap_limit": GAP_LIMIT,
                                    "min_len": MIN_LEN, "max_len": MAX_LEN,
+                                   "lines_ref": {"dir": "lines/", "pattern": "lines_epNN.json",
+                                                 "note": "台词文字只存在 lines/lines_epNN.json；本文件只存时间码 line_times，不复制文字",
+                                                 "since": "2026-11-10"},
                                    "episodes": {str(k): v for k, v in result.items()}},
                                   ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"已写 {out}")

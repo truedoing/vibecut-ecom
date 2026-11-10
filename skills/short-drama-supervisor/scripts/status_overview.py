@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""短剧线状态总览（short-drama-supervisor 专用，按纯剪预告 v0.2 形态重写）。
+"""短剧线状态总览（short-drama-supervisor 专用，v0.3 三层结构）。
 
 与旧电商主管的 status_overview.py 完全独立，不复用旧 stages：
 旧表里短剧 stages 还是 11-09 电视框三拍（hook_frame_spec / hook_frame_video / 一句点题词），
 会把已废弃产物报成「可开工」。本脚本只认 v0.2 的七个环节。
 
-核心修复：**stale 是算出来的，不是人写进状态文件的。**
-每个产物带 depends_on（依赖谁）+ depends_rev（建它时各依赖的 rev 快照）。
-只要上游 rev 变了，下游立刻被判 stale，一条链自动传下去，不靠谁记得。
+核心修复：**要重做是算出来的，不是人写进状态文件的。**
+1) 文件内：每个产物带 depends_on + depends_rev（建它时的版本快照），
+   只要上游版本变了，下游立刻被判要重做，一条链自动传下去。
+2) 跨文件：工作台 shared 记共用层当前版本，每条片子记 shared_snapshot，
+   共用层一改，只把用到它的片子标出来（剧包/玩法/角色资产各管各的范围）。
+
+旧台账没有 shared_snapshot、或工作台不存在时，行为与 11-10 验收版本完全一致。
 
 用法：
   python3 status_overview.py                          # 扫 runs/ 下所有短剧状态文件
@@ -19,16 +23,16 @@ import argparse
 import json
 from pathlib import Path
 
-# v0.2 链路：选品 → 建包 → 素材索引 → 角色资产(可选) → 编排 → 织入片(可选) → 装配
+# v0.2 链路：选片 → 建包 → 素材索引 → 角色资产(可选) → 编排 → 素材段(可选) → 装配
 STAGES = ["select", "pack", "asset_index", "ai_assets",
           "script", "weave_video", "trailer"]
 STAGE_LABELS = {
-    "select": "选品（GO / NO-GO）",
-    "pack": "剧集包（G0 人审）",
+    "select": "选片（做 / 不做）",
+    "pack": "建包（剧集资料，G0 人审）",
     "asset_index": "素材索引 / 台词库",
-    "ai_assets": "王婶角色资产（可选）",
-    "script": "编排 plan.json（G1 段表人审）",
-    "weave_video": "王婶织入片（可选，G2 出片验收）",
+    "ai_assets": "玩法要用的角色资产（可选）",
+    "script": "方向卡 + 剪辑清单（G1 人审）",
+    "weave_video": "按玩法生成的素材段（可选，G2 验收）",
     "trailer": "装配成片（G3 成片人审）",
 }
 OPTIONAL = {"ai_assets", "weave_video"}
@@ -55,8 +59,82 @@ def iter_status(root):
         yield p, d
 
 
+def drama_of(rel_path):
+    """runs/<剧名>/<任务>/状态.json → <剧名>。"""
+    parts = rel_path.parts
+    return parts[0] if parts else ""
+
+
+def load_workspace(root):
+    """读 runs/工作台.json：当前选中对象 + 共用层当前版本。缺了就按旧口径跑。"""
+    p = Path(root) / "工作台.json"
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"[提示] 工作台读取失败，只算文件内依赖：{e}")
+        return {}
+
+
+def shared_reasons(doc, workspace, drama):
+    """共用层改版 → 这条片子哪些要重看。只读派生，不改状态文件。
+
+    影响范围在这里一次算全，不再跑通用传播，避免把「改清单」误传成「素材段要重做」——
+    出片是唯一花钱的环节，能复用就复用。
+    """
+    snap = doc.get("shared_snapshot") or {}
+    shared = workspace.get("shared") or {}
+    if not snap or not shared:
+        return {}
+    out = {}
+
+    def add(key, msg):
+        out.setdefault(key, []).append(f"共用层：{msg}")
+
+    # 剧包 / 素材索引：只影响本剧的清单与成片，不牵连别剧，也不重做素材段
+    base_now = (shared.get("drama_base") or {}).get(drama) or {}
+    base_old = snap.get("drama_base") or {}
+    for k, label in (("pack", "剧集包"), ("asset_index", "素材索引")):
+        if k in base_now and k in base_old and base_now[k] != base_old[k]:
+            add("script", f"本剧{label}版本 {base_old[k]}→{base_now[k]}，剪辑清单要重看")
+            add("trailer", "清单已重看，成片要重拼（已生成的素材段可复用）")
+
+    # 玩法配方 / 共用角色资产：只影响点了这道玩法的片子
+    strategy = doc.get("ai_strategy") or "none"
+    if strategy != "none":
+        now = (shared.get("ai_strategies") or {}).get(strategy) or {}
+        old = (snap.get("ai_strategies") or {}).get(strategy)
+        if isinstance(now, dict) and now.get("rev") is not None and old is not None \
+                and now["rev"] != old:
+            add("weave_video", f"玩法 {strategy} 配方版本 {old}→{now['rev']}，素材段要重做")
+            add("trailer", "素材段重做后成片要重拼")
+        assets_now = (shared.get("ai_assets") or {}).get("rev")
+        assets_old = snap.get("ai_assets")
+        if assets_now is not None and assets_old is not None and assets_now != assets_old:
+            add("weave_video", f"共用角色资产版本 {assets_old}→{assets_now}，素材段要重做")
+            add("trailer", "素材段重做后成片要重拼")
+    return out
+
+
 def rev_of(art):
     return art.get("rev") if isinstance(art, dict) else None
+
+
+def propagate(reasons, artifacts):
+    """被判失效的产物，其下游一并失效，直到收敛。"""
+    changed = True
+    while changed:
+        changed = False
+        for key, art in artifacts.items():
+            if not isinstance(art, dict) or art.get("state") in SKIP or key in reasons:
+                continue
+            for dep in art.get("depends_on") or []:
+                if dep in reasons:
+                    reasons[key] = [f"上游 {dep} 已失效（依赖链传播）"]
+                    changed = True
+                    break
+    return reasons
 
 
 def stale_reasons(artifacts):
@@ -89,26 +167,14 @@ def stale_reasons(artifacts):
         if rs:
             reasons[key] = rs
 
-    # 传递闭包：被判失效的产物，其下游一并失效，直到收敛。
-    # 三测试要求的是「改 pack rev 后下游一条链全标 stale」，只比一跳不够。
-    changed = True
-    while changed:
-        changed = False
-        for key, art in artifacts.items():
-            if not isinstance(art, dict) or art.get("state") in SKIP or key in reasons:
-                continue
-            for dep in art.get("depends_on") or []:
-                if dep in reasons:
-                    reasons[key] = [f"上游 {dep} 已失效（依赖链传播）"]
-                    changed = True
-                    break
-    return reasons
+    # 传递闭包：三测试要求「改 pack rev 后下游一条链全标 stale」，只比一跳不够。
+    return propagate(reasons, artifacts)
 
 
 def next_step(artifacts, reasons):
     if reasons:
         return "返工：" + "、".join(sorted(reasons))
-    # 从「最新已完成的环节」往后找，不能从头扫——否则成片都出了还会报「可开工选品」。
+    # 从「最新已完成的环节」往后找，不能从头扫——否则成片都出了还会报「可开工选片」。
     last_done = -1
     for i, s in enumerate(STAGES):
         art = artifacts.get(s)
@@ -133,18 +199,29 @@ def main():
     ap.add_argument("--stale-only", action="store_true")
     a = ap.parse_args()
 
+    ws = load_workspace(a.root)
+    active = ws.get("active") or {}
+    if active and not a.stale_only:
+        print(f"当前工作对象：{active.get('drama', '?')} / {active.get('task', '?')}"
+              "（不指定就沿用；换剧只改工作台，历史不删）")
+
     found = 0
     for p, d in iter_status(a.root):
         artifacts = d.get("artifacts") or {}
+        rel = p.relative_to(Path(a.root))
+        drama = drama_of(rel)
         legacy = sorted(set(artifacts) & LEGACY_KEYS)
         if legacy and a.stale_only:
             continue  # 旧形态不是依赖卡点，别混进「只看卡点」视图
         reasons = stale_reasons(artifacts)
+        # 共用层影响范围由 shared_reasons 一次算全，不再跑通用传播（省钱规矩）
+        for k, rs in shared_reasons(d, ws, drama).items():
+            reasons.setdefault(k, []).extend(rs)
         if a.stale_only and not reasons:
             continue
         found += 1
-        rel = p.relative_to(Path(a.root))
-        print(f"\n=== {rel} ===")
+        is_active = (active.get("drama") == drama and active.get("task") == p.parent.name)
+        print(f"\n=== {rel} ===" + ("  [当前]" if is_active else ""))
         if legacy:
             print(f"  [旧形态] 含 11-09 电视框三拍键名 {legacy}；本主管按 v0.2 只认新键名，"
                   "不迁移、不计入进度，也不拿旧依赖报 stale。")
@@ -156,12 +233,16 @@ def main():
         unlogged = [s for s in must if not isinstance(artifacts.get(s), dict)]
         print(f"  演到哪  {done[-1] if done else '未开工'}"
               f"（已完成 {len(done)}/{len(must)} 个必选环节）")
+        print(f"  AI 玩法 {d.get('ai_strategy') or 'none'}"
+              f"（不写＝纯剪）   循环轮次 {d.get('cycle_round') or 1}")
         if unlogged and done:
             print(f"  未登记  {', '.join(unlogged)}（旧批次可能没记，不倒推为待办）")
         if reasons:
-            print("  卡点    依赖变更，以下产物应判 stale：")
+            print("  卡点    以下产物要重做：")
             for k, rs in sorted(reasons.items()):
                 print(f"            - {k}: {'; '.join(rs)}")
+            if any("素材段可复用" in x for rs in reasons.values() for x in rs):
+                print("            * 改清单不等于重做出片：素材段留着换插入位，别重跑花钱那步")
         else:
             print("  卡点    无")
         print(f"  下一步  {next_step(artifacts, reasons)}")
