@@ -59,7 +59,7 @@
       ],
       "by": "WorkBuddy",
       "at": "2026-11-08",
-      "_note": "已知台词库漏收 4 处（ep1「建军哥我等你」/ ep12「小满，」/ ep18「我嫁人了」/ ep20 同音字），未补。明细不进剧集包。"
+      "_note": "【19:xx 已复核补句】原记「漏收 4 处」是简写，实为整句漏 / 句首被切 / 半句截断 / 存疑四类混合。用内置听写重听 ep1/12/18/20 原片：补 ep1 片尾整句「建军哥，我等你。」(t=130)、修「婶子，」缺字、补 ep12 句首「小满，」、补 ep18 三处半句；ep20 听写与现有台词一致，两处存疑不硬改，只登记。详见 docs/台词库复核记录_2026-11-10.md。明细不进剧集包。另：索引历史口径「508 句」未重算（补了 1 句），asset_index.json 不存总句数字段，不影响脚本。"
     },
     "ai_assets": {
       "skill": "short-drama-ai-assets",
@@ -71,7 +71,7 @@
       "evidence": [],
       "by": "WorkBuddy",
       "at": "2026-11-10",
-      "_note": "技能 11-10 新建，card.json ×2 / 三张锚 / registry.json 均未落盘。王婶存量资产仍在 assets/ai_assets/（电商库），只登记来源未迁移。此处不虚报 approved。"
+      "_note": "技能 11-10 新建；card.json ×2 / 三张无脸锚仍未落盘，故保持 pending 不虚报 approved。19:xx 修复：registry.json 已落盘，如实登记电商库存量资产的来源、哪些含脸不可提交、以及三处缺口；按技能规定存量不迁移。王婶存量资产仍在 assets/ai_assets/（电商库）。"
     },
     "script": {
       "skill": "short-drama-script",
@@ -81,7 +81,7 @@
       "depends_on": ["pack", "asset_index"],
       "depends_rev": {"pack": 1, "asset_index": 1},
       "evidence": [
-        "plan_v3ws.json 15 段，每段带 label / type / ep / a / b / beats",
+        "plan_v3ws.json 14 段，每段带 label / type / ep / a / b / beats（19:xx 更正，旧写 15 段是笔误）",
         "11-10 12:40 v0.2 定版，段表人审通过（张老师）"
       ],
       "direction_card": {
@@ -90,11 +90,12 @@
         "approved_by": null,
         "at": null,
         "state": "未落盘",
-        "_note": "方向卡是 11-10 17:4x 才加的工序，D5 当时没有这份文件；「婆婆线」是在对话里定的，不是走方向卡人圈定的。按补记不美化原则不倒推 approved，此处只如实登记选了哪条线。"
+        "_note": "方向卡是 11-10 17:4x 才加的工序，D5 当时没有这份文件；「婆婆线」是在对话里定的，不是走方向卡人圈定的。按补记不美化原则不倒推 approved，此处只如实登记选了哪条线。19:xx 另补「方向卡.md」作事后存档（标题已写明不是当时记录），path 仍保持 null、state 仍为「未落盘」，不因补文件就改状态。",
+        "retro_doc": "runs/八零憨妻/D5_婆婆线/方向卡.md"
       },
       "by": "张老师",
       "at": "2026-11-10",
-      "_note": "该 plan 由 11-10 旧流程产出，short-drama-script 技能当日才建，未由该技能产出；配套「选段说明.md」（五幕归属 / But-Therefore / 砍场前因复述）未落盘。src_dir 写死本机绝对路径，未去路径化。"
+      "_note": "该 plan 由 11-10 旧流程产出，short-drama-script 技能当日才建，未由该技能产出。19:xx 修复：src_dir 已改相对 plan 目录路径（装配器另支持 SHORT_DRAMA_SRC_DIR 环境变量覆盖），dry-run 通过；「选段说明.md」已按 14 段事后补记（五幕归属 / But-Therefore 还原 / 砍场前因标注无法还原），不倒推当时人审记录。"
     },
     "weave_video": {
       "skill": "short-drama-video",
@@ -109,7 +110,7 @@
       ],
       "by": "WorkBuddy",
       "at": "2026-11-10",
-      "_note": "带伤未清：视觉标记「王婶说剧」四字道具未生成（台历实测没出来）；<名>.report.json 未落盘；ASR 逐字比对无记录。故只标 done 不标 approved。路径也不在技能写明的 assets/ai_assets/shots/ 下。"
+      "_note": "带伤未清：视觉标记「王婶说剧」四字道具未生成（v1 实际写成「王婶看剧」且是背景细节）；19:xx 已按主体物件写法另出 prompt_wangshen_v2.txt，但未提交出片、未验四字，故状态仍为 done 不升 approved。<名>.report.json 未落盘；ASR 逐字比对无记录。路径不在技能旧写的 assets/ai_assets/shots/ 下（该旧路径已被取代）。"
     },
     "trailer": {
       "skill": "short-drama-trailer",
@@ -134,6 +135,7 @@
     "D1_第1条 的 11-09 电视框三拍旧状态文件不迁移、不删，新主管只报「旧形态，不计入进度」。",
     "【已处理，原文保留备查】补记时发现的交接路径断口（原记「未修订，待张老师拍板」）：select 决策书路径模板写 runs/<剧名>/<task>/，技能写 runs/<剧名>/；script 输出名模板 plan.json，实际 plan_v3ws.json；video 输出技能写 assets/ai_assets/shots/，实际在 runs/<task>/ 且在电商库目录下；ai_assets 的 registry.json 不存在但被 video 列为输入。2026-11-10 17:2x 张老师「按推荐来」后已统一，见 docs/短剧链路空跑验收记录.md 第八节。",
     "【17:2x 现状】六处路径口径已统一到技能文档与状态模板；本台账各 path 仍写存量文件真实路径，不改文件名、不搬文件。未落盘的 ai_assets registry 与 选段说明.md 仍如实标 pending / 带伤，不因口径统一而回填 approved。",
-    "【17:4x 方向卡】新增「出方向卡 → 人选一条故事线 → 才排段表」这道停，记在 artifacts.script.direction_card，不是独立环节、不进脚本环节表。D5 是存量批次，方向卡未落盘，只如实登记当时选的是婆婆线，不倒推人审通过。"
+    "【17:4x 方向卡】新增「出方向卡 → 人选一条故事线 → 才排段表」这道停，记在 artifacts.script.direction_card，不是独立环节、不进脚本环节表。D5 是存量批次，方向卡未落盘，只如实登记当时选的是婆婆线，不倒推人审通过。",
+    "【19:xx 修已知带伤】张老师「带伤是什么意思？那就修复呀」后本轮处理：① 11 个 4 字节 blat 空文件移出工作区（备份 /tmp/vibecut-ecom-junk-20261110；tmp/ 反向测试脚本与 3.5M 出镜视频经核实不是垃圾，保留）；② short-drama-trailer 用户级复制目录改软链，8 个技能现全为软链；③ plan.src_dir 去绝对路径、装配器支持环境变量覆盖与中英文集文件命名、黑场缓存按尺寸命名，dry-run 通过；④ 补 registry.json / 选段说明.md / 方向卡.md / prompt_wangshen_v2.txt 四份文件，均为如实登记或事后补记，不倒推人审通过；⑤ 台账 evidence「15 段」更正为 14 段。仍未清：四字道具出片验证（要人审 + 花钱 / 出片费）、台词库漏收复核（要重新看片听声）、第二个独立用例与换剧完整跑通。"
   ]
 }

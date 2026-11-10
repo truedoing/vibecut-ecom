@@ -1,5 +1,5 @@
 {
-  "src_dir": "/Users/zgl/短剧/八零憨妻的甜蜜日常",
+  "src_dir": "../../../../短剧/八零憨妻的甜蜜日常",
   "card": "build/card.png",
   "w": 720, "h": 1280, "fps": 24,
   "segs": [
