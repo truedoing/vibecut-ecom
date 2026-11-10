@@ -117,16 +117,42 @@ def shared_reasons(doc, workspace, drama):
     return out
 
 
+def strategy_warnings(doc, workspace):
+    """片子点了玩法但菜单没登记齐 → 明说，别静默跳过配方改版的传播。
+
+    实测（11-10 22:1x）：新玩法没登记、没写版本、或片子没记建它时的版本时，
+    shared_reasons 一路静默，配方改了也不报「要重做」。这类缺登记只提醒，
+    不混进要重做列表（不改「下一步」，也不触发返工流程）。
+    """
+    strategy = doc.get("ai_strategy") or "none"
+    if strategy == "none":
+        return []
+    shared = workspace.get("shared") or {}
+    if not shared:
+        return []
+    entry = (shared.get("ai_strategies") or {}).get(strategy)
+    if entry is None:
+        return [f"点了玩法 {strategy}，工作台菜单里却没有它；配方改版不会被发现，请先登记"]
+    if not isinstance(entry, dict) or entry.get("rev") is None:
+        return [f"玩法 {strategy} 在菜单里没写版本；配方改版不会被发现，请补 rev"]
+    old = ((doc.get("shared_snapshot") or {}).get("ai_strategies") or {}).get(strategy)
+    if old is None:
+        return [f"这条片子没记建它时玩法 {strategy} 的版本；配方改版不会被发现，请补 shared_snapshot"]
+    return []
+
+
 def rev_of(art):
     return art.get("rev") if isinstance(art, dict) else None
 
 
-def propagate(reasons, artifacts):
+def propagate(reasons, artifacts, skipped=()):
     """被判失效的产物，其下游一并失效，直到收敛。"""
     changed = True
     while changed:
         changed = False
         for key, art in artifacts.items():
+            if key in skipped:
+                continue
             if not isinstance(art, dict) or art.get("state") in SKIP or key in reasons:
                 continue
             for dep in art.get("depends_on") or []:
@@ -137,10 +163,18 @@ def propagate(reasons, artifacts):
     return reasons
 
 
-def stale_reasons(artifacts):
-    """返回 {产物名: [作废原因]}。只读派生，不改状态文件。"""
+def stale_reasons(artifacts, skip_optional=False):
+    """返回 {产物名: [作废原因]}。只读派生，不改状态文件。
+
+    11-11 修第 40 环登记的结构问题：明确写了「纯剪」的片子，角色资产 / 素材段两环整环跳过、
+    零花费，改剪辑清单不该把它们报成「要重做」。只认**明确写 ai_strategy == "none"** 的台账；
+    旧台账没写这个字段时不跳过，避免把 D5 那种有织入版的老片子误当纯剪。
+    """
     reasons = {}
+    skipped = OPTIONAL if skip_optional else set()
     for key, art in artifacts.items():
+        if key in skipped:
+            continue
         if not isinstance(art, dict) or art.get("state") in SKIP:
             continue
         rs = []
@@ -168,7 +202,7 @@ def stale_reasons(artifacts):
             reasons[key] = rs
 
     # 传递闭包：三测试要求「改 pack rev 后下游一条链全标 stale」，只比一跳不够。
-    return propagate(reasons, artifacts)
+    return propagate(reasons, artifacts, skipped)
 
 
 def next_step(artifacts, reasons):
@@ -213,11 +247,13 @@ def main():
         legacy = sorted(set(artifacts) & LEGACY_KEYS)
         if legacy and a.stale_only:
             continue  # 旧形态不是依赖卡点，别混进「只看卡点」视图
-        reasons = stale_reasons(artifacts)
+        skip_optional = d.get("ai_strategy") == "none"
+        reasons = stale_reasons(artifacts, skip_optional)
         # 共用层影响范围由 shared_reasons 一次算全，不再跑通用传播（省钱规矩）
         for k, rs in shared_reasons(d, ws, drama).items():
             reasons.setdefault(k, []).extend(rs)
-        if a.stale_only and not reasons:
+        warnings = strategy_warnings(d, ws)
+        if a.stale_only and not reasons and not warnings:
             continue
         found += 1
         is_active = (active.get("drama") == drama and active.get("task") == p.parent.name)
@@ -235,6 +271,10 @@ def main():
               f"（已完成 {len(done)}/{len(must)} 个必选环节）")
         print(f"  AI 玩法 {d.get('ai_strategy') or 'none'}"
               f"（不写＝纯剪）   循环轮次 {d.get('cycle_round') or 1}")
+        if skip_optional:
+            print("            （纯剪：角色资产 / 素材段整环跳过，改清单不牵动它们）")
+        for w in warnings:
+            print(f"  [提醒]  {w}")
         if unlogged and done:
             print(f"  未登记  {', '.join(unlogged)}（旧批次可能没记，不倒推为待办）")
         if reasons:
