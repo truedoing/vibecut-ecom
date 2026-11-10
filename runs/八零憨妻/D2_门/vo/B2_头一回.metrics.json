@@ -1,0 +1,19 @@
+{
+ "file": "runs/八零憨妻/D2_门/vo/B2_头一回.mp3",
+ "chars": 19,
+ "atempo": 1.0732,
+ "gain_db": -1.7,
+ "rate": 3.6,
+ "metrics": {
+  "sec": 5.28,
+  "sil_n": 1,
+  "sil_sec": 0.312,
+  "sil_pct": 5.9,
+  "lufs": -18.7,
+  "lra": 1.5,
+  "peak": -2.9
+ },
+ "issues": [
+  "LRA 1.5 < 3.5：起伏不够，检查 style 是否写了「放慢/清晰」"
+ ]
+}

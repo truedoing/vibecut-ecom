@@ -207,6 +207,19 @@ def main() -> int:
         if spans and series_len and max(s[1] for s in spans) < series_len:
             warn("STORY",
                  f"幕次只覆盖到第 {max(s[1] for s in spans)} 集，总集数 {series_len} —— 结尾未纳入概要")
+        # 大结局门禁：概要要覆盖结局才完整，但结局素材禁进成片 —— 覆盖它的幕必须显式标 restricted
+        comp = d.get("compliance") or {}
+        finale_eps = set((d.get("asset_index") or {}).get("finale_episodes") or [])
+        if comp.get("ending_policy") == "do_not_use" and finale_eps:
+            for a in acts:
+                ef, et = a.get("ep_from"), a.get("ep_to")
+                if not isinstance(ef, int) or not isinstance(et, int):
+                    continue
+                hit = sorted(finale_eps & set(range(ef, et + 1)))
+                if hit and not a.get("restricted"):
+                    err("STORY",
+                        f"act {a.get('no')} 覆盖第 {hit} 集（大结局，ending_policy=do_not_use）"
+                        "却没标 restricted —— 结局素材会顺着概要流进成片")
         tps = sa.get("turning_points") or []
         if not tps:
             warn("STORY", "story_arc 没有 turning_points —— 转折点是二创选段的落点，建议至少 2 条")
