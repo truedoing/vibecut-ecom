@@ -3466,9 +3466,11 @@
             46,
             48,
             50,
-            52,
-            54,
-            56
+            53,
+            55,
+            57,
+            59,
+            60
           ],
           "speakers": null,
           "speakers_pending": true,
@@ -3731,10 +3733,13 @@
           "duration": 16.0,
           "line_times": [
             64,
-            68,
+            65,
+            67,
+            69,
             72,
             74,
-            78
+            76,
+            77
           ],
           "speakers": null,
           "speakers_pending": true,
@@ -4976,7 +4981,8 @@
     "dir": "lines/",
     "pattern": "lines_epNN.json",
     "note": "台词文字只存在这里。asset_index.json 与 segments_skeleton.json 只存时间码 line_times，不复制文字；改台词只改 lines/ 下的文件，台账等视图重新渲染即可。",
-    "since": "2026-11-10"
+    "since": "2026-11-10",
+    "timeline_fix_2026_11_11": "ep17/ep18 的 line_times 已按画面字幕重渲染：台词文字仍在 lines/ 唯一真源里，这里只有秒数。"
   },
   "legacy_fields": {
     "note": "以下字段属于 11-08 旧形态「让虚构的王婶在旁边接话」，2026-11-10 已被纯剪预告 + AI 玩法菜单取代。原文保留备查，不删不改；新会话不要据此生成或插入王婶镜头。",

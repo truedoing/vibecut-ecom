@@ -1,0 +1,1021 @@
+{
+  "meta": {
+    "schema_version": "1.1",
+    "kind": "short_drama",
+    "drama": "八零憨妻的甜蜜日常",
+    "pack_version": "1.1-draft.2",
+    "platform": "kuaishou",
+    "task_id": null,
+    "created_at": "2026-11-08",
+    "created_by": "WorkBuddy",
+    "source_materials": [
+      "本地 20 集全集（无 BGM）",
+      "星火任务页截图",
+      "前 5 集台词稿",
+      "星火任务页「必须完成以下要求」全文截图（11-08）",
+      "19 集硬字幕 OCR 台词（ep01–ep19，508 句，2026-11-09；extract_lines.py）",
+      "第 20 集语音转写（20 句，2026-11-09；AudioTranscribe，仅剧情理解不进成片）"
+    ],
+    "review": {
+      "self_check": "ok",
+      "human_review": "pending",
+      "published_to_tdrive": false,
+      "evidence": [
+        "张老师 11-08 原话『可以』，附任务页「必须完成以下要求」截图 —— G0 通过",
+        "validate_pack 0 ERROR / 1 WARN（WARN=task_id 为 null，结算与授权无法回溯，不阻塞结构）",
+        "2026-11-09 13:55 schema 1.0→1.1，新增 story_arc（五幕 + 三个转折点，全部带 ep/t/台词）—— 属于已批准包的内容变更，按规矩回落 pending，待张老师确认后重签。原 11-08 approved 不删。",
+        "2026-11-09 14:2x 补第 20 集：新增 lines_ep20.json（语音转写 20 句）+ story_arc 第六幕「家」（标 restricted，不得进成片）；幕次覆盖 1–20。张老师当日指令「ep20 要补」「大结局的问题写文案时才考虑」。"
+      ]
+    },
+    "consumers": [
+      "short-drama-script"
+    ]
+  },
+  "drama_facts": [
+    {
+      "id": "df_001",
+      "field": "title",
+      "label": "剧名",
+      "value": "八零憨妻的甜蜜日常",
+      "source": {
+        "type": "local_material",
+        "ref": "素材目录名与片头"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_002",
+      "field": "series_length",
+      "label": "集数",
+      "value": 20,
+      "source": {
+        "type": "local_material",
+        "ref": "目录内 20 个文件"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_003",
+      "field": "episode_duration",
+      "label": "单集时长",
+      "value": "约 133 秒",
+      "source": {
+        "type": "local_material",
+        "ref": "ffprobe 第 1 集"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_004",
+      "field": "genre",
+      "label": "题材",
+      "value": "年代 / 家庭伦理 / 憨妻反差",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "前 5 集台词稿"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_005",
+      "field": "era",
+      "label": "年代设定",
+      "value": "二十世纪八十年代，农村",
+      "source": {
+        "type": "local_material",
+        "ref": "抽帧：土墙竹篱、花布袄、借一斗米"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_006",
+      "field": "logline",
+      "label": "一句话剧情",
+      "value": "为救男友摔伤变迟钝的姑娘，被退婚后自己走几十里路找上门，在婆家一边干活一边用实话反杀。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "前 5 集台词稿"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_007",
+      "field": "premise",
+      "label": "必交代的前因",
+      "value": "她是为了救建军才摔下山坡；人一变迟钝，周家就退彩礼退婚。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "第 1 集 20s"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_008",
+      "field": "style",
+      "label": "风格判定",
+      "value": "爽剧反杀 + 轻喜日常（非苦情）",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "每集均有实话反杀；借米不还为跨集重复梗；第 5 集婆婆软化"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_009",
+      "field": "core_conflict",
+      "label": "核心冲突",
+      "value": "婆家嫌她迟钝要退婚，她认死理不肯走",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "第 1–2 集"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_010",
+      "field": "ending_type",
+      "label": "结局类型",
+      "value": "暖收（未看结局，按第 5 集走向推断）",
+      "source": {
+        "type": "inferred",
+        "ref": "第 5 集婆婆态度软化"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_011",
+      "field": "license_scope",
+      "label": "授权范围",
+      "value": "平台任务内素材，仅限二创推广",
+      "source": {
+        "type": "platform_task_page",
+        "ref": "任务详情页结算说明"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": true
+    },
+    {
+      "id": "df_012",
+      "field": "settlement",
+      "label": "结算口径",
+      "value": "按站内观看广告效果计费（IAA），发布后 60 天有效",
+      "source": {
+        "type": "platform_task_page",
+        "ref": "任务详情页结算说明"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_013",
+      "field": "sub_format",
+      "label": "字幕形态",
+      "value": "内嵌硬字幕，需去字幕后重建",
+      "source": {
+        "type": "local_material",
+        "ref": "抽帧可见烧录字幕"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": true
+    },
+    {
+      "id": "df_014",
+      "field": "audio",
+      "label": "音轨",
+      "value": "无 BGM 版，对白音轨保留",
+      "source": {
+        "type": "local_material",
+        "ref": "文件名标注 + ffprobe"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_015",
+      "field": "finale",
+      "label": "大结局集数",
+      "value": 20,
+      "source": {
+        "type": "local_material",
+        "ref": "第 20 集为最后一集"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    }
+  ],
+  "story_arc": {
+    "usable_in_copy": false,
+    "acts": [
+      {
+        "no": 1,
+        "name": "弃",
+        "ep_from": 1,
+        "ep_to": 2,
+        "summary": "周家嫌她救人后反应迟钝，把彩礼退回来、婚事退了。她一个人走几十里路找上门，被堵在门外、被全村当笑话；她只说清自己的名字，和一句不走。",
+        "payoff": "门没进去，人却在门口站定了：「我不走。建军哥在哪，我就在哪。」婆婆回她「只要我活着，你就别想进这个门」——矛盾轴心就此立起。",
+        "evidence": [
+          {
+            "ep": 1,
+            "t": 18,
+            "quote": "当初小满是为了救建军才摔下山坡的"
+          },
+          {
+            "ep": 1,
+            "t": 110,
+            "quote": "我不走。建军哥在哪，我就在哪。"
+          },
+          {
+            "ep": 1,
+            "t": 128,
+            "quote": "只要我活着，你就别想进这个门！"
+          }
+        ]
+      },
+      {
+        "no": 2,
+        "name": "证",
+        "ep_from": 3,
+        "ep_to": 9,
+        "summary": "留下就得顶全部重活：烧火、挑水、劈柴、下地，一个人拉犁翻后山那块坡地，手磨破了也不吭声；当众讨回刘婶借的一斗米；用劈的柴换鸡蛋给婆婆补身子。婆婆夜里高烧，她背着走夜路去卫生所。",
+        "payoff": "医生「再晚点就麻烦了」；建军「这辈子，我护定她了」——婆婆态度的物理分水岭，前面所有刁难在这一夜抵清。",
+        "evidence": [
+          {
+            "ep": 4,
+            "t": 44,
+            "quote": "家里重活你全包。挑水、劈柴、下地，"
+          },
+          {
+            "ep": 6,
+            "t": 2,
+            "quote": "今天翻出来。你一个人拉犁，"
+          },
+          {
+            "ep": 8,
+            "t": 16,
+            "quote": "我跟隔壁王奶奶换的。用我劈的柴。"
+          },
+          {
+            "ep": 9,
+            "t": 22,
+            "quote": "不放。婶子病了，要去看大夫。"
+          },
+          {
+            "ep": 9,
+            "t": 48,
+            "quote": "这辈子，我护定她了"
+          }
+        ]
+      },
+      {
+        "no": 3,
+        "name": "名",
+        "ep_from": 10,
+        "ep_to": 13,
+        "summary": "婆婆开始替她挡话（「我家的儿媳妇，轮不到外人操心」），带她去镇上扯布做新衣；当众宣布她是周家儿媳；建军提亲、给陪嫁、拜堂。婚礼上她一个人搬三百斤石碾，全村震住。",
+        "payoff": "「谁再敢叫她一声傻子，就是跟我张桂芬过不去」+ 村代表「我代表村里，认了！」——不是家内接纳，是村社层面的承认，公共标签被当场撕掉。",
+        "evidence": [
+          {
+            "ep": 10,
+            "t": 30,
+            "quote": "我家的儿媳妇，轮不到外人操心。"
+          },
+          {
+            "ep": 11,
+            "t": 30,
+            "quote": "婶子，我不傻。我会干活，会背子看病"
+          },
+          {
+            "ep": 12,
+            "t": 6,
+            "quote": "从今往后就是我周家的儿媳。"
+          },
+          {
+            "ep": 12,
+            "t": 10,
+            "quote": "就是跟我张桂芬过不去"
+          },
+          {
+            "ep": 13,
+            "t": 30,
+            "quote": "这是我家的石碾！我来搬！"
+          },
+          {
+            "ep": 13,
+            "t": 36,
+            "quote": "这力气，比牛还大。"
+          }
+        ]
+      },
+      {
+        "no": 4,
+        "name": "立",
+        "ep_from": 14,
+        "ep_to": 16,
+        "summary": "开荒种菜；刘婶拔她菜苗，村长判赔菜苗钱并当众道歉；刘婶反咬「小满推我」，全家举证戳穿，小满反倒送她菜种。",
+        "payoff": "「以德报怨」在村里立住（「她要是再拔，我就再给她菜种」）；婆婆决定补办婚宴给她正名。",
+        "evidence": [
+          {
+            "ep": 14,
+            "t": 82,
+            "quote": "赔菜苗钱，给苏小满道歉。"
+          },
+          {
+            "ep": 14,
+            "t": 86,
+            "quote": "对不住。"
+          },
+          {
+            "ep": 15,
+            "t": 96,
+            "quote": "菜种。我昨天去镇上买的。"
+          },
+          {
+            "ep": 16,
+            "t": 22,
+            "quote": "她要是再拔，我就再给她菜种"
+          },
+          {
+            "ep": 16,
+            "t": 92,
+            "quote": "都听好了！周家后天给小满补办婚宴！"
+          }
+        ]
+      },
+      {
+        "no": 5,
+        "name": "圆",
+        "ep_from": 17,
+        "ep_to": 19,
+        "summary": "补办婚宴：村长致辞、哥哥当面托付；婆婆当场认女，把戴了三十年的镯子给她；席上棚子要塌她一个人顶上；王婆子带赵四上门想讨便宜，被她一块糖打发走。",
+        "payoff": "「你就是我亲闺女」——从第 1 集的「别想进这个门」走到认亲，全剧闭环。",
+        "evidence": [
+          {
+            "ep": 17,
+            "t": 10,
+            "quote": "这是我当年的陪嫁。从今往后，"
+          },
+          {
+            "ep": 17,
+            "t": 12,
+            "quote": "你就是我亲闺女。"
+          },
+          {
+            "ep": 17,
+            "t": 46,
+            "quote": "棚子要塌了！棚子要塌了！"
+          },
+          {
+            "ep": 18,
+            "t": 24,
+            "quote": "当初王婆子还说要把你说给我"
+          },
+          {
+            "ep": 19,
+            "t": 30,
+            "quote": "这镯子跟了我三十年。今天传给你，"
+          }
+        ]
+      },
+      {
+        "no": 6,
+        "name": "家",
+        "ep_from": 20,
+        "ep_to": 20,
+        "usable_in_copy": false,
+        "summary": "开春，建军带小满去镇上照相馆拍结婚照。婆婆说不去、家里还有活，小满临走还回头喊娘。摄影师让她「看镜头，别看你男人」；照片拿回来，村里人说这姑娘是村里的福气。",
+        "payoff": "「我有家了」／「嗯，你有家了」—— 从第 1 集被堵在门外说的「我不走」，收在她被承认有了一个家。",
+        "evidence": [
+          {
+            "ep": 20,
+            "t": 29,
+            "quote": "姑娘看镜头，别看你男人",
+            "src": "asr",
+            "quote_verified": false
+          },
+          {
+            "ep": 20,
+            "t": 59,
+            "quote": "小满这姑娘是咱们村的福气",
+            "src": "asr",
+            "quote_verified": false
+          },
+          {
+            "ep": 20,
+            "t": 63,
+            "quote": "我有家了",
+            "src": "asr",
+            "quote_verified": false
+          }
+        ]
+      }
+    ],
+    "turning_points": [
+      {
+        "ep": 9,
+        "t": 22,
+        "beat": "婆婆夜里高烧，她背着走夜路去卫生所",
+        "quote": "不放。婶子病了，要去看大夫。"
+      },
+      {
+        "ep": 12,
+        "t": 6,
+        "beat": "当众宣布她是周家儿媳，把「傻子」这个公共标签撕掉",
+        "quote": "从今往后就是我周家的儿媳。"
+      },
+      {
+        "ep": 15,
+        "t": 96,
+        "beat": "被造谣后不追究、反送菜种，坏人自己低头",
+        "quote": "菜种。我昨天去镇上买的。"
+      }
+    ],
+    "episode_pattern": {
+      "loop": [
+        "挑衅",
+        "直球",
+        "护短"
+      ],
+      "payoff_per_episode": true
+    },
+    "source": {
+      "type": "subtitle_ocr",
+      "ref": "ep01–ep19 硬字幕 OCR 508 句（assets/.../lines/lines_ep01–ep19.json）；ep20 语音转写 20 句（lines_ep20.json）",
+      "supplementary_type": "asr",
+      "supplementary_ref": "第 20 集 AudioTranscribe 转写，含同音错字，quote 引用前须回听"
+    },
+    "verified": false
+  },
+  "characters": [
+    {
+      "id": "ch_001",
+      "name": "苏小满",
+      "role": "protagonist",
+      "relation": "女主，周建军未过门的媳妇",
+      "traits": [
+        "反应慢",
+        "认死理",
+        "记性好",
+        "力气大"
+      ],
+      "evidence": {
+        "ep": 1,
+        "t": 100,
+        "quote": "我不是傻姑娘，我叫苏小满。"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_002",
+      "name": "桂芬",
+      "role": "antagonist",
+      "relation": "周建军的母亲，主张退婚",
+      "traits": [
+        "势利",
+        "强硬",
+        "重面子"
+      ],
+      "evidence": {
+        "ep": 1,
+        "t": 128,
+        "quote": "只要我活着，你就别想进这个门！"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_003",
+      "name": "周建军",
+      "role": "supporting",
+      "relation": "男主，小满的未婚夫",
+      "traits": [
+        "摇摆",
+        "护她",
+        "不敢顶撞母亲"
+      ],
+      "evidence": {
+        "ep": 1,
+        "t": 120,
+        "quote": "小满，你先回去，我过两天去看你。"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_004",
+      "name": "刘婶",
+      "role": "neighbor",
+      "relation": "邻居，爱嚼舌根，借米不还",
+      "traits": [
+        "刻薄",
+        "爱传话",
+        "占小便宜"
+      ],
+      "evidence": {
+        "ep": 1,
+        "t": 96,
+        "quote": "这不是苏家那傻姑娘吗？还真追上门来了。"
+      },
+      "usable_in_copy": true
+    }
+  ],
+  "hook_map": [
+    {
+      "id": "hk_001",
+      "beat": "周家把彩礼退回来了",
+      "ep": 1,
+      "t_start": 2,
+      "t_end": 10,
+      "quote": "周家把彩礼退回来了。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 10,
+        "quote": "他们说……说你这病好不了。"
+      },
+      "opening_lines": [
+        "彩礼退回来了，就因为她救了人之后变迟钝。",
+        "为救男朋友摔下山坡，人一变迟钝，亲事就退了。",
+        "周家把彩礼退回来了。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low 原剧开场即冲突",
+      "status": "ready"
+    },
+    {
+      "id": "hk_002",
+      "beat": "她一个人走了几十里路去找他",
+      "ep": 1,
+      "t_start": 32,
+      "t_end": 48,
+      "quote": "我认识建军哥带我走过，顺着大路一直走，过两个桥，再拐个弯就到了。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 48,
+        "quote": "我倒要看看周家有没有脸把她赶出来！"
+      },
+      "opening_lines": [
+        "几十里路，她一个人走过去的，就记得他带她走过一次。",
+        "一个记性特别好的人，把路记得一字不差。",
+        "他带她走过一次，她记了一辈子。"
+      ],
+      "hook_type": "suspense",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_003",
+      "beat": "她追到周家门口，被当场退婚",
+      "ep": 1,
+      "t_start": 62,
+      "t_end": 74,
+      "quote": "建军哥！建军哥！我是小满！",
+      "truncate_at": {
+        "ep": 1,
+        "t": 74,
+        "quote": "这门亲事退了，以后别来了。"
+      },
+      "opening_lines": [
+        "她自己找上门，门一开，人家说的是「这门亲事退了」。",
+        "她站在门口喊他的名字，出来的是他妈。",
+        "门没让她进，话只说了一句：这门亲事退了。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_004",
+      "beat": "邻居当众嘲笑她脸皮厚",
+      "ep": 1,
+      "t_start": 96,
+      "t_end": 102,
+      "quote": "这不是苏家那傻姑娘吗？还真追上门来了。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 102,
+        "quote": "连自己傻都不承认，还不是傻？"
+      },
+      "opening_lines": [
+        "全村人都在看，她站在那儿一句话没说。",
+        "邻居当面说：脸皮可真厚。",
+        "全村人围着看，没有一个人帮她说话。"
+      ],
+      "hook_type": "contrast",
+      "risk": "medium 涉残障表述，只引用原台词，旁白不描述",
+      "status": "conditional"
+    },
+    {
+      "id": "hk_005",
+      "beat": "她一句实话把所有人堵住",
+      "ep": 1,
+      "t_start": 100,
+      "t_end": 110,
+      "quote": "我不是傻姑娘，我叫苏小满。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 110,
+        "quote": "我不走。建军哥在哪，我就在哪。"
+      },
+      "opening_lines": [
+        "全场都在叫她傻姑娘，她只说了一句话，屋里就安静了。",
+        "她不会吵架，但她记得每一件事。",
+        "她不会吵，她只是把自己的名字说清楚了。"
+      ],
+      "hook_type": "reveal",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_006",
+      "beat": "她当面把借米的事说出来",
+      "ep": 2,
+      "t_start": 44,
+      "t_end": 50,
+      "quote": "我不傻。我记得你去年借了我家一斗米，还没还。",
+      "truncate_at": {
+        "ep": 2,
+        "t": 50,
+        "quote": "行了行了！建军，把她弄走！"
+      },
+      "opening_lines": [
+        "谁再说她傻，她就把去年那斗米念出来。",
+        "这一句话，把最爱嚼舌根的邻居说没声了。",
+        "去年那斗米，全院子只有她记得。"
+      ],
+      "hook_type": "reveal",
+      "risk": "low",
+      "status": "ready"
+    }
+  ],
+  "compliance": {
+    "platform": "kuaishou",
+    "rules_ref": "references/platform-rules.md",
+    "ending_policy": "do_not_use",
+    "must_check": {
+      "ending_spoiler": {
+        "status": "ok",
+        "action": "第 20 集不使用，钩子全部取 1–2 集"
+      },
+      "disability_disease_wording": {
+        "status": "watch",
+        "action": "「傻姑娘」仅可引用原台词，旁白改用「反应慢」「记性好」"
+      },
+      "rebuild_evidence": {
+        "status": "watch",
+        "action": "去字幕 + 重写解说词 + 重建字幕轴 + 多段短切（全部基于官方素材）；AI 生成画面受第 2 条限制，待张老师拍板"
+      },
+      "offsite_diversion": {
+        "status": "ok",
+        "action": "不留微信/公众号/手机号/主页引导"
+      },
+      "ai_label": {
+        "status": "pending",
+        "action": "发布页需勾选 AI 生成标识"
+      }
+    },
+    "banned_in_voiceover": [
+      "治",
+      "疗效",
+      "康复",
+      "精神失常",
+      "大结局",
+      "结局是",
+      "最后他们",
+      "加微信",
+      "公众号",
+      "主页有",
+      "私信",
+      "全网最",
+      "官方推荐"
+    ],
+    "quote_risk_terms": [
+      "傻",
+      "残",
+      "病",
+      "死"
+    ],
+    "task_requirements": {
+      "source": "星火任务页「必须完成以下要求」全文截图（11-08 张老师提供）",
+      "verbatim": [
+        "1、创作者需带首话题#快来看短剧，活动视频请勿聚合合集或添加到现有合集中。",
+        "2、内容需有明显二创痕迹；禁止使用活动提供素材之外视频生产；禁止搬运/抄袭/洗稿/大段拼接/原片；禁止出现色情低俗/擦边内容。",
+        "3、作者需严格按照活动提供的素材进行创作，不得存在超范围创作（包括但不限于发布的作品剧集内容超过版权方通过网盘链接提供的剧集内容、发布的剧集内容可实现用户观看短剧全集等行为）。",
+        "4、作者可通过口播、画面提示方式引导用户点击【底部合集】观看短剧全集。时长占比小于全视频总时长30%，图标占比不可过大清晰即可。"
+      ],
+      "actions": [
+        "发布时带首话题 #快来看短剧；本片不加入自建合集、不聚合",
+        "二创痕迹只能建在官方素材之上（去字幕 / 重写解说词 / 重建字幕轴 / 多段短切），不得引入素材外画面",
+        "原片不得大段连续铺陈：执行单 S3–S8 为 ep1 62–131s 近连续 69 秒，须切成短段并穿插解说",
+        "只用片单提供集数，不用第 20 集大结局；剪辑不得让观众看完全集",
+        "结尾引导点击【底部合集】：口播+画面提示合计 < 全片 30%，图标不过大",
+        "发布页勾选 AI 生成标识；简介/评论不留站外联系方式"
+      ],
+      "note": "第 2 条与孪生解说的冲突已按『双模式并存』处置（cf_001 resolved）；两条片子的审核结果将给出甲方真实口径，届时再固化规则。"
+    }
+  },
+  "elements": {
+    "hooks": [
+      {
+        "id": "h_001",
+        "hook_type": "conflict",
+        "pattern": "前 3 秒直接抛结果：亲事退了/人被赶出门",
+        "example": "彩礼退回来了。"
+      },
+      {
+        "id": "h_002",
+        "hook_type": "suspense",
+        "pattern": "前 3 秒抛一个不合理的事实，不给解释",
+        "example": "几十里路，她一个人走过去的。"
+      },
+      {
+        "id": "h_003",
+        "hook_type": "contrast",
+        "pattern": "全场都在否定她，她只说一句话",
+        "example": "我不是傻姑娘，我叫苏小满。"
+      }
+    ],
+    "pains": [
+      {
+        "id": "p_001",
+        "pain": "为别人付出后被翻脸不认"
+      },
+      {
+        "id": "p_002",
+        "pain": "被当众叫难听的外号"
+      },
+      {
+        "id": "p_003",
+        "pain": "婆家嫌、娘家劝、丈夫不吭声"
+      },
+      {
+        "id": "p_004",
+        "pain": "明明是自己家，却像外人"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "s_001",
+        "scene": "土墙院子门口，来人站在门槛外"
+      },
+      {
+        "id": "s_002",
+        "scene": "灶台前干活，一边被数落"
+      },
+      {
+        "id": "s_003",
+        "scene": "集市/村口，邻居扎堆传话"
+      },
+      {
+        "id": "s_004",
+        "scene": "屋里八仙桌，一家人围着说事"
+      }
+    ],
+    "proofs": [
+      {
+        "id": "pr_001",
+        "level": "E1",
+        "claim": "她是为救建军才摔的",
+        "source": "第 1 集 20s 原台词"
+      },
+      {
+        "id": "pr_002",
+        "level": "E1",
+        "claim": "周家退了彩礼",
+        "source": "第 1 集 2s 原台词"
+      },
+      {
+        "id": "pr_003",
+        "level": "E2",
+        "claim": "八零年代农村",
+        "source": "画面：土墙、花布袄、竹篱"
+      }
+    ],
+    "trust": [
+      {
+        "id": "t_001",
+        "level": "T1",
+        "item": "素材来自平台官方任务，限二创推广"
+      },
+      {
+        "id": "t_002",
+        "level": "T2",
+        "item": "简介声明「剧情来自官方授权素材，二次创作」"
+      },
+      {
+        "id": "t_003",
+        "level": "T3",
+        "item": "账号固定栏目「隔壁那家人」，每条片头一致"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "c_001",
+        "text": "后面更狠，点下面自己看。"
+      },
+      {
+        "id": "c_002",
+        "text": "她到底能不能进这个门，往下看。"
+      },
+      {
+        "id": "c_003",
+        "text": "全集在下面，从第一集看起。"
+      }
+    ],
+    "golden_quotes": [
+      {
+        "id": "gq_001",
+        "quote": "我不是傻姑娘，我叫苏小满。",
+        "ep": 1,
+        "t": 100
+      },
+      {
+        "id": "gq_002",
+        "quote": "我不走。建军哥在哪，我就在哪。",
+        "ep": 1,
+        "t": 110
+      },
+      {
+        "id": "gq_003",
+        "quote": "我干活，是因为这是我家。",
+        "ep": 5,
+        "t": 54
+      },
+      {
+        "id": "gq_004",
+        "quote": "我不傻。我记得你去年借了我家一斗米，还没还。",
+        "ep": 2,
+        "t": 44
+      }
+    ],
+    "audiences": [
+      {
+        "id": "au_001",
+        "segment": "农村/县城 50–65 岁女性",
+        "evidence": [
+          "1985 年设定 + 借一斗米 → 有八零年代农村生活记忆",
+          "退婚退彩礼 + 「怎么配得上我家建军」→ 亲历婚事由长辈定的一代",
+          "婆婆势利、丈夫不敢顶嘴 → 已婚女性、婆媳结构",
+          "「我不是傻姑娘」→ 对被看轻高度敏感"
+        ],
+        "why_stop": "第 1 秒看到同龄人的处境，且她正被当众羞辱",
+        "address_as": [
+          "婶子",
+          "大姐"
+        ],
+        "exclude": [
+          "35 岁以下女性（对退婚/彩礼是反感不是共鸣）",
+          "都市白领（场景不共振）"
+        ],
+        "confidence": "medium",
+        "calibration": "上线 2 周后用后台观众画像校正"
+      }
+    ]
+  },
+  "pending": [
+    {
+      "id": "pd_001",
+      "item": "星火任务页「必须完成以下要求」全文（指定片段/时长/字幕规范）",
+      "owner": "张老师",
+      "how_to_resolve": "App 内展开任务介绍全文并截图",
+      "blocking": false,
+      "status": "resolved",
+      "resolved_at": "2026-11-08",
+      "evidence": "张老师提供截图，四条要求全文已录入 compliance.task_requirements"
+    },
+    {
+      "id": "pd_002",
+      "item": "发布页组件类型（角标写「付费短剧」，结算说明是 IAA）",
+      "owner": "张老师",
+      "how_to_resolve": "试发一条看挂载组件",
+      "blocking": false
+    },
+    {
+      "id": "pd_003",
+      "item": "第 6–19 集台词（当前只抽了前 5 集）",
+      "owner": "WorkBuddy",
+      "how_to_resolve": "按 extract-method 补抽",
+      "blocking": false,
+      "status": "resolved",
+      "resolved_at": "2026-11-09",
+      "evidence": "lines_ep01–ep19.json 共 19 集 508 句（ASR 全量）；ep20 未解析见 pd_005"
+    },
+    {
+      "id": "pd_004",
+      "item": "确认本地 20 集素材确实来自本任务片单（第 2 条禁止「活动提供素材之外视频」）",
+      "owner": "张老师",
+      "how_to_resolve": "核对素材下载来源与任务页片单链接是否同一批",
+      "blocking": false
+    },
+    {
+      "id": "pd_005",
+      "item": "第 20 集台词未解析，story_arc 第五幕未覆盖大结局",
+      "owner": "WorkBuddy",
+      "how_to_resolve": "对第 20 集跑 extract_lines.py 补入 lines_ep20.json，再补第五幕结尾",
+      "blocking": false,
+      "status": "resolved",
+      "resolved_at": "2026-11-09",
+      "evidence": "lines_ep20.json 已产出（20 句，语音转写）；story_arc 增第六幕「家」ep20，payoff=「我有家了」。素材仍受 ending_policy=do_not_use 约束，不进成片。"
+    },
+    {
+      "id": "pd_006",
+      "item": "story_arc 的说话人归属靠上下文推断（台词为硬字幕，无说话人分离；ep20 转写的 0/1 tag 不稳定），个别引语主体待人耳核",
+      "owner": "张老师",
+      "how_to_resolve": "听对应时间点确认说话人；只影响证据引语的归属，不影响幕次划分",
+      "blocking": false
+    },
+    {
+      "id": "pd_007",
+      "item": "次要人物（苏强 / 赵小慧 / 村长 / 赵四 / 王婆子）已出现在 story_arc 与锚点标签里，但未进 characters",
+      "owner": "WorkBuddy",
+      "how_to_resolve": "做人物特写类片子前补进 characters（各带 ep/t/quote 证据）；只做群像混剪时可暂缺",
+      "blocking": false
+    }
+  ],
+  "asset_index": {
+    "mode": "official_task_material",
+    "episodes": [
+      {
+        "ep": 1,
+        "file": "八零憨妻的甜蜜日常 第1集_第一集无bgm版.mp4",
+        "duration": 132.9,
+        "desub": "pending"
+      },
+      {
+        "ep": 2,
+        "file": "八零憨妻的甜蜜日常 第2集_第二集无bgm版.mp4",
+        "duration": null,
+        "desub": "pending"
+      },
+      {
+        "ep": 20,
+        "file": "八零憨妻的甜蜜日常 第20集_第二十集无bgm版.mp4",
+        "duration": 69.4,
+        "desub": "not_needed",
+        "lines_index": "lines/lines_ep20.json",
+        "lines_source": "asr"
+      }
+    ],
+    "finale_episodes": [
+      20
+    ],
+    "audio": "no_bgm",
+    "subtitle": "burned_in",
+    "splittable": {
+      "usable_ep_range": "1-19",
+      "estimated_clips": 6,
+      "note": "第 1 集已按冲突段落索引出 6 段；2–19 集待补"
+    },
+    "index_path": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json",
+    "unit": "conflict_segment",
+    "covered_episodes": [
+      1
+    ]
+  },
+  "conflicts": [
+    {
+      "id": "cf_001",
+      "item": "「禁止使用活动提供素材之外视频生产」与「孪生解说 = AI 生成王婶出镜」",
+      "status": "resolved",
+      "values": [
+        {
+          "source": "星火任务页「必须完成以下要求」第 2 条（11-08 截图原文）",
+          "value": "禁止使用活动提供素材之外视频生产；同时要求内容有明显二创痕迹",
+          "evidence": "截图原文：禁止搬运/抄袭/洗稿/大段拼接/原片"
+        },
+        {
+          "source": "项目既定方法论 docs/孪生解说_方法定义.md（张老师 11-08 拍板）",
+          "value": "用 AI 在原剧旁边生出同源世界，新增角色在场景里出镜解说，解说本身即二创",
+          "evidence": "11-08 对话定名；ch_003 王婶角色卡已建且人审通过"
+        }
+      ],
+      "resolution": "张老师拍板：**两个模式都支持，不二选一**。出镜版（孪生解说）与不出镜版（官方素材内二创 + 王婶画外音）并行，用实际审核口径决定哪条先投。理由：任务第 4 条明文允许口播且给出占比上限，第 2 条更合理的读法是禁止第三方/别剧素材，而非禁止一切非原片像素；王婶是依本剧场景生成的口播载体，不是第三方孤立素材。商业上从引流目标看不损害甲方；但解释权在甲方，**论证用于申诉，不替代实测**。 本包仍不自动选值：两种形态并列登记在 state.json 的 structure.modes。",
+      "impact": "决定 D1 第 1 条是否保留 S2 王婶出镜段；也决定「孪生解说」在这条任务下能否落地",
+      "opened_at": "2026-11-08",
+      "resolved_at": "2026-11-08",
+      "decision": "张老师拍板：**两个模式都支持，不二选一**。出镜版（孪生解说）与不出镜版（官方素材内二创 + 王婶画外音）并行，用实际审核口径决定哪条先投。理由：任务第 4 条明文允许口播且给出占比上限，第 2 条更合理的读法是禁止第三方/别剧素材，而非禁止一切非原片像素；王婶是依本剧场景生成的口播载体，不是第三方孤立素材。商业上从引流目标看不损害甲方；但解释权在甲方，**论证用于申诉，不替代实测**。",
+      "original_resolution_kept": "张老师拍板：**两个模式都支持，不二选一**。出镜版（孪生解说）与不出镜版（官方素材内二创 + 王婶画外音）并行，用实际审核口径决定哪条先投。理由：任务第 4 条明文允许口播且给出占比上限，第 2 条更合理的读法是禁止第三方/别剧素材，而非禁止一切非原片像素；王婶是依本剧场景生成的口播载体，不是第三方孤立素材。商业上从引流目标看不损害甲方；但解释权在甲方，**论证用于申诉，不替代实测**。 本包仍"
+    }
+  ]
+}

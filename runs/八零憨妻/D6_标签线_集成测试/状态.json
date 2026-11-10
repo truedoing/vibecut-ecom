@@ -1,0 +1,239 @@
+{
+  "_readme": "D6 标签线，2026-11-10 23:03 自动集成测试落盘。用户 22:47 明确「我就不审了，你自动的跑一遍」，两道人审停授权豁免；所有产物 state 最高停在 done，绝不回填 approved。这是 v0.3 三层结构（ai_strategy / cycle_round / shared_snapshot）第一次在真实片子上落地，也是第二份并列片子的状态文件。全剧级产物（select/pack/asset_index）本片只引用不重做，state 写 done 且注明不复制 D5 的人审结论。 【11-11 第 2 轮】张老师看完 v1 说「不错，算是合格」，要求修两处半句切点、并指出这条标签线是副线、太长单调、只留经典场。本轮按副线规格重排清单到 166.7s，并校正 ep17/18 台词库。v1 产物原样保留标为已废弃。「不错，算是合格」是对 v1 的观感，不是对 v2 的人审通过，所有 state 仍停 done。",
+  "task": "D6_标签线_集成测试",
+  "category": "八零憨妻",
+  "line": "short-drama",
+  "intent": "标签线 × 纯剪（无人审自动集成测试）",
+  "structure": "repeat",
+  "ai_strategy": "none",
+  "cycle_round": 2,
+  "shared_snapshot": {
+    "drama_base": {
+      "pack": 1,
+      "asset_index": 1
+    },
+    "ai_strategies": {},
+    "ai_assets": 1,
+    "_note": "纯剪，不点菜，ai_strategies 为空。ai_assets 记快照但脚本在 strategy=none 时不参与比对，实测角色资产改版不影响本片。"
+  },
+  "updated_at": "2026-11-11T06:40",
+  "test_mode": {
+    "auto_run": true,
+    "human_review_waived_by": "张老师 2026-11-10 22:47 原话「我就不审了，你自动的跑一遍」",
+    "waived_gates": [
+      "方向卡圈线",
+      "清单人审（G1）",
+      "成片人审（G3）"
+    ],
+    "report": "docs/短剧链路集成测试_2026-11-10.md",
+    "_note": "测试模式不是产物等级。所有 state 停在 done；等人真看过，才按规矩升 approved。",
+    "round2": {
+      "human_feedback": "张老师 11-11：「不错，算是合格。你把错误改一下，另外这个冲突应该是副线……选经典的就行。」",
+      "is_human_approval_of_v2": false,
+      "note": "这句话是对 v1 成片的观感 + 对本轮修改的授权，不是对 v2 清单/成片说过「通过」。state 一律停 done，不回填 approved。"
+    }
+  },
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "docs/八零憨妻_选品决策书.md",
+      "state": "done",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "decision": "GO",
+      "evidence": [
+        "全剧级产物，沿用 D5 已登记的 GO 结论",
+        "本片不重做选片"
+      ],
+      "by": "WorkBuddy（自动集成测试）",
+      "at": "2026-11-10",
+      "_note": "全剧级一份，本片引用不复制。D5 台账此项为 approved；本处写 done 是为了不把人审结论复制到新片子。这是本轮发现的结构问题，见报告。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/八零憨妻的甜蜜日常/drama-pack.json",
+      "state": "done",
+      "rev": 1,
+      "depends_on": [
+        "select"
+      ],
+      "depends_rev": {
+        "select": 1
+      },
+      "evidence": [
+        "validate_pack: 0 ERROR / 2 WARN（旧提醒）",
+        "包里 meta.review.human_review 仍是「待确认」"
+      ],
+      "by": "WorkBuddy（自动集成测试）",
+      "at": "2026-11-10"
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json",
+      "state": "done",
+      "rev": 1,
+      "depends_on": [
+        "pack"
+      ],
+      "depends_rev": {
+        "pack": 1
+      },
+      "evidence": [
+        "19 集 97 段 / 45 锚点 / 台词唯一真源 509 句",
+        "本轮实测：每集最后一段 end 越过视频流上限，取片时需避开，见报告",
+        "【11-11】ep17/ep18 按原片字幕逐帧校正时间码、补 3 句漏句；lines/ 仍是唯一真源，索引 line_times 视图同步。其余 17 集未复核，切点仍须目视。"
+      ],
+      "by": "WorkBuddy（自动集成测试）",
+      "at": "2026-11-10",
+      "_note": "本轮改了台词库内容但**没有加 rev**：只动 ep17/18 两集，D5 用集 1/2/4/6/7/8/9/10/12 全不沾；加版本号会让定版用例被粗粒度规则误报「要重做」。这是版本粒度的已知局限，登记待办，不擅自改规则。"
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "path": "assets/short-drama/ai_assets/registry.json",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "asset_index",
+        "script"
+      ],
+      "depends_rev": {
+        "asset_index": 1,
+        "script": 1
+      },
+      "evidence": [],
+      "by": "WorkBuddy（自动集成测试）",
+      "at": "2026-11-10",
+      "_note": "纯剪不点菜，整环跳过，不生成任何角色资产。"
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/八零憨妻/D6_标签线_集成测试/plan_v2.json",
+      "state": "done",
+      "rev": 2,
+      "depends_on": [
+        "pack",
+        "asset_index"
+      ],
+      "depends_rev": {
+        "pack": 1,
+        "asset_index": 1
+      },
+      "direction_card": {
+        "path": "runs/八零憨妻/D6_标签线_集成测试/方向卡.md",
+        "chosen": "标签线 T2：都叫她傻子，她一句句把名字说回来",
+        "ai_strategy": "none（纯剪）",
+        "approved_by": "无人审，程序按索引数据自动选定（用户 22:47 授权豁免）",
+        "at": "2026-11-10T23:00",
+        "_note": "三条候选线、推荐理由、玩法选择都写在卡里；这不是人圈定的决定，只作测试留痕。",
+        "line_weight": "subplot（2026-11-11 张老师定性，方向卡第五节补记）",
+        "length_target": "2–3 分钟（副线规格）",
+        "amended_at": "2026-11-11"
+      },
+      "evidence": [
+        "方向卡第五节补定：标签线是副线 → 2–3 分钟、只取三幕、只留经典场",
+        "--dry 预检 9 段全通过，装配器直接吃清单",
+        "7 个原片段里 5 段三拍齐全、2 段属模板例外（当众认/收尾）；副线不铺回撤",
+        "15 个切点抽帧目视：两处半句切点已消除，S14 入点 69.0 首句完整、出点 83.0 落在整句末"
+      ],
+      "review": {
+        "checklist": "runs/八零憨妻/D6_标签线_集成测试/清单人审表_v2.md",
+        "notes_doc": "runs/八零憨妻/D6_标签线_集成测试/选段说明_v2.md",
+        "conclusion": "自动自检，不等于人审通过",
+        "approved_by": "（无人审）",
+        "at": "2026-11-11T06:40",
+        "_note": "第 2 轮表按新模板填（副线三幕 / 2–3 分钟）。仍只报偏差、无人点头，state 保持 done。"
+      },
+      "by": "WorkBuddy（自动集成测试）",
+      "at": "2026-11-10",
+      "_note": "第 2 轮清单。副线规格来自 11-11 张老师反馈；v1 的 plan.json 原样保留并标废弃。"
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "path": "",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "script",
+        "ai_assets"
+      ],
+      "depends_rev": {
+        "script": 1,
+        "ai_assets": 0
+      },
+      "evidence": [],
+      "by": "WorkBuddy（自动集成测试）",
+      "at": "2026-11-10",
+      "_note": "无 AI 模式，用户明确「AI视频就不生成了」。本环零花费、零调用。装配清单不含 video 段。"
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/八零憨妻/D6_标签线_集成测试/sd_006_标签线_纯剪_v2.mp4",
+      "state": "done",
+      "rev": 2,
+      "depends_on": [
+        "script"
+      ],
+      "depends_rev": {
+        "script": 2
+      },
+      "round": 2,
+      "evidence": [
+        "mix_trailer.py 真实装配（非 --dry），耗时 1:45，成片 166.7s / 67.3 MB",
+        "h264 720x1280 24fps 4001 帧 / 166.708s；aac 48k；全片唯一黑场 126.5–127.0 与清单精确对齐",
+        "I -15.0 LUFS / LRA 5.5 / TP -0.4 dBFS 未削波；15 个切点抽帧无半句、无异常黑帧",
+        "装配结果与原片一致（沿用第 40 环逐像素对照结论，本轮未重复全量对照）"
+      ],
+      "by": "WorkBuddy（自动集成测试）",
+      "at": "2026-11-10",
+      "_note": "纯剪不出素材段。G3 成片人审仍无，state 保持 done。v1 成片保留标废弃。 第 2 轮消费的是 script rev 2，depends_rev 已同步。"
+    }
+  },
+  "notes": [
+    "本片与 D5 婆婆线是同一部剧下两条并列片子，各记各的进度；改 D6 的清单不该标 D5 要重做。",
+    "工作台 active 仍指 D5，本轮故意没切：切了会改变张老师下次开工的默认对象。切换能力至此仍只在临时副本验过。",
+    "全剧级产物在每条片子的状态文件里各记一份，是现有模板的结构问题（同一份包有三处状态口径）。本轮只如实登记，不擅自改模板。",
+    "「占原片 40–50%」没写分母：本片按 1–19 集合计算 19.0%，按所用 8 集算 40.9%，同一成片两种结论。等张老师定口径。",
+    "索引里 19 个末段 end 越过视频流上限 0.62–0.78s，是数据层问题；本清单主动避开，未改索引。",
+    "【11-11 第 2 轮】张老师看完 v1：「不错，算是合格」＋「把错误改一下」＋「这个冲突应该是副线……选经典的就行」。按副线规格重排：15 段→9 段、296.4s→166.7s，砍掉 ep14/15 六个来回的邻居线拉扯与 S13 婆婆线段。",
+    "两处半句切点：S13 整段砍掉；S14 入点 64.0→69.0（按原片字幕，首句「给你吃糖。我嫁人了,」语义自足）。根子＝ep17/18 台词库是 2 秒采样帧、比画面差 1–2 秒且漏句，已逐帧校正并补句。",
+    "方向卡模板从此多一栏「主线/副线 + 打算多长」：主线 4–6 分钟五幕齐，副线 2–3 分钟只取三幕。「占原片 40–50%」没写分母，不再当合格线。已同步编排/装配/主管三个技能与人审表模板。",
+    "联系表只裁字幕区，收尾卡主文字被裁掉，一度误判「点题卡没点题」；回看整帧确认是误报，如实留痕。",
+    "v2 仍无人审：张老师看的是 v1 且看完就要求改，不构成对 v2 点头；state 一律停 done。",
+    "工作台 active 仍指 D5，本轮依旧没切。第 38–41 环代码仍未提交。"
+  ],
+  "line_weight": "subplot",
+  "line_weight_reason": "副线：同一种「叫傻→反证」反复出现，没有从头到尾的因果链、冲突不升级。11-11 张老师定性；方向卡第五节补记，技能模板已加这一栏。",
+  "versions": {
+    "round": 2,
+    "current": {
+      "plan": "plan_v2.json",
+      "notes": "选段说明_v2.md",
+      "checklist": "清单人审表_v2.md",
+      "video": "sd_006_标签线_纯剪_v2.mp4",
+      "duration": 166.7,
+      "state": "done"
+    },
+    "superseded": [
+      {
+        "plan": "plan.json",
+        "notes": "选段说明.md",
+        "checklist": "清单人审表.md",
+        "video": "sd_006_标签线_纯剪_v1.mp4",
+        "duration": 296.4,
+        "state": "superseded",
+        "reason": "按主线规格做到 4 分 56 秒，副线过长；另有两处半句切点。2026-11-11 张老师要求精简并改错，文件原样保留不删。"
+      }
+    ],
+    "_note": "同一条片子的两轮，不是两条片子。旧版标废弃、不参与「下一步」推荐。"
+  }
+}

@@ -37,3 +37,6 @@ build/.gatecheck/
 
 # mix_trailer.py 自动生成的黑场底图（可再生缓存）
 **/build_black_*.png
+
+# 成片可由 plan + mix_trailer.py 再生，不进库（仓库历史上从未跟踪过 mp4）
+runs/**/sd_*.mp4
