@@ -1,0 +1,139 @@
+{
+  "_readme": "补记于 2026-11-10 17:09。本文件按 short-drama-supervisor/references/状态模板_短剧.json 的 v0.2 七环节格式，为已完成的定版用例 D5_婆婆线补台账。所有产物均为既有文件，非本轮新建；状态按当时的实际人审结论回填，未做的环节不补写、不美化。带伤项一律写进 _note / evidence，供主管报偏差。",
+  "task": "D5_婆婆线",
+  "category": "八零憨妻的甜蜜日常",
+  "line": "short-drama",
+  "intent": "弧线型 × 第一场后黑场位织入王婶一次",
+  "structure": "arc",
+  "updated_at": "2026-11-10T17:09",
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写；手写会被标「旧口径」",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实，卡在谁要写清"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "docs/八零憨妻_选品决策书.md",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "decision": "GO",
+      "evidence": [
+        "11-08 全剧级选品决策书，结论 GO",
+        "硬门禁：组件 / 素材链接 / 结算口径 / 投稿数 / 奖池 / 剧型实核验"
+      ],
+      "by": "张老师",
+      "at": "2026-11-08",
+      "_note": "全剧级决策书，D5 复用；不是 D5 单独跑的 select。short-drama-select 技能 11-10 才建，六项硬门禁未按新技能复核过。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/八零憨妻的甜蜜日常/drama-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["select"],
+      "depends_rev": {"select": 1},
+      "evidence": [
+        "drama-pack.json + 剧集包说明.md + drama-pack.gatecheck.json 均在（11-09）",
+        "story_arc 六幕覆盖 ep20；覆盖大结局的幕带 restricted"
+      ],
+      "by": "张老师",
+      "at": "2026-11-09"
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["pack"],
+      "depends_rev": {"pack": 1},
+      "evidence": [
+        "asset_index.json（172KB）+ 素材台账.md + segments_skeleton.json 均在（11-08）",
+        "台词库 lines_epNN.json 共 20 个文件；索引口径 19 集 / 508 句 / 45 锚点"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-08",
+      "_note": "已知台词库漏收 4 处（ep1「建军哥我等你」/ ep12「小满，」/ ep18「我嫁人了」/ ep20 同音字），未补。明细不进剧集包。"
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "path": "assets/short-drama/ai_assets/registry.json",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["asset_index", "script"],
+      "depends_rev": {"asset_index": 1, "script": 1},
+      "evidence": [],
+      "by": "WorkBuddy",
+      "at": "2026-11-10",
+      "_note": "技能 11-10 新建，card.json ×2 / 三张锚 / registry.json 均未落盘。王婶存量资产仍在 assets/ai_assets/（电商库），只登记来源未迁移。此处不虚报 approved。"
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/八零憨妻/D5_婆婆线/plan_v3ws.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["pack", "asset_index"],
+      "depends_rev": {"pack": 1, "asset_index": 1},
+      "evidence": [
+        "plan_v3ws.json 15 段，每段带 label / type / ep / a / b / beats",
+        "11-10 12:40 v0.2 定版，段表人审通过（张老师）"
+      ],
+      "direction_card": {
+        "path": null,
+        "chosen": "婆婆线",
+        "approved_by": null,
+        "at": null,
+        "state": "未落盘",
+        "_note": "方向卡是 11-10 17:4x 才加的工序，D5 当时没有这份文件；「婆婆线」是在对话里定的，不是走方向卡人圈定的。按补记不美化原则不倒推 approved，此处只如实登记选了哪条线。"
+      },
+      "by": "张老师",
+      "at": "2026-11-10",
+      "_note": "该 plan 由 11-10 旧流程产出，short-drama-script 技能当日才建，未由该技能产出；配套「选段说明.md」（五幕归属 / But-Therefore / 砍场前因复述）未落盘。src_dir 写死本机绝对路径，未去路径化。"
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "path": "runs/八零憨妻/D5_婆婆线/wangshen_v1.mp4",
+      "state": "done",
+      "rev": 1,
+      "depends_on": ["script", "ai_assets"],
+      "depends_rev": {"script": 1, "ai_assets": 0},
+      "evidence": [
+        "wangshen_v1.mp4 在（10s / 480p / 9:16）",
+        "插 S01 后黑场位；v3ws 织入版 334.84s 与定版回归一致"
+      ],
+      "by": "WorkBuddy",
+      "at": "2026-11-10",
+      "_note": "带伤未清：视觉标记「王婶说剧」四字道具未生成（台历实测没出来）；<名>.report.json 未落盘；ASR 逐字比对无记录。故只标 done 不标 approved。路径也不在技能写明的 assets/ai_assets/shots/ 下。"
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/八零憨妻/D5_婆婆线/sd_005_婆婆线_v3ws_预览.mp4",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["script", "weave_video"],
+      "depends_rev": {"script": 1, "weave_video": 1},
+      "evidence": [
+        "sd_005_婆婆线_v3.mp4 325.1s（占原片 44%），11-10 v0.2 定版用例",
+        "sd_005_婆婆线_v3ws_预览.mp4 334.84s，织入版回归一致",
+        "v1 / v2 为三次失败留档（时序跨度 / 冲突密度 / 金句切碎）"
+      ],
+      "by": "张老师",
+      "at": "2026-11-10"
+    }
+  },
+  "notes": [
+    "本台账是补记：产物均为既有文件，状态按当时实际结论回填。未做的环节（ai_assets）不倒推为已完成。",
+    "line 必须是 short-drama；新主管不扫无 line 或别线的状态文件。",
+    "depends_rev 记的是「建这个产物时各依赖的 rev」，不是当前值。上游一改由 status_overview.py 沿链自动判 stale。",
+    "D1_第1条 的 11-09 电视框三拍旧状态文件不迁移、不删，新主管只报「旧形态，不计入进度」。",
+    "【已处理，原文保留备查】补记时发现的交接路径断口（原记「未修订，待张老师拍板」）：select 决策书路径模板写 runs/<剧名>/<task>/，技能写 runs/<剧名>/；script 输出名模板 plan.json，实际 plan_v3ws.json；video 输出技能写 assets/ai_assets/shots/，实际在 runs/<task>/ 且在电商库目录下；ai_assets 的 registry.json 不存在但被 video 列为输入。2026-11-10 17:2x 张老师「按推荐来」后已统一，见 docs/短剧链路空跑验收记录.md 第八节。",
+    "【17:2x 现状】六处路径口径已统一到技能文档与状态模板；本台账各 path 仍写存量文件真实路径，不改文件名、不搬文件。未落盘的 ai_assets registry 与 选段说明.md 仍如实标 pending / 带伤，不因口径统一而回填 approved。",
+    "【17:4x 方向卡】新增「出方向卡 → 人选一条故事线 → 才排段表」这道停，记在 artifacts.script.direction_card，不是独立环节、不进脚本环节表。D5 是存量批次，方向卡未落盘，只如实登记当时选的是婆婆线，不倒推人审通过。"
+  ]
+}

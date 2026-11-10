@@ -1,0 +1,124 @@
+{
+  "_readme": "短剧线 v0.2 状态模板（2026-11-10 独立主管专用）。七环节：select → pack → asset_index → ai_assets(可选) → script → weave_video(可选) → trailer。凡带 depends_on 的产物必须同时写 depends_rev 快照，status_overview.py 靠它自动判 stale，并沿依赖链传播。11-09 电视框三拍旧模板保留在 ecommerce-supervisor/references/状态模板_短剧.json，不迁移、不删。2026-11-10 17:2x 按张老师「按推荐来」统一七环节路径口径，见 notes。2026-11-10 17:4x 按「选 A」在 script 产物下加 direction_card 字段（方向卡人审停），不新增流水线环节。",
+  "task": "D5_婆婆线",
+  "category": "剧名",
+  "line": "short-drama",
+  "intent": "受力结构 × 是否织入（如：弧线型 × 第一场后织入王婶一次）",
+  "structure": "arc",
+  "updated_at": "2026-11-10T17:20",
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写；手写会被标「旧口径」",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实，卡在谁要写清"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "runs/{剧名}/选品决策书.md",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "decision": "GO",
+      "evidence": ["硬门禁 6 项已点开核验", "GO 三条约束已写进数据表口径"],
+      "by": "张老师",
+      "at": "2026-11-10",
+      "_note": "NO-GO 就是终点，不建包。决策书是全剧级，一部剧一份，不带 task 层。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/{剧名}/drama-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["select"],
+      "depends_rev": {"select": 1},
+      "evidence": ["validate_pack: 0E", "G0 人审通过", "覆盖大结局的幕带 restricted"],
+      "by": "张老师",
+      "at": "2026-11-10"
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "assets/short-drama/{剧名}/asset_index.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["pack"],
+      "depends_rev": {"pack": 1},
+      "evidence": ["台词库体检 0 漏收", "段落索引与锚点池落盘"],
+      "by": "WorkBuddy",
+      "at": "2026-11-10",
+      "_note": "明细不进剧集包，包里只登记状态与路径"
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "path": "assets/short-drama/ai_assets/registry.json",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["asset_index", "script"],
+      "depends_rev": {"asset_index": 1, "script": 1},
+      "evidence": [],
+      "by": "WorkBuddy",
+      "at": "2026-11-10",
+      "_note": "可选：不要王婶织入位时整环跳过。三张参考图一律无脸。存量角色资产在电商库 assets/ai_assets/，只在 registry 登记来源，不复制不搬动。"
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/{剧名}/{task}/plan.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["pack", "asset_index"],
+      "depends_rev": {"pack": 1, "asset_index": 1},
+      "direction_card": {
+        "path": "runs/{剧名}/{task}/方向卡.md",
+        "chosen": "从 2–3 条故事线里人圈定的那一条（写线名，不写编号）",
+        "approved_by": "张老师",
+        "at": "2026-11-10",
+        "_note": "编排环节内部的第一道停：人没圈定不排段表。不是独立流水线环节，故不单列 STAGES、不参与依赖作废链。换了线 = 整张段表重排，按新一条片子处理。"
+      },
+      "evidence": ["G1 段表人审通过", "每段 beats 三拍齐全", "选段说明.md 含五幕归属与砍场前因复述"],
+      "by": "张老师",
+      "at": "2026-11-10",
+      "_note": "允许版本化命名 plan_<tag>.json（存量 plan_v3ws.json 即此），台账 path 写实际文件名"
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "path": "runs/{剧名}/{task}/wangshen_vN.mp4",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["script", "ai_assets"],
+      "depends_rev": {"script": 1, "ai_assets": 0},
+      "evidence": [],
+      "by": "WorkBuddy",
+      "at": "2026-11-10",
+      "_note": "可选。台词人审 + dry-run 两道停；10s/480p ≈ 2 元；出片后 ASR 逐字比对。同目录应有 <名>.report.json（存量 wangshen_v1 缺，已在台账标带伤）"
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/{剧名}/{task}/<成片名>.mp4",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["script", "weave_video"],
+      "depends_rev": {"script": 1, "weave_video": 0},
+      "evidence": [],
+      "by": "WorkBuddy",
+      "at": "2026-11-10",
+      "_note": "G3 成片人审；不出织入片时从 depends_on 去掉 weave_video。成片文件名自定义，台账 path 写实际文件名"
+    }
+  },
+  "notes": [
+    "line 必须是 short-drama；新主管不扫无 line 或别线的状态文件",
+    "depends_rev 记的是「建这个产物时各依赖的 rev」，不是当前值。少了它脚本只会报「无法校验」，不会假装通过",
+    "状态值一律用 rules 里的七个；旧模板的 draft / ready 属 11-09 口径，已由 done 取代",
+    "剧集包的状态只由 artifacts.pack 承载，别在别处再放一份（两个真源）",
+    "任何改动从主管登记：改了哪个产物、rev 从几到几，交给脚本传播，不在下游技能里各记一笔",
+    "【2026-11-10 17:2x 路径口径统一】七环节 path 一律相对仓库根、写实际文件名；模板里的 <> {} 只是示意，落台账必须换成真实文件名。此前六处对不上已修，改动记录见 docs/短剧链路空跑验收记录.md 第八节。",
+    "选品决策书是全剧级，落 runs/<剧名>/选品决策书.md，不带 task 层；存量实例 docs/八零憨妻_选品决策书.md 不迁移、不删。",
+    "plan 规范名 plan.json，允许版本化命名 plan_<tag>.json；配套 选段说明.md 同目录。存量批次没落 选段说明.md 时，trailer 明确报偏差，不静默放行也不倒推退回。",
+    "王婶织入片落 runs/<剧名>/<task>/wangshen_vN.mp4。已被取代的旧路径 assets/ai_assets/shots/ 属电商素材库，2026-11-10 短剧线独立后不再使用（原文保留在本条备查）。",
+    "角色资产 registry 全路径 assets/short-drama/ai_assets/registry.json；short-drama-video 按此取料，不写技能目录名当路径。",
+    "【17:4x 方向卡】编排环节第一道停：先出 方向卡.md（2–3 条故事线 + 各一句角度 + 推荐哪条和理由），人圈定一条才排段表。台账记在 artifacts.script.direction_card，不是独立环节、不进 STAGES、不参与依赖作废链；换线按新一条片子重排整张段表。存量批次没落盘方向卡时如实标 pending，不倒推 approved。"
+  ]
+}
