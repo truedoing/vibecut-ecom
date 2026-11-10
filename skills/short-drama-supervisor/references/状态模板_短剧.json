@@ -1,11 +1,19 @@
 {
-  "_readme": "短剧线 v0.2 状态模板（2026-11-10 独立主管专用）。七环节：select → pack → asset_index → ai_assets(可选) → script → weave_video(可选) → trailer。凡带 depends_on 的产物必须同时写 depends_rev 快照，status_overview.py 靠它自动判 stale，并沿依赖链传播。11-09 电视框三拍旧模板保留在 ecommerce-supervisor/references/状态模板_短剧.json，不迁移、不删。2026-11-10 17:2x 按张老师「按推荐来」统一七环节路径口径，见 notes。2026-11-10 17:4x 按「选 A」在 script 产物下加 direction_card 字段（方向卡人审停），不新增流水线环节。",
+  "_readme": "短剧线 v0.3 状态模板（2026-11-10 独立主管专用）。七环节：select → pack → asset_index → ai_assets(可选) → script → weave_video(可选) → trailer。凡带 depends_on 的产物必须同时写 depends_rev 快照，status_overview.py 靠它自动判要重做，并沿依赖链传播。11-09 电视框三拍旧模板保留在 ecommerce-supervisor/references/状态模板_短剧.json，不迁移、不删。17:2x 统一七环节路径口径；17:4x 加方向卡；20:4x 按张老师「可以」加三层结构：ai_strategy（本片点哪道 AI 玩法）、cycle_round（小循环第几轮）、shared_snapshot（建它时共用层版本）。共用层当前版本在 runs/工作台.json，切换剧包只改那里的 active。",
   "task": "D5_婆婆线",
   "category": "剧名",
   "line": "short-drama",
-  "intent": "受力结构 × 是否织入（如：弧线型 × 第一场后织入王婶一次）",
+  "intent": "故事线 × AI 玩法（如：婆婆线 × 王婶旁观一次）",
   "structure": "arc",
-  "updated_at": "2026-11-10T17:20",
+  "ai_strategy": "wangshen_weave",
+  "cycle_round": 1,
+  "shared_snapshot": {
+    "drama_base": {"pack": 1, "asset_index": 1},
+    "ai_strategies": {"wangshen_weave": 1},
+    "ai_assets": 1,
+    "_note": "建这条片子时共用层的版本。共用层改版由主管写进 runs/工作台.json 的 shared；脚本比对两者，只把用到它的片子标要重做。不写＝不参与跨文件比对（旧台账兼容）。"
+  },
+  "updated_at": "2026-11-10T20:45",
   "rules": {
     "pending": "未开工",
     "in_progress": "在做，产物未成形",
@@ -18,7 +26,7 @@
   "artifacts": {
     "select": {
       "skill": "short-drama-select",
-      "path": "runs/{剧名}/选品决策书.md",
+      "path": "runs/{剧名}/选片结论.md",
       "state": "approved",
       "rev": 1,
       "depends_on": [],
@@ -27,7 +35,7 @@
       "evidence": ["硬门禁 6 项已点开核验", "GO 三条约束已写进数据表口径"],
       "by": "张老师",
       "at": "2026-11-10",
-      "_note": "NO-GO 就是终点，不建包。决策书是全剧级，一部剧一份，不带 task 层。"
+      "_note": "不做（NO-GO）就是终点，不建包。选片结论是全剧级，一部剧一份，不带 task 层。存量实例 docs/八零憨妻_选品决策书.md 保留旧名不迁移、不删，台账 path 写它的真实路径。"
     },
     "pack": {
       "skill": "short-drama-pack",
@@ -62,7 +70,7 @@
       "evidence": [],
       "by": "WorkBuddy",
       "at": "2026-11-10",
-      "_note": "可选：不要王婶织入位时整环跳过。三张参考图一律无脸。存量角色资产在电商库 assets/ai_assets/，只在 registry 登记来源，不复制不搬动。"
+      "_note": "可选：本片不点 AI 玩法时整环跳过。三张参考图一律无脸。角色资产是所有剧共用的，不属于任何剧包；存量资产在电商库 assets/ai_assets/，只在 registry 登记来源，不复制不搬动。"
     },
     "script": {
       "skill": "short-drama-script",
@@ -74,14 +82,15 @@
       "direction_card": {
         "path": "runs/{剧名}/{task}/方向卡.md",
         "chosen": "从 2–3 条故事线里人圈定的那一条（写线名，不写编号）",
+        "ai_strategy": "人同时圈定的 AI 玩法 id；不点菜写 none，表示纯剪",
         "approved_by": "张老师",
         "at": "2026-11-10",
-        "_note": "编排环节内部的第一道停：人没圈定不排段表。不是独立流水线环节，故不单列 STAGES、不参与依赖作废链。换了线 = 整张段表重排，按新一条片子处理。"
+        "_note": "编排环节内部的第一道停：人没圈定线、没点玩法，不排剪辑清单。不是独立流水线环节，故不单列 STAGES、不参与依赖作废链。换了线或换了玩法 = 整张清单重排，按新一条片子处理。"
       },
-      "evidence": ["G1 段表人审通过", "每段 beats 三拍齐全", "选段说明.md 含五幕归属与砍场前因复述"],
+      "evidence": ["G1 清单人审通过", "每段 beats 三拍齐全", "选段说明.md 含五幕归属与砍场前因复述"],
       "by": "张老师",
       "at": "2026-11-10",
-      "_note": "允许版本化命名 plan_<tag>.json（存量 plan_v3ws.json 即此），台账 path 写实际文件名"
+      "_note": "允许版本化命名 plan_<tag>.json（存量 plan_v3ws.json 即此），台账 path 写实际文件名。点没点玩法不写进 plan.json 的额外字段，只体现在清单里有没有留插入位，避免装配器吃到未知字段。"
     },
     "weave_video": {
       "skill": "short-drama-video",
@@ -93,7 +102,7 @@
       "evidence": [],
       "by": "WorkBuddy",
       "at": "2026-11-10",
-      "_note": "可选。台词人审 + dry-run 两道停；10s/480p ≈ 2 元；出片后 ASR 逐字比对。同目录应有 <名>.report.json（存量 wangshen_v1 缺，已在台账标带伤）"
+      "_note": "可选。台词人审 + 试跑两道停；10s/480p ≈ 2 元；出片后 ASR 逐字比对。同目录应有 <名>.report.json（存量 wangshen_v1 缺，已在台账标带伤）。小循环里只改清单时可复用，别重跑花钱这步；改的是台词或插入位上下文才重做。装配器只认插入位置，不关心这段叫什么，所以将来换玩法不用改它。"
     },
     "trailer": {
       "skill": "short-drama-trailer",
@@ -102,10 +111,11 @@
       "rev": 0,
       "depends_on": ["script", "weave_video"],
       "depends_rev": {"script": 1, "weave_video": 0},
+      "round": 1,
       "evidence": [],
       "by": "WorkBuddy",
       "at": "2026-11-10",
-      "_note": "G3 成片人审；不出织入片时从 depends_on 去掉 weave_video。成片文件名自定义，台账 path 写实际文件名"
+      "_note": "G3 成片人审；不出素材段时从 depends_on 去掉 weave_video。小循环每轮留一版成片（文件名带版本或 round 递增），旧版标 superseded，绝不拿旧版当下一步。一条片子反复改版轮次记顶层 cycle_round；两条并列片子各用一份状态文件，别混记。"
     }
   },
   "notes": [
@@ -114,11 +124,14 @@
     "状态值一律用 rules 里的七个；旧模板的 draft / ready 属 11-09 口径，已由 done 取代",
     "剧集包的状态只由 artifacts.pack 承载，别在别处再放一份（两个真源）",
     "任何改动从主管登记：改了哪个产物、rev 从几到几，交给脚本传播，不在下游技能里各记一笔",
-    "【2026-11-10 17:2x 路径口径统一】七环节 path 一律相对仓库根、写实际文件名；模板里的 <> {} 只是示意，落台账必须换成真实文件名。此前六处对不上已修，改动记录见 docs/短剧链路空跑验收记录.md 第八节。",
-    "选品决策书是全剧级，落 runs/<剧名>/选品决策书.md，不带 task 层；存量实例 docs/八零憨妻_选品决策书.md 不迁移、不删。",
+    "【17:2x 路径口径统一】七环节 path 一律相对仓库根、写实际文件名；模板里的 <> {} 只是示意，落台账必须换成真实文件名。此前六处对不上已修，改动记录见 docs/短剧链路空跑验收记录.md 第八节。",
+    "【20:1x 命名】对外叫「选片 / 建包」，不再叫「选品 / 建品」；机器字段 select / pack 与存量文件名保持不变，历史文档原文保留不迁移。选片结论是全剧级，落 runs/<剧名>/选片结论.md；存量实例 docs/八零憨妻_选品决策书.md 不迁移、不删。",
     "plan 规范名 plan.json，允许版本化命名 plan_<tag>.json；配套 选段说明.md 同目录。存量批次没落 选段说明.md 时，trailer 明确报偏差，不静默放行也不倒推退回。",
     "王婶织入片落 runs/<剧名>/<task>/wangshen_vN.mp4。已被取代的旧路径 assets/ai_assets/shots/ 属电商素材库，2026-11-10 短剧线独立后不再使用（原文保留在本条备查）。",
     "角色资产 registry 全路径 assets/short-drama/ai_assets/registry.json；short-drama-video 按此取料，不写技能目录名当路径。",
-    "【17:4x 方向卡】编排环节第一道停：先出 方向卡.md（2–3 条故事线 + 各一句角度 + 推荐哪条和理由），人圈定一条才排段表。台账记在 artifacts.script.direction_card，不是独立环节、不进 STAGES、不参与依赖作废链；换线按新一条片子重排整张段表。存量批次没落盘方向卡时如实标 pending，不倒推 approved。"
+    "【17:4x 方向卡】编排环节第一道停：先出 方向卡.md（2–3 条故事线 + 各一句角度 + 推荐哪条和理由），人圈定一条才排段表。台账记在 artifacts.script.direction_card，不是独立环节、不进 STAGES、不参与依赖作废链；换线按新一条片子重排整张段表。存量批次没落盘方向卡时如实标 pending，不倒推 approved。",
+    "【20:4x 三层结构】ai_strategy 记本片点哪道 AI 玩法（none＝纯剪＝默认）；王婶只是菜单上第一道，不是固定环节。现在只留位置不建空技能，等第二种玩法出现再收成技能。方向卡必须同时圈线和圈玩法，因为点了玩法清单就得留插入位。",
+    "【20:4x 共用层】shared_snapshot 与 runs/工作台.json 的 shared 配对使用：剧包/索引改版只影响本剧片子的清单与成片；玩法配方或共用角色资产改版只影响点了这道玩法的片子；新增玩法不动任何已有片子。旧台账没写 shared_snapshot 时脚本跳过跨文件比对。",
+    "【20:4x 切换与小循环】当前选中对象只在 runs/工作台.json 的 active 里，换剧包＝挂起不是作废。快层小循环每轮留一版成片、旧版标 superseded；改清单只重拼成片，已生成的素材段可复用，出片是唯一花钱的环节。"
   ]
 }

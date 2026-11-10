@@ -24,7 +24,8 @@
         "张老师 11-08 原话『可以』，附任务页「必须完成以下要求」截图 —— G0 通过",
         "validate_pack 0 ERROR / 1 WARN（WARN=task_id 为 null，结算与授权无法回溯，不阻塞结构）",
         "2026-11-09 13:55 schema 1.0→1.1，新增 story_arc（五幕 + 三个转折点，全部带 ep/t/台词）—— 属于已批准包的内容变更，按规矩回落 pending，待张老师确认后重签。原 11-08 approved 不删。",
-        "2026-11-09 14:2x 补第 20 集：新增 lines_ep20.json（语音转写 20 句）+ story_arc 第六幕「家」（标 restricted，不得进成片）；幕次覆盖 1–20。张老师当日指令「ep20 要补」「大结局的问题写文案时才考虑」。"
+        "2026-11-09 14:2x 补第 20 集：新增 lines_ep20.json（语音转写 20 句）+ story_arc 第六幕「家」（标 restricted，不得进成片）；幕次覆盖 1–20。张老师当日指令「ep20 要补」「大结局的问题写文案时才考虑」。",
+        "2026-11-10 21:1x 只修正 asset_index 状态登记（6 段 / covered_episodes:[1] → 97 段 / 1–19 集），并注明以 index_path 为准；剧情六幕、人物、金句等主体内容未动。属于已批准包的内容变更，human_review 继续 pending，不倒推通过，不上传 tdrive。工作台新增 dramas 目录对照表，不改本包结构。"
       ]
     },
     "consumers": [
@@ -985,14 +986,15 @@
     "subtitle": "burned_in",
     "splittable": {
       "usable_ep_range": "1-19",
-      "estimated_clips": 6,
-      "note": "第 1 集已按冲突段落索引出 6 段；2–19 集待补"
+      "estimated_clips": 97,
+      "note": "19 集 97 段 / 45 锚点，以 index_path 指向的 asset_index.json 为准；第 20 集大结局只用于理解剧情，不进成片。2026-11-10 修正：原写「第 1 集 6 段、2–19 集待补」是 11-08 建包时的快照，索引做完后未回头更新。"
     },
     "index_path": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json",
     "unit": "conflict_segment",
     "covered_episodes": [
-      1
-    ]
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+    ],
+    "_note": "episodes 数组是 11-08 素材体检的抽样登记（只列第 1、2、20 集），逐集文件与时长以素材目录及 asset_index.json 为准；本块其余字段为索引状态，不从抽样数组推断。"
   },
   "conflicts": [
     {

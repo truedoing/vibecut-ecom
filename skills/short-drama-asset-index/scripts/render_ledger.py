@@ -12,10 +12,25 @@ from pathlib import Path
 STATE_ICON = {"临界": "◐", "已兑现": "●", "铺垫": "○"}
 
 
+def line_lookup(base: Path, ep: int, cache: dict) -> dict:
+    """台词文字的唯一真源在 lines/lines_epNN.json，这里只按需取，不另存一份。"""
+    if ep not in cache:
+        d = json.loads((base / "lines" / f"lines_ep{ep:02d}.json").read_text(encoding="utf-8"))
+        arr = d["lines"] if isinstance(d, dict) else d
+        cache[ep] = {x["t"]: str(x.get("text", "")).strip() for x in arr}
+    return cache[ep]
+
+
+def seg_times(s: dict) -> list:
+    """兼容 11-10 之前的旧格式（段内直接嵌 lines 文字），但不再写出那种格式。"""
+    return s.get("line_times") or [x["t"] for x in s.get("lines", [])]
+
+
 def main() -> int:
     root = Path(__file__).resolve().parents[3]
     base = root / "assets/short-drama/八零憨妻的甜蜜日常"
     d = json.loads((base / "asset_index.json").read_text(encoding="utf-8"))
+    line_cache: dict = {}
 
     st = d["stats"]
     lines: list[str] = []
@@ -24,6 +39,14 @@ def main() -> int:
     A(f"# 素材台账 · {d['category']}")
     A("")
     A("> 由 `asset_index.json` 渲染，**以 JSON 为准**；本文件只是给人看的视图。")
+    A("> 台词文字取自 `lines/lines_epNN.json`（唯一真源），本表只显示、不另存一份。")
+    A(">")
+    A("> ⚠️ **旧做法提醒（2026-11-10 补）**：本表里「王婶怎么进 / 王婶的开口方式 / 插在哪」"
+      "是 11-08 那套「让虚构的王婶在旁边接话」留下的，属于**历史字段**，正文原文保留备查，")
+    A("> **别照着去插王婶**：现在默认纯剪原片，王婶只是 AI 玩法菜单里的一道菜，"
+      "要由每条片子的方向卡点选才用。")
+    A("> `space` / `exit_type` 这两列的数据本身仍然有效——纯剪也要判断这段切不切得出去。")
+    A(">")
     A(f"> 覆盖 1–{max(d['scope']['covered'])} 集（第 20 集大结局按任务要求第 3 条排除）｜"
       f"{st['total_seconds']/60:.1f} 分钟素材")
     A("")
@@ -106,7 +129,10 @@ def main() -> int:
     A("|---|---|---|---|---|---|---|---|---|---|")
     for e in d["episodes"]:
         for s in e["segments"]:
-            first = s["lines"][0]["text"].strip().replace("|", "／")[:22]
+            times = seg_times(s)
+            first = "—"
+            if times:
+                first = line_lookup(base, e["ep"], line_cache).get(times[0], "—").replace("|", "／")[:22]
             mark = "◐" if s["critical_state"] == "临界" else ("●" if s["critical_state"] == "已兑现" else "○")
             th = "/".join(s["themes"])
             A(f"| {s['id']} | {s['start']:.0f}–{s['end']:.0f} | {s.get('space','—')} | "
@@ -123,6 +149,15 @@ def main() -> int:
     out = base / "素材台账.md"
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"已写 {out}（{len(lines)} 行）")
+
+    missing = []
+    for e in d["episodes"]:
+        owned = {t for s in e["segments"] for t in seg_times(s)}
+        for t in sorted(set(line_lookup(base, e["ep"], line_cache)) - owned):
+            missing.append(f"ep{e['ep']:02d} t={t}")
+    if missing:
+        print(f"提示：台词库有 {len(missing)} 句未归入任何段落（补句后请把秒数补进对应段的 line_times）："
+              f"{', '.join(missing)}")
     return 0
 
 

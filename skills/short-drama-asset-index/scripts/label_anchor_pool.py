@@ -348,7 +348,7 @@ def main() -> int:
                 "start": s["start"],
                 "end": s["end"],
                 "duration": s["duration"],
-                "lines": s["lines"],
+                "line_times": s.get("line_times") or [l["t"] for l in s.get("lines", [])],
                 "speakers": None,
                 "speakers_pending": True,
                 "conflict": {"type": lab["t"], "intensity": lab["i"]},
@@ -402,15 +402,18 @@ def main() -> int:
         }
 
     out = {
-        "schema_version": "2.0",
+        "schema_version": "2.1",
         "line": "short-drama",
         "category": "八零憨妻的甜蜜日常",
         "source_root_env": "SHORT_DRAMA_ASSET_ROOT",
         "unit": "conflict_segment",
+        "lines_ref": {"dir": "lines/", "pattern": "lines_epNN.json",
+                      "note": "台词文字只存在这里。本文件与 segments_skeleton.json 只存时间码 line_times，不复制文字；改台词只改 lines/ 下的文件，台账等视图重新渲染即可。",
+                      "since": "2026-11-10"},
         "scope": {"covered": list(range(1, 20)), "excluded": [20],
                   "excluded_reason": "大结局，任务要求第 3 条禁止让用户看完全集"},
         "method": {
-            "text": "内嵌硬字幕 OCR → lines/lines_epNN.json（508 句，带秒）",
+            "text": "内嵌硬字幕 OCR → lines/lines_epNN.json（台词唯一真源）。本文件只存时间码 line_times，不复制台词文字；2026-11-10 起改台词只改 lines/ 下的文件。",
             "segment": "按台词间隔 >4.5s 或段长 >26s 切，段长落 12–26s（segment.py）",
             "label": "人工逐段判读（label_anchor_pool.py），非模型自动生成",
             "not_done": ["画面描述 visual（待锚点筛完再做局部核验，不做全量 VLM）",
