@@ -3,7 +3,7 @@
     "schema_version": "1.1",
     "kind": "short_drama",
     "drama": "八零憨妻的甜蜜日常",
-    "pack_version": "1.1-draft",
+    "pack_version": "1.1-draft.2",
     "platform": "kuaishou",
     "task_id": null,
     "created_at": "2026-11-08",
@@ -13,7 +13,8 @@
       "星火任务页截图",
       "前 5 集台词稿",
       "星火任务页「必须完成以下要求」全文截图（11-08）",
-      "19 集 ASR 台词（508 句，2026-11-09 全量解析）"
+      "19 集硬字幕 OCR 台词（ep01–ep19，508 句，2026-11-09；extract_lines.py）",
+      "第 20 集语音转写（20 句，2026-11-09；AudioTranscribe，仅剧情理解不进成片）"
     ],
     "review": {
       "self_check": "ok",
@@ -22,7 +23,8 @@
       "evidence": [
         "张老师 11-08 原话『可以』，附任务页「必须完成以下要求」截图 —— G0 通过",
         "validate_pack 0 ERROR / 1 WARN（WARN=task_id 为 null，结算与授权无法回溯，不阻塞结构）",
-        "2026-11-09 13:55 schema 1.0→1.1，新增 story_arc（五幕 + 三个转折点，全部带 ep/t/台词）—— 属于已批准包的内容变更，按规矩回落 pending，待张老师确认后重签。原 11-08 approved 不删。"
+        "2026-11-09 13:55 schema 1.0→1.1，新增 story_arc（五幕 + 三个转折点，全部带 ep/t/台词）—— 属于已批准包的内容变更，按规矩回落 pending，待张老师确认后重签。原 11-08 approved 不删。",
+        "2026-11-09 14:2x 补第 20 集：新增 lines_ep20.json（语音转写 20 句）+ story_arc 第六幕「家」（标 restricted，不得进成片）；幕次覆盖 1–20。张老师当日指令「ep20 要补」「大结局的问题写文案时才考虑」。"
       ]
     },
     "consumers": [
@@ -398,6 +400,39 @@
             "quote": "这镯子跟了我三十年。今天传给你，"
           }
         ]
+      },
+      {
+        "no": 6,
+        "name": "家",
+        "ep_from": 20,
+        "ep_to": 20,
+        "restricted": "ending_policy=do_not_use —— 第 20 集不得进成片/口播，本幕仅供剧情理解与写文案时判断收束方式",
+        "usable_in_copy": false,
+        "summary": "开春，建军带小满去镇上照相馆拍结婚照。婆婆说不去、家里还有活，小满临走还回头喊娘。摄影师让她「看镜头，别看你男人」；照片拿回来，村里人说这姑娘是村里的福气。",
+        "payoff": "「我有家了」／「嗯，你有家了」—— 从第 1 集被堵在门外说的「我不走」，收在她被承认有了一个家。",
+        "evidence": [
+          {
+            "ep": 20,
+            "t": 29,
+            "quote": "姑娘看镜头，别看你男人",
+            "src": "asr",
+            "quote_verified": false
+          },
+          {
+            "ep": 20,
+            "t": 59,
+            "quote": "小满这姑娘是咱们村的福气",
+            "src": "asr",
+            "quote_verified": false
+          },
+          {
+            "ep": 20,
+            "t": 63,
+            "quote": "我有家了",
+            "src": "asr",
+            "quote_verified": false
+          }
+        ]
       }
     ],
     "turning_points": [
@@ -430,7 +465,9 @@
     },
     "source": {
       "type": "subtitle_ocr",
-      "ref": "assets/short-drama/八零憨妻的甜蜜日常/lines/lines_ep01–ep19.json（19 集 508 句 ASR 转写）"
+      "ref": "ep01–ep19 硬字幕 OCR 508 句（assets/.../lines/lines_ep01–ep19.json）；ep20 语音转写 20 句（lines_ep20.json）",
+      "supplementary_type": "asr",
+      "supplementary_ref": "第 20 集 AudioTranscribe 转写，含同音错字，quote 引用前须回听"
     },
     "verified": false
   },
@@ -897,11 +934,14 @@
       "item": "第 20 集台词未解析，story_arc 第五幕未覆盖大结局",
       "owner": "WorkBuddy",
       "how_to_resolve": "对第 20 集跑 extract_lines.py 补入 lines_ep20.json，再补第五幕结尾",
-      "blocking": false
+      "blocking": false,
+      "status": "resolved",
+      "resolved_at": "2026-11-09",
+      "evidence": "lines_ep20.json 已产出（20 句，语音转写）；story_arc 增第六幕「家」ep20，payoff=「我有家了」。素材仍受 ending_policy=do_not_use 约束，不进成片。"
     },
     {
       "id": "pd_006",
-      "item": "story_arc 的说话人归属靠上下文推断（ASR 无说话人分离），个别引语主体待人耳核",
+      "item": "story_arc 的说话人归属靠上下文推断（台词为硬字幕，无说话人分离；ep20 转写的 0/1 tag 不稳定），个别引语主体待人耳核",
       "owner": "张老师",
       "how_to_resolve": "听对应时间点确认说话人；只影响证据引语的归属，不影响幕次划分",
       "blocking": false
@@ -932,8 +972,10 @@
       {
         "ep": 20,
         "file": "八零憨妻的甜蜜日常 第20集_第二十集无bgm版.mp4",
-        "duration": null,
-        "desub": "not_needed"
+        "duration": 69.4,
+        "desub": "not_needed",
+        "lines_index": "lines/lines_ep20.json",
+        "lines_source": "asr"
       }
     ],
     "finale_episodes": [

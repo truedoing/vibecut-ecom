@@ -30,3 +30,10 @@ config.local.json
 # 素材抽帧缓存（可随时删，不占原片）
 assets/**/frames/
 assets/**/edge_frames/
+
+# 门禁回归测试产物（check_finale_gate.py；沙箱下可能删不掉，忽略即可）
+*.gatecheck.json
+build/.gatecheck/
+
+# mix_trailer.py 自动生成的黑场底图（可再生缓存）
+**/build_black_*.png

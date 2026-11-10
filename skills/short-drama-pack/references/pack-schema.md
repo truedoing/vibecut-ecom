@@ -112,12 +112,15 @@
 | `episode_pattern.loop` | 单集循环结构（如「挑衅→直球→护短」），选段时用 |
 | `episode_pattern.payoff_per_episode` | 每集是否自带兑现点。为 true 时，跨集取高光成立；要留悬念就切在兑现前的临界帧 |
 | `verified` | 人审通过后再置 true；未核实时保持 false |
+| `acts[].restricted` | **仅当该幕覆盖大结局集**（`compliance.ending_policy = do_not_use` 且集号在 `asset_index.finale_episodes` 内）时**必填**，写一句限制说明。缺了校验器判 ERROR |
+| `acts[].evidence[].src` / `quote_verified` | 证据来自语音转写（而非硬字幕 OCR）时标 `src: "asr"`、`quote_verified: false`——转写有同音错字，引用前须回听 |
 
 **分幕的三条规矩**：
 
 1. **幕次必须铺满、不重叠**（有缺口或重叠说明分幕拍脑袋了，校验器出 WARN）。
 2. **`payoff` 写「结果」不写「感想」**——它决定下游切点：切在 payoff 之前吊人，切在 payoff 之后收情绪。
 3. **`usable_in_copy: false` 是硬约束**，不是建议。hook_map 管「从哪切」，story_arc 管「讲什么」，两者混用必剧透。
+4. **概要要覆盖到大结局，但大结局不许进成片**——两件事不矛盾：概要缺结局，分幕就断在半路，写文案时判断不了怎么收；而结局素材一旦顺着概要流进选段，就违反平台第 3 条。所以覆盖它、同时用 `restricted` 标死。
 
 > 同一部剧的 `episode_pattern` 属于**这部剧**的写法，放包里；
 > 「短剧普遍为什么这么写」属于技能层方法论，放 `SKILL.md`，不要混进包。

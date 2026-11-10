@@ -71,6 +71,8 @@ agent_created: true
    > `story_arc` 属于**内部知识层**（分幕必然覆盖到结尾），所以它的门禁不是「不写」，
    > 而是「写了必须关死出口」：`usable_in_copy` 强制 false，校验器对此判 ERROR。
    > 换句话说：**概要可以知道结局，但一个字都不许流到文案里。**
+   > **11-09 追加**：覆盖大结局集的那一幕必须再带 `restricted` 说明，否则校验器判 ERROR——
+   > 顶层 `usable_in_copy` 只挡住了「措辞」，挡不住下游按幕次去取素材。
 2. **每句台词必须可回溯到「第几集 + 秒」。** 没有时间码的金句不算证据，只是印象。
    `hook_map` 和 `elements.golden_quotes` 的每条都要带 `ep` 与 `t`。
 3. **人群必须从剧情推，不能套模板。** `elements.audiences` 每条要带 `evidence`
