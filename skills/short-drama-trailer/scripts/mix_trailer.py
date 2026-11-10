@@ -16,7 +16,10 @@ plan.json 驱动的 ffmpeg concat 装配。铁律内置：
                      path 可省，用 plan 级 "card"。
 
 plan 级字段：src_dir（剧集目录）、card（默认字幕卡图）、w/h/fps（默认 720/1280/24）。
-相对路径一律相对 plan.json 所在目录解析。
+相对路径一律相对 plan.json 所在目录解析；src_dir 支持 ${环境变量} 展开。
+换机器时不必改 plan：设置环境变量 SHORT_DRAMA_SRC_DIR 指向剧集目录即可覆盖 src_dir。
+集文件命名兼容「第N集_」「第N集 」「ep_N_」「episode_0N_」「EPN_」等，N 后紧跟数字不算命中
+（避免找第 1 集时误取第 10 集）。
 
 用法：
   python3 mix_trailer.py --plan plan.json --out 成片.mp4 [--ff /path/ffmpeg] [--dry]
@@ -26,6 +29,7 @@ plan 级字段：src_dir（剧集目录）、card（默认字幕卡图）、w/h/
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -65,10 +69,21 @@ def stream_dur(fp, path, sel):
 
 
 def ep_file(src_dir, n):
-    for f in sorted(os.listdir(src_dir)):
-        if f"第{n}集_" in f:
+    """按集号找素材文件；兼容中文「第N集」与英文 ep/episode 命名。"""
+    if not src_dir or not os.path.isdir(src_dir):
+        raise FileNotFoundError(
+            f"剧集目录不存在，或 plan 没给 src_dir：{src_dir!r}。"
+            "可用环境变量 SHORT_DRAMA_SRC_DIR 指定。")
+    exts = (".mp4", ".mov", ".mkv", ".m4v", ".ts", ".avi")
+    files = [f for f in sorted(os.listdir(src_dir)) if f.lower().endswith(exts)]
+    pat = re.compile(
+        rf"(?:第\s*0*{n}集|(?<![A-Za-z0-9])ep(?:isode)?[\s_.-]*0*{n})(?![0-9])",
+        re.I)
+    for f in files:
+        if pat.search(f):
             return os.path.join(src_dir, f)
-    raise FileNotFoundError(f"src_dir 下找不到 第{n}集_ 文件：{src_dir}")
+    raise FileNotFoundError(
+        f"src_dir 下找不到第 {n} 集文件（支持 第N集 / ep_N / episode_N 命名）：{src_dir}")
 
 
 def main():
@@ -90,9 +105,9 @@ def main():
     W = plan.get("w", 720)
     H = plan.get("h", 1280)
     FPS = plan.get("fps", 24)
-    src_dir = plan.get("src_dir")
+    src_dir = os.environ.get("SHORT_DRAMA_SRC_DIR") or plan.get("src_dir")
     if src_dir:
-        src_dir = resolve(src_dir)
+        src_dir = resolve(os.path.expandvars(src_dir))
     card_default = plan.get("card")
 
     ff = find_ff(args.ff)
@@ -135,7 +150,7 @@ def main():
         return
 
     # ---------- 黑场落地成文件（lavfi 不能直接进 concat） ----------
-    black_png = os.path.join(base, "build_black_720x1280.png")
+    black_png = os.path.join(base, f"build_black_{W}x{H}.png")
     if not os.path.exists(black_png):
         os.makedirs(os.path.dirname(black_png), exist_ok=True)
         subprocess.run(
