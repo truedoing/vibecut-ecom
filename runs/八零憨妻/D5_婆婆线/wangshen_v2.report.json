@@ -1,0 +1,70 @@
+{
+  "skill": "short-drama-video",
+  "target": "wangshen_v2.mp4",
+  "purpose": "验证「王婶说剧」四字道具能否作为主体物件生成（v1 写成背景细节，没生成）",
+  "submitted_at": "2026-11-11T07:08+08:00",
+  "task_id": "cgt-20261111070820-p66lc",
+  "request": {
+    "model": "doubao-seedance-2-0-mini-260615",
+    "resolution": "480p",
+    "ratio": "9:16",
+    "duration": 10,
+    "seed": 20261109,
+    "ref_image": "assets/ai_assets/characters/ch_003_王婶/ref/B_细节_无水印.jpg（无脸服装道具特写；脚本按路径提示误判为人物图，加 --allow-human-ref 放行，审核通过）",
+    "ref_audio": "runs/八零憨妻/D1_第1条/王婶_片内锚.mp3",
+    "prompt_file": "runs/八零憨妻/D5_婆婆线/prompt_wangshen_v2_提交版.txt（v2 说明头已剥掉，只留提交正文）"
+  },
+  "cost": {
+    "tokens": 100858,
+    "cny_approx": 2,
+    "note": "口径沿用 10s/480p ≈ 2 元；无需重试，一次过审"
+  },
+  "output": {
+    "path": "runs/八零憨妻/D5_婆婆线/wangshen_v2.mp4",
+    "video": "h264 / 496x864 / 10.04s",
+    "audio": "aac / 10.08s",
+    "size_mb": 3.9,
+    "elapsed_sec": 126
+  },
+  "checks": {
+    "four_chars": {
+      "result": "pass",
+      "detail": "台历在 2–10 秒各帧均可见，竖排四字放大 3 倍逐字确认为「王婶说剧」，无错字、缺字、歪斜"
+    },
+    "stray_text": {
+      "result": "pass",
+      "detail": "全片无字幕、台标、角标、水印；v1 的屏幕右上模糊白字不再出现"
+    },
+    "single_person": {
+      "result": "pass",
+      "detail": "屋内自始至终只有王婶一人，无第二人"
+    },
+    "asr": {
+      "result": "pass_with_note",
+      "script": "哎哟喂！退了婚的闺女，几十里地摸来的，就仨字——我不走。图啥呀？",
+      "asr": "哎呦喂，退了婚的闺女，几十里地摸来的就仨字儿，我不走，图啥呀？",
+      "diff": "「哟/呦」同音异体（转写常混）；「就仨字」多一个儿化音。无实质错字。"
+    },
+    "one_take_camera": {
+      "result": "fail",
+      "detail": "提示词写的时序（0s 屏幕满幅 → 后拉 → 8–10s 推回屏幕）未实现。实际开头已是拉开状态；6–9 秒为广角全景，第 10 秒直接切到中景，出现一次切镜，观众视角没有回到屏幕。"
+    },
+    "facing_camera": {
+      "result": "partial",
+      "detail": "6–7 秒对镜头说话，8–9 秒转为侧脸说话，不是全程直视观众"
+    }
+  },
+  "verdict": "四字道具验证通过，v1 的两处旧问题（四字未生成、台标白字）都已解决。不是可直接用的织入片：首尾没回到屏幕，头尾衔接会硬切。",
+  "next_options": [
+    "A：换 seed 重出一次（再约 2 元），把「首尾屏幕满幅」当唯一目标写",
+    "B：接受现状，装配时头尾各加 0.4s 叠化或压黑遮住硬切",
+    "C：四字贴图后期合成，AI 片只做人物与镜头，规避写字与镜头双重不确定"
+  ],
+  "human_review": "pending（张老师未看此片；本报告不等于人审通过）",
+  "artifacts": [
+    "build/v2check/v2_秒帧总览.jpg",
+    "build/v2check/台历四个字_放大.jpg",
+    "build/v2check/首尾屏幕_放大.jpg",
+    "build/v2check/结尾5帧.jpg"
+  ]
+}

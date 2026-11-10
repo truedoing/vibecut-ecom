@@ -37,8 +37,12 @@
       "path": "packs/short-drama/八零憨妻的甜蜜日常/drama-pack.json",
       "state": "approved",
       "rev": 1,
-      "depends_on": ["select"],
-      "depends_rev": {"select": 1},
+      "depends_on": [
+        "select"
+      ],
+      "depends_rev": {
+        "select": 1
+      },
       "evidence": [
         "drama-pack.json + 剧集包说明.md + drama-pack.gatecheck.json 均在（11-09）",
         "story_arc 六幕覆盖 ep20；覆盖大结局的幕带 restricted"
@@ -51,8 +55,12 @@
       "path": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json",
       "state": "approved",
       "rev": 1,
-      "depends_on": ["pack"],
-      "depends_rev": {"pack": 1},
+      "depends_on": [
+        "pack"
+      ],
+      "depends_rev": {
+        "pack": 1
+      },
       "evidence": [
         "asset_index.json（172KB）+ 素材台账.md + segments_skeleton.json 均在（11-08）",
         "台词库 lines_epNN.json 共 20 个文件；索引口径 19 集 / 508 句 / 45 锚点"
@@ -66,8 +74,14 @@
       "path": "assets/short-drama/ai_assets/registry.json",
       "state": "pending",
       "rev": 0,
-      "depends_on": ["asset_index", "script"],
-      "depends_rev": {"asset_index": 1, "script": 1},
+      "depends_on": [
+        "asset_index",
+        "script"
+      ],
+      "depends_rev": {
+        "asset_index": 1,
+        "script": 1
+      },
       "evidence": [],
       "by": "WorkBuddy",
       "at": "2026-11-10",
@@ -78,8 +92,14 @@
       "path": "runs/八零憨妻/D5_婆婆线/plan_v3ws.json",
       "state": "approved",
       "rev": 1,
-      "depends_on": ["pack", "asset_index"],
-      "depends_rev": {"pack": 1, "asset_index": 1},
+      "depends_on": [
+        "pack",
+        "asset_index"
+      ],
+      "depends_rev": {
+        "pack": 1,
+        "asset_index": 1
+      },
       "evidence": [
         "plan_v3ws.json 14 段，每段带 label / type / ep / a / b / beats（19:xx 更正，旧写 15 段是笔误）",
         "11-10 12:40 v0.2 定版，段表人审通过（张老师）"
@@ -102,23 +122,44 @@
       "path": "runs/八零憨妻/D5_婆婆线/wangshen_v1.mp4",
       "state": "done",
       "rev": 1,
-      "depends_on": ["script", "ai_assets"],
-      "depends_rev": {"script": 1, "ai_assets": 0},
+      "depends_on": [
+        "script",
+        "ai_assets"
+      ],
+      "depends_rev": {
+        "script": 1,
+        "ai_assets": 0
+      },
       "evidence": [
         "wangshen_v1.mp4 在（10s / 480p / 9:16）",
         "插 S01 后黑场位；v3ws 织入版 334.84s 与定版回归一致"
       ],
       "by": "WorkBuddy",
       "at": "2026-11-10",
-      "_note": "带伤未清：视觉标记「王婶说剧」四字道具未生成（v1 实际写成「王婶看剧」且是背景细节）；19:xx 已按主体物件写法另出 prompt_wangshen_v2.txt，但未提交出片、未验四字，故状态仍为 done 不升 approved。<名>.report.json 未落盘；ASR 逐字比对无记录。路径不在技能旧写的 assets/ai_assets/shots/ 下（该旧路径已被取代）。"
+      "_note": "带伤未清：视觉标记「王婶说剧」四字道具未生成（v1 实际写成「王婶看剧」且是背景细节）；11-11 已按 v2 提示词出片并验四字通过，作为**候选**登记在 candidates，未替换定版（首尾屏幕占满未实现，结尾一次切镜）；rev 与 path 仍指 v1。",
+      "candidates": [
+        {
+          "path": "runs/八零憨妻/D5_婆婆线/wangshen_v2.mp4",
+          "status": "候选，未被采用",
+          "why": "四字道具验证通过（台历「王婶说剧」清晰、台标消失、ASR 仅多一处儿化音），但首尾「屏幕占满」未实现、结尾有一次切镜，直接替换会让 v3ws 头尾硬切",
+          "report": "runs/八零憨妻/D5_婆婆线/wangshen_v2.report.json",
+          "cost": "100858 tokens ≈ 2 元"
+        }
+      ]
     },
     "trailer": {
       "skill": "short-drama-trailer",
       "path": "runs/八零憨妻/D5_婆婆线/sd_005_婆婆线_v3ws_预览.mp4",
       "state": "approved",
       "rev": 1,
-      "depends_on": ["script", "weave_video"],
-      "depends_rev": {"script": 1, "weave_video": 1},
+      "depends_on": [
+        "script",
+        "weave_video"
+      ],
+      "depends_rev": {
+        "script": 1,
+        "weave_video": 1
+      },
       "evidence": [
         "sd_005_婆婆线_v3.mp4 325.1s（占原片 44%），11-10 v0.2 定版用例",
         "sd_005_婆婆线_v3ws_预览.mp4 334.84s，织入版回归一致",
