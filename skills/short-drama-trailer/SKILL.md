@@ -1,11 +1,13 @@
 ---
 name: short-drama-trailer
-description: 纯剪预告片装配技能：从剧集包+台词库选段（三拍完整单元）、按业界预告片五幕重排、mix_trailer.py 装配成片，并支持王婶孪生 AI 织入位的生成与验证。当用户要「纯剪/剪一条预告/混剪一条/出第二条片子」时使用。只管剪辑装配与织入位，不建包（short-drama-pack）、不做任务编排。
+description: 纯剪预告片装配技能：消费 short-drama-script 产出的 plan.json，用 mix_trailer.py 校验并装配成片，做段界与切点验证，支持王婶孪生 AI 织入位整段插入。当用户要「装配 / 剪一条预告 / 重出成片」时使用。只管装配与验证，不做选段与五幕重排、不建包、不做任务编排。
 agent_created: true
 ---
 
-> 本技能不是入口。调度、门禁、多线并发走 supervisor。
-> 本技能只负责「把选好的素材装配成一条能看的纯剪预告」。
+> 本技能不是入口。调度、门禁、并发走 `short-drama-supervisor`（2026-11-10 已独立）。
+> 本技能只负责「把编排好的 plan.json 装配成一条能看的纯剪预告」。
+> **职责划清**：定轴 / 三拍选段 / 五幕重排归 `short-drama-script`，本技能不再宣称做这三件；
+> plan.json 不齐就退回上游，不自己补。
 
 # 纯剪预告装配
 
@@ -19,27 +21,22 @@ agent_created: true
 ## 何时使用 / 不要使用
 
 - 使用：剧集包已建好，要出一条纯剪预告或第二条片子（换受力结构）。
-- 不使用：建包/补台词（short-drama-pack）；解说文案；AI 出片提交本身（ecommerce-video-gen）；
-  带货混剪（ecommerce-mix）。
+- 不使用：建包/补台词（`short-drama-pack`）；定轴 / 选段 / 五幕重排（`short-drama-script`）；
+  AI 织入片生成（`short-drama-video`）；带货混剪（`ecommerce-mix`，与本线无关）。
 
-## 工序（六步，每步有判据）
+## 工序（四步，每步有判据）
 
-1. **受力结构检索定轴**：全剧扫「外人施压 / 自家人挡」结构。
-   - 重复型：同一受力反复出现，段 = 完整小冲突 15–25s；
-   - 弧线型：同一对手立场翻转，段 = 态度刻度 5–15s + 回撤段；
-   - 高光集锦：禁止（等于播原片，已实测失败）。
-2. **选段三道判据**（每道都是一次翻车换来的，见方法论文档第三节）：
-   ① 受力结构对轴；② 脱离前后集能否看懂；③ **三拍完整单元**（挑起→交锋→落点，
-   缺一拍宁可整场拿进来——金句抽取 ≠ 场景）。
-3. **五幕重排**：Tease（最强台词前置）→ Establish（三拍拒绝 Rule of Three）→
-   Escalate（反击+回撤 false victory）→ Brake（黑场急停+最静一句）→ Button（当众认+字幕卡）。
-   段间过 **But/Therefore 连接律**：出现「然后…然后」就重排。
-   冲突密度：前 45 秒每段必须是一次拒绝或反击。
-4. **写 plan.json 并装配**：每段 `beats` 字段写三拍注释（供人工核对），
-   跑 `scripts/mix_trailer.py`（自动校验出点上限 = 视频流时长，超限报错不装配）。
-5. **验证三件**：抽单帧全尺寸看字幕切点（小拼图会看串行）；段界帧查黑帧；
+> **编排在上游**：定轴 / 三拍选段 / 五幕重排由 `short-drama-script` 完成并产出 plan.json。
+> 本技能从「拿到 plan.json」开始，不重新选段。
+
+1. **复核 plan.json**：每段 `beats` 三拍注释齐不齐、`选段说明.md` 有没有五幕归属与
+   But/Therefore 连接、砍场前因复述在不在；缺任一项退回 `short-drama-script`，不自己补。
+   **存量批次例外（11-10 口径）**：`选段说明.md` 未落盘时，明确报「存量批次未落盘」并继续装配，
+   不静默放行、也不倒推退回上游——定版用例 D5 属此情形，已在台账标注。
+2. **装配**：跑 `scripts/mix_trailer.py`（自动校验出点上限 = 视频流时长，超限报错不装配）。
+3. **验证三件**：抽单帧全尺寸看字幕切点（小拼图会看串行）；段界帧查黑帧；
    AI 织入段加 ASR 逐字比对台词。
-6. **（可选）王婶织入**：见 `references/wangshen-weave-in.md`。织入位首选
+4. **（可选）王婶织入**：见 `references/wangshen-weave-in.md`。织入位首选
    第一场后的黑场位（消化位+导航位），插完整 AI 段后原黑场取消。
 
 ## 硬纪律（违反必翻车，全部实测换来的）
@@ -61,8 +58,9 @@ agent_created: true
 |---|---|
 | 剧集包 | `packs/short-drama/<剧名>/drama-pack.json`（story_arc / finale 门禁） |
 | 台词库 | `assets/short-drama/<剧名>/lines/lines_epNN.json` |
-| plan.json | 段表（见 scripts/mix_trailer.py 头部注释） |
-| 输出 | 成片 mp4 + 段落表打印 + （织入时）ASR 比对记录 |
+| plan.json | **由 `short-drama-script` 产出**；字段见 scripts/mix_trailer.py 头部注释。允许版本化命名 `plan_<tag>.json`（存量 `plan_v3ws.json` 即此） |
+| 输出 | 成片 mp4 + 段落表打印 + （织入时）ASR 比对记录；成片文件名自定义，台账写实际路径 |
 
 **时长预期**：每场自洽的诚实代价是全片 4–6 分钟（占原片 40–50%）。
 压时长的刀序：先砍功能重复场 → 再砍标签来源场（须用户拍板，前因会缺）。
+砍场是编排决策，归 `short-drama-script`；本技能只报装配后的实际时长账。
