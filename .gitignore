@@ -40,3 +40,7 @@ build/.gatecheck/
 
 # 成片可由 plan + mix_trailer.py 再生，不进库（仓库历史上从未跟踪过 mp4）
 runs/**/sd_*.mp4
+
+# 媒体一律不入库：成片 / AI 片段都能由清单与提示词再生
+runs/**/*.mp4
+assets/ai_assets/shots/*.mp4
