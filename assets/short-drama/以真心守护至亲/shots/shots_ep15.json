@@ -1,0 +1,316 @@
+{
+  "ep": 15,
+  "file": "15.mp4",
+  "duration": 54.4,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 12135,
+    "completion_tokens": 4016,
+    "total_tokens": 16151
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.33,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发 别珍珠发饰",
+          "老年女性 深色旧布衫 灰白盘发 背对镜头坐轮椅"
+        ],
+        "action": "年轻女性站立说话，老人坐着面对她",
+        "place": "书房",
+        "props": [
+          "轮椅",
+          "书架",
+          "挂镜",
+          "笔记本电脑",
+          "书桌"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep15_s000.jpg"
+    },
+    {
+      "start": 3.33,
+      "end": 6.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发 别珍珠发饰",
+          "老年女性 深色旧布衫 灰白盘发 背对镜头坐轮椅"
+        ],
+        "action": "年轻女性站立说话，老人坐着面对她",
+        "place": "书房",
+        "props": [
+          "轮椅",
+          "书架",
+          "挂镜",
+          "笔记本电脑",
+          "书桌"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep15_s001.jpg"
+    },
+    {
+      "start": 6.97,
+      "end": 9.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧布衫 灰白盘发 眼眶泛泪"
+        ],
+        "action": "老人含泪抬头说话",
+        "place": "书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s002.jpg"
+    },
+    {
+      "start": 9.83,
+      "end": 14.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发 别珍珠发饰",
+          "老年女性 深色旧布衫 背对镜头坐轮椅"
+        ],
+        "action": "年轻女性张嘴说话，神情激动",
+        "place": "书房",
+        "props": [
+          "轮椅",
+          "书架",
+          "挂镜",
+          "笔记本电脑",
+          "书桌"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s003.jpg"
+    },
+    {
+      "start": 14.07,
+      "end": 17.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色衣袖 仅见手臂与双手"
+        ],
+        "action": "双手把文件放进黑色手提包",
+        "place": "书房",
+        "props": [
+          "黑色手提包",
+          "书桌",
+          "台灯",
+          "绿植"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s004.jpg"
+    },
+    {
+      "start": 17.43,
+      "end": 19.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 米色长裤 黑色单肩包"
+        ],
+        "action": "提着单肩包站立说话",
+        "place": "书房",
+        "props": [
+          "黑色单肩包",
+          "书架",
+          "笔记本电脑"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s005.jpg"
+    },
+    {
+      "start": 19.77,
+      "end": 23.6,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 浅棕色夹克+灰色内搭 短发花白"
+        ],
+        "action": "伸手递出一把钥匙，正对镜头说话",
+        "place": "室内客厅",
+        "props": [
+          "钥匙",
+          "门",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s006.jpg"
+    },
+    {
+      "start": 23.6,
+      "end": 29.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 浅棕色夹克+灰色内搭 短发花白"
+        ],
+        "action": "伸手递出一把钥匙，正对镜头说话",
+        "place": "室内客厅",
+        "props": [
+          "钥匙",
+          "门",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s007.jpg"
+    },
+    {
+      "start": 29.13,
+      "end": 33.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰色盘扣旧衣 坐轮椅 灰白发"
+        ],
+        "action": "坐在轮椅上抬头望向别处，神情动容",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s008.jpg"
+    },
+    {
+      "start": 33.73,
+      "end": 40.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 米白色短袖T恤+牛仔裤 高马尾 面带泪痕"
+        ],
+        "action": "站在门边低头哭泣，神情难过",
+        "place": "室内卧室",
+        "props": [
+          "门"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s009.jpg"
+    },
+    {
+      "start": 40.77,
+      "end": 42.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 米白色短袖T恤 高马尾 眼眶泛红"
+        ],
+        "action": "俯身向前看向对方，嘴唇微张说话",
+        "place": "室内卧室",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s010.jpg"
+    },
+    {
+      "start": 42.47,
+      "end": 45.7,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深灰色盘扣旧衣 灰白发 眼含泪水"
+        ],
+        "action": "含泪凝视前方，嘴角勉强抿住",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s011.jpg"
+    },
+    {
+      "start": 45.7,
+      "end": 48.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色传统盘扣上衣 灰白发髻 神情悲伤"
+        ],
+        "action": "面向他人诉说，面露悲伤",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s012.jpg"
+    },
+    {
+      "start": 48.53,
+      "end": 50.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色传统盘扣上衣 灰白发髻 神情悲伤"
+        ],
+        "action": "面向他人诉说，面露悲伤",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep15_s013.jpg"
+    },
+    {
+      "start": 50.7,
+      "end": 54.4,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "action": "静物展示书桌上的文件与物品",
+        "place": "室内书桌",
+        "props": [
+          "笔记本电脑",
+          "台灯",
+          "计划假离婚书",
+          "书籍"
+        ],
+        "scene_text": "计划假离婚书",
+        "watermark": ""
+      },
+      "frame": "ep15_s014.jpg"
+    }
+  ]
+}

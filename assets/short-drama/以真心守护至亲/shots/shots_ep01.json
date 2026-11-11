@@ -1,0 +1,586 @@
+{
+  "ep": 1,
+  "file": "1.mp4",
+  "duration": 99.01,
+  "shot_count": 32,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 25714,
+    "completion_tokens": 8349,
+    "total_tokens": 34063
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.57,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "action": "画面昏暗模糊，无可见动作",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep01_s000.jpg"
+    },
+    {
+      "start": 2.57,
+      "end": 7.17,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "action": "画面昏暗模糊，无可见动作",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep01_s001.jpg"
+    },
+    {
+      "start": 7.17,
+      "end": 10.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "坐在轮椅上双手扶着木桌",
+        "place": "室内仓库",
+        "props": [
+          "轮椅",
+          "金条货架",
+          "木桌"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s002.jpg"
+    },
+    {
+      "start": 10.1,
+      "end": 13.77,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧衣 双手持手机"
+        ],
+        "action": "双手捧着手机查看请柬",
+        "place": "未识别",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "囍 Wedding Wedding",
+        "watermark": ""
+      },
+      "frame": "ep01_s003.jpg"
+    },
+    {
+      "start": 13.77,
+      "end": 17.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "坐在轮椅上抬眼望向前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅",
+          "红毯"
+        ],
+        "scene_text": "婚礼现场",
+        "watermark": ""
+      },
+      "frame": "ep01_s004.jpg"
+    },
+    {
+      "start": 17.23,
+      "end": 20.33,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧衣 眼含泪水"
+        ],
+        "action": "含泪笑着张口喊人",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s005.jpg"
+    },
+    {
+      "start": 20.33,
+      "end": 24.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披头纱 长卷发",
+          "老年女性 深灰旧布衣 坐轮椅 背对镜头"
+        ],
+        "action": "新娘低头看向轮椅上的老人",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅",
+          "头纱"
+        ],
+        "scene_text": "许宁 女主",
+        "watermark": ""
+      },
+      "frame": "ep01_s006.jpg"
+    },
+    {
+      "start": 24.83,
+      "end": 28.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披头纱 长卷发",
+          "老年女性 深灰旧布衣 坐轮椅 背对镜头"
+        ],
+        "action": "新娘低头看向轮椅上的老人",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅",
+          "头纱"
+        ],
+        "scene_text": "许宁 女主",
+        "watermark": ""
+      },
+      "frame": "ep01_s007.jpg"
+    },
+    {
+      "start": 28.13,
+      "end": 30.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰旧布衣 花白盘发 满脸泪痕"
+        ],
+        "action": "老人伸出手激动地哭诉",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s008.jpg"
+    },
+    {
+      "start": 30.7,
+      "end": 33.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披头纱 长卷发",
+          "老年女性 深灰旧布衣 背对镜头"
+        ],
+        "action": "新娘神情震惊地听老人讲话",
+        "place": "酒店宴会厅",
+        "props": [
+          "头纱"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s009.jpg"
+    },
+    {
+      "start": 33.13,
+      "end": 35.87,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深灰旧布衣 脖颈皱纹明显"
+        ],
+        "action": "老人开口诉说往事",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s010.jpg"
+    },
+    {
+      "start": 35.87,
+      "end": 39.67,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰旧布衣 花白盘发 眼含泪水"
+        ],
+        "action": "老人流泪向新娘诉说寻找经过",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s011.jpg"
+    },
+    {
+      "start": 39.67,
+      "end": 42.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装白衬衫酒红色领带 短发"
+        ],
+        "action": "闭着眼开口说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s012.jpg"
+    },
+    {
+      "start": 42.6,
+      "end": 45.97,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装白衬衫酒红色领带 短发"
+        ],
+        "action": "闭着眼开口说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s013.jpg"
+    },
+    {
+      "start": 45.97,
+      "end": 50.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色立领旧上衣 灰白长发扎起"
+        ],
+        "action": "抬头神情难过地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s014.jpg"
+    },
+    {
+      "start": 50.43,
+      "end": 52.67,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装马甲白衬衫酒红色领带 酒红色口袋巾"
+        ],
+        "action": "面无表情看向画面外",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s015.jpg"
+    },
+    {
+      "start": 52.67,
+      "end": 54.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装白衬衫酒红色领带 短发"
+        ],
+        "action": "侧头开口说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s016.jpg"
+    },
+    {
+      "start": 54.37,
+      "end": 58.47,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深色立领旧上衣 灰白长发扎起",
+          "年轻女性 浅粉色荷叶边连衣裙 长发佩戴珍珠发饰"
+        ],
+        "action": "年轻女性哭喊，老年女性低头",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s017.jpg"
+    },
+    {
+      "start": 58.47,
+      "end": 63.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "情绪激动地看着前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s018.jpg"
+    },
+    {
+      "start": 63.07,
+      "end": 66.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "情绪激动地看着前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s019.jpg"
+    },
+    {
+      "start": 66.27,
+      "end": 70.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色连衣裙 珍珠发夹"
+        ],
+        "action": "表情惊讶或不满地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s020.jpg"
+    },
+    {
+      "start": 70.37,
+      "end": 72.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻男性 深色西装 白衬衫 红领带",
+          "年轻女性 白色婚纱 盘发"
+        ],
+        "action": "男性正与女性对话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s021.jpg"
+    },
+    {
+      "start": 72.87,
+      "end": 77.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 深色西装 白衬衫 红领带"
+        ],
+        "action": "表情痛苦地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s022.jpg"
+    },
+    {
+      "start": 77.1,
+      "end": 78.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 珍珠发夹",
+          "年轻男性 深色西装 蓝衬衫 黑领带"
+        ],
+        "action": "女性表情激动地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s023.jpg"
+    },
+    {
+      "start": 78.37,
+      "end": 80.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 头纱 长发"
+        ],
+        "action": "女性看向一侧，神情惊讶",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s024.jpg"
+    },
+    {
+      "start": 80.6,
+      "end": 83.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 头纱 长发"
+        ],
+        "action": "女性看向一侧，神情惊讶",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s025.jpg"
+    },
+    {
+      "start": 83.43,
+      "end": 86.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 头纱 长发"
+        ],
+        "action": "女性看向一侧，似在交谈",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "她坐着轮椅",
+        "watermark": ""
+      },
+      "frame": "ep01_s026.jpg"
+    },
+    {
+      "start": 86.7,
+      "end": 90.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 长发 发饰",
+          "中年男性 黑色外套 短发"
+        ],
+        "action": "粉色连衣裙女性看向一侧，似在说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "姐宾客都看着呢",
+        "watermark": ""
+      },
+      "frame": "ep01_s027.jpg"
+    },
+    {
+      "start": 90.57,
+      "end": 92.87,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 头纱 长发"
+        ],
+        "action": "女性站立，看向镜头方向",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "她没伤人也没要钱",
+        "watermark": ""
+      },
+      "frame": "ep01_s028.jpg"
+    },
+    {
+      "start": 92.87,
+      "end": 94.87,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "老年女性 破旧深色衣服 手有血迹",
+          "年轻女性 白色蕾丝婚纱 手部"
+        ],
+        "action": "年轻女性的手触碰受伤的手",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s029.jpg"
+    },
+    {
+      "start": 94.87,
+      "end": 98.67,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 深色上衣 流泪面颊泛红"
+        ],
+        "action": "含泪盯着手腕上的疤痕",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s030.jpg"
+    },
+    {
+      "start": 98.67,
+      "end": 99.01,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 深色上衣 流泪面颊泛红"
+        ],
+        "action": "含泪盯着手腕上的疤痕",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep01_s031.jpg"
+    }
+  ]
+}

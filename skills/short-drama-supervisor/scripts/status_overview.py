@@ -31,13 +31,17 @@ STAGE_LABELS = {
     "pack": "建包（剧集资料，G0 人审）",
     "asset_index": "素材索引 / 台词库",
     "ai_assets": "玩法要用的角色资产（可选）",
-    "script": "方向卡 + 剪辑清单（G1 人审）",
+    "script": "选题单 + 剪辑清单（G1 人审）",
     "weave_video": "按玩法生成的素材段（可选，G2 验收）",
     "trailer": "装配成片（G3 成片人审）",
 }
 OPTIONAL = {"ai_assets", "weave_video"}
 DONE = {"done", "approved"}
 SKIP = {"superseded", "blocked"}
+# 人审节点：这几个环节 `done` 只代表「产物在、自检过了、人还没判」，
+# 不能当「可以往下」用。11-11 实测踩到：script 记 done（清单齐了、试跑通过），
+# 下一步却直接推荐装配——G1 人审根本没走。asset_index 不在此列，它落盘即算完。
+GATED = {"pack": "G0", "script": "G1", "trailer": "G3"}
 VALID = {"pending", "in_progress", "done", "approved", "stale", "superseded", "blocked"}
 
 # 11-09 旧形态键名：遇到就明确报「不迁移」，不拿旧键当进度
@@ -145,6 +149,13 @@ def rev_of(art):
     return art.get("rev") if isinstance(art, dict) else None
 
 
+def never_built(art) -> bool:
+    """还没造过东西（rev=0 的 pending/in_progress）：谈不上「要重做」，只是还没开工。"""
+    return (isinstance(art, dict)
+            and rev_of(art) in (0, None)
+            and art.get("state") in ("pending", "in_progress"))
+
+
 def propagate(reasons, artifacts, skipped=()):
     """被判失效的产物，其下游一并失效，直到收敛。"""
     changed = True
@@ -154,6 +165,8 @@ def propagate(reasons, artifacts, skipped=()):
             if key in skipped:
                 continue
             if not isinstance(art, dict) or art.get("state") in SKIP or key in reasons:
+                continue
+            if never_built(art):
                 continue
             for dep in art.get("depends_on") or []:
                 if dep in reasons:
@@ -176,6 +189,11 @@ def stale_reasons(artifacts, skip_optional=False):
         if key in skipped:
             continue
         if not isinstance(art, dict) or art.get("state") in SKIP:
+            continue
+        # 还没造过东西（rev=0 的 pending）谈不上「要重做」，只是还没开工。
+        # 11-11 实测踩到：asset_index 从 rev0 升 rev1，把从没开过工的 script/trailer
+        # 一并报成「要重做」，让真正的卡点淹在假卡点里。旧台账 rev≥1，行为不变。
+        if never_built(art):
             continue
         rs = []
         deps = art.get("depends_on") or []
@@ -214,6 +232,14 @@ def next_step(artifacts, reasons):
         art = artifacts.get(s)
         if isinstance(art, dict) and art.get("state") in DONE:
             last_done = i
+    # 人审节点上停在 done：产物齐了但人没点头，不许往下推。
+    # 这条比「继续下一环」优先——装配是花钱且不可逆的动作，门没过就推等于越权。
+    tail = STAGES[last_done] if last_done >= 0 else None
+    if tail in GATED:
+        art = artifacts.get(tail) or {}
+        if art.get("state") == "done":
+            return (f"等人审 {tail}（{STAGE_LABELS[tail]}，{GATED[tail]} 门禁）"
+                    f"——产物已齐、人没点头，不许往下")
     for s in STAGES[last_done + 1:]:
         art = artifacts.get(s)
         if s in OPTIONAL:

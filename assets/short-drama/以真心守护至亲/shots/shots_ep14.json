@@ -1,0 +1,290 @@
+{
+  "ep": 14,
+  "file": "14.mp4",
+  "duration": 49.2,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 12135,
+    "completion_tokens": 4872,
+    "total_tokens": 17007
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.67,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 浅棕色夹克 内搭灰色T恤 短灰发 伸手指向前方"
+        ],
+        "action": "中年男性伸手指向前方，表情激动",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep14_s000.jpg"
+    },
+    {
+      "start": 2.67,
+      "end": 4.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 浅棕色夹克 内搭灰色T恤 短灰发 伸手指向前方"
+        ],
+        "action": "中年男性伸手指向前方，表情激动",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep14_s001.jpg"
+    },
+    {
+      "start": 4.7,
+      "end": 8.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 衬衫带污渍 深棕色裤子 握拳站立"
+        ],
+        "action": "年轻男性握拳站立，表情严肃",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s002.jpg"
+    },
+    {
+      "start": 8.07,
+      "end": 13.03,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发 戴白色发夹"
+        ],
+        "action": "年轻女性惊讶张嘴，正在说话",
+        "place": "室内门口",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s003.jpg"
+    },
+    {
+      "start": 13.03,
+      "end": 14.7,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 头发扎起"
+        ],
+        "action": "年轻女性表情错愕，张嘴说话",
+        "place": "室内门口",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s004.jpg"
+    },
+    {
+      "start": 14.7,
+      "end": 17.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 深色盘扣棉服 坐轮椅 灰白盘发"
+        ],
+        "action": "老年女性坐轮椅，手持透明密封袋",
+        "place": "室内房间",
+        "props": [
+          "轮椅",
+          "透明密封袋"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s005.jpg"
+    },
+    {
+      "start": 17.07,
+      "end": 22.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色盘扣立领上衣 灰白短发"
+        ],
+        "action": "正开口说话，神情难过",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s006.jpg"
+    },
+    {
+      "start": 22.1,
+      "end": 25.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色盘扣立领上衣 灰白短发"
+        ],
+        "action": "正开口说话，神情难过",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s007.jpg"
+    },
+    {
+      "start": 25.63,
+      "end": 28.3,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 卡其色夹克内搭灰色上衣 手持纸张",
+          "年轻女性 白色短袖牛仔裤 高马尾"
+        ],
+        "action": "男性手持纸张与女性交谈",
+        "place": "室内卧室",
+        "props": [
+          "行李箱",
+          "纸张"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s008.jpg"
+    },
+    {
+      "start": 28.3,
+      "end": 31.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 卡其色夹克内搭灰色上衣 短发"
+        ],
+        "action": "正开口说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s009.jpg"
+    },
+    {
+      "start": 31.3,
+      "end": 36.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖牛仔裤 高马尾"
+        ],
+        "action": "站立倾听，神情惊讶",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s010.jpg"
+    },
+    {
+      "start": 36.17,
+      "end": 40.7,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "中年男性 卡其色夹克内搭灰色上衣 短发"
+        ],
+        "action": "正开口说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s011.jpg"
+    },
+    {
+      "start": 40.7,
+      "end": 42.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 蓝色牛仔裤 高马尾带白色发圈"
+        ],
+        "action": "张嘴说话，看向画面右侧",
+        "place": "室内书房",
+        "props": [
+          "木质书架",
+          "书本",
+          "书桌"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s012.jpg"
+    },
+    {
+      "start": 42.53,
+      "end": 46.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 蓝色牛仔裤 高马尾带白色发圈"
+        ],
+        "action": "张嘴说话，看向画面右侧",
+        "place": "室内书房",
+        "props": [
+          "木质书架",
+          "书本",
+          "书桌"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s013.jpg"
+    },
+    {
+      "start": 46.37,
+      "end": 49.2,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 手持白色小包 长发配珍珠发夹",
+          "年轻男性 浅蓝色衬衫 卡其色长裤 短发"
+        ],
+        "action": "两人站立，男性张嘴说话",
+        "place": "室内客厅",
+        "props": [
+          "墙面镜子",
+          "木质书架",
+          "书本"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep14_s014.jpg"
+    }
+  ]
+}

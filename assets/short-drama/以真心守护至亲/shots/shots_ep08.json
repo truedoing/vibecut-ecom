@@ -1,0 +1,274 @@
+{
+  "ep": 8,
+  "file": "8.mp4",
+  "duration": 51.04,
+  "shot_count": 14,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 11413,
+    "completion_tokens": 4223,
+    "total_tokens": 15636
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深灰旧中式上衣 坐轮椅",
+          "年轻女性 白色婚纱 长发"
+        ],
+        "action": "老人坐着与白衣人对话",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep08_s000.jpg"
+    },
+    {
+      "start": 2.57,
+      "end": 5.6,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深灰旧中式上衣 坐轮椅",
+          "年轻女性 白色婚纱 长发"
+        ],
+        "action": "老人坐着与白衣人对话",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep08_s001.jpg"
+    },
+    {
+      "start": 5.6,
+      "end": 8.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰旧中式上衣 坐轮椅"
+        ],
+        "action": "老人面露难过神情",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s002.jpg"
+    },
+    {
+      "start": 8.53,
+      "end": 10.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年男性 深色三件套西装 皱眉开口",
+          "年轻女性 白色婚纱 长发戴头纱"
+        ],
+        "action": "男性皱眉开口说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s003.jpg"
+    },
+    {
+      "start": 10.87,
+      "end": 15.33,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝长袖婚纱 长发戴头纱"
+        ],
+        "action": "新娘站立在原地",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s004.jpg"
+    },
+    {
+      "start": 15.33,
+      "end": 20.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶袖连衣裙 长发戴珍珠发夹"
+        ],
+        "action": "粉衣女性开口说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s005.jpg"
+    },
+    {
+      "start": 20.93,
+      "end": 24.87,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝连衣裙 长发披肩",
+          "老年女性 深色中式上衣 坐轮椅 盘发"
+        ],
+        "action": "年轻女性手扶轮椅，站在老年女性身后",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s006.jpg"
+    },
+    {
+      "start": 24.87,
+      "end": 31.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝连衣裙 长发披肩",
+          "老年女性 深色中式上衣 坐轮椅 盘发"
+        ],
+        "action": "年轻女性手扶轮椅，站在老年女性身后",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s007.jpg"
+    },
+    {
+      "start": 31.8,
+      "end": 37.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色连衣裙 长发带珍珠发夹"
+        ],
+        "action": "惊讶地张嘴说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s008.jpg"
+    },
+    {
+      "start": 37.27,
+      "end": 40.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色中式上衣 坐轮椅 盘发"
+        ],
+        "action": "悲伤地仰头说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s009.jpg"
+    },
+    {
+      "start": 40.17,
+      "end": 43.0,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 白色衬衫 深色领带"
+        ],
+        "action": "严肃地看着前方说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s010.jpg"
+    },
+    {
+      "start": 43.0,
+      "end": 44.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 白色衬衫 深色领带"
+        ],
+        "action": "严肃地站立在宴会厅中",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s011.jpg"
+    },
+    {
+      "start": 44.8,
+      "end": 48.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装三件套 深酒红色领带 手持蓝色首饰盒"
+        ],
+        "action": "手持首饰盒，下达指令",
+        "place": "室内婚礼舞台",
+        "props": [
+          "蓝色首饰盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s012.jpg"
+    },
+    {
+      "start": 48.4,
+      "end": 51.04,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装三件套 深酒红色领带 手持蓝色首饰盒"
+        ],
+        "action": "手持首饰盒，下达指令",
+        "place": "室内婚礼舞台",
+        "props": [
+          "蓝色首饰盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep08_s013.jpg"
+    }
+  ]
+}

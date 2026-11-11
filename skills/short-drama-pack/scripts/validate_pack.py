@@ -28,10 +28,11 @@ PROOF_LEVELS = {"E1", "E2", "E3", "E4"}
 TRUST_LEVELS = {"T1", "T2", "T3"}
 HOOK_TYPES = {"conflict", "suspense", "contrast", "reveal"}
 HOOK_STATUS = {"ready", "conditional", "blocked"}
-PLATFORMS = {"kuaishou", "douyin", "other"}
+PLATFORMS = {"kuaishou", "douyin", "wechat_channels", "other"}
 MODES = {"official_task_material", "self_licensed", "no_license"}
 DESUB = {"done", "pending", "not_needed"}
-CHECK_STATUS = {"ok", "watch", "pending", "blocked"}
+# waived = 事实存在但张老师明确「不处理」，比 ok 更准：ok 是查过没问题，waived 是查过有问题但决定不管
+CHECK_STATUS = {"ok", "watch", "pending", "blocked", "waived"}
 MUST_CHECK = {
     "ending_spoiler", "disability_disease_wording", "rebuild_evidence",
     "offsite_diversion", "ai_label",

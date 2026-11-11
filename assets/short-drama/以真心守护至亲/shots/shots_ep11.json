@@ -1,0 +1,297 @@
+{
+  "ep": 11,
+  "file": "11.mp4",
+  "duration": 53.45,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 12135,
+    "completion_tokens": 4939,
+    "total_tokens": 17074
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边上衣 白色蕾丝头纱 长卷发"
+        ],
+        "action": "皱眉张嘴，情绪激动地说话",
+        "place": "室内宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep11_s000.jpg"
+    },
+    {
+      "start": 2.57,
+      "end": 5.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边上衣 白色蕾丝头纱 长卷发"
+        ],
+        "action": "皱眉张嘴，情绪激动地说话",
+        "place": "室内宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep11_s001.jpg"
+    },
+    {
+      "start": 5.9,
+      "end": 8.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色连衣裙 白色蕾丝头纱 长卷发"
+        ],
+        "action": "神情急切，情绪激动地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s002.jpg"
+    },
+    {
+      "start": 8.87,
+      "end": 11.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅蓝条纹衬衫 深色领带"
+        ],
+        "action": "皱眉说话，神情严肃不满",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s003.jpg"
+    },
+    {
+      "start": 11.7,
+      "end": 14.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色连衣裙 白色蕾丝头纱 长卷发"
+        ],
+        "action": "神情委屈，情绪激动地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s004.jpg"
+    },
+    {
+      "start": 14.7,
+      "end": 17.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色盘扣上衣 灰发"
+        ],
+        "action": "含泪哭诉，神情悲痛",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s005.jpg"
+    },
+    {
+      "start": 17.87,
+      "end": 20.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 白色衬衫 黑色领带 侧头开口"
+        ],
+        "action": "看向画面右侧开口说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "酒杯",
+          "红色餐巾",
+          "白色瓷盘"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s006.jpg"
+    },
+    {
+      "start": 20.83,
+      "end": 22.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 白色衬衫 黑色领带 侧头开口"
+        ],
+        "action": "看向画面右侧开口说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "酒杯",
+          "红色餐巾",
+          "白色瓷盘"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s007.jpg"
+    },
+    {
+      "start": 22.57,
+      "end": 25.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝头纱 浅粉色连衣裙 长发微卷"
+        ],
+        "action": "惊讶张嘴看向画面右侧",
+        "place": "酒店宴会厅",
+        "props": [
+          "白色蕾丝头纱"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s008.jpg"
+    },
+    {
+      "start": 25.17,
+      "end": 39.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 白色衬衫 酒红色领带 手持戒指"
+        ],
+        "action": "手持戒指盒看向画面左侧说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "戒指盒",
+          "钻戒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s009.jpg"
+    },
+    {
+      "start": 39.13,
+      "end": 41.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝头纱 浅粉色连衣裙 长发微卷 微笑",
+          "未知人 深色长发 前景左侧头部背影"
+        ],
+        "action": "白纱裙女性微笑看向画面前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "白色蕾丝头纱"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s010.jpg"
+    },
+    {
+      "start": 41.73,
+      "end": 45.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 灰色中式盘扣上衣 灰发盘起"
+        ],
+        "action": "抬头看向画面左侧说话",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s011.jpg"
+    },
+    {
+      "start": 45.13,
+      "end": 46.37,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "青年（性别未识别） 无可见服装 仅露出持钥匙开锁的手部"
+        ],
+        "action": "手持钥匙插入入户门锁中",
+        "place": "住宅入户门外",
+        "props": [
+          "金属钥匙",
+          "入户门锁（带蓝色锁芯）",
+          "入户门把手"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s012.jpg"
+    },
+    {
+      "start": 46.37,
+      "end": 50.8,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "青年（性别未识别） 无可见服装 仅露出持钥匙开锁的手部"
+        ],
+        "action": "手持钥匙插入入户门锁中",
+        "place": "住宅入户门外",
+        "props": [
+          "金属钥匙",
+          "入户门锁（带蓝色锁芯）",
+          "入户门把手"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s013.jpg"
+    },
+    {
+      "start": 50.8,
+      "end": 53.45,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色蕾丝边连衣裙 长卷发别银色发卡"
+        ],
+        "action": "站在玄关门边看向门外的人",
+        "place": "住宅入户玄关（室内）",
+        "props": [
+          "木质鞋架",
+          "多双鞋子"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep11_s014.jpg"
+    }
+  ]
+}

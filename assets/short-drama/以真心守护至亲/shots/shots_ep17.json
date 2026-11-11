@@ -1,0 +1,336 @@
+{
+  "ep": 17,
+  "file": "17.mp4",
+  "duration": 51.69,
+  "shot_count": 16,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 15032,
+    "completion_tokens": 5554,
+    "total_tokens": 20586
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 米白色短袖T恤 扎高马尾"
+        ],
+        "action": "双手持手机查看内容",
+        "place": "室内书房",
+        "props": [
+          "手机",
+          "笔记本电脑"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep17_s000.jpg"
+    },
+    {
+      "start": 3.7,
+      "end": 7.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧中式棉袄 坐轮椅",
+          "年轻女性 浅色短袖上衣 手持手机"
+        ],
+        "action": "老年女性端坐轮椅，年轻女性手持手机与她交流",
+        "place": "室内卧室",
+        "props": [
+          "轮椅",
+          "手机",
+          "书架",
+          "书籍",
+          "床"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s001.jpg"
+    },
+    {
+      "start": 7.17,
+      "end": 10.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 蓝色牛仔裤 手持手机"
+        ],
+        "action": "手持手机操作转账",
+        "place": "未识别",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "15:32 客服催 石川县配豪华包装 白麻 售前客服 售后客服 合作商 备货 售后客服 物流单",
+        "watermark": ""
+      },
+      "frame": "ep17_s002.jpg"
+    },
+    {
+      "start": 10.17,
+      "end": 14.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰色盘扣上衣 花白发髻"
+        ],
+        "action": "手持智能手机操作屏幕",
+        "place": "室内房间",
+        "props": [
+          "智能手机"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s003.jpg"
+    },
+    {
+      "start": 14.07,
+      "end": 16.27,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色短袖T恤 高马尾",
+          "老年女性 深色上衣 坐轮椅"
+        ],
+        "action": "年轻女性抱枕头面向坐轮椅的老人",
+        "place": "室内卧室",
+        "props": [
+          "轮椅",
+          "枕头"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s004.jpg"
+    },
+    {
+      "start": 16.27,
+      "end": 21.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅色短袖上衣 马尾发",
+          "老年女性 深色衣物 灰白头发"
+        ],
+        "action": "年轻女性俯身扶住老年女性",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s005.jpg"
+    },
+    {
+      "start": 21.27,
+      "end": 25.43,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧盘扣上衣 灰白盘发 眼含泪水",
+          "年轻女性 深色长发 露半张脸"
+        ],
+        "action": "老年女性面露悲伤，注视身旁人",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s006.jpg"
+    },
+    {
+      "start": 25.43,
+      "end": 28.1,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧盘扣上衣 灰白盘发 眼含泪水",
+          "年轻女性 深色长发 露半张脸"
+        ],
+        "action": "老年女性面露悲伤，注视身旁人",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s007.jpg"
+    },
+    {
+      "start": 28.1,
+      "end": 31.3,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧盘扣上衣 灰白盘发 坐轮椅",
+          "年轻女性 白色T恤 高马尾 俯身握手"
+        ],
+        "action": "年轻女性握着老年女性的手交谈",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s008.jpg"
+    },
+    {
+      "start": 31.3,
+      "end": 33.97,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧盘扣上衣 灰白盘发 坐姿"
+        ],
+        "action": "老年女性开口讲述，面露难过",
+        "place": "室内书房",
+        "props": [
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s009.jpg"
+    },
+    {
+      "start": 33.97,
+      "end": 39.47,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 白色上衣 高马尾 眼含泪水"
+        ],
+        "action": "年轻女性流泪，面露心疼",
+        "place": "室内卧室",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s010.jpg"
+    },
+    {
+      "start": 39.47,
+      "end": 40.67,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 蓝色牛仔裤 高马尾"
+        ],
+        "action": "年轻女性开口关切地说话",
+        "place": "室内卧室",
+        "props": [
+          "床",
+          "百叶窗"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s011.jpg"
+    },
+    {
+      "start": 40.67,
+      "end": 41.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖 手臂伸向床头柜"
+        ],
+        "action": "伸手按动床头柜上的黑色圆盘",
+        "place": "室内卧室",
+        "props": [
+          "台灯",
+          "书籍",
+          "储物罐",
+          "储物盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s012.jpg"
+    },
+    {
+      "start": 41.2,
+      "end": 43.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖 手臂伸向床头柜"
+        ],
+        "action": "伸手按动床头柜上的黑色圆盘",
+        "place": "室内卧室",
+        "props": [
+          "台灯",
+          "书籍",
+          "储物罐",
+          "储物盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s013.jpg"
+    },
+    {
+      "start": 43.37,
+      "end": 46.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色短袖牛仔裤 扎高马尾",
+          "老年女性 深灰色中式上衣 坐姿前倾"
+        ],
+        "action": "年轻女性扶着老年女性起身",
+        "place": "室内书房（卧室带书架区域）",
+        "props": [
+          "轮椅",
+          "书架",
+          "笔记本电脑"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s014.jpg"
+    },
+    {
+      "start": 46.83,
+      "end": 51.69,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色短袖 俯身整理被子",
+          "老年女性 深灰色中式上衣 躺在床上"
+        ],
+        "action": "年轻女性为老年女性盖被子",
+        "place": "室内卧室",
+        "props": [
+          "枕头",
+          "被子"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep17_s015.jpg"
+    }
+  ]
+}

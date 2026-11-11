@@ -1,0 +1,296 @@
+{
+  "ep": 7,
+  "file": "7.mp4",
+  "duration": 51.08,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 13005,
+    "completion_tokens": 5057,
+    "total_tokens": 18062
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 4.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 深色三件套西装 红领带 白衬衫 发型整齐"
+        ],
+        "action": "年轻男性穿着正装，注视前方",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep07_s000.jpg"
+    },
+    {
+      "start": 4.77,
+      "end": 10.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 深色三件套西装 红领带 白衬衫 发型整齐"
+        ],
+        "action": "年轻男性穿着正装，注视前方",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep07_s001.jpg"
+    },
+    {
+      "start": 10.87,
+      "end": 17.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色连衣裙 珍珠发饰 长发"
+        ],
+        "action": "年轻女性穿着粉色裙子，表情惊讶",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s002.jpg"
+    },
+    {
+      "start": 17.3,
+      "end": 20.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 头纱 长发",
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "年轻女性看向一侧，老年女性坐轮椅",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s003.jpg"
+    },
+    {
+      "start": 20.93,
+      "end": 24.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色连衣裙 珍珠发饰 长发"
+        ],
+        "action": "年轻女性穿着粉色裙子，表情惊讶",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s004.jpg"
+    },
+    {
+      "start": 24.47,
+      "end": 27.23,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "老年女性坐在轮椅上，表情悲伤",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s005.jpg"
+    },
+    {
+      "start": 27.23,
+      "end": 28.63,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅灰衬衫黑领带 头发向后梳"
+        ],
+        "action": "对着麦克风说话，身体前倾看向下方",
+        "place": "酒店宴会厅",
+        "props": [
+          "麦克风"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s006.jpg"
+    },
+    {
+      "start": 28.63,
+      "end": 32.63,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅灰衬衫黑领带 头发向后梳"
+        ],
+        "action": "对着麦克风说话，身体前倾看向下方",
+        "place": "酒店宴会厅",
+        "props": [
+          "麦克风"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s007.jpg"
+    },
+    {
+      "start": 32.63,
+      "end": 36.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅灰衬衫黑领带 头发向后梳"
+        ],
+        "action": "对着麦克风说话，神情严肃看向下方",
+        "place": "酒店宴会厅",
+        "props": [
+          "麦克风"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s008.jpg"
+    },
+    {
+      "start": 36.63,
+      "end": 39.9,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅灰衬衫黑领带 头发向后梳"
+        ],
+        "action": "抬手做手势，侧头开口说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "深色小物件"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s009.jpg"
+    },
+    {
+      "start": 39.9,
+      "end": 42.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色高领蕾丝婚纱 长发披肩 神情焦急",
+          "老年女性 深色棉袄 坐轮椅 背对镜头"
+        ],
+        "action": "年轻女性焦急地对着轮椅上的人说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s010.jpg"
+    },
+    {
+      "start": 42.7,
+      "end": 44.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅灰衬衫黑领带 头发向后梳"
+        ],
+        "action": "神情严肃，开口向对方说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s011.jpg"
+    },
+    {
+      "start": 44.43,
+      "end": 47.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧盘扣棉服 坐轮椅",
+          "年轻女性 白色蕾丝婚纱 侧身站立"
+        ],
+        "action": "坐轮椅的老年女性抬头看向穿婚纱的人",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅",
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s012.jpg"
+    },
+    {
+      "start": 47.9,
+      "end": 48.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年男性 深色外套 坐轮椅",
+          "年轻女性 白色蕾丝袖连衣裙"
+        ],
+        "action": "年轻女性伸手握住坐轮椅男性的手",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s013.jpg"
+    },
+    {
+      "start": 48.77,
+      "end": 51.08,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝长袖婚纱 戴头纱 长发披肩 眼含泪水",
+          "未识别 深色上衣 画面左侧背影露头部肩部"
+        ],
+        "action": "新娘含泪质问面前的人",
+        "place": "婚礼现场",
+        "props": [
+          "头纱"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep07_s014.jpg"
+    }
+  ]
+}

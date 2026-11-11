@@ -1,56 +1,72 @@
 {
-  "_readme": "短剧线工作台（2026-11-10 20:4x 张老师「可以」后落盘，21:1x 补目录对照）。三个职责：① active 记当前选中哪部剧、哪条片子，不指定就沿用，切换只改这一处；② dramas 记每部剧的三个目录怎么对应（包和素材用全名、片子用短名），换剧包时按这张表找资料；③ shared 记共用层当前版本，status_overview.py 拿它和各片子的 shared_snapshot 比对，自动报「要重做」。共用层改版一律由主管登记到这里，不在下游技能各记一笔。",
-  "active": {
-    "drama": "八零憨妻",
-    "task": "D5_婆婆线",
-    "updated_at": "2026-11-10T20:45",
-    "_note": "换剧包＝挂起，不改任何片子的状态；切回来接着走。一部剧能有多条片子，各记各的进度。"
+ "_readme": "短剧线工作台（2026-11-10 20:4x 张老师「可以」后落盘，21:1x 补目录对照）。三个职责：① active 记当前选中哪部剧、哪条片子，不指定就沿用，切换只改这一处；② dramas 记每部剧的三个目录怎么对应（包和素材用全名、片子用短名），换剧包时按这张表找资料；③ shared 记共用层当前版本，status_overview.py 拿它和各片子的 shared_snapshot 比对，自动报「要重做」。共用层改版一律由主管登记到这里，不在下游技能各记一笔。",
+ "active": {
+  "drama": "以真心守护至亲",
+  "task": "D2_第2条",
+  "updated_at": "2026-11-11T17:05",
+  "_note": "17:05 张老师要求「换选题，不是换剧」——同一部戏开第二条片子 D2，剧集资料与素材索引沿用，只重出选题单与剪辑清单。D1_第1条 挂起等人审成片，不作废、不删。"
+ },
+ "dramas": {
+  "八零憨妻": {
+   "full_title": "八零憨妻的甜蜜日常",
+   "pack_dir": "packs/short-drama/八零憨妻的甜蜜日常",
+   "asset_dir": "assets/short-drama/八零憨妻的甜蜜日常",
+   "runs_dir": "runs/八零憨妻",
+   "usable_episodes": "1-19",
+   "finale_episodes": [
+    20
+   ],
+   "files": {
+    "pack": "packs/short-drama/八零憨妻的甜蜜日常/drama-pack.json",
+    "lines": "assets/short-drama/八零憨妻的甜蜜日常/lines/",
+    "index": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json"
+   },
+   "_note": "三个目录、两种剧名的唯一对照，换剧包时按这张表找资料，别靠拼名字。各份资料第几版仍以 shared.drama_base 为唯一真源，这里不另记一份。原片目录不写进本表，由 plan.src_dir 或 SHORT_DRAMA_ASSET_ROOT 指定。"
   },
-  "dramas": {
-    "八零憨妻": {
-      "full_title": "八零憨妻的甜蜜日常",
-      "pack_dir": "packs/short-drama/八零憨妻的甜蜜日常",
-      "asset_dir": "assets/short-drama/八零憨妻的甜蜜日常",
-      "runs_dir": "runs/八零憨妻",
-      "usable_episodes": "1-19",
-      "finale_episodes": [20],
-      "files": {
-        "pack": "packs/short-drama/八零憨妻的甜蜜日常/drama-pack.json",
-        "lines": "assets/short-drama/八零憨妻的甜蜜日常/lines/",
-        "index": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json"
-      },
-      "_note": "三个目录、两种剧名的唯一对照，换剧包时按这张表找资料，别靠拼名字。各份资料第几版仍以 shared.drama_base 为唯一真源，这里不另记一份。原片目录不写进本表，由 plan.src_dir 或 SHORT_DRAMA_ASSET_ROOT 指定。"
-    }
+  "以真心守护至亲": {
+   "full_title": "以真心守护至亲",
+   "pack_dir": "packs/short-drama/以真心守护至亲",
+   "asset_dir": "assets/short-drama/以真心守护至亲",
+   "runs_dir": "runs/以真心守护至亲",
+   "usable_episodes": "1-60（预告只取 1-19，20 集起是另一条职场线）",
+   "finale_episodes": [],
+   "files": {
+    "pack": "packs/short-drama/以真心守护至亲/drama-pack.json（待建）",
+    "lines": "assets/short-drama/以真心守护至亲/lines/（已有 ep01-04）",
+    "index": "assets/short-drama/以真心守护至亲/asset_index.json（待建）"
+   },
+   "_note": "2026-11-11 新增。素材来源为本地素材包，带简介详情＋第1集剧本＋5张4K角色三视图。包里没有承诺函/时间戳，版权来源待确认。shared.drama_base 暂不登记——剧集包还没建，登记了会让跨文件比对误报。"
+  }
+ },
+ "shared": {
+  "drama_base": {
+   "八零憨妻": {
+    "pack": 1,
+    "asset_index": 1
+   }
   },
-  "shared": {
-    "drama_base": {
-      "八零憨妻": {
-        "pack": 1,
-        "asset_index": 1
-      }
-    },
-    "ai_strategies": {
-      "wangshen_weave": {
-        "name": "王婶旁观",
-        "rev": 1,
-        "state": "可用",
-        "recipe": "runs/玩法菜单/wangshen_weave.md",
-        "_note": "菜单上第一道菜，也是 11-10 唯一做出来的一种。适合什么片子、要准备什么、插在哪、成本与几道人审、三层说明各在哪、版本怎么加一，全写在 recipe 指向的玩法卡里；这里只留版本、状态和路径，不复制内容。王婶不是固定环节，只是可选玩法。"
-      }
-    },
-    "ai_assets": {
-      "rev": 1,
-      "_note": "共用角色与场景资产，所有剧共用，不属于任何剧包。"
-    }
+  "ai_strategies": {
+   "wangshen_weave": {
+    "name": "王婶旁观",
+    "rev": 1,
+    "state": "可用",
+    "recipe": "runs/玩法菜单/wangshen_weave.md",
+    "_note": "菜单上第一道菜，也是 11-10 唯一做出来的一种。适合什么片子、要准备什么、插在哪、成本与几道人审、三层说明各在哪、版本怎么加一，全写在 recipe 指向的玩法卡里；这里只留版本、状态和路径，不复制内容。王婶不是固定环节，只是可选玩法。"
+   }
   },
-  "notes": [
-    "active 只记当前选中，不复制进度；唯一真源仍是各片子的 状态.json",
-    "shared.drama_base 按剧名分别记版本：某部剧的资料改了，只影响这部剧下的片子",
-    "shared.ai_strategies 是 AI 玩法菜单：新增一道菜＝加一项，已有片子一条都不动；现在不建空技能，等第二道菜出现再收成技能",
-    "每条片子状态文件顶层写 ai_strategy（不写＝none＝纯剪）、cycle_round（小循环第几轮）、shared_snapshot（建它时共用层版本）",
-    "小循环每轮留一版成片，旧版标 superseded；改清单只重拼成片，已生成的素材段可复用，别重跑花钱那步",
-    "旧台账没有 shared_snapshot 时脚本自动跳过跨文件比对，11-10 已验收的 5/5 无卡点、上游改版连锁重做不受影响",
-    "dramas 只记目录对照，不记资料内容、也不记版本；包里那块旧登记（6 段 / 只覆盖第 1 集）已在 2026-11-10 21:1x 改为以真实索引为准，包主体内容一字未删",
-    "【22:1x 玩法卡】每道菜一张卡放 runs/玩法菜单/，菜单项用 recipe 指过去。卡里写：什么片子适合用、要准备什么、插在哪、花多少钱几道人审、三层说明各在哪、什么时候把版本加一。工作台只记 rev / state / recipe 路径，不复制卡内容（原来 brief 的 cost 与 human_gates 两栏已移进卡，只留一处）。改卡任一栏或改三层硬规矩，由主管把这道菜的 rev 加一，脚本自动把点了这道菜的片子标要重做"
-  ]
+  "ai_assets": {
+   "rev": 1,
+   "_note": "共用角色与场景资产，所有剧共用，不属于任何剧包。"
+  }
+ },
+ "notes": [
+  "active 只记当前选中，不复制进度；唯一真源仍是各片子的 状态.json",
+  "shared.drama_base 按剧名分别记版本：某部剧的资料改了，只影响这部剧下的片子",
+  "shared.ai_strategies 是 AI 玩法菜单：新增一道菜＝加一项，已有片子一条都不动；现在不建空技能，等第二道菜出现再收成技能",
+  "每条片子状态文件顶层写 ai_strategy（不写＝none＝纯剪）、cycle_round（小循环第几轮）、shared_snapshot（建它时共用层版本）",
+  "小循环每轮留一版成片，旧版标 superseded；改清单只重拼成片，已生成的素材段可复用，别重跑花钱那步",
+  "旧台账没有 shared_snapshot 时脚本自动跳过跨文件比对，11-10 已验收的 5/5 无卡点、上游改版连锁重做不受影响",
+  "dramas 只记目录对照，不记资料内容、也不记版本；包里那块旧登记（6 段 / 只覆盖第 1 集）已在 2026-11-10 21:1x 改为以真实索引为准，包主体内容一字未删",
+  "【22:1x 玩法卡】每道菜一张卡放 runs/玩法菜单/，菜单项用 recipe 指过去。卡里写：什么片子适合用、要准备什么、插在哪、花多少钱几道人审、三层说明各在哪、什么时候把版本加一。工作台只记 rev / state / recipe 路径，不复制卡内容（原来 brief 的 cost 与 human_gates 两栏已移进卡，只留一处）。改卡任一栏或改三层硬规矩，由主管把这道菜的 rev 加一，脚本自动把点了这道菜的片子标要重做"
+ ]
 }

@@ -1,0 +1,277 @@
+{
+  "ep": 4,
+  "file": "4.mp4",
+  "duration": 46.58,
+  "shot_count": 14,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 11413,
+    "completion_tokens": 4464,
+    "total_tokens": 15877
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披纱",
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "年轻女性扶老年女性坐轮椅",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep04_s000.jpg"
+    },
+    {
+      "start": 2.77,
+      "end": 5.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披纱",
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "年轻女性扶老年女性坐轮椅",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep04_s001.jpg"
+    },
+    {
+      "start": 5.8,
+      "end": 8.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披纱",
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "年轻女性帮老年女性盖毯子",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep04_s002.jpg"
+    },
+    {
+      "start": 8.83,
+      "end": 11.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "老年女性看向画面外",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep04_s003.jpg"
+    },
+    {
+      "start": 11.87,
+      "end": 15.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披纱"
+        ],
+        "action": "年轻女性低头看手部",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep04_s004.jpg"
+    },
+    {
+      "start": 15.7,
+      "end": 16.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "老年女性含泪看向画面外",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep04_s005.jpg"
+    },
+    {
+      "start": 16.93,
+      "end": 18.6,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧衣 坐轮椅",
+          "年轻女性 白色蕾丝上衣 握对方手"
+        ],
+        "action": "年轻女性轻握老人的手",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s006.jpg"
+    },
+    {
+      "start": 18.6,
+      "end": 22.83,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧衣 坐轮椅",
+          "年轻女性 白色蕾丝上衣 握对方手"
+        ],
+        "action": "年轻女性轻握老人的手",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s007.jpg"
+    },
+    {
+      "start": 22.83,
+      "end": 26.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深色上衣 坐轮椅",
+          "年轻女性 白色蕾丝婚纱 长卷发 戴头纱"
+        ],
+        "action": "新娘握着老人的手说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s008.jpg"
+    },
+    {
+      "start": 26.83,
+      "end": 30.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 深色三件套西装 酒红领带 短黑发"
+        ],
+        "action": "男性严肃地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s009.jpg"
+    },
+    {
+      "start": 30.47,
+      "end": 35.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 长卷发 戴头纱"
+        ],
+        "action": "新娘惊讶地抬头看向一侧",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s010.jpg"
+    },
+    {
+      "start": 35.6,
+      "end": 40.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 深色三件套西装 酒红领带 短黑发"
+        ],
+        "action": "男性不满地说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s011.jpg"
+    },
+    {
+      "start": 40.2,
+      "end": 44.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 头纱披肩 发丝微乱 面露惊讶"
+        ],
+        "action": "面露惊讶，看向画面外",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s012.jpg"
+    },
+    {
+      "start": 44.63,
+      "end": 46.58,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 头纱披肩 发丝微乱 面露惊讶"
+        ],
+        "action": "面露惊讶，看向画面外",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep04_s013.jpg"
+    }
+  ]
+}

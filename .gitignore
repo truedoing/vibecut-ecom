@@ -44,3 +44,4 @@ runs/**/sd_*.mp4
 # 媒体一律不入库：成片 / AI 片段都能由清单与提示词再生
 runs/**/*.mp4
 assets/ai_assets/shots/*.mp4
+*.sqlite

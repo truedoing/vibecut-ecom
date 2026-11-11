@@ -1,0 +1,285 @@
+{
+  "ep": 6,
+  "file": "6.mp4",
+  "duration": 49.04,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 12135,
+    "completion_tokens": 5112,
+    "total_tokens": 17247
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 1.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色三件套西装 红色领带 短发"
+        ],
+        "action": "他站在舞台上张嘴说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep06_s000.jpg"
+    },
+    {
+      "start": 1.63,
+      "end": 6.03,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色三件套西装 红色领带 短发"
+        ],
+        "action": "他站在舞台上张嘴说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep06_s001.jpg"
+    },
+    {
+      "start": 6.03,
+      "end": 8.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 条纹衬衫 严肃神情"
+        ],
+        "action": "他坐在餐桌旁神情严肃地看向前方",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s002.jpg"
+    },
+    {
+      "start": 8.53,
+      "end": 10.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领婚纱 长发戴头纱"
+        ],
+        "action": "她站在深色门前神情疑惑地说话",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s003.jpg"
+    },
+    {
+      "start": 10.07,
+      "end": 20.9,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 长发"
+        ],
+        "action": "她瞪大眼睛张嘴说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s004.jpg"
+    },
+    {
+      "start": 20.9,
+      "end": 22.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 条纹衬衫 严肃张嘴"
+        ],
+        "action": "他神情严肃地看着前方说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s005.jpg"
+    },
+    {
+      "start": 22.47,
+      "end": 23.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 佩戴头纱",
+          "中年男性 深色西装 (持手机入画)"
+        ],
+        "action": "新娘站立，旁人正拿手机对其拍摄",
+        "place": "酒店走廊",
+        "props": [
+          "手机",
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s006.jpg"
+    },
+    {
+      "start": 23.73,
+      "end": 27.33,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 佩戴头纱",
+          "中年男性 深色西装 (持手机入画)"
+        ],
+        "action": "新娘站立，旁人正拿手机对其拍摄",
+        "place": "酒店走廊",
+        "props": [
+          "手机",
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s007.jpg"
+    },
+    {
+      "start": 27.33,
+      "end": 31.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领婚纱 佩戴头纱"
+        ],
+        "action": "神情惊讶地张口说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s008.jpg"
+    },
+    {
+      "start": 31.77,
+      "end": 37.0,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 白衬衫黑领带"
+        ],
+        "action": "手持亮屏手机给他人看，神情严肃",
+        "place": "酒店宴会厅",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s009.jpg"
+    },
+    {
+      "start": 37.0,
+      "end": 38.97,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰色中式盘扣上衣 灰白头发"
+        ],
+        "action": "坐着说话，面容忧伤",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s010.jpg"
+    },
+    {
+      "start": 38.97,
+      "end": 40.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 黑领带 手持手机"
+        ],
+        "action": "闭眼说话，神情不屑",
+        "place": "酒店宴会厅",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s011.jpg"
+    },
+    {
+      "start": 40.87,
+      "end": 43.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻男性 黑色西装 红色领带",
+          "年轻女性 白色上衣 黑色长发"
+        ],
+        "action": "男性对女性说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s012.jpg"
+    },
+    {
+      "start": 43.73,
+      "end": 45.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻男性 黑色西装 红色领带",
+          "年轻女性 白色上衣 黑色长发"
+        ],
+        "action": "男性对女性说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s013.jpg"
+    },
+    {
+      "start": 45.27,
+      "end": 49.04,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色婚纱 头纱",
+          "年轻男性 黑色西装"
+        ],
+        "action": "两人站立对视",
+        "place": "酒店走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep06_s014.jpg"
+    }
+  ]
+}
