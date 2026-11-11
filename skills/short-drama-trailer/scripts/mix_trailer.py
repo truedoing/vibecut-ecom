@@ -82,8 +82,15 @@ def ep_file(src_dir, n):
     for f in files:
         if pat.search(f):
             return os.path.join(src_dir, f)
+    # 纯数字命名（1.mp4 / 01.mp4 / 第01集.mp4 之类没有的场合）：
+    # 11-11 以真心守护至亲实测遇到，文件名就是 1.mp4–60.mp4，上面两条都不命中。
+    # 用「去扩展名后整串是数字且等于集号」精确比对，避免找第 1 集时吃到 10.mp4。
+    for f in files:
+        stem = os.path.splitext(f)[0].strip()
+        if stem.isdigit() and int(stem) == n:
+            return os.path.join(src_dir, f)
     raise FileNotFoundError(
-        f"src_dir 下找不到第 {n} 集文件（支持 第N集 / ep_N / episode_N 命名）：{src_dir}")
+        f"src_dir 下找不到第 {n} 集文件（支持 第N集 / ep_N / episode_N / 纯数字 N 命名）：{src_dir}")
 
 
 def main():

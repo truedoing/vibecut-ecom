@@ -1,0 +1,254 @@
+{
+  "_readme": "2026-11-11 新建。以真心守护至亲的第一条片子。按 v0.3 七环节格式起台账：只有 select 有产物，其余全 pending。shared_snapshot 暂不写——这部剧的剧集包还没建，共用层里没有它的条目，写了会让脚本做无意义的跨文件比对；建包时再补。",
+  "task": "D1_第1条",
+  "category": "以真心守护至亲",
+  "line": "short-drama",
+  "intent": "认亲主线 × 纯剪（AI 玩法待选题单圈定）",
+  "structure": "arc",
+  "ai_strategy": "none",
+  "cycle_round": 1,
+  "updated_at": "2026-11-11T13:45",
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写；手写会被标「旧口径」",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实，卡在谁要写清"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "runs/以真心守护至亲/选片结论.md",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "decision": "GO",
+      "evidence": [
+        "六条轻查（题材/冲突/线型/素材/资料/风险）全部走完，见 runs/选片候选表.md",
+        "60 集齐全、51.1 分钟、1080×1920 竖屏，ffprobe 实测"
+      ],
+      "by": "张老师",
+      "at": "2026-11-11",
+      "_correction": "原 evidence 第 3 条写「主线只到第 19 集；20 集起转集团职场线，预告整串砍」——11-11 14:0x 通读 1–19 集台词后确认这条判断是错的：1–19 集是一条连贯因果链（婚礼认亲→周家逼走→悔婚→妹妹顶替→母女无处可去→第 16 集末「弘业不是周家开的」），不存在「另一条线」。错因是当时只看了中段抽帧、没串前因。该条已删，原文存此备查；选片做不做的结论（GO）不受影响。",
+      "_note": "11-11 13:2x 张老师「选以真心守护至亲」；13:44 看过结论后回「认，往下」，选片正式 approved，下游可依赖。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/以真心守护至亲/drama-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "select"
+      ],
+      "depends_rev": {
+        "select": 1
+      },
+      "evidence": [
+        "素材体检：60 集齐全 1.mp4–60.mp4 无缺号；1080×1920 / 30fps / aac 44.1k 双声道，60 集参数完全一致",
+        "视频流与容器时长只差 0.01–0.02s（AI 生成对齐准，切点余量比八零憨妻大）",
+        "无「无 BGM 版」，只有带 BGM 原片，后期混音按带 BGM 处理",
+        "画面上烧了硬字幕（台词唯一来源）；底部另烧水印「热播漫剧ai生成请勿模仿」，39 个镜头带，成片须遮或裁，方案待定",
+        "集数口径按 11-11 新规只解析前 60%：60×0.6=36 集上限，实际只做 1–19",
+        "validate_pack.py 结构校验 0 ERROR / 2 WARN，记录见 packs/short-drama/以真心守护至亲/drama-pack.gatecheck.json",
+        "内容：16 条剧集事实 / 5 幕（1–19 集，每条带 ep+t+quote）/ 6 个转折点 / 5 个人物 / 12 条钩子（1 条标 blocked）/ 3 条冲突记录",
+        "第 18 集「林董」那条钩子标 blocked：越过预告边界，剪了就无悬念，留档不进成片",
+        "G0 三项待定 11-11 15:4x 张老师逐条裁决：水印「不用管」/ 投放「视频号」/ 授权「有，不用检测了」",
+        "按裁决改包并重跑校验：0 ERROR / 2 WARN（task_id 为本地包固有；story_arc.verified 待他看过分幕再置 true）"
+      ],
+      "license": {
+        "license_scope": "confirmed_by_owner",
+        "by": "张老师",
+        "at": "2026-11-11",
+        "note": "原话「有授权」。素材包内无承诺函/时间戳，按口头确认记；对外发布前仍需补书面凭证。"
+      },
+      "coverage": {
+        "total_episodes": 60,
+        "rule": "只解析前 60% 集数，不剧透（2026-11-11 定）",
+        "plan_max_ep": 36,
+        "actual_ep": "1-19",
+        "finale_ep": 60
+      },
+      "_note": "11-11 15:5x 升 approved：G0 三项待定全部由张老师裁决，他并主动问「下一步是啥」，视为放行建包。story_arc.verified 仍为 false —— 分幕内容他还没逐幕看过，不因放行就假标。",
+      "g0": {
+        "state": "approved",
+        "by": "张老师",
+        "at": "2026-11-11T15:45",
+        "decisions": [
+          {
+            "item": "画面水印「热播漫剧ai生成请勿模仿」（39 个镜头）",
+            "decision": "不处理，保留原样",
+            "quote": "水印不用管"
+          },
+          {
+            "item": "投放平台",
+            "decision": "微信视频号",
+            "quote": "视频号"
+          },
+          {
+            "item": "授权书面凭证",
+            "decision": "不再核验",
+            "quote": "授权有，不用检测了"
+          }
+        ]
+      }
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "runs/以真心守护至亲/索引摘要.md",
+      "data_dirs": [
+        "assets/short-drama/以真心守护至亲/lines/",
+        "assets/short-drama/以真心守护至亲/shots/",
+        "assets/short-drama/以真心守护至亲/char_map.json"
+      ],
+      "state": "done",
+      "rev": 1,
+      "depends_on": [
+        "pack"
+      ],
+      "depends_rev": {
+        "pack": 1
+      },
+      "snapshot_note": "11-11 15:3x 把快照从 pack:0 改到 pack:1。理由：pack rev0→1 是「从没产物到有产物」，不是内容改版；索引的数据来源是原片素材 + 1–19 集范围，与剧集资料里写了什么无关，剧集资料也没改过原片和范围。故视为不触发重做。若后续 pack 里改了覆盖范围（例如放开到 20 集以后），索引必须重跑，这条 note 不适用于那种情况。",
+      "evidence": [
+        "台词全部落地：1–19 集 / 552 条 / 17.0 分钟（每秒一帧硬字幕识别，增量跳过生效）",
+        "画面打标全部落地：1–17 集 / 288 个镜头 / 324,123 tokens，零漏标；第 3 集曾因模型返回坏 JSON 崩过一次，已加逐对象抢救＋单帧重试",
+        "人物映射落地：char_map.json，359 次人物出现 340 次可确定（95%），剩 13 次许宁/许晴不分、6 次无人物；台词里只有五个名字，无第六个主要角色",
+        "核心道具：轮椅 67 镜、麦克风 10 镜；场景一半以上是酒店宴会厅（154 镜）；景别几乎无全景（1 镜）",
+        "水印 39 镜带「热播漫剧ai生成请勿模仿」，成片须遮或裁，方案待定",
+        "打标能力边界实测：道具/服装/景别/人数/动作/场景/水印准；判不出谁在说话（听者反应镜头多）；判不出黑场（须用亮度数值）"
+      ],
+      "_note": "按「done = 产物在、自检过了，人还没判」记。数据齐了，但人物映射规则和索引摘要张老师还没看过。"
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "path": "",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "asset_index",
+        "script"
+      ],
+      "depends_rev": {
+        "asset_index": 0,
+        "script": 0
+      },
+      "evidence": [
+        "素材包自带 5 张 4K 角色三视图，建角色资产时可用作造型参照；图里有脸，不能当参考图送审"
+      ]
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/以真心守护至亲/D1_第1条/plan.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "pack",
+        "asset_index"
+      ],
+      "depends_rev": {
+        "pack": 1,
+        "asset_index": 1
+      },
+      "evidence": [
+        "选题单：三条线，人圈定线 A；AI 玩法选纯剪，ai_strategy=none，故 ai_assets/weave_video 两环按规则跳过",
+        "剪辑清单 plan.json：22 段（20 段原片 + 1 黑场 + 1 字幕卡），5 分 41 秒，素材范围第 1–17 集",
+        "五幕齐：强台词 S01／三拍拒绝 S02-S04／反击 S08-S13 + 回撤 S14／急停 S15-S17 + 黑场 S18／收尾 S19-S20",
+        "段间连接 19 处全部是「所以／但是」，无并列；前 45 秒只有钩子 + 两次拒绝，无温情段",
+        "试跑：mix_trailer.py --plan plan.json --dry 校验通过，22 段全部被程序认下",
+        "切点抽帧核过 4 处（ep1 10.5 / 98.6 / 15.5 / 37.2 秒），字幕与预期一致，无黑场误切",
+        "装配器补洞：原片文件名为纯数字 1.mp4–60.mp4，原匹配规则只认「第N集」「ep_N」，已加纯数字精确匹配（1.mp4 命中第 1 集，不误吃 10.mp4）",
+        "主动报 4 处偏差：时间线倒置 1 处、S04 出点贴边 0.2 秒、S11 挑起句缺前因、第 3 集前 39 秒整串砍"
+      ],
+      "topic": {
+        "state": "chosen",
+        "path": "runs/以真心守护至亲/D1_第1条/选题单.md",
+        "options": [
+          "A 认不认这个妈（主线 4–6 分钟，推荐）",
+          "B 两个女儿，一个妈（副线 2–3 分钟）",
+          "C 一把刷了黑漆的椅子（不推荐，收尾兑现不了）"
+        ],
+        "ai_strategy_options": [
+          "none（纯剪，推荐）",
+          "wangshen_weave（王婶旁观，约 2 元一次）"
+        ],
+        "chosen_line": "A",
+        "chosen_ai_strategy": "none",
+        "by": "张老师",
+        "at": "2026-11-11T15:50",
+        "_note": "11-11 15:50 张老师一次圈定「线A + 纯剪」。线 A 为全剧主线（有完整因果链、冲突逐级升高），按主线做 4–6 分钟五幕齐。",
+        "chosen_line_name": "认不认这个妈",
+        "chosen_type": "主线",
+        "chosen_length": "4–6 分钟",
+        "ai_strategy_name": "纯剪",
+        "quote": "线A，纯剪"
+      },
+      "_note": "11-11 16:1x 三份产物齐（plan.json ＋ 选段说明.md ＋ 清单人审表.md），state 记 done 不是 approved：G1 人审未过，张老师还没看。装配属越权。",
+      "review": {
+        "state": "approved",
+        "by": "张老师",
+        "at": "2026-11-11T16:00",
+        "quote": "好，开始剪吧，这些文字描述太繁琐，我们直接看成片，再反推优化这个过程。",
+        "conclusion": "G1 放行：人审表不再逐条过，改为看成片反推优化。人审表保留作对照底稿，不当作已逐条核对。",
+        "_note": "人审口径按张老师明确了：先出片再反馈。清单本身未逐段确认，故 plan 内容若成片暴露问题，回头改清单属正常小循环，不算推翻。"
+      }
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "path": "",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "script",
+        "ai_assets"
+      ],
+      "depends_rev": {
+        "script": 0,
+        "ai_assets": 0
+      },
+      "evidence": []
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/以真心守护至亲/D1_第1条/build/v1.mp4",
+      "state": "done",
+      "rev": 1,
+      "depends_on": [
+        "script"
+      ],
+      "depends_rev": {
+        "script": 1
+      },
+      "evidence": [
+        "装配 mix_trailer.py：22 段全部被程序认下，无出点超限",
+        "参数对齐原片 1080×1920 / 30fps（清单原写 720×1280/24，是沿用上一部，已改）",
+        "响度 -14.8 LUFS / LRA 6.8 LU，全程 alimiter 兜底，无削波",
+        "黑场检测：仅两处——4.37s 原片自带转场 0.3s、326.0s 本片设计的急停 0.5s",
+        "瑕疵：89.1s 一帧全黑。成因=ep1 出点 98.8 落在原片黑场 98.667–98.967 内，ep2 首帧亦偏黑，两段相接出现 1 帧黑。肉眼几乎不可见，待改",
+        "收尾末帧已核：落在字幕卡「她手里／还剩几张牌」上，未切断画面"
+      ],
+      "output": {
+        "w": 1080,
+        "h": 1920,
+        "fps": 30,
+        "duration": 341.3,
+        "size_mb": 196.3,
+        "video": {
+          "codec": "h264",
+          "frames": 10239
+        },
+        "audio": {
+          "codec": "aac",
+          "sr": 48000,
+          "ch": 2
+        },
+        "loudness_lufs": -14.8,
+        "lra_lu": 6.8,
+        "true_peak_ok": true
+      },
+      "_note": "11-11 16:10 出 v1 并落盘。state=done：张老师尚未看片。他明确改为「先看成片再反推优化」，故 G3 人审以看片反馈为准。"
+    }
+  }
+}

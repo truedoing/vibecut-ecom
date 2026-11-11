@@ -1,0 +1,1343 @@
+{
+  "meta": {
+    "schema_version": "1.1",
+    "kind": "short_drama",
+    "drama": "以真心守护至亲",
+    "pack_version": "1.1-draft.1",
+    "platform": "wechat_channels",
+    "task_id": null,
+    "created_at": "2026-11-11",
+    "created_by": "WorkBuddy",
+    "source_materials": [
+      "本地素材包 60 集 mp4（1.mp4–60.mp4，1080×1920 / 30fps / aac 44.1k 双声道，参数全一致）",
+      "简介详情.txt（宣传文案，只作参考，不作为事实来源）",
+      "剧本.txt（只含第 1 集，用作识别校准的标准答案）",
+      "5 张角色三视图 PNG（4K，含人脸，可作造型参照，不可作 AI 出片参考图）",
+      "硬字幕 OCR 台词 1–19 集 / 552 条（assets/short-drama/以真心守护至亲/lines/）",
+      "画面打标 1–17 集 / 288 个镜头（assets/short-drama/以真心守护至亲/shots/）"
+    ],
+    "review": {
+      "self_check": "ok",
+      "human_review": "approved",
+      "published_to_tdrive": false,
+      "evidence": [
+        "validate_pack.py 结构校验结果见 drama-pack.gatecheck.json",
+        "剧情概要每条幕次都能回到具体台词（ep + t + quote），未凭空概括",
+        "人物关系的证据来自台词原句，不来自简介文案",
+        "已核对：简介与画面不一致之处记入 conflicts，未自动选值",
+        "11-11 15:4x 张老师对 G0 三项待定逐条裁决：水印不处理 / 投放微信视频号 / 授权有不用检测；G0 放行"
+      ]
+    },
+    "consumers": [
+      "short-drama-script"
+    ],
+    "coverage": {
+      "total_episodes": 60,
+      "rule": "只解析前 60% 集数，不剧透（2026-11-11 张老师定）",
+      "parsed_ep_range": "1-19",
+      "trailer_boundary_ep_range": "1-17",
+      "finale_ep": 60
+    }
+  },
+  "drama_facts": [
+    {
+      "id": "df_001",
+      "field": "title",
+      "label": "剧名",
+      "value": "以真心守护至亲",
+      "source": {
+        "type": "local_material",
+        "ref": "素材目录名与文件名"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_002",
+      "field": "series_length",
+      "label": "总集数",
+      "value": "60",
+      "source": {
+        "type": "local_material",
+        "ref": "1.mp4–60.mp4 实测，无缺号"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_003",
+      "field": "episode_duration",
+      "label": "单集时长",
+      "value": "46–99 秒（第 1 集最长 99 秒，其余 46–57 秒）",
+      "source": {
+        "type": "local_material",
+        "ref": "ffprobe 实测 1–19 集"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_004",
+      "field": "genre",
+      "label": "题材",
+      "value": "家庭伦理（认亲 / 母女 / 婚恋）",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "1–19 集台词内容判定"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_005",
+      "field": "era",
+      "label": "年代",
+      "value": "当代",
+      "source": {
+        "type": "local_material",
+        "ref": "画面：手机、酒店宴会厅、集团办公室、电子文档"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_006",
+      "field": "setting",
+      "label": "主要场景",
+      "value": "酒店宴会厅（占一半以上镜头）/ 出租屋 / 集团办公区 / 酒店走廊",
+      "source": {
+        "type": "local_material",
+        "ref": "1–17 集 288 个镜头画面打标统计"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_007",
+      "field": "logline",
+      "label": "一句话故事",
+      "value": "母亲把五十斤黄金铸成轮椅、刷上黑漆，装成穷婆子去女儿的婚礼，只为试试失散十七年的两个女儿还认不认她。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "第 1 集 1–10 秒原片旁白原文"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_008",
+      "field": "premise",
+      "label": "必须交代的前因",
+      "value": "十七年前发大水，母亲把两个女儿抱上救援船，自己回头就被水冲走；两个女儿以为她死了。母亲左腿在洪水里受了伤，久站久走会疼，出门靠轮椅。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "第 1 集 27–34 秒；第 17 集 26–30 秒"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_009",
+      "field": "style",
+      "label": "风格标签",
+      "value": "苦情 + 爽剧反杀",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "前 9 集压抑、第 13 集起母亲掌握主动权"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_010",
+      "field": "core_conflict",
+      "label": "核心矛盾",
+      "value": "认亲妈，还是保住婚约和进集团的机会——大女儿被逼在两者之间选一个。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "第 6 集 6–12 秒；第 9 集 17–19 秒"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_011",
+      "field": "ending_type",
+      "label": "结局类型",
+      "value": null,
+      "placeholder": "【结局类型】",
+      "source": {
+        "type": "inferred",
+        "ref": "只解析前 60%，第 20–60 集未看，不推断"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_012",
+      "field": "license_scope",
+      "label": "授权范围",
+      "value": "张老师 11-11 口头确认有授权；素材包内无承诺函、无时间戳证书",
+      "source": {
+        "type": "local_material",
+        "ref": "11-11 对话原话「有授权」；素材目录内无凭证文件"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_013",
+      "field": "sub_format",
+      "label": "字幕形态",
+      "value": "硬字幕烧在画面上，一句拆成多张短卡片、每张只显示 1–2 秒；底部另有水印「热播漫剧ai生成请勿模仿」",
+      "source": {
+        "type": "local_material",
+        "ref": "抽帧实测；水印出现在 39 个镜头"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_014",
+      "field": "audio",
+      "label": "音轨",
+      "value": "带 BGM，无「无 BGM 版」",
+      "source": {
+        "type": "local_material",
+        "ref": "素材目录只有一种版本"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_015",
+      "field": "finale",
+      "label": "大结局集",
+      "value": "第 60 集（不碰）",
+      "source": {
+        "type": "local_material",
+        "ref": "共 60 集，集号连续"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_016",
+      "field": "platform",
+      "label": "投放平台",
+      "value": null,
+      "placeholder": "【投放平台】",
+      "source": {
+        "type": "inferred",
+        "ref": "张老师尚未定；不同平台对 AI 短剧二创的接受度不同"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    }
+  ],
+  "story_arc": {
+    "usable_in_copy": false,
+    "acts": [
+      {
+        "no": 1,
+        "name": "认",
+        "ep_from": 1,
+        "ep_to": 4,
+        "summary": "婚礼上母亲推着刷了黑漆的轮椅出现，凭大女儿手臂上的烫伤疤认回了她；小女儿当众不认，还逼母亲交出「新婚礼物」。",
+        "payoff": "大女儿认了：她跑去给母亲拿软垫，怕硬框硌人——认亲成立，但立刻被周家赶来阻拦。",
+        "evidence": [
+          {
+            "ep": 1,
+            "t": 94,
+            "quote": "这道疤是不是替我挡那锅热汤烫的"
+          },
+          {
+            "ep": 2,
+            "t": 9,
+            "quote": "妈真的是你"
+          },
+          {
+            "ep": 4,
+            "t": 19,
+            "quote": "妈我好不容易找到你，怎么舍得不要你"
+          }
+        ]
+      },
+      {
+        "no": 2,
+        "name": "逼",
+        "ep_from": 5,
+        "ep_to": 9,
+        "summary": "周家不让母亲坐主桌，周德海拿弘业集团的录用做筹码，要许宁先把人送走；小女儿在旁边劝「你就听一次劝」。",
+        "payoff": "许宁当场悔婚：「证还没领，这婚我不结了。」",
+        "evidence": [
+          {
+            "ep": 6,
+            "t": 12,
+            "quote": "你进弘业的事也别想了"
+          },
+          {
+            "ep": 8,
+            "t": 48,
+            "quote": "把她送出去，回来戴戒指"
+          },
+          {
+            "ep": 9,
+            "t": 18,
+            "quote": "这婚我不结了"
+          }
+        ]
+      },
+      {
+        "no": 3,
+        "name": "抢",
+        "ep_from": 10,
+        "ep_to": 15,
+        "summary": "妹妹许晴顶替姐姐上台嫁给周承，回头把姐姐租的房子换了锁、东西扔出来；姐姐拿合同反击——押金三千、月租两千四、合同上是她的名字。",
+        "payoff": "房子争回来了，但母女俩只剩彼此：「不是我来了他们才这样，是我今天才看清。」",
+        "evidence": [
+          {
+            "ep": 10,
+            "t": 33,
+            "quote": "别追了她不嫁我嫁"
+          },
+          {
+            "ep": 13,
+            "t": 35,
+            "quote": "合同写我的名字"
+          },
+          {
+            "ep": 15,
+            "t": 53,
+            "quote": "是我今天才看清"
+          }
+        ]
+      },
+      {
+        "no": 4,
+        "name": "露",
+        "ep_from": 16,
+        "ep_to": 17,
+        "summary": "母亲看完女儿那些被扔出来的项目资料，说「弘业不是周家开的，我以前在那做过事」，替她把材料递了过去；夜里母亲把唯一的床让给女儿，才露出腿是洪水里伤的。",
+        "payoff": "母亲第一次露出底牌——她不是一无所有的穷婆子，但观众还不知道她到底是谁。",
+        "evidence": [
+          {
+            "ep": 16,
+            "t": 35,
+            "quote": "弘业不是周家开的，我以前在那做过事"
+          },
+          {
+            "ep": 16,
+            "t": 49,
+            "quote": "你的本事，总得有个让人看见的机会"
+          },
+          {
+            "ep": 17,
+            "t": 26,
+            "quote": "洪水时伤的左腿"
+          }
+        ]
+      },
+      {
+        "no": 5,
+        "name": "揭",
+        "ep_from": 18,
+        "ep_to": 19,
+        "summary": "集团那边称她「林董」，把她女儿的作品直接递给研发部，同时下令调出周德海经手的推荐；秘书备好了年薪八十万、两百万奖励和百分之十五股权的方案。她只要求先落实岗位，钱和身份往后放。",
+        "payoff": "身份对观众揭晓，但对女儿还瞒着：「职务先不公开，别让招聘变成认老板的女儿。」——这一段已经超出预告边界，是剧透区。",
+        "evidence": [
+          {
+            "ep": 18,
+            "t": 2,
+            "quote": "林董研发部看过了"
+          },
+          {
+            "ep": 18,
+            "t": 29,
+            "quote": "把他经手的推荐，周承的申请都调出来"
+          },
+          {
+            "ep": 19,
+            "t": 17,
+            "quote": "职务先不公开"
+          }
+        ]
+      }
+    ],
+    "beyond_coverage": {
+      "ep_range": "20-60",
+      "note": "按只解析前 60% 的规矩，第 20 集以后未解析，走向未知，含大结局收尾。本包不得据此推断后段剧情；要动后段必须先补解析。"
+    },
+    "turning_points": [
+      {
+        "ep": 1,
+        "t": 94,
+        "beat": "伤疤对上，大女儿认了妈",
+        "quote": "这道疤是不是替我挡那锅热汤烫的"
+      },
+      {
+        "ep": 9,
+        "t": 17,
+        "beat": "许宁当场悔婚，把婚约和前途一起放下",
+        "quote": "证还没领，这婚我不结了"
+      },
+      {
+        "ep": 11,
+        "t": 33,
+        "beat": "妹妹顶替姐姐上台",
+        "quote": "继续吧新娘换成我"
+      },
+      {
+        "ep": 13,
+        "t": 33,
+        "beat": "姐姐拿租房合同反打，住处争回来",
+        "quote": "押金3,000，每月房租2,400，合同写我的名字"
+      },
+      {
+        "ep": 16,
+        "t": 35,
+        "beat": "母亲露出底牌，暗示自己不是普通人",
+        "quote": "弘业不是周家开的，我以前在那做过事"
+      },
+      {
+        "ep": 18,
+        "t": 2,
+        "beat": "集团称她「林董」，身份对观众揭晓",
+        "quote": "林董研发部看过了"
+      }
+    ],
+    "episode_pattern": {
+      "loop": [
+        "周家施压",
+        "许宁正面顶回去",
+        "周家加码威胁"
+      ],
+      "payoff_per_episode": true
+    },
+    "source": {
+      "type": "subtitle_ocr",
+      "ref": "assets/short-drama/以真心守护至亲/lines/lines_ep01–ep19.json（552 条）"
+    },
+    "verified": false
+  },
+  "characters": [
+    {
+      "id": "ch_001",
+      "name": "林秀兰",
+      "role": "protagonist",
+      "relation": "两个女儿的母亲，失散十七年；真实身份是弘业集团董事长，装成穷婆子试探女儿",
+      "traits": [
+        "装穷试探",
+        "坐轮椅",
+        "左腿旧伤",
+        "手里有牌不先亮"
+      ],
+      "evidence": {
+        "ep": 1,
+        "t": 1,
+        "quote": "我把50斤黄金做成轮椅，刷上黑漆，穿着破衣服去女儿的婚礼"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_002",
+      "name": "许宁",
+      "role": "protagonist",
+      "relation": "大女儿，婚礼上的新娘；为了认妈把婚约和进集团的机会一起推了",
+      "traits": [
+        "认死理",
+        "护母",
+        "不靠关系",
+        "会拿合同讲理"
+      ],
+      "evidence": {
+        "ep": 9,
+        "t": 18,
+        "quote": "这婚我不结了"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_003",
+      "name": "许晴",
+      "role": "antagonist",
+      "relation": "小女儿，婚礼上第一个不认妈的人，后来顶替姐姐嫁给周承",
+      "traits": [
+        "抢",
+        "当众翻脸",
+        "拿姐姐的东西不心虚"
+      ],
+      "evidence": {
+        "ep": 11,
+        "t": 33,
+        "quote": "继续吧新娘换成我"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_004",
+      "name": "周承",
+      "role": "antagonist",
+      "relation": "新郎，周德海的儿子；把婚约当筹码，换锁把母女赶出去",
+      "traits": [
+        "拿条件换服从",
+        "翻脸快",
+        "占房不认账"
+      ],
+      "evidence": {
+        "ep": 9,
+        "t": 23,
+        "quote": "你现在走就是打我周家的脸"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_005",
+      "name": "周德海",
+      "role": "antagonist",
+      "relation": "周承的父亲，弘业集团人力资源部副总监，负责今年校招——录用名额就是他手里的刀",
+      "traits": [
+        "拿前途要挟",
+        "讲体面不讲理",
+        "手里管招人"
+      ],
+      "evidence": {
+        "ep": 6,
+        "t": 12,
+        "quote": "你进弘业的事也别想了"
+      },
+      "usable_in_copy": true
+    }
+  ],
+  "hook_map": [
+    {
+      "id": "hk_001",
+      "beat": "开场旁白自报家底：五十斤黄金铸成轮椅、刷上黑漆、装成穷婆子去女儿婚礼",
+      "ep": 1,
+      "t_start": 1,
+      "t_end": 11,
+      "quote": "我把50斤黄金做成轮椅，刷上黑漆，穿着破衣服去女儿的婚礼，就为了试试失散17年的两个女儿还认不认我这个穷妈。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 10,
+        "quote": "还认不认我这个穷妈"
+      },
+      "opening_lines": [
+        "她推着一把破轮椅走进女儿的婚礼，底下是五十斤黄金。",
+        "五十斤黄金铸成轮椅，刷上黑漆，就为了试一句话。",
+        "她把黄金刷成黑漆，装成穷婆子，去了女儿的婚礼。"
+      ],
+      "hook_type": "reveal",
+      "risk": "low 原片开场旁白，非外部编造",
+      "status": "ready",
+      "note": "开场 0–5 秒画面直接给了金条货架和纯金色轮椅，旁白与画面互证"
+    },
+    {
+      "id": "hk_002",
+      "beat": "母亲当众认女，被大女儿一句顶回去：我妈十七年前就没了",
+      "ep": 1,
+      "t_start": 16,
+      "t_end": 24,
+      "quote": "我是妈妈。妈终于找到你了。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 23,
+        "quote": "可我妈妈17年前就没了"
+      },
+      "opening_lines": [
+        "妈站到婚礼台上说「我是妈妈」，女儿回了一句：我妈十七年前就没了。",
+        "找了十七年，找到的是一场婚礼和一个不认她的女儿。",
+        "她推着轮椅上了台，全场没有一个人认得她。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_003",
+      "beat": "周家当众赶人：来的都是亲戚领导，冒出你这么个亲家让人怎么看",
+      "ep": 1,
+      "t_start": 43,
+      "t_end": 55,
+      "quote": "来的都是亲戚领导，冒出你这么个亲家，让人怎么看？我们周家丢不起这个人。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 53,
+        "quote": "你也配"
+      },
+      "opening_lines": [
+        "婚礼上来了个坐轮椅的穷亲家，周家第一句话是：我们丢不起这个人。",
+        "亲戚领导都在场，周家当场要把人赶出去。",
+        "她说我是新娘的妈妈，对方回了三个字：你也配。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_004",
+      "beat": "小女儿逼母亲交新婚礼物，母亲只有一把轮椅可给",
+      "ep": 2,
+      "t_start": 24,
+      "t_end": 54,
+      "quote": "这些年我什么都没了，就只剩这把轮椅。等妈不在了，就留给你们姐妹俩。",
+      "truncate_at": {
+        "ep": 2,
+        "t": 54,
+        "quote": "留给我干什么"
+      },
+      "opening_lines": [
+        "女儿问妈要新婚礼物，妈能给的只有一把破轮椅。",
+        "「新婚礼物就一把破轮椅，是盼着谁坐？」",
+        "她全部的家当，是一把会被嫌弃的轮椅。"
+      ],
+      "hook_type": "contrast",
+      "risk": "medium 观众若已知轮椅是黄金，反差会提前泄底；单独使用时不解释轮椅材质",
+      "status": "ready"
+    },
+    {
+      "id": "hk_005",
+      "beat": "母亲只想在婚礼上有个座位，被小女儿当众嫌难堪",
+      "ep": 5,
+      "t_start": 30,
+      "t_end": 39,
+      "quote": "我坐你旁边就这么让你难堪？",
+      "truncate_at": {
+        "ep": 5,
+        "t": 38,
+        "quote": "今天来的人，谁不是穿的体体面面"
+      },
+      "opening_lines": [
+        "她只想在主桌有个位置，女儿说：妈真替你着想，你去后面坐。",
+        "「我坐你旁边就这么让你难堪？」",
+        "一张椅子，把母女隔成了两个世界。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_006",
+      "beat": "未来公公把话挑明：把人送走，工作还在；不送，录用撤掉",
+      "ep": 6,
+      "t_start": 6,
+      "t_end": 20,
+      "quote": "先把人送走，再回来谈这婚怎么结。你进弘业的事也别想了。",
+      "truncate_at": {
+        "ep": 6,
+        "t": 14,
+        "quote": "你的项目成绩我都收到了"
+      },
+      "opening_lines": [
+        "认下这个妈，工作就没了——未来的公公把话说到这个份上。",
+        "他手里握着她的录用名额，开口第一句是：把人送走。",
+        "要么赶走亲妈，要么丢掉工作和婚事。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_007",
+      "beat": "许宁当场悔婚",
+      "ep": 9,
+      "t_start": 15,
+      "t_end": 20,
+      "quote": "证还没领，这婚我不结了。戒指我也不戴。",
+      "truncate_at": {
+        "ep": 9,
+        "t": 19,
+        "quote": "戒指我也不戴"
+      },
+      "opening_lines": [
+        "婚礼进行到一半，新娘把戒指摘了：这婚我不结了。",
+        "「要成为你家的人，就得先不认自己的妈」——她转身就走。",
+        "全场等着交换戒指，新娘说证还没领。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_008",
+      "beat": "妹妹当场顶替姐姐上台",
+      "ep": 10,
+      "t_start": 33,
+      "t_end": 36,
+      "quote": "别追了，她不嫁我嫁。",
+      "truncate_at": {
+        "ep": 11,
+        "t": 33,
+        "quote": "继续吧新娘换成我"
+      },
+      "opening_lines": [
+        "姐姐刚走出门，妹妹对着满场宾客说：她不嫁我嫁。",
+        "新娘前脚走，妹妹后脚上台补位。",
+        "「继续吧，新娘换成我。」"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_009",
+      "beat": "妹妹把姐姐租的房子换锁、东西扔出门",
+      "ep": 11,
+      "t_start": 44,
+      "t_end": 51,
+      "quote": "锁换了。姐你回来的正好，把东西拿走，以后这是我跟周承住。",
+      "truncate_at": {
+        "ep": 12,
+        "t": 3,
+        "quote": "你不嫁了还想带个人来占着婚房"
+      },
+      "opening_lines": [
+        "母女俩回到住处，门锁已经被换了。",
+        "妹妹站在门口说：把东西拿走，以后这房子是我住。",
+        "抢了姐姐的新郎，又来抢姐姐的房子。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_010",
+      "beat": "姐姐拿租房合同反打，把住处争回来",
+      "ep": 13,
+      "t_start": 33,
+      "t_end": 36,
+      "quote": "押金3,000，每月房租2,400，合同写我的名字。",
+      "truncate_at": {
+        "ep": 13,
+        "t": 35,
+        "quote": "合同写我的名字"
+      },
+      "opening_lines": [
+        "房子是谁的？她报了三个数：押金三千，月租两千四，合同上写的是我的名字。",
+        "被赶出门那天，她翻出了自己签的租房合同。",
+        "对方说房子是周家的，她把合同拍到桌上。"
+      ],
+      "hook_type": "reveal",
+      "risk": "low",
+      "status": "ready"
+    },
+    {
+      "id": "hk_011",
+      "beat": "母亲第一次露底：弘业不是周家开的，我以前在那做过事",
+      "ep": 16,
+      "t_start": 30,
+      "t_end": 37,
+      "quote": "弘业不是周家开的，我以前在那做过事。能把你的材料递过去。",
+      "truncate_at": {
+        "ep": 16,
+        "t": 36,
+        "quote": "我以前在那做过事"
+      },
+      "opening_lines": [
+        "周家把她的推荐撤了，那个坐轮椅的妈说：弘业不是周家开的。",
+        "「我以前在那做过事。」——她到底是什么人？",
+        "所有人都当她是累赘，她只说了一句话。"
+      ],
+      "hook_type": "suspense",
+      "risk": "low 停在「做过事」，不解释身份；这是本片建议的 Button 位",
+      "status": "ready",
+      "note": "预告边界建议停在这里：观众会问「她到底是谁」，剧情一个字没承认"
+    },
+    {
+      "id": "hk_012",
+      "beat": "集团称她「林董」，身份对观众揭晓",
+      "ep": 18,
+      "t_start": 2,
+      "t_end": 8,
+      "quote": "林董，研发部看过了，他的方向跟部门需求相符。",
+      "truncate_at": {
+        "ep": 18,
+        "t": 8,
+        "quote": "别只挂个名字哄我高兴"
+      },
+      "opening_lines": [
+        "「林董，研发部看过了。」——那个穷婆子，是集团董事长。",
+        "她一句话就能把女儿的简历递进研发部。",
+        "周家一直踩的那个人，是他们的董事长。"
+      ],
+      "hook_type": "reveal",
+      "risk": "high 这一条本身就是答案，剪进预告再无悬念",
+      "status": "blocked",
+      "note": "第 18 集已越过预告边界（1–17）。留档备查，不进成片；要用必须张老师明确改边界"
+    }
+  ],
+  "compliance": {
+    "platform": "wechat_channels",
+    "rules_ref": "references/platform-rules.md",
+    "ending_policy": "do_not_use",
+    "must_check": {
+      "ending_spoiler": {
+        "status": "ok",
+        "note": "大结局第 60 集不碰；第 18–19 集已喊出「林董」，泄底，预告边界定在 1–17 集"
+      },
+      "disability_disease_wording": {
+        "status": "watch",
+        "note": "台词里有「我又没瘤」这类粗话，只能原句引用，不得改成旁白描述；「瘸」「残」不进字幕卡"
+      },
+      "rebuild_evidence": {
+        "status": "ok",
+        "note": "纯剪预告：原片重剪 + 五幕重排 + 无口播。二创痕迹靠重排与选段体现，非搬运整段"
+      },
+      "offsite_diversion": {
+        "status": "ok",
+        "note": "不留微信、公众号、私信、主页引导"
+      },
+      "ai_label": {
+        "status": "waived",
+        "note": "两项合写在一处，不另起字段：①原片是 AI 生成漫剧，发布视频号时按平台要求勾选 AI 生成标识；②39 个镜头底部烧「热播漫剧ai生成请勿模仿」，11-11 15:4x 张老师「水印不用管、AI 这个不用管」，装配不做裁边/打码/换画幅，保留原样。"
+      }
+    },
+    "banned_in_voiceover": [
+      "大结局",
+      "结局是",
+      "最后他们",
+      "真相是",
+      "加微信",
+      "公众号",
+      "主页有",
+      "私信",
+      "全网最",
+      "第一",
+      "官方推荐",
+      "残疾",
+      "瘸子",
+      "疯子",
+      "讨钱的"
+    ],
+    "quote_risk_terms": [
+      "破",
+      "穷",
+      "瘤",
+      "疯婆子",
+      "丢人",
+      "你也配"
+    ]
+  },
+  "elements": {
+    "hooks": [
+      {
+        "id": "h_001",
+        "hook_type": "reveal",
+        "pattern": "前 3 秒给一个反常事实，先不解释",
+        "example": "她把五十斤黄金刷成黑漆，装成穷婆子。"
+      },
+      {
+        "id": "h_002",
+        "hook_type": "conflict",
+        "pattern": "当众认亲，对方一句否认",
+        "example": "我是妈妈。可我妈妈17年前就没了。"
+      },
+      {
+        "id": "h_003",
+        "hook_type": "contrast",
+        "pattern": "全场都在嫌，她只有一件东西可给",
+        "example": "新婚礼物就一把破轮椅。"
+      },
+      {
+        "id": "h_004",
+        "hook_type": "suspense",
+        "pattern": "被踩到最狠的时候，弱势一方忽然说一句不该她说的话",
+        "example": "弘业不是周家开的，我以前在那做过事。"
+      }
+    ],
+    "pains": [
+      {
+        "id": "p_001",
+        "pain": "找了很多年的亲人站在面前，对方不认"
+      },
+      {
+        "id": "p_002",
+        "pain": "被当众嫌穷、嫌丢人，连坐一桌的资格都没有"
+      },
+      {
+        "id": "p_003",
+        "pain": "在亲妈和饭碗之间被逼着二选一"
+      },
+      {
+        "id": "p_004",
+        "pain": "亲妹妹抢走了自己的对象，还来抢自己的住处"
+      },
+      {
+        "id": "p_005",
+        "pain": "把最好的都给了孩子，孩子回头嫌你拖累"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "s_001",
+        "scene": "酒店宴会厅主桌",
+        "note": "全剧一半以上镜头在这，冲突的主战场"
+      },
+      {
+        "id": "s_002",
+        "scene": "婚礼台上与麦克风前",
+        "note": "当众宣布的位置，三拍冲突都发生在这"
+      },
+      {
+        "id": "s_003",
+        "scene": "出租屋门口（换锁那场）",
+        "note": "第二幕的转折现场"
+      },
+      {
+        "id": "s_004",
+        "scene": "出租屋屋内（一张床、地铺）",
+        "note": "母女独处的私密空间，唯一的暖场"
+      },
+      {
+        "id": "s_005",
+        "scene": "集团办公区",
+        "note": "第 18 集以后才出现，预告边界外"
+      }
+    ],
+    "proofs": [
+      {
+        "id": "pr_001",
+        "level": "E1",
+        "claim": "母亲装穷是有意为之",
+        "ref": "第 1 集 1–10 秒旁白原句"
+      },
+      {
+        "id": "pr_002",
+        "level": "E2",
+        "claim": "轮椅是黄金铸的",
+        "ref": "第 1 集 0–5 秒画面：金条货架与纯金色轮椅；旁白点明「50斤黄金做成轮椅」"
+      },
+      {
+        "id": "pr_003",
+        "level": "E1",
+        "claim": "周德海拿录用名额要挟许宁",
+        "ref": "第 6 集 6–20 秒"
+      },
+      {
+        "id": "pr_004",
+        "level": "E1",
+        "claim": "房子是许宁自己租的",
+        "ref": "第 13 集 33–35 秒，押金与月租原话"
+      },
+      {
+        "id": "pr_005",
+        "level": "E3",
+        "claim": "母亲的身份高于周家",
+        "ref": "第 16 集 35–36 秒「弘业不是周家开的」＋第 18 集「林董」；后者在预告边界外"
+      }
+    ],
+    "trust": [
+      {
+        "id": "t_001",
+        "level": "T1",
+        "item": "授权来源：张老师确认有授权（11-11 15:4x「授权有，不用检测了」），不再核验书面凭证"
+      },
+      {
+        "id": "t_002",
+        "level": "T2",
+        "item": "二创方式：原片重剪、五幕重排、零口播，非搬运整段——二创痕迹靠重排与选段体现"
+      },
+      {
+        "id": "t_003",
+        "level": "T3",
+        "item": "原片是 AI 生成漫剧，画面自带 AI 水印；张老师不要求处理，发布视频号时按平台要求勾选 AI 生成标识"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "c_001",
+        "text": "往下看她到底是谁",
+        "note": "纯剪预告以悬念收，不写引导关注"
+      },
+      {
+        "id": "c_002",
+        "text": "这一句，她忍了十七年",
+        "note": "字幕卡可用，不进口播"
+      }
+    ],
+    "golden_quotes": [
+      {
+        "id": "gq_001",
+        "ep": 1,
+        "t": 3,
+        "quote": "刷上黑漆",
+        "note": "旁白最狠的一句，短到能当字幕卡"
+      },
+      {
+        "id": "gq_002",
+        "ep": 1,
+        "t": 23,
+        "quote": "可我妈妈17年前就没了"
+      },
+      {
+        "id": "gq_003",
+        "ep": 1,
+        "t": 53,
+        "quote": "你也配"
+      },
+      {
+        "id": "gq_004",
+        "ep": 2,
+        "t": 52,
+        "quote": "谁要你的破轮椅"
+      },
+      {
+        "id": "gq_005",
+        "ep": 5,
+        "t": 35,
+        "quote": "我坐你旁边就这么让你难堪"
+      },
+      {
+        "id": "gq_006",
+        "ep": 6,
+        "t": 12,
+        "quote": "你进弘业的事也别想了"
+      },
+      {
+        "id": "gq_007",
+        "ep": 9,
+        "t": 18,
+        "quote": "这婚我不结了"
+      },
+      {
+        "id": "gq_008",
+        "ep": 11,
+        "t": 33,
+        "quote": "新娘换成我"
+      },
+      {
+        "id": "gq_009",
+        "ep": 13,
+        "t": 35,
+        "quote": "合同写我的名字"
+      },
+      {
+        "id": "gq_010",
+        "ep": 16,
+        "t": 35,
+        "quote": "弘业不是周家开的"
+      }
+    ],
+    "audiences": [
+      {
+        "id": "a_001",
+        "segment": "45–65 岁女性，家庭伦理剧常客",
+        "evidence": [
+          "认亲 + 母女 + 婚嫁，是家庭伦理剧的典型结构，不依赖年代记忆也能看懂",
+          "核心痛点是「把一辈子给了孩子，孩子嫌你穷、嫌你丢人」——这一代母亲最容易对号入座",
+          "第 1 集当众被赶、第 5 集争一个座位，都是「被当外人」的具体场景"
+        ],
+        "why_stop": "第 1 秒就是一个坐轮椅的穷婆子被全场看着，同龄人立刻代入处境",
+        "address_as": [
+          "大姐",
+          "婶子",
+          "老姐"
+        ],
+        "exclude": [
+          "25 岁以下（对婚嫁、认亲结构无共鸣）",
+          "都市白领（场景是酒店宴席与租屋，不共振）"
+        ],
+        "confidence": "medium",
+        "calibration": "上线两周后用后台观众画像校正；平台未定，先按家庭伦理剧通行人群推断"
+      },
+      {
+        "id": "a_002",
+        "segment": "有「被亲兄弟姐妹抢过东西」经历的人",
+        "evidence": [
+          "第 11–15 集连续四集抢婚、抢房，冲突点不在婆家而在亲妹妹",
+          "第 13 集用合同反打，是「讲理讲赢」的爽点，不是哭戏"
+        ],
+        "why_stop": "看到「亲妹妹抢走姐姐的对象」，会想起自己家里的事",
+        "address_as": [
+          "姐妹",
+          "老姐"
+        ],
+        "exclude": [
+          "独生子女（缺同类经验，共情弱）"
+        ],
+        "confidence": "low",
+        "calibration": "无后台数据，纯内容推断；有数据后回填"
+      },
+      {
+        "id": "a_003",
+        "segment": "爱看「扮猪吃虎」反差的人",
+        "evidence": [
+          "第 1 集旁白直接亮底牌：五十斤黄金刷成黑漆",
+          "第 16 集母亲露一手「弘业不是周家开的」，是标准反差位"
+        ],
+        "why_stop": "开头就知道她有钱，等着看她什么时候亮牌",
+        "address_as": [
+          "各位",
+          "看官"
+        ],
+        "exclude": [
+          "只看苦情戏、不要爽感的观众（会觉得被骗）"
+        ],
+        "confidence": "low",
+        "calibration": "同上，待数据校正"
+      }
+    ]
+  },
+  "pending": [
+    {
+      "id": "pd_001",
+      "item": "投放平台未定",
+      "owner": "张老师",
+      "how_to_resolve": "平台确定，后续按视频号口径核 AI 标注与二创政策",
+      "blocking": false,
+      "blocked_reason": null,
+      "state": "closed",
+      "resolution": "已定：微信视频号",
+      "resolved_by": "张老师",
+      "resolved_at": "2026-11-11"
+    },
+    {
+      "id": "pd_002",
+      "item": "画面水印「热播漫剧ai生成请勿模仿」处理方案未定（39 个镜头）",
+      "owner": "张老师",
+      "how_to_resolve": "张老师「水印不用管」，39 个镜头保留原样，装配不做任何遮盖",
+      "blocking": false,
+      "blocked_reason": null,
+      "state": "closed",
+      "resolution": "已裁：不处理",
+      "resolved_by": "张老师",
+      "resolved_at": "2026-11-11"
+    },
+    {
+      "id": "pd_003",
+      "item": "授权无书面凭证（承诺函／时间戳证书）",
+      "owner": "张老师",
+      "how_to_resolve": "张老师「授权有，不用检测了」，不再核验书面凭证",
+      "blocking": false,
+      "blocked_reason": null,
+      "state": "closed",
+      "resolution": "已裁：不检测",
+      "resolved_by": "张老师",
+      "resolved_at": "2026-11-11"
+    },
+    {
+      "id": "pd_004",
+      "item": "第 16 集 OCR 混入奖状文字（「金国大学特航大第一年装」等），第 1 集有「晴睛/晴晴」错字",
+      "owner": "WorkBuddy",
+      "how_to_resolve": "已在台词库标出，写清单时不得当台词引用",
+      "blocking": false
+    },
+    {
+      "id": "pd_005",
+      "item": "第 20–60 集未解析，后续走向未知",
+      "owner": "WorkBuddy",
+      "how_to_resolve": "按只解析前 60% 的规矩，除非张老师明确放开边界，否则不补",
+      "blocking": false
+    }
+  ],
+  "asset_index": {
+    "mode": "self_licensed",
+    "episodes": [
+      {
+        "ep": 1,
+        "file": "1.mp4",
+        "duration": 99.01,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 2,
+        "file": "2.mp4",
+        "duration": 54.85,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 3,
+        "file": "3.mp4",
+        "duration": 50.2,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 4,
+        "file": "4.mp4",
+        "duration": 46.58,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 5,
+        "file": "5.mp4",
+        "duration": 56.89,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 6,
+        "file": "6.mp4",
+        "duration": 49.04,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 7,
+        "file": "7.mp4",
+        "duration": 51.08,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 8,
+        "file": "8.mp4",
+        "duration": 51.04,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 9,
+        "file": "9.mp4",
+        "duration": 50.18,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 10,
+        "file": "10.mp4",
+        "duration": 51.48,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 11,
+        "file": "11.mp4",
+        "duration": 53.45,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 12,
+        "file": "12.mp4",
+        "duration": 48.04,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 13,
+        "file": "13.mp4",
+        "duration": 49.95,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 14,
+        "file": "14.mp4",
+        "duration": 49.2,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 15,
+        "file": "15.mp4",
+        "duration": 54.4,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 16,
+        "file": "16.mp4",
+        "duration": 52.92,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 17,
+        "file": "17.mp4",
+        "duration": 51.69,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 18,
+        "file": "18.mp4",
+        "duration": 50.2,
+        "desub": "not_needed",
+        "note": "超出预告边界，只解析不留用"
+      },
+      {
+        "ep": 19,
+        "file": "19.mp4",
+        "duration": 51.11,
+        "desub": "not_needed",
+        "note": "超出预告边界，只解析不留用"
+      },
+      {
+        "ep": 60,
+        "file": "60.mp4",
+        "duration": null,
+        "desub": "not_needed",
+        "note": "大结局，不碰、不解析、不进成片"
+      }
+    ],
+    "finale_episodes": [
+      60
+    ],
+    "audio": "with_bgm",
+    "subtitle": "burned_in",
+    "splittable": {
+      "usable_ep_range": "1-17",
+      "estimated_clips": 3,
+      "note": "纯剪预告不做去字幕；硬字幕原样保留，切点须对齐字幕卡出现/消失（±0.3s）"
+    }
+  },
+  "conflicts": [
+    {
+      "id": "cf_001",
+      "topic": "简介写「黄金露出、妹妹扑来争椅」与画面实测对不上",
+      "values": [
+        {
+          "source": "简介详情.txt（宣传文案）",
+          "value": "黑漆剥落、黄金露出、妹妹扑来争椅子",
+          "evidence": "简介正文原文"
+        },
+        {
+          "source": "1–17 集画面打标 + 全剧抽帧",
+          "value": "黄金轮椅在前 5 秒以原样出现（金条货架 + 纯金色轮椅），随后刷成黑漆；未发现「黑漆剥落露黄金」和「妹妹争椅」的镜头",
+          "evidence": "shots_ep01–ep17.json；第 1 集 0–7 秒抽帧"
+        }
+      ],
+      "status": "resolved",
+      "resolution": "以画面为准，简介只当宣传文案。预告素材一律以台词时间码 + 镜头表为准；「黄金」只在开场 0–10 秒用"
+    },
+    {
+      "id": "cf_002",
+      "topic": "建包要求「分幕铺满全集」与「只解析前 60%」冲突",
+      "values": [
+        {
+          "source": "skills/short-drama-pack/SKILL.md v1.1 铁律 1",
+          "value": "分幕必须铺满全集、不许留空",
+          "evidence": "原文"
+        },
+        {
+          "source": "张老师 2026-11-11 口头规则",
+          "value": "解说／分析只看前 60%，为了不剧透",
+          "evidence": "11-11 对话原话「解说只解说前60%的内容」"
+        }
+      ],
+      "status": "resolved",
+      "resolution": "改按新规：分幕只铺已解析范围（本剧 1–19），后 40% 只留一句走向、不带集号不带台词。旧条文保留并标注已被取代"
+    },
+    {
+      "id": "cf_003",
+      "topic": "第 20 集起是「另一条线」与「同一条因果链」两个判断打架",
+      "values": [
+        {
+          "source": "选片阶段判断（11-11 13:4x，只看了中段抽帧）",
+          "value": "第 20 集起转集团职场线，属另一条线，预告整串砍",
+          "evidence": "runs/以真心守护至亲/选片结论.md 原文"
+        },
+        {
+          "source": "通读 1–19 集台词后（11-11 14:0x）",
+          "value": "1–19 集是一条连贯因果链：认亲→逼走→悔婚→妹妹顶替→母女无处可去→母亲露底；第 18 集起是同一条因果的反转段",
+          "evidence": "lines_ep01–ep19.json 全文"
+        }
+      ],
+      "status": "resolved",
+      "resolution": "以通读台词后的判断为准。前一个判断是只看抽帧、没串前因造成的误判，已在进度记录里更正留痕"
+    }
+  ]
+}

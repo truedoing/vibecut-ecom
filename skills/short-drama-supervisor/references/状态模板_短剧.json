@@ -1,5 +1,5 @@
 {
-  "_readme": "短剧线 v0.3 状态模板（2026-11-10 独立主管专用）。七环节：select → pack → asset_index → ai_assets(可选) → script → weave_video(可选) → trailer。凡带 depends_on 的产物必须同时写 depends_rev 快照，status_overview.py 靠它自动判要重做，并沿依赖链传播。11-09 电视框三拍旧模板保留在 ecommerce-supervisor/references/状态模板_短剧.json，不迁移、不删。17:2x 统一七环节路径口径；17:4x 加方向卡；20:4x 按张老师「可以」加三层结构：ai_strategy（本片点哪道 AI 玩法）、cycle_round（小循环第几轮）、shared_snapshot（建它时共用层版本）。共用层当前版本在 runs/工作台.json，切换剧包只改那里的 active。",
+  "_readme": "短剧线 v0.3 状态模板（2026-11-10 独立主管专用）。七环节：select → pack → asset_index → ai_assets(可选) → script → weave_video(可选) → trailer。凡带 depends_on 的产物必须同时写 depends_rev 快照，status_overview.py 靠它自动判要重做，并沿依赖链传播。11-09 电视框三拍旧模板保留在 ecommerce-supervisor/references/状态模板_短剧.json，不迁移、不删。17:2x 统一七环节路径口径；17:4x 加选题单；20:4x 按张老师「可以」加三层结构：ai_strategy（本片点哪道 AI 玩法）、cycle_round（小循环第几轮）、shared_snapshot（建它时共用层版本）。共用层当前版本在 runs/工作台.json，切换剧包只改那里的 active。",
   "task": "D5_婆婆线",
   "category": "剧名",
   "line": "short-drama",
@@ -79,8 +79,8 @@
       "rev": 1,
       "depends_on": ["pack", "asset_index"],
       "depends_rev": {"pack": 1, "asset_index": 1},
-      "direction_card": {
-        "path": "runs/{剧名}/{task}/方向卡.md",
+      "topic": {
+        "path": "runs/{剧名}/{task}/选题单.md",
         "chosen": "从 2–3 条故事线里人圈定的那一条（写线名，不写编号）",
         "ai_strategy": "人同时圈定的 AI 玩法 id；不点菜写 none，表示纯剪",
         "approved_by": "张老师",
@@ -137,8 +137,8 @@
     "plan 规范名 plan.json，允许版本化命名 plan_<tag>.json；配套 选段说明.md 同目录。存量批次没落 选段说明.md 时，trailer 明确报偏差，不静默放行也不倒推退回。",
     "王婶织入片落 runs/<剧名>/<task>/wangshen_vN.mp4。已被取代的旧路径 assets/ai_assets/shots/ 属电商素材库，2026-11-10 短剧线独立后不再使用（原文保留在本条备查）。",
     "角色资产 registry 全路径 assets/short-drama/ai_assets/registry.json；short-drama-video 按此取料，不写技能目录名当路径。",
-    "【17:4x 方向卡】编排环节第一道停：先出 方向卡.md（2–3 条故事线 + 各一句角度 + 推荐哪条和理由），人圈定一条才排段表。台账记在 artifacts.script.direction_card，不是独立环节、不进 STAGES、不参与依赖作废链；换线按新一条片子重排整张段表。存量批次没落盘方向卡时如实标 pending，不倒推 approved。",
-    "【20:4x 三层结构】ai_strategy 记本片点哪道 AI 玩法（none＝纯剪＝默认）；王婶只是菜单上第一道，不是固定环节。现在只留位置不建空技能，等第二种玩法出现再收成技能。方向卡必须同时圈线和圈玩法，因为点了玩法清单就得留插入位。",
+    "【17:4x 选题单】编排环节第一道停：先出 选题单.md（2–3 条故事线 + 各一句角度 + 推荐哪条和理由），人圈定一条才排段表。台账记在 artifacts.script.topic，不是独立环节、不进 STAGES、不参与依赖作废链；换线按新一条片子重排整张段表。存量批次没落盘选题单时如实标 pending，不倒推 approved。",
+    "【20:4x 三层结构】ai_strategy 记本片点哪道 AI 玩法（none＝纯剪＝默认）；王婶只是菜单上第一道，不是固定环节。现在只留位置不建空技能，等第二种玩法出现再收成技能。选题单必须同时圈线和圈玩法，因为点了玩法清单就得留插入位。",
     "【20:4x 共用层】shared_snapshot 与 runs/工作台.json 的 shared 配对使用：剧包/索引改版只影响本剧片子的清单与成片；玩法配方或共用角色资产改版只影响点了这道玩法的片子；新增玩法不动任何已有片子。旧台账没写 shared_snapshot 时脚本跳过跨文件比对。",
     "【20:4x 切换与小循环】当前选中对象只在 runs/工作台.json 的 active 里，换剧包＝挂起不是作废。快层小循环每轮留一版成片、旧版标 superseded；改清单只重拼成片，已生成的素材段可复用，出片是唯一花钱的环节。",
     "【22:1x 默认纯剪】模板的 ai_strategy 默认 none、shared_snapshot.ai_strategies 为 {}；点了菜才写菜单里的玩法 id，并在 ai_strategies 记下建它时那道菜的版本，别照旧示例默认点王婶。每道菜的适用条件与三层文件位置在 runs/玩法菜单/<id>.md，工作台菜单项只用 recipe 指过去，不复制内容。改卡或改三层硬规矩由主管把版本加一。",
