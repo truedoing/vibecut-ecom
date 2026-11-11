@@ -45,3 +45,6 @@ runs/**/sd_*.mp4
 runs/**/*.mp4
 assets/ai_assets/shots/*.mp4
 *.sqlite
+
+# AI 出片临时校验截图（可随时重新抽帧生成）
+assets/ai_assets/shots/_check_*.png
