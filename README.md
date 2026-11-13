@@ -1,117 +1,95 @@
-# VibeCut 电商素材台
+# VibeCut 短剧素材台（vibecut-ecom）
 
-给电商短视频团队用的**素材库 + 去字幕 + 任务台账 + 版本审核**。
+给短剧二创团队用的**素材分析建库 + 剧集包 + 选题/剪辑清单 + 装配出片 + 只读工作台**。
 
-它不剪片子、不做时间轴。它解决的是团队共同记忆的问题：素材找不到、缺了才去搜、搜完还要去字幕、版本混乱、审核靠口头。
+> 2026-11-13 起只保留短剧线。电商线运行代码已删除，历史留在 git。
+> Agent 是编剧和外包，VibeCut 是片场、资产库和看板。
 
-> Agent 是编剧和外包，VibeCut 是片场和资产库。
-> WorkBuddy 负责想和做，VibeCut 负责记住、复用、审核、记账。
+## 三块用途
+
+| 用途 | 面向谁 | 入口 |
+|---|---|---|
+| **生成** | 每天出片的人 / Agent | `skills/short-drama-*`、`runs/`、工作台 |
+| **教学** | 学这条链路的人 | `docs/` 里的方法、决策、翻案记录 |
+| **自媒体** | 讲过程、讲工程判断的人 | [`docs/UI_教学与自媒体素材.md`](docs/UI_教学与自媒体素材.md) |
+
+三条线共用同一份状态：`runs/<剧>/<任务>/状态.json`。UI 只是它的只读投影，不另记一套账。
 
 ## 快速开始
 
 ```bash
-# 1. 安装（Python 3.10+，需要 ffmpeg）
-pip install -e .
-# 如果 vibecut 不在 PATH 上（例如 conda 未激活）：
-#   /opt/anaconda3/bin/vibecut ...   或   python -m vibecut.cli ...
+# 1. 编辑仓库根 .env（没有就新建），写入素材根
+SHORT_DRAMA_ASSET_ROOT=/Users/zgl/短剧
 
-# 2. 初始化数据目录（默认 ~/VibeCutEcomData）
-vibecut init
-
-# 3. 启动本地服务（仅本机）
-vibecut serve --host 127.0.0.1 --port 8766
-# 团队局域网访问：
-#   vibecut serve --host 0.0.0.0 --port 8766
-#   其他人浏览器打开 http://<主机IP>:8766
-
-# 4. 另开一个终端
-vibecut project add 羽衣甘蓝 --media-root "/path/to/参考视频"
-vibecut assets ingest --project 羽衣甘蓝 --file ./素材.mp4 \
-  --tags "实拍,冲泡" --layer L1 --note "玻璃杯冲水特写"
-vibecut assets search --project 羽衣甘蓝 --query "冲泡"
+# 2. 启动只读工作台（Python 3.10+，零依赖）
+python3 skills/short-drama-supervisor/ui/server.py
+# http://127.0.0.1:8765
 ```
 
-浏览器打开 `http://127.0.0.1:8766` 可以看到素材库与任务看板。
+打标、装配、切镜头需要 ffmpeg / ffprobe；工作台本身不调用它们。
 
-## 它解决什么
+## 工作台
 
-| 能力 | 命令 | 典型场景 |
-|---|---|---|
-| 素材入库 | `vibecut assets ingest` | 新拍的、搜到的片段登记进团队库 |
-| 素材检索 | `vibecut assets search` | "有没有冲泡特写？"跨项目找 |
-| 缺口清单 | `vibecut assets gap` | 文案定了，先看素材够不够 |
-| 去字幕 | `vibecut desub check/run` | 参考片段有烧录字幕，只去字幕保留包装 |
-| 任务台账 | `vibecut task list/status` | 待素材 → 待初剪 → 待审 → 待发 → 已发 |
-| 跨项目复用 | `assets search --scope all` | 上一个品的爆款镜头，这个品还能用 |
+四个页签，全部只读：
 
-## 给 WorkBuddy 用
+| 页签 | 看什么 |
+|---|---|
+| **总览** | 一剧一行：素材分析 / 文案 / 出片三段进度，点行展开细节 |
+| **素材分析** | 逐集看台词、镜头标注、合表齐不齐，以及人物/情绪覆盖率 |
+| **待审文案** | 等人过目的剪辑清单，右侧直接看 md 原文 |
+| **成片预览** | 按「剧 / 片子」分组；当前成片、旧版、中间文件分开；带段落首尾帧与自检图 |
 
-把 [`skills/vibecut/SKILL.md`](skills/vibecut/SKILL.md) 交给 WorkBuddy。它描述了何时调用、命令示例、输出格式，以及几条硬规则（比如 `risk=high` 的片段不要硬修）。
+页面只处理 GET，POST/PUT/DELETE/PATCH 一律 405；不执行脚本、不写数据。
+要跑任务、改清单、出片，回对话里说。
 
-推荐工作流：
+### 一条片子的日常路径
 
-```
-assets gap --requirements req.json   → 缺什么
-  → 搜索/生成/实拍                  → 拿到片段
-  → desub check                     → risk=low 才 run
-  → assets ingest                   → 入库复用
-  → task status                     → 交给剪辑
-```
+1. **总览**看哪部剧、哪条片子卡住，点行展开看「要改 / 等人过目 / 待拼」的名字。
+2. **素材分析**确认这一集的台词、镜头标注、合表齐不齐，缺哪份补哪份。
+3. **待审文案**是 G1：清单 + 选段说明 + 人审表一起看；点头回对话，不在页面上点。
+4. **成片预览**是 G3：按片子找到当前成片，切版本、看段落首尾帧和装配自检图。
 
-## 数据目录
+## 数据流
 
 ```
-~/VibeCutEcomData/
-├── vibecut.db                  # SQLite，唯一真源
-├── projects/<项目>/
-│   ├── assets/files/           # 入库素材
-│   ├── assets/thumbs/          # 缩略图
-│   ├── tasks/<任务>/           # 任务资料
-│   └── desub/<报告>/           # 去字幕产物
-└── desub/                      # 不属于任何项目的去字幕产物
+素材根/<剧>/N.mp4
+  → short-drama-asset-index   台词库 / 镜头标签 / 合表 / index.sqlite
+  → short-drama-pack          剧集包（packs/short-drama/<剧>/drama-pack.json）
+  → short-drama-script        选题单 + 剪辑清单（runs/<剧>/<任务>/plan.json）
+  → short-drama-trailer       装配成片（build/vN.mp4）
+  → 工作台                    只读展示，不参与生产
 ```
 
-素材文件永远在磁盘，库里只存项目内相对路径。备份只需拷 `data_root`。
+## 目录
 
-### 配置
-
-优先级：命令行参数 > 环境变量 > `~/.vibecut-ecom.json` > 默认值。
-
-```json
-{
-  "data_root": "/path/to/data",
-  "host": "127.0.0.1",
-  "port": 8766,
-  "ffmpeg": "/path/to/ffmpeg"
-}
+```
+skills/                8 个短剧技能（选片/建包/索引/角色/选题/出片/装配/主管）
+  short-drama-supervisor/ui/   只读工作台（server.py + index.html）
+runs/                  工作台.json + 各剧 / 各片子的状态、清单、成片
+assets/short-drama/    台词、镜头、合表、人物映射、index.sqlite
+packs/short-drama/     剧集包
+config/                素材目录登记表
+docs/                  方法论、进度台账、决策与教学素材
 ```
 
-ffmpeg 探测顺序：`VIBECUT_FFMPEG` → 配置 → `tools/ffmpeg/bin` → PATH → 常见安装位置。
+## 文档
 
-## 从旧 VIBECAP 迁移
+**技能线**
 
-```bash
-python scripts/migrate_from_vibecut.py \
-  --src /Users/zgl/VIBECAP/羽衣甘蓝 \
-  --dst ~/VibeCutEcomData \
-  --dry-run     # 先看报告，再去掉 dry-run
-```
+- [`docs/进度台账.md`](docs/进度台账.md) — 版本里程碑、量化基线、任务进度
+- [`docs/短剧链路_v0.4_批量管线架构.md`](docs/短剧链路_v0.4_批量管线架构.md) — 从一条一条做到一天二十条
+- [`docs/纯剪预告方法论_v0.1.md`](docs/纯剪预告方法论_v0.1.md) — 纯剪预告的选段与结构
 
-导入资产（保留旧 `asset_id` 为 `legacy_id`）、任务脚本、参考图选择、抽卡记录；幂等，可重复执行。
+**UI 线**
 
-## 开发
+- [`docs/UI_技术决策.md`](docs/UI_技术决策.md) — 为什么只读、为什么不用框架、为什么认状态文件
+- [`docs/UI_版本演变.md`](docs/UI_版本演变.md) — 每一版解决了什么、口径怎么变的
+- [`docs/UI_教学与自媒体素材.md`](docs/UI_教学与自媒体素材.md) — 可讲课、可发内容的故事与数据
 
-```bash
-# 后端测试
-PYTHONPATH=src pytest -q
+**调度入口**
 
-# 前端开发（代理到 8766）
-cd web && npm install && npm run dev
-
-# 前段构建后，FastAPI 会直接托管 web/dist
-cd web && npm run build
-```
+- [`skills/short-drama-supervisor/SKILL.md`](skills/short-drama-supervisor/SKILL.md)
 
 ## 不做
 
-时间轴、成片渲染、通用剪辑、影视管线、多租户 SaaS、素材上云。
+时间轴、通用剪辑、成片渲染、影视管线、素材上云。

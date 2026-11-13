@@ -1,77 +1,69 @@
-# VibeCut 电商素材台（vibecut-ecom）
+# VibeCut 短剧素材台（vibecut-ecom）
 
-给 3–8 人电商短视频团队用的**素材库 + 去字幕 + 任务台账 + 版本审核**。
+给短剧二创团队用的**素材分析建库 + 剧集包 + 选题/剪辑清单 + 装配出片 + 只读工作台**。
 
-> Agent 是编剧和外包，VibeCut 是片场和资产库。
-> WorkBuddy 负责想和做，VibeCut 负责记住、复用、审核、记账。
-
-## 与旧仓库 VIBECAP 的关系
-
-- 旧仓库 `/Users/zgl/VIBECAP`（影视解说/口播/电商导演台）**已冻结**，不再加电商功能，只作参考实现与知识/课程资产。
-- 新仓库**不 import 旧代码**。去字幕是整体搬运，搬完旧仓库不再维护该模块，因此没有双份维护。
-- 电商功能一律在这里做，不要回旧仓库改。
+> 2026-11-13 起只保留短剧线，电商线运行代码已删除，历史留在 git。
+> Agent 是编剧和外包，VibeCut 是片场、资产库和看板。
+> 项目同时服务三块：**生成**（每天出片）、**教学**（方法和翻案讲得清）、**自媒体**（过程可传播）。
 
 ## 运行
 
 ```bash
-pip install -e .                      # 已装过；CLI 在 /opt/anaconda3/bin/vibecut
-vibecut init
-vibecut serve --host 0.0.0.0 --port 8766
+# 只读工作台（Python 标准库，零依赖）
+python3 skills/short-drama-supervisor/ui/server.py
+# http://127.0.0.1:8765   支持 #pipeline / #assets / #review / #video 直达
 ```
 
-浏览器 `http://<主机IP>:8766`。数据根默认 `~/VibeCutEcomData`（本机是 `/Users/apple/VibeCutEcomData`）。
+素材根写在仓库根 `.env`，不写死在代码里：
 
 ```bash
-# 测试
-PYTHONPATH=src pytest -q
-
-# 前端
-cd web && npm install && npm run dev    # 代理到 8766
-cd web && npm run build                 # FastAPI 直接托管 web/dist
+SHORT_DRAMA_ASSET_ROOT=/Users/zgl/短剧
 ```
+
+打标、装配脚本需要 ffmpeg / ffprobe；**工作台不调用它们**（时长读 MP4 盒头）。
 
 ## 代码结构
 
 ```
-src/vibecut/
-├── cli.py              # 唯一对外接口：Agent/人/脚本都走它
-├── config.py           # data_root / host / port / ffmpeg
-├── core/
-│   ├── db.py           # SQLite 唯一真源：schema + WAL + 写锁
-│   ├── paths.py        # 安全文件名 / Windows 长路径 / 原子写
-│   ├── media.py        # ffmpeg 探测 / 元数据 / 缩略图
-│   └── locks.py        # 跨进程文件锁
-├── assets/
-│   ├── store.py        # 入库（sha 去重）/ 检索 / 使用记录
-│   └── gap.py          # 缺口分析（优先显式 requirements）
-├── desub/              # 从旧 lib/desub 搬运：OCR/分类/轨迹/mask/修复/QA
-├── tasks/state.py      # 五状态：待素材/待初剪/待审/待发/已发
-├── reviews/            # M2：审核规则
-└── server/             # FastAPI：assets / tasks / desub / health + SPA 托管
+skills/short-drama-*/              # 8 个技能：选片 / 建包 / 索引 / 角色 / 选题 / 出片 / 装配 / 主管
+  short-drama-supervisor/
+    scripts/status_overview.py     # 状态计算：谁要重做、下一步做什么（网页也调它）
+    scripts/progress.py            # 长跑任务进度上报：一任务一文件、原子写、带 pid
+    ui/server.py                   # 只读 HTTP 服务：只处理 GET
+    ui/index.html                  # 单文件工作台，无构建步骤
+runs/工作台.json                   # 当前选中 + 剧名目录对照 + 共用层版本
+runs/<剧>/<任务>/状态.json          # 一条片子的七环节进度（唯一真源）
+runs/<剧>/<任务>/plan.json          # 剪辑清单：seg(label/type/ep/a/b/beats)
+runs/<剧>/<任务>/build/             # 装配产物与自检图
+assets/short-drama/<剧>/            # lines / shots / sentences / char_map / index.sqlite
+packs/short-drama/<剧>/             # 剧集包
+docs/                              # 方法论、进度台账、UI 三份文档
 ```
 
 ## 硬规则
 
-1. **SQLite 是唯一真源**。不要再引入「JSON 文件 + manifest + DB」三套记账。
-2. **素材文件在磁盘，库里只存项目内相对路径**。媒体永不进 DB，永不上传云端。
-3. **不做时间轴、Elah、成片渲染、通用剪辑**。精修交给剪映。
-4. **不做影视管线**（scene_map / VLM / BGE / storyboard_match）。
-5. **缺口分析 v1 不引入 LLM**。WorkBuddy 用 `--requirements` 给需求，VibeCut 只核对有没有。
-6. **`desub check` 的 `risk=high` 不要硬修**。字幕压在包装上时被遮住的内容已经不存在，应换片段/盖字幕条/重生成。
-7. **Windows 是第一交付目标**。路径一律 `pathlib` + `core.paths.long_path()`，ffmpeg 一律走 `core.media`。
-8. **CLI 不 import 服务端模块**，只走 HTTP；保证 Agent 侧行为稳定。
+1. **状态文件是唯一真源**。网页只画不算：`status_overview.py` 算，UI 不另算一套。
+2. **UI 只读**：只处理 GET，POST/PUT/DELETE/PATCH 一律 405；页面不执行脚本、不写数据。
+3. **媒体不入库、不上云**。原片在素材根，`runs/**/*.mp4` 可再生、已 gitignore。
+4. **不做时间轴、通用剪辑、成片渲染**。精修交给剪映。
+5. **done ≠ approved**。`pack` G0 / `script` G1 / `trailer` G3，人没点头不许往下。
+6. **改清单 ≠ 重做出片**。只改选段/顺序就只重拼；改素材台词/上下文才重新出片。
+7. **路径去本机化**。素材根写 `.env`，剧包不写绝对路径。
+8. **换剧包是挂起，不是作废**。只改工作台 `active`，历史不删。
+9. **UI 零依赖**：Python 标准库 `http.server` + 单文件 HTML；不为看板引入前端框架。
+10. **文档三块**：决策留翻案、版本留口径、过程留故事。
 
 ## 当前进度
 
-**M1 已完成**：SQLite、CLI、素材入库/检索/缺口、去字幕 check/run、薄看板两页、旧数据迁移脚本。
-羽衣甘蓝验证数据：13 资产 / 7 任务 / 22 抽卡记录。
-
-**M2 待做**：版本（`version save/list`）、审核闸门（`review check`）、Windows 绿色包 + 开机自启、并发写冲突 409、任务详情页。
-
-**M3 按需**：生成管理（Seedream/Seedance 抽卡入库）、跨项目资产复用配方、自动更新版本接口。
+- **技能链 v0.4**（批量管线）已定；状态台账、门禁、改动影响传播已验收。
+- **工作台 v0.3**：总览 / 素材分析 / 待审文案 / 成片预览；已删电商线；预览页按「剧 / 片子」分组。
+- **待做**：分镜台、原视频预览、深色主题、30 部剧分页、素材分析与待审文案页打磨。
 
 ## 参考
 
-- `README.md` — 快速开始、数据目录、迁移
-- `skills/vibecut/SKILL.md` — 交给 WorkBuddy 的说明书
-- 设计决策记录：`/Users/apple/.claude/plans/validated-marinating-bentley.md`
+- `README.md` — 快速开始、目录、数据流
+- `docs/进度台账.md` — 技能线进度
+- `docs/UI_技术决策.md` — UI 为什么这么选（含被推翻的判断）
+- `docs/UI_版本演变.md` — UI 版本节点与口径变更
+- `docs/UI_教学与自媒体素材.md` — 可讲课、可发内容的故事与数据
+- `skills/short-drama-supervisor/SKILL.md` — 调度入口

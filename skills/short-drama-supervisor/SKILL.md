@@ -102,6 +102,17 @@ python3 skills/short-drama-supervisor/scripts/status_overview.py --root runs --d
 python3 skills/short-drama-supervisor/scripts/status_overview.py --stale-only
 ```
 
+### 只读工作台（UI，给人看的）
+
+```bash
+python3 skills/short-drama-supervisor/ui/server.py     # http://127.0.0.1:8765
+```
+
+四个页签：**总览 / 素材分析 / 待审文案 / 成片预览**（`#pipeline` / `#assets` / `#review` / `#video` 可直达）。
+只处理 GET，POST/PUT/DELETE/PATCH 一律 405；页面不执行脚本、不写状态。
+「谁要重做、下一步做什么」仍由本技能的 `status_overview.py` 算，网页只画。
+UI 的决策与版本见 `docs/UI_技术决策.md`、`docs/UI_版本演变.md`、`docs/UI_教学与自媒体素材.md`。
+
 ### 要重做是算出来的，不是人写进去的
 
 两套比对，都只读派生、不改状态文件：
