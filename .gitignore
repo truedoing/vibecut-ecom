@@ -16,10 +16,6 @@ data/
 *.db-wal
 *.db-shm
 
-# Web
-web/node_modules/
-web/dist/
-
 # Env / secrets
 .env
 config.local.json
