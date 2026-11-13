@@ -592,6 +592,25 @@ def api_videos() -> dict:
     }
 
 
+def _task_dirs(drama: str) -> list[Path]:
+    """一部剧下面真正的「片子」目录。排除 specs* 这类资料目录。"""
+    base = RUNS / drama
+    if not base.is_dir():
+        return []
+    return [p for p in base.iterdir()
+            if p.is_dir() and not p.name.startswith((".", "specs"))]
+
+
+def _plan_file(base: Path) -> Path | None:
+    """一条片子可能叫 plan.json / plan_v2.json / plan_v3ws.json。"""
+    for name in ("plan.json", "plan_v2.json", "plan_v3ws.json"):
+        p = base / name
+        if p.exists():
+            return p
+    cands = sorted(base.glob("plan*.json"))
+    return cands[0] if cands else None
+
+
 def api_pipelines() -> dict:
     """一部剧一条管线，三个阶段的进度。
 
@@ -606,7 +625,6 @@ def api_pipelines() -> dict:
     pv_groups = {(g["drama"], g["task"]): g
                  for g in api_videos()["groups"]}
 
-    alias = drama_alias()
     # 剧只从素材根目录的一级文件夹来。原视频不在这台机器上的历史剧，
     # 片子记录和成片仍在 runs 下，不混进管线，单独列一句免得看着像丢了。
     names = set(api_dramas())
@@ -615,33 +633,38 @@ def api_pipelines() -> dict:
     out = []
     for drama in sorted(names):
         a = api_assets(drama)
-        mine = [p for p in plans if p["drama"] == drama]
+        task_dirs = _task_dirs(drama)
+        plan_tasks = [p for p in task_dirs if _plan_file(p)]
+        task_count = len(task_dirs)       # 这部戏排了多少条片子
+        script_count = len(plan_tasks)    # 其中已经出了文案的
+
         waiting, passed, revise, to_mix, to_remix = [], [], [], [], []
-        for p in mine:
-            t = by_task.get((drama, p["task"]))
+        for p in plan_tasks:
+            name = p.name
+            t = by_task.get((drama, name))
             if not t:
-                # 没登记状态的新片子，多半是刚排出来等人过目
-                waiting.append(p["task"])
+                # 有清单、没登记状态的，按「等人过目」算
+                waiting.append(name)
                 continue
             sc = next((s for s in t["stages"] if s["key"] == "script"), {})
             tr = next((s for s in t["stages"] if s["key"] == "trailer"), {})
             if "script" in t["reasons"]:
-                revise.append(p["task"])
+                revise.append(name)
             elif sc.get("state") == "approved":
-                passed.append(p["task"])
+                passed.append(name)
             elif sc.get("state") == "superseded":
                 pass
             else:
-                waiting.append(p["task"])
+                waiting.append(name)
             if "trailer" in t["reasons"]:
-                to_remix.append(p["task"])
+                to_remix.append(name)
             elif tr.get("state") not in ("done", "approved", "superseded"):
-                to_mix.append(p["task"])
+                to_mix.append(name)
+
         eps = a.get("eps") or []
         video_count = a.get("video_count") or len(eps)
         # 分母沿用「已经动工的集数」，不换成全剧总集数：
         # 一部剧可能只挑前 19 集分析，用 60 集当分母会把做完的活显示成 29%。
-        # 全剧集数另给前端，在展开的细节里提示。
         total_eps = len(eps) or video_count
         line_total = sum(e["line_count"] for e in eps)
         sentences = sum(e["sentence_count"] for e in eps)
@@ -650,25 +673,28 @@ def api_pipelines() -> dict:
         lines_eps = sum(1 for e in eps if e["has_lines"])
         shots_eps = sum(1 for e in eps if e["has_shots"])
         sent_eps = sum(1 for e in eps if e["has_sentences"])
-        # ① 的百分比：每集要交三份资料（台词、镜头标注、合表），按份数算。
-        # 只按「三样都齐的集数」算，会出现台词全齐、只差合表却显示 0% 的冤枉进度。
+        # 每集要交三份资料（台词、镜头标注、合表），按份数算。
+        parts_done = lines_eps + shots_eps + sent_eps
         parts_total = total_eps * 3
-        pct1 = round((lines_eps + shots_eps + sent_eps) / parts_total * 100) if parts_total else 0
-        n_tasks = len(mine)
-        pct2 = round(len(passed) / n_tasks * 100) if n_tasks else 0
-        vf = [p for p in mine
-              if pv_groups.get((drama, p["task"]), {}).get("has_current")]
-        pct3 = round(len(vf) / n_tasks * 100) if n_tasks else 0
+        pct1 = round(parts_done / parts_total * 100) if parts_total else 0
+
+        script_pct = round(script_count / task_count * 100) if task_count else 0
+        review_pct = round(len(passed) / script_count * 100) if script_count else 0
+        vf = [p for p in plan_tasks
+              if pv_groups.get((drama, p.name), {}).get("has_current")]
+        final_pct = round(len(vf) / script_count * 100) if script_count else 0
+
         active = (ov["active"] or {})
         out.append({
             "drama": drama,
             "active": active.get("drama") == drama,
             "stage1": {
-                "label": "素材分析建库",
+                "label": "素材分析",
                 "ep_count": a.get("ep_count", 0),
                 "ready_count": a.get("ready_count", 0),
                 "video_count": video_count,
                 "lines_eps": lines_eps, "shots_eps": shots_eps, "sent_eps": sent_eps,
+                "parts_done": parts_done, "parts_total": parts_total,
                 "lines": line_total,
                 "sentences": sentences,
                 "named_pct": round(named / sentences * 100, 1) if sentences else 0,
@@ -678,17 +704,23 @@ def api_pipelines() -> dict:
                 "done": total_eps > 0 and sent_eps == total_eps,
             },
             "stage2": {
-                "label": "文案生成",
-                "tasks": n_tasks,
-                "waiting": waiting, "passed": passed, "revise": revise,
-                "pct": pct2,
-                "unlogged": not any((drama, p["task"]) in by_task for p in mine),
+                "label": "文案",
+                "count": script_count,
+                "total": task_count,
+                "pct": script_pct,
+            },
+            "review": {
+                "label": "审核",
+                "passed": passed, "waiting": waiting, "revise": revise,
+                "total": script_count,
+                "pct": review_pct,
             },
             "stage3": {
                 "label": "出片",
                 "final_count": len(vf),
                 "to_mix": to_mix, "to_remix": to_remix,
-                "pct": pct3,
+                "total": script_count,
+                "pct": final_pct,
             },
         })
     return {"pipelines": out, "generated_at": ov["generated_at"],

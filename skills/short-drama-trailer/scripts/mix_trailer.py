@@ -18,6 +18,8 @@ plan.json 驱动的 ffmpeg concat 装配。铁律内置：
 plan 级字段：src_dir（剧集目录）、card（默认字幕卡图）、w/h/fps（默认 720/1280/24）。
 相对路径一律相对 plan.json 所在目录解析；src_dir 支持 ${环境变量} 展开。
 换机器时不必改 plan：设置环境变量 SHORT_DRAMA_SRC_DIR 指向剧集目录即可覆盖 src_dir。
+素材被人挪了目录也不必改 plan：src_dir 解析后若不存在，会取路径末段当剧名，
+查仓库根 config/drama-sources.json 的登记表自动纠正（2026-11-12 素材整体搬家后加）。
 集文件命名兼容「第N集_」「第N集 」「ep_N_」「episode_0N_」「EPN_」等，N 后紧跟数字不算命中
 （避免找第 1 集时误取第 10 集）。
 
@@ -34,6 +36,25 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from pathlib import Path
+
+
+def repo_root() -> Path:
+    for p in Path(__file__).resolve().parents:
+        if (p / "runs" / "工作台.json").exists():
+            return p
+    return Path.cwd()
+
+
+# 进度上报给主管的网页看；找不到模块就降级，不影响装配本身。
+try:
+    sys.path.insert(0, str(repo_root() / "skills" / "short-drama-supervisor" / "scripts"))
+    import progress
+except Exception:
+    class _NoProgress:
+        def __getattr__(self, _name):
+            return lambda *a, **k: None
+    progress = _NoProgress()
 
 
 def find_ff(override):
@@ -66,6 +87,37 @@ def stream_dur(fp, path, sel):
     if r.returncode != 0 or not r.stdout.strip():
         return None
     return float(r.stdout.strip().splitlines()[0])
+
+
+def find_sources_map():
+    """向上找 config/drama-sources.json，返回 {剧名: 素材目录}；找不到返回空表。"""
+    d = os.path.dirname(os.path.abspath(__file__))
+    for _ in range(6):
+        p = os.path.join(d, "config", "drama-sources.json")
+        if os.path.isfile(p):
+            try:
+                return json.load(open(p, encoding="utf-8")).get("dramas", {})
+            except Exception:
+                return {}
+        parent = os.path.dirname(d)
+        if parent == d:
+            break
+        d = parent
+    return {}
+
+
+def relocate_src(src_dir):
+    """素材被人整目录搬走时，按「路径末段＝剧名」查登记表找回，存量清单不必改路径。"""
+    if not src_dir or os.path.isdir(src_dir):
+        return src_dir
+    key = os.path.basename(os.path.normpath(src_dir))
+    alt = find_sources_map().get(key)
+    if alt:
+        alt = os.path.expandvars(alt)
+        if os.path.isdir(alt):
+            print(f"素材目录已变动，按剧名「{key}」查登记表改用：{alt}")
+            return alt
+    return src_dir
 
 
 def ep_file(src_dir, n):
@@ -114,7 +166,7 @@ def main():
     FPS = plan.get("fps", 24)
     src_dir = os.environ.get("SHORT_DRAMA_SRC_DIR") or plan.get("src_dir")
     if src_dir:
-        src_dir = resolve(os.path.expandvars(src_dir))
+        src_dir = relocate_src(resolve(os.path.expandvars(src_dir)))
     card_default = plan.get("card")
 
     ff = find_ff(args.ff)
@@ -253,9 +305,27 @@ def main():
         t += d
     print(f"  合计 {t:.2f}s")
 
-    r = subprocess.run(cmd)
+    plan_path = Path(args.plan).resolve()
+    drama = plan_path.parent.parent.name
+    task = plan_path.parent.name
+    progress.start("mix_trailer", drama, task, total=0, unit="次",
+                   note=f"{n} 段 / {total:.1f}s")
+    # ffmpeg 可能跑 3–5 分钟；每 30 秒 touch 一次，页面不会误判成卡死
+    stop_beat = progress.heartbeat("mix_trailer", drama, task,
+                                   every=30, note="ffmpeg 装配中")
+    try:
+        r = subprocess.run(cmd)
+    except Exception as e:
+        progress.fail("mix_trailer", drama, task,
+                      note=f"{e.__class__.__name__}: {str(e)[:100]}")
+        raise
+    finally:
+        if stop_beat:
+            stop_beat()
     if r.returncode != 0:
+        progress.fail("mix_trailer", drama, task, note=f"ffmpeg 退出码 {r.returncode}")
         sys.exit("ffmpeg 失败")
+    progress.finish("mix_trailer", drama, task, note=f"{total:.1f}s")
     print(f"完成 {out}  {total:.2f}s")
 
 

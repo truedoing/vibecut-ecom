@@ -27,6 +27,16 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
+# 进度上报给主管的网页看；找不到模块就降级，不影响 OCR 本身。
+try:
+    sys.path.insert(0, str(ROOT / "skills" / "short-drama-supervisor" / "scripts"))
+    import progress
+except Exception:
+    class _NoProgress:
+        def __getattr__(self, _name):
+            return lambda *a, **k: None
+    progress = _NoProgress()
+
 ASSET_ROOT = None
 for _line in (ROOT / ".env").read_text(encoding="utf-8").splitlines():
     if _line.startswith("SHORT_DRAMA_ASSET_ROOT="):
@@ -94,20 +104,30 @@ def ocr_one(engine, frame: Path, crop_top: float, crop_bottom: float) -> str:
     return " ".join(parts)
 
 
-def extract_ep(ep: int, video: Path, engine, crop=(CROP_TOP, CROP_BOTTOM), step=STEP) -> dict:
+def extract_ep(ep: int, video: Path, engine, crop=(CROP_TOP, CROP_BOTTOM),
+               step=STEP, drama: str = "") -> dict:
     dur = duration(video)
     with tempfile.TemporaryDirectory(prefix=f"sd_ep{ep:02d}_") as td:
         pattern = str(Path(td) / "f_%04d.jpg")
-        subprocess.run(
-            [tool("ffmpeg"), "-v", "error", "-i", str(video),
-             "-vf", f"fps=1/{step}", "-q:v", "3", pattern],
-            check=True,
-        )
+        stop_beat = progress.heartbeat("ocr_lines", drama, ep, every=30, note="抽帧中")
+        try:
+            subprocess.run(
+                [tool("ffmpeg"), "-v", "error", "-i", str(video),
+                 "-vf", f"fps=1/{step}", "-q:v", "3", pattern],
+                check=True,
+            )
+        finally:
+            if stop_beat:
+                stop_beat()
         frames = sorted(Path(td).glob("f_*.jpg"))
+        progress.update("ocr_lines", drama, ep, done=0, total=len(frames),
+                        note="抽帧完成，开始识别")
         raw = []
         for i, f in enumerate(frames):
             txt = ocr_one(engine, f, crop[0], crop[1])
             raw.append({"t": i * step, "text": txt})
+            progress.update("ocr_lines", drama, ep, done=i + 1,
+                            total=len(frames), note=f"{i + 1}/{len(frames)} 帧")
 
     # 相邻帧同一句字幕去重：保留首次出现，时间取起点
     lines = []
@@ -122,6 +142,7 @@ def extract_ep(ep: int, video: Path, engine, crop=(CROP_TOP, CROP_BOTTOM), step=
         lines.append({"t": row["t"], "text": row["text"]})
         prev = cur
 
+    progress.finish("ocr_lines", drama, ep, note=f"{len(lines)} 句")
     return {
         "ep": ep,
         "file": video.name,
@@ -148,8 +169,14 @@ def _init_worker():
 
 
 def _work_one(task):
-    ep, video, crop, step = task
-    return extract_ep(ep, video, _W["engine"], crop, step)
+    ep, video, crop, step, drama = task
+    progress.start("ocr_lines", drama, ep, total=0, unit="帧")
+    try:
+        return extract_ep(ep, video, _W["engine"], crop, step, drama)
+    except Exception as e:
+        progress.fail("ocr_lines", drama, ep,
+                      note=f"{e.__class__.__name__}: {str(e)[:100]}")
+        raise
 
 
 def _save(out_dir: Path, data: dict) -> Path:
@@ -217,7 +244,13 @@ def main():
             from rapidocr_onnxruntime import RapidOCR
             engine = RapidOCR()
             for ep in todo:
-                data = extract_ep(ep, videos[ep], engine, crop, args.step)
+                progress.start("ocr_lines", args.drama, ep, total=0, unit="帧")
+                try:
+                    data = extract_ep(ep, videos[ep], engine, crop, args.step, args.drama)
+                except Exception as e:
+                    progress.fail("ocr_lines", args.drama, ep,
+                                  note=f"{e.__class__.__name__}: {str(e)[:100]}")
+                    raise
                 dst = _save(out_dir, data)
                 done.append(ep)
                 print(f"ep{ep:02d}  {data['duration']:>7.1f}s  {data['line_count']:>3d} 句"
@@ -226,13 +259,15 @@ def main():
             from concurrent.futures import ProcessPoolExecutor, as_completed
             print(f"并行 {jobs} 路，共 {len(todo)} 集", flush=True)
             with ProcessPoolExecutor(max_workers=jobs, initializer=_init_worker) as ex:
-                futs = {ex.submit(_work_one, (ep, videos[ep], crop, args.step)): ep
+                futs = {ex.submit(_work_one, (ep, videos[ep], crop, args.step, args.drama)): ep
                         for ep in todo}
                 for fut in as_completed(futs):
                     ep = futs[fut]
                     try:
                         data = fut.result()
                     except Exception as e:
+                        progress.fail("ocr_lines", args.drama, ep,
+                                      note=f"{e.__class__.__name__}: {str(e)[:100]}")
                         print(f"ep{ep:02d} 失败：{e}", flush=True)
                         continue
                     dst = _save(out_dir, data)

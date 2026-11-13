@@ -20,6 +20,9 @@ data/
 .env
 config.local.json
 
+# 运行中进度（脚本实时写，不必入库）
+runs/进度/
+
 # WorkBuddy local state (memory / handoff) — never commit
 .workbuddy/
 

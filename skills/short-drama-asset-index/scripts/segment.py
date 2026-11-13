@@ -38,6 +38,18 @@ def repo_root() -> Path:
     return Path(__file__).resolve().parents[3]
 
 
+ROOT = repo_root()
+# 进度上报给主管的网页看；找不到模块就降级，不影响切分本身。
+try:
+    sys.path.insert(0, str(ROOT / "skills" / "short-drama-supervisor" / "scripts"))
+    import progress
+except Exception:
+    class _NoProgress:
+        def __getattr__(self, _name):
+            return lambda *a, **k: None
+    progress = _NoProgress()
+
+
 def load_lines(lines_dir: Path, ep: int) -> dict:
     p = lines_dir / f"lines_ep{ep:02d}.json"
     if not p.exists():
@@ -117,15 +129,23 @@ def segments_of(lines: list[dict], duration: float) -> list[dict]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--drama", required=True,
+                    help="剧名＝剧库目录名，如 父爱跨越山海")
     ap.add_argument("--ep", nargs="*", type=int)
     ap.add_argument("--all", action="store_true")
-    ap.add_argument("--write", action="store_true", help="合并写入 asset_index.json")
+    ap.add_argument("--write", action="store_true", help="合并写入 segments_skeleton.json")
     args = ap.parse_args()
 
     root = repo_root()
-    lines_dir = root / "assets/short-drama/八零憨妻的甜蜜日常/lines"
+    lines_dir = root / "assets/short-drama" / args.drama / "lines"
+    if not lines_dir.exists():
+        ap.error(f"台词库不存在：{lines_dir}")
     if args.all:
-        eps = list(range(1, 20))          # 第 20 集大结局按任务要求排除
+        # 集数从台词库实际文件推断，不写死——换剧时台词库做到第几集就切到第几集
+        eps = sorted(int(p.stem.replace("lines_ep", ""))
+                     for p in lines_dir.glob("lines_ep*.json"))
+        if not eps:
+            ap.error(f"{lines_dir} 下没有 lines_epNN.json")
     elif args.ep:
         eps = args.ep
     else:
@@ -134,18 +154,27 @@ def main() -> int:
     result = {}
     total_seg = 0
     for ep in eps:
-        d = load_lines(lines_dir, ep)
-        segs = segments_of(d["lines"], d["duration"])
-        result[ep] = {"duration": d["duration"], "segments": segs}
-        total_seg += len(segs)
-        lens = [s["duration"] for s in segs]
-        print(f"EP{ep:02d} {d['duration']:6.1f}s -> {len(segs)} 段  "
-              f"段长 {min(lens):.0f}-{max(lens):.0f}s  句数 {[len(s['line_times']) for s in segs]}")
+        progress.start("segment", args.drama, ep, total=1, unit="集")
+        try:
+            d = load_lines(lines_dir, ep)
+            segs = segments_of(d["lines"], d["duration"])
+            result[ep] = {"duration": d["duration"], "segments": segs}
+            total_seg += len(segs)
+            lens = [s["duration"] for s in segs]
+            print(f"EP{ep:02d} {d['duration']:6.1f}s -> {len(segs)} 段  "
+                  f"段长 {min(lens):.0f}-{max(lens):.0f}s  句数 {[len(s['line_times']) for s in segs]}")
+            progress.update("segment", args.drama, ep, done=1, total=1,
+                            note=f"{len(segs)} 段")
+            progress.finish("segment", args.drama, ep, note=f"{len(segs)} 段")
+        except Exception as e:
+            progress.fail("segment", args.drama, ep,
+                          note=f"{e.__class__.__name__}: {str(e)[:100]}")
+            raise
 
     print(f"\n合计 {len(eps)} 集 / {total_seg} 段 / 平均 {total_seg/len(eps):.1f} 段每集")
 
     if args.write:
-        out = root / "assets/short-drama/八零憨妻的甜蜜日常/segments_skeleton.json"
+        out = root / "assets/short-drama" / args.drama / "segments_skeleton.json"
         out.write_text(json.dumps({"generated_by": "segment.py", "gap_limit": GAP_LIMIT,
                                    "min_len": MIN_LEN, "max_len": MAX_LEN,
                                    "lines_ref": {"dir": "lines/", "pattern": "lines_epNN.json",
