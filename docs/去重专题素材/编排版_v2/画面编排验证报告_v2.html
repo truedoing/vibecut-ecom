@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画面编排验证报告 v2 · 以真心守护至亲 D3</title>
+<style>
+  :root{
+    --bg:#f6f3ee; --paper:#fffdf9; --ink:#2b2621; --sub:#6d645a;
+    --line:#e3dccf; --gold:#a8802f; --goldbg:#f6edda;
+    --red:#a8443a; --redbg:#f8eae7; --green:#3f6b4e; --greenbg:#eaf1ea;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:15px;}
+  .wrap{max-width:960px;margin:0 auto;padding:36px 28px 72px}
+  header{border-bottom:3px solid var(--gold);padding-bottom:22px;margin-bottom:28px}
+  .kicker{color:var(--gold);font-size:13px;letter-spacing:2px;font-weight:700}
+  h1{font-size:29px;margin:8px 0 6px;letter-spacing:-.5px}
+  .meta{color:var(--sub);font-size:13px}
+  h2{font-size:20px;margin:38px 0 14px;padding-left:12px;border-left:4px solid var(--gold)}
+  h3{font-size:16px;margin:24px 0 10px}
+  p{margin:10px 0}
+  .lead{background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:18px 20px;font-size:16px;line-height:1.85}
+  .status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 8px}
+  .status div{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:13px 15px}
+  .status b{display:block;color:var(--gold);font-size:12px;letter-spacing:1px;margin-bottom:5px}
+  .status span{font-size:13.5px}
+  table{width:100%;border-collapse:collapse;margin:14px 0;background:var(--paper);
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:14px}
+  th{background:#efe8da;text-align:left;padding:11px 13px;font-weight:700;color:#4a4033}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  td:first-child{font-weight:600}
+  .del{color:var(--red);text-decoration:line-through;opacity:.8}
+  .add{color:var(--green);font-weight:600}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:18px 20px;margin:14px 0}
+  .tag{display:inline-block;background:var(--goldbg);color:var(--gold);border-radius:5px;
+    padding:1px 9px;font-size:12px;font-weight:700;margin-right:7px}
+  .tag.g{background:var(--greenbg);color:var(--green)}
+  .tag.r{background:var(--redbg);color:var(--red)}
+  .note{background:#fbf6ea;border-left:4px solid var(--gold);padding:13px 17px;
+    border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
+  .warn{background:var(--redbg);border-left:4px solid var(--red);padding:13px 17px;
+    border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
+  figure{margin:16px 0;background:var(--paper);border:1px solid var(--line);
+    border-radius:10px;padding:14px;text-align:center}
+  figure img{max-width:100%;border-radius:6px;display:block;margin:0 auto}
+  figcaption{color:var(--sub);font-size:13px;margin-top:10px;text-align:left}
+  video{width:100%;max-width:420px;border-radius:8px;background:#000;display:block;margin:0 auto}
+  .gifs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gifs figure{margin:0;padding:10px}
+  .gifs img{max-width:100%;border-radius:5px}
+  .gifs figcaption{font-size:12px;text-align:center;margin-top:7px}
+  ul{padding-left:22px;margin:10px 0} li{margin:6px 0}
+  code{background:#efe8da;padding:1px 6px;border-radius:4px;font-size:13px;
+    font-family:"SF Mono",Menlo,monospace}
+  .small{font-size:13px;color:var(--sub)}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--sub);font-size:12.5px}
+  @media(max-width:700px){.status,.gifs{grid-template-columns:1fr 1fr} .wrap{padding:22px 16px 50px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">画面编排 · 验证报告 v2</div>
+  <h1>去掉 PPT 感、改成动态浮层、文字只给观众看</h1>
+  <div class="meta">验证对象：《以真心守护至亲》D3「线一认不认这个妈」v3 成片 &nbsp;·&nbsp; 2026-11-14 &nbsp;·&nbsp; v2（v1 全部保留做对照）</div>
+</header>
+
+<p class="lead">
+一句话结论：<b>三处都改完并跑通了。</b>整屏深色页面没有了，改成半透明浮层，原剧画面全程可见；卡片全部做成淡入／上滑／逐条出现／淡出的动效，不再"啪"地弹一页；图层上的制作术语和幕结构词全删，换成剧里本来就有的钩子句、人物台词和悬念收尾——<b>一句没手写，全部从剧集包自动取</b>。进度条按你说的留着，但改成纯图形刻度，上面一个字都没有。
+</p>
+
+<div class="status">
+  <div><b>做到哪了</b><span>v2 演示片、4 个动效 GIF、1152 帧带透明通道的图层帧序列、抽帧总览。</span></div>
+  <div><b>卡在哪</b><span>仍是效果验证，没测平台查重读数；情绪条仍因缺素材索引没做。</span></div>
+  <div><b>下一步</b><span>看完定动效时长和浮层浓度，再接进装配器做一次编码全片。</span></div>
+</div>
+
+<h2>一、风格：从"一页 PPT"改成"画面上的浮层"</h2>
+<table>
+  <tr><th>v1（上一版）</th><th>v2（这一版）</th></tr>
+  <tr><td>整屏深色不透明底板，画面全被盖住</td><td>局部渐变遮罩 + 半透明浮层，<b>原剧画面继续可见</b></td></tr>
+  <tr><td>居中大标题、圆角框、圆形节点连线的关系图</td><td>左对齐、竖金线、描边大字；人物改成<b>三条名片</b>（名字 + 这个角色的一句台词）</td></tr>
+  <tr><td>静态整页，到点硬切进来、硬切走</td><td>淡入 0.7 秒 → 停留 → 淡出，文字逐行、名片逐条错峰浮现</td></tr>
+  <tr><td>顶部标题 + 底部图例说明，像汇报页</td><td>没有标题、没有图例，只有给观众看的内容本身</td></tr>
+</table>
+
+<figure>
+  <img src="成片抽帧_v2.png" alt="v2 成片抽帧">
+  <figcaption>11 个时间点的成片实拍帧。对比 1 / 4 / 7 秒：悬念句是慢慢浮出来的，不是突然一页；15 / 18 秒人物名片逐条滑入；33 秒金句淡入；45 / 47 秒收尾句在画面上半部，避开了原剧字幕。全程原剧画面没有被盖死，角标和进度条常驻但不抢戏。</figcaption>
+</figure>
+
+<h2>二、动效：GIF 给你看，帧序列进视频</h2>
+<div class="card">
+<p><b>你问的"能不能生成动态 GIF 渲染进视频"，这里有个技术取舍，如实说：</b></p>
+<p>动效确实做了，而且导出了 4 个 GIF，可以直接在浏览器或微信里打开看。但<b>真正叠进视频的不是 GIF 文件</b>，而是同一套动效渲染出的<b>带半透明通道的 PNG 帧序列</b>（1152 帧）。原因很实在：GIF 只有 256 色，透明只有"全透 / 全不透"两档，半透明浮层叠到视频上会出色带和锯齿边缘；PNG 帧序列带完整透明通道，叠上去干净。工程上做视频合成都用后者，GIF 是给人和甲方预览用的。</p>
+<p class="small">一句话：GIF 是"看效果"，帧序列是"进片子"，两者是同一份动效的两种输出。</p>
+</div>
+
+<div class="gifs">
+  <figure><img src="GIF预览/hook动效.gif" alt="悬念句动效"><figcaption>悬念句渐入</figcaption></figure>
+  <figure><img src="GIF预览/people动效.gif" alt="人物名片动效"><figcaption>人物名片逐条浮入</figcaption></figure>
+  <figure><img src="GIF预览/quote动效.gif" alt="金句动效"><figcaption>金句淡入</figcaption></figure>
+  <figure><img src="GIF预览/end动效.gif" alt="收尾动效"><figcaption>悬念收尾</figcaption></figure>
+</div>
+<p class="small">四个 GIF 都叠了真实画面做底，所以看到的就是叠进片子之后的样子。</p>
+
+<h2>三、文字：只留观众看得懂的信息</h2>
+<p>你定的原则是"信息是给观众看的"。据此把图层上的制作术语、幕结构、数据来源说明全部删掉，换成剧集包里现成的观众向文案。<b>下面这些字一句都没手写</b>，全从包里自动取。</p>
+
+<table>
+  <tr><th>位置</th><th>删掉的（给制作方看的）</th><th>换成（给观众看的）</th><th>数据从哪来</th></tr>
+  <tr><td>角标副行</td><td class="del">剧情解读 · 画面编排验证</td><td class="add">（整行删掉，只留剧名）</td><td><code>drama_facts.title</code></td></tr>
+  <tr><td>进度条</td><td class="del">剧情进度 / 1认 2逼 3抢 4露 5揭</td><td class="add">纯图形五段刻度，一个字不留</td><td>按段序自动算比例</td></tr>
+  <tr><td>章节卡</td><td class="del">第 1 幕 / 认 / 第 1–4 集 / 章节名取自 story_arc.acts</td><td class="add">她推着一把破轮椅走进女儿的婚礼，底下是五十斤黄金。</td><td><code>hook_map[0].opening_lines[0]</code></td></tr>
+  <tr><td>人物关系图</td><td class="del">人物关系 / 谁站哪一边 / 主角 对立面 配角 / 母女（金线）周家（红线） / 本图文字取自剧集包 characters 字段</td><td class="add">林秀兰「我把50斤黄金做成轮椅…」<br>许宁「这婚我不结了」<br>许晴「继续吧新娘换成我」</td><td><code>characters[].name + evidence.quote</code></td></tr>
+  <tr><td>金句花字</td><td class="del">第 1 集 · 原剧台词</td><td class="add">可我妈妈17年前就没了</td><td><code>elements.golden_quotes[1].quote</code></td></tr>
+  <tr><td>片尾落版</td><td class="del">画面编排验证版 / 编排 · 图层 · 统一视觉参数 / 本片仅用于效果验证</td><td class="add">往下看她到底是谁</td><td><code>elements.ctas[0].text</code></td></tr>
+</table>
+<div class="note">
+<b>关于"转、接"这类结构词：</b>画面里原本没有这两个字，我按"凡是幕号、集数、章节名、结构标记、制作说明都不给观众看"这条来处理——进度条上的五幕名（认/逼/抢/露/揭）、章节卡的"第 1 幕 / 第 1–4 集"、金句的"第 1 集"、以及所有"取自剧集包…字段"的说明，全部清除。如果你指的是别的具体字样，告诉我再删。
+</div>
+
+<h2>四、成片演示</h2>
+<figure>
+  <video controls preload="metadata" src="编排演示_v2_48秒.mp4"></video>
+  <figcaption><b>v2 演示片（48 秒，可播放）</b>。四段各 12 秒，原声、原剧字幕全程保留。建议重点看四个卡片的进出：是不是还有"突然一页"的感觉。</figcaption>
+</figure>
+
+<table>
+  <tr><th>时间</th><th>镜头</th><th>画面处理</th><th>浮层动效</th></tr>
+  <tr><td>0–12 秒</td><td>老太太特写</td><td>A3 统一调色 + 角标 + 进度条</td><td>2.5 秒起，悬念句渐入、逐行浮现、淡出</td></tr>
+  <tr><td>12–24 秒</td><td>双人前后景</td><td>A1 画中画 + A3</td><td>2.5 秒起，三条人物名片从右逐条滑入</td></tr>
+  <tr><td>24–36 秒</td><td>新娘 + 轮椅</td><td>A3 + "另一个人"辅助窗（4–9 秒）</td><td>5.5 秒起，金句描边大字淡入</td></tr>
+  <tr><td>36–48 秒</td><td>新郎</td><td>A3 + 细节放大窗（3–8 秒）</td><td>8 秒起，收尾悬念浮在上半部</td></tr>
+</table>
+
+<h2>五、这轮修掉的两个问题</h2>
+<ul>
+  <li><b>金句被右边界切字。</b>原来字号写死 52px，"可我妈妈17年前就没了"最后一个字出画。改成按文字宽度自动缩字号，长句短句都不出界。</li>
+  <li><b>收尾句和原剧字幕撞在一起。</b>收尾原本放在画面下 70%，正好压住 62–66% 的原剧字幕带。挪到上半部 22%，并加了描边保证亮画面上也读得清。</li>
+</ul>
+<p class="small">这两处是抽帧复核时发现的，改完重跑了一遍，报告里的图和视频都是修复后的版本。</p>
+
+<h2>六、边界，如实说</h2>
+<ul>
+  <li><b>没测平台查重读数。</b>这轮验证的是观感和能不能自动跑，不是有效性。要判断有没有用，得用巨量创意的素材投前分析，出"不挂 / 挂"两版各测一次。</li>
+  <li><b>语义层没变。</b>台词、剧情、人物还是这部剧，画面手段改不了这一层。</li>
+  <li><b>仍是二次编码预览。</b>拿已拼好的 v3 成片再跑一遍，画质掉一档；正式接产线要按技术方案走装配器内一次编码。</li>
+  <li><b>演示片只取 4 段共 48 秒、分辨率 540×960</b>，不是全片成片。原片 231.7 秒 / 1080×1920 规格没变，v3.mp4、装配器脚本、方案文档全没动。</li>
+  <li><b>情绪条仍缺数据源。</b>这部剧没有 <code>asset_index.json</code>，这轮继续留空，没编数据。</li>
+  <li><b>帧序列体积不小。</b>1152 帧 PNG 是验证产物，正式做技能时会改成按段生成、用完即清，不会常驻占空间。</li>
+  <li><b>GIF 是预览用的。</b>256 色限制下颜色会比成片略糙，成片以视频为准。</li>
+</ul>
+
+<h2>七、下一步，等你看完再定</h2>
+<ol>
+  <li>定动效参数：卡片停留多久、浮层遮罩压多暗、一条片子出现几次。</li>
+  <li>定完把这套链子接进装配器，加开关，从清单重新装配出<b>一次编码的全片</b>。</li>
+  <li>再出"不挂 / 挂"两版，用素材投前分析各测一次重复度。</li>
+  <li>修饰技能（图层文字这块）和文案侧约束另开，不混在这轮。</li>
+</ol>
+
+<footer>
+产物目录：<code>runs/以真心守护至亲/D3_线一认不认这个妈/build/去重预览/编排版_v2/</code><br>
+生成脚本：<code>生成_v2_动态图层.py</code>（验证用，不是产线技能，未进流水线）<br>
+v1 产物保留在 <code>编排版/</code>，含 <code>画面编排验证报告.html</code>，可做前后对照。<br>
+本轮未修改任何已有产物：方向卡、剪辑清单、装配器、v3 成片、两份方案文档、v1 产物均未改动。
+</footer>
+
+</div>
+</body>
+</html>

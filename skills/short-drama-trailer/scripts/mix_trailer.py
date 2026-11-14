@@ -25,8 +25,33 @@ plan 级字段：src_dir（剧集目录）、card（默认字幕卡图）、w/h/
 
 用法：
   python3 mix_trailer.py --plan plan.json --out 成片.mp4 [--ff /path/ffmpeg] [--dry]
+  python3 mix_trailer.py --plan plan.json --out 成片.mp4 --allow-mid-speech
+  python3 mix_trailer.py --plan plan.json --out 成片.mp4 --dedup dedup_spec.json
 
 --dry 只跑校验和段落表打印，不执行 ffmpeg。
+
+画面层参数表（2026-11-14 加，可选）
+--------------------------------
+`--dedup <spec.json>` 挂技能产出的「画面参数表」：逐段可挑几段做 A1 包装、
+concat 之后挂一次全局参数包 + 循环扫光 + ASS 文字，全部并进同一张滤镜图，
+**全程只编码一次**，不对已经拼好的成片二次压制。
+
+spec 由两个可选技能共同产出：去重技能写 dedup 段（a1 / global / sweep），
+修饰技能写 decorate 段（ass 字幕文件）。装配器只负责「挂上去」，不做任何
+剪辑决策，不改段序、段长、清单字段，音频链一行不动。
+
+**不给 --dedup 就完全不挂**，行为跟加这个开关之前一模一样，存量片子不受影响。
+
+刀口体检（2026-11-14 加）
+------------------------
+段表的两头原来只按镜头切，不管这句话说完没有，于是出片里常出现「半句被切」。
+现在装配前读素材解析产出的停顿表 `assets/short-drama/<剧>/cuts/epNN.json`
+（由 short-drama-asset-index 的 cut_index.py --build 生成），逐个刀口判：
+落在停顿里过；差 0.30 秒以内算贴边，警告放行；**出点**再远就是切在说话中间，拒装。
+入点切在连读中间只警告不拦——两句之间没静音是原片常态，剪进去听不出断，真正难听的是
+「这句没说完画面就走了」，那只有出点。判据与 cut_index.py 的 judge_cut 同源，改一处要同步。
+没有停顿表时只提示、不拦（老剧没算过也能装）；--no-cut-check 可整体跳过。
+--allow-mid-speech 明知有切半句也照装（给人自己定的时候用）。
 """
 import argparse
 import json
@@ -145,12 +170,186 @@ def ep_file(src_dir, n):
         f"src_dir 下找不到第 {n} 集文件（支持 第N集 / ep_N / episode_N / 纯数字 N 命名）：{src_dir}")
 
 
+# ---------- 刀口体检：别切在人家说话中间 ----------
+# 判据与 short-drama-asset-index/scripts/cut_index.py 的 judge_cut 同源。
+CUT_EDGE_TOL = 0.03      # 刀口落在停顿边界外的容差
+CUT_WARN_DIST = 0.30     # 距最近停顿多远以内算贴边
+CUT_TAIL_GUARD = 0.15    # 集末视频流最后这么多秒，刀口一律放行
+
+
+def plan_drama(plan, plan_path, src_dir):
+    if src_dir:
+        n = os.path.basename(os.path.normpath(src_dir))
+        if n:
+            return n
+    return os.path.basename(os.path.dirname(os.path.dirname(os.path.abspath(plan_path))))
+
+
+def load_cuts(drama, cuts_dir=None):
+    d = cuts_dir or os.path.join(str(repo_root()), "assets", "short-drama", drama, "cuts")
+    if not os.path.isdir(d):
+        return {}, d
+    out = {}
+    for f in sorted(os.listdir(d)):
+        m = re.match(r"ep(\d+)\.json$", f)
+        if not m:
+            continue
+        try:
+            out[int(m.group(1))] = json.load(open(os.path.join(d, f), encoding="utf-8"))
+        except Exception:
+            continue
+    return out, d
+
+
+def judge_cut(pauses, t, video_dur, is_in):
+    """返回 (级别, 说明, 建议)。级别 error / warn / ok。"""
+    if t <= 0.05:
+        return "ok", "集开头", None
+    if video_dur and t >= video_dur - CUT_TAIL_GUARD:
+        return "ok", "贴集末", None
+    best_d, best = 1e9, None
+    for a, b in pauses:
+        if a - CUT_EDGE_TOL - 1e-9 <= t <= b + CUT_EDGE_TOL + 1e-9:
+            return "ok", "", None
+        d = a - t if t < a else t - b
+        if d < best_d:
+            best_d, best = d, [a, b]
+    if best is None:
+        return "warn", "整集没测到停顿，无法判断", None
+    seg = f"{best[0]:.2f}–{best[1]:.2f}"
+    if best_d <= CUT_WARN_DIST:
+        return "warn", f"差 {best_d:.2f}s（最近停顿 {seg}）", None
+    # 给两个候选：往后到下一个停顿、往前退到上一个停顿
+    nxt = [(a, b) for a, b in pauses if a > t - 0.06]
+    prv = [(a, b) for a, b in pauses if b < t + 0.06]
+    hints = []
+    if nxt:
+        a, b = nxt[0]
+        hints.append(f"往后到 {(a + b) / 2:.2f}（多带 {a - t:+.2f}s）")
+    if prv:
+        a, b = prv[-1]
+        hints.append(f"往前到 {(a + b) / 2:.2f}（少带 {b - t:+.2f}s）")
+    return ("error", f"切在说话中间，距最近停顿 {best_d:.2f}s（{seg}）",
+            "；".join(hints) if hints else None)
+
+
+def cut_check(plan, plan_path, src_dir, cuts_dir=None, allow=False):
+    """逐刀口体检。返回 True 表示可以装配。"""
+    drama = plan_drama(plan, plan_path, src_dir)
+    cuts, found = load_cuts(drama, cuts_dir)
+    print(f"\n刀口体检（{drama}）：")
+    if not cuts:
+        print(f"  没有停顿表（{found} 不存在），跳过。"
+              f"要体检先跑：cut_index.py --build --drama {drama}")
+        return True
+    errors, warns, n, no_table = [], [], 0, []
+    for s in plan["segs"]:
+        if s.get("type") != "ep":
+            continue
+        c = cuts.get(s["ep"])
+        if not c:
+            no_table.append(s["ep"])
+            continue
+        vd = c.get("video_duration")
+        pauses = c.get("pauses") or []
+        for is_in, t, tag in ((True, s["a"], "入点"), (False, s["b"], "出点")):
+            n += 1
+            lvl, why, hint = judge_cut(pauses, t, vd, is_in)
+            if lvl == "error" and is_in:
+                # 入点落在连读中间（两句之间没静音）是真实现场常见切法，只警告不拦；
+                # 出点切在话中间才是「说完之前画面走了」。用户指出的三处全是出点。
+                lvl, why = "warn", "入点在连读中间：" + why
+            if lvl == "error":
+                errors.append((s["ep"], s["label"], tag, t, why, hint))
+            elif lvl == "warn" and why:
+                warns.append(f"ep{s['ep']:>2} {tag} {t:>6.2f}  {s['label']}  {why}")
+    print(f"  {n} 个刀口：切在说话中间 {len(errors)} 处，贴边 {len(warns)} 处")
+    for w in warns:
+        print("  ⚠ " + w)
+    if no_table:
+        print(f"  ⚠ 这些集没有停顿表，未判：{sorted(set(no_table))}")
+    if not errors:
+        return True
+    print("\n切在说话中间（会听到半句被削掉）：")
+    for ep, label, tag, t, why, hint in errors:
+        print(f"  ✗ ep{ep:>2} {tag} {t:>6.2f}  {label}")
+        print(f"      {why}")
+        if hint:
+            print(f"      可选：{hint}")
+    if allow:
+        print("\n--allow-mid-speech：明知有切半句，照装。")
+        return True
+    print("\n拒绝装配。改清单里的 a/b 后重来，或用 --allow-mid-speech 强行装。")
+    return False
+
+
+# ---------- 画面参数表：技能只「准备」，装配器负责「挂」 ----------
+# 说明：这里不写死任何去重/修饰手段的具体数值，全部从 spec 读。
+# 装配器只认结构，不认审美；换一套参数不用改本文件。
+def dedup_ep_chain(idx, i, a, b, W, H, FPS, cfg):
+    """逐段链：挑中的段套 A1（缩放前景 + 模糊底 + 边框），其余段保持原样。"""
+    head = (f"[{idx}:v]trim=start={a}:end={b},setpts=PTS-STARTPTS,"
+            f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+            f"setsar=1,fps={FPS}")
+    a1 = (cfg or {}).get("a1") or {}
+    fw = int(W * float(a1.get("fg_scale", 0.90)))
+    fh = int(H * float(a1.get("fg_scale", 0.90)))
+    bw, bh = int(W / 4), int(H / 4)      # 先缩到 1/4 再模糊，比全分辨率糊快得多
+    blur = a1.get("bg_blur", "10:1")
+    # 底层先裁掉底部字幕带再拉伸：模糊底不留字影；主画面 fg 保持完整、原剧字幕照旧在
+    bg_nosub = f"crop={W}:{int(H * 0.88)}:0:0," if a1.get("bg_drop_subtitle", True) else ""
+    return (f"{head},split=2[bg{i}][fg{i}];"
+            f"[bg{i}]{bg_nosub}scale={bw}:{bh},boxblur={blur},"
+            f"eq=brightness={a1.get('bg_brightness', -0.08)},scale={W}:{H}[bg2{i}];"
+            f"[fg{i}]scale={fw}:{fh},"
+            f"drawbox=x=0:y=0:w={fw}:h={fh}:color={a1.get('border', 'white@0.30')}:"
+            f"t={a1.get('border_t', 6)},setsar=1[fg2{i}];"
+            f"[bg2{i}][fg2{i}]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2,"
+            f"setsar=1,format=yuv420p[v{i}]")
+
+
+def dedup_tail_chains(cfg, W, H, sweep_idx, ass_path, fontsdir):
+    """concat 之后的全局链：参数包 → 循环扫光 → ASS 文字，一次过。"""
+    parts, vmap = [], "vcat"
+    g = (cfg or {}).get("global") or {}
+    if g:
+        c = int(g.get("crop", 8))
+        chain = (f"[vcat]eq=brightness={g.get('brightness', 0.03)}:"
+                 f"contrast={g.get('contrast', 1.03)}")
+        if g.get("vignette", True):
+            chain += ",vignette"
+        if c:
+            chain += f",crop={W - 2 * c}:{H - 2 * c}:{c}:{c},scale={W}:{H}"
+        chain += ",format=yuv420p[vbase]"
+        parts.append(chain)
+        vmap = "vbase"
+    sw = (cfg or {}).get("sweep") or {}
+    if sw and sweep_idx is not None:
+        parts.append(f"[{sweep_idx}:v]scale={W}:{H},format=rgba[sw]")
+        parts.append(f"[{vmap}][sw]overlay=0:0:shortest=1:eval=frame[vsw]")
+        vmap = "vsw"
+    if ass_path:
+        parts.append(f"[{vmap}]ass={ass_path}:fontsdir={fontsdir}[vout]")
+        vmap = "vout"
+    return parts, f"[{vmap}]"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--ff", default=None)
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--dedup", default=None,
+                    help="画面参数表 dedup_spec.json；不给则完全不挂画面处理")
+    ap.add_argument("--preset", default=None,
+                    help="覆盖 libx264 预设（默认 medium；全片带滤镜时可用 fast 提速）")
+    ap.add_argument("--allow-mid-speech", action="store_true",
+                    help="明知刀口切在说话中间也照装")
+    ap.add_argument("--no-cut-check", action="store_true",
+                    help="跳过刀口体检")
+    ap.add_argument("--cuts-dir", default=None,
+                    help="停顿表目录（默认 assets/short-drama/<剧>/cuts）")
     args = ap.parse_args()
 
     plan_path = os.path.abspath(args.plan)
@@ -160,6 +359,37 @@ def main():
 
     def resolve(p):
         return p if os.path.isabs(p) else os.path.join(base, p)
+
+    # spec 里的路径一律相对 spec 自己所在目录解析，方便整套预览产物搬家
+    spec = None
+    spec_base = base
+    a1_labels = set()
+    sweep_pattern = None
+    sweep_fr = None
+    ass_path = None
+    fontsdir = None
+    if args.dedup:
+        # spec 是命令行传进来的，习惯上相对「当前目录」写；兼容老规矩相对 plan 目录
+        sp = args.dedup if os.path.isabs(args.dedup) else (
+            args.dedup if os.path.exists(args.dedup) else resolve(args.dedup))
+        spec = json.load(open(sp, encoding="utf-8"))
+        spec_base = os.path.dirname(sp)
+
+        def sresolve(p):
+            return p if os.path.isabs(p) else os.path.join(spec_base, p)
+
+        a1_labels = set(spec.get("a1_segments") or [])
+        sw = spec.get("sweep") or {}
+        sweep_pattern = sresolve(sw["pattern"]) if sw.get("pattern") else None
+        sweep_fr = sw.get("framerate", 30)
+        dec = spec.get("decorate") or {}
+        if dec.get("ass"):
+            ass_path = sresolve(dec["ass"])
+            fontsdir = sresolve(dec.get("fontsdir") or spec_base)
+        print(f"画面参数表：{sp}")
+        print(f"  A1 包装 {len(a1_labels)} 段；扫光 {'开' if sweep_pattern else '关'}；"
+              f"ASS {'开' if ass_path else '关'}；全局参数包 "
+              f"{'开' if spec.get('global') else '关'}")
 
     W = plan.get("w", 720)
     H = plan.get("h", 1280)
@@ -204,6 +434,12 @@ def main():
         for p in problems:
             print("  " + p)
         sys.exit(1)
+
+    # ---------- 预检 2：刀口体检（切半句） ----------
+    if not args.no_cut_check:
+        if not cut_check(plan, plan_path, src_dir, args.cuts_dir, args.allow_mid_speech):
+            sys.exit(1)
+
     if args.dry:
         print("--dry：校验通过，未装配。")
         return
@@ -219,6 +455,7 @@ def main():
     # ---------- 组滤镜图 ----------
     inputs, parts = [], []
     special = {}  # input idx -> 展示时长（图片类）
+    loop_input = {}  # input idx -> 无限循环标记（扫光帧序列）
 
     def add_input(p):
         inputs.append(p)
@@ -232,10 +469,13 @@ def main():
             a, b = s["a"], s["b"]
             durations.append(round(b - a, 3))
             idx = add_input(path)
-            parts.append(
-                f"[{idx}:v]trim=start={a}:end={b},setpts=PTS-STARTPTS,"
-                f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                f"setsar=1,fps={FPS},format=yuv420p[v{i}]")
+            if spec and s.get("label") in a1_labels:
+                parts.append(dedup_ep_chain(idx, i, a, b, W, H, FPS, spec))
+            else:
+                parts.append(
+                    f"[{idx}:v]trim=start={a}:end={b},setpts=PTS-STARTPTS,"
+                    f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+                    f"setsar=1,fps={FPS},format=yuv420p[v{i}]")
             parts.append(
                 f"[{idx}:a]atrim=start={a}:end={b},asetpts=PTS-STARTPTS,"
                 f"aresample=48000,aformat=channel_layouts=stereo,"
@@ -276,6 +516,12 @@ def main():
         else:
             sys.exit(f"未知段类型 {t}")
 
+    # 扫光帧序列作为额外输入挂在最后；-stream_loop -1 让它循环到全片结束
+    sweep_idx = None
+    if sweep_pattern:
+        sweep_idx = add_input(sweep_pattern)
+        loop_input[sweep_idx] = sweep_fr
+
     n = len(plan["segs"])
     vlist = "".join(f"[v{i}]" for i in range(n))
     alist = "".join(f"[a{i}]" for i in range(n))
@@ -283,16 +529,26 @@ def main():
     parts.append(f"{alist}concat=n={n}:v=0:a=1[acat]")
     parts.append("[acat]alimiter=limit=0.891:attack=5:release=80[aout]")
 
+    vmap = "[vcat]"
+    if spec:
+        tail, vmap = dedup_tail_chains(spec, W, H, sweep_idx, ass_path, fontsdir)
+        parts.extend(tail)
+
     total = sum(durations)
     cmd = [ff, "-y", "-v", "warning", "-stats"]
     for j, p in enumerate(inputs):
         if j in special:
             cmd += ["-loop", "1", "-t", f"{special[j]:.3f}", "-i", p]
+        elif j in loop_input:
+            # 帧序列循环输入容易被主线程队列卡住（ffmpeg 会提示 thread message queue
+            # blocking），给足缓冲，不然全片里每 5 秒都要白等一次
+            cmd += ["-stream_loop", "-1", "-thread_queue_size", "1024",
+                    "-framerate", str(loop_input[j]), "-i", p]
         else:
             cmd += ["-i", p]
-    cmd += ["-filter_complex", ";".join(parts), "-map", "[vcat]", "-map", "[aout]",
+    cmd += ["-filter_complex", ";".join(parts), "-map", vmap, "-map", "[aout]",
             "-t", f"{total:.3f}",
-            "-c:v", "libx264", "-preset", "medium", "-crf", "19",
+            "-c:v", "libx264", "-preset", args.preset or "medium", "-crf", "19",
             "-pix_fmt", "yuv420p", "-r", str(FPS),
             "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
             "-movflags", "+faststart", out]

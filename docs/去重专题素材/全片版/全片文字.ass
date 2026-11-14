@@ -1,0 +1,50 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Base,Source Han Sans SC Heavy,96,&H00E8F4FA&,&H000000FF&,&H000C0F12&,&H800C0F12&,0,0,0,0,100,100,0,0,1,6,4,5,20,20,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:03:51.73,Base,,0,0,0,,{\p1\an7\pos(44,60)\c&H206EB8DE&\bord0\shad0}m 0 0 l 10 0 l 10 80 l 0 80{\p0}
+Dialogue: 1,0:00:00.00,0:03:51.73,Base,,0,0,0,,{\an7\pos(76,56)\fnOPPO Sans H\fs50\c&H00E8F4FA&\bord4\shad2\alpha&H20&}以真心守护至亲
+Dialogue: 0,0:00:00.00,0:03:51.73,Base,,0,0,0,,{\p1\an7\pos(68,1856)\c&HB0FFFFFF&\bord0\shad0}m 0 0 l 182 0 l 182 8 l 0 8{\p0}
+Dialogue: 0,0:00:00.00,0:03:51.73,Base,,0,0,0,,{\p1\an7\pos(258,1856)\c&HB0FFFFFF&\bord0\shad0}m 0 0 l 182 0 l 182 8 l 0 8{\p0}
+Dialogue: 0,0:00:00.00,0:03:51.73,Base,,0,0,0,,{\p1\an7\pos(449,1856)\c&HB0FFFFFF&\bord0\shad0}m 0 0 l 182 0 l 182 8 l 0 8{\p0}
+Dialogue: 0,0:00:00.00,0:03:51.73,Base,,0,0,0,,{\p1\an7\pos(639,1856)\c&HB0FFFFFF&\bord0\shad0}m 0 0 l 182 0 l 182 8 l 0 8{\p0}
+Dialogue: 0,0:00:00.00,0:03:51.73,Base,,0,0,0,,{\p1\an7\pos(830,1856)\c&HB0FFFFFF&\bord0\shad0}m 0 0 l 182 0 l 182 8 l 0 8{\p0}
+Dialogue: 1,0:00:00.00,0:00:30.82,Base,,0,0,0,,{\p1\an7\pos(68,1854)\c&H006EB8DE&\bord0\shad0}m 0 0 l 182 0 l 182 12 l 0 12{\p0}
+Dialogue: 1,0:00:30.82,0:01:25.88,Base,,0,0,0,,{\p1\an7\pos(258,1854)\c&H006EB8DE&\bord0\shad0}m 0 0 l 182 0 l 182 12 l 0 12{\p0}
+Dialogue: 1,0:01:25.88,0:02:21.18,Base,,0,0,0,,{\p1\an7\pos(449,1854)\c&H006EB8DE&\bord0\shad0}m 0 0 l 182 0 l 182 12 l 0 12{\p0}
+Dialogue: 1,0:02:21.18,0:03:03.56,Base,,0,0,0,,{\p1\an7\pos(639,1854)\c&H006EB8DE&\bord0\shad0}m 0 0 l 182 0 l 182 12 l 0 12{\p0}
+Dialogue: 1,0:03:03.56,0:03:51.73,Base,,0,0,0,,{\p1\an7\pos(830,1854)\c&H006EB8DE&\bord0\shad0}m 0 0 l 182 0 l 182 12 l 0 12{\p0}
+Dialogue: 2,0:00:00.60,0:00:03.30,Base,,0,0,0,,{\an5\pos(148,1120)\fnSource Han Sans SC Heavy\fs112\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz-7\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}底
+Dialogue: 2,0:00:00.67,0:00:03.38,Base,,0,0,0,,{\an5\pos(260,1120)\fnSource Han Sans SC Heavy\fs112\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz-4\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}下
+Dialogue: 2,0:00:00.75,0:00:03.45,Base,,0,0,0,,{\an5\pos(372,1120)\fnSource Han Sans SC Heavy\fs112\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz-1\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}是
+Dialogue: 2,0:00:00.82,0:00:03.53,Base,,0,0,0,,{\an5\pos(484,1120)\fnSource Han Sans SC Heavy\fs112\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz2\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}五
+Dialogue: 2,0:00:00.90,0:00:03.60,Base,,0,0,0,,{\an5\pos(596,1120)\fnSource Han Sans SC Heavy\fs112\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz5\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}十
+Dialogue: 2,0:00:00.97,0:00:03.68,Base,,0,0,0,,{\an5\pos(708,1120)\fnSource Han Sans SC Heavy\fs132\c&H006EB8DE&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz-7\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}斤
+Dialogue: 2,0:00:01.05,0:00:03.75,Base,,0,0,0,,{\an5\pos(820,1120)\fnSource Han Sans SC Heavy\fs132\c&H006EB8DE&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz-4\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}黄
+Dialogue: 2,0:00:01.12,0:00:03.83,Base,,0,0,0,,{\an5\pos(932,1120)\fnSource Han Sans SC Heavy\fs132\c&H006EB8DE&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx55\fscy55\frz-1\t(0,170,\alpha&H00&\fscx120\fscy120\frz0)\t(170,310,\fscx94\fscy94)\t(310,440,\fscx100\fscy100)\t(2200,2650,\alpha&HFF&)}金
+Dialogue: 2,0:00:32.00,0:00:36.20,Base,,0,0,0,,{\an5\fnOPPO Sans H\fs88\c&H006EB8DE&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\frz-14\fscx65\fscy65\move(156,752,296,700,0,340)\t(0,240,\alpha&H00&\fscx115\fscy115\frz0)\t(240,400,\fscx100\fscy100)\t(3700,4200,\alpha&HFF&)}林秀兰
+Dialogue: 2,0:00:32.24,0:00:36.20,Base,,0,0,0,,{\an5\fnOPPO Sans H\fs88\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\frz-14\fscx65\fscy65\move(444,752,584,700,0,340)\t(0,240,\alpha&H00&\fscx115\fscy115\frz0)\t(240,400,\fscx100\fscy100)\t(3460,3960,\alpha&HFF&)}许宁
+Dialogue: 2,0:00:32.48,0:00:36.20,Base,,0,0,0,,{\an5\fnOPPO Sans H\fs88\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\frz-14\fscx65\fscy65\move(688,752,828,700,0,340)\t(0,240,\alpha&H00&\fscx115\fscy115\frz0)\t(240,400,\fscx100\fscy100)\t(3220,3720,\alpha&HFF&)}许晴
+Dialogue: 2,0:00:07.66,0:00:10.86,Base,,0,0,0,,{\an5\fnSource Han Serif CN\fs94\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx100\fscy100\move(360,896,540,860,0,420)\t(0,380,\alpha&H00&)\t(380,650,\fscx106\fscy106)\t(650,860,\fscx100\fscy100)\t(2500,3100,\alpha&HFF&)}可我妈妈{\fs116\c&H006EB8DE&}17年前就没了{\fs94\c&H00E8F4FA&}
+Dialogue: 2,0:00:56.56,0:00:59.76,Base,,0,0,0,,{\an5\fnSource Han Serif CN\fs100\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx100\fscy100\move(360,896,540,860,0,420)\t(0,380,\alpha&H00&)\t(380,650,\fscx106\fscy106)\t(650,860,\fscx100\fscy100)\t(2500,3100,\alpha&HFF&)}谁要你的破轮椅
+Dialogue: 2,0:01:47.68,0:01:50.88,Base,,0,0,0,,{\an5\fnSource Han Serif CN\fs94\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx100\fscy100\move(360,896,540,860,0,420)\t(0,380,\alpha&H00&)\t(380,650,\fscx106\fscy106)\t(650,860,\fscx100\fscy100)\t(2500,3100,\alpha&HFF&)}你进弘业的事也别想了
+Dialogue: 2,0:02:24.14,0:02:27.34,Base,,0,0,0,,{\an5\fnSource Han Serif CN\fs100\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx100\fscy100\move(360,896,540,860,0,420)\t(0,380,\alpha&H00&)\t(380,650,\fscx106\fscy106)\t(650,860,\fscx100\fscy100)\t(2500,3100,\alpha&HFF&)}这婚我不结了
+Dialogue: 2,0:03:00.16,0:03:03.36,Base,,0,0,0,,{\an5\fnSource Han Serif CN\fs100\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx100\fscy100\move(360,896,540,860,0,420)\t(0,380,\alpha&H00&)\t(380,650,\fscx106\fscy106)\t(650,860,\fscx100\fscy100)\t(2500,3100,\alpha&HFF&)}合同写我的名字
+Dialogue: 2,0:03:44.19,0:03:47.39,Base,,0,0,0,,{\an5\fnSource Han Serif CN\fs100\c&H00E8F4FA&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\fscx100\fscy100\move(360,896,540,860,0,420)\t(0,380,\alpha&H00&)\t(380,650,\fscx106\fscy106)\t(650,860,\fscx100\fscy100)\t(2500,3100,\alpha&HFF&)}弘业不是周家开的
+Dialogue: 2,0:03:48.00,0:03:51.20,Base,,0,0,0,,{\an5\pos(232,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}往
+Dialogue: 2,0:03:48.11,0:03:51.31,Base,,0,0,0,,{\an5\pos(320,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}下
+Dialogue: 2,0:03:48.22,0:03:51.42,Base,,0,0,0,,{\an5\pos(408,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}看
+Dialogue: 2,0:03:48.33,0:03:51.53,Base,,0,0,0,,{\an5\pos(496,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}她
+Dialogue: 2,0:03:48.44,0:03:51.64,Base,,0,0,0,,{\an5\pos(584,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}到
+Dialogue: 2,0:03:48.55,0:03:51.75,Base,,0,0,0,,{\an5\pos(672,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}底
+Dialogue: 2,0:03:48.66,0:03:51.86,Base,,0,0,0,,{\an5\pos(760,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}是
+Dialogue: 2,0:03:48.77,0:03:51.97,Base,,0,0,0,,{\an5\pos(848,470)\fnSource Han Sans CN Bold\fs88\c&H00FFFFFF&\3c&H000C0F12&\bord8\shad6\alpha&HFF&\t(0,90,\alpha&H00&)\t(2500,3100,\alpha&HFF&)}谁

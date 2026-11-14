@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画面编排验证报告 v3 · 以真心守护至亲 D3</title>
+<style>
+  :root{
+    --bg:#f6f3ee; --paper:#fffdf9; --ink:#2b2621; --sub:#6d645a;
+    --line:#e3dccf; --gold:#a8802f; --goldbg:#f6edda;
+    --red:#a8443a; --redbg:#f8eae7; --green:#3f6b4e; --greenbg:#eaf1ea;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:15px;}
+  .wrap{max-width:960px;margin:0 auto;padding:36px 28px 72px}
+  header{border-bottom:3px solid var(--gold);padding-bottom:22px;margin-bottom:28px}
+  .kicker{color:var(--gold);font-size:13px;letter-spacing:2px;font-weight:700}
+  h1{font-size:29px;margin:8px 0 6px;letter-spacing:-.5px}
+  .meta{color:var(--sub);font-size:13px}
+  h2{font-size:20px;margin:38px 0 14px;padding-left:12px;border-left:4px solid var(--gold)}
+  h3{font-size:16px;margin:24px 0 10px}
+  p{margin:10px 0}
+  .lead{background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:18px 20px;font-size:16px;line-height:1.85}
+  .status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 8px}
+  .status div{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:13px 15px}
+  .status b{display:block;color:var(--gold);font-size:12px;letter-spacing:1px;margin-bottom:5px}
+  .status span{font-size:13.5px}
+  table{width:100%;border-collapse:collapse;margin:14px 0;background:var(--paper);
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:14px}
+  th{background:#efe8da;text-align:left;padding:11px 13px;font-weight:700;color:#4a4033}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  td:first-child{font-weight:600}
+  .del{color:var(--red);text-decoration:line-through;opacity:.8}
+  .add{color:var(--green);font-weight:600}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:18px 20px;margin:14px 0}
+  .tag{display:inline-block;background:var(--goldbg);color:var(--gold);border-radius:5px;
+    padding:1px 9px;font-size:12px;font-weight:700;margin-right:7px}
+  .tag.g{background:var(--greenbg);color:var(--green)}
+  .tag.r{background:var(--redbg);color:var(--red)}
+  .note{background:#fbf6ea;border-left:4px solid var(--gold);padding:13px 17px;
+    border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
+  .warn{background:var(--redbg);border-left:4px solid var(--red);padding:13px 17px;
+    border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
+  figure{margin:16px 0;background:var(--paper);border:1px solid var(--line);
+    border-radius:10px;padding:14px;text-align:center}
+  figure img{max-width:100%;border-radius:6px;display:block;margin:0 auto}
+  figcaption{color:var(--sub);font-size:13px;margin-top:10px;text-align:left}
+  video{width:100%;max-width:420px;border-radius:8px;background:#000;display:block;margin:0 auto}
+  .gifs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gifs figure{margin:0;padding:10px}
+  .gifs img{max-width:100%;border-radius:5px}
+  .gifs figcaption{font-size:12px;text-align:center;margin-top:7px}
+  ul{padding-left:22px;margin:10px 0} li{margin:6px 0}
+  code{background:#efe8da;padding:1px 6px;border-radius:4px;font-size:13px;
+    font-family:"SF Mono",Menlo,monospace}
+  .small{font-size:13px;color:var(--sub)}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--sub);font-size:12.5px}
+  @media(max-width:700px){.status,.gifs{grid-template-columns:1fr 1fr} .wrap{padding:22px 16px 50px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">画面编排 · 验证报告 v3</div>
+  <h1>去掉小的画中画，加一道斜着扫过的淡光</h1>
+  <div class="meta">验证对象：《以真心守护至亲》D3「线一认不认这个妈」v3 成片 &nbsp;·&nbsp; 2026-11-14 &nbsp;·&nbsp; v3（v1、v2 全部保留做对照）</div>
+</header>
+
+<p class="lead">
+这一轮三件事：<strong>①</strong> 按张老师判断，把效果不好的「小的画中画」去掉；
+<strong>②</strong> 从张老师给的外部方案里，只取「斜向扫光」这一条加上去；
+<strong>③</strong> 那份方案里其余手段全部存进备忘录，逐条标了能不能用，慢慢完善，这轮一概不采纳。
+v2 已经认可的部分（大画中画、参数包、动态浮层、文字只给观众看）一律没动。
+</p>
+
+<div class="status">
+  <div><b>做到哪了</b><span>小辅助窗删干净、扫光跑通并出片，外部方案已存档</span></div>
+  <div><b>卡在哪</b><span>没卡。扫光倾角调过一次（20° 偏横 → 32°）</span></div>
+  <div><b>下一步</b><span>等你定扫光要不要更淡／更快，再接进装配器一次编码</span></div>
+</div>
+
+<h2>一、删了什么：角落那两个小辅助窗</h2>
+
+<p>你上一版嫌「效果苛刻、看着重复」的，是这两个右下角小窗口。这轮全部删掉：</p>
+
+<table>
+  <tr><th>位置</th><th>原来是什么</th><th>现在</th></tr>
+  <tr><td>段 3（演示片 24–36 秒）</td><td class="del">右下角小窗放「另一个人」</td><td class="add">取消，只留金句浮层</td></tr>
+  <tr><td>段 4（演示片 36–48 秒）</td><td class="del">右下角小窗放「脸部细节放大」</td><td class="add">取消，只留收尾句</td></tr>
+  <tr><td>段 2（12–24 秒）</td><td>主画面缩小 + 四周模糊背景（大画中画）</td><td><strong>保留</strong>：你上轮确认这个效果明显</td></tr>
+</table>
+
+<div class="note">
+删掉之后，四段的渲染结构统一成「一路原片 + 一路图层」，代码里不再有任何小窗逻辑。
+抽帧复核 29 / 33 / 41 / 45 秒，确认小方框一个都没有了。
+</div>
+
+<h2>二、加了什么：斜着扫过的不明显光波</h2>
+
+<p>你贴的那份方案 5.1 节叫「低强度动态特效」，写的是扫光／水波／粒子，
+不透明度 3%~8%，「肉眼几乎不可见、系统可感知动态变化」。
+我按这个口径做了一条<strong>斜着的柔光带</strong>，缓慢扫过全片。</p>
+
+<table>
+  <tr><th>项</th><th>取值</th><th>为什么</th></tr>
+  <tr><td>形态</td><td>倾斜 32°、边缘柔和、带轻微波动</td><td>不是死板直线；20° 在竖屏上看着偏「横」，看不出斜，已调到 32°</td></tr>
+  <tr><td>强度</td><td>峰值 7%</td><td>落在方案建议的 3%~8% 中间，暖白提亮、不做色块，几乎看不出</td></tr>
+  <tr><td>速度</td><td>6.5 秒扫过一次，按全片时间算</td><td>四段拼接处不跳变</td></tr>
+  <tr><td>挂在哪</td><td>所有图层的最底层</td><td>不挡角标、进度条、文字浮层、原剧字幕</td></tr>
+  <tr><td>怎么自动跑</td><td>numpy 先算好一个周期的光带，逐帧取一张复用</td><td>不逐帧重算，全套渲完约 3 分钟</td></tr>
+</table>
+
+<div class="note">
+<strong>为什么这一条值得先加</strong>：它是动态的，每一帧光带位置都不一样，
+正好落在平台抽帧比对要抓的那一维上；同时它只在画面最底层加东西，
+段序、段长、台词、五幕、原剧字幕一个都不碰，不会伤到剪辑质量。
+</div>
+
+<figure>
+  <img src="扫光_三栏对照.png" alt="扫光三栏对照">
+  <figcaption>同一帧三栏对照。中栏是成片真实强度（7%），跟原片几乎没差别，这正是要的「不明显」；
+  右栏把强度放大到 45%，只为让你看清光带长什么样、是斜着的——这一栏不进成片。</figcaption>
+</figure>
+
+<h3>动效可以直接看</h3>
+<div class="gifs">
+  <figure><img src="GIF预览/扫光动效_强度放大示意.gif" alt="扫光动效"><figcaption>扫光（强度放大示意）</figcaption></figure>
+  <figure><img src="GIF预览/hook动效.gif" alt="悬念句"><figcaption>悬念句浮入</figcaption></figure>
+  <figure><img src="GIF预览/people动效.gif" alt="人物名片"><figcaption>人物名片逐条浮入</figcaption></figure>
+  <figure><img src="GIF预览/end动效.gif" alt="收尾句"><figcaption>收尾句</figcaption></figure>
+</div>
+<p class="small">四张卡片动效里也带着扫光，只是 7% 强度下不刻意看看不出来。
+真正叠进视频的是带半透明通道的 PNG 帧序列，不是 GIF 文件——GIF 只有 256 色，
+半透明浮层叠上去会有色带和锯齿。</p>
+
+<h2>三、48 秒演示片</h2>
+<figure>
+  <video controls preload="metadata" src="编排演示_v3_48秒.mp4"></video>
+  <figcaption>点开可播。原声、台词、原剧字幕全程保留；段序、选段、五幕、时长都没动。</figcaption>
+</figure>
+
+<figure>
+  <img src="成片抽帧_v3.png" alt="成片抽帧总览">
+  <figcaption>11 个时间点抽帧。小辅助窗已无；角标、进度条、四张浮层、收尾句都在；
+  收尾句在上半部，没压到原剧字幕；没有整屏页面、没有全黑或图层错位。</figcaption>
+</figure>
+
+<h2>四、那份外部方案：先存备忘录，逐条判了能不能用</h2>
+
+<p class="lead">
+先说结论：<strong>这份方案有一大半跟我们对不上。</strong>
+它写的是「影视解说」——有解说稿、有配音、可以把原声全删了重录；
+我们做的是「零解说纯剪预告」，全靠原剧台词讲故事。
+所以不是我们漏做了很多，是它面向另一种片型写的。
+</p>
+
+<table>
+  <tr><th>它主打的手段</th><th>判断</th><th>原因（大白话）</th></tr>
+  <tr><td>删原音轨、换配音、解说稿改写</td><td><span class="tag r">整块不适用</span></td><td>台词就是我们的内容，删了等于把片子删了</td></tr>
+  <tr><td>换 BGM、多轨混音、声道微调</td><td><span class="tag r">不做</span></td><td>11-14 已定「音频不做」，配乐照老规矩人工加</td></tr>
+  <tr><td>改字幕字体、位置、时间轴错开</td><td><span class="tag r">不适用</span></td><td>我们不去原字幕，硬字幕改不动，也没有独立字幕轨</td></tr>
+  <tr><td>水平镜像</td><td><span class="tag r">不能用</span></td><td>字幕会被翻反；平台公告也把这类简单加工列进违规口径</td></tr>
+  <tr><td>局部变速 1.1~1.3 倍</td><td><span class="tag r">不能用</span></td><td>会改段时长，撞时长账和台词节奏，正是会伤叙事的那类</td></tr>
+  <tr><td>改 MD5、换码率、25fps、清元数据</td><td><span class="tag">基础卫生</span></td><td>只改文件身份，画面结构没动；别拿它算去重成绩</td></tr>
+  <tr><td>放大裁切、镜头调序、掐头去尾</td><td><span class="tag g">已在做</span></td><td>就是 A3 裁切、B5 跨集倒插、B4 切点错开</td></tr>
+  <tr><td>低强度动态特效</td><td><span class="tag g">本次取 1 条</span></td><td>只加了斜向扫光</td></tr>
+  <tr><td>微旋转、水波／粒子、5% 纹理、1 像素动态横线</td><td><span class="tag">待议</span></td><td>能做，但观感或对素材的要求没验证，先放着慢慢来</td></tr>
+</table>
+
+<div class="warn">
+<strong>有一处真冲突，我没自作主张改。</strong>
+这份方案的核心原则是「参数要随机化，别形成固定模板」；
+而我前面给过一条相反的结论——「每个账号固定一套画面参数，当风格印记」。
+这两条直接打架。可能的解释是「结构层随机、视觉层固定」，但没有证据。
+在拿两版对照测出结果之前，<strong>现有「固定参数」口径不动</strong>，只在备忘录里记下这笔账。
+</div>
+
+<div class="note">
+另外，这份资料里的具体数字（放大 105%~112%、旋转 0.8°~1.2°、改写 ≥45%、一次随机选 8~12 项等）
+<strong>没有平台官方依据，也没在我们素材上实测</strong>，我没有替它编出处，只当经验参考存着。
+</div>
+
+<p>备忘录全文：<code>docs/去重手段_外部方案备忘录_v0.1.md</code>。</p>
+
+<h2>五、已知带伤（照旧如实说）</h2>
+<ul>
+  <li><strong>没测平台查重读数。</strong>这轮只验证「能自动跑、肉眼几乎看不见、叙事没坏」；扫光到底压了多少读数，得用素材投前分析出两版对照才知道。</li>
+  <li><strong>语义层不变。</strong>台词、剧情、人物还是那部剧，这层怎么都躲不掉，仍是不求百分百。</li>
+  <li><strong>演示片是二次编码预览</strong>：540×960、48 秒、取 4 段，只对已拼好的 v3 成片再跑一遍，用来看效果。正式接产线要走装配器内一次编码那条路，画质不会掉这一档。</li>
+  <li><strong>扫光强度是护栏</strong>，别为了「看得见」调高——一调高就变成廉价特效，跟观感优先、去重让位剪辑质量的红线相冲。</li>
+  <li>这部剧缺素材索引，情绪条仍无数据源，留空没编。</li>
+</ul>
+
+<h2>六、没动的东西</h2>
+<p>v1、v2 目录与报告全部保留做前后对照；剪辑清单、方向卡、装配器、原 v3 成片、
+两份去重方案文档一律未改。新增文件只有：本目录（v3）与那份备忘录。</p>
+
+<footer>
+画面编排验证报告 v3 · 2026-11-14 · 生成脚本：生成_v3_扫光版.py（验证用，不是产线技能）
+</footer>
+
+</div>
+</body>
+</html>
