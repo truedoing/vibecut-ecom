@@ -19,7 +19,8 @@ from pathlib import Path
 SKILLS = ["short-drama-select", "short-drama-pack", "short-drama-asset-index",
           "short-drama-ai-assets", "short-drama-script", "short-drama-video",
           "short-drama-trailer", "short-drama-supervisor",
-          "short-drama-dedup"]  # 主管也算一个，对外说 9 个要对得上（去重 11-16 加，不占流水线工位）
+          "short-drama-dedup", "short-drama-modify"]
+# 主管也算一个，对外说 10 个要对得上（去重 / 修饰 11-16 加，都不占流水线工位）
 
 
 def main() -> int:

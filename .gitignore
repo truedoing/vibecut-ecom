@@ -42,6 +42,11 @@ assets/**/edge_frames/
 # 按平台下下来的 ffmpeg / ffprobe（ffbin.py 放这儿，各机器自己下一次）
 /bin/
 
+# 修饰技能要用的四款中文字体（41MB，思源/OPPO 开源可商用）。
+# 放共用层 assets/fonts/，一部机器放一次、所有剧共用；字体体积大不进库，
+# 换机器从项目资产「字体/」拷一次。缺了技能会降级到系统字体并明说。
+assets/fonts/
+
 # 门禁回归测试产物（check_finale_gate.py；沙箱下可能删不掉，忽略即可）
 *.gatecheck.json
 build/.gatecheck/
