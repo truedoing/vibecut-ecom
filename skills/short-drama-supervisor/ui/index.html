@@ -222,22 +222,25 @@ tr.live td:first-child{box-shadow:inset 3px 0 0 var(--blue)}
         border:1px solid var(--line);border-radius:7px;background:#0c1119;color:var(--ink)}
 .pvside .tool label{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--sub);cursor:pointer}
 .pvlist{overflow:auto;padding:7px 8px 10px}
-.vgroup{border:1px solid transparent;border-radius:8px;padding:8px 9px;margin-bottom:5px;
+.vgroup{border:1px solid transparent;border-radius:8px;padding:6px 8px;margin-bottom:4px;
         cursor:pointer;transition:background .12s,border-color .12s}
 .vgroup:hover{background:rgba(255,255,255,.025)}
 .vgroup.on{background:var(--bluebg);border-color:rgba(79,140,255,.4)}
-.vgroup .t{font-size:13px;font-weight:650;line-height:1.45;display:-webkit-box;
-           -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.vgroup .s{font-size:11px;color:var(--sub);margin-top:3px;white-space:nowrap;
+/* 一条片子固定两行（11-16 张老师：一屏可能要装十几条，三行太占地方）。
+   第一行 标题 + 状态，第二行 剧/片子 + 版数时长；标题长了省略号，鼠标悬停看全名。 */
+.vgroup .l1{display:flex;align-items:center;gap:6px}
+.vgroup .t{flex:1;min-width:0;font-size:12.5px;font-weight:650;line-height:1.35;
+           white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vgroup .l2{display:flex;align-items:center;gap:6px;margin-top:2px;line-height:1.3}
+.vgroup .s{flex:1;min-width:0;font-size:10.5px;color:var(--sub);white-space:nowrap;
            overflow:hidden;text-overflow:ellipsis}
-.vgroup .n{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:4px}
-.vgroup .vpill{font-size:10px;padding:1px 7px;border-radius:20px;background:var(--greybg);
-               color:var(--sub);white-space:nowrap}
+.vgroup .vpill{font-size:10px;padding:0 6px;border-radius:20px;background:var(--greybg);
+               color:var(--sub);white-space:nowrap;flex:none}
 .vgroup .vpill.ok{background:var(--greenbg);color:var(--green)}
 .vgroup .vpill.warn{background:var(--amberbg);color:var(--amber)}
 .vgroup .vpill.blue{background:var(--bluebg);color:var(--blue)}
 .vgroup[hidden]{display:none}
-.vgroup .n .c{font-size:10px;color:var(--sub);font-variant-numeric:tabular-nums}
+.vgroup .c{font-size:10px;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap;flex:none}
 .pvmain{display:flex;flex-direction:column;gap:12px;min-width:0}
 .pvplayer{background:#0b0f14;border:1px solid #1c2530;border-radius:12px;
           display:flex;align-items:center;justify-content:center;padding:14px;min-height:340px}
@@ -269,10 +272,19 @@ tr.live td:first-child{box-shadow:inset 3px 0 0 var(--blue)}
 .shot:hover{border-color:var(--blue)}
 .shot .im{display:flex;height:76px;background:#0b0f14}
 .shot .im img{width:50%;height:100%;object-fit:cover;opacity:.95}
-.shot .lb{padding:5px 7px 6px;font-size:11px;font-weight:600;line-height:1.35;
+/* 明细卡片：第一行「第几段」＋钩子标，第二行段落名，第三行出处（第几集 哪几秒） */
+.shot .lb{padding:5px 7px 0;font-size:11px;font-weight:600;line-height:1.3;
+          display:flex;align-items:center;gap:4px}
+.shot .lb .num{flex:none;font-variant-numeric:tabular-nums}
+.shot .hk{flex:none;font-size:9px;font-weight:600;padding:0 5px;border-radius:20px;
+          background:rgba(226,169,74,.16);color:var(--amber);letter-spacing:.02em}
+.shot .nm{font-size:10.5px;color:var(--ink);opacity:.82;line-height:1.3;padding:1px 7px 0;
           white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .shot .tm{font-size:10px;color:var(--sub);font-variant-numeric:tabular-nums;
-          padding:0 7px 6px}
+          padding:1px 7px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot.hookseg{border-color:rgba(226,169,74,.45)}
+.hkchip{font-size:10px;padding:1px 8px;border-radius:20px;background:rgba(226,169,74,.16);
+        color:var(--amber);white-space:nowrap;margin-left:var(--gap,0)}
 .selfgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
 .selfgrid figure{margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;
                  background:var(--panel-2);cursor:pointer}
@@ -951,11 +963,11 @@ async function renderVideo(){
     const hay = (gg.drama+' '+gg.task+' '+gg.title+' '+gg.angle).toLowerCase();
     return '<div class="vgroup'+(gg.key===state.vtask?' on':'')+'" data-key="'+esc(gg.key)+'"'
       +' data-search="'+esc(hay)+'" data-current="'+(gg.has_current?'1':'0')+'">'
-      +'<div class="t">'+esc(gg.title)+'</div>'
-      +'<div class="s">'+esc((gg.code ? gg.code+' ' : '')+gg.drama+' / '+gg.task)+'</div>'
-      +'<div class="n"><span class="vpill '+stCls(gg.trailer_state)+'">'
-      +esc(stTxt(gg.trailer_state))+'</span><span class="c">'+cnt+' · '
-      +(cv?fmtDur(cv.duration):'—')+'</span></div></div>';
+      +'<div class="l1"><span class="t" title="'+esc(gg.title)+'">'+esc(gg.title)+'</span>'
+      +'<span class="vpill '+stCls(gg.trailer_state)+'">'+esc(stTxt(gg.trailer_state))+'</span></div>'
+      +'<div class="l2"><span class="s" title="'+esc((gg.code ? gg.code+' ' : '')+gg.drama+' / '+gg.task)+'">'
+      +esc((gg.code ? gg.code+' ' : '')+gg.drama+' / '+gg.task)+'</span>'
+      +'<span class="c">'+cnt+' · '+(cv?fmtDur(cv.duration):'—')+'</span></div></div>';
   };
 
   const vBtn = v => {
@@ -979,16 +991,25 @@ async function renderVideo(){
   const segItems = (g.segs||[]).map((s,i) => {
     const imgs = (s.card_a ? '<img src="'+esc(s.card_a)+'" alt="" loading="lazy">' : '')
       + (s.card_b ? '<img src="'+esc(s.card_b)+'" alt="" loading="lazy">' : '');
-    const tm = s.ep!=null
-      ? '第'+esc(s.ep)+'集 · '+fmtClock(s.a)+'–'+fmtClock(s.b)
+    // 明细按「段」编号（张老师 11-16：下面明明是第几段的明细，别写成第几集）；
+    // 集号和秒数退到第三行当出处看。
+    const where = s.ep!=null
+      ? '第'+esc(s.ep)+'集 '+fmtClock(s.a)+'–'+fmtClock(s.b)
         + (s.dur!=null?' · '+fmtDur(s.dur):'')
       : (s.type==='black' ? '设计黑场' : s.type==='card' ? '字幕卡'
          : (s.type || '非原片段'))
         + (s.dur!=null?' · '+fmtDur(s.dur):'');
-    return '<div class="shot" data-seg="'+i+'">'
+    const nm = String(s.label||'').replace(/^S\d+[_-]/,'').replace(/_/g,' ')
+      || (s.type==='black' ? '设计黑场' : s.type==='card' ? '字幕卡' : '');
+    const hk = s.is_hook
+      ? '<span class="hk" title="开头钩子'+(g.hook&&g.hook.no?' '+esc(g.hook.no)+' '+esc(g.hook.name||''):'')+'">'
+        +'钩子'+(g.hook&&g.hook.no?' '+esc(g.hook.no):'')+'</span>'
+      : '';
+    return '<div class="shot'+(s.is_hook?' hookseg':'')+'" data-seg="'+i+'">'
       + (imgs ? '<div class="im">'+imgs+'</div>' : '')
-      + '<div class="lb">'+esc(s.label || ('第 '+(i+1)+' 段'))+'</div>'
-      + '<div class="tm">'+tm+'</div></div>';
+      + '<div class="lb"><span class="num">第'+(i+1)+'段</span>'+hk+'</div>'
+      + '<div class="nm">'+esc(nm)+'</div>'
+      + '<div class="tm">'+where+'</div></div>';
   }).join('');
 
   const selfItems = (g.selfchecks||[]).map((im,i) =>
@@ -1019,8 +1040,13 @@ async function renderVideo(){
     +(state.vbuild?'收起中间文件':'显示中间文件')+'</button></div>';
 
   if(segItems){
+    const hkp = g.hook && (g.hook.no || g.hook.name)
+      ? '<span class="hkchip" style="margin-left:8px" title="这条片子开头用的是哪个钩子模板">'
+        +'开头钩子 '+(g.hook.no?esc(g.hook.no)+' ':'')+esc(g.hook.name||'')+'</span>'
+      : '';
     h += '<div class="card"><div class="row" style="justify-content:space-between;align-items:baseline">'
-      +'<h2 style="margin:0">段落首尾帧 · '+(g.segs||[]).length+' 段</h2>'
+      +'<h2 style="margin:0;display:flex;align-items:baseline;flex-wrap:wrap">段落明细 · '
+      +(g.segs||[]).length+' 段'+hkp+'</h2>'
       +'<span class="muted">点一段看首帧 / 尾帧和这段的说明</span></div>'
       +'<div class="strip" style="margin-top:10px">'+segItems+'</div></div>';
   }

@@ -71,17 +71,19 @@ STEP = 2  # 秒/帧，与既有台词稿同一粒度
 
 
 def tool(name: str) -> str:
-    """ffmpeg/ffprobe：包内 bin/ → PATH → 本机 anaconda 兜底。"""
-    try:  # 分发到别的机器时 ffmpeg 就在包里
+    """ffmpeg/ffprobe：统一问 _env（数据目录 bin/ → 系统 PATH）。缺了说清怎么补。"""
+    try:
         from _env import tool as _env_tool
         cand = _env_tool(name)
         if Path(cand).is_absolute() and Path(cand).exists():
             return cand
     except Exception:
         pass
-    p = shutil.which(name) or f"/opt/anaconda3/bin/{name}"
-    if not Path(p).exists():
-        sys.exit(f"找不到 {name}：装一个，或加进 PATH")
+    p = shutil.which(name)
+    if p:
+        return p
+    sys.exit(f"找不到 {name}。跑一次开工自检会自动下；"
+             f"下不动就手动放进 {Path.home() / 'Documents' / '短剧工作区' / 'bin'}")
     return p
 
 NOISE = re.compile(r"[\|\•\.…。、,，\s0-9oOJlI`'\"]+")

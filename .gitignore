@@ -39,6 +39,9 @@ updates/
 assets/**/frames/
 assets/**/edge_frames/
 
+# 按平台下下来的 ffmpeg / ffprobe（ffbin.py 放这儿，各机器自己下一次）
+/bin/
+
 # 门禁回归测试产物（check_finale_gate.py；沙箱下可能删不掉，忽略即可）
 *.gatecheck.json
 build/.gatecheck/

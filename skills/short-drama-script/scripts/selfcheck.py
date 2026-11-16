@@ -76,7 +76,7 @@ def load_drama(name):
 
 
 def _ffprobe_first():
-    """包内 bin/ffprobe 优先，其次本机 anaconda，最后交给 PATH。"""
+    """统一走 _env（数据目录 bin/ → 系统 PATH）。不再自己猜本机路径。"""
     try:
         from _env import ffprobe
         p = ffprobe()
@@ -84,7 +84,7 @@ def _ffprobe_first():
             return [p, "ffprobe"]
     except Exception:
         pass
-    return ["/opt/anaconda3/bin/ffprobe", "ffprobe"]
+    return ["ffprobe"]
 
 
 def video_dur(path):

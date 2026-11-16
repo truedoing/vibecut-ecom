@@ -108,7 +108,7 @@ except Exception:
 def find_ff(override):
     if override:
         return override
-    try:  # 优先用包里自带的 bin/ffmpeg（分发到别的机器时 ffmpeg 就在包里）
+    try:  # 统一问 _env：数据目录 bin/ 优先，其次系统 PATH
         from _env import ffmpeg as _ff
         cand = _ff()
         if os.path.isabs(cand) and os.path.exists(cand):
@@ -118,16 +118,23 @@ def find_ff(override):
     p = shutil.which("ffmpeg")
     if p:
         return p
-    for cand in ("/opt/anaconda3/bin/ffmpeg",):
-        if os.path.exists(cand):
-            return cand
-    sys.exit("找不到 ffmpeg：请用 --ff 指定绝对路径")
+    sys.exit("找不到 ffmpeg：跑一次开工自检会自动下；或用 --ff 指定绝对路径")
 
 
 def find_ffprobe(ff):
-    cand = os.path.join(os.path.dirname(ff), "ffprobe")
+    # 必须是 ffprobe.exe —— Windows 上写 "ffprobe" 拼出来的路径 os.path.exists 判不出来，
+    # 会一路掉到 PATH 去找，缓存里那份就用不上（实测踩到）。
+    exe = "ffprobe.exe" if os.name == "nt" else "ffprobe"
+    cand = os.path.join(os.path.dirname(ff), exe)
     if os.path.exists(cand):
         return cand
+    try:
+        from _env import ffprobe as _fp
+        p = _fp()
+        if os.path.isabs(p) and os.path.exists(p):
+            return p
+    except Exception:
+        pass
     p = shutil.which("ffprobe")
     if p:
         return p

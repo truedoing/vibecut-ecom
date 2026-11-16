@@ -25,16 +25,15 @@ CACHE_VER = 3
 
 
 def ffprobe_exe():
-    try:  # 优先用包里自带的 bin/ffprobe（分发到别的机器时就在包里）
+    """统一走 _env（数据目录 bin/ → 系统 PATH）。以前这里写死了本机 anaconda 路径，
+    换台机器就找不到，而且包内 bin/ 以后不再带可执行文件。"""
+    try:
         from _env import ffprobe as _fp
         p = _fp()
         if os.path.isabs(p) and os.path.exists(p):
             return p
     except Exception:
         pass
-    for p in ("/opt/anaconda3/bin/ffprobe", "/usr/local/bin/ffprobe"):
-        if os.path.exists(p):
-            return p
     return shutil.which("ffprobe") or "ffprobe"
 
 

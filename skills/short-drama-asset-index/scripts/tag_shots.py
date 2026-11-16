@@ -90,11 +90,8 @@ def tool(name: str) -> str:
     hit = which(name)
     if hit:
         return hit
-    for cand in (f"/opt/anaconda3/bin/{name}", f"/usr/local/bin/{name}",
-                 f"/opt/homebrew/bin/{name}"):
-        if Path(cand).exists():
-            return cand
-    sys.exit(f"找不到 {name}，请装 ffmpeg 或加进 PATH")
+    sys.exit(f"找不到 {name}。跑一次开工自检会自动下；"
+             "下不动就手动放进 <数据目录>/bin")
 
 
 def probe_duration(video: Path) -> float:

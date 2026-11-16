@@ -180,6 +180,16 @@ def _tail(s: str, n: int = 600) -> str:
 
 # ---------------------------------------------------------------- 各阶段
 def st_check(a) -> dict:
+    # ffmpeg / ffprobe 先备好：包里不带可执行文件了，缺了在这里按平台下。
+    # 跟配套库一样放在体检里——不能等跑到装配才发现，那时候已经跑了几小时。
+    try:
+        import ffbin
+        good, fmsg = ffbin.ensure()
+        if not good:
+            return dict(status="fail", detail="ffmpeg 备不好，后面全没法跑：" + fmsg)
+    except Exception as e:
+        return dict(status="fail", detail=f"ffmpeg 自检没跑成：{e}")
+
     # 配套库先补齐。放在体检里，不是等跑到「读台词」才下载——
     # 27 集的活儿跑到一半停下来装 100MB，人还以为卡死了（11-16 实际栽过）。
     try:
@@ -280,6 +290,30 @@ def st_segment(a) -> dict:
     return dict(status="ok", detail=f"切出 {n} 段")
 
 
+def tag_mode(a=None) -> str:
+    """要不要调接口做画面打标。
+
+    11-16 张老师定：**默认不调**。纯剪用不上，这一步是全流程唯一花钱的地方
+    （一部 17 集的剧约 134 万 tokens），不该默认就烧。
+
+    `.env` 里 `SHORT_DRAMA_TAG` 三个值：
+      off（默认）只切镜头边界、不调接口。谁在说只能靠台词上下文推，
+                句级表的「画内/画外」会全判画外，选段就只靠台词文本
+      on         逐镜头打标，谁在说、什么表情、什么景别都有
+      auto       有 MIMO 的 key 就打，没 key 自动退成 off
+    命令行 `--tag` 可以不管 `.env` 直接开这一趟。
+    """
+    if a is not None and getattr(a, "tag", False):
+        return "on"
+    env = read_env()
+    v = (env.get("SHORT_DRAMA_TAG") or "").strip().lower()
+    if v in ("on", "1", "true", "yes"):
+        return "on"
+    if v == "auto":
+        return "on" if (env.get("MIMO_API_KEY") or "").strip() else "off"
+    return "off"
+
+
 def st_tag(a) -> dict:
     d = asset_dir(a.drama) / "shots"
     eps = a.eps
@@ -287,28 +321,42 @@ def st_tag(a) -> dict:
     todo = [e for e in eps if a.force or not list(d.glob(f"shots_ep{e:02d}.json"))]
     if not todo:
         k, got = has_all(d, "shots_ep{ep:02d}.json", eps)
-        return dict(status="skip", detail=f"画面打标已齐（{got}/{len(eps)} 集），跳过")
+        return dict(status="skip", detail=f"镜头已切/已打标（{got}/{len(eps)} 集），跳过")
 
-    # 每集独立、产物按集落盘，可以并行。这一步是全流程最慢的（实测约 10 分钟一集），
+    mode = tag_mode(a)
+    vlm = mode == "on"
+    if not vlm:
+        print("  画面打标：默认关，只切镜头边界（不调接口、不花钱）", flush=True)
+
+    # 每集独立、产物按集落盘，可以并行。开打标时是全流程最慢的一步（实测约 10 分钟一集），
     # 串行跑 27 集要四个半小时，并行 3 路压到一个半小时左右。
+    # 只切镜头是本地 ffmpeg 的活，更快，同样并行。
     failed: list[str] = []
     done = [0]
     lock = threading.Lock()
     jobs = max(1, a.tag_jobs)
 
     def one(ep: int) -> None:
-        rc, out = sh([PY, str(script), "--drama", a.drama, "--ep", str(ep)], timeout=7200)
+        cmd = [PY, str(script), "--drama", a.drama, "--ep", str(ep)]
+        if not vlm:
+            cmd.append("--no-vlm")
+        rc, out = sh(cmd, timeout=7200)
         with lock:
             done[0] += 1
             if rc != 0:
                 failed.append(f"ep{ep:02d}:{_tail(out, 90)}")
-            print(f"    打标 ep{ep:02d} {'ok' if rc == 0 else 'fail'} ({done[0]}/{len(todo)})", flush=True)
+            print(f"    {'打标' if vlm else '切镜头'} ep{ep:02d} "
+                  f"{'ok' if rc == 0 else 'fail'} ({done[0]}/{len(todo)})", flush=True)
 
     with ThreadPoolExecutor(max_workers=jobs) as ex:
         list(ex.map(one, todo))
 
     k, got = has_all(d, "shots_ep{ep:02d}.json", eps)
-    detail = f"画面打标 {got}/{len(eps)} 集（并行 {jobs} 路）"
+    if vlm:
+        detail = f"画面打标 {got}/{len(eps)} 集（并行 {jobs} 路）"
+    else:
+        detail = (f"只切了镜头边界 {got}/{len(eps)} 集，没调接口打标"
+                  f"（默认关；要用 AI 玩法或要判谁在说，加 --tag 或 .env 写 SHORT_DRAMA_TAG=on）")
     if failed:
         detail += f"；失败 {len(failed)} 集（例：{failed[0]}）"
     return dict(status="ok" if k else "fail", detail=detail)
@@ -332,6 +380,12 @@ def st_charmap(a) -> dict:
         except Exception:
             n = -1
         return dict(status="skip", detail=f"人名映射已在（{n} 条规则），跳过")
+    if tag_mode(a) != "on":
+        return dict(
+            status="skip",
+            detail="跳过：这一趟没做画面打标，没有外观描述可对，人名映射无从做起。"
+                   "要用就加 --tag 先打标，再单独补这一步。",
+        )
     return dict(
         status="needs_model",
         detail="缺人名映射 char_map.json。画面打标只有外观描述（比如「中年女性 深色旧棉袄」），"
@@ -843,8 +897,15 @@ def cmd_report(a) -> int:
     lines.append("")
 
     lines += ["## 五、钱花了多少", ""]
-    if stages.get("tag", {}).get("status") in ("ok", "skip"):
-        lines.append("- 画面打标：这一步是唯一可能花钱的地方，按集调模型。"
+    tagrec = stages.get("tag") or {}
+    tag_detail = str(tagrec.get("detail") or "")
+    if tag_mode(a) == "off" or "没调接口" in tag_detail:
+        lines.append("- 画面打标：**这一趟没开**（默认关，纯剪用不上）。"
+                     "代价说清楚：句级表的「谁在说」只能按台词上下文推，"
+                     "画内/画外会偏保守，选段主要靠台词文本。"
+                     "要精确就加 `--tag` 单独补这一步。")
+    elif tagrec.get("status") in ("ok", "skip"):
+        lines.append("- 画面打标：按集调模型，是唯一花钱的一步。"
                      "具体金额看接口后台，本机只记「跑了几集」，不估金额。")
     lines.append("- 纯剪装配：0 元，本机 ffmpeg，不调任何接口。")
     lines.append("")
@@ -861,6 +922,30 @@ def cmd_report(a) -> int:
     if log.get("ui_url"):
         lines += ["## 七、进度网页", "",
                   f"- {log['ui_url']}（跑完不关也能回看，页面每 3 秒自己刷）", ""]
+
+    # 11-16 张老师指出：跑完了东西只在本机，项目资产里还是空的，换台机器得重跑一遍分析。
+    # 所以报告里必须写清「该传什么」——传的动作要人点头，脚本不自己往网盘写。
+    lines += ["## 八、该同步到项目资产的东西", ""]
+    try:
+        import sync_assets  # 同目录，只是个清单算法，不上传
+        r = sync_assets.one(a.drama)
+        pk, ix = r["pack"], r["index"]
+        lines.append(f"- 剧集包 → `剧集包/{a.drama}/`："
+                     + ("可传" if pk["ready"] else "还不能传")
+                     + f"（{len(pk['files'])} 个文件）")
+        for n in pk["notes"]:
+            lines.append(f"  - {n}")
+        lines.append(f"- 素材索引 → `素材索引/{a.drama}/`："
+                     + ("齐" if ix["ready"] else "不齐")
+                     + f"（{len(ix['dirs'])} 个目录 / {len(ix['files'])} 个单文件）")
+        for n in ix["notes"]:
+            lines.append(f"  - {n}")
+        lines.append("- 不传：原片 mp4、抽帧图 edge_frames、ai_assets、build、.env。")
+        lines.append("- 传之前要张老师点头；清单随时可复算："
+                     f"`sync_assets.py --drama {a.drama}`。")
+    except Exception as e:
+        lines.append(f"- 清单没算出来：{type(e).__name__}: {e}")
+    lines.append("")
 
     out = ROOT / "runs" / a.drama / "_autopilot" / "汇总报告.md"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -882,6 +967,8 @@ def main() -> int:
             p.add_argument("--episodes", type=int, default=0, help="最多跑几集（测试用，0=全部）")
             p.add_argument("--jobs", type=int, default=4, help="台词抽取并行集数")
             p.add_argument("--tag-jobs", type=int, default=3, help="画面打标并行集数（默认 3，太多容易被限流）")
+            p.add_argument("--tag", action="store_true",
+                           help="这一趟调接口做画面打标（默认不做：纯剪用不上，白花钱）")
             p.add_argument("--force", action="store_true", help="已有产物也重跑（会烧钱，慎用）")
             p.add_argument("--on-error", choices=("continue", "stop"), default="continue")
             p.add_argument("--ui", action="store_true", default=True,

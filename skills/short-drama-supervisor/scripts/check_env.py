@@ -3,7 +3,9 @@
 """短剧线环境自检（开工第 0 步，只在这里做一次）。
 
 11-15 改成「装完就能自查」：数据目录找不到就自己建，不再要求先有仓库。
-查的只有四类：python、ffmpeg/ffprobe、数据目录与原片目录、出片密钥。
+11-16 起 ffmpeg/ffprobe 和几个 Python 库都改成「缺了当场自动补」，
+所以查的只有四类：python、ffmpeg/ffprobe、数据目录与原片目录、出片密钥。
+补不上的才报给人，报的时候带上「手动放哪儿」。
 
 原片目录写在数据目录的 .env 里（SHORT_DRAMA_ASSET_ROOT），
 技能代码和本脚本都不写死任何本机绝对路径。
@@ -36,10 +38,18 @@ def main() -> int:
 
     check(f"python3 {sys.version.split()[0]}", True)
 
-    for tool in ("ffmpeg", "ffprobe"):
-        p = env_mod.tool(tool)
-        check(tool, os.path.isabs(p) and os.path.exists(p),
-              "包里没带就手工装：Windows 用 winget install Gyan.FFmpeg；Mac 用 brew install ffmpeg")
+    # ffmpeg / ffprobe：包里不再带那 100MB 可执行文件，缺了在这里按平台当场下
+    # （约 30–120MB，只下一次，缓存在数据目录 bin/，以后升级专家包不用重下）。
+    # 放在最前面探——它是整条链的第一步，缺了后面什么都干不了。
+    try:
+        import ffbin
+        good, msg = ffbin.ensure()
+        if good:
+            ok.append(f"ffmpeg / ffprobe 可用（{msg}）")
+        else:
+            bad.append(f"ffmpeg 不可用  ← {msg}")
+    except Exception as e:
+        bad.append(f"ffmpeg 检查没跑成  ← {e.__class__.__name__}: {e}")
 
     root_value = env.get("SHORT_DRAMA_ASSET_ROOT") or os.environ.get("SHORT_DRAMA_ASSET_ROOT")
     check("原片目录已填写", bool(root_value), f"打开 {root / '.env'} 填 SHORT_DRAMA_ASSET_ROOT")
@@ -75,15 +85,23 @@ def main() -> int:
     else:
         bad.append("出片密钥没填  ← 只有要用 AI 玩法才需要，纯剪可以不填")
 
-    # 画面打标：做新剧必需。原片字幕不给「谁在说」，只能靠看画面判断；
+    # 画面打标：默认不开（11-16 张老师定：纯剪用不上，别默认烧接口钱）。
+    # 开了才有「谁在说」——原片字幕只给说了什么，不给谁说的；
     # 缺了它每句话都会被当成画外音（11-16 实测：49 句全部判成画外）。
     # 服务地址和模型名是写死的，只有 Key 需要填。
-    if env.get("MIMO_API_KEY"):
-        ok.append(f"画面打标已配置（判断谁在说必需，模型 {env_mod.MIMO_MODEL}）")
+    tag_on = str(env.get("SHORT_DRAMA_TAG") or "").strip().lower() in ("on", "1", "true", "yes")
+    if not tag_on:
+        if env.get("MIMO_API_KEY"):
+            ok.append("画面打标默认关着（要用就 .env 写 SHORT_DRAMA_TAG=on 或跑时加 --tag；"
+                      f"Key 已填，模型 {env_mod.MIMO_MODEL}）")
+        else:
+            ok.append("画面打标默认关着（纯剪不需要）")
+    elif env.get("MIMO_API_KEY"):
+        ok.append(f"画面打标已开启（判断谁在说必需，模型 {env_mod.MIMO_MODEL}）")
     else:
         bad.append(
-            "画面打标没配  ← 做新剧必需，缺 MIMO_API_KEY"
-            "；只沿用已经打标过的老剧可以先不管"
+            "画面打标开着但没 Key  ← 缺 MIMO_API_KEY"
+            "；不想打标就把 .env 里 SHORT_DRAMA_TAG 删掉或写 off"
         )
 
     host_skills = env_mod.HOST / "skills"

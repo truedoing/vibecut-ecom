@@ -108,8 +108,7 @@ def repo_root() -> Path:
 def find_ff(override=None):
     if override:
         return override
-    import shutil
-    try:  # 优先用包里自带的 bin/ffmpeg（分发到别的机器时 ffmpeg 就在包里）
+    try:  # 统一问 _env：数据目录 bin/ 优先，其次系统 PATH
         from _env import ffmpeg as _ff
         cand = _ff()
         if os.path.isabs(cand) and os.path.exists(cand):
@@ -119,31 +118,25 @@ def find_ff(override=None):
     p = shutil.which("ffmpeg")
     if p:
         return p
-    for cand in ("/opt/anaconda3/bin/ffmpeg",):
-        if os.path.exists(cand):
-            return cand
-    sys.exit("找不到 ffmpeg：用 --ff 指定绝对路径")
+    sys.exit("找不到 ffmpeg：跑一次开工自检会自动下；"
+             "下不动就手动放进 <数据目录>/bin；或者用 --ff 指定绝对路径")
 
 
 def find_ffprobe(ff):
+    """ffprobe 和 ffmpeg 是一套的：先取同目录那份，再问 _env，最后看 PATH。"""
     if ff:
-        cand = os.path.join(os.path.dirname(ff), "ffprobe")
+        exe = "ffprobe.exe" if os.name == "nt" else "ffprobe"
+        cand = os.path.join(os.path.dirname(ff), exe)
         if os.path.exists(cand):
             return cand
-        import shutil
-        p = shutil.which("ffprobe")
-        if p:
-            return p
-    cands = []
-    import shutil
-    p = shutil.which("ffprobe")
-    if p:
-        cands.append(p)
-    cands.append("/opt/anaconda3/bin/ffprobe")
-    for c in cands:
-        if os.path.exists(c):
-            return c
-    return None
+    try:
+        from _env import ffprobe as _fp
+        cand = _fp()
+        if os.path.isabs(cand) and os.path.exists(cand):
+            return cand
+    except Exception:
+        pass
+    return shutil.which("ffprobe")
 
 
 # ---------- 素材定位 ----------

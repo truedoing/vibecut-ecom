@@ -64,7 +64,7 @@ CANDIDATES = [
     HOME / ".workbuddy/plugins" / NAME,
 ]
 
-SKIP_DIRS = {"__pycache__", "__MACOSX", ".git", "node_modules"}
+SKIP_DIRS = {"__pycache__", "__MACOSX", ".git", "node_modules", "bin"}
 SKIP_FILES = {".DS_Store", ".gitignore", "Thumbs.db"}
 SKIP_EXT = {".pyc", ".pyo"}
 
@@ -133,13 +133,12 @@ def check(host: Path, items) -> list:
         if must not in names:
             bad.append(f"包根目录缺 {must}")
 
-    # Windows 上要用到的自带工具
-    if not any(n.startswith("bin/") for n in names):
-        bad.append("bin/ 里没有自带工具（Windows 那边会缺 ffmpeg）")
-
-    big = [(str(rel), full.stat().st_size) for full, rel in items if full.stat().st_size > 80 * 1024 * 1024]
+    # bin/ 已从打包范围里排除（SKIP_DIRS）。可执行文件不打进包：
+    # ffmpeg / ffprobe 改成按平台自己下（见 skills/.../scripts/ffbin.py），
+    # 包从 37.2MB 降到 1MB 以内，Mac 用户也不用白背 Windows 的 exe。
+    big = [(str(rel), full.stat().st_size) for full, rel in items if full.stat().st_size > 10 * 1024 * 1024]
     for n, sz in big:
-        bad.append(f"{n} 有 {sz // 1024 // 1024}MB，太大了，确认是不是误打进去的素材")
+        bad.append(f"{n} 有 {sz // 1024 // 1024}MB，包里不该有这么大的文件，确认是不是误打进去的素材")
 
     bad += check_root_exit(items)
     return bad
@@ -192,7 +191,7 @@ def verify(zip_path: Path, version: str) -> int:
         if got != version:
             bad.append(f"包内版本号是 {got}，不是 {version}")
 
-        for must in ("LICENSE", "README.md", "INSTALL.md", f"{NAME}/bin", "agents/", "skills/"):
+        for must in ("LICENSE", "README.md", "INSTALL.md", "agents/", "skills/"):
             key = must if must.startswith(NAME) else f"{NAME}/{must}"
             if not any(n.startswith(key) for n in names):
                 bad.append(f"包里缺 {must}")
@@ -210,7 +209,8 @@ def verify(zip_path: Path, version: str) -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="把本机的短剧专家打成可分发的 zip")
-    ap.add_argument("--out", default="/Users/zgl/vibecut-ecom/dist", help="输出目录")
+    ap.add_argument("--out", default=os.environ.get("SD_PACK_OUT") or str(Path.cwd() / "dist"),
+                    help="输出目录（默认当前目录下的 dist/，可用 SD_PACK_OUT 覆盖）")
     ap.add_argument("--check-only", action="store_true", help="只体检，不打包")
     a = ap.parse_args()
 

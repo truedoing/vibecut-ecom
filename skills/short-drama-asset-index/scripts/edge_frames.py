@@ -91,9 +91,9 @@ PAD_OUT = 0.5  # 段尾内缩，避开"切走以后"的黑场
 
 
 def tool(name: str) -> str:
-    """可移植地找 ffmpeg/ffprobe：包内 bin/ → PATH → 当前解释器同目录 → 常见包管理目录。
-    不写死本机路径（技能红线），也不假定 PATH 里有它。"""
-    try:  # 优先用包里自带的 bin（分发到别的机器时 ffmpeg 就在包里）
+    """ffmpeg/ffprobe：统一问 _env（数据目录 bin/ → 系统 PATH）。
+    不再自己往后备目录里翻——包内 bin/ 以后不带可执行文件了。"""
+    try:
         from _env import tool as _env_tool
         cand = _env_tool(name)
         if Path(cand).is_absolute() and Path(cand).exists():

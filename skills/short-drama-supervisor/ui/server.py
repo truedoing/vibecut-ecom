@@ -669,6 +669,72 @@ def list_videos() -> list[dict]:
     return out
 
 
+_HOOK_NAMES = None
+
+
+def hook_names() -> dict:
+    """钩子模板 01–08 的名字，从技能自带的模板库读；读不到就只显示编号。
+
+    模板库是真源（`skills/short-drama-script/references/hook-templates.md`），
+    这里不另抄一份名字——抄了以后改了库这边就对不上。
+    """
+    global _HOOK_NAMES
+    if _HOOK_NAMES is not None:
+        return _HOOK_NAMES
+    out: dict[str, str] = {}
+    cands = [
+        Path(__file__).resolve().parents[2] / "short-drama-script" / "references" / "hook-templates.md",
+        ROOT / "skills" / "short-drama-script" / "references" / "hook-templates.md",
+    ]
+    for p in cands:
+        try:
+            txt = p.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        for m in re.finditer(r"^###\s*0?(\d+)\s+(.+?)\s*$", txt, re.M):
+            out[m.group(1).zfill(2)] = m.group(2).strip()
+        break
+    _HOOK_NAMES = out
+    return out
+
+
+def _detect_hook(plan: dict, segs: list) -> dict:
+    """这条片子开头用的是哪个钩子模板。
+
+    优先读清单里直接写的 `hook` 字段；没写就从钩子段（标签带「钩子」的那段，
+    没有就是第一段）的说明文字里认「钩子模板 01」这种字样。
+    认不出来就返回空，页面不显示——不编一个填上。
+    """
+    no = ""
+    h = plan.get("hook")
+    if isinstance(h, dict):
+        no = str(h.get("no") or h.get("template") or "").strip()
+    elif isinstance(h, str):
+        m = re.search(r"0?(\d{1,2})", h)
+        no = m.group(1) if m else ""
+
+    seg_i = None
+    for i, s in enumerate(segs):
+        if "钩子" in str(s.get("label") or ""):
+            seg_i = i
+            break
+
+    if not no:
+        for s in segs[:3]:
+            m = re.search(r"钩子模板\s*0?(\d{1,2})", str(s.get("beats") or ""))
+            if m:
+                no = m.group(1)
+                break
+    if no.isdigit():
+        no = no.zfill(2)
+    # 两样都没有就不许猜：老清单里没写钩子的，页面宁可不显示，也不要给个假的
+    if not no and seg_i is None:
+        return {}
+    if seg_i is None:
+        seg_i = 0
+    return {"no": no, "name": hook_names().get(no, ""), "seg": seg_i}
+
+
 def _task_preview_meta(drama: str, task: str) -> dict:
     """一条片子的预览上下文：计划、当前成片路径、段落首尾帧、自检图。"""
     base = RUNS / drama / task
@@ -726,6 +792,10 @@ def _task_preview_meta(drama: str, task: str) -> dict:
             "card_b": _frames_url(b) if b.exists() else "",
         })
 
+    hook = _detect_hook(plan, segs)
+    for i, s in enumerate(segs):
+        s["is_hook"] = (i == hook.get("seg")) if hook else False
+
     selfchecks = []
     bdir = base / "build"
     if bdir.is_dir():
@@ -748,6 +818,7 @@ def _task_preview_meta(drama: str, task: str) -> dict:
         "trailer_rev": trailer.get("rev"),
         "script_state": script.get("state") or "unlogged",
         "cycle_round": status.get("cycle_round") or 1,
+        "hook": hook,
         "segs": segs,
         "selfchecks": selfchecks,
     }
@@ -809,6 +880,7 @@ def api_videos(scope: str = "active") -> dict:
             "trailer_exists": meta["trailer_exists"],
             "script_state": meta["script_state"],
             "cycle_round": meta["cycle_round"],
+            "hook": meta.get("hook") or {},
             "current": current["url"] if current else (items[0]["url"] if items else ""),
             "has_current": bool(current),
             "versions": items,
