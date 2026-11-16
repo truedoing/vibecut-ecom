@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
 import sys
@@ -28,23 +29,44 @@ from urllib.parse import parse_qs, quote, unquote, urlparse
 
 UI_DIR = Path(__file__).resolve().parent
 SKILL_DIR = UI_DIR.parent
+sys.path.insert(0, str(SKILL_DIR / "scripts"))
 
 
 def find_root() -> Path:
-    """按 runs/工作台.json 找仓库根。技能是软链到用户级目录的，不能数 parents。"""
-    for parent in Path(__file__).resolve().parents:
-        if (parent / "runs" / "工作台.json").exists():
-            return parent
-    raise RuntimeError("找不到仓库根（没看到 runs/工作台.json）")
+    """数据目录只认一个出口：scripts/_env.py（11-16 修，张老师测试机踩到）。
+
+    以前这里从 __file__ 往上数 parents 找 runs/工作台.json——技能装进
+    ~/.workbuddy/skills 或专家包的 skills/ 之后，那条链会一路翻到 C:\\ 或 /，
+    永远碰不到工作台，服务一启动就 RuntimeError 退出；而启动时的输出又被
+    上层丢进黑洞，最终表现只有一句「进度网页没起起来」，看不出原因。
+
+    _env.data_root() 的查找顺序：环境变量 → 当前目录往上 → 技能位置往上 →
+    默认的「文档/短剧工作区」。自动跑片时上层会把工作目录设成数据目录，
+    手动起服务也照样能找到。
+    """
+    import _env  # noqa: E402  （上面已经把 scripts/ 放进 sys.path）
+
+    return _env.data_root()
 
 
 ROOT = find_root()
-sys.path.insert(0, str(SKILL_DIR / "scripts"))
 import progress  # noqa: E402
 import status_overview  # noqa: E402
+import drama_registry  # noqa: E402
+import analysis_log  # noqa: E402
+import asset_summary  # noqa: E402
+try:  # 无人值守进度接口要用它的阶段表；导入失败只影响那一个面板
+    import autopilot  # noqa: E402
+except Exception:
+    autopilot = None
 
 ASSETS = ROOT / "assets" / "short-drama"
 RUNS = ROOT / "runs"
+
+# 素材分析做到多少算够——张老师 11-13 定的行业规则：一般分析全剧的 60%。
+# 分母一律用「全剧集数」，不用「已动工集数」：后者会把只挑了前 19 集的剧
+# 显示成快做完（60 集的剧挑 19 集，按已动工算 100%，实际只覆盖三分之一）。
+COVERAGE_TARGET = 0.6
 
 
 def source_root() -> Path:
@@ -231,6 +253,67 @@ def api_progress() -> dict:
     return {"items": items, "running_count": len(running), "suspect_count": len(suspects)}
 
 
+def api_autopilot() -> dict:
+    """无人值守实时进度：走到第几步、当前在跑什么、心跳还活着没有。
+
+    为什么单独开一个接口而不是混进 /api/progress：那个是「哪个脚本在跑」的流水账，
+    这个是「整条流水线走到哪」的账。无人值守挂一晚上，第二天要一眼看出
+    「跑完了 / 还在跑 / 半夜死了」，三句话不能靠翻流水账拼出来。
+    """
+    try:
+        stages_def = [(k, lb, kd) for k, lb, kd in autopilot.STAGES if k != "report"]
+    except Exception:
+        stages_def = []
+
+    books = []
+    for logp in RUNS.glob("*/_autopilot/日志.json"):
+        try:
+            d = json.loads(logp.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        drama = d.get("drama") or logp.parent.parent.name
+        stages = d.get("stages") or {}
+        row = {
+            "drama": drama,
+            "updated_at": d.get("updated_at") or "",
+            "authorized": d.get("authorized") or {},
+            "stages": [
+                {
+                    "key": k,
+                    "label": lb,
+                    "kind": kd,
+                    "status": (stages.get(k) or {}).get("status") or "todo",
+                    "detail": (stages.get(k) or {}).get("detail") or "",
+                    "seconds": (stages.get(k) or {}).get("seconds"),
+                    "at": (stages.get(k) or {}).get("at") or "",
+                }
+                for k, lb, kd in stages_def
+            ],
+        }
+        rep = logp.parent / "汇总报告.md"
+        if rep.exists():
+            row["report_url"] = "/doc/" + quote(str(rep.relative_to(ROOT)))
+        books.append(row)
+
+    # 关联实时心跳：这一趟正在跑的脚本，以及「标着在跑但没动静」的疑似卡死
+    try:
+        live = progress.read_all()
+    except Exception:
+        live = []
+    for b in books:
+        mine = [x for x in live if x.get("drama") == b["drama"]]
+        b["live"] = [x for x in mine if x.get("state") == "running" and not x.get("suspect")]
+        b["suspect"] = [x for x in mine if x.get("suspect")]
+
+    books.sort(key=lambda b: b.get("updated_at") or "", reverse=True)
+    return {
+        "books": books,
+        "server_time": datetime.now().strftime("%H:%M:%S"),
+        # 出问题时先看这三行：服务读的是哪个目录、从哪个文件起来的
+        "where": {"runs": str(RUNS), "cwd": os.getcwd(), "file": str(Path(__file__).resolve())},
+    }
+
+
 def drama_alias() -> dict[str, str]:
     """剧名对照：工作台记的是短名，素材目录可能用全名。
 
@@ -249,6 +332,77 @@ def drama_alias() -> dict[str, str]:
 def api_dramas() -> list[str]:
     """剧列表只认素材根目录的一级文件夹，别的目录一概不扫。"""
     return source_dramas()
+
+
+# ---------------------------------------------------------------- 剧注册表
+REGISTRY = RUNS / "剧注册表.json"
+
+
+def load_registry() -> dict:
+    return jload(REGISTRY, {}) or {}
+
+
+def canon_drama(text: str) -> str:
+    """接口也认简称：?drama=父爱剧 能对到《父爱跨越山海》。
+
+    对不上就原样返回，让下游照旧报「没建库」，不要在接口层替人猜。
+    """
+    m = drama_registry.match_drama(text, load_registry())
+    return m["name"] if m.get("ok") else text
+
+
+def registry_entries() -> list[dict]:
+    """按 drama_order 排；未登记的素材根剧默认 active，排在最后。
+
+    code 只在活动剧上有效；归档剧用 archived_code，保留归档那一刻的号。
+    """
+    reg = load_registry()
+    order = reg.get("drama_order") or []
+    infos = reg.get("dramas") or {}
+    names = list(order)
+    for n in sorted(set(source_dramas()) | set(infos)):
+        if n not in names:
+            names.append(n)
+    out = []
+    for name in names:
+        info = infos.get(name) or {}
+        status = info.get("status") or "active"
+        code = info.get("archived_code") if status == "archived" else info.get("code")
+        out.append({
+            "name": name,
+            "status": status,
+            "code": code,
+            "archived_code": info.get("archived_code"),
+            "archived_at": info.get("archived_at") or "",
+            # 简称给页面的搜索框用：输「父爱」「鸡排」也能找得到
+            "aliases": info.get("aliases") or [],
+        })
+    return out
+
+
+def drama_meta(name: str) -> dict:
+    for e in registry_entries():
+        if e["name"] == name:
+            return e
+    return {"name": name, "status": "active", "code": None,
+            "archived_code": None, "archived_at": ""}
+
+
+def names_for_scope(scope: str = "active") -> list[str]:
+    if scope == "archived":
+        return [e["name"] for e in registry_entries() if e["status"] == "archived"]
+    return [e["name"] for e in registry_entries() if e["status"] != "archived"]
+
+
+def api_registry() -> dict:
+    ents = registry_entries()
+    return {
+        "dramas": ents,
+        "counts": {
+            "active": sum(1 for e in ents if e["status"] != "archived"),
+            "archived": sum(1 for e in ents if e["status"] == "archived"),
+        },
+    }
 
 
 def asset_dir_of(drama: str) -> Path | None:
@@ -275,12 +429,21 @@ def api_assets(drama: str) -> dict:
     """素材进度：按集看台词库、镜头标签、句子视图齐不齐。
 
     这一页不依赖脚本上报，读的是已经落盘的产物，所以历史数据也能看。
+    drama 可以是简称（父爱剧），先对成正式剧名再找目录。
     """
+    drama = canon_drama(drama)
     base = asset_dir_of(drama)
     if not base:
+        vc = source_ep_count(drama)
         return {"drama": drama, "error": "这部剧还没建库",
                 "ep_count": 0, "ready_count": 0, "eps": [], "char_map": {},
-                "video_count": source_ep_count(drama)}
+                "video_count": vc,
+                "cover_pct": 0,
+                "target_eps": math.ceil(vc * COVERAGE_TARGET) if vc else 0,
+                "target_pct": round(COVERAGE_TARGET * 100),
+                "subs": [], "subs_ok": 0, "subs_total": 8, "pct": 0,
+                "summary": asset_summary.build(drama, [], vc, 0,
+                                               analysis_log.bundle(drama), 0)}
 
     def ep_of(name: str):
         m = re.search(r"ep(\d+)", name)
@@ -325,9 +488,75 @@ def api_assets(drama: str) -> dict:
         })
 
     ready = sum(1 for e in eps if e["has_lines"] and e["has_shots"] and e["has_sentences"])
+    video_count = max(source_ep_count(drama), len(eps))
+    target = math.ceil(video_count * COVERAGE_TARGET) if video_count else 0
+    cover = round(len(eps) / video_count * 100, 1) if video_count else 0
+    # 用量：走 jload 的缓存，否则 17 个文件读一遍就多等 1 秒（这台机器开一个文件 60 毫秒）
+    tokens = sum(int(((jload(p, {}) or {}).get("usage") or {}).get("total_tokens") or 0)
+                 for p in (base / "shots").glob("shots_ep[0-9][0-9].json"))
+    # 概况：耗时 + 用量 + 质量分。耗时来自 analysis_log（脚本记的或事后补记的），
+    # 没有记录就如实说没有——不拿文件时间戳去猜，猜出来的数比没有更坏。
+    summary = asset_summary.build(drama, eps, video_count, cover,
+                                  analysis_log.bundle(drama), tokens)
+    # 素材分析不是一个进度，是 8 件事：有的按集跑（台词/切口/切段/打标/边界帧/句级表），
+    # 有的整部剧只做一次（体检/人名映射），速度差几十倍。混成一个百分比会谎报完成——
+    # 打标只跑了 8 集，主数字已经 60%（11-16 拆开）。
+    def _eps_count(d: Path, pat: str) -> int:
+        seen = set()
+        for p in d.glob(pat):
+            m = re.search(r"ep_?(\d+)", p.name)
+            if m:
+                seen.add(int(m.group(1)))
+        return len(seen)
+
+    target_eps = target or 1
+    cuts_n = _eps_count(base / "cuts", "*.json")
+    sk = jload(base / "segments_skeleton.json", {})
+    eps_map = (sk.get("episodes") if isinstance(sk, dict) else None) or {}
+    seg_n = len(eps_map) if isinstance(eps_map, dict) else 0
+    tagged_n = 0
+    for _ep, _p in shots.items():
+        _doc = jload(_p, {}) or {}
+        if any((s.get("tag") or {}) for s in (_doc.get("shots") or [])):
+            tagged_n += 1
+    man = jload(base / "edge_frames" / "manifest.json", {})
+    edge_n = len(man) if isinstance(man, dict) else 0
+    cmap = jload(base / "char_map.json", {})
+    cmap_n = len((cmap.get("chars") if isinstance(cmap, dict) else None) or cmap or {})
+
+    def sub(key, label, done, total):
+        total = total or 0
+        done = min(done, total) if total else done
+        return {
+            "key": key, "label": label, "done": done, "total": total,
+            "pct": round(done / total * 100) if total else 0,
+            "ok": bool(total) and done >= total,
+        }
+
+    subs = [
+        sub("check", "素材体检（原片能不能读）", 1 if video_count else 0, 1),
+        sub("lines", "台词时间轴（OCR 认字幕）", len(lines), target_eps),
+        sub("cuts", "切口停顿表（找自然刀口）", cuts_n, target_eps),
+        sub("segment", "冲突段落切分", seg_n, target_eps),
+        sub("tag", "镜头画面打标（VLM 看图）", tagged_n, target_eps),
+        sub("charmap", "外观对人名", 1 if cmap_n else 0, 1),
+        sub("edge", "边界帧扫描", edge_n, target_eps),
+        sub("index", "查询库与句级表", len(sentences), target_eps),
+    ]
+    subs_ok = sum(1 for s in subs if s["ok"])
+    subs_pct = round(sum(s["pct"] for s in subs) / len(subs)) if subs else 0
+
     return {
         "drama": drama, "ep_count": len(eps), "ready_count": ready, "eps": eps,
-        "video_count": max(source_ep_count(drama), len(eps)),
+        "video_count": video_count,
+        "cover_pct": cover,
+        "target_eps": target,
+        "target_pct": round(COVERAGE_TARGET * 100),
+        "subs": subs,
+        "subs_ok": subs_ok,
+        "subs_total": len(subs),
+        "pct": subs_pct,
+        "summary": summary,
         "char_map": jload(base / "char_map.json", {}),
     }
 
@@ -358,6 +587,7 @@ def api_plans() -> dict:
 
 
 def api_plan(drama: str, task: str) -> dict:
+    drama = canon_drama(drama)
     p = RUNS / drama / task / "plan.json"
     d = jload(p, {})
     if not d:
@@ -541,20 +771,25 @@ _ROLE_ORDER = {"当前成片": 0, "成片": 1, "旧版": 2, "装配中间文件"
                "AI 素材段 / 验证片": 4}
 
 
-def api_videos() -> dict:
+def api_videos(scope: str = "active") -> dict:
     """按「剧 / 片子」分组，一组就是一个预览单元。
 
     旧版页面把 38 个 mp4 平铺成一张列表，用户得靠文件名猜哪条是成片。
     这里按状态文件里的 trailer.path 认当前成片，再按片子分组，前面只放人要看的。
+    scope=active 只看活动剧；archived 只看归档剧。
     """
-    vids = list_videos()
+    allowed = set(names_for_scope(scope))
+    vids = [v for v in list_videos() if v["drama"] in allowed]
     by: dict[tuple[str, str], list[dict]] = {}
     for v in vids:
         by.setdefault((v["drama"], v["task"]), []).append(v)
 
+    order = {e["name"]: i for i, e in enumerate(registry_entries())}
     groups = []
-    for (drama, task), items in sorted(by.items()):
+    for (drama, task), items in sorted(
+            by.items(), key=lambda kv: (order.get(kv[0][0], 999), kv[0][1])):
         meta = _task_preview_meta(drama, task)
+        dmeta = drama_meta(drama)
         trel = meta["trailer_rel"]
         for v in items:
             v["role"] = _video_role(v, trel)
@@ -564,6 +799,8 @@ def api_videos() -> dict:
         groups.append({
             "key": f"{drama}/{task}",
             "drama": drama, "task": task,
+            "code": dmeta["code"], "status": dmeta["status"],
+            "archived_at": dmeta["archived_at"],
             "title": meta["title"], "angle": meta["angle"],
             "rev": meta["rev"],
             "trailer_state": meta["trailer_state"],
@@ -581,9 +818,12 @@ def api_videos() -> dict:
 
     final = [v for v in vids if v["role"] in ("当前成片", "成片")]
     ws = jload(RUNS / "工作台.json", {}) or {}
+    active = ws.get("active") or {}
+    if active.get("drama") not in allowed:
+        active = {}
     return {
         "groups": groups, "videos": vids, "final": final,
-        "active": ws.get("active") or {},
+        "active": active,
         "group_count": len(groups),
         "current_count": sum(1 for g in groups if g["has_current"]),
         "final_count": len(final),
@@ -611,11 +851,12 @@ def _plan_file(base: Path) -> Path | None:
     return cands[0] if cands else None
 
 
-def api_pipelines() -> dict:
+def api_pipelines(scope: str = "active") -> dict:
     """一部剧一条管线，三个阶段的进度。
 
     后两段不是「一个开关」，是一部剧底下**一批片子**各自的进度：
     有的等人过目、有的已成片、有的改了清单要重拼。所以这里给的是数，不是勾。
+    scope=active 只看活动剧；archived 只看归档剧。
     """
     ov = api_overview()
     by_task = {(t["drama"], t["task"]): t for t in ov["tasks"]}
@@ -623,15 +864,14 @@ def api_pipelines() -> dict:
     # 出片进度按「状态文件里写了当前成片路径」算，与预览页同一口径。
     # 不能只看 sd_*.mp4：D1/D2 的成片在 build/vN.mp4 下，文件名不带 sd_。
     pv_groups = {(g["drama"], g["task"]): g
-                 for g in api_videos()["groups"]}
+                 for g in api_videos(scope)["groups"]}
 
-    # 剧只从素材根目录的一级文件夹来。原视频不在这台机器上的历史剧，
-    # 片子记录和成片仍在 runs 下，不混进管线，单独列一句免得看着像丢了。
-    names = set(api_dramas())
-    historical = sorted({p["drama"] for p in plans} - names)
+    names = names_for_scope(scope)
+    historical = sorted({p["drama"] for p in plans} - set(source_dramas()))
 
     out = []
-    for drama in sorted(names):
+    for drama in names:
+        meta = drama_meta(drama)
         a = api_assets(drama)
         task_dirs = _task_dirs(drama)
         plan_tasks = [p for p in task_dirs if _plan_file(p)]
@@ -663,9 +903,9 @@ def api_pipelines() -> dict:
 
         eps = a.get("eps") or []
         video_count = a.get("video_count") or len(eps)
-        # 分母沿用「已经动工的集数」，不换成全剧总集数：
-        # 一部剧可能只挑前 19 集分析，用 60 集当分母会把做完的活显示成 29%。
-        total_eps = len(eps) or video_count
+        # 分母用「全剧集数」：够不够看的是覆盖率，不是把挑出来的那几集做得多完整。
+        # 达标线 60%（COVERAGE_TARGET），比如 60 集的剧要分析到 36 集才够。
+        eps_total = max(video_count, len(eps))
         line_total = sum(e["line_count"] for e in eps)
         sentences = sum(e["sentence_count"] for e in eps)
         named = sum(e["named_count"] for e in eps)
@@ -673,10 +913,13 @@ def api_pipelines() -> dict:
         lines_eps = sum(1 for e in eps if e["has_lines"])
         shots_eps = sum(1 for e in eps if e["has_shots"])
         sent_eps = sum(1 for e in eps if e["has_sentences"])
-        # 每集要交三份资料（台词、镜头标注、合表），按份数算。
+        # 每集要交三份资料（台词、镜头标注、合表），按份数算，分母是 全剧集数 × 3。
         parts_done = lines_eps + shots_eps + sent_eps
-        parts_total = total_eps * 3
+        parts_total = eps_total * 3
         pct1 = round(parts_done / parts_total * 100) if parts_total else 0
+        # 覆盖率单算一个：已建台词的集数 ÷ 全剧集数，跟「60% 够不够」这条线直接比。
+        cover_pct = round(lines_eps / eps_total * 100, 1) if eps_total else 0
+        target_eps = math.ceil(eps_total * COVERAGE_TARGET)
 
         script_pct = round(script_count / task_count * 100) if task_count else 0
         review_pct = round(len(passed) / script_count * 100) if script_count else 0
@@ -688,6 +931,9 @@ def api_pipelines() -> dict:
         out.append({
             "drama": drama,
             "active": active.get("drama") == drama,
+            "code": meta["code"],
+            "status": meta["status"],
+            "archived_at": meta["archived_at"],
             "stage1": {
                 "label": "素材分析",
                 "ep_count": a.get("ep_count", 0),
@@ -695,13 +941,24 @@ def api_pipelines() -> dict:
                 "video_count": video_count,
                 "lines_eps": lines_eps, "shots_eps": shots_eps, "sent_eps": sent_eps,
                 "parts_done": parts_done, "parts_total": parts_total,
+                "cover_pct": cover_pct,
+                "target_eps": target_eps,
+                "target_pct": round(COVERAGE_TARGET * 100),
+                "cover_ok": lines_eps >= target_eps and eps_total > 0,
                 "lines": line_total,
                 "sentences": sentences,
                 "named_pct": round(named / sentences * 100, 1) if sentences else 0,
                 "emotion_pct": round(emos / sentences * 100, 1) if sentences else 0,
                 "dense": sum(e["dense_shots"] for e in eps),
-                "pct": pct1,
-                "done": total_eps > 0 and sent_eps == total_eps,
+                # 主数字按 8 道工序算（素材分析不是一个进度）。pct_parts 是老的
+                # 「三份资料份数」口径，留着做明细，不再当主数字（11-16）。
+                "pct": a.get("pct", pct1),
+                "pct_parts": pct1,
+                "subs": a.get("subs", []),
+                "subs_ok": a.get("subs_ok", 0),
+                "subs_total": a.get("subs_total", 8),
+                # 8 项全满才算过：有一项没满，下游拿到的数据就是缺的
+                "done": bool(a.get("subs_total")) and a.get("subs_ok") == a.get("subs_total"),
             },
             "stage2": {
                 "label": "文案",
@@ -733,12 +990,16 @@ REVIEW_DOCS = ("清单过目.md", "清单人审表.md", "送审说明.md",
                "方向卡.md", "选段说明.md", "spec.json")
 
 
-def api_reviews() -> dict:
+def api_reviews(scope: str = "active") -> dict:
     """待审文案：把等人过目的清单挑出来，附上看得到内容的文档。"""
+    allowed = set(names_for_scope(scope))
     by_task = {(t["drama"], t["task"]): t for t in api_overview()["tasks"]}
     out = []
     for p in sorted(RUNS.glob("*/*/plan.json")):
         drama, task = p.parent.parent.name, p.parent.name
+        if drama not in allowed:
+            continue
+        dmeta = drama_meta(drama)
         d = jload(p, {})
         docs = []
         for f in sorted(p.parent.glob("*.md")) + sorted(p.parent.glob("spec.json")):
@@ -762,6 +1023,7 @@ def api_reviews() -> dict:
             state = "等人过目"
         out.append({
             "drama": drama, "task": task,
+            "code": dmeta["code"], "status": dmeta["status"],
             "title": d.get("title") or task,
             "angle": d.get("angle") or "",
             "seg_count": len(d.get("segs") or []),
@@ -772,7 +1034,9 @@ def api_reviews() -> dict:
             "mtime": datetime.fromtimestamp(p.stat().st_mtime).strftime("%m-%d %H:%M"),
         })
     order = {"要改": 0, "等人过目": 1, "没登记状态": 2, "已通过": 3, "已废弃": 4}
-    out.sort(key=lambda x: (order.get(x["state"], 9), x["drama"], x["task"]))
+    idx = {e["name"]: i for i, e in enumerate(registry_entries())}
+    out.sort(key=lambda x: (order.get(x["state"], 9),
+                            idx.get(x["drama"], 999), x["task"]))
     return {
         "reviews": out,
         # 没登记状态的片子也有清单要人看，算进来，另给一个数字说清来源
@@ -889,10 +1153,14 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_file(UI_DIR / "index.html", "text/html; charset=utf-8")
             if path == "/api/overview":
                 return self.send_json(api_overview())
+            if path == "/api/autopilot":
+                return self.send_json(api_autopilot())
             if path == "/api/progress":
                 return self.send_json(api_progress())
             if path == "/api/dramas":
                 return self.send_json({"dramas": api_dramas()})
+            if path == "/api/registry":
+                return self.send_json(api_registry())
             if path == "/api/assets":
                 return self.send_json(api_assets(q.get("drama", [""])[0]))
             if path == "/api/plans":
@@ -903,11 +1171,11 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/shared":
                 return self.send_json(api_shared())
             if path == "/api/pipelines":
-                return self.send_json(api_pipelines())
+                return self.send_json(api_pipelines(q.get("scope", ["active"])[0]))
             if path == "/api/reviews":
-                return self.send_json(api_reviews())
+                return self.send_json(api_reviews(q.get("scope", ["active"])[0]))
             if path == "/api/videos":
-                return self.send_json(api_videos())
+                return self.send_json(api_videos(q.get("scope", ["active"])[0]))
             if path == "/api/doc":
                 return self.send_json(api_doc(q.get("path", [""])[0]))
             if path.startswith("/video/"):
@@ -949,7 +1217,10 @@ def main():
     srv = ThreadingHTTPServer(("127.0.0.1", a.port), Handler)
     threading.Thread(target=warm_cache, daemon=True).start()
     print(f"短剧工作台（只读）：http://127.0.0.1:{a.port}", flush=True)
-    print(f"仓库根：{ROOT}", flush=True)
+    print(f"数据目录：{ROOT}", flush=True)
+    if not (ROOT / "runs" / "工作台.json").exists():
+        print("  注意：这个目录里还没有 runs/工作台.json，页面会是空的。", flush=True)
+        print("  想指定位置：设环境变量 SHORT_DRAMA_ROOT 指向真正的数据目录再起。", flush=True)
     print("按 Ctrl+C 停止", flush=True)
     try:
         srv.serve_forever()

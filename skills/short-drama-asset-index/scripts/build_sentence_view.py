@@ -18,19 +18,35 @@ import argparse
 import json
 import re
 import sys
+import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[3]
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return Path(__file__).resolve().parents[3]
+
+ROOT = _data_root()
 
 # 进度上报给主管的网页看；找不到模块就降级，不影响合表本身。
+# 主管技能住在插件包的 skills/ 下，不在数据目录里，得问 _env 要宿主位置（11-16 修）。
 try:
-    sys.path.insert(0, str(ROOT / "skills" / "short-drama-supervisor" / "scripts"))
+    from _env import HOST as _HOST
+except Exception:
+    _HOST = Path(__file__).resolve().parents[3]
+_SUP = _HOST / "skills" / "short-drama-supervisor" / "scripts"
+try:
+    if _SUP.is_dir() and str(_SUP) not in sys.path:
+        sys.path.insert(0, str(_SUP))
     import progress
+    import analysis_log
 except Exception:
     class _NoProgress:
         def __getattr__(self, _name):
             return lambda *a, **k: None
     progress = _NoProgress()
+    analysis_log = _NoProgress()
 
 # --- 情绪：粗分六类，够剪片子用，不追求心理学精度 ---
 EMO_TABLE = [
@@ -251,6 +267,7 @@ def main() -> int:
     ap.add_argument("--out", default="")
     args = ap.parse_args()
 
+    t0 = time.time()
     base = ROOT / "assets" / "short-drama" / args.drama
     out_dir = Path(args.out) if args.out else base / "sentences"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -339,6 +356,9 @@ def main() -> int:
 
     n = sum(total.values())
     progress.finish("build_sentences", args.drama, None, note=f"{n} 句")
+    # 耗时台账：这一环只读已有的两份 JSON 做对齐，几秒到几十秒
+    analysis_log.record(args.drama, "build_sentences", started=t0,
+                        eps=done_eps, items=n, note=f"对齐 {done_eps} 集 / {n} 句")
     print(f"\n=== {args.drama} 共 {n} 句 → {out_dir} ===")
     for k, label in [("on_screen", "画面内说话"), ("off_screen", "画外音"),
                      ("unknown", "定不了")]:

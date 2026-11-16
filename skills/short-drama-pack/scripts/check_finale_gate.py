@@ -15,7 +15,12 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return HERE.parents[2]
+ROOT = _data_root()
 VALIDATOR = HERE / "validate_pack.py"
 NEEDLE = "却没标 restricted"
 # 临时包写到 build/（已 gitignore）；跑完删掉，删不掉也不污染仓库

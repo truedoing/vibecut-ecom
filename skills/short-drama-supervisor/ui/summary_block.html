@@ -1,0 +1,119 @@
+<!--
+素材分析页的「概括」块。给张老师直接粘进 index.html 用，不改动他已有的样式。
+
+用法（两步）：
+  1. 把下面 script 标签里的内容整段粘到 index.html 的脚本区（任意位置，函数声明会提升）；
+  2. 在素材分析页的渲染函数里，把明细表之前加一行：
+         h += renderSummary(d);      // d 就是接口 /api/assets 返回的那个对象
+     现在那一行大概是：  h += progressBanner(pr);
+
+它只用内联样式，不依赖页面里任何 class，粘进去不会跟现有样式打架。
+数据全部来自接口新增的 summary 字段，页面自己不算任何东西——
+算两遍就会出现「页面显示 78 分，实际是 62 分」这种没人信的事。
+-->
+<script>
+function renderSummary(d){
+  const s = (d && d.summary) || null;
+  if(!s || !s.quality) return '';
+
+  const q = s.quality, t = s.time, u = s.usage, c = s.counts;
+  const esc = x => String(x == null ? '' : x).replace(/[&<>"]/g,
+    m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+  const col = q.score >= 85 ? '#2f855a' : q.score >= 70 ? '#2b6cb0'
+            : q.score >= 50 ? '#b7791f' : '#c53030';
+  const bg  = q.score >= 85 ? '#eaf6ef' : q.score >= 70 ? '#eaf1f9'
+            : q.score >= 50 ? '#fdf6e7' : '#fdeceb';
+
+  // ---- 环节耗时：有记录才写数字，没记录就明说「没记录」，不用「0 秒」糊过去
+  const stages = (t.stages || []).map(x => {
+    const val = x.sec == null
+      ? '<span style="color:#a0aab4">没记录</span>'
+      : '<b>' + (x.sec >= 60 ? (x.sec/60).toFixed(1) + ' 分' : Math.round(x.sec) + ' 秒') + '</b>';
+    const tag = x.sec != null && x.source && x.source !== 'auto'
+      ? '<span style="font-size:10px;color:#b7791f;background:#fdf6e7;border-radius:4px;'
+        + 'padding:1px 4px;margin-left:4px">' + esc(x.source_label) + '</span>' : '';
+    return '<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0;'
+      + 'border-bottom:1px dashed #eceff3;font-size:12px">'
+      + '<span style="color:#5b6672">' + esc(x.label) + tag + '</span>'
+      + '<span style="white-space:nowrap">' + val
+      + (x.eps ? '<span style="color:#98a2ad;font-size:11px"> / ' + x.eps + ' 集</span>' : '')
+      + '</span></div>';
+  }).join('');
+
+  const missNote = (t.missing || []).length
+    ? '<div style="margin-top:6px;font-size:11px;color:#b7791f">'
+      + '合计里少了 ' + t.missing.length + ' 项（' + t.missing.map(esc).join('、')
+      + '）——这几项没有耗时记录，不是 0 秒。从这版起每跑一轮自动记。</div>'
+    : (t.complete ? '<div style="margin-top:6px;font-size:11px;color:#2f855a">四个环节都有记录</div>' : '');
+
+  // ---- 五维：一条一条摆出来，分数低在哪一目了然
+  const dims = (q.dims || []).map(x => {
+    const pc = Math.round((x.rate || 0) * 100);
+    const w = x.done ? Math.max(2, pc) : 0;
+    const bar = x.done
+      ? '<div style="height:6px;background:#eef1f5;border-radius:3px;overflow:hidden">'
+        + '<i style="display:block;height:100%;width:' + w + '%;background:'
+        + (pc >= 85 ? '#2f855a' : pc >= 70 ? '#2b6cb0' : pc >= 50 ? '#b7791f' : '#c53030')
+        + '"></i></div>'
+      : '<div style="height:6px;background:repeating-linear-gradient(45deg,#eef1f5,#eef1f5 4px,#f8fafc 4px,#f8fafc 8px);border-radius:3px"></div>';
+    return '<div style="padding:8px 0;border-bottom:1px dashed #eceff3">'
+      + '<div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">'
+      + '<span style="color:#2b3440;font-weight:600">' + esc(x.label) + '</span>'
+      + '<span style="color:#98a2ad;font-size:11px">'
+      + (x.done ? x.rate_label : '没做') + '　' + x.score + ' / ' + x.max + ' 分</span></div>'
+      + bar
+      + '<div style="margin-top:5px;font-size:11px;color:#8b95a0">' + esc(x.note) + '</div></div>';
+  }).join('');
+
+  const weak = q.weakest
+    ? '<div style="margin-top:10px;padding:8px 10px;background:#fdf6e7;border-radius:6px;'
+      + 'font-size:12px;color:#8a5a11">最该补：<b>' + esc(q.weakest.label) + '</b>（少 '
+      + q.weakest.lost + ' 分）　' + esc(q.weakest.note) + '</div>' : '';
+
+  return '<div style="background:#fff;border:1px solid #e3e8ee;border-radius:9px;'
+    + 'padding:14px 16px;margin-bottom:12px">'
+
+    // 上半：三个数
+    + '<div style="display:grid;grid-template-columns:200px 1fr 200px;gap:18px;align-items:start">'
+
+    + '<div style="background:' + bg + ';border-radius:8px;padding:13px 14px">'
+    + '<div style="font-size:11px;color:#8b95a0;letter-spacing:.5px">数据质量分</div>'
+    + '<div style="font-size:40px;font-weight:700;line-height:1.05;color:' + col + '">'
+    + q.score + '<span style="font-size:14px;font-weight:400;color:#98a2ad"> 分</span></div>'
+    + '<div style="font-size:13px;font-weight:650;color:' + col + ';margin-top:2px">'
+    + esc(q.level) + '</div>'
+    + '<div style="font-size:11px;color:#7a858f;line-height:1.6;margin-top:6px">'
+    + esc(q.level_hint) + '</div></div>'
+
+    + '<div><div style="font-size:12px;font-weight:650;color:#2b3440;margin-bottom:4px">'
+    + '各环节耗时' + (t.total_sec ? '　<span style="font-weight:400;color:#8b95a0">合计 '
+      + esc(t.total_label) + '</span>' : '') + '</div>'
+    + stages + missNote + '</div>'
+
+    + '<div style="font-size:12px;color:#5b6672">'
+    + '<div style="font-weight:650;color:#2b3440;margin-bottom:6px">用量</div>'
+    + (u.tokens
+        ? '<div style="font-size:22px;font-weight:700;color:#2b3440;line-height:1.2">'
+          + (u.tokens/10000).toFixed(1) + '<span style="font-size:12px;font-weight:400;'
+          + 'color:#98a2ad"> 万 tokens</span></div>'
+          + '<div style="font-size:11px;color:#8b95a0;margin-top:2px">约 ' + u.yuan
+          + ' 元（' + esc(u.note) + '）</div>'
+        : '<div style="color:#a0aab4">还没调过模型</div>')
+    + '<div style="font-size:11px;color:#8b95a0;margin-top:8px;line-height:1.7">'
+    + '已打标 ' + u.shots + ' 个镜头 / ' + u.shots_eps + ' 集'
+    + (u.shot_version ? '<br>提示词版本 ' + esc(u.shot_version) : '')
+    + '<br>台词 ' + c.lines_total + ' 句，合表 ' + c.sentences + ' 句'
+    + '</div></div>'
+
+    + '</div>'
+
+    // 下半：五维
+    + '<div style="margin-top:14px;padding-top:4px;border-top:1px solid #eef1f5">'
+    + '<div style="font-size:12px;font-weight:650;color:#2b3440;margin:10px 0 2px">'
+    + '质量分怎么来的（五个维度固定权重，满分 100）</div>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:0 24px">'
+    + dims + '</div>' + weak + '</div>'
+
+    + '</div>';
+}
+</script>

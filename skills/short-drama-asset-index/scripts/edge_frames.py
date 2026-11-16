@@ -24,15 +24,39 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return Path(__file__).resolve().parents[3]
+
+# 配套库没装就当场补（装完专家包不用任何人敲命令）。
+# 必须在 import PIL 之前：顶层 import 缺库会直接抛错，补都没机会补。
+try:
+    from _env import HOST as _HOST
+except Exception:
+    _HOST = Path(__file__).resolve().parents[3]
+_SUP = _HOST / "skills" / "short-drama-supervisor" / "scripts"
+if _SUP.is_dir() and str(_SUP) not in sys.path:
+    sys.path.insert(0, str(_SUP))
+try:
+    import deps
+    deps.need("PIL")
+except SystemExit:
+    raise
+except Exception:
+    pass
+
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = _data_root()
 
 ASSET_ROOT = None
 for _line in (ROOT / ".env").read_text(encoding="utf-8").splitlines():
@@ -42,21 +66,40 @@ for _line in (ROOT / ".env").read_text(encoding="utf-8").splitlines():
 if ASSET_ROOT is None:
     sys.exit("缺少 .env 的 SHORT_DRAMA_ASSET_ROOT")
 
-DRAMA = "八零憨妻的甜蜜日常"
-SRC = ASSET_ROOT / DRAMA
-BASE = ROOT / "assets" / "short-drama" / DRAMA
-SKELETON = BASE / "segments_skeleton.json"
-OUT = BASE / "edge_frames"
-FRAMES = OUT / "frames"
-GRID = OUT / "grid"
+# 以前这里写死《八零憨妻》——第二部剧一来就找不到骨架文件，报错还指向旧剧目录（11-16 修）。
+# 顺序：--drama 参数 → 环境变量 SHORT_DRAMA_ACTIVE → 旧默认（兼容老用法）。
+DRAMA = os.environ.get("SHORT_DRAMA_ACTIVE") or "八零憨妻的甜蜜日常"
+SRC = BASE = SKELETON = OUT = FRAMES = GRID = None
+
+
+def set_drama(name: str) -> None:
+    """切剧：所有路径常量一起重算，别让上一个剧的目录粘在这轮上。"""
+    global DRAMA, SRC, BASE, SKELETON, OUT, FRAMES, GRID
+    DRAMA = name
+    SRC = ASSET_ROOT / DRAMA
+    BASE = ROOT / "assets" / "short-drama" / DRAMA
+    SKELETON = BASE / "segments_skeleton.json"
+    OUT = BASE / "edge_frames"
+    FRAMES = OUT / "frames"
+    GRID = OUT / "grid"
+
+
+set_drama(DRAMA)
 
 PAD_IN = 0.5   # 段首内缩，避开上一段的尾巴
 PAD_OUT = 0.5  # 段尾内缩，避开"切走以后"的黑场
 
 
 def tool(name: str) -> str:
-    """可移植地找 ffmpeg/ffprobe：PATH → 当前解释器同目录 → 常见包管理目录。
+    """可移植地找 ffmpeg/ffprobe：包内 bin/ → PATH → 当前解释器同目录 → 常见包管理目录。
     不写死本机路径（技能红线），也不假定 PATH 里有它。"""
+    try:  # 优先用包里自带的 bin（分发到别的机器时 ffmpeg 就在包里）
+        from _env import tool as _env_tool
+        cand = _env_tool(name)
+        if Path(cand).is_absolute() and Path(cand).exists():
+            return cand
+    except Exception:
+        pass
     p = shutil.which(name)
     if p:
         return p
@@ -77,7 +120,8 @@ PER_GRID = 3   # 每张拼图放 3 段（每段一行：IN 左 / OUT 右）
 def find_videos() -> dict[int, Path]:
     out = {}
     for p in sorted(SRC.glob("*.mp4")):
-        m = re.search(r"第(\d+)集", p.name)
+        # 两种命名都要认：老素材是「第N集.mp4」，新下的常是「N.mp4」（11-16 修）
+        m = re.search(r"第(\d+)集", p.name) or re.fullmatch(r"(\d+)", p.stem)
         if m:
             out[int(m.group(1))] = p
     return out
@@ -135,7 +179,11 @@ def main() -> None:
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--ep", nargs="*", type=int)
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--drama", default=None,
+                    help="剧名（默认取环境变量 SHORT_DRAMA_ACTIVE，再退回旧默认）")
     a = ap.parse_args()
+    if a.drama:
+        set_drama(a.drama)
 
     sk = json.loads(SKELETON.read_text(encoding="utf-8"))
     eps = sk["episodes"]

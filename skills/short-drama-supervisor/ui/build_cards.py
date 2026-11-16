@@ -19,12 +19,15 @@ import subprocess
 from pathlib import Path
 
 UI_DIR = Path(__file__).resolve().parent
-for _p in Path(__file__).resolve().parents:
-    if (_p / "runs" / "工作台.json").exists():
-        ROOT = _p
-        break
-else:
-    ROOT = Path(__file__).resolve().parents[4]
+import sys as _sys  # noqa: E402
+
+_sys.path.insert(0, str(UI_DIR.parent / "scripts"))
+try:  # 数据目录只认 scripts/_env.py 一个出口（11-16 收敛，别再手数 parents）
+    from _env import data_root as _data_root
+
+    ROOT = _data_root()
+except Exception:  # 极端情况兜底：至少别崩，也别悄悄指到当前目录
+    ROOT = UI_DIR.parents[3]
 
 RUNS = ROOT / "runs"
 

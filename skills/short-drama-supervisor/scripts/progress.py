@@ -33,21 +33,82 @@ import threading
 from datetime import datetime
 from pathlib import Path
 
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return Path(__file__).resolve().parents[3]
+
 
 def root() -> Path:
-    """按 runs/工作台.json 这个标志找仓库根。
+    """数据目录。唯一出口是 _env.data_root()（11-16 收敛）。
 
-    技能是软链到用户级目录的，用 __file__.parents[3] 会指错地方，
-    所以从脚本所在位置往上找，找到带工作台的那个目录为止。
+    以前这里也手写了一遍「从 __file__ 往上数 parents 找工作台」，装成插件后
+    那条链一路翻到 C:\\ 再落回兜底——结果对，但白扫一遍；更要紧的是这种写法
+    会被下一个新脚本照抄，而照抄的那份往往连兜底都没写（同一类坑已踩过两次）。
     """
-    for parent in Path(__file__).resolve().parents:
-        if (parent / "runs" / "工作台.json").exists():
-            return parent
-    return Path(__file__).resolve().parents[3]
+    return _data_root()
 
 
 def dir_of() -> Path:
     return root() / "runs" / "进度"
+
+
+# 多少秒没更新算「卡住了」。心跳（heartbeat）默认 30 秒一次，
+# 装配整片那种长阻塞也会有心跳，所以三分钟没动静基本就是真卡了。
+STALL_SEC = 180
+
+
+def pid_alive(pid: int) -> bool:
+    """这个进程号现在还活着吗。**Windows 上绝对不能写 os.kill(pid, 0)。**
+
+    11-16 测试机踩到，而且这条比它看起来严重得多：
+
+    CPython 的 os.kill 在 Windows 上只有两个信号是「发控制台事件」，
+    其余一律是 TerminateProcess。而 signal.CTRL_C_EVENT 的值**正好就是 0**，
+    所以 os.kill(pid, 0) 实际执行的是 GenerateConsoleCtrlEvent(0, pid)——
+    **向这个进程组发 Ctrl+C**。后果两层：
+
+      1. 探活必然失败：pid 不是控制台进程组组长时抛 WinError 87（参数错误），
+         被 except 吞掉 → 判定「进程不在」→ 网页上每个在跑的任务都挂红字。
+      2. 万一那个 pid 恰好是组长，这一行**会真的把对方打断**。
+         一个自称「只读」的进度页，在轮询时把正在跑的任务掐掉。
+
+    Windows 走 OpenProcess + GetExitCodeProcess 才是真只读；POSIX 上 os.kill(pid, 0)
+    本来就是正规探活方式，保持不变。
+    """
+    if not pid or pid <= 0:
+        return False
+    if os.name == "nt":
+        try:
+            import ctypes
+            from ctypes import wintypes
+
+            PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+            STILL_ACTIVE = 259
+            k32 = ctypes.WinDLL("kernel32", use_last_error=True)
+            # 64 位下句柄是 8 字节，不写 restype 会被截成 32 位，拿到的句柄直接无效
+            k32.OpenProcess.restype = wintypes.HANDLE
+            k32.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+            k32.GetExitCodeProcess.argtypes = [wintypes.HANDLE, ctypes.POINTER(wintypes.DWORD)]
+            k32.CloseHandle.argtypes = [wintypes.HANDLE]
+            h = k32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, int(pid))
+            if not h:
+                return False
+            try:
+                code = wintypes.DWORD()
+                if not k32.GetExitCodeProcess(h, ctypes.byref(code)):
+                    return False
+                return code.value == STILL_ACTIVE
+            finally:
+                k32.CloseHandle(h)
+        except Exception:
+            return False
+    try:
+        os.kill(int(pid), 0)   # POSIX 上这才是真正的探活
+        return True
+    except (OSError, ValueError, TypeError):
+        return False
 
 
 LABELS = {
@@ -181,13 +242,8 @@ def read_all() -> list[dict]:
             continue
         d["file"] = p.name
         now = dt.now()
-        # 进程还活着吗
-        alive = False
-        try:
-            os.kill(int(d.get("pid") or 0), 0)
-            alive = True
-        except (OSError, ValueError, TypeError):
-            pass
+        # 进程还活着吗（Windows 上必须走 pid_alive，别用 os.kill）
+        alive = pid_alive(int(d.get("pid") or 0))
         d["alive"] = alive
         try:
             updated = dt.fromisoformat(d["updated_at"])
@@ -215,7 +271,17 @@ def read_all() -> list[dict]:
         else:
             d["eta_sec"] = None
 
-        if d.get("state") == "running" and (not alive or age > 180):
-            d["suspect"] = True
+        # 「进程死了」和「进程活着但没动静」是两件事，排查时不能混成一个数
+        # （11-16 测试机报告的建议）：前者要看日志找崩溃点，后者要等它或者手动停。
+        if d.get("state") != "running":
+            d["health"] = None
+        elif not alive:
+            d["health"] = "dead"          # 进程不在
+        elif age > STALL_SEC:
+            d["health"] = "stalled"       # 进程在，但一直没更新
+        else:
+            d["health"] = "ok"
+        # 老字段留着：网页和别的脚本都在读，删了会连累下游
+        d["suspect"] = d["health"] in ("dead", "stalled")
         out.append(d)
     return out

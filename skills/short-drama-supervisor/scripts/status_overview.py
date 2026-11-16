@@ -21,6 +21,8 @@
 """
 import argparse
 import json
+import sys
+from datetime import datetime
 from pathlib import Path
 
 # v0.2 链路：选片 → 建包 → 素材索引 → 角色资产(可选) → 编排 → 素材段(可选) → 装配
@@ -54,7 +56,7 @@ def iter_status(root):
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError) as e:
-            print(f"[跳过] {p}: {e}")
+            print(f"[跳过] {p}: {e}", file=sys.stderr)
             continue
         # 只认短剧线。旧电商主管用「缺省=轻食」兼容老台账，本主管不背这个兼容：
         # 无 line 字段的轻食/图书状态文件一律不扫，避免把别线的产物报成短剧进度。
@@ -77,7 +79,7 @@ def load_workspace(root):
     try:
         return json.loads(p.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError) as e:
-        print(f"[提示] 工作台读取失败，只算文件内依赖：{e}")
+        print(f"[提示] 工作台读取失败，只算文件内依赖：{e}", file=sys.stderr)
         return {}
 
 
@@ -252,12 +254,74 @@ def next_step(artifacts, reasons):
     return "全线完成，等人审 / 新一批"
 
 
+def overview_json(root):
+    """把状态总览算成一份只读数据，给网页用。
+
+    这里是**同一套算法**的另一种输出形式，不另算一遍状态。
+    网页只负责画，判断谁该重做、下一步做什么，仍然由本文件的函数说了算。
+    """
+    ws = load_workspace(root)
+    active = ws.get("active") or {}
+    tasks = []
+    for p, d in iter_status(root):
+        artifacts = d.get("artifacts") or {}
+        rel = p.relative_to(Path(root))
+        drama = drama_of(rel)
+        skip_optional = d.get("ai_strategy") == "none"
+        reasons = stale_reasons(artifacts, skip_optional)
+        for k, rs in shared_reasons(d, ws, drama).items():
+            reasons.setdefault(k, []).extend(rs)
+        warnings = strategy_warnings(d, ws)
+        must = [s for s in STAGES if s not in OPTIONAL]
+        stages = []
+        for s in STAGES:
+            art = artifacts.get(s) if isinstance(artifacts.get(s), dict) else {}
+            stages.append({
+                "key": s, "label": STAGE_LABELS[s],
+                "state": art.get("state", "unlogged"),
+                "rev": rev_of(art),
+                "optional": s in OPTIONAL,
+                "gate": GATED.get(s),
+                "logged": isinstance(artifacts.get(s), dict),
+            })
+        done = [s for s in must
+                if isinstance(artifacts.get(s), dict)
+                and artifacts[s].get("state") in DONE]
+        tasks.append({
+            "path": str(rel), "drama": drama, "task": p.parent.name,
+            "active": active.get("drama") == drama and active.get("task") == p.parent.name,
+            "ai_strategy": d.get("ai_strategy") or "none",
+            "cycle_round": d.get("cycle_round") or 1,
+            "legacy": sorted(set(artifacts) & LEGACY_KEYS),
+            "stages": stages,
+            "done_count": len(done), "must_count": len(must),
+            "current_stage": done[-1] if done else "未开工",
+            "unlogged": [s for s in must if not isinstance(artifacts.get(s), dict)],
+            "reasons": reasons, "warnings": warnings,
+            "next_step": next_step(artifacts, reasons),
+        })
+    return {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "root": str(root),
+        "active": active,
+        "shared": ws.get("shared") or {},
+        "dramas": ws.get("dramas") or {},
+        "tasks": tasks,
+    }
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default="runs")
     ap.add_argument("--detail", action="store_true")
     ap.add_argument("--stale-only", action="store_true")
+    ap.add_argument("--json", action="store_true",
+                    help="输出机器可读 JSON（给网页用），屏幕文字一律不打印")
     a = ap.parse_args()
+
+    if a.json:
+        print(json.dumps(overview_json(a.root), ensure_ascii=False, indent=2))
+        return
 
     ws = load_workspace(a.root)
     active = ws.get("active") or {}

@@ -57,6 +57,17 @@ nav button{border:0;background:none;padding:11px 16px;font-size:14px;color:var(-
            transition:color .12s,border-color .12s,background .12s}
 nav button.on{color:#fff;border-bottom-color:var(--accent);font-weight:650}
 nav button:hover{color:var(--ink);background:rgba(255,255,255,.04)}
+.scopebar{display:flex;gap:4px;align-items:center;width:max-content;margin:-6px 0 16px;
+    padding:3px;background:rgba(255,255,255,.03);border:1px solid var(--line);
+    border-radius:10px}
+.scopebar button{border:0;background:transparent;color:var(--sub);font:inherit;
+    font-size:12px;padding:5px 12px;border-radius:7px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px}
+.scopebar button b{font-size:10px;font-weight:650;color:var(--sub);
+    font-variant-numeric:tabular-nums}
+.scopebar button.on{background:var(--panel-2);color:var(--ink);
+    box-shadow:0 1px 0 rgba(255,255,255,.04)}
+.scopebar button.on b{color:var(--accent)}
 .card{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0) 42%),var(--card);
       border:1px solid var(--line);border-radius:var(--radius);
       padding:16px 18px;margin-bottom:14px;box-shadow:var(--shadow)}
@@ -88,50 +99,66 @@ main section{animation:fade .18s ease-out}
 @keyframes fade{from{opacity:0;transform:translateY(2px)}to{opacity:1;transform:none}}
 .bar{height:7px;background:#1b2331;border-radius:5px;overflow:hidden;margin:5px 0 3px}
 .bar>i{display:block;height:100%;background:var(--blue)}
-/* 生产看板：四段进度，数字优先 */
-.statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
-.stat{position:relative;overflow:hidden;
-      background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0) 46%),var(--card);
-      border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;
-      box-shadow:var(--shadow)}
-.stat::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
-      background:linear-gradient(90deg,var(--sc),transparent 72%)}
-.stat .sk{font-size:10px;color:var(--sub);letter-spacing:.1em}
-.stat .sv{font-size:28px;font-weight:750;line-height:1.08;letter-spacing:-.03em;
-      margin-top:4px;font-variant-numeric:tabular-nums}
-.stat .sv .u{font-size:12px;font-weight:600;color:var(--sub);margin-left:4px;letter-spacing:0}
-.stat .strack{height:4px;background:#1b2331;border-radius:99px;overflow:hidden;margin:9px 0 6px}
-.stat .strack>i{display:block;height:100%;border-radius:99px}
-.stat .ss{font-size:10px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-.board{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-       overflow:hidden;box-shadow:var(--shadow)}
-.drow{display:grid;grid-template-columns:210px repeat(4,minmax(120px,1fr));
-      align-items:stretch;border-top:1px solid var(--line);position:relative}
-.drow:first-child{border-top:0}
-.drow:hover{background:rgba(255,255,255,.018)}
-.drow.on{background:linear-gradient(90deg,rgba(255,77,79,.07),transparent 40%)}
+/* 总览：一部剧一张卡，卡内一条四段进度条 */
+.stagelegend{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+      margin:0 2px 12px;font-size:11px;color:var(--sub)}
+.stagelegend .lg{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.stagelegend .lg i{width:7px;height:7px;border-radius:2px;display:inline-block}
+.stagelegend .lg b{color:var(--ink);font-weight:650;font-variant-numeric:tabular-nums}
+.stagelegend .cnt{margin-left:auto;font-size:10px;color:var(--sub);
+      font-variant-numeric:tabular-nums;white-space:nowrap}
+.drows{display:flex;flex-direction:column;gap:10px}
+.drow{display:grid;grid-template-columns:260px minmax(200px,1fr) 190px;gap:18px;
+      align-items:center;padding:13px 18px;position:relative;overflow:hidden;
+      background:linear-gradient(90deg,rgba(255,255,255,.025),transparent 55%),var(--card);
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+      transition:border-color .15s,transform .15s}
+.drow:hover{border-color:#354258;transform:translateY(-1px)}
+.drow.on{border-color:rgba(255,77,79,.42)}
 .drow.on::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
-                 background:var(--accent)}
-.dname{padding:13px 16px;min-width:0;display:flex;flex-direction:column;
-       justify-content:center;gap:3px}
-.dname .dn{font-size:15px;font-weight:680;display:flex;align-items:center;gap:7px;
-           white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dname .dn .dot{flex:none;background:var(--accent);box-shadow:0 0 8px rgba(255,77,79,.7)}
-.dname .dm{font-size:10px;color:var(--sub);white-space:nowrap;overflow:hidden;
-           text-overflow:ellipsis}
-.scell{padding:12px 16px;border-left:1px solid var(--line);min-width:0;
-       display:flex;flex-direction:column;justify-content:center}
-.scl{font-size:10px;color:var(--sub);display:flex;align-items:center;gap:5px;
-     letter-spacing:.08em}
-.scl i{width:5px;height:5px;border-radius:50%;display:inline-block;flex:none}
-.scv{font-size:21px;font-weight:750;line-height:1.12;letter-spacing:-.02em;
-     margin-top:2px;font-variant-numeric:tabular-nums}
-.scv .u{font-size:11px;font-weight:600;color:var(--sub);margin-left:3px;letter-spacing:0}
-.strack{height:3px;background:#1b2331;border-radius:99px;overflow:hidden;margin:6px 0 4px}
-.strack>i{display:block;height:100%;border-radius:99px;transition:width .3s}
-.scs{font-size:10px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.scs.warn{color:var(--amber)}
+      background:var(--accent)}
+.subbars{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:4px 22px;
+      margin-top:1px;padding-top:9px;border-top:1px dashed var(--line)}
+.subbar{display:grid;grid-template-columns:104px 1fr 46px;gap:8px;align-items:center;
+      font-size:11px;color:var(--sub)}
+.subbar .sb-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.subbar>i{display:block;height:4px;border-radius:3px;background:#1a2230;overflow:hidden}
+.subbar>i>b{display:block;height:100%;border-radius:3px;background:var(--blue);
+      transition:width .45s ease}
+.subbar.ok>i>b{background:#3ecf8e}
+.subbar.ok .sb-num{color:#3ecf8e}
+.subbar .sb-num{text-align:right;font-variant-numeric:tabular-nums;font-size:10.5px;color:var(--sub)}
+.dleft{min-width:0}
+.dleft .dn{font-size:15px;font-weight:680;line-height:1.4;display:flex;align-items:center;
+      gap:7px;min-width:0}
+.dleft .dn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dleft .dn .dot{width:6px;height:6px;border-radius:50%;flex:none;background:var(--accent);
+      box-shadow:0 0 8px rgba(255,77,79,.7)}
+.dcode{font:9px/1 ui-monospace,Menlo,monospace;color:var(--blue);letter-spacing:.04em;
+      border:1px solid rgba(79,140,255,.35);background:rgba(79,140,255,.1);
+      padding:2px 5px;border-radius:4px;flex:none}
+.dcode.arch{color:var(--sub);border-color:var(--line);background:rgba(255,255,255,.03)}
+.archpill{font-size:9px;color:var(--sub);background:var(--greybg);padding:1px 6px;
+      border-radius:20px;white-space:nowrap;flex:none}
+.dleft .dm{font-size:10px;color:var(--sub);margin-top:3px;white-space:nowrap;overflow:hidden;
+      text-overflow:ellipsis}
+.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.pseg{height:26px;background:#1a2230;border-radius:6px;overflow:hidden;position:relative}
+.pseg>i{display:block;height:100%;border-radius:6px;transition:width .55s ease}
+.pseg.off{opacity:.28}
+.pvalue{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;color:#fff;
+      letter-spacing:.02em;text-shadow:0 1px 3px rgba(0,0,0,.65);z-index:3;
+      pointer-events:none;white-space:nowrap}
+.pseg.off .pvalue{display:none}
+.ptarget{position:absolute;top:-2px;bottom:-2px;width:1px;background:rgba(255,255,255,.55);
+      box-shadow:0 0 4px rgba(255,255,255,.35);z-index:2}
+.dright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;text-align:right;
+      min-width:0}
+.ddetail{font-size:10px;color:var(--sub);white-space:nowrap;overflow:hidden;
+      text-overflow:ellipsis;max-width:100%}
+.stagepill{font-size:10px;padding:2px 8px;border-radius:20px;white-space:nowrap;
+      font-weight:600;letter-spacing:.04em;flex:none}
 .empty-board{padding:40px;text-align:center;color:var(--sub);font-size:13px}
 .livewrap{margin-bottom:14px}
 .livewrap:empty{display:none}
@@ -275,12 +302,37 @@ footer{margin-top:26px;color:var(--sub);font-size:12px;text-align:center}
   nav{margin:0 -14px 16px;padding:0 14px;overflow-x:auto}
   nav button{white-space:nowrap}
   .pvside{position:static;max-height:none}
-  .statrow{grid-template-columns:1fr 1fr}
-  .drow{grid-template-columns:1fr 1fr}
-  .dname{grid-column:1/-1;border-bottom:1px solid var(--line)}
-  .scell{border-left:0;border-top:1px solid var(--line)}
-  .scell:nth-child(even){border-right:1px solid var(--line)}
+  .drow{grid-template-columns:1fr;gap:10px}
+  .dright{flex-direction:row;align-items:center;justify-content:space-between;text-align:left}
+  .stagelegend{gap:10px}
   .lightbox .two{grid-template-columns:1fr}}
+
+/* ---- 无人值守进度面板（11-16 加）：挂一晚上，第二天一眼看跑到哪 ---- */
+.autolist{display:flex;flex-direction:column;gap:14px}
+.autocard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;box-shadow:var(--shadow)}
+.autohead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.autotitle{font-size:17px;font-weight:600}
+.badge{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid transparent;line-height:1.6}
+.badge.run{color:var(--green);border-color:var(--green);background:var(--greenbg)}
+.badge.done{color:var(--blue);border-color:var(--blue);background:var(--bluebg)}
+.badge.dead{color:var(--red);border-color:var(--red);background:var(--redbg)}
+.badge.wait{color:var(--amber);border-color:var(--amber);background:var(--amberbg)}
+.ptrack{height:8px;background:var(--greybg);border-radius:999px;overflow:hidden;margin:12px 0 6px}
+.pfill{height:100%;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .6s ease}
+.pmeta{color:var(--sub);font-size:12px;margin-bottom:12px}
+.stepline{display:grid;grid-template-columns:22px 108px 66px 1fr;gap:10px;align-items:baseline;
+  padding:7px 0;border-top:1px solid var(--line);font-size:13px}
+.stepline .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.stepline .nm{color:var(--ink)}
+.stepline .st{font-size:12px;color:var(--sub)}
+.stepline .dt{color:var(--sub);font-size:12px;overflow:hidden;text-overflow:ellipsis;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
+.stepline.now{background:rgba(79,140,255,.07)}
+.autofoot{margin-top:14px;font-size:12px;color:var(--sub);display:flex;gap:14px;flex-wrap:wrap}
+.autofoot a{color:var(--blue);text-decoration:none}
+.livejob{font-size:12.5px;color:var(--green);margin-top:8px}
+.deadwarn{font-size:12.5px;color:var(--red);margin-top:8px;font-weight:600}
 </style>
 </head>
 <body>
@@ -297,14 +349,21 @@ footer{margin-top:26px;color:var(--sub);font-size:12px;text-align:center}
     <button data-tab="assets">素材分析</button>
     <button data-tab="review">待审文案</button>
     <button data-tab="video">成片预览</button>
+    <button data-tab="auto">无人值守</button>
     <button onclick="loadAll()" style="margin-left:auto;padding:10px 6px">刷新</button>
   </nav>
+
+  <div class="scopebar" id="scopebar">
+    <button data-scope="active" class="on">活动 <b id="scopeActive">0</b></button>
+    <button data-scope="archived">归档 <b id="scopeArchived">0</b></button>
+  </div>
 
   <main>
     <section id="tab-pipeline"><div class="loading">正在读…</div></section>
     <section id="tab-assets" hidden><div class="loading">正在读…</div></section>
     <section id="tab-review" hidden><div class="loading">正在读…</div></section>
     <section id="tab-video" hidden><div class="loading">正在读…</div></section>
+    <section id="tab-auto" hidden><div class="loading">正在读…</div></section>
   </main>
 </div>
 
@@ -314,8 +373,25 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g,
   c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const get = async p => { const r = await fetch(p); if(!r.ok) throw new Error(p+' '+r.status); return r.json(); };
 let curTab = 'pipeline';
-let state = {drama:'', openDoc:'', dramas:[], livePaused:false,
+let liveLastAuto = 0;
+let state = {drama:'', openDoc:'', scope:'active', registry:[],
+             scopeCounts:{active:0,archived:0}, livePaused:false,
              vtask:'', vurl:'', vq:'', vonly:false, vbuild:false, vtimes:{}};
+const _scopeParam = new URLSearchParams(location.search).get('scope');
+if(_scopeParam === 'archived' || _scopeParam === 'active') state.scope = _scopeParam;
+
+async function loadRegistry(){
+  try{
+    const d = await get('/api/registry');
+    state.registry = d.dramas || [];
+    state.scopeCounts = d.counts || {active:0,archived:0};
+    const a = $('#scopeActive'), b = $('#scopeArchived');
+    if(a) a.textContent = state.scopeCounts.active || 0;
+    if(b) b.textContent = state.scopeCounts.archived || 0;
+    document.querySelectorAll('#scopebar button').forEach(x =>
+      x.classList.toggle('on', x.dataset.scope === state.scope));
+  }catch(e){}
+}
 
 function tab(name){
   curTab = name;
@@ -328,6 +404,19 @@ function tab(name){
 }
 document.querySelectorAll('nav button[data-tab]').forEach(b =>
   b.addEventListener('click', () => tab(b.dataset.tab)));
+
+document.querySelectorAll('#scopebar button').forEach(b =>
+  b.addEventListener('click', () => {
+    if(state.scope === b.dataset.scope) return;
+    state.scope = b.dataset.scope;
+    state.drama = ''; state.vtask = ''; state.vurl = '';
+    const u = new URL(location.href);
+    u.searchParams.set('scope', state.scope);
+    history.replaceState(null, '', u);
+    document.querySelectorAll('#scopebar button').forEach(x =>
+      x.classList.toggle('on', x === b));
+    loadAll();
+  }));
 
 // ------------------------------------------------------------ 实时进度（LIVE）
 let lastProgress = {items:[]};
@@ -354,7 +443,11 @@ const jobTarget = x => {
   if(typeof ep==='number' || /^\d+$/.test(String(ep))) return '第 '+ep+' 集';
   return String(ep);
 };
-const jobStateTxt = x => x.suspect ? '疑似中断'
+// 「进程死了」和「进程活着但没动静」要分开说：一个去找日志看崩在哪，一个再等等或手动停。
+// health 是新字段，老记录没有就退回看 alive。
+const jobHealth = x => x.health || (x.suspect ? (x.alive ? 'stalled' : 'dead') : 'ok');
+const jobStateTxt = x => x.suspect
+  ? (jobHealth(x)==='dead' ? '进程没了' : '卡住了')
   : x.state==='running' ? '运行中' : x.state==='failed' ? '失败' : '完成';
 
 function liveHTML(pr){
@@ -373,7 +466,7 @@ function liveHTML(pr){
     + (bad.length && alive ? ' · '+bad.length+' 个疑似中断' : '') + '</span>'
     + '<span class="st">最后刷新 '+stamp+'</span>'
     + '<button class="act" id="livePause">'+(state.livePaused?'继续':'暂停')+'</button></div>';
-  h += items.slice(0,8).map(x=>{
+  h += items.slice(0,12).map(x=>{
     const pct = x.total ? Math.round(x.done/x.total*100) : 0;
     const color = x.suspect ? 'var(--red)'
       : x.state==='running' ? 'var(--blue)'
@@ -386,7 +479,7 @@ function liveHTML(pr){
       : '处理中';
     const side = x.state==='running'
       ? '<b>'+fmtLive(x.elapsed_sec)+'</b>'
-        + (x.suspect ? (x.alive ? '心跳停了' : '进程不在')
+        + (x.suspect ? (jobHealth(x)==='dead' ? '进程没了' : '没动静了')
            : (x.eta_sec!=null ? '剩 ~'+fmtLive(x.eta_sec) : '进行中'))
         + '<br>'+fmtAgo(x.age_sec)
       : '<b>'+fmtLive(x.elapsed_sec)+'</b>用时<br>'+fmtAgo(x.age_sec);
@@ -456,6 +549,15 @@ async function liveTick(){
       liveLastPipe = Date.now();
       await refreshPipeline();
     }
+    if(curTab==='auto' && Date.now()-liveLastAuto > 3000){
+      liveLastAuto = Date.now();
+      const box = $('#tab-auto');
+      if(box){
+        box.innerHTML = await renderAuto();
+        box.querySelectorAll('.docbtn').forEach(b =>
+          b.addEventListener('click', ()=>openDoc(b.dataset.url, b)));
+      }
+    }
     if(curTab==='assets' && jobEnded(pr)){
       const y = window.scrollY;
       await loadAll();
@@ -477,136 +579,219 @@ function stopLive(){
   if(liveTimer){ clearInterval(liveTimer); liveTimer = null; }
 }
 
-// ------------------------------------------------------------ 总览：四段进度
+// ------------------------------------------------------------ 总览：一剧一卡
 const C = {assets:'#4f8cff', script:'#a78bfa', review:'#f5a524', final:'#34d399'};
-const sumBy = (rows, f) => rows.reduce((n,p)=>n+f(p), 0);
-const pctOf = (a,b) => b ? Math.round(a/b*100) : 0;
+const STAGES = [
+  {key:'assets', label:'素材分析'},
+  {key:'script', label:'文案'},
+  {key:'review', label:'审核'},
+  {key:'final', label:'出片'},
+];
 const clampPct = n => Math.max(0, Math.min(100, Math.round(Number(n)||0)));
+const nowClock = () => new Date().toLocaleTimeString('zh-CN',{hour12:false});
+const fmtPct = n => {
+  if(n==null || isNaN(n)) return '—';
+  return String(Math.round(Number(n)*10)/10).replace(/\.0$/,'');
+};
 
-function statTile(key, label, value, sub, color, p){
-  return '<div class="stat" data-stat="'+key+'" style="--sc:'+color+'">'
-    +'<div class="sk">'+label+'</div>'
-    +'<div class="sv">'+value+'</div>'
-    +'<div class="strack"><i style="width:'+clampPct(p)+'%;background:'+color+'"></i></div>'
-    +'<div class="ss">'+esc(sub)+'</div></div>';
-}
-function stageCell(c){
-  const color = C[c.key];
-  return '<div class="scell" data-stage="'+c.key+'">'
-    +'<div class="scl"><i style="background:'+color+'"></i>'+c.label+'</div>'
-    +'<div class="scv">'+c.value+'</div>'
-    +'<div class="strack"><i style="width:'+clampPct(c.pct)+'%;background:'+color+'"></i></div>'
-    +'<div class="scs'+(c.warn?' warn':'')+'">'+esc(c.sub)+'</div></div>';
+function stageInfo(p){
+  const s1=p.stage1, s2=p.stage2, rv=p.review, s3=p.stage3;
+  // 主数字按 8 道工序算（服务端 s1.pct）。cover_pct 只是「解析范围达成率」，
+  // 台词齐了就 100%，拿它当主数字会让「打标只跑了 8 集」看着像全做完了（11-16 修）。
+  const cover = (s1.pct != null) ? s1.pct : (s1.cover_pct || 0);
+  const subs = s1.subs || [];
+  const subsOk = s1.subs_ok || 0;
+  const subsTotal = s1.subs_total || subs.length || 8;
+  const targetPct = (s1.target_pct != null) ? s1.target_pct : 60;
+  const targetEps = s1.target_eps || 0;
+  const coverOk = (s1.cover_ok != null)
+    ? !!s1.cover_ok
+    : (cover >= targetPct && (s1.ep_count||0) > 0);
+  const done = (s1.done != null) ? !!s1.done : coverOk;
+  const lines = s1.lines_eps || 0;
+  let assetDetail;
+  if(!(s1.ep_count||0) && !subs.length){
+    assetDetail = '全剧 '+(s1.video_count||0)+' 集未动工';
+  } else {
+    const cur = subs.find(x=>!x.ok);
+    assetDetail = subsOk+'/'+subsTotal+' 项已满'
+      + (cur ? ' · 当前 '+String(cur.label).split('（')[0]+' '+cur.done+'/'+cur.total : '');
+  }
+  const raw = [
+    {key:'assets', label:'素材分析', pct:cover,
+     value:fmtPct(cover)+'%', short:fmtPct(cover)+'%',
+     detail:assetDetail,
+     done:done, target:targetPct},
+    {key:'script', label:'文案', pct:s2.pct,
+     value:s2.count+'<span class="u">条</span>', short:s2.count+'条',
+     detail:s2.pct+'%',
+     done:s2.pct>=100 && (s2.total||0)>0},
+    {key:'review', label:'审核', pct:rv.pct,
+     value:rv.total ? rv.pct+'%' : '—', short:rv.total ? rv.pct+'%' : '—',
+     detail:rv.total ? (rv.passed.length+'/'+rv.total+' 条') : '还没文案',
+     done:rv.pct>=100 && (rv.total||0)>0},
+    {key:'final', label:'出片', pct:s3.pct,
+     value:s3.total ? s3.pct+'%' : '—', short:s3.total ? s3.pct+'%' : '—',
+     detail:s3.total ? (s3.final_count+'/'+s3.total+' 条') : '还没文案',
+     done:s3.pct>=100 && (s3.total||0)>0},
+  ];
+  let cur = raw.findIndex(x=>!x.done);
+  const allDone = cur < 0;
+  if(allDone) cur = raw.length - 1;
+  const c = raw[cur];
+  const segs = raw.map((x,i)=>({
+    key:x.key, color:C[x.key],
+    fill: i<cur ? 100 : (i===cur ? x.pct : 0),
+    off: i>cur,
+    target: (i===cur && x.target != null) ? x.target : null,
+    text: allDone ? '✓' : (i<cur ? '✓' : (i===cur ? x.short : '')),
+  }));
+  return {
+    segs, currentKey:c.key,
+    currentLabel: allDone ? '已完成' : c.label,
+    currentColor: allDone ? C.final : C[c.key],
+    value: allDone ? '100%' : c.value,
+    detail: allDone ? ('共 '+(s3.final_count||0)+' 条成片') : c.detail,
+  };
 }
 
 function pipelineModel(d){
   const rows = d.pipelines || [];
-  const analyzed = sumBy(rows, p=>p.stage1.ep_count||0);
-  const fullEps = sumBy(rows, p=>p.stage1.video_count||0);
-  const gAssets = pctOf(sumBy(rows, p=>p.stage1.parts_done||0),
-                        sumBy(rows, p=>(p.stage1.ep_count||0)*3));
-  const scriptCount = sumBy(rows, p=>p.stage2.count||0);
-  const taskCount = sumBy(rows, p=>p.stage2.total||0);
-  const gScript = pctOf(scriptCount, taskCount);
-  const reviewPassed = sumBy(rows, p=>p.review.passed.length);
-  const reviewTotal = sumBy(rows, p=>p.review.total||0);
-  const gReview = pctOf(reviewPassed, reviewTotal);
-  const finalCount = sumBy(rows, p=>p.stage3.final_count||0);
-  const finalTotal = sumBy(rows, p=>p.stage3.total||0);
-  const gFinal = pctOf(finalCount, finalTotal);
-
-  const items = rows.map(p => {
-    const s1=p.stage1, s2=p.stage2, rv=p.review, s3=p.stage3;
-    const eps = s1.ep_count || 0;
-    const sub1 = eps ? ('已动工 '+eps+' 集')
-      : ('全剧 '+(s1.video_count||0)+' 集待分析');
-    const sub3 = rv.total ? (rv.passed.length+'/'+rv.total+' 条') : '还没文案';
-    const sub4 = s3.total ? (s3.final_count+'/'+s3.total+' 条') : '还没文案';
-    const dm = s2.total
-      ? (s2.total+' 条片子 · 全剧 '+(s1.video_count||0)+' 集')
-      : ('全剧 '+(s1.video_count||0)+' 集 · 还没排片子');
+  const items = rows.map(p=>{
+    const si = stageInfo(p);
+    const status = p.status || 'active';
+    let sub = (p.stage2.total||0)+' 条片子 · 全剧 '+(p.stage1.video_count||0)+' 集';
+    if(status === 'archived' && p.archived_at) sub += ' · 归档于 '+p.archived_at;
     return {
-      drama: p.drama, active: !!p.active, dm,
-      cells: [
-        {key:'assets', label:'素材分析', value:s1.pct+'%', sub:sub1, pct:s1.pct, warn:false},
-        {key:'script', label:'文案', value:s2.count+'<span class="u">条</span>', sub:s2.pct+'%', pct:s2.pct, warn:false},
-        {key:'review', label:'审核', value:rv.total?rv.pct+'%':'—', sub:sub3, pct:rv.pct, warn:rv.revise.length>0},
-        {key:'final', label:'出片', value:s3.total?s3.pct+'%':'—', sub:sub4, pct:s3.pct, warn:s3.to_remix.length>0},
-      ],
+      drama:p.drama, active:!!p.active,
+      code:p.code || '', status, archived_at:p.archived_at || '',
+      sub, subs: p.stage1.subs || [],
+      ...si,
     };
   });
-  return {rows, items, totals:{analyzed, fullEps, gAssets, scriptCount, taskCount,
-    gScript, reviewPassed, reviewTotal, gReview, finalCount, finalTotal, gFinal}};
+  const counts = {assets:0, script:0, review:0, final:0};
+  items.forEach(it=>{ counts[it.currentKey] = (counts[it.currentKey]||0)+1; });
+  return {items, counts, total: items.length};
 }
 
-function pipelineRowHTML(it){
-  return '<div class="drow'+(it.active?' on':'')+'" data-drama="'+esc(it.drama)+'">'
-    +'<div class="dname"><div class="dn"><span class="dot" style="'
-    +(it.active?'':'visibility:hidden')+'"></span>'+esc(it.drama)+'</div>'
-    +'<div class="dm">'+esc(it.dm)+'</div></div>'
-    + it.cells.map(stageCell).join('')
-    +'</div>';
+function legendHTML(m){
+  return '<div class="stagelegend">'
+    + STAGES.map(s=>'<span class="lg" data-stage="'+s.key+'">'
+        +'<i style="background:'+C[s.key]+'"></i>'+s.label
+        +' <b>'+m.counts[s.key]+'</b></span>').join('')
+    + '<span class="cnt" data-role="stamp">当前阶段 · '+m.total+' 部剧 · 更新 '+nowClock()+'</span>'
+    + '</div>';
+}
+
+function rowHTML(it){
+  const pillStyle = 'color:'+it.currentColor+';background:'+it.currentColor+'1f';
+  const code = it.code
+    ? '<span class="dcode'+(it.status==='archived'?' arch':'')+'" data-role="code">'
+      +esc(it.code)+'</span>' : '';
+  const arch = it.status === 'archived' ? '<span class="archpill">归档</span>' : '';
+  // 停在这一段时把 8 道工序摊开：一个百分比看不出「做到哪了」，也分不清
+  // 「进程死了」和「活着但卡住」（11-16）。
+  const subs = it.subs || [];
+  const subbars = (it.currentKey === 'assets' && subs.length)
+    ? '<div class="subbars">' + subs.map(s=>{
+        const cls = s.ok ? ' ok' : (s.done > 0 ? ' run' : '');
+        const num = s.ok ? '✓' : (s.done ? s.done+'/'+s.total : '未开始');
+        return '<div class="subbar'+cls+'">'
+          +'<span class="sb-name">'+esc(String(s.label).split('（')[0])+'</span>'
+          +'<i><b style="width:'+clampPct(s.pct)+'%"></b></i>'
+          +'<span class="sb-num">'+num+'</span></div>';
+      }).join('') + '</div>'
+    : '';
+  return '<article class="drow'+(it.active?' on':'')+'" data-drama="'+esc(it.drama)+'">'
+    +'<div class="dleft"><div class="dn"><span class="dot" style="'
+    +(it.active?'':'visibility:hidden')+'"></span>'+code
+    +'<span>'+esc(it.drama)+'</span>'+arch+'</div>'
+    +'<div class="dm" data-role="sub">'+esc(it.sub)+'</div></div>'
+    +'<div class="pipeline">'+it.segs.map(s=>
+        '<div class="pseg'+(s.off?' off':'')+'" data-seg="'+s.key+'">'
+        +'<i style="width:'+clampPct(s.fill)+'%;background:'+s.color+'"></i>'
+        +(s.text ? '<span class="pvalue">'+esc(s.text)+'</span>' : '')
+        +(s.target != null ? '<span class="ptarget" style="left:'+clampPct(s.target)+'%"></span>' : '')
+        +'</div>').join('')+'</div>'
+    +'<div class="dright"><span class="stagepill" data-role="pill" style="'+pillStyle+'">'
+    +esc(it.currentLabel)+'</span><span class="ddetail" data-role="detail">'
+    +esc(it.detail)+'</span></div>'
+    +subbars
+    +'</article>';
 }
 
 function nowText(d){
+  if(state.scope === 'archived') return '归档 · 只读';
   const a = d.active || {};
   return '当前 <b>'+esc(a.drama||'未选')+' / '+esc(a.task||'—')+'</b>';
 }
 
 async function renderPipeline(){
-  const [d, pr] = await Promise.all([get('/api/pipelines'), get('/api/progress')]);
+  const [d, pr] = await Promise.all([
+    get('/api/pipelines?scope='+encodeURIComponent(state.scope)),
+    get('/api/progress')]);
   const m = pipelineModel(d);
   $('#now').innerHTML = nowText(d);
   updateLiveBadge(pr);
-  let h = '<div class="statrow">'
-    + statTile('assets','素材分析 · 已动工', m.totals.gAssets+'%',
-        m.totals.analyzed+' / 全剧 '+m.totals.fullEps+' 集', C.assets, m.totals.gAssets)
-    + statTile('script','文案', m.totals.scriptCount+'<span class="u">条</span>',
-        m.totals.gScript+'%', C.script, m.totals.gScript)
-    + statTile('review','审核', m.totals.gReview+'%',
-        m.totals.reviewPassed+' / '+m.totals.reviewTotal+' 条已过审', C.review, m.totals.gReview)
-    + statTile('final','出片', m.totals.gFinal+'%',
-        m.totals.finalCount+' / '+m.totals.finalTotal+' 条成片', C.final, m.totals.gFinal)
-    + '</div>';
-  h += '<div id="live-panel" class="livewrap">'+liveHTML(pr)+'</div>';
-  h += '<div class="board">'+m.items.map(pipelineRowHTML).join('')+'</div>';
+  if(!m.total) return '<div class="card empty-board">'
+    +(state.scope==='archived' ? '没有归档剧' : '当前范围没有活动剧')+'</div>';
+  let h = '<div id="live-panel" class="livewrap">'+liveHTML(pr)+'</div>';
+  h += legendHTML(m);
+  h += '<div class="drows">'+m.items.map(rowHTML).join('')+'</div>';
   return h;
 }
 
-function setStat(key, value, sub, p){
-  const el = document.querySelector('.stat[data-stat="'+key+'"]');
-  if(!el) return;
-  el.querySelector('.sv').innerHTML = value;
-  el.querySelector('.ss').textContent = sub;
-  el.querySelector('.strack > i').style.width = clampPct(p)+'%';
-}
-
 async function refreshPipeline(){
-  const d = await get('/api/pipelines');
+  const d = await get('/api/pipelines?scope='+encodeURIComponent(state.scope));
   const m = pipelineModel(d);
-  const rows = [...document.querySelectorAll('.drow[data-drama]')];
-  if(rows.length !== m.items.length){ await loadAll(); return; }
-  const t = m.totals;
-  setStat('assets', t.gAssets+'%', t.analyzed+' / 全剧 '+t.fullEps+' 集', t.gAssets);
-  setStat('script', t.scriptCount+'<span class="u">条</span>', t.gScript+'%', t.gScript);
-  setStat('review', t.gReview+'%', t.reviewPassed+' / '+t.reviewTotal+' 条已过审', t.gReview);
-  setStat('final', t.gFinal+'%', t.finalCount+' / '+t.finalTotal+' 条成片', t.gFinal);
+  const cards = [...document.querySelectorAll('.drow[data-drama]')];
+  if(cards.length !== m.items.length){ await loadAll(); return; }
+  STAGES.forEach(s=>{
+    const el = document.querySelector('.stagelegend .lg[data-stage="'+s.key+'"] b');
+    if(el) el.textContent = m.counts[s.key];
+  });
+  const stamp = document.querySelector('.stagelegend [data-role="stamp"]');
+  if(stamp) stamp.textContent = '当前阶段 · '+m.total+' 部剧 · 更新 '+nowClock();
   m.items.forEach(it=>{
-    const row = rows.find(r=>r.dataset.drama===it.drama);
-    if(!row) return;
-    row.classList.toggle('on', it.active);
-    const dot = row.querySelector('.dn .dot');
+    const card = cards.find(c=>c.dataset.drama===it.drama);
+    if(!card) return;
+    card.classList.toggle('on', it.active);
+    const dot = card.querySelector('.dleft .dn .dot');
     if(dot) dot.style.visibility = it.active ? '' : 'hidden';
-    const dm = row.querySelector('.dm');
-    if(dm) dm.textContent = it.dm;
-    it.cells.forEach(c=>{
-      const cell = row.querySelector('.scell[data-stage="'+c.key+'"]');
-      if(!cell) return;
-      cell.querySelector('.scv').innerHTML = c.value;
-      const sb = cell.querySelector('.scs');
-      sb.textContent = c.sub;
-      sb.classList.toggle('warn', !!c.warn);
-      cell.querySelector('.strack > i').style.width = clampPct(c.pct)+'%';
+    const codeEl = card.querySelector('[data-role="code"]');
+    if(codeEl){
+      codeEl.textContent = it.code || '';
+      codeEl.classList.toggle('arch', it.status === 'archived');
+    }
+    const pill = card.querySelector('[data-role="pill"]');
+    if(pill){
+      pill.textContent = it.currentLabel;
+      pill.style.color = it.currentColor;
+      pill.style.background = it.currentColor+'1f';
+    }
+    const sub = card.querySelector('[data-role="sub"]');
+    if(sub) sub.textContent = it.sub;
+    const det = card.querySelector('[data-role="detail"]');
+    if(det) det.textContent = it.detail;
+    it.segs.forEach(s=>{
+      const seg = card.querySelector('.pseg[data-seg="'+s.key+'"]');
+      if(!seg) return;
+      seg.classList.toggle('off', s.off);
+      seg.querySelector('i').style.width = clampPct(s.fill)+'%';
+      let pv = seg.querySelector('.pvalue');
+      if(s.text){
+        if(!pv){ pv = document.createElement('span'); pv.className = 'pvalue'; seg.appendChild(pv); }
+        pv.textContent = s.text;
+      } else if(pv){
+        pv.remove();
+      }
+      let tg = seg.querySelector('.ptarget');
+      if(s.target != null){
+        if(!tg){ tg = document.createElement('span'); tg.className = 'ptarget'; seg.appendChild(tg); }
+        tg.style.left = clampPct(s.target)+'%';
+      } else if(tg){
+        tg.remove();
+      }
     });
   });
   $('#now').innerHTML = nowText(d);
@@ -616,18 +801,29 @@ async function refreshPipeline(){
 const pct = (n,d2) => d2 ? Math.round(n/d2*100) : 0;
 
 async function renderAssets(){
-  const [pr, ds, sh] = await Promise.all(
-    [get('/api/progress'), get('/api/dramas'), get('/api/shared')]);
-  state.dramas = ds.dramas || [];
-  const act = sh.active || {};
-  $('#now').innerHTML = '当前 <b>'+esc(act.drama||'未选')+' / '+esc(act.task||'—')+'</b>';
-  if(!state.drama) state.drama = state.dramas.includes('以真心守护至亲')
-    ? '以真心守护至亲' : (state.dramas[0]||'');
+  const [pr, sh] = await Promise.all([get('/api/progress'), get('/api/shared')]);
+  $('#now').innerHTML = nowText({active: sh.active || {}});
+  const entries = (state.registry || []).filter(e =>
+    state.scope === 'archived' ? e.status === 'archived' : e.status !== 'archived');
+  const names = entries.map(e => e.name);
+  if(!names.includes(state.drama)){
+    const activeName = (sh.active || {}).drama;
+    state.drama = names.includes(activeName) ? activeName : (names[0] || '');
+  }
+  if(!state.drama){
+    return '<div class="card empty-board">'
+      +(state.scope === 'archived' ? '没有归档剧' : '当前范围没有活动剧')+'</div>';
+  }
+  const cur = entries.find(e => e.name === state.drama) || {};
+  const title = (cur.code ? cur.code+' ' : '') + state.drama;
+  const label = e => (e.code ? e.code+' ' : '') + e.name
+    + (e.status === 'archived' ? '（归档）' : '');
+  const sel = '<select id="dramaSel">'+entries.map(e =>
+    '<option value="'+esc(e.name)+'" '+(e.name === state.drama ? 'selected' : '')+'>'
+    + esc(label(e))+'</option>').join('')+'</select>';
   const d = await get('/api/assets?drama='+encodeURIComponent(state.drama));
-  const sel = '<select id="dramaSel">'+state.dramas.map(x =>
-    '<option '+(x===state.drama?'selected':'')+'>'+esc(x)+'</option>').join('')+'</select>';
 
-  let h = '<div class="card"><div class="row"><h2 style="margin:0">'+esc(state.drama)+' 的素材做到哪了</h2>'
+  let h = '<div class="card"><div class="row"><h2 style="margin:0">'+esc(title)+' 的素材做到哪了</h2>'
     + sel + '<span class="muted">共 '+d.ep_count+' 集，三份资料都齐的有 '+d.ready_count+' 集</span></div></div>';
   if(d.error) return h + '<div class="banner warn">'+esc(d.error)+'：原视频在素材盘里，还没跑建库。</div>';
   h += '<div id="live-panel" class="livewrap">'+liveHTML(pr)+'</div>';
@@ -663,9 +859,10 @@ async function renderAssets(){
 
 // ------------------------------------------------------------ 待审文案
 async function renderReview(){
-  const [d, sh] = await Promise.all([get('/api/reviews'), get('/api/shared')]);
-  const act = sh.active || {};
-  $('#now').innerHTML = '当前 <b>'+esc(act.drama||'未选')+' / '+esc(act.task||'—')+'</b>';
+  const [d, sh] = await Promise.all([
+    get('/api/reviews?scope='+encodeURIComponent(state.scope)),
+    get('/api/shared')]);
+  $('#now').innerHTML = nowText({active: sh.active || {}});
   const stPill = s => s==='已通过' ? 'ok' : (s==='要改' ? 'bad'
     : (s==='已废弃' ? 'flat' : 'warn'));
   let h = '<div class="card"><h2>等人过目的文案有 '+d.waiting_count+' 条</h2>'
@@ -676,6 +873,7 @@ async function renderReview(){
       +'" data-url="'+esc(x.url)+'">'+esc(x.name)+'</button>').join('');
     return '<div class="card" style="margin-bottom:10px"><div class="row">'
       +'<span class="pill '+stPill(r.state)+'">'+esc(r.state)+'</span>'
+      +(r.code ? '<span class="dcode'+(r.status==='archived'?' arch':'')+'">'+esc(r.code)+'</span>' : '')
       +'<b>'+esc(r.title)+'</b><span class="muted">'+esc(r.drama+' / '+r.task)
       +' · '+r.seg_count+' 段 · '+esc(r.mtime)+'</span></div>'
       +(r.angle?'<div class="muted" style="margin-top:6px">'+esc(r.angle)+'</div>':'')
@@ -718,9 +916,9 @@ const stTxt = s => ({approved:'已通过',done:'已成片',blocked:'卡住',stal
   in_progress:'在做',pending:'未开工',unlogged:'没登记'}[s] || s || '—');
 
 async function renderVideo(){
-  const d = await get('/api/videos');
+  const d = await get('/api/videos?scope='+encodeURIComponent(state.scope));
   const act = d.active || {};
-  $('#now').innerHTML = '当前 <b>'+esc(act.drama||'未选')+' / '+esc(act.task||'—')+'</b>';
+  $('#now').innerHTML = nowText(d);
   const all = d.groups || [];
   if(!all.length) return '<div class="card"><h2>还没有可预览的视频</h2>'
     +'<p class="muted">runs/ 下还没有 mp4。装配出片后这里会自动出现。</p></div>';
@@ -754,7 +952,7 @@ async function renderVideo(){
     return '<div class="vgroup'+(gg.key===state.vtask?' on':'')+'" data-key="'+esc(gg.key)+'"'
       +' data-search="'+esc(hay)+'" data-current="'+(gg.has_current?'1':'0')+'">'
       +'<div class="t">'+esc(gg.title)+'</div>'
-      +'<div class="s">'+esc(gg.drama+' / '+gg.task)+'</div>'
+      +'<div class="s">'+esc((gg.code ? gg.code+' ' : '')+gg.drama+' / '+gg.task)+'</div>'
       +'<div class="n"><span class="vpill '+stCls(gg.trailer_state)+'">'
       +esc(stTxt(gg.trailer_state))+'</span><span class="c">'+cnt+' · '
       +(cv?fmtDur(cv.duration):'—')+'</span></div></div>';
@@ -769,7 +967,7 @@ async function renderVideo(){
   };
 
   const meta = [
-    ['剧', g.drama], ['片子', g.task],
+    ['剧', (g.code ? g.code+' ' : '')+g.drama], ['片子', g.task],
     ['状态', stTxt(g.trailer_state)+(g.trailer_rev!=null?' · rev '+g.trailer_rev:'')],
     ['循环', '第 '+(g.cycle_round||1)+' 轮'],
     ['时长', fmtDur(cur.duration)],
@@ -882,11 +1080,89 @@ function openSelf(i){
 }
 
 // ------------------------------------------------------------ 调度
+
+// ------------------------------------------------------------ 无人值守进度（11-16 加）
+const AUTO_MARK = {
+  ok:          {txt:'完成',     c:'var(--green)'},
+  skip:        {txt:'本来就有', c:'var(--sub)'},
+  fail:        {txt:'出错',     c:'var(--red)'},
+  needs_model: {txt:'等你定',   c:'var(--amber)'},
+  todo:        {txt:'没开始',   c:'var(--line)'},
+};
+function agoText(t){
+  if(!t) return '没有记录';
+  const d = new Date(t.replace(' ','T'));
+  if(isNaN(d)) return t;
+  const m = Math.round((Date.now()-d.getTime())/60000);
+  if(m < 1) return '刚刚';
+  if(m < 60) return m + ' 分钟前';
+  const h = Math.floor(m/60);
+  if(h < 24) return h + ' 小时 ' + (m%60) + ' 分钟前';
+  return Math.floor(h/24) + ' 天前';
+}
+function autoBadge(b){
+  if((b.suspect||[]).length) return ['疑似卡死','dead'];
+  if((b.live||[]).length)    return ['正在跑','run'];
+  const st = b.stages.map(x=>x.status);
+  if(st.includes('fail'))         return ['出错了','dead'];
+  if(st.includes('needs_model'))  return ['等你拍板','wait'];
+  if(st.every(x=>x==='ok'||x==='skip')) return ['跑完了','done'];
+  return ['停着','wait'];
+}
+function renderAutoBook(b){
+  const [txt, cls] = autoBadge(b);
+  const doneN = b.stages.filter(x=>x.status==='ok'||x.status==='skip').length;
+  const pct = b.stages.length ? Math.round(doneN*100/b.stages.length) : 0;
+
+  const rows = b.stages.map(x=>{
+    const m = AUTO_MARK[x.status] || AUTO_MARK.todo;
+    const sec = (x.seconds!=null && x.seconds>0) ? (x.seconds>=60 ? Math.round(x.seconds/60)+' 分' : Math.round(x.seconds)+' 秒') : '';
+    return '<div class="stepline">'
+      + '<span class="dot" style="background:'+m.c+'"></span>'
+      + '<span class="nm">'+esc(x.label)+'</span>'
+      + '<span class="st" style="color:'+m.c+'">'+m.txt+(sec?' '+sec:'')+'</span>'
+      + '<span class="dt" title="'+esc(x.detail)+'">'+esc(x.detail||'')+'</span>'
+      + '</div>';
+  }).join('');
+
+  const jobs = (b.live||[]).map(j=>
+    '<div class="livejob">正在跑：'+esc(j.label||j.job||'')
+    + (j.ep?' · '+esc(String(j.ep)):'')
+    + (j.total?(' · '+esc(String(j.done||0))+'/'+esc(String(j.total))+(j.unit||'')):'')
+    + (j.note?' · '+esc(j.note):'')+'</div>').join('');
+
+  const dead = (b.suspect||[]).map(j=>
+    '<div class="deadwarn">⚠ '+(j.label||j.job||'')+' 标着在跑，但已经 '
+    + agoText(j.updated_at)+' 没动静 —— 多半是断了，去命令行看一眼</div>').join('');
+
+  return '<div class="autocard">'
+    + '<div class="autohead"><span class="autotitle">'+esc(b.drama)+'</span>'
+    + '<span class="badge '+cls+'">'+txt+'</span>'
+    + '<span class="muted" style="font-size:12px">上次动静：'+agoText(b.updated_at)+'</span></div>'
+    + '<div class="ptrack"><div class="pfill" style="width:'+pct+'%"></div></div>'
+    + '<div class="pmeta">'+doneN+' / '+b.stages.length+' 步（'+pct+'%）</div>'
+    + rows + jobs + dead
+    + '<div class="autofoot">'
+    + (b.report_url?'<a class="docbtn" data-url="'+esc(b.report_url)+'" href="javascript:void(0)">看汇总报告</a>':'')
+    + '<span>页面每 3 秒自己刷</span></div>'
+    + '</div>';
+}
+async function renderAuto(){
+  const d = await get('/api/autopilot');
+  const books = d.books || [];
+  if(!books.length){
+    return '<div class="empty">还没有无人值守的记录。<br><br>'
+      + '跑一次就会出现在这里：<code>autopilot.py run --drama 剧名</code></div>';
+  }
+  return '<div class="autolist">' + books.map(renderAutoBook).join('') + '</div>';
+}
+
 const RENDER = {pipeline:renderPipeline, assets:renderAssets,
-                review:renderReview, video:renderVideo};
+                review:renderReview, video:renderVideo, auto:renderAuto};
 async function loadAll(){
   const box = $('#tab-'+curTab);
   try{
+    await loadRegistry();
     box.innerHTML = await RENDER[curTab]();
     const ds = $('#dramaSel');
     if(ds) ds.addEventListener('change', e=>{ state.drama = e.target.value; loadAll(); });

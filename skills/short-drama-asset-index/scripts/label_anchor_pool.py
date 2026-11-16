@@ -15,6 +15,12 @@ import json
 import sys
 from pathlib import Path
 
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return Path(__file__).resolve().parents[3]
+
 # ── 跨集主题（栏目单元的最小单位）────────────────────────────────
 # 判据：能用一个「看法」把 3-4 个不相邻的画面串起来，且不依赖剧情顺序。
 THEMES = {
@@ -327,7 +333,7 @@ L: dict[str, dict] = {
 
 
 def main() -> int:
-    root = Path(__file__).resolve().parents[3]
+    root = _data_root()
     base = root / "assets/short-drama/八零憨妻的甜蜜日常"
     skel = json.loads((base / "segments_skeleton.json").read_text(encoding="utf-8"))
 

@@ -23,19 +23,39 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from difflib import SequenceMatcher
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[3]
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return Path(__file__).resolve().parents[3]
+
+ROOT = _data_root()
+
+# 主管技能里的公共模块（进度上报、配套库补装）住在插件包的 skills/ 下，
+# 不在数据目录里。以前按 ROOT 往上找，装成插件后必然落空 → 静默降级成空壳，
+# 网页上看不到这一步的细进度。改成问 _env 要宿主位置（11-16 修）。
+try:
+    from _env import HOST as _HOST
+except Exception:
+    _HOST = Path(__file__).resolve().parents[3]
+_SUP = _HOST / "skills" / "short-drama-supervisor" / "scripts"
+if _SUP.is_dir() and str(_SUP) not in sys.path:
+    sys.path.insert(0, str(_SUP))
+
 # 进度上报给主管的网页看；找不到模块就降级，不影响 OCR 本身。
 try:
-    sys.path.insert(0, str(ROOT / "skills" / "short-drama-supervisor" / "scripts"))
     import progress
+    import analysis_log
 except Exception:
     class _NoProgress:
         def __getattr__(self, _name):
             return lambda *a, **k: None
     progress = _NoProgress()
+    analysis_log = _NoProgress()
 
 ASSET_ROOT = None
 for _line in (ROOT / ".env").read_text(encoding="utf-8").splitlines():
@@ -51,7 +71,14 @@ STEP = 2  # 秒/帧，与既有台词稿同一粒度
 
 
 def tool(name: str) -> str:
-    """ffmpeg/ffprobe 一律按名字找；本机 anaconda 装有但不在 PATH 时兜底。"""
+    """ffmpeg/ffprobe：包内 bin/ → PATH → 本机 anaconda 兜底。"""
+    try:  # 分发到别的机器时 ffmpeg 就在包里
+        from _env import tool as _env_tool
+        cand = _env_tool(name)
+        if Path(cand).is_absolute() and Path(cand).exists():
+            return cand
+    except Exception:
+        pass
     p = shutil.which(name) or f"/opt/anaconda3/bin/{name}"
     if not Path(p).exists():
         sys.exit(f"找不到 {name}：装一个，或加进 PATH")
@@ -106,6 +133,7 @@ def ocr_one(engine, frame: Path, crop_top: float, crop_bottom: float) -> str:
 
 def extract_ep(ep: int, video: Path, engine, crop=(CROP_TOP, CROP_BOTTOM),
                step=STEP, drama: str = "") -> dict:
+    t0 = time.time()
     dur = duration(video)
     with tempfile.TemporaryDirectory(prefix=f"sd_ep{ep:02d}_") as td:
         pattern = str(Path(td) / "f_%04d.jpg")
@@ -150,6 +178,8 @@ def extract_ep(ep: int, video: Path, engine, crop=(CROP_TOP, CROP_BOTTOM),
         "step": step,
         "frame_count": len(frames),
         "line_count": len(lines),
+        # 单集耗时：抽帧 + 逐帧认字都算在里面。哪一集特别慢，看这个数。
+        "elapsed_sec": round(time.time() - t0, 1),
         "lines": lines,
     }
 
@@ -206,6 +236,16 @@ def main():
                          "要切台词边界请用 1；已存文件间隔不一致会自动重跑")
     args = ap.parse_args()
 
+    # 认字库没装就当场补（装完专家包不用任何人敲命令）。必须在派活之前做完，
+    # 否则并行子进程里各自 import 失败，报出来的是 4 条一样的错。
+    try:
+        import deps
+        deps.need("rapidocr_onnxruntime", "cv2")
+    except SystemExit:
+        raise
+    except Exception:
+        pass  # 老版本包里没有 deps，让下面原来的 import 照旧报错
+
     src = ASSET_ROOT / args.drama
     if not src.exists():
         sys.exit(f"素材目录不存在：{src}")
@@ -238,6 +278,8 @@ def main():
 
     crop = (args.crop_top, args.crop_bottom)
     jobs = max(1, min(args.jobs, len(todo) or 1))
+    t_all = time.time()
+    items = 0          # 本轮一共认了多少帧，记耗时台账要用
     done = []
     if todo:
         if jobs == 1:
@@ -253,6 +295,7 @@ def main():
                     raise
                 dst = _save(out_dir, data)
                 done.append(ep)
+                items += int(data.get("frame_count") or 0)
                 print(f"ep{ep:02d}  {data['duration']:>7.1f}s  {data['line_count']:>3d} 句"
                       f"  -> {dst.name}", flush=True)
         else:
@@ -272,6 +315,7 @@ def main():
                         continue
                     dst = _save(out_dir, data)
                     done.append(ep)
+                    items += int(data.get("frame_count") or 0)
                     print(f"ep{ep:02d}  {data['duration']:>7.1f}s  {data['line_count']:>3d} 句"
                           f"  -> {dst.name}  （已完成 {len(done)}/{len(todo)}）", flush=True)
 
@@ -279,6 +323,10 @@ def main():
           + (f"，重跑 {len(redone)} 集（旧文件间隔不同：{sorted(redone)}）" if redone else ""))
     print(f"产物目录：{out_dir}")
     if done:
+        # 耗时台账：页面上的「字幕识别跑了多久」就来自这一条
+        analysis_log.record(args.drama, "ocr_lines", started=t_all,
+                            eps=len(done), items=items,
+                            note=f"抽帧间隔 {args.step} 秒，{jobs} 路并行")
         _rebuild_sqlite(args.drama)
 
 

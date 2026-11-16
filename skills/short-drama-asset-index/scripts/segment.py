@@ -20,7 +20,14 @@ import argparse
 import json
 import os
 import sys
+import time
 from pathlib import Path
+
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return Path(__file__).resolve().parents[3]
 
 # 段长约束（秒）。依据：短剧单集 37-133 秒，16:9 竖屏 2-3 秒一切，
 # 一段需容纳 3-8 句台词才够一个「冲突单元」。
@@ -35,19 +42,28 @@ SPAN_MIN = MIN_LEN - PAD_TOTAL
 
 
 def repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
+    return _data_root()
 
 
 ROOT = repo_root()
 # 进度上报给主管的网页看；找不到模块就降级，不影响切分本身。
+# 主管技能住在插件包的 skills/ 下，不在数据目录里，得问 _env 要宿主位置（11-16 修）。
 try:
-    sys.path.insert(0, str(ROOT / "skills" / "short-drama-supervisor" / "scripts"))
+    from _env import HOST as _HOST
+except Exception:
+    _HOST = Path(__file__).resolve().parents[3]
+_SUP = _HOST / "skills" / "short-drama-supervisor" / "scripts"
+try:
+    if _SUP.is_dir() and str(_SUP) not in sys.path:
+        sys.path.insert(0, str(_SUP))
     import progress
+    import analysis_log
 except Exception:
     class _NoProgress:
         def __getattr__(self, _name):
             return lambda *a, **k: None
     progress = _NoProgress()
+    analysis_log = _NoProgress()
 
 
 def load_lines(lines_dir: Path, ep: int) -> dict:
@@ -136,6 +152,7 @@ def main() -> int:
     ap.add_argument("--write", action="store_true", help="合并写入 segments_skeleton.json")
     args = ap.parse_args()
 
+    t0 = time.time()
     root = repo_root()
     lines_dir = root / "assets/short-drama" / args.drama / "lines"
     if not lines_dir.exists():
@@ -172,6 +189,11 @@ def main() -> int:
             raise
 
     print(f"\n合计 {len(eps)} 集 / {total_seg} 段 / 平均 {total_seg/len(eps):.1f} 段每集")
+
+    # 耗时台账：切镜头这一环只读台词文件、不调模型，通常几秒到十几秒
+    analysis_log.record(args.drama, "segment", started=t0,
+                        eps=len(eps), items=total_seg,
+                        note=f"间隔上限 {GAP_LIMIT} 秒，段长 {MIN_LEN}–{MAX_LEN} 秒")
 
     if args.write:
         out = root / "assets/short-drama" / args.drama / "segments_skeleton.json"

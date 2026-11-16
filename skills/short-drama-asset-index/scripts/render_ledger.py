@@ -9,6 +9,12 @@ import json
 import sys
 from pathlib import Path
 
+try:  # 数据目录不靠数层级猜：见同目录 _env.py（换机器也不用改代码）
+    from _env import data_root as _data_root
+except Exception:  # 极端情况下退回老办法，至少不崩
+    def _data_root():
+        return Path(__file__).resolve().parents[3]
+
 STATE_ICON = {"临界": "◐", "已兑现": "●", "铺垫": "○"}
 
 
@@ -27,7 +33,7 @@ def seg_times(s: dict) -> list:
 
 
 def main() -> int:
-    root = Path(__file__).resolve().parents[3]
+    root = _data_root()
     base = root / "assets/short-drama/八零憨妻的甜蜜日常"
     d = json.loads((base / "asset_index.json").read_text(encoding="utf-8"))
     line_cache: dict = {}

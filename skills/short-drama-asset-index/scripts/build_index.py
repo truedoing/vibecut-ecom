@@ -78,16 +78,19 @@ def main():
         d = json.load(open(p, encoding="utf-8"))
         ep = d.get("ep")
         for s in d.get("shots", []):
-            person = map_person(s["tag"].get("who"), chars)
+            # 个别镜头没有 tag 字段（打标漏了/旧版本产物），直接 s["tag"] 会 KeyError，
+            # 整个索引就断在这儿。缺就当空字典，索引照建，缺的片段后面能补（11-16 修）。
+            tag = s.get("tag") or {}
+            person = map_person(tag.get("who"), chars)
             if person not in ("分不清",):
                 n_known += 1
             conn.execute(
                 'INSERT INTO shots(ep,start,"end",shot_size,who,person,action,place,props) '
                 "VALUES(?,?,?,?,?,?,?,?,?)",
-                (ep, s["start"], s["end"], s["tag"].get("shot_size", ""),
-                 "/".join(s["tag"].get("who") or []), person,
-                 s["tag"].get("action", ""), s["tag"].get("place", ""),
-                 ",".join(s["tag"].get("props") or [])))
+                (ep, s["start"], s["end"], tag.get("shot_size", ""),
+                 "/".join(tag.get("who") or []), person,
+                 tag.get("action", ""), tag.get("place", ""),
+                 ",".join(tag.get("props") or [])))
             n_shots += 1
 
     conn.execute("CREATE TABLE IF NOT EXISTS persons(name TEXT PRIMARY KEY, role TEXT, rules TEXT)")

@@ -54,7 +54,22 @@ HUMAN_REF_HINTS = ("/characters/", "ref_video.", "portrait.", "定妆", "定装"
 
 
 def load_env():
-    """向上找 .env（技能目录 → 仓库根），补齐 MIMO/APIYI 之类的 key。"""
+    """补齐 MIMO/APIYI 之类的 key。
+
+    优先读数据目录的 .env（新装机器只有这一份，在「文档/短剧工作区」下）；
+    读不到再往上找 .env，兼容老仓库布局（.env 就在仓库根）。
+    11-15 修：原来只往上找 .env，技能住进插件目录后永远找不到，
+    症状是「自检说密钥已配置，出片却说缺 APIYI_API_KEY」。
+    """
+    try:
+        from _env import read_env
+        for k, v in read_env().items():
+            if v:
+                os.environ.setdefault(k, v)
+        return
+    except Exception:
+        pass
+
     here = Path(__file__).resolve()
     for parent in here.parents:
         env = parent / ".env"
@@ -246,7 +261,7 @@ def main():
         return
 
     if not api_key:
-        sys.exit("缺 APIYI_API_KEY（写进仓库 .env）")
+        sys.exit("缺 APIYI_API_KEY：请放进数据目录的 .env（在「文档/短剧工作区/.env」）")
 
     task_id = args.task_id
     if not task_id:
