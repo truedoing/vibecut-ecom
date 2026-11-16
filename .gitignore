@@ -23,6 +23,15 @@ config.local.json
 # 运行中进度（脚本实时写，不必入库）
 runs/进度/
 
+# 进度网页服务的运行日志（autopilot 起服务时写，每次覆盖）
+runs/.ui_server.log
+
+# 交付用的预览/母版 mp4 放这里，媒体不入库（可再生）
+delivery/*.mp4
+
+# 版本监控的远端清单快照：从项目资产取到本机，各机器自己取、会过期
+updates/
+
 # WorkBuddy local state (memory / handoff) — never commit
 .workbuddy/
 
