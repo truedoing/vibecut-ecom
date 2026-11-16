@@ -1,0 +1,422 @@
+{
+  "ep": 17,
+  "file": "17.mp4",
+  "duration": 51.69,
+  "shot_count": 16,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v4",
+  "usage": {
+    "prompt_tokens": 47920,
+    "completion_tokens": 20956,
+    "total_tokens": 68876
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 高马尾白色发圈"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "action": "双手拿着手机低头查看",
+        "place": "室内书房",
+        "props": [
+          "智能手机",
+          "笔记本电脑",
+          "书架",
+          "台灯"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep17_s000_0.jpg"
+    },
+    {
+      "start": 3.7,
+      "end": 7.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 灰色旧棉袄 坐轮椅",
+          "年轻女性 浅色上衣 手持手机 侧对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "老年女性嘴部清晰可见且闭合，年轻女性嘴部被头部角度遮挡不可见",
+        "action": "老年女性静坐，年轻女性低头看手机",
+        "place": "室内卧室",
+        "props": [
+          "轮椅",
+          "手机",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s001_0.jpg"
+    },
+    {
+      "start": 7.17,
+      "end": 10.17,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 蓝色牛仔裤 双手持智能手机 背对镜头"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "仅露后脑勺与双手，看不见嘴",
+        "action": "双手持手机浏览聊天文件夹列表",
+        "place": "未识别",
+        "props": [
+          "智能手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s002_0.jpg"
+    },
+    {
+      "start": 10.17,
+      "end": 14.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 灰白头发盘起 深色盘扣棉袄 坐姿"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸可见，嘴唇微张露出牙齿，像在说话",
+        "action": "低头看手中的手机并说话",
+        "place": "室内",
+        "props": [
+          "智能手机",
+          "窗台盆栽",
+          "百叶窗"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s003_0.jpg"
+    },
+    {
+      "start": 14.07,
+      "end": 16.27,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色短袖T恤牛仔裤 高马尾 手抱白色大枕头",
+          "老年女性 灰白头发 深色上衣 坐轮椅背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位年轻女性嘴巴微张，可见唇间缝隙",
+        "action": "站着抱大枕头与坐着的人对视",
+        "place": "室内卧室",
+        "props": [
+          "白色大枕头",
+          "轮椅",
+          "床",
+          "百叶窗"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s004_0.jpg"
+    },
+    {
+      "start": 16.27,
+      "end": 21.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 米白色短袖T恤 高马尾",
+          "老年女性 灰色上衣 侧对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "action": "年轻女性俯身对老年女性说话",
+        "place": "室内",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s005_0.jpg"
+    },
+    {
+      "start": 21.27,
+      "end": 25.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深灰色中式立领上衣 灰白头发 眼眶含泪",
+          "年轻女性 深色头发 仅露部分侧脸"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老年女性嘴部微张，处于说话状态",
+        "action": "含泪望向旁人开口说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s006_0.jpg"
+    },
+    {
+      "start": 25.43,
+      "end": 28.1,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色短袖T恤 马尾辫",
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位老人嘴巴张开，第1位侧脸嘴部可见",
+        "action": "年轻女子俯身握住轮椅老人的手对视",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s007_0.jpg"
+    },
+    {
+      "start": 28.1,
+      "end": 31.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰色盘扣棉袄 灰白发髻 面部有斑点"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "坐着讲述身体疼痛情况",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s008_0.jpg"
+    },
+    {
+      "start": 31.3,
+      "end": 33.97,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 白色上衣 盘发 眼眶泛红含泪"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴巴闭合，嘴角下撇",
+        "action": "流泪直视前方，神情悲伤",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s009_0.jpg"
+    },
+    {
+      "start": 33.97,
+      "end": 39.47,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 牛仔裤 高马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸可见，嘴巴张开说话",
+        "action": "站立着对面前的人说话",
+        "place": "卧室",
+        "props": [
+          "床",
+          "绿植",
+          "百叶窗"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s010_0.jpg"
+    },
+    {
+      "start": 39.47,
+      "end": 40.67,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色短袖 只露出手臂和手"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "只露出手臂和手，看不见嘴",
+        "action": "伸手去碰床头柜上的黑色物件",
+        "place": "室内卧室",
+        "props": [
+          "台灯",
+          "书",
+          "杯子",
+          "黑色小物件",
+          "床头柜",
+          "床"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s011_0.jpg"
+    },
+    {
+      "start": 40.67,
+      "end": 41.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅灰色短袖上衣 仅露出手臂与部分面部"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "面部被画面上缘截断，只露出下巴，看不清嘴部",
+        "action": "手臂伸向床头柜上的黑色音箱",
+        "place": "卧室",
+        "props": [
+          "台灯",
+          "黑色圆形智能音箱",
+          "床头柜",
+          "书本",
+          "收纳盒",
+          "床铺"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s012_0.jpg"
+    },
+    {
+      "start": 41.2,
+      "end": 43.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中老年女性 深灰色中式外套 坐轮椅，正扶床准备起身",
+          "年轻女性 白色短袖+浅蓝牛仔裤 扎高马尾，正搀扶老年女性"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "老年女性嘴部可见且闭合，年轻女性脸部部分被遮挡",
+        "action": "年轻女性搀扶老年女性从轮椅起身到床边",
+        "place": "室内卧室",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s013_0.jpg"
+    },
+    {
+      "start": 43.37,
+      "end": 46.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 灰白头发 深色盘扣棉衣 躺在床上",
+          "年轻女性 白色上衣 短发 侧脸俯身"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "老年女性嘴唇张开，可见口型；年轻女性只见侧脸下颌，嘴部不清晰",
+        "action": "年轻女子俯身伸手照看老人",
+        "place": "卧室",
+        "props": [
+          "枕头",
+          "木质床头"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s014_0.jpg"
+    },
+    {
+      "start": 46.83,
+      "end": 51.69,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 灰色盘扣中式上衣 灰白头发 卧床含泪"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "action": "老人躺在床上含泪说话",
+        "place": "卧室",
+        "props": [
+          "枕头"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep17_s015_0.jpg"
+    }
+  ]
+}

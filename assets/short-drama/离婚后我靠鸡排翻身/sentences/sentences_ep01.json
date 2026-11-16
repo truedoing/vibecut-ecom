@@ -1,0 +1,361 @@
+{
+  "ep": 1,
+  "drama": "离婚后我靠鸡排翻身",
+  "sources": {
+    "lines": "lines/lines_ep01.json",
+    "shots": "shots/shots_ep01.json",
+    "char_map": null,
+    "shots_prompt": "sd-shot-v5"
+  },
+  "counts": {
+    "lines": 21,
+    "on_screen": 17,
+    "off_screen": 4,
+    "unknown": 0,
+    "named": 0
+  },
+  "dense_shots": [
+    {
+      "shot": "23.68-32.77",
+      "lines": 4
+    }
+  ],
+  "rows": [
+    {
+      "t": 6,
+      "text": "因为买不起一包卫生巾",
+      "shot": [
+        4.82,
+        6.03
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "画面只有双手和手机，看不见任何人嘴部",
+      "cross": true
+    },
+    {
+      "t": 8,
+      "text": "我和丈夫提了离婚",
+      "shot": [
+        6.03,
+        9.02
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "",
+      "intensity": "",
+      "size": "特写",
+      "evidence": "画面只有一只手握着碎屏手机，看不见任何人的嘴",
+      "cross": false
+    },
+    {
+      "t": 10,
+      "text": "姜菜庆",
+      "shot": [
+        9.88,
+        16.18
+      ],
+      "who": "中年女性 灰色圆领连衣裙 深色扎发 手持手机和粉色包装袋",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴唇微张，口型处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 12,
+      "text": "我来例假了",
+      "shot": [
+        9.88,
+        16.18
+      ],
+      "who": "中年女性 灰色圆领连衣裙 深色扎发 手持手机和粉色包装袋",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴唇微张，口型处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 14,
+      "text": "我月初不是才给了你2，800",
+      "shot": [
+        9.88,
+        16.18
+      ],
+      "who": "中年女性 灰色圆领连衣裙 深色扎发 手持手机和粉色包装袋",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴唇微张，口型处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 16,
+      "text": "给妈买的药花了800多",
+      "shot": [
+        16.18,
+        23.68
+      ],
+      "who": "中年女性 灰色连衣裙 披肩黑发 手持黑屏手机贴耳",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露齿，正在说话",
+      "cross": true
+    },
+    {
+      "t": 20,
+      "text": "还有你让我买的东西",
+      "shot": [
+        16.18,
+        23.68
+      ],
+      "who": "中年女性 灰色连衣裙 披肩黑发 手持黑屏手机贴耳",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 22,
+      "text": "都是从里面出的",
+      "shot": [
+        16.18,
+        23.68
+      ],
+      "who": "中年女性 灰色连衣裙 披肩黑发 手持黑屏手机贴耳",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 24,
+      "text": "可我做销售",
+      "shot": [
+        23.68,
+        32.77
+      ],
+      "who": "中年女性 灰色系带连衣裙 手持裂屏手机和粉色卫生巾包装",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴唇微张，似在说话",
+      "cross": false
+    },
+    {
+      "t": 26,
+      "text": "压力也大",
+      "shot": [
+        23.68,
+        32.77
+      ],
+      "who": "中年女性 灰色系带连衣裙 手持裂屏手机和粉色卫生巾包装",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴唇微张，似在说话",
+      "cross": false
+    },
+    {
+      "t": 30,
+      "text": "我知道我就差10块多",
+      "shot": [
+        23.68,
+        32.77
+      ],
+      "who": "中年女性 灰色系带连衣裙 手持裂屏手机和粉色卫生巾包装",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴唇微张，似在说话",
+      "cross": false
+    },
+    {
+      "t": 32,
+      "text": "要不你先看看",
+      "shot": [
+        23.68,
+        32.77
+      ],
+      "who": "中年女性 灰色系带连衣裙 手持裂屏手机和粉色卫生巾包装",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴唇微张，似在说话",
+      "cross": true
+    },
+    {
+      "t": 34,
+      "text": "我这边客户还等着",
+      "shot": [
+        32.77,
+        36.68
+      ],
+      "who": "中年女性 灰色上衣 手持碎屏手机 眼眶红有泪痕",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 36,
+      "text": "等谈完单子再说吧",
+      "shot": [
+        32.77,
+        36.68
+      ],
+      "who": "中年女性 灰色上衣 手持碎屏手机 眼眶红有泪痕",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": true
+    },
+    {
+      "t": 38,
+      "text": "我提神用的",
+      "shot": [
+        38.18,
+        41.55
+      ],
+      "who": "中年女性 灰色宽松上衣 手持碎屏手机 眼眶泛红",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，处于说话状态",
+      "cross": true
+    },
+    {
+      "t": 42,
+      "text": "我给这个家当牛做马了4年",
+      "shot": [
+        41.55,
+        43.2
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "画面仅显示手部与躯干局部，无法看清嘴部",
+      "cross": false
+    },
+    {
+      "t": 44,
+      "text": "这次我不想再忍了",
+      "shot": [
+        43.2,
+        45.82
+      ],
+      "who": "中年女性 灰色亚麻圆领上衣 扎马尾 眼眶泛红",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张，正在说话",
+      "cross": false
+    },
+    {
+      "t": 46,
+      "text": "老板这两盒咖啡我不要了",
+      "shot": [
+        45.82,
+        48.58
+      ],
+      "who": "中年女性 灰色上衣 手持两盒咖啡",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 48,
+      "text": "好您稍等",
+      "shot": [
+        45.82,
+        48.58
+      ],
+      "who": "中年女性 灰色上衣 手持两盒咖啡",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴张开，正在说话",
+      "cross": true
+    },
+    {
+      "t": 52,
+      "text": "英信",
+      "shot": [
+        51.1,
+        52.07
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "画面仅展示躯干和手部，无嘴部可见",
+      "cross": true
+    },
+    {
+      "t": 56,
+      "text": "张律师我想预约咨询",
+      "shot": [
+        55.12,
+        60.29
+      ],
+      "who": "中年女性 灰色长袖连衣裙 眼眶发红哭过",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴张开说话，可见口腔",
+      "cross": false
+    }
+  ]
+}

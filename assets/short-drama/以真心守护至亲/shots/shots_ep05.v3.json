@@ -1,0 +1,381 @@
+{
+  "ep": 5,
+  "file": "5.mp4",
+  "duration": 56.89,
+  "shot_count": 19,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 15458,
+    "completion_tokens": 3760,
+    "total_tokens": 19218
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.0,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫黑领带 偏分黑发"
+        ],
+        "action": "侧头质问，神情不满",
+        "place": "酒店宴会厅",
+        "props": [
+          "红色椅背"
+        ],
+        "scene_text": "周德海 周家掌舵人",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep05_s000.jpg"
+    },
+    {
+      "start": 2.0,
+      "end": 7.0,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫黑领带 偏分黑发"
+        ],
+        "action": "侧头质问，神情不满",
+        "place": "酒店宴会厅",
+        "props": [
+          "红色椅背"
+        ],
+        "scene_text": "周德海 周家掌舵人",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep05_s001.jpg"
+    },
+    {
+      "start": 7.0,
+      "end": 11.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝长袖婚纱 短头纱 长发",
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "action": "女子推着轮椅上的老人说话",
+        "place": "酒店走廊",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s002.jpg"
+    },
+    {
+      "start": 11.73,
+      "end": 14.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫黑领带 偏分黑发"
+        ],
+        "action": "皱眉说话，神情严肃",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s003.jpg"
+    },
+    {
+      "start": 14.8,
+      "end": 16.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 灰发盘起 坐轮椅"
+        ],
+        "action": "坐在轮椅上侧头张望",
+        "place": "酒店走廊",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s004.jpg"
+    },
+    {
+      "start": 16.23,
+      "end": 20.4,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 灰发盘起"
+        ],
+        "action": "面露悲伤地抬头凝望",
+        "place": "酒店走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s005.jpg"
+    },
+    {
+      "start": 20.4,
+      "end": 22.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅条纹衬衫 领带"
+        ],
+        "action": "看向前方，表情严肃",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s006.jpg"
+    },
+    {
+      "start": 22.57,
+      "end": 26.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅条纹衬衫 领带"
+        ],
+        "action": "看向前方，表情严肃",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s007.jpg"
+    },
+    {
+      "start": 26.2,
+      "end": 29.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色婚纱 头纱 长卷发"
+        ],
+        "action": "看向前方，表情疑惑",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s008.jpg"
+    },
+    {
+      "start": 29.93,
+      "end": 31.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 白衬衫 酒红色领带"
+        ],
+        "action": "皱眉看向下方，表情不满",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s009.jpg"
+    },
+    {
+      "start": 31.6,
+      "end": 34.3,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色连衣裙 珍珠发饰 长卷发"
+        ],
+        "action": "双臂交叉，面带微笑",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s010.jpg"
+    },
+    {
+      "start": 34.3,
+      "end": 37.97,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色连衣裙 珍珠发饰 长卷发"
+        ],
+        "action": "张嘴说话，表情生动",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s011.jpg"
+    },
+    {
+      "start": 37.97,
+      "end": 40.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 5,
+        "who": [
+          "年轻女性 浅粉色连衣裙 波浪卷发",
+          "中年男性 深色西装 侧脸",
+          "中年男性 深色西装 侧脸",
+          "年轻女性 深色衣服 侧脸",
+          "年轻女性 深色衣服 侧脸"
+        ],
+        "action": "年轻女性情绪激动地站着说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "圆桌",
+          "白色餐盘",
+          "黑色筷子",
+          "花束",
+          "高脚杯"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s012.jpg"
+    },
+    {
+      "start": 40.6,
+      "end": 42.4,
+      "tag": {
+        "shot_size": "近景",
+        "people": 5,
+        "who": [
+          "年轻女性 浅粉色连衣裙 波浪卷发",
+          "中年男性 深色西装 侧脸",
+          "中年男性 深色西装 侧脸",
+          "年轻女性 深色衣服 侧脸",
+          "年轻女性 深色衣服 侧脸"
+        ],
+        "action": "年轻女性情绪激动地站着说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "圆桌",
+          "白色餐盘",
+          "黑色筷子",
+          "花束",
+          "高脚杯"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s013.jpg"
+    },
+    {
+      "start": 42.4,
+      "end": 46.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 5,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披头纱",
+          "老年女性 深色旧棉袄 坐轮椅",
+          "年轻女性 浅粉色连衣裙 背对镜头",
+          "中年男性 深色西装 侧脸",
+          "中年男性 深色西装 侧脸"
+        ],
+        "action": "婚纱女性站着看向粉衣女性",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅",
+          "深色木门"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s014.jpg"
+    },
+    {
+      "start": 46.0,
+      "end": 49.53,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披头纱 波浪卷发"
+        ],
+        "action": "婚纱女性面露惊讶地看着前方",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s015.jpg"
+    },
+    {
+      "start": 49.53,
+      "end": 53.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧棉袄 灰白发髻 坐轮椅",
+          "年轻女性 白色蕾丝婚纱 仅露手臂"
+        ],
+        "action": "老人仰头说话，手被婚纱女性握住",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅",
+          "深色木门"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s016.jpg"
+    },
+    {
+      "start": 53.27,
+      "end": 55.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披头纱 波浪卷发 眼眶泛红含泪"
+        ],
+        "action": "婚纱女性含泪看着前方说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s017.jpg"
+    },
+    {
+      "start": 55.63,
+      "end": 56.89,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫打领带 面露惊讶"
+        ],
+        "action": "手持麦克风讲话，面露惊讶",
+        "place": "舞台",
+        "props": [
+          "麦克风",
+          "讲台"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep05_s018.jpg"
+    }
+  ]
+}

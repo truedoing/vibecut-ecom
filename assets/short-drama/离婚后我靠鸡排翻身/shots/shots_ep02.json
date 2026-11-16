@@ -1,0 +1,381 @@
+{
+  "ep": 2,
+  "file": "2.mp4",
+  "duration": 50.45,
+  "shot_count": 13,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 41977,
+    "completion_tokens": 23931,
+    "total_tokens": 65908
+  },
+  "elapsed_sec": 467.3,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 4.85,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅灰色连衣裙 背对镜头 手提塑料袋",
+          "中年男性 浅蓝色衬衫 黑色长裤 低头看纸",
+          "老年女性 深色毛衣 深色长裤 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位中年男性嘴部微张呈说话状态",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男子低头看纸，女子提菜走近",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "塑料袋",
+          "橘子",
+          "玻璃罐",
+          "纸张",
+          "书堆"
+        ],
+        "scene_text": "",
+        "watermark": "本剧由AI创作 纯属虚构",
+        "frames_used": 3
+      },
+      "frame": "ep02_s000_0.jpg"
+    },
+    {
+      "start": 4.85,
+      "end": 6.15,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 灰色亚麻连衣裙 扎马尾",
+          "青年男性 深色短发 仅见后脑勺与耳朵"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴唇微张，口腔隐约可见",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "站着微张嘴开口说话",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s001_0.jpg"
+    },
+    {
+      "start": 6.15,
+      "end": 7.43,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "青年女性 米灰色长袖上衣 扎发背对镜头",
+          "中年男性 浅蓝色衬衫黑裤 戴手表",
+          "老年女性 深色上衣 坐在椅子上"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位男性正脸可见，嘴微张呈说话状态",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "身体前倾向女性急切解释",
+        "place": "室内客厅",
+        "props": [
+          "台灯",
+          "绿植",
+          "玻璃茶几",
+          "木椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 2
+      },
+      "frame": "ep02_s002_0.jpg"
+    },
+    {
+      "start": 7.43,
+      "end": 9.03,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年男性 浅蓝色长袖衬衫 黑色西裤 黑色短发",
+          "年轻女性 米灰色上衣 盘发 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴部微张，正对背身女性说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "男性皱眉面对女性说话质问",
+        "place": "室内客厅",
+        "props": [
+          "台灯",
+          "窗帘",
+          "画框"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s003_0.jpg"
+    },
+    {
+      "start": 9.03,
+      "end": 12.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年女性 灰色圆领上衣 扎马尾 素颜面有斑点",
+          "中年男性 浅蓝色衬衫 背对镜头只见后脑勺和耳朵"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴唇微张在说话，第2位背对镜头看不见嘴",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "向对方解释明天客户很重要",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s004_0.jpg"
+    },
+    {
+      "start": 12.27,
+      "end": 15.18,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年女性 灰色棉麻短袖T恤 扎马尾 眼眶泛红"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话，牙齿可见",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "眼含泪水地张口说话",
+        "place": "室内卧室",
+        "props": [
+          "台灯",
+          "抱枕",
+          "装饰画",
+          "床"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s005_0.jpg"
+    },
+    {
+      "start": 15.18,
+      "end": 20.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 浅蓝色条纹衬衫"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "中",
+        "action": "正在说话解释",
+        "place": "室内房间",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s006_0.jpg"
+    },
+    {
+      "start": 20.17,
+      "end": 23.82,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 灰白发 深色针织开衫内搭碎花衬衫 眼眶湿润"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "老人张嘴说话，眉头微皱眼含泪光",
+        "place": "室内客厅",
+        "props": [
+          "红色皮沙发"
+        ],
+        "scene_text": "吴秀琴",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s007_0.jpg"
+    },
+    {
+      "start": 23.82,
+      "end": 26.2,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 浅蓝色长袖衬衫 深色西裤 皮带",
+          "老年女性 灰白发 深色上衣 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正面朝向镜头，嘴巴张开正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "站着手下垂对面前的人说话解释",
+        "place": "室内客厅",
+        "props": [
+          "相框",
+          "木柜"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s008_0.jpg"
+    },
+    {
+      "start": 26.2,
+      "end": 30.45,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅灰色无袖连衣裙 侧脸出镜",
+          "老年女性 深蓝色针织开衫 花衬衫内搭 坐轮椅 灰白发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位老年女性嘴巴张开正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "老年女性坐轮椅，侧头看向年轻女性说话",
+        "place": "室内客厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s009_0.jpg"
+    },
+    {
+      "start": 30.45,
+      "end": 38.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "中年女性 灰色连衣裙 扎马尾 眼眶泛红",
+          "中年男性 浅蓝色衬衫 深色长裤 站立",
+          "老年女性 仅露一只枯瘦的手递钱"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话，其余人嘴闭合",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "中年女性含泪说话，有人伸手递钱",
+        "place": "室内客厅",
+        "props": [
+          "纸币"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s010_0.jpg"
+    },
+    {
+      "start": 38.57,
+      "end": 43.28,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 灰色棉麻长裙 马尾站立",
+          "中年男性 浅蓝色衬衫 坐姿",
+          "老年女性 深色开衫 坐轮椅 灰白发髻"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位男性嘴张开说话，第3位嘴微张，第1位嘴闭合",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "男性坐姿抬头对站立女子说话",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "果盘",
+          "玻璃茶几",
+          "书本"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s011_0.jpg"
+    },
+    {
+      "start": 43.28,
+      "end": 50.45,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "中年女性 灰色连衣裙 扎马尾",
+          "中年男性 浅蓝色衬衫 深色西裤",
+          "老年女性 深色上衣 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第一位女性嘴巴微张正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "女子与男子面对面站立对峙",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "挂画"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep02_s012_0.jpg"
+    }
+  ]
+}

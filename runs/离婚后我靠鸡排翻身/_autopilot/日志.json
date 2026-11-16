@@ -1,0 +1,163 @@
+{
+ "drama": "离婚后我靠鸡排翻身",
+ "created_at": "2026-11-16T12:06:16",
+ "runs": [
+  {
+   "started_at": "2026-11-16T12:06:16",
+   "upto": "pack",
+   "only": null
+  },
+  {
+   "started_at": "2026-11-16T12:06:27",
+   "upto": null,
+   "only": [
+    "lines"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:08:03",
+   "upto": null,
+   "only": [
+    "cuts",
+    "segment"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:08:35",
+   "upto": null,
+   "only": [
+    "segment"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:08:42",
+   "upto": null,
+   "only": [
+    "tag"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:27:07",
+   "upto": null,
+   "only": [
+    "index"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:56:06",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:56:53",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:57:39",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:58:23",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T12:59:14",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T13:00:07",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T13:01:00",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T13:01:39",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  },
+  {
+   "started_at": "2026-11-16T13:53:54",
+   "upto": null,
+   "only": [
+    "check"
+   ]
+  }
+ ],
+ "stages": {
+  "check": {
+   "status": "ok",
+   "detail": "45 个素材文件；本次解析 2 集（1–2）；依据：按前 60% 取 27 集（素材共 45 集）",
+   "seconds": 0.0,
+   "at": "2026-11-16T13:53:55",
+   "artifacts": []
+  },
+  "pack": {
+   "status": "needs_model",
+   "detail": "剧集包还没建：/Users/zgl/vibecut-ecom/packs/short-drama/离婚后我靠鸡排翻身/drama-pack.json。要让模型通读素材后写出来，然后跑 validate_pack.py 校验。",
+   "seconds": 0.0,
+   "at": "2026-11-16T12:06:16",
+   "artifacts": []
+  },
+  "lines": {
+   "status": "ok",
+   "detail": "台词 1/1 集",
+   "seconds": 75.2,
+   "at": "2026-11-16T12:07:42",
+   "artifacts": []
+  },
+  "cuts": {
+   "status": "ok",
+   "detail": "切口表 1/1 集；ep 1 60.2s 阈值 -25.2dB 停顿 44处（每分钟 44 处） 离婚后我靠鸡排翻身：新算 1 集，沿用缓存 0 集 → /Users/zgl/vibecut-ecom/assets/short-drama/离婚后我靠鸡排翻身/cuts",
+   "seconds": 2.5,
+   "at": "2026-11-16T12:08:05",
+   "artifacts": []
+  },
+  "segment": {
+   "status": "skip",
+   "detail": "冲突段落骨架已在，跳过",
+   "seconds": 0.0,
+   "at": "2026-11-16T12:08:35",
+   "artifacts": []
+  },
+  "tag": {
+   "status": "ok",
+   "detail": "画面打标 1/1 集",
+   "seconds": 602.2,
+   "at": "2026-11-16T12:18:44",
+   "artifacts": []
+  },
+  "index": {
+   "status": "ok",
+   "detail": "查询库重建好了；句级表 1/27 集（0% 查到人名 0 句 0.0% （其余只有外观描述，规则表里没匹配上） 情绪分布: 悲伤16 平静4 1 跨镜头台词 7 句（起点和主体不在同一镜头，已按起点优先算，标了 cross） 一镜多句的镜头 1 个（一个镜头塞了 4 句以上，可能漏切了一刀，需人核）： 23.68-32.77 秒 4 句）",
+   "seconds": 0.3,
+   "at": "2026-11-16T12:27:07",
+   "artifacts": []
+  }
+ },
+ "updated_at": "2026-11-16T13:53:55",
+ "ui_url": "http://127.0.0.1:8801"
+}

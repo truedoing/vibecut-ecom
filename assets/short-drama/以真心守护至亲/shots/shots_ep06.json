@@ -4,46 +4,63 @@
   "duration": 49.04,
   "shot_count": 15,
   "scene_threshold": 0.25,
-  "prompt_version": "sd-shot-v1",
+  "prompt_version": "sd-shot-v5",
   "usage": {
-    "prompt_tokens": 12135,
-    "completion_tokens": 5112,
-    "total_tokens": 17247
+    "prompt_tokens": 48435,
+    "completion_tokens": 19073,
+    "total_tokens": 67508
   },
   "shots": [
     {
       "start": 0.0,
       "end": 1.63,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "年轻男性 黑色三件套西装 红色领带 短发"
+          "年轻男性 深色三件套西装 白衬衫酒红领带 背头"
         ],
-        "action": "他站在舞台上张嘴说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张大，牙齿可见，正在喊话",
+        "emotion": "激动",
+        "intensity": "强",
+        "action": "张口大声呼喊催促",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
       },
-      "frame": "ep06_s000.jpg"
+      "frame": "ep06_s000_0.jpg"
     },
     {
       "start": 1.63,
       "end": 6.03,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "年轻男性 黑色三件套西装 红色领带 短发"
+          "中年男性 深色西装 梳背头 侧脸严肃"
         ],
-        "action": "他站在舞台上张嘴说话",
-        "place": "酒店宴会厅",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸嘴部微张，可见说话口型",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "坐在餐桌前侧头说话",
+        "place": "高级餐厅",
+        "props": [
+          "白色餐桌",
+          "金色靠背椅"
+        ],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
       },
-      "frame": "ep06_s001.jpg"
+      "frame": "ep06_s001_0.jpg"
     },
     {
       "start": 6.03,
@@ -52,15 +69,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 深色西装 条纹衬衫 严肃神情"
+          "年轻女性 白色蕾丝高领长袖婚纱 戴白色头纱 深色长卷发"
         ],
-        "action": "他坐在餐桌旁神情严肃地看向前方",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微微张开，可见唇间缝隙",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "站在门口，眉头微蹙神情忧伤",
+        "place": "室内门口",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s002.jpg"
+      "frame": "ep06_s002_0.jpg"
     },
     {
       "start": 8.53,
@@ -69,91 +93,127 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝高领婚纱 长发戴头纱"
+          "年轻女性 白色蕾丝高领婚纱 戴白色头纱 深色长卷发"
         ],
-        "action": "她站在深色门前神情疑惑地说话",
-        "place": "走廊",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开呈圆形，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "红着眼眶低头忍泪",
+        "place": "未识别",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s003.jpg"
+      "frame": "ep06_s003_0.jpg"
     },
     {
       "start": 10.07,
       "end": 20.9,
       "tag": {
-        "shot_size": "特写",
+        "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝婚纱 长发"
+          "中年男性 深色西装浅蓝衬衫深色领带 背头发型"
         ],
-        "action": "她瞪大眼睛张嘴说话",
-        "place": "未识别",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位嘴唇微张，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "面带愠色对他人说话",
+        "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s004.jpg"
+      "frame": "ep06_s004_0.jpg"
     },
     {
       "start": 20.9,
       "end": 22.47,
       "tag": {
-        "shot_size": "近景",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 2,
         "who": [
-          "中年男性 深色西装 条纹衬衫 严肃张嘴"
+          "中年男性 深色西装白衬衫深色领带 侧分黑发 手持手机",
+          "年轻女性 浅棕色长发 白色蕾丝上衣 背对镜头"
         ],
-        "action": "他神情严肃地看着前方说话",
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部可见且闭合，第2位只见后脑勺",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "低头看向手中手机屏幕",
         "place": "酒店宴会厅",
-        "props": [],
+        "props": [
+          "手机"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s005.jpg"
+      "frame": "ep06_s005_0.jpg"
     },
     {
       "start": 22.47,
       "end": 23.73,
       "tag": {
         "shot_size": "中景",
-        "people": 2,
+        "people": 1,
         "who": [
-          "年轻女性 白色蕾丝婚纱 佩戴头纱",
-          "中年男性 深色西装 (持手机入画)"
+          "年轻女性 白色蕾丝高领婚纱 戴头纱 站立于轮椅旁"
         ],
-        "action": "新娘站立，旁人正拿手机对其拍摄",
-        "place": "酒店走廊",
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未见说话",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "被他人用手机拍摄，呆立望向镜头方向",
+        "place": "走廊",
         "props": [
           "手机",
           "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s006.jpg"
+      "frame": "ep06_s006_0.jpg"
     },
     {
       "start": 23.73,
       "end": 27.33,
       "tag": {
-        "shot_size": "中景",
-        "people": 2,
+        "shot_size": "近景",
+        "people": 1,
         "who": [
-          "年轻女性 白色蕾丝婚纱 佩戴头纱",
-          "中年男性 深色西装 (持手机入画)"
+          "年轻女性 白色蕾丝长袖婚纱 戴头纱 长卷发"
         ],
-        "action": "新娘站立，旁人正拿手机对其拍摄",
-        "place": "酒店走廊",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸嘴部张开，牙齿可见",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "女子正脸张口说话，旁有手举手机对着她",
+        "place": "豪华室内",
         "props": [
-          "手机",
-          "轮椅"
+          "头纱",
+          "手机"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s007.jpg"
+      "frame": "ep06_s007_0.jpg"
     },
     {
       "start": 27.33,
@@ -162,15 +222,24 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝高领婚纱 佩戴头纱"
+          "中年男性 深色西装 条纹衬衫 深色领带 手持亮屏手机"
         ],
-        "action": "神情惊讶地张口说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "举着手机质问对方",
         "place": "酒店宴会厅",
-        "props": [],
+        "props": [
+          "手机"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s008.jpg"
+      "frame": "ep06_s008_0.jpg"
     },
     {
       "start": 31.77,
@@ -179,53 +248,76 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 深色西装 白衬衫黑领带"
+          "老年女性 深色旧棉袄 灰白发髻 坐扶手椅"
         ],
-        "action": "手持亮屏手机给他人看，神情严肃",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张，牙齿可见",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "老人坐在椅子上开口说话",
+        "place": "室内",
         "props": [
-          "手机"
+          "磨损的皮质扶手椅",
+          "雕花木门板"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s009.jpg"
+      "frame": "ep06_s009_0.jpg"
     },
     {
       "start": 37.0,
       "end": 38.97,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "老年女性 深灰色中式盘扣上衣 灰白头发"
+          "中年男性 深色西装领带 手持手机 短发背头"
         ],
-        "action": "坐着说话，面容忧伤",
-        "place": "未识别",
-        "props": [],
-        "scene_text": "",
-        "watermark": ""
-      },
-      "frame": "ep06_s010.jpg"
-    },
-    {
-      "start": 38.97,
-      "end": 40.87,
-      "tag": {
-        "shot_size": "近景",
-        "people": 1,
-        "who": [
-          "中年男性 深色西装 黑领带 手持手机"
-        ],
-        "action": "闭眼说话，神情不屑",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "手持手机对人说话，神情严肃",
         "place": "酒店宴会厅",
         "props": [
           "手机"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s011.jpg"
+      "frame": "ep06_s010_0.jpg"
+    },
+    {
+      "start": 38.97,
+      "end": 40.87,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝长袖婚纱 头纱 长发",
+          "年轻男性 深色三件套西装 酒红色领带 短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位男性嘴巴张开说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "男人握着女人的手腕，两人近距离对视",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep06_s011_0.jpg"
     },
     {
       "start": 40.87,
@@ -234,52 +326,75 @@
         "shot_size": "近景",
         "people": 2,
         "who": [
-          "年轻男性 黑色西装 红色领带",
-          "年轻女性 白色上衣 黑色长发"
+          "年轻男性 深色西装三件套 红领带 发型整齐",
+          "年轻女性 白色婚纱 侧脸可见"
         ],
-        "action": "男性对女性说话",
-        "place": "未识别",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第一位男性嘴巴张开",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "男性严肃地看着女性说话",
+        "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s012.jpg"
+      "frame": "ep06_s012_0.jpg"
     },
     {
       "start": 43.73,
       "end": 45.27,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 2,
         "who": [
-          "年轻男性 黑色西装 红色领带",
-          "年轻女性 白色上衣 黑色长发"
+          "年轻女性 白色高领蕾丝婚纱 长发 戴头纱",
+          "年轻男性 黑色西装 白衬衫 短发"
         ],
-        "action": "男性对女性说话",
-        "place": "未识别",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴唇微张像在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "两人面对面站立，女子垂眼低头",
+        "place": "室内走廊",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s013.jpg"
+      "frame": "ep06_s013_0.jpg"
     },
     {
       "start": 45.27,
       "end": 49.04,
       "tag": {
-        "shot_size": "中景",
+        "shot_size": "近景",
         "people": 2,
         "who": [
-          "年轻女性 白色婚纱 头纱",
-          "年轻男性 黑色西装"
+          "年轻女性 白色蕾丝高领婚纱 含泪",
+          "年轻男性 黑色西装 侧脸"
         ],
-        "action": "两人站立对视",
-        "place": "酒店走廊",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话，第2位侧脸嘴部闭合",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "两人相对而立，女子含泪注视对方",
+        "place": "室内宴会厅",
+        "props": [
+          "婚纱头纱"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep06_s014.jpg"
+      "frame": "ep06_s014_0.jpg"
     }
   ]
 }

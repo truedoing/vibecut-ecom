@@ -4,11 +4,11 @@
   "duration": 51.48,
   "shot_count": 18,
   "scene_threshold": 0.25,
-  "prompt_version": "sd-shot-v1",
+  "prompt_version": "sd-shot-v5",
   "usage": {
-    "prompt_tokens": 16615,
-    "completion_tokens": 8694,
-    "total_tokens": 25309
+    "prompt_tokens": 58122,
+    "completion_tokens": 22328,
+    "total_tokens": 80450
   },
   "shots": [
     {
@@ -18,112 +18,157 @@
         "shot_size": "特写",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝连衣裙 哭泣流泪"
+          "年轻女性 白色蕾丝礼服 长发哭诉"
         ],
-        "action": "手持麦克风哽咽说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "握着麦克风哭着讲话",
         "place": "酒店宴会厅",
         "props": [
           "麦克风"
         ],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
       },
-      "frame": "ep10_s000.jpg"
+      "frame": "ep10_s000_0.jpg"
     },
     {
       "start": 3.4,
       "end": 7.2,
       "tag": {
-        "shot_size": "特写",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 2,
         "who": [
-          "年轻女性 白色蕾丝连衣裙 哭泣流泪"
+          "年轻女性 白色蕾丝连衣裙 手持麦克风 眼眶发红落泪",
+          "老年女性 灰色头发 深色上衣 背对镜头"
         ],
-        "action": "手持麦克风哽咽说话",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正面朝镜头，嘴巴张开可见牙齿，正在说话；第2位只见后脑勺，看不见嘴",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "女子含泪手持麦克风讲话",
+        "place": "舞台",
         "props": [
           "麦克风"
         ],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s001.jpg"
+      "frame": "ep10_s001_0.jpg"
     },
     {
       "start": 7.2,
       "end": 9.33,
       "tag": {
-        "shot_size": "近景",
-        "people": 1,
-        "who": [
-          "年轻女性 白色蕾丝连衣裙 哭泣流泪"
-        ],
-        "action": "手持麦克风哽咽说话",
-        "place": "酒店宴会厅",
-        "props": [
-          "麦克风"
-        ],
-        "scene_text": "",
-        "watermark": ""
-      },
-      "frame": "ep10_s002.jpg"
-    },
-    {
-      "start": 9.33,
-      "end": 11.73,
-      "tag": {
         "shot_size": "特写",
         "people": 1,
         "who": [
-          "老年女性 深色旧棉袄 坐轮椅 哭泣流泪"
+          "老年女性 灰白头发 深色旧布衣 坐轮椅 满脸泪水"
         ],
-        "action": "双眼流泪哽咽",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张，正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "老妇人流泪哽咽地说话",
         "place": "未识别",
         "props": [
           "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s003.jpg"
+      "frame": "ep10_s002_0.jpg"
+    },
+    {
+      "start": 9.33,
+      "end": 11.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 眼含泪水"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "手持麦克风含泪讲话",
+        "place": "酒店宴会厅",
+        "props": [
+          "麦克风"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep10_s003_0.jpg"
     },
     {
       "start": 11.73,
       "end": 13.87,
       "tag": {
-        "shot_size": "特写",
+        "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝连衣裙 哭泣流泪"
+          "年轻女性 白色蕾丝高领连衣裙 长发微卷 眼眶泛红"
         ],
-        "action": "手持麦克风哽咽说话",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "手持麦克风讲话，眼含泪光",
+        "place": "未识别",
         "props": [
           "麦克风"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s004.jpg"
+      "frame": "ep10_s004_0.jpg"
     },
     {
       "start": 13.87,
       "end": 16.9,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝连衣裙 哭泣流泪"
+          "中年男性 深色西装白衬衫领带 侧身坐于宴会餐桌旁"
         ],
-        "action": "手持麦克风说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，处于说话口型",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "抬手比划着对人说话",
         "place": "酒店宴会厅",
         "props": [
-          "麦克风"
+          "餐盘",
+          "花束",
+          "筷子"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s005.jpg"
+      "frame": "ep10_s005_0.jpg"
     },
     {
       "start": 16.9,
@@ -132,19 +177,26 @@
         "shot_size": "特写",
         "people": 1,
         "who": [
-          "中年男性 深色西装 浅蓝色衬衫袖口"
+          "青年男性 深色西装白衬衫 只见手部"
         ],
-        "action": "手按在黑色手机上",
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有手部，看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "一只手按在桌上的黑色手机上",
         "place": "酒店宴会厅",
         "props": [
-          "黑色手机",
-          "白色餐盘",
-          "玻璃杯"
+          "手机",
+          "餐盘",
+          "高脚杯"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s006.jpg"
+      "frame": "ep10_s006_0.jpg"
     },
     {
       "start": 17.47,
@@ -153,38 +205,51 @@
         "shot_size": "特写",
         "people": 1,
         "who": [
-          "中年男性 深色西装 浅蓝色衬衫袖口"
+          "年轻女性 白色蕾丝上衣 长卷发 手持麦克风"
         ],
-        "action": "手按在黑色手机上",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开，处于说话状态",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手持麦克风，安静看向镜头",
+        "place": "未识别",
         "props": [
-          "黑色手机",
-          "白色餐盘",
-          "玻璃杯"
+          "麦克风"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s007.jpg"
+      "frame": "ep10_s007_0.jpg"
     },
     {
       "start": 21.8,
       "end": 23.93,
       "tag": {
-        "shot_size": "特写",
+        "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝上衣 长发 拿黑色麦克风"
+          "年轻女性 白色蕾丝高领长袖礼服 长发 眼眶泛红"
         ],
-        "action": "拿麦克风讲话",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇微闭，没有张开说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "低头握着麦克风，情绪低落",
+        "place": "室内活动厅",
         "props": [
-          "麦克风"
+          "麦克风",
+          "座椅扶手"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s008.jpg"
+      "frame": "ep10_s008_0.jpg"
     },
     {
       "start": 23.93,
@@ -193,36 +258,51 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝连衣裙 坐椅子手扶扶手"
+          "老年女性 花白头发 深色旧中式对襟上衣 坐姿疑似轮椅 落泪"
         ],
-        "action": "坐在椅子上手扶扶手",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪低头倾听，泪水挂在脸颊",
         "place": "酒店宴会厅",
         "props": [
-          "椅子"
+          "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s009.jpg"
+      "frame": "ep10_s009_0.jpg"
     },
     {
       "start": 27.13,
       "end": 30.17,
       "tag": {
         "shot_size": "近景",
-        "people": 1,
+        "people": 2,
         "who": [
-          "年轻女性 白色蕾丝婚纱 长发 眼眶泛红含泪"
+          "年轻女性 白色蕾丝高领长袖连衣裙 长卷发 眼眶发红",
+          "未识别年龄 男性 深色西装 背对镜头只见头部侧后方"
         ],
-        "action": "双手扶轮椅靠背，眼含泪水看向面前的人",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开可见牙齿，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "红着眼眶对面前人说话，双手扶行李箱",
         "place": "酒店宴会厅",
         "props": [
-          "轮椅"
+          "行李箱"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s010.jpg"
+      "frame": "ep10_s010_0.jpg"
     },
     {
       "start": 30.17,
@@ -231,18 +311,26 @@
         "shot_size": "中景",
         "people": 2,
         "who": [
-          "中年男性 黑色西装白衬衫酒红领带 口袋带酒红方巾 短黑发",
-          "年轻女性 粉色连衣裙 长发带银色发夹 手持白色毛绒物件"
+          "青年男性 深色西装酒红领带 侧脸站立",
+          "青年女性 粉色连衣裙 长发别发卡 伸手抓男子手臂"
         ],
-        "action": "女性拉住男性手臂，二人望向画面外",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸清晰，嘴巴张开正在说话",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "女子抓住男子手臂抬头喊话",
         "place": "酒店宴会厅",
         "props": [
-          "白色毛绒物件"
+          "白色婚纱裙摆",
+          "餐桌花艺"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s011.jpg"
+      "frame": "ep10_s011_0.jpg"
     },
     {
       "start": 32.03,
@@ -251,34 +339,50 @@
         "shot_size": "近景",
         "people": 2,
         "who": [
-          "年轻女性 粉色连衣裙 白色头纱 长卷发 情绪激动",
-          "年轻男性 深色西装 仅见侧脸与肩部"
+          "年轻女性 粉色纱质连衣裙 长发戴珍珠发夹",
+          "中年男性 深色西装 短发侧对镜头"
         ],
-        "action": "女子仰头激动地对男子喊话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位年轻女性嘴巴张开，牙齿可见",
+        "emotion": "震惊",
+        "intensity": "强",
+        "action": "手持白纱，急切抬头对男性说话",
         "place": "酒店宴会厅",
-        "props": [],
+        "props": [
+          "白色头纱",
+          "珍珠发夹"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s012.jpg"
+      "frame": "ep10_s012_0.jpg"
     },
     {
       "start": 35.43,
       "end": 38.87,
       "tag": {
-        "shot_size": "近景",
-        "people": 2,
+        "shot_size": "特写",
+        "people": 1,
         "who": [
-          "年轻女性 粉色连衣裙 白色头纱 长卷发 情绪激动",
-          "年轻男性 深色西装 仅见侧脸与肩部"
+          "青年男性 黑色西装 白衬衫 深红色领带 黑色背心 黑色短发"
         ],
-        "action": "女子仰头激动地对男子喊话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，牙齿可见",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "眉头紧锁，张嘴说话",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s013.jpg"
+      "frame": "ep10_s013_0.jpg"
     },
     {
       "start": 38.87,
@@ -287,15 +391,24 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻男性 深色西装 白衬衫 深红领带 背头 瞪眼震惊"
+          "年轻女性 粉色荷叶边上衣 白色头纱 长卷发 泪水滑落"
         ],
-        "action": "男子震惊地瞪大眼睛说话",
-        "place": "酒店宴会厅",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在哭诉",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "戴头纱哭着张口说话",
+        "place": "未识别",
+        "props": [
+          "白色头纱"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s014.jpg"
+      "frame": "ep10_s014_0.jpg"
     },
     {
       "start": 42.2,
@@ -304,15 +417,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 粉色连衣裙 白色头纱 长卷发 眼含泪水"
+          "老年女性 灰白发髻 深色旧中式棉袄 坐姿"
         ],
-        "action": "女子含泪委屈地开口说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸清楚，嘴巴张开露出牙齿",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "坐着情绪激动地张口诉说",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s015.jpg"
+      "frame": "ep10_s015_0.jpg"
     },
     {
       "start": 45.2,
@@ -321,17 +441,24 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "老年女性 深色旧棉袄 灰白发髻 手持拐杖 情绪激动"
+          "年轻女性 浅粉色连衣裙 白色头纱 长波浪卷发 眼眶泛红含泪"
         ],
-        "action": "老妇人拄着拐杖激动地说话",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "微笑着流泪，嘴巴张开",
+        "place": "未识别",
         "props": [
-          "拐杖"
+          "白色头纱"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s016.jpg"
+      "frame": "ep10_s016_0.jpg"
     },
     {
       "start": 48.6,
@@ -340,15 +467,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 粉色连衣裙 白色头纱 长卷发 眼含泪水"
+          "年轻女性 白色蕾丝礼服 黑色长发 红唇妆"
         ],
-        "action": "女子含泪开口争辩",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "面部朝向左侧平静说话",
+        "place": "未识别",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep10_s017.jpg"
+      "frame": "ep10_s017_0.jpg"
     }
   ]
 }

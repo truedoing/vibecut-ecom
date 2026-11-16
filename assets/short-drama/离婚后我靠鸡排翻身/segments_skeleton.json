@@ -1,0 +1,71 @@
+{
+  "generated_by": "segment.py",
+  "gap_limit": 4.5,
+  "min_len": 8.0,
+  "max_len": 26.0,
+  "lines_ref": {
+    "dir": "lines/",
+    "pattern": "lines_epNN.json",
+    "note": "台词文字只存在 lines/lines_epNN.json；本文件只存时间码 line_times，不复制文字",
+    "since": "2026-11-10"
+  },
+  "episodes": {
+    "1": {
+      "duration": 60.29,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 5.0,
+          "end": 29.7,
+          "duration": 24.7,
+          "line_times": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            20,
+            22,
+            24,
+            26
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 29.7,
+          "end": 41.7,
+          "duration": 12.0,
+          "line_times": [
+            30,
+            32,
+            34,
+            36,
+            38
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 41.7,
+          "end": 60.3,
+          "duration": 18.6,
+          "line_times": [
+            42,
+            44,
+            46,
+            48,
+            52,
+            56
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    }
+  }
+}

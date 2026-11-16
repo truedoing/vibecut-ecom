@@ -1,0 +1,601 @@
+{
+  "ep": 5,
+  "drama": "以真心守护至亲",
+  "sources": {
+    "lines": "lines/lines_ep05.json",
+    "shots": "shots/shots_ep05.json",
+    "char_map": "char_map.json",
+    "shots_prompt": "sd-shot-v5"
+  },
+  "counts": {
+    "lines": 36,
+    "on_screen": 35,
+    "off_screen": 1,
+    "unknown": 0,
+    "named": 35
+  },
+  "dense_shots": [
+    {
+      "shot": "49.53-53.27",
+      "lines": 4
+    }
+  ],
+  "rows": [
+    {
+      "t": 1.0,
+      "text": "谁让她坐这的",
+      "shot": [
+        0.0,
+        2.0
+      ],
+      "who": "中年男性 深色西装白衬衫黑领带 短发后梳 肤色偏白",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 2.0,
+      "text": "周叔叔这是我妈妈林秀兰",
+      "shot": [
+        2.0,
+        7.0
+      ],
+      "who": "年轻女性 白色蕾丝长袖婚纱 披头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，第2位低头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 4.0,
+      "text": "我们今天刚找到彼此",
+      "shot": [
+        2.0,
+        7.0
+      ],
+      "who": "年轻女性 白色蕾丝长袖婚纱 披头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，第2位低头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 6.0,
+      "text": "我想让她坐我这边",
+      "shot": [
+        2.0,
+        7.0
+      ],
+      "who": "年轻女性 白色蕾丝长袖婚纱 披头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，第2位低头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 7.0,
+      "text": "我听见了",
+      "shot": [
+        7.0,
+        11.73
+      ],
+      "who": "中年男性 深色西装白衬衫黑领带 背头",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，露出牙齿正在说话",
+      "cross": false
+    },
+    {
+      "t": 9.0,
+      "text": "可今天是两家的婚礼",
+      "shot": [
+        7.0,
+        11.73
+      ],
+      "who": "中年男性 深色西装白衬衫黑领带 背头",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，露出牙齿正在说话",
+      "cross": false
+    },
+    {
+      "t": 10.0,
+      "text": "不是你一个人的认亲大会",
+      "shot": [
+        7.0,
+        11.73
+      ],
+      "who": "中年男性 深色西装白衬衫黑领带 背头",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，露出牙齿正在说话",
+      "cross": false
+    },
+    {
+      "t": 12.0,
+      "text": "我来看看女儿",
+      "shot": [
+        11.73,
+        14.8
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 侧脸望向右侧",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位侧脸嘴部微张，正在说话",
+      "cross": false
+    },
+    {
+      "t": 13.0,
+      "text": "不会耽误你们的事",
+      "shot": [
+        11.73,
+        14.8
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 侧脸望向右侧",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位侧脸嘴部微张，正在说话",
+      "cross": false
+    },
+    {
+      "t": 16.0,
+      "text": "您坐在这就已经耽误了",
+      "shot": [
+        16.23,
+        20.4
+      ],
+      "who": "青年男性 深色西装白衬衫黑领带 站立正对镜头",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "冷淡",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位男性嘴巴张开正在说话，第2位只见后脑勺",
+      "cross": true
+    },
+    {
+      "t": 19.0,
+      "text": "大家敬酒问起亲家做什么",
+      "shot": [
+        16.23,
+        20.4
+      ],
+      "who": "青年男性 深色西装白衬衫黑领带 站立正对镜头",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "冷淡",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位男性嘴巴张开正在说话，第2位只见后脑勺",
+      "cross": false
+    },
+    {
+      "t": 20.0,
+      "text": "住哪",
+      "shot": [
+        20.4,
+        22.57
+      ],
+      "who": "中年男性 深色西装 白衬衫黑领带 黑色背头",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，可见牙齿和口腔",
+      "cross": true
+    },
+    {
+      "t": 22.0,
+      "text": "您怎么答",
+      "shot": [
+        22.57,
+        26.2
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 戴白色头纱 长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位正面朝镜头，嘴唇张开在说话",
+      "cross": true
+    },
+    {
+      "t": 23.0,
+      "text": "您要问可以好好问",
+      "shot": [
+        22.57,
+        26.2
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 戴白色头纱 长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位正面朝镜头，嘴唇张开在说话",
+      "cross": false
+    },
+    {
+      "t": 25.0,
+      "text": "他不是见不得人的人",
+      "shot": [
+        22.57,
+        26.2
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 戴白色头纱 长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位正面朝镜头，嘴唇张开在说话",
+      "cross": false
+    },
+    {
+      "t": 27.0,
+      "text": "许宁我爸已经够给你面子了",
+      "shot": [
+        26.2,
+        29.93
+      ],
+      "who": "年轻男性 深色西装白衬衫酒红领带 蹲姿",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位男子嘴巴张开露出牙齿，第2位侧对镜头嘴被头发遮挡",
+      "cross": false
+    },
+    {
+      "t": 29.0,
+      "text": "你还想让他陪着你丢脸",
+      "shot": [
+        26.2,
+        29.93
+      ],
+      "who": "年轻男性 深色西装白衬衫酒红领带 蹲姿",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位男子嘴巴张开露出牙齿，第2位侧对镜头嘴被头发遮挡",
+      "cross": false
+    },
+    {
+      "t": 30.0,
+      "text": "姐妈真替你着想",
+      "shot": [
+        29.93,
+        31.6
+      ],
+      "who": "年轻女性 浅粉色连衣裙 长卷发配珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "喜悦",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，牙齿可见",
+      "cross": false
+    },
+    {
+      "t": 32.0,
+      "text": "就该自己去后面",
+      "shot": [
+        31.6,
+        34.3
+      ],
+      "who": "年轻女性 粉色荷叶边上衣 长卷发佩戴珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "喜悦",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴巴张开露齿，处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 33.0,
+      "text": "非得让大家看笑话",
+      "shot": [
+        31.6,
+        34.3
+      ],
+      "who": "年轻女性 粉色荷叶边上衣 长卷发佩戴珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "喜悦",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴巴张开露齿，处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 34.0,
+      "text": "晴晴",
+      "shot": [
+        34.3,
+        37.97
+      ],
+      "who": "老年女性 灰色盘扣旧棉袄 坐轮椅 袖口有补丁 灰白发髻",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张，牙齿隐约可见，正在说话",
+      "cross": true
+    },
+    {
+      "t": 35.0,
+      "text": "我坐你旁边就这么让你难堪",
+      "shot": [
+        34.3,
+        37.97
+      ],
+      "who": "老年女性 灰色盘扣旧棉袄 坐轮椅 袖口有补丁 灰白发髻",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张，牙齿隐约可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 39.0,
+      "text": "你非要我说难听的",
+      "shot": [
+        37.97,
+        40.6
+      ],
+      "who": "年轻女性 浅粉色连衣裙 长卷发 别发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位嘴巴大张、可见牙齿，像在哭喊",
+      "cross": false
+    },
+    {
+      "t": 40.0,
+      "text": "今天来的人",
+      "shot": [
+        37.97,
+        40.6
+      ],
+      "who": "年轻女性 浅粉色连衣裙 长卷发 别发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位嘴巴大张、可见牙齿，像在哭喊",
+      "cross": false
+    },
+    {
+      "t": 41.0,
+      "text": "谁不是穿的体体面面",
+      "shot": [
+        40.6,
+        42.4
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位新娘嘴部闭合，可见嘴部",
+      "cross": false
+    },
+    {
+      "t": 43.0,
+      "text": "妈的外套旧不脏",
+      "shot": [
+        42.4,
+        46.0
+      ],
+      "who": "年轻女性 白色高领蕾丝婚纱 佩戴白色头纱 黑色长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 44.0,
+      "text": "她也没坐过你的位置",
+      "shot": [
+        42.4,
+        46.0
+      ],
+      "who": "年轻女性 白色高领蕾丝婚纱 佩戴白色头纱 黑色长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 45.0,
+      "text": "你推什么",
+      "shot": [
+        42.4,
+        46.0
+      ],
+      "who": "年轻女性 白色高领蕾丝婚纱 佩戴白色头纱 黑色长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 46.0,
+      "text": "宁宁妈坐后面也看得见你",
+      "shot": [
+        46.0,
+        49.53
+      ],
+      "who": "老年女性 深色旧中式上衣 坐轮椅",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": false
+    },
+    {
+      "t": 49.0,
+      "text": "别为了一个位置吵了",
+      "shot": [
+        49.53,
+        53.27
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 戴头纱 眼眶泛红有泪痕",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位女性嘴巴张开，露齿正在说话",
+      "cross": true
+    },
+    {
+      "t": 50.0,
+      "text": "不是位置",
+      "shot": [
+        49.53,
+        53.27
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 戴头纱 眼眶泛红有泪痕",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位女性嘴巴张开，露齿正在说话",
+      "cross": false
+    },
+    {
+      "t": 51.0,
+      "text": "你今天推到后面",
+      "shot": [
+        49.53,
+        53.27
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 戴头纱 眼眶泛红有泪痕",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位女性嘴巴张开，露齿正在说话",
+      "cross": false
+    },
+    {
+      "t": 52.0,
+      "text": "以后他们还会让",
+      "shot": [
+        49.53,
+        53.27
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 戴头纱 眼眶泛红有泪痕",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位女性嘴巴张开，露齿正在说话",
+      "cross": false
+    },
+    {
+      "t": 53.0,
+      "text": "我把你往哪放",
+      "shot": [
+        53.27,
+        55.63
+      ],
+      "who": "中年男性 深色西装白衬衫深色领带 背头短发 站立",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": true
+    },
+    {
+      "t": 54.0,
+      "text": "仪式先停",
+      "shot": [
+        53.27,
+        55.63
+      ],
+      "who": "中年男性 深色西装白衬衫深色领带 背头短发 站立",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 55.0,
+      "text": "音乐也关了",
+      "shot": [
+        53.27,
+        55.63
+      ],
+      "who": "中年男性 深色西装白衬衫深色领带 背头短发 站立",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": true
+    }
+  ]
+}

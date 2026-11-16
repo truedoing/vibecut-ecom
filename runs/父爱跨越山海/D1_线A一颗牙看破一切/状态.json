@@ -1,0 +1,132 @@
+{
+ "_readme": "2026-11-14 新建。父爱跨越山海的第一条片子，也是新钩子库＋停顿表兜底修复后的第一次完整试跑。剧集资料（select/pack）与素材索引（asset_index，覆盖第 1–18 集）沿用 11-12 建的现成结果，不重建、不重花钱。本条片子要做的是 script（方向卡→清单→人审）与 trailer（装配成片）。",
+ "task": "D1_线A一颗牙看破一切",
+ "category": "父爱跨越山海",
+ "line": "short-drama",
+ "intent": "这部剧的第一条片子：父亲视角，从一个细节看破，飞过去救人再算账",
+ "structure": "arc",
+ "ai_strategy": "none",
+ "cycle_round": 1,
+ "shared_snapshot": {
+  "hook_templates": 1,
+  "cut_index_rule": "2026-11-14 停顿密度兜底版"
+ },
+ "updated_at": "2026-11-14T23:30",
+ "rules": {
+  "pending": "未开工",
+  "in_progress": "在做，产物未成形",
+  "done": "产物在、自检过了，人还没判。机器可用，人不能依赖",
+  "approved": "人说过一句明确的话，下游可以依赖",
+  "stale": "由脚本按 depends_rev 算出来，不手写；手写会被标「旧口径」",
+  "superseded": "已废弃，绝不参与「下一步」推荐",
+  "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实，卡在谁要写清"
+ },
+ "artifacts": {
+  "select": {
+   "skill": "short-drama-select",
+   "path": "runs/剧注册表.json",
+   "state": "done",
+   "rev": 1,
+   "depends_on": [],
+   "depends_rev": {},
+   "decision": "做。父爱题材、30 集、单集 49–98 秒，第 5 集起付费",
+   "_inherit": "11-12 已定，本条片子不重走人审"
+  },
+  "pack": {
+   "skill": "short-drama-pack",
+   "path": "packs/short-drama/父爱跨越山海/drama-pack.json",
+   "state": "done",
+   "rev": 1,
+   "depends_on": ["select"],
+   "depends_rev": {"select": 1},
+   "_inherit": "11-12 建好：人物 8 个、五幕结构、金句 10 条、钩子 10 条"
+  },
+  "asset_index": {
+   "skill": "short-drama-asset-index",
+   "path": "assets/short-drama/父爱跨越山海/",
+   "state": "done",
+   "rev": 1,
+   "depends_on": ["pack"],
+   "depends_rev": {"pack": 1},
+   "evidence": [
+    "台词库 lines_ep01–ep18 共 18 集（第 19–30 集未做）",
+    "画面索引 segments_skeleton.json 覆盖前 18 集",
+    "停顿表 cuts/ 本次补算 11 集（ep1/2/4/7/8/9/13/14/15/17/18），阈值走自适应兜底（整集压着配乐，绝对阈值测不出停顿）"
+   ],
+   "_inherit": "索引沿用 11-12；停顿表是本条片子新增的，不是重建"
+  },
+  "ai_assets": {
+   "skill": "short-drama-ai-assets",
+   "path": null,
+   "state": "superseded",
+   "rev": 0,
+   "depends_on": ["pack"],
+   "depends_rev": {"pack": 1},
+   "_note": "纯剪，不点 AI 玩法，这一环跳过。"
+  },
+  "script": {
+   "skill": "short-drama-script",
+   "path": "runs/父爱跨越山海/D1_线A一颗牙看破一切/plan.json",
+   "state": "done",
+   "rev": 3,
+   "depends_on": ["pack", "asset_index"],
+   "depends_rev": {"pack": 1, "asset_index": 1},
+   "direction_card": {
+    "path": "本次会话口头给出（未单独落盘）",
+    "lines_offered": [
+     "A 父亲视角·一颗牙看破一切（主线，推荐）",
+     "B 铁皮屋里的女人（副线）",
+     "C 那 20 万（副线，一条反转）"
+    ],
+    "selected": "线 A 父亲视角·一颗牙看破一切",
+    "ai_strategy_selected": "none（纯剪）",
+    "circled_by": "张老师",
+    "at": "2026-11-14T23:08",
+    "_note": "23:08 张老师回「线A」。AI 玩法未点，按纯剪走。"
+   },
+   "_gate": "第一道停：方向卡要人圈（已过）。第二道停：清单＋选段说明＋人审表三份一起交，人点头才许拼。",
+   "evidence": [
+    "18 段实拍 + 1 张收尾卡，合计 178.95 秒（2 分 59 秒），落在 2–3 分钟区间",
+    "五幕齐：钩子 S00 / 建立 S01–S03 / 升级 S04–S10 / 急停 S11–S14 / 落点 S15–S17＋卡",
+    "素材取自第 1、2、4、8、9、13、14、17、18 共 9 集，全部在前 18 集边界内",
+    "36 个刀口逐个过停顿表：切在说话中间 0 处、贴边 0 处",
+    "钩子库首次实战：S00 用模板 01「反常识一句话」，三个字「你牙呢」",
+    "偏差写进人审表第四节：ep8「你们快走」整句舍掉、扫光未挂、文字动效未做"
+   ],
+   "review": {
+    "path": "runs/父爱跨越山海/D1_线A一颗牙看破一切/清单人审表.md",
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "_note": "等人看片后给结论。三件要判：开头跳不跳、「全是旧照片」要不要回来、落点够不够。"
+   },
+   "at": "2026-11-14T23:25",
+   "_note": "rev1 按台词库时间码排（182.2 秒）；rev2 按停顿表吸附后超 3 分钟，删两段并拆 ep8；rev3 删「全是旧照片」，修四处贴边入点，定稿 178.95 秒。"
+  },
+  "weave_video": {
+   "skill": "short-drama-video",
+   "path": null,
+   "state": "superseded",
+   "rev": 0,
+   "depends_on": ["script"],
+   "depends_rev": {"script": 3},
+   "_note": "纯剪，不走织入片。"
+  },
+  "trailer": {
+   "state": "done",
+   "rev": 1,
+   "path": "runs/父爱跨越山海/D1_线A一颗牙看破一切/build/v1.mp4",
+   "depends_on": ["script"],
+   "depends_rev": {"script": 3},
+   "evidence": [
+    "v1 成片 178.95 秒 / 1080×1920 / 30fps / 101MB",
+    "挂去重参数表装配：A1 包装 2 段（S00 钩子、S14 独白）实测生效（0.8s、131s 抽帧见白框与模糊底），其余满屏",
+    "全片 global 参数包生效（亮度 +0.03、对比 1.03、暗角、四周裁 8 像素）",
+    "扫光未挂：PNG 序列循环输入会让 ffmpeg 预读失控，与 D2 同一处 bug，未修好前成片不含扫光",
+    "抽帧核对：0.8s「晓晓」带框、8s「我看见他这样」满屏、50s「说中国话」、100s「你带弟弟走」、131s「却差点没护住自己的闺女」带框、157s「自愿打工要扣护照吗」、176s 收尾卡",
+    "收尾卡为新建：一颗牙 / 八个女人 / 往下看，账还没算完"
+   ],
+   "_note": "等 G3 看片。另有一处要人耳确认：ep18「自愿打工要扣护照吗」原片画面上是女方在说话，若观众听出女声，这一段要换。"
+  }
+ }
+}

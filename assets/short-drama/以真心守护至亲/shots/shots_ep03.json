@@ -4,29 +4,36 @@
   "duration": 50.2,
   "shot_count": 18,
   "scene_threshold": 0.25,
-  "prompt_version": "sd-shot-v1",
+  "prompt_version": "sd-shot-v5",
   "usage": {
-    "prompt_tokens": 14301,
-    "completion_tokens": 6150,
-    "total_tokens": 20451
+    "prompt_tokens": 58122,
+    "completion_tokens": 30134,
+    "total_tokens": 88256
   },
   "shots": [
     {
       "start": 0.0,
       "end": 2.33,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "年轻女性 粉色连衣裙 长发白发饰"
+          "年轻女性 粉色连衣裙 深色长卷发 珍珠发夹"
         ],
-        "action": "说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "神情悲伤地开口说话",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
       },
-      "frame": "ep03_s000.jpg"
+      "frame": "ep03_s000_0.jpg"
     },
     {
       "start": 2.33,
@@ -35,292 +42,424 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 粉色连衣裙 长发白发饰"
-        ],
-        "action": "说话",
-        "place": "酒店宴会厅",
-        "props": [],
-        "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
-      },
-      "frame": "ep03_s001.jpg"
-    },
-    {
-      "start": 7.03,
-      "end": 11.87,
-      "tag": {
-        "shot_size": "近景",
-        "people": 1,
-        "who": [
           "老年女性 深色旧棉袄 坐轮椅"
         ],
-        "action": "坐着说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开，正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "坐在轮椅上，含泪张嘴说话",
         "place": "未识别",
         "props": [
           "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s002.jpg"
+      "frame": "ep03_s001_0.jpg"
+    },
+    {
+      "start": 7.03,
+      "end": 11.87,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发佩戴珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴大张，可见牙齿和口腔",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "张嘴哭喊着拒绝",
+        "place": "酒店宴会厅",
+        "props": [
+          "花艺装饰",
+          "吊灯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s002_0.jpg"
     },
     {
       "start": 11.87,
       "end": 14.2,
       "tag": {
-        "shot_size": "近景",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 3,
         "who": [
-          "年轻女性 粉色连衣裙 长发白发饰"
+          "老年男性 深色传统上衣 坐轮椅",
+          "年轻女性 白色蕾丝婚纱 盘发戴头纱",
+          "中年男性 深色西装"
         ],
-        "action": "说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位年轻女性的嘴部张开，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "年轻女性伸手靠近老人，老人看向她",
         "place": "酒店宴会厅",
-        "props": [],
+        "props": [
+          "轮椅",
+          "婚纱头纱"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s003.jpg"
+      "frame": "ep03_s003_0.jpg"
     },
     {
       "start": 14.2,
       "end": 16.8,
       "tag": {
-        "shot_size": "中景",
-        "people": 3,
+        "shot_size": "近景",
+        "people": 2,
         "who": [
-          "老年女性 深色旧棉袄 坐轮椅",
-          "年轻女性 白色婚纱 盘发",
-          "中年男性 深色西装"
+          "年轻女性 白色蕾丝婚纱 头纱长卷发",
+          "老年人 灰色旧衣物 坐轮椅仅露手部"
         ],
-        "action": "婚纱女性弯腰扶轮椅",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位女性嘴部张开正在说话，第2位只有手部入镜",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "俯身扶住轮椅上的人并说话",
+        "place": "室内",
         "props": [
           "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s004.jpg"
+      "frame": "ep03_s004_0.jpg"
     },
     {
       "start": 16.8,
       "end": 19.23,
       "tag": {
-        "shot_size": "近景",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 3,
         "who": [
-          "年轻女性 白色婚纱 盘发"
+          "老年女性 深色旧棉袄 坐轮椅 侧脸",
+          "年轻女性 白色蕾丝长袖婚纱 戴头纱 长卷发",
+          "中年男性 深色西装 仅露身体右侧"
         ],
-        "action": "说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "年轻女性正脸嘴部张开可见，老年女性侧脸嘴部可见但闭合",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "新娘弯腰激动地看向轮椅上的老人",
         "place": "酒店宴会厅",
         "props": [
           "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s005.jpg"
+      "frame": "ep03_s005_0.jpg"
     },
     {
       "start": 19.23,
       "end": 22.87,
       "tag": {
-        "shot_size": "中景",
+        "shot_size": "近景",
         "people": 2,
         "who": [
-          "年轻女性 浅粉色荷叶边连衣裙 长发卷发 珍珠发饰",
-          "年轻男性 黑色西装 露半身"
+          "年轻男性 深色西装",
+          "年轻女性 浅粉色荷叶边连衣裙 珍珠发饰 长卷发"
         ],
-        "action": "女性轻抓男性手臂，面带笑容",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位女性嘴巴张开，可见牙齿",
+        "emotion": "喜悦",
+        "intensity": "中",
+        "action": "女性挽住男性手臂，张口说话",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s006.jpg"
+      "frame": "ep03_s006_0.jpg"
     },
     {
       "start": 22.87,
       "end": 25.23,
       "tag": {
         "shot_size": "中景",
-        "people": 2,
+        "people": 1,
         "who": [
-          "年轻女性 浅粉色荷叶边连衣裙 长发卷发 珍珠发饰",
-          "年轻男性 黑色西装 露半身"
+          "老年女性 深色旧棉袄 坐轮椅 灰白头发"
         ],
-        "action": "女性轻抓男性手臂，面带笑容",
-        "place": "酒店宴会厅",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "坐轮椅上张口询问对方去向",
+        "place": "老宅室内",
+        "props": [
+          "轮椅"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s007.jpg"
+      "frame": "ep03_s007_0.jpg"
     },
     {
       "start": 25.23,
       "end": 29.17,
       "tag": {
         "shot_size": "中景",
-        "people": 1,
+        "people": 2,
         "who": [
-          "老年女性 深灰色旧中式上衣 坐轮椅"
+          "年轻男性 深色三件套西装 酒红色领带",
+          "老年 灰色头发 仅露后脑勺"
         ],
-        "action": "面向镜头说话",
-        "place": "未识别",
-        "props": [
-          "轮椅"
-        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男子正面朝镜头，嘴巴张开",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "低头俯视下方的人并说话",
+        "place": "酒店宴会厅",
+        "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s008.jpg"
+      "frame": "ep03_s008_0.jpg"
     },
     {
       "start": 29.17,
       "end": 33.93,
       "tag": {
         "shot_size": "中景",
-        "people": 1,
+        "people": 2,
         "who": [
-          "年轻男性 黑色西装 红色领带 白衬衫"
+          "年轻女性 粉色连衣裙 长卷发配珍珠发夹",
+          "中年女性 深灰色毛衣 扎发髻 背对镜头"
         ],
-        "action": "低头看向下方",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸嘴巴张开说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "双臂抱胸对坐着的人说话",
         "place": "酒店宴会厅",
-        "props": [],
+        "props": [
+          "圆餐桌",
+          "酒杯",
+          "红色餐巾"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s009.jpg"
+      "frame": "ep03_s009_0.jpg"
     },
     {
       "start": 33.93,
       "end": 36.33,
       "tag": {
-        "shot_size": "中景",
-        "people": 2,
+        "shot_size": "近景",
+        "people": 1,
         "who": [
-          "年轻女性 浅粉色荷叶边连衣裙 长发卷发 珍珠发饰",
-          "未识别人物 背影部分"
+          "老年女性 深灰色中式棉袄 坐旧轮椅 灰白头发挽起"
         ],
-        "action": "女性双手交叉，看向侧方",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴张开说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "坐在轮椅上张口说话",
+        "place": "室内大厅",
         "props": [
-          "酒杯",
-          "餐盘"
+          "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s010.jpg"
+      "frame": "ep03_s010_0.jpg"
     },
     {
       "start": 36.33,
       "end": 38.13,
       "tag": {
         "shot_size": "中景",
-        "people": 1,
+        "people": 2,
         "who": [
-          "老年女性 深灰色旧中式上衣 坐轮椅"
+          "年轻男性 黑色三件套西装白衬衫酒红领带 站立正对镜头",
+          "老年女性 深色外套 坐轮椅背对镜头"
         ],
-        "action": "坐在轮椅上说话",
-        "place": "未识别",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见、嘴唇张开；第2位只有后脑勺看不见嘴",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "男子站立俯视轮椅上的人并开口说话",
+        "place": "酒店宴会厅",
         "props": [
-          "轮椅"
+          "轮椅",
+          "水晶吊灯",
+          "花艺背景板"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s011.jpg"
+      "frame": "ep03_s011_0.jpg"
     },
     {
       "start": 38.13,
       "end": 40.13,
       "tag": {
-        "shot_size": "中景",
+        "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 黑色三件套西装 酒红领带 胸袋有酒红方巾 发型整齐"
+          "年轻男性 黑色三件套西装 白衬衫酒红领带 背头"
         ],
-        "action": "低头说话，神情严肃",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "皱眉开口质问对方",
+        "place": "室内",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s012.jpg"
+      "frame": "ep03_s012_0.jpg"
     },
     {
       "start": 40.13,
       "end": 41.3,
       "tag": {
-        "shot_size": "中景",
+        "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 黑色三件套西装 酒红领带 胸袋有酒红方巾 发型整齐"
+          "老年女性 深灰盘扣旧棉衣 灰白发盘起 坐轮椅"
         ],
-        "action": "低头说话，神情严肃",
-        "place": "酒店宴会厅",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部闭合，嘴角下垂，未见张口发音",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "坐轮椅眼含泪水望向一侧",
+        "place": "未识别",
+        "props": [
+          "轮椅"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s013.jpg"
+      "frame": "ep03_s013_0.jpg"
     },
     {
       "start": 41.3,
       "end": 42.7,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "特写",
         "people": 1,
         "who": [
-          "老年女性 灰布对襟上衣 坐轮椅 眼眶含泪 头发灰白"
+          "老年 性别未识别 深色旧中式盘扣上衣 坐轮椅手扶扶手"
         ],
-        "action": "坐在轮椅上，眼眶泛红",
-        "place": "室外中式庭院",
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只拍到颈部以下，嘴部在画框外，看不见嘴",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "坐在轮椅上手扶扶手",
+        "place": "未识别",
         "props": [
           "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s014.jpg"
+      "frame": "ep03_s014_0.jpg"
     },
     {
       "start": 42.7,
       "end": 47.87,
       "tag": {
-        "shot_size": "特写",
+        "shot_size": "近景",
         "people": 1,
         "who": [
-          "老年女性 灰布对襟上衣 抓握轮椅扶手"
+          "老年女性 灰白头发盘起 深色中式旧布衫 眼眶发红含泪"
         ],
-        "action": "手抓轮椅扶手，情绪紧绷",
-        "place": "室外中式庭院",
-        "props": [
-          "轮椅"
-        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪直视前方，嘴唇紧抿",
+        "place": "未识别",
+        "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s015.jpg"
+      "frame": "ep03_s015_0.jpg"
     },
     {
       "start": 47.87,
       "end": 49.03,
       "tag": {
-        "shot_size": "特写",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 2,
         "who": [
-          "老年女性 灰布对襟上衣 面部含泪 皱纹明显 头发灰白"
+          "年轻女性 白色蕾丝高领上衣白色长裤 抱米色垫子和棕色大衣 长发披肩",
+          "中老年女性 深色上衣 侧背对镜头 前景虚化"
         ],
-        "action": "含泪注视前方，神情难过",
-        "place": "室外中式庭院",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位正面露嘴，嘴巴微张呈惊讶状，非说话口型",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "抱着垫子和大衣快步走向前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "米色垫子",
+          "棕色大衣",
+          "水晶吊灯"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s016.jpg"
+      "frame": "ep03_s016_0.jpg"
     },
     {
       "start": 49.03,
@@ -329,20 +468,26 @@
         "shot_size": "中景",
         "people": 2,
         "who": [
-          "年轻女性 白色蕾丝高领婚纱 披头纱 抱着坐垫和外套",
-          "老年女性 灰布对襟上衣 坐轮椅 仅露背影"
+          "年轻女性 白色蕾丝婚纱 白色头纱 手抱米色靠垫与大衣",
+          "年龄性别未识别 深色外套 画面仅露侧脸边缘与手臂"
         ],
-        "action": "抱着坐垫和外套走向轮椅旁",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位低头时嘴部微张，可见说话口型",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "低头把靠垫递给座位上的人",
         "place": "酒店宴会厅",
         "props": [
-          "坐垫",
-          "外套",
-          "轮椅"
+          "米色靠垫",
+          "米色大衣"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep03_s017.jpg"
+      "frame": "ep03_s017_0.jpg"
     }
   ]
 }

@@ -1,0 +1,1345 @@
+{
+  "meta": {
+    "schema_version": "1.1",
+    "kind": "short_drama",
+    "drama": "父爱跨越山海",
+    "pack_version": "1.1-draft.1",
+    "platform": "wechat_channels",
+    "task_id": null,
+    "created_at": "2026-11-12",
+    "created_by": "WorkBuddy",
+    "source_materials": [
+      "本地素材包 30 集 mp4（1.mp4–30.mp4，1080×1882 / 29.97fps / h264 / aac 44.1k 双声道，抽查第 1、5、12、30 集参数一致）",
+      "剧本.txt（仅第 1 集 1-1 至 1-2 场，用作第 1 集台词的校对参照，不覆盖后续集）",
+      "简介详情.txt（宣传文案：三个平台剧名、作品简介、制作团队、5 集免费 6 集起付费）",
+      "人物设定图 4 张：陈铁山 / 陈晓-出院 / 陈浩 / 小芸（不含反派巴颂）"
+    ],
+    "review": {
+      "self_check": "ok",
+      "human_review": "pending",
+      "published_to_tdrive": false,
+      "evidence": [
+        "validate_pack.py 结构校验结果见 drama-pack.gatecheck.json",
+        "五幕每条都有 ep + t + quote 回到台词库原句，未凭空概括",
+        "人物关系证据全部来自台词原句，不采用简介文案",
+        "台词库按 1 秒一帧 OCR 重建（643 句 / 18 集），未沿用 2 秒粗抽版本",
+        "第 19–30 集未解析，剧情走向按「不剧透」规矩留空"
+      ]
+    },
+    "consumers": [
+      "short-drama-script"
+    ],
+    "coverage": {
+      "total_episodes": 30,
+      "rule": "只解析前 60% 集数，不剧透（2026-11-11 张老师定）",
+      "parsed_ep_range": "1-18",
+      "trailer_boundary_ep_range": "1-18",
+      "finale_ep": 30
+    }
+  },
+  "drama_facts": [
+    {
+      "id": "df_001",
+      "field": "title",
+      "label": "剧名",
+      "value": "父爱跨越山海（视频号）/ 为女闯东南亚（抖音）/ 不要虚假的幸福（快手）",
+      "source": {
+        "type": "local_material",
+        "ref": "简介详情.txt 第 1 条"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_002",
+      "field": "series_length",
+      "label": "总集数",
+      "value": 30,
+      "source": {
+        "type": "local_material",
+        "ref": "素材目录 1.mp4–30.mp4"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_003",
+      "field": "episode_duration",
+      "label": "单集时长",
+      "value": "48.8–97.7 秒（第 2 集最长 97.7 秒，第 17 集最短 48.8 秒，前 18 集合计 21.4 分钟）",
+      "source": {
+        "type": "local_material",
+        "ref": "assets/short-drama/父爱跨越山海/ep_durations.json（取视频流时长）"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_004",
+      "field": "genre",
+      "label": "题材",
+      "value": "跨境营救 + 父女亲情（现实向强冲突，非甜宠、非重生）",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "ep01–ep18 全量台词"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_005",
+      "field": "era",
+      "label": "年代",
+      "value": "当代",
+      "source": {
+        "type": "local_material",
+        "ref": "画面为智能手机、视频通话、微信朋友圈"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_006",
+      "field": "setting",
+      "label": "主要场景",
+      "value": "国内工地办公室（开场）／女儿被关的仓库／城郊红土石场后院铁皮屋／巴颂家小白楼（实为空置）／石场主屋客厅",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "ep01「这不是他们家」、ep04「城郊红土石场」、ep15「门上两道铁链」"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_007",
+      "field": "logline",
+      "label": "一句话故事",
+      "value": "包工头从一次视频通话里看出女儿缺了一颗牙、身后有人盯着，飞了 18 个小时到东南亚，从铁皮屋里背出被锁住脚的女儿，还有另外 7 个被扣了护照的中国女人。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "ep01 36s「你牙呢」、ep16 42s「我从县城飞18个小时」、ep09 10s「屋里一共8个中国女人」"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_008",
+      "field": "premise",
+      "label": "必须交代的前因",
+      "value": "女儿远嫁到东南亚当地男子巴颂家，半年前搬离原来的小白楼、搬进石场后院铁皮屋；巴颂一家收走她的护照，逼她打电话向家里要钱；父亲半年前收到「生意周转」的借款电话，转了 20 万，当时还骂过女儿乱花钱。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "ep07 16–19s、ep14 22–36s、ep13 20s「他们收了我护照」"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_009",
+      "field": "style",
+      "label": "风格标签",
+      "value": "现实向 + 强冲突反杀（父亲一人对抗一家的体面，靠直播与逐级上告翻盘）",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "ep15–ep18 正面对峙段"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_010",
+      "field": "core_conflict",
+      "label": "核心矛盾",
+      "value": "救女儿 vs 不能硬来——当地执法长官沙昆是巴颂的酒友，父亲一旦冲进去，女儿在里面更危险；他只能用「让所有人看见」的办法逼对方收手。",
+      "source": {
+        "type": "subtitle_ocr",
+        "ref": "ep04 44–51s、ep09 58–68s、ep13 35–40s"
+      },
+      "verified": true,
+      "usable_in_copy": true,
+      "blocking": false
+    },
+    {
+      "id": "df_011",
+      "field": "ending_type",
+      "label": "结局类型",
+      "value": null,
+      "source": {
+        "type": "inferred",
+        "ref": "第 19–30 集未解析，不推断结局（不剧透铁律）"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_012",
+      "field": "license_scope",
+      "label": "授权范围",
+      "value": "沿用同批素材口径：张老师确认有授权；素材包内无承诺函、无时间戳证书",
+      "source": {
+        "type": "task_template",
+        "ref": "2026-11-11 15:4x 张老师「授权有，不用检测了」"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_013",
+      "field": "sub_format",
+      "label": "字幕形态",
+      "value": "硬字幕烧在画面上，白色小字，位置约在画面高度 73–80%；一句台词拆成多张短卡片、每张只显示 1–1.5 秒且卡片之间有空档；底部另有水印「热播漫剧AI生成请勿模仿」",
+      "source": {
+        "type": "local_material",
+        "ref": "2026-11-12 抽帧实测：2s「腊月28」→3–4s「我远嫁东南亚的女儿」→5s 空档→6s「你还在工地啊」"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_014",
+      "field": "audio",
+      "label": "音轨",
+      "value": "带 BGM，无「无 BGM 版」",
+      "source": {
+        "type": "local_material",
+        "ref": "ffprobe 抽查 1/5/12/30 集，仅一条 aac 双声道流"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_015",
+      "field": "finale",
+      "label": "大结局集",
+      "value": "第 30 集（不碰）",
+      "source": {
+        "type": "local_material",
+        "ref": "30 集全量素材；第 19 集起按不剧透规矩不解析"
+      },
+      "verified": true,
+      "usable_in_copy": false,
+      "blocking": false
+    },
+    {
+      "id": "df_016",
+      "field": "platform",
+      "label": "投放平台",
+      "value": "微信视频号（抖音名《为女闯东南亚》、快手名《不要虚假的幸福》，本包按视频号口径做）",
+      "source": {
+        "type": "task_template",
+        "ref": "简介详情.txt 第 1 条 + 11-11 平台口径"
+      },
+      "verified": false,
+      "usable_in_copy": false,
+      "blocking": false
+    }
+  ],
+  "story_arc": {
+    "usable_in_copy": false,
+    "acts": [
+      {
+        "no": 1,
+        "name": "疑",
+        "ep_from": 1,
+        "ep_to": 3,
+        "summary": "视频通话里女儿缺了一颗门牙、坐姿僵硬、身后是仓库不是自家客厅；父亲翻遍她朋友圈，发现雪景是前年县城拍的、咖啡是婚前送饭时喝的、牵手照是婚纱照花絮截图——全是旧照片。他当天决定飞过去。",
+        "payoff": "从「女婿孝顺」翻成「我闺女出事了」，一句话定调：女儿在镜头里笑，父亲在镜头外看穿了。",
+        "evidence": [
+          {
+            "ep": 1,
+            "t": 36,
+            "quote": "你牙呢"
+          },
+          {
+            "ep": 2,
+            "t": 28,
+            "quote": "全是旧照片"
+          },
+          {
+            "ep": 2,
+            "t": 30,
+            "quote": "我闺女出事了"
+          }
+        ]
+      },
+      {
+        "no": 2,
+        "name": "找",
+        "ep_from": 4,
+        "ep_to": 6,
+        "summary": "到当地找到石场，才知道女儿半年前就搬来了；后院里一间挂锁的铁皮屋，「里面老有女人哭，说中国话，不止一个」。父亲的亲家母告诉他，执法长官沙昆是巴颂的酒友，上回多嘴的村民第二天就被带走了。他隔着门听见女儿挨打，没有冲。",
+        "payoff": "父亲第一次克制：明知女儿在里面挨打，他选择不冲，因为「她还在他们手里」。",
+        "evidence": [
+          {
+            "ep": 4,
+            "t": 31,
+            "quote": "里面老有女人哭"
+          },
+          {
+            "ep": 4,
+            "t": 67,
+            "quote": "别打了"
+          },
+          {
+            "ep": 4,
+            "t": 76,
+            "quote": "她还在他们手里"
+          }
+        ]
+      },
+      {
+        "no": 3,
+        "name": "救",
+        "ep_from": 7,
+        "ep_to": 10,
+        "summary": "父亲用半年前打给女儿的 20 万买了辆车，带着儿子和阿迪凌晨开门，把女儿从铁皮屋里背出来；屋里还有 8 个中国女人，一个叫张丽的被关了一年，一个叫小芸的求他「能不能也带我们走」。他把女儿送医院，自己留下等那家人回来。",
+        "payoff": "救的不止自己女儿：从一个父亲变成 8 个女人的出口。",
+        "evidence": [
+          {
+            "ep": 9,
+            "t": 27,
+            "quote": "一个都不留"
+          },
+          {
+            "ep": 9,
+            "t": 29,
+            "quote": "我全带走"
+          },
+          {
+            "ep": 10,
+            "t": 9,
+            "quote": "这是把人折腾废了"
+          }
+        ]
+      },
+      {
+        "no": 4,
+        "name": "守",
+        "ep_from": 11,
+        "ep_to": 14,
+        "summary": "父亲把 4 个还走不动的女人安置在主屋客厅，等巴颂一家 4 点回来；一天一块钱饭、几个人分一瓶水的日子被一个个问出来。张丽当众说「他们收了我护照，关了我一年」；小芸说晓晓挨打最多，因为她不肯再打电话要钱，那颗牙是 5 天前打掉的。父亲才明白自己半年前那 20 万，是女儿被人逼着开口要的。",
+        "payoff": "父亲自省：这双手给别人盖过楼、搭过桥，却差点没护住自己的闺女。",
+        "evidence": [
+          {
+            "ep": 13,
+            "t": 20,
+            "quote": "他们收了我护照"
+          },
+          {
+            "ep": 14,
+            "t": 18,
+            "quote": "那颗牙就是5天前打掉的"
+          },
+          {
+            "ep": 14,
+            "t": 43,
+            "quote": "却差点没护住自己的闺女"
+          }
+        ]
+      },
+      {
+        "no": 5,
+        "name": "刚",
+        "ep_from": 15,
+        "ep_to": 18,
+        "summary": "巴颂一家回来，反手报警说中国老头私闯民宅；父亲开直播让 2 万人看着对方的脸和身份号，逼他们不敢动手；村长被叫来看铁皮屋，父亲当着执法员问「自愿打工要扣护照吗？自愿打工要锁脚吗？」最后开始算账：彩礼一分没出、嫁妆全收、20 万被拿去买了车。",
+        "payoff": "不靠当地执法，靠「让所有人看见」翻盘；最后一句停在算账，账没算完。",
+        "evidence": [
+          {
+            "ep": 15,
+            "t": 49,
+            "quote": "一块硬面包叫照顾"
+          },
+          {
+            "ep": 17,
+            "t": 30,
+            "quote": "2万人正在看"
+          },
+          {
+            "ep": 18,
+            "t": 23,
+            "quote": "自愿打工要扣护照吗"
+          }
+        ]
+      }
+    ],
+    "beyond_coverage": {
+      "ep_range": "19-30",
+      "note": "按只解析前 60% 的规矩，第 19 集以后未解析，走向未知，含大结局收尾。本包不得据此推断后段剧情；要动后段必须先补解析。"
+    },
+    "turning_points": [
+      {
+        "ep": 1,
+        "t": 36,
+        "beat": "一句「你牙呢」，父亲看出女儿被人控制",
+        "quote": "你牙呢"
+      },
+      {
+        "ep": 2,
+        "t": 28,
+        "beat": "朋友圈每张照片都被对上旧照，造假坐实",
+        "quote": "全是旧照片"
+      },
+      {
+        "ep": 4,
+        "t": 31,
+        "beat": "第一次听到铁皮屋里的哭声，不是一个女人",
+        "quote": "里面老有女人哭"
+      },
+      {
+        "ep": 8,
+        "t": 45,
+        "beat": "破门，背起走不动的女儿",
+        "quote": "我背你走"
+      },
+      {
+        "ep": 14,
+        "t": 18,
+        "beat": "知道那颗牙是 5 天前打掉的，也知道 20 万是女儿被逼着要的",
+        "quote": "那颗牙就是5天前打掉的"
+      },
+      {
+        "ep": 17,
+        "t": 37,
+        "beat": "直播反制：2 万人看见了对方的脸",
+        "quote": "这两万人都看见你的脸了"
+      }
+    ],
+    "episode_pattern": {
+      "loop": [
+        "巴颂一家装体面、讲道理",
+        "陈铁山拿出证据把这层皮挑开",
+        "对方抬出执法关系或人多势众施压"
+      ],
+      "payoff_per_episode": true
+    },
+    "source": {
+      "type": "subtitle_ocr",
+      "ref": "assets/short-drama/父爱跨越山海/lines/lines_ep01–ep18.json（643 条）"
+    },
+    "verified": false
+  },
+  "characters": [
+    {
+      "id": "ch_001",
+      "name": "陈铁山",
+      "role": "protagonist",
+      "relation": "女主角陈晓的父亲，包工头；一个人飞到国外把女儿和另外 7 个中国女人从铁皮屋里带出来",
+      "traits": [
+        "看细节",
+        "能忍",
+        "先算账再动手",
+        "会借势（直播、使馆、村长）",
+        "护住所有人"
+      ],
+      "evidence": {
+        "ep": 1,
+        "t": 36,
+        "quote": "你牙呢"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_002",
+      "name": "巴颂",
+      "role": "antagonist",
+      "relation": "陈晓的丈夫，当地男子；收走妻子护照、把人锁在铁皮屋里，靠装体面在外面做人",
+      "traits": [
+        "装孝顺",
+        "嘴上讲道理",
+        "动手不留痕",
+        "一出事就报警反咬"
+      ],
+      "evidence": {
+        "ep": 15,
+        "t": 43,
+        "quote": "那不是锁"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_003",
+      "name": "陈晓",
+      "role": "supporting",
+      "relation": "陈铁山的女儿，远嫁当地；缺了一颗门牙、腿被打伤，仍对着镜头说自己「挺好的」",
+      "traits": [
+        "报喜不报忧",
+        "被逼着要钱也不肯开口",
+        "挨打最多"
+      ],
+      "evidence": {
+        "ep": 5,
+        "t": 16,
+        "quote": "我最近挺好的"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_004",
+      "name": "沙昆",
+      "role": "supporting",
+      "relation": "当地执法长官，巴颂的酒友，整条街没人敢得罪",
+      "traits": [
+        "保护伞",
+        "先抓报案的人",
+        "收手机"
+      ],
+      "evidence": {
+        "ep": 4,
+        "t": 46,
+        "quote": "是巴颂的酒友"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_005",
+      "name": "陈浩",
+      "role": "supporting",
+      "relation": "陈铁山的儿子，跟着来救姐姐；几次忍不住想冲进去被打住",
+      "traits": [
+        "急",
+        "护姐",
+        "被父亲按住"
+      ],
+      "evidence": {
+        "ep": 9,
+        "t": 55,
+        "quote": "他们把姐锁成这样"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_006",
+      "name": "张丽",
+      "role": "supporting",
+      "relation": "被关在铁皮屋里一年的中国女人，护照被收；最后选择留下作证",
+      "traits": [
+        "被关一年",
+        "不怕了",
+        "要亲眼看他们完蛋"
+      ],
+      "evidence": {
+        "ep": 8,
+        "t": 60,
+        "quote": "我在这关一年了"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_007",
+      "name": "小芸",
+      "role": "supporting",
+      "relation": "被关的年轻中国女人，家里拿不出钱，差点被卖到山里；晓晓挨打最多这件事是她说的",
+      "traits": [
+        "最先开口求救",
+        "知道内情",
+        "年纪小"
+      ],
+      "evidence": {
+        "ep": 9,
+        "t": 5,
+        "quote": "就把我卖到山里去"
+      },
+      "usable_in_copy": true
+    },
+    {
+      "id": "ch_008",
+      "name": "娜帕",
+      "role": "supporting",
+      "relation": "巴颂的母亲；骂被关的女人「装死」，被父亲当场把「体面」扒下来",
+      "traits": [
+        "嘴狠",
+        "装体面",
+        "骂人不留情"
+      ],
+      "evidence": {
+        "ep": 4,
+        "t": 39,
+        "quote": "说她装死"
+      },
+      "usable_in_copy": true
+    }
+  ],
+  "hook_map": [
+    {
+      "id": "hk_001",
+      "beat": "视频里女儿缺了一颗门牙，父亲追问，女婿抢着解释「洗澡摔的」",
+      "ep": 1,
+      "t_start": 35,
+      "t_end": 44,
+      "quote": "晓晓，你牙呢？她昨晚洗澡摔了一跤，浴室地滑。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 37,
+        "quote": "她昨晚洗澡摔了一"
+      },
+      "opening_lines": [
+        "女儿在视频里笑，父亲只盯住她缺的那颗牙。",
+        "隔着半个地球，父亲看见女儿少了一颗门牙。",
+        "女婿抢着解释那颗牙是怎么掉的，父亲没接话。"
+      ],
+      "hook_type": "reveal",
+      "risk": "low 原片台词，非外部编造",
+      "status": "ready",
+      "note": "最好的一钩：一个细节把「孝顺女婿」全翻过来；字幕卡可用「你牙呢」。OCR 原句「她昨晚洗澡摔了一」缺尾字，切点须落在字幕卡消失处，不补字。"
+    },
+    {
+      "id": "hk_002",
+      "beat": "父亲问一句朋友圈的蛋糕照，女儿只回一个「啊」——他当场断定朋友圈不是她发的",
+      "ep": 1,
+      "t_start": 69,
+      "t_end": 81,
+      "quote": "那张蛋糕照挺好看，谁买的？啊？就这一个字，我心里彻底凉了。",
+      "truncate_at": {
+        "ep": 1,
+        "t": 76,
+        "quote": "我心里彻底凉了"
+      },
+      "opening_lines": [
+        "父亲只问了一句蛋糕照，女儿回了一个字。",
+        "一个「啊」字，父亲就知道朋友圈不是她发的。",
+        "他问的不是蛋糕，是谁在替她发朋友圈。"
+      ],
+      "hook_type": "suspense",
+      "risk": "low 原片台词",
+      "status": "ready",
+      "note": "推理型钩子，适合「细节控」角度；一句「啊」是全剧信息密度最高的一秒。"
+    },
+    {
+      "id": "hk_003",
+      "beat": "石场后院一间挂锁的铁皮屋，里面有女人哭，说中国话，不止一个",
+      "ep": 4,
+      "t_start": 28,
+      "t_end": 35,
+      "quote": "后院有间铁皮屋，门上挂锁，里面老有女人哭，说中国话，不止一个。",
+      "truncate_at": {
+        "ep": 4,
+        "t": 35,
+        "quote": "不止一个"
+      },
+      "opening_lines": [
+        "他以为只是接女儿回家，直到听见铁皮屋里的哭声。",
+        "一间挂锁的铁皮屋，里面不止一个中国女人在哭。",
+        "女儿不是一个人被关着。"
+      ],
+      "hook_type": "reveal",
+      "risk": "medium 涉及非法拘禁，只用原片台词陈述，不做猎奇化描述、不配恐怖音效",
+      "status": "ready",
+      "note": "格局打开的一钩：从「救自己女儿」变成「里面有好几个」。"
+    },
+    {
+      "id": "hk_004",
+      "beat": "亲家母说「那不是锁，我们是在照顾他们」，父亲一句顶回去",
+      "ep": 15,
+      "t_start": 43,
+      "t_end": 53,
+      "quote": "那不是锁，他们情绪不稳定，我们是在照顾他们。照顾？你们给半瓶水，一块硬面包叫照顾？",
+      "truncate_at": {
+        "ep": 15,
+        "t": 49,
+        "quote": "一块硬面包叫照顾"
+      },
+      "opening_lines": [
+        "「门上两道铁链」——她说这是照顾。",
+        "把八个女人锁进铁皮屋，她说这叫照顾。",
+        "半瓶水、一块硬面包，她说这是照顾。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low 原片台词，冲突由台词自己完成",
+      "status": "ready",
+      "note": "最锋利的一钩：恶人自己把话说出来，不需要旁白定性。"
+    },
+    {
+      "id": "hk_005",
+      "beat": "对方要拿钱摆平，父亲把女儿的伤一样一样报价",
+      "ep": 16,
+      "t_start": 30,
+      "t_end": 45,
+      "quote": "你要多少钱，我们可以谈。我女儿那颗牙，多少钱？她腿上的伤，多少钱？我从县城飞18个小时，不是听你这句的。",
+      "truncate_at": {
+        "ep": 16,
+        "t": 39,
+        "quote": "多少钱"
+      },
+      "opening_lines": [
+        "他们说「我们可以谈」，父亲问了一句价钱。",
+        "「我女儿那颗牙，多少钱？」",
+        "飞了 18 个小时，他只要一个价钱。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low 原片台词",
+      "status": "ready",
+      "note": "反打脸结构：对方以为钱能了事，父亲用「多少钱」把话题顶回去。"
+    },
+    {
+      "id": "hk_006",
+      "beat": "执法长官到场，父亲开直播，2 万人在看他的脸和身份号",
+      "ep": 17,
+      "t_start": 27,
+      "t_end": 40,
+      "quote": "我在直播，现在中国那边2万人正在看。你收我手机可以，这两万人都看见你的脸了，也看见你身份号了。",
+      "truncate_at": {
+        "ep": 17,
+        "t": 40,
+        "quote": "也看见你身份号了"
+      },
+      "opening_lines": [
+        "他们要收他手机，他说：2 万人正在看你的脸。",
+        "一个人对一整个执法局，他打开了直播。",
+        "他不靠当地执法，他让 2 万人替他看着。"
+      ],
+      "hook_type": "contrast",
+      "risk": "medium 涉及境外执法机关腐败；台词未点名国名，成片字幕卡也不得点名任何真实国家或机关",
+      "status": "ready",
+      "note": "翻盘核心：不走关系，走曝光。做片子时须保证不出现真实国名、国旗、警徽特写。"
+    },
+    {
+      "id": "hk_007",
+      "beat": "村长被叫到铁皮屋前，父亲当着执法员一句一问",
+      "ep": 18,
+      "t_start": 14,
+      "t_end": 27,
+      "quote": "这就是你说的仓库。误会，都是误会。自愿打工要扣护照吗？自愿打工要锁脚吗？",
+      "truncate_at": {
+        "ep": 18,
+        "t": 25,
+        "quote": "自愿打工要锁脚吗"
+      },
+      "opening_lines": [
+        "「这就是你说的仓库？」父亲当着村长把门打开。",
+        "自愿打工要扣护照吗？自愿打工要锁脚吗？",
+        "一句一问，问到没人接话。"
+      ],
+      "hook_type": "conflict",
+      "risk": "low 原片台词",
+      "status": "ready",
+      "note": "全剧最整齐的一组反问，适合当收尾钩；断在「锁脚吗」之后，不接答案。"
+    },
+    {
+      "id": "hk_008",
+      "beat": "父亲的自省：这双手给别人盖过楼、搭过桥，却差点没护住自己的闺女",
+      "ep": 14,
+      "t_start": 38,
+      "t_end": 46,
+      "quote": "我这双手，给别人盖过楼，搭过桥，却差点没护住自己的闺女。",
+      "truncate_at": {
+        "ep": 14,
+        "t": 43,
+        "quote": "却差点没护住自己的闺女"
+      },
+      "opening_lines": [
+        "给别人盖了一辈子楼，他差点没护住自己的闺女。",
+        "盖过楼、搭过桥，就是没护住女儿。",
+        "这双手什么都盖得住，除了女儿的门。"
+      ],
+      "hook_type": "contrast",
+      "risk": "low 原片台词",
+      "status": "ready",
+      "note": "情绪最高点，适合「父亲视角」角度的收尾；用原声，不加配乐推情绪。"
+    },
+    {
+      "id": "hk_009",
+      "beat": "父亲给女儿留后路：两小时没消息，你就当我也被关了",
+      "ep": 5,
+      "t_start": 52,
+      "t_end": 68,
+      "quote": "两个小时内我没消息，你就当我也被关了。你这是给自己留后路。是给你姐留，万一咱们进去了出不来，至少有人知道她在哪。",
+      "truncate_at": {
+        "ep": 5,
+        "t": 56,
+        "quote": "你就当我也被关了"
+      },
+      "opening_lines": [
+        "进门前他交代儿子：两小时没消息，你就当我也被关了。",
+        "他不是给自己留后路，是给女儿留。",
+        "万一出不来，至少有人知道她在哪。"
+      ],
+      "hook_type": "suspense",
+      "risk": "low 原片台词",
+      "status": "ready",
+      "note": "悲壮型钩子，适合「父亲一个人进去」角度；断在「你就当我也被关了」。"
+    },
+    {
+      "id": "hk_010",
+      "beat": "女儿在视频里报平安「我最近挺好的」，父亲一句「你牙掉了」",
+      "ep": 5,
+      "t_start": 14,
+      "t_end": 27,
+      "quote": "你别担心我，我最近挺好的。你婆婆呢？去市场卖布了。那正好，让巴颂给你多切点水果。你牙掉了，别吃硬的。",
+      "truncate_at": {
+        "ep": 5,
+        "t": 26,
+        "quote": "你牙掉了"
+      },
+      "opening_lines": [
+        "女儿说她挺好的，父亲说「你牙掉了」。",
+        "她说一切都好，他听见的是「别吃硬的」。",
+        "电话里全是平安话，只有一颗牙露了底。"
+      ],
+      "hook_type": "contrast",
+      "risk": "low 原片台词",
+      "status": "ready",
+      "note": "对照结构：女儿的「挺好」和父亲的「你牙掉了」正面撞；适合做开场。"
+    }
+  ],
+  "compliance": {
+    "platform": "wechat_channels",
+    "rules_ref": "references/platform-rules.md",
+    "ending_policy": "do_not_use",
+    "must_check": {
+      "ending_spoiler": {
+        "status": "ok",
+        "note": "只解析到第 18 集（60% 上限），第 19–30 集不解析；大结局第 30 集不碰，成片不得出现结局画面或结论"
+      },
+      "disability_disease_wording": {
+        "status": "watch",
+        "note": "女儿牙缺、腿伤；台词「腿差点废了」「这是把人折腾废了」「腿有时候没知觉」只能原句引用，不得改写成旁白描述，字幕卡不写「残疾」「残废」「瘸」"
+      },
+      "rebuild_evidence": {
+        "status": "ok",
+        "note": "纯剪预告：原片重剪 + 五幕重排 + 无口播。二创痕迹靠重排与选段体现，非搬运整段"
+      },
+      "offsite_diversion": {
+        "status": "ok",
+        "note": "不留微信、公众号、私信、主页引导"
+      },
+      "ai_label": {
+        "status": "watch",
+        "note": "原片是 AI 生成漫剧，底部烧「热播漫剧AI生成请勿模仿」；发布视频号时按平台要求勾选 AI 生成标识，水印不处理（沿用 11-11 口径）"
+      }
+    },
+    "extra_checks": [
+      {
+        "item": "涉外表述",
+        "status": "watch",
+        "note": "素材设定在东南亚某国，台词未点名国名。成片与文案一律不出现任何真实国家名、国旗、地图、警徽特写；不得出现「某国警察都腐败」这类以一个国家概括全部执法者的表述。只陈述「这一家的案子」与「当地这一个执法长官」。",
+        "why": "平台对涉外负面与地域概括敏感，且点名会带来事实与法律风险"
+      },
+      {
+        "item": "人口贩卖/拘禁情节",
+        "status": "watch",
+        "note": "台词有「把我卖到山里去」「一个都不留」；只做原句引用与因果陈述，不做猎奇化剪辑（不加锁链特写堆叠、不加惊悚音效），不呈现身体伤害细节",
+        "why": "避免被判定为以犯罪细节博眼球"
+      }
+    ],
+    "banned_in_voiceover": [
+      "大结局",
+      "结局曝光",
+      "人贩子集团",
+      "卖淫",
+      "性奴",
+      "泰国",
+      "缅甸",
+      "柬埔寨",
+      "老挝",
+      "越南",
+      "菲律宾",
+      "印度尼西亚",
+      "马来西亚",
+      "某国警察",
+      "东南亚警察"
+    ],
+    "quote_risk_terms": [
+      "把我卖到山里去",
+      "连哭都不敢出声",
+      "腿差点废了",
+      "这是把人折腾废了",
+      "打掉的",
+      "一个都不留",
+      "我先砸死他"
+    ]
+  },
+  "elements": {
+    "hooks": [
+      {
+        "id": "h_001",
+        "hook_type": "reveal",
+        "pattern": "前 3 秒给一个反常细节，先不解释",
+        "example": "女儿在视频里笑，父亲只盯住她缺的那颗牙。"
+      },
+      {
+        "id": "h_002",
+        "hook_type": "suspense",
+        "pattern": "用一个字的回答制造信息缺口",
+        "example": "他只问了一句蛋糕照，女儿回了一个「啊」。"
+      },
+      {
+        "id": "h_003",
+        "hook_type": "conflict",
+        "pattern": "让恶人自己把话说出口，不配旁白定性",
+        "example": "「那不是锁，我们是在照顾他们。」"
+      },
+      {
+        "id": "h_004",
+        "hook_type": "contrast",
+        "pattern": "两句意思相反的话正面相撞",
+        "example": "「我最近挺好的。」「你牙掉了。」"
+      }
+    ],
+    "pains": [
+      {
+        "id": "p_001",
+        "pain": "孩子在外面出事，跟家里只说「挺好的」"
+      },
+      {
+        "id": "p_002",
+        "pain": "攒了一辈子的钱，被孩子开口要走，后来才知道是被逼的"
+      },
+      {
+        "id": "p_003",
+        "pain": "到了地方举目无亲，连报案都不知道找谁"
+      },
+      {
+        "id": "p_004",
+        "pain": "知道孩子在屋里挨打，还不能冲，一冲她更危险"
+      },
+      {
+        "id": "p_005",
+        "pain": "对方人多、有关系、会装体面，讲道理讲不过"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "s_001",
+        "scene": "国内工地办公室（视频通话）",
+        "note": "开场，父女俩隔着屏幕的第一轮交锋，全剧信息量最密"
+      },
+      {
+        "id": "s_002",
+        "scene": "城郊红土石场后院铁皮屋",
+        "note": "主战场：两道铁链、一把大锁、8 个中国女人"
+      },
+      {
+        "id": "s_003",
+        "scene": "石场主屋客厅",
+        "note": "第二轮战场：父亲把 4 个走不动的女人安置在沙发上等对方回来"
+      },
+      {
+        "id": "s_004",
+        "scene": "小白楼（已空置）",
+        "note": "「这不是他们家」的来源，半年前搬走的证据"
+      },
+      {
+        "id": "s_005",
+        "scene": "镇上五金/工具店",
+        "note": "买液压剪、绳子、锁——父亲「来真的」的转折"
+      }
+    ],
+    "proofs": [
+      {
+        "id": "pr_001",
+        "level": "E1",
+        "claim": "父亲是从一个细节看穿的，不是靠别人告状",
+        "ref": "第 1 集 36 秒「你牙呢」原句"
+      },
+      {
+        "id": "pr_002",
+        "level": "E1",
+        "claim": "朋友圈是伪造的，有逐张比对",
+        "ref": "第 2 集 16–28 秒：雪景是前年县城、咖啡是婚前送饭、牵手照是花絮截图"
+      },
+      {
+        "id": "pr_003",
+        "level": "E1",
+        "claim": "被关的不止一个人",
+        "ref": "第 9 集 10 秒「屋里一共8个中国女人」"
+      },
+      {
+        "id": "pr_004",
+        "level": "E2",
+        "claim": "当地执法与加害方是熟人关系",
+        "ref": "第 4 集 44–51 秒：执法长官沙昆是巴颂酒友，多嘴的村民第二天被带走"
+      },
+      {
+        "id": "pr_005",
+        "level": "E1",
+        "claim": "父亲没有以暴制暴，靠直播与逐级上告",
+        "ref": "第 13 集 35–40 秒「本地的不管就找市里的，市里的不管就找使馆」；第 17 集 27–40 秒直播"
+      }
+    ],
+    "trust": [
+      {
+        "id": "t_001",
+        "level": "T1",
+        "item": "授权来源：沿用同批素材口径，张老师确认有授权，不再核验书面凭证"
+      },
+      {
+        "id": "t_002",
+        "level": "T2",
+        "item": "素材为完整 30 集官方包，非录屏、非搬运切片；1080×1882 参数一致"
+      },
+      {
+        "id": "t_003",
+        "level": "T3",
+        "item": "台词来自硬字幕 OCR，非人工听写；第 1 集已与剧本.txt 对校，其余集未逐句复核"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "c_001",
+        "text": "往下看这账怎么算",
+        "note": "纯剪预告以悬念收，不写引导关注"
+      },
+      {
+        "id": "c_002",
+        "text": "他没报警，他打开了直播",
+        "note": "用反常识动作收尾，不做号召"
+      }
+    ],
+    "golden_quotes": [
+      {
+        "id": "gq_001",
+        "ep": 1,
+        "t": 36,
+        "quote": "你牙呢",
+        "note": "三个字定全剧，适合直接当字幕卡"
+      },
+      {
+        "id": "gq_002",
+        "ep": 1,
+        "t": 76,
+        "quote": "我心里彻底凉了",
+        "note": "父亲内心的第一句实话"
+      },
+      {
+        "id": "gq_003",
+        "ep": 4,
+        "t": 34,
+        "quote": "不止一个",
+        "note": "四个字把格局打开"
+      },
+      {
+        "id": "gq_004",
+        "ep": 5,
+        "t": 56,
+        "quote": "你就当我也被关了",
+        "note": "进门前留后路，悲壮"
+      },
+      {
+        "id": "gq_005",
+        "ep": 9,
+        "t": 29,
+        "quote": "我全带走",
+        "note": "父亲的承诺，四个字"
+      },
+      {
+        "id": "gq_006",
+        "ep": 13,
+        "t": 20,
+        "quote": "他们收了我护照",
+        "note": "受害者第一句当众陈述"
+      },
+      {
+        "id": "gq_007",
+        "ep": 14,
+        "t": 43,
+        "quote": "却差点没护住自己的闺女",
+        "note": "全剧情绪最高点"
+      },
+      {
+        "id": "gq_008",
+        "ep": 15,
+        "t": 49,
+        "quote": "一块硬面包叫照顾",
+        "note": "把恶人的体面撕开"
+      },
+      {
+        "id": "gq_009",
+        "ep": 17,
+        "t": 30,
+        "quote": "2万人正在看",
+        "note": "翻盘的一句话"
+      },
+      {
+        "id": "gq_010",
+        "ep": 18,
+        "t": 23,
+        "quote": "自愿打工要扣护照吗",
+        "note": "最整齐的一问"
+      }
+    ],
+    "audiences": [
+      {
+        "id": "a_001",
+        "segment": "45–65 岁男性，家里有女儿已出嫁或在外地工作",
+        "evidence": [
+          "核心痛点是「女儿报喜不报忧，父亲只能自己去看」——这一代父亲最容易对号入座",
+          "父亲的身份是包工头，工地、盖楼、搭桥是熟悉的语言，不是都市白领叙事",
+          "第 14 集「我这双手给别人盖过楼，搭过桥，却差点没护住自己的闺女」是这一人群的直击句"
+        ],
+        "why_stop": "第 1 秒是一个父亲盯着手机屏幕看女儿缺的那颗牙，同龄人立刻代入",
+        "address_as": [
+          "老哥",
+          "大哥",
+          "当爸的"
+        ],
+        "exclude": [
+          "25 岁以下（对嫁女、父女关系无共鸣）",
+          "都市白领女性（场景是工地与铁皮屋，不共振）"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "id": "a_002",
+        "segment": "40–60 岁女性，家里有女儿在外地或嫁到外地",
+        "evidence": [
+          "「我最近挺好的」是这一代女儿对母亲说得最多的一句，母亲一听就懂",
+          "第 5 集父女通话整段是母女日常的镜像：问婆婆、问吃饭、问牙",
+          "痛点是「孩子受苦还哄你」，比「打脸」更能留住这一人群"
+        ],
+        "why_stop": "女儿说「我最近挺好的」，父亲说「你牙掉了」，一句话就够",
+        "address_as": [
+          "大姐",
+          "婶子",
+          "当妈的"
+        ],
+        "exclude": [
+          "只爱看甜宠、重生的年轻观众"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "id": "a_003",
+        "segment": "关注跨境婚恋、出国打工风险的 30–50 岁人群",
+        "evidence": [
+          "剧情支点是护照被收、被锁、被逼打电话要钱，都是出国打工与跨境婚姻的真实风险点",
+          "第 13 集「他们收了我护照，关了我一年」是这类人群的警醒句",
+          "不是猎奇，是「怎么防」——留证件、留联系、留后路"
+        ],
+        "why_stop": "「上门要人，结果发现里面关了 8 个」比单纯的父女寻亲更有信息量",
+        "address_as": [
+          "在外打工的",
+          "家里有孩子出国的"
+        ],
+        "exclude": [
+          "纯娱乐向观众（本片不提供爽感消费）"
+        ],
+        "confidence": "medium"
+      }
+    ]
+  },
+  "pending": [
+    {
+      "id": "pd_001",
+      "item": "剧包人审未做",
+      "owner": "张老师",
+      "how_to_resolve": "按五幕、人物、钩子逐条过；通过后 meta.review.human_review 置 approved",
+      "blocking": false,
+      "blocked_reason": null,
+      "state": "open",
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null
+    },
+    {
+      "id": "pd_002",
+      "item": "台词库有 OCR 错字（「盯」识别成「町」、「腊月二十八」缺字、个别句首被字幕空档截断）",
+      "owner": "WorkBuddy",
+      "how_to_resolve": "写清单前按集抽帧核对被引用的那几句；不改全局台词库，只在清单里用已核对的切点",
+      "blocking": false,
+      "blocked_reason": null,
+      "state": "open",
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null
+    },
+    {
+      "id": "pd_003",
+      "item": "第 19–30 集未解析（不剧透规矩），结局未知",
+      "owner": "张老师",
+      "how_to_resolve": "若某条片子必须要后段素材，先补解析再动；否则一律只用 1–18 集",
+      "blocking": false,
+      "blocked_reason": null,
+      "state": "open",
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null
+    },
+    {
+      "id": "pd_004",
+      "item": "镜头级打标（shots_epNN.json）未做，素材索引只有台词层",
+      "owner": "WorkBuddy",
+      "how_to_resolve": "跑 tag_shots.py 按集生成；不跑也能拼片，但看不出「画面上有没有人、能不能切出去」",
+      "blocking": false,
+      "blocked_reason": null,
+      "state": "open",
+      "resolution": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  ],
+  "asset_index": {
+    "mode": "self_licensed",
+    "episodes": [
+      {
+        "ep": 1,
+        "file": "1.mp4",
+        "duration": 93.34,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 2,
+        "file": "2.mp4",
+        "duration": 97.73,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 3,
+        "file": "3.mp4",
+        "duration": 86.05,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 4,
+        "file": "4.mp4",
+        "duration": 95.64,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 5,
+        "file": "5.mp4",
+        "duration": 68.99,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 6,
+        "file": "6.mp4",
+        "duration": 76.23,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 7,
+        "file": "7.mp4",
+        "duration": 58.83,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 8,
+        "file": "8.mp4",
+        "duration": 66.98,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 9,
+        "file": "9.mp4",
+        "duration": 70.62,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 10,
+        "file": "10.mp4",
+        "duration": 63.14,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 11,
+        "file": "11.mp4",
+        "duration": 76.71,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 12,
+        "file": "12.mp4",
+        "duration": 64.27,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 13,
+        "file": "13.mp4",
+        "duration": 67.99,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 14,
+        "file": "14.mp4",
+        "duration": 75.04,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 15,
+        "file": "15.mp4",
+        "duration": 64.69,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 16,
+        "file": "16.mp4",
+        "duration": 54.89,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 17,
+        "file": "17.mp4",
+        "duration": 48.78,
+        "desub": "not_needed"
+      },
+      {
+        "ep": 18,
+        "file": "18.mp4",
+        "duration": 53.29,
+        "desub": "not_needed"
+      }
+    ],
+    "finale_episodes": [
+      30
+    ],
+    "audio": "with_bgm",
+    "subtitle": "burned_in",
+    "splittable": {
+      "usable_ep_range": "1-18",
+      "estimated_clips": 10,
+      "note": "纯剪预告不做去字幕；硬字幕原样保留，切点须对齐字幕卡出现/消失（±0.3s）。本剧字幕卡每张只显示 1–1.5 秒、卡片之间有空档，切点必须落在字幕卡消失那一帧，不能靠秒数估算"
+    }
+  },
+  "conflicts": [
+    {
+      "id": "cf_001",
+      "topic": "简介写「联合华人、使馆与正义警方」，前 18 集只做到使馆联系上、当地执法未介入",
+      "values": [
+        {
+          "source": "简介详情.txt（宣传文案）",
+          "value": "他冒着生命危险，联合华人、使馆与正义警方，搜集证据对抗当地黑恶势力与腐败警察",
+          "evidence": "简介正文原文"
+        },
+        {
+          "source": "ep01–ep18 台词实测",
+          "value": "华人帮手阿南、阿迪有出场；使馆一处只到「李领事」联系上；当地执法（沙昆）在前 18 集是加害方一侧，未出现「正义警方」",
+          "evidence": "ep03 42s「我叫阿南」、ep10 36s「路上给李领事打电话」、ep04 46s「是巴颂的酒友」"
+        }
+      ],
+      "status": "resolved",
+      "resolution": "以台词为准，简介只当宣传文案。成片不得出现「正义警方出手」的情节，也不得预告未解析的后段"
+    },
+    {
+      "id": "cf_002",
+      "topic": "素材里的国家与执法机关不能点名",
+      "values": [
+        {
+          "source": "简介详情.txt",
+          "value": "仅写「东南亚」，未点名国名",
+          "evidence": "简介正文原文"
+        },
+        {
+          "source": "画面与台词实测",
+          "value": "台词只出现「这边」「我们国家」「这是红沙石场」；未见国旗、地名标牌的特写证据",
+          "evidence": "ep13 4s「这里是红沙石场后院」、ep16 14s「这里不是你们县城」"
+        }
+      ],
+      "status": "resolved",
+      "resolution": "成片与文案一律不点名任何真实国家与机关；只讲「这一家、这个案子」"
+    }
+  ]
+}

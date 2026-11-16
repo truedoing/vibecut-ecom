@@ -1,0 +1,287 @@
+{
+  "ep": 9,
+  "file": "9.mp4",
+  "duration": 50.18,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v1",
+  "usage": {
+    "prompt_tokens": 12135,
+    "completion_tokens": 3737,
+    "total_tokens": 15872
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.5,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 长卷发披肩戴头纱"
+        ],
+        "action": "她张嘴激动地说话，眼含泪水",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep09_s000.jpg"
+    },
+    {
+      "start": 2.5,
+      "end": 3.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 长卷发披肩戴头纱"
+        ],
+        "action": "她张嘴激动地说话，眼含泪水",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep09_s001.jpg"
+    },
+    {
+      "start": 3.83,
+      "end": 6.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 深色三件套西装 酒红领带"
+        ],
+        "action": "他皱眉张嘴说话，手拿打开的戒指盒",
+        "place": "酒店宴会厅",
+        "props": [
+          "蓝色戒指盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s002.jpg"
+    },
+    {
+      "start": 6.3,
+      "end": 9.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧式盘扣上衣 坐轮椅",
+          "年轻女性 白色婚纱 背对镜头"
+        ],
+        "action": "轮椅上的老人仰头说话，对面人俯身倾听",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep09_s003.jpg"
+    },
+    {
+      "start": 9.23,
+      "end": 12.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 戴头纱",
+          "年轻男性 深色西装 手拿戒指盒"
+        ],
+        "action": "她站在原地望向对方，对方伸手递出戒指盒",
+        "place": "酒店宴会厅",
+        "props": [
+          "蓝色戒指盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s004.jpg"
+    },
+    {
+      "start": 12.77,
+      "end": 14.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 长卷发"
+        ],
+        "action": "她双手掀开头纱，表情凝重看向前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "红色首饰盒"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿"
+      },
+      "frame": "ep09_s005.jpg"
+    },
+    {
+      "start": 14.57,
+      "end": 17.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领长袖礼服 泪眼朦胧"
+        ],
+        "action": "神情悲伤地看向前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "红色天鹅绒首饰盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s006.jpg"
+    },
+    {
+      "start": 17.9,
+      "end": 20.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领长袖礼服 泪眼朦胧"
+        ],
+        "action": "神情悲伤地看向前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "红色天鹅绒首饰盒"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s007.jpg"
+    },
+    {
+      "start": 20.93,
+      "end": 25.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 黑色三件套西装 酒红色领带 握拳"
+        ],
+        "action": "情绪激动地说话，紧握拳头",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s008.jpg"
+    },
+    {
+      "start": 25.7,
+      "end": 28.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅紫色衬衫 面带怒气"
+        ],
+        "action": "愤怒地大声说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s009.jpg"
+    },
+    {
+      "start": 28.9,
+      "end": 31.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领长袖礼服 泪眼汪汪"
+        ],
+        "action": "神情委屈地侧头看向旁处",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s010.jpg"
+    },
+    {
+      "start": 31.8,
+      "end": 35.73,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领礼服 流着泪"
+        ],
+        "action": "面露悲愤，眼泪流下面颊",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s011.jpg"
+    },
+    {
+      "start": 35.73,
+      "end": 44.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝立领长袖连衣裙 眼含泪水"
+        ],
+        "action": "眼含泪水神情悲伤地看向一侧",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s012.jpg"
+    },
+    {
+      "start": 44.37,
+      "end": 48.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝立领长袖连衣裙 眼含泪水"
+        ],
+        "action": "眼含泪水神情悲伤地看向一侧",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s013.jpg"
+    },
+    {
+      "start": 48.3,
+      "end": 50.18,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 珍珠发夹"
+        ],
+        "action": "惊讶地张嘴看向一侧",
+        "place": "酒店宴会厅",
+        "props": [
+          "白色茶杯与茶碟",
+          "花艺装饰"
+        ],
+        "scene_text": "",
+        "watermark": ""
+      },
+      "frame": "ep09_s014.jpg"
+    }
+  ]
+}

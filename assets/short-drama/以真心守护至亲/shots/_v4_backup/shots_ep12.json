@@ -1,0 +1,394 @@
+{
+  "ep": 12,
+  "file": "12.mp4",
+  "duration": 48.04,
+  "shot_count": 16,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v4",
+  "usage": {
+    "prompt_tokens": 47920,
+    "completion_tokens": 15091,
+    "total_tokens": 63011
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 4.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫卡其长裤 站在门口卷袖口"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "单手卷起衬衫袖口站在门口",
+        "place": "室内门口",
+        "props": [
+          "木质鞋架",
+          "鞋子"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep12_s000_0.jpg"
+    },
+    {
+      "start": 4.23,
+      "end": 7.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 灰黑色旧中式对襟上衣带补丁 坐姿"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "坐着手放腿上，张口说话",
+        "place": "室内门口",
+        "props": [],
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s001_0.jpg"
+    },
+    {
+      "start": 7.53,
+      "end": 13.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发戴发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "站在走廊张口说话，神情焦急",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "C",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s002_0.jpg"
+    },
+    {
+      "start": 13.0,
+      "end": 15.67,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 高马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "嘴部张开，正在说话",
+        "action": "站立，表情平静",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s003_0.jpg"
+    },
+    {
+      "start": 15.67,
+      "end": 16.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年龄感未识别 性别未识别 白色短袖上衣 双手持白色塑料文件袋"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有手臂和躯干局部，看不到嘴部",
+        "action": "从门内递出装满纸张的塑料文件袋",
+        "place": "走廊",
+        "props": [
+          "白色塑料文件袋",
+          "纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s004_0.jpg"
+    },
+    {
+      "start": 16.7,
+      "end": 17.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年龄感未识别 未识别性别 蓝色牛仔裤+白色运动鞋 画面只露出腿部以下"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有腿部和轮椅，看不见任何人的嘴",
+        "action": "数张纸从空中飘落散开",
+        "place": "室内玄关",
+        "props": [
+          "轮椅",
+          "纸张",
+          "鞋架",
+          "鞋子"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s005_0.jpg"
+    },
+    {
+      "start": 17.27,
+      "end": 22.33,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 深灰色中式盘扣上衣 坐姿 灰白头发盘髻 手握拐杖"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部可见但双唇闭合，未见张口",
+        "action": "老人坐着看向侧前方，神情严肃紧绷",
+        "place": "室内住宅",
+        "props": [
+          "拐杖"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s006_0.jpg"
+    },
+    {
+      "start": 22.33,
+      "end": 24.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 蓝色牛仔裤 高马尾白发圈 蹲姿"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位低头看资料，嘴唇闭合",
+        "action": "蹲着翻看手中蓝色文件夹与牛皮纸袋",
+        "place": "室内房间",
+        "props": [
+          "蓝色文件夹",
+          "牛皮纸档案袋",
+          "纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s007_0.jpg"
+    },
+    {
+      "start": 24.97,
+      "end": 27.5,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色长袖衬衫 黑色短发 面带笑容"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，处于说话口型",
+        "action": "站在门口面带微笑看向一侧",
+        "place": "室内门口",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s008_0.jpg"
+    },
+    {
+      "start": 27.5,
+      "end": 28.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里只有一只手，看不见嘴部",
+        "action": "用食指指向左侧",
+        "place": "金属电梯内部",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s009_0.jpg"
+    },
+    {
+      "start": 28.13,
+      "end": 32.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色长袖衬衫 短发微卷"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸嘴部张开，可见牙齿",
+        "action": "男子侧脸张嘴说话",
+        "place": "室内走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s010_0.jpg"
+    },
+    {
+      "start": 32.2,
+      "end": 37.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 浅蓝色牛仔裤 马尾辫"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "action": "女子双手放在腿前站立说话",
+        "place": "室内门口",
+        "props": [
+          "福字门贴"
+        ],
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s011_0.jpg"
+    },
+    {
+      "start": 37.17,
+      "end": 38.33,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 深色盘发 脸颊有痣 肩部裸露"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "嘴唇微闭微张，未见发音口型",
+        "action": "低头注视手中的粉色物件",
+        "place": "未识别",
+        "props": [
+          "粉色绒面镜盒状物件"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s012_0.jpg"
+    },
+    {
+      "start": 38.33,
+      "end": 41.23,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 高马尾 白色发圈"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，处于说话状态",
+        "action": "女子看向对方手中的粉色鞋开口询问",
+        "place": "室内门口",
+        "props": [
+          "粉色鞋子"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s013_0.jpg"
+    },
+    {
+      "start": 41.23,
+      "end": 43.6,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅粉色连衣裙 波浪长发戴珍珠发夹",
+          "年轻男性 白色短袖 背对镜头",
+          "青年 蓝色衣袖 只见一只手臂"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇张开正在说话",
+        "action": "女孩开口质问，手臂被旁边伸来的手抓住",
+        "place": "室内玄关",
+        "props": [
+          "粉色拖鞋",
+          "鞋架"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s014_0.jpg"
+    },
+    {
+      "start": 43.6,
+      "end": 48.04,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "年轻女性 米色短袖 高马尾",
+          "年轻女性 浅粉色上衣 背对镜头 黑发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位嘴巴微张，可见牙齿",
+        "action": "与人对话，嘴巴微张",
+        "place": "室内走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep12_s015_0.jpg"
+    }
+  ]
+}

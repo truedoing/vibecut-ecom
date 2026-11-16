@@ -1,0 +1,497 @@
+{
+  "ep": 16,
+  "drama": "以真心守护至亲",
+  "sources": {
+    "lines": "lines/lines_ep16.json",
+    "shots": "shots/shots_ep16.json",
+    "char_map": "char_map.json",
+    "shots_prompt": "sd-shot-v5"
+  },
+  "counts": {
+    "lines": 29,
+    "on_screen": 26,
+    "off_screen": 3,
+    "unknown": 0,
+    "named": 26
+  },
+  "dense_shots": [
+    {
+      "shot": "0.0-3.9",
+      "lines": 4
+    },
+    {
+      "shot": "11.77-16.8",
+      "lines": 4
+    },
+    {
+      "shot": "25.8-32.17",
+      "lines": 4
+    }
+  ],
+  "rows": [
+    {
+      "t": 0.0,
+      "text": "就算没有你",
+      "shot": [
+        0.0,
+        3.9
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 手持带印章的文件并用纸巾擦拭",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "画面左上角露出侧脸下部，嘴唇张开",
+      "cross": false
+    },
+    {
+      "t": 1.0,
+      "text": "我跟他也过不好",
+      "shot": [
+        0.0,
+        3.9
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 手持带印章的文件并用纸巾擦拭",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "画面左上角露出侧脸下部，嘴唇张开",
+      "cross": false
+    },
+    {
+      "t": 2.0,
+      "text": "我跟他也过不好 金国大学特航大第一年装",
+      "shot": [
+        0.0,
+        3.9
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 手持带印章的文件并用纸巾擦拭",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "画面左上角露出侧脸下部，嘴唇张开",
+      "cross": false
+    },
+    {
+      "t": 3.0,
+      "text": "全国大崇丝烤新大素一等装",
+      "shot": [
+        0.0,
+        3.9
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 手持带印章的文件并用纸巾擦拭",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "画面左上角露出侧脸下部，嘴唇张开",
+      "cross": true
+    },
+    {
+      "t": 5.0,
+      "text": "这是你做的项目",
+      "shot": [
+        3.9,
+        7.23
+      ],
+      "who": "老年女性 灰色旧中式棉袄 灰白发髻 眼神低垂",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位正脸可见，嘴巴微张在说话",
+      "cross": false
+    },
+    {
+      "t": 6.0,
+      "text": "耐磨涂层是做什么用的",
+      "shot": [
+        3.9,
+        7.23
+      ],
+      "who": "老年女性 灰色旧中式棉袄 灰白发髻 眼神低垂",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位正脸可见，嘴巴微张在说话",
+      "cross": true
+    },
+    {
+      "t": 9.0,
+      "text": "跟同学做的",
+      "shot": [
+        9.0,
+        11.77
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 扎马尾 白色发圈",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第2位嘴巴张开正在说话，第1位后脑勺朝镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 10.0,
+      "text": "给机器零件用",
+      "shot": [
+        9.0,
+        11.77
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 扎马尾 白色发圈",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第2位嘴巴张开正在说话，第1位后脑勺朝镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 12.0,
+      "text": "想让它少磨损",
+      "shot": [
+        11.77,
+        16.8
+      ],
+      "who": "年轻女性 白色短袖T恤 黑色高马尾 持蓝色笔记本",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴部张开正在说话",
+      "cross": false
+    },
+    {
+      "t": 13.0,
+      "text": "少停工换件",
+      "shot": [
+        11.77,
+        16.8
+      ],
+      "who": "年轻女性 白色短袖T恤 黑色高马尾 持蓝色笔记本",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴部张开正在说话",
+      "cross": false
+    },
+    {
+      "t": 15.0,
+      "text": "方案我负责",
+      "shot": [
+        11.77,
+        16.8
+      ],
+      "who": "年轻女性 白色短袖T恤 黑色高马尾 持蓝色笔记本",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴部张开正在说话",
+      "cross": false
+    },
+    {
+      "t": 16.0,
+      "text": "实验一笔笔记着",
+      "shot": [
+        11.77,
+        16.8
+      ],
+      "who": "年轻女性 白色短袖T恤 黑色高马尾 持蓝色笔记本",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴部张开正在说话",
+      "cross": true
+    },
+    {
+      "t": 18.0,
+      "text": "你这些年没少吃苦",
+      "shot": [
+        16.8,
+        19.8
+      ],
+      "who": "老年女性 灰白发 深色竖条纹中式布衫 眼眶发红面带泪痕",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 21.0,
+      "text": "当时不觉得",
+      "shot": [
+        19.8,
+        23.33
+      ],
+      "who": "年轻女性 白色圆领短袖T恤 高马尾 手持蓝色册子",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴唇微张正在说话，视线垂向册子",
+      "cross": false
+    },
+    {
+      "t": 23.0,
+      "text": "今天被他扔出来",
+      "shot": [
+        19.8,
+        23.33
+      ],
+      "who": "年轻女性 白色圆领短袖T恤 高马尾 手持蓝色册子",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴唇微张正在说话，视线垂向册子",
+      "cross": true
+    },
+    {
+      "t": 26.0,
+      "text": "我才知道",
+      "shot": [
+        25.8,
+        32.17
+      ],
+      "who": "老年女性 深灰色盘扣旧上衣 坐轮椅 持蓝色书本",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴张开说话，露出牙齿",
+      "cross": false
+    },
+    {
+      "t": 27.0,
+      "text": "他根本没把这些当回事",
+      "shot": [
+        25.8,
+        32.17
+      ],
+      "who": "老年女性 深灰色盘扣旧上衣 坐轮椅 持蓝色书本",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴张开说话，露出牙齿",
+      "cross": false
+    },
+    {
+      "t": 29.0,
+      "text": "有人会看",
+      "shot": [
+        25.8,
+        32.17
+      ],
+      "who": "老年女性 深灰色盘扣旧上衣 坐轮椅 持蓝色书本",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴张开说话，露出牙齿",
+      "cross": false
+    },
+    {
+      "t": 30.0,
+      "text": "宁宁明天去弘业试试",
+      "shot": [
+        25.8,
+        32.17
+      ],
+      "who": "老年女性 深灰色盘扣旧上衣 坐轮椅 持蓝色书本",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴张开说话，露出牙齿",
+      "cross": false
+    },
+    {
+      "t": 33.0,
+      "text": "周承他爸刚把我的推荐撤了",
+      "shot": [
+        32.17,
+        34.53
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴可见，处于微张状态但未明显发音",
+      "cross": false
+    },
+    {
+      "t": 35.0,
+      "text": "弘业不是周家开的",
+      "shot": [
+        34.53,
+        38.47
+      ],
+      "who": "老年女性 深灰色中式旧上衣 灰白盘发 坐轮椅",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第2位老人正脸可见，低头看书时嘴部张开说话",
+      "cross": false
+    },
+    {
+      "t": 36.0,
+      "text": "我以前在那做过事",
+      "shot": [
+        34.53,
+        38.47
+      ],
+      "who": "老年女性 深灰色中式旧上衣 灰白盘发 坐轮椅",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第2位老人正脸可见，低头看书时嘴部张开说话",
+      "cross": false
+    },
+    {
+      "t": 38.0,
+      "text": "能把你的材料递过去",
+      "shot": [
+        34.53,
+        38.47
+      ],
+      "who": "老年女性 深灰色中式旧上衣 灰白盘发 坐轮椅",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第2位老人正脸可见，低头看书时嘴部张开说话",
+      "cross": true
+    },
+    {
+      "t": 40.0,
+      "text": "妈别为了我去求人",
+      "shot": [
+        39.83,
+        42.83
+      ],
+      "who": "年轻女性 白色圆领T恤 高马尾配白色发圈 眼眶泛红",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位侧脸可见，嘴巴张开正在说话",
+      "cross": false
+    },
+    {
+      "t": 43.0,
+      "text": "我只是替你递材料",
+      "shot": [
+        42.83,
+        45.37
+      ],
+      "who": "老年女性 深色中式上衣 灰白头发 眼眶含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "特写",
+      "evidence": "第1位嘴巴微张，牙齿部分可见",
+      "cross": false
+    },
+    {
+      "t": 45.0,
+      "text": "SM",
+      "shot": [
+        45.37,
+        48.57
+      ],
+      "who": "老年女性 灰色盘扣棉袄 坐轮椅 灰白发髻",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴部微张，牙齿隐约可见，呈说话口型",
+      "cross": true
+    },
+    {
+      "t": 46.0,
+      "text": "不是叫你去领一份闲工资",
+      "shot": [
+        45.37,
+        48.57
+      ],
+      "who": "老年女性 灰色盘扣棉袄 坐轮椅 灰白发髻",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴部微张，牙齿隐约可见，呈说话口型",
+      "cross": false
+    },
+    {
+      "t": 49.0,
+      "text": "你的本事",
+      "shot": [
+        48.57,
+        52.92
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴闭着",
+      "cross": false
+    },
+    {
+      "t": 50.0,
+      "text": "总得有个让人看见的机会",
+      "shot": [
+        48.57,
+        52.92
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴闭着",
+      "cross": false
+    }
+  ]
+}

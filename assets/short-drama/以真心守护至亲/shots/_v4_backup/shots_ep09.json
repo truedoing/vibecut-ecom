@@ -1,0 +1,377 @@
+{
+  "ep": 9,
+  "file": "9.mp4",
+  "duration": 50.18,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v4",
+  "usage": {
+    "prompt_tokens": 44925,
+    "completion_tokens": 14884,
+    "total_tokens": 59809
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.5,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 盘发戴头纱"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "action": "新娘在婚礼现场说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep09_s000_0.jpg"
+    },
+    {
+      "start": 2.5,
+      "end": 3.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装 红色领带 拿着蓝色戒指盒"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部可见且张开",
+        "action": "手持戒指盒说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "蓝色戒指盒"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep09_s001_0.jpg"
+    },
+    {
+      "start": 3.83,
+      "end": 6.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 戴头纱 眼眶泛泪",
+          "老年女性 深色中式棉衣 坐轮椅 灰发 背景虚化"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸嘴部微张，牙齿隐约可见",
+        "action": "新娘侧脸含泪看向一旁",
+        "place": "酒店大厅",
+        "props": [
+          "轮椅",
+          "头纱"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s002_0.jpg"
+    },
+    {
+      "start": 6.3,
+      "end": 9.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色蕾丝高领婚纱 戴头纱 长卷发",
+          "年轻男性 深色西装 侧脸站立"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴巴张开发音中",
+        "action": "女子站立看着对面的男子，男子手拿戒指盒",
+        "place": "酒店宴会厅",
+        "props": [
+          "戒指盒"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s003_0.jpg"
+    },
+    {
+      "start": 9.23,
+      "end": 12.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 披白纱头纱"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未说话",
+        "action": "双手捧着戒指盒放到桌上",
+        "place": "婚礼现场",
+        "props": [
+          "红色金扣戒指盒"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s004_0.jpg"
+    },
+    {
+      "start": 12.77,
+      "end": 14.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "青年男性 黑色三件式西装白衬衫酒红领带 短发 面朝镜头",
+          "青年女性 浅色花纹上衣 只露肩部与后脑背影虚化"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴巴张开说话",
+        "action": "男子面朝镜头坐在餐桌前，神情讶异",
+        "place": "酒店宴会厅",
+        "props": [
+          "红色金边小物件",
+          "白瓷餐盘",
+          "筷子",
+          "餐桌鲜花"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s005_0.jpg"
+    },
+    {
+      "start": 14.57,
+      "end": 17.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领长袖连衣裙 长卷发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未张嘴",
+        "action": "端坐在桌前，望向前方",
+        "place": "室内宴会厅",
+        "props": [
+          "红色绒面首饰盒"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s006_0.jpg"
+    },
+    {
+      "start": 17.9,
+      "end": 20.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色三件套西装白衬衫酒红领带 坐在宴会桌前"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "action": "坐在桌前，神情凝重，手放在桌上",
+        "place": "酒店宴会厅",
+        "props": [
+          "深红色小盒"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s007_0.jpg"
+    },
+    {
+      "start": 20.93,
+      "end": 25.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 黑色领带 短背头发型"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见口腔",
+        "action": "面朝侧面方向张口说话，神情急切",
+        "place": "酒店宴会厅",
+        "props": [
+          "花艺布置"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s008_0.jpg"
+    },
+    {
+      "start": 25.7,
+      "end": 28.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领长袖连衣裙 泪眼盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位嘴巴张开说话",
+        "action": "站立着哽咽说话",
+        "place": "室内宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s009_0.jpg"
+    },
+    {
+      "start": 28.9,
+      "end": 31.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领上衣 眼含泪水"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，露出牙齿",
+        "action": "含泪凝视前方，嘴巴微张正在说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s010_0.jpg"
+    },
+    {
+      "start": 31.8,
+      "end": 35.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 黑色三件套西装 酒红领带 短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，处于说话状态",
+        "action": "坐椅子上，张嘴向旁人倾诉",
+        "place": "酒店宴会厅",
+        "props": [
+          "高脚杯",
+          "餐桌",
+          "桌花",
+          "金色座椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s011_0.jpg"
+    },
+    {
+      "start": 35.73,
+      "end": 44.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领长袖连衣裙 眼眶湿润含泪"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇张开，可见上排牙齿，处于说话状态",
+        "action": "含泪侧望，神情委屈地站着",
+        "place": "室内宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s012_0.jpg"
+    },
+    {
+      "start": 44.37,
+      "end": 48.3,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶袖连衣裙 长卷发戴珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "表情焦虑急切，向画外之人开口劝阻",
+        "place": "酒店宴会厅",
+        "props": [
+          "酒杯",
+          "餐盘",
+          "花束"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s013_0.jpg"
+    },
+    {
+      "start": 48.3,
+      "end": 50.18,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝高领连衣裙 长卷发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位嘴张开，可见牙齿，处于说话状态",
+        "action": "望向侧前方，神情凝重",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep09_s014_0.jpg"
+    }
+  ]
+}

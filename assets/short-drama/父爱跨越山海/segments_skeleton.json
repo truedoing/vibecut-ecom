@@ -1,0 +1,1604 @@
+{
+  "generated_by": "segment.py",
+  "gap_limit": 4.5,
+  "min_len": 8.0,
+  "max_len": 26.0,
+  "lines_ref": {
+    "dir": "lines/",
+    "pattern": "lines_epNN.json",
+    "note": "台词文字只存在 lines/lines_epNN.json；本文件只存时间码 line_times，不复制文字",
+    "since": "2026-11-10"
+  },
+  "episodes": {
+    "1": {
+      "duration": 93.34,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 1.0,
+          "end": 23.7,
+          "duration": 22.7,
+          "line_times": [
+            2.0,
+            3.0,
+            6.0,
+            7.0,
+            8.0,
+            10.0,
+            11.0,
+            13.0,
+            14.0,
+            15.0,
+            16.0,
+            17.0,
+            19.0,
+            20.0,
+            21.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 23.7,
+          "end": 35.7,
+          "duration": 12.0,
+          "line_times": [
+            24.0,
+            25.0,
+            26.0,
+            27.0,
+            30.0,
+            31.0,
+            35.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 35.7,
+          "end": 48.7,
+          "duration": 13.0,
+          "line_times": [
+            36.0,
+            37.0,
+            39.0,
+            41.0,
+            42.0,
+            44.0,
+            45.0,
+            47.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 48.7,
+          "end": 68.7,
+          "duration": 20.0,
+          "line_times": [
+            49.0,
+            50.0,
+            52.0,
+            54.0,
+            55.0,
+            56.0,
+            57.0,
+            60.0,
+            61.0,
+            62.0,
+            63.0,
+            64.0,
+            65.0,
+            66.0,
+            67.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 68.7,
+          "end": 78.7,
+          "duration": 10.0,
+          "line_times": [
+            69.0,
+            70.0,
+            72.0,
+            73.0,
+            75.0,
+            76.0,
+            77.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p06",
+          "start": 78.7,
+          "end": 93.3,
+          "duration": 14.6,
+          "line_times": [
+            79.0,
+            81.0,
+            82.0,
+            83.0,
+            84.0,
+            87.0,
+            88.0,
+            91.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "2": {
+      "duration": 97.73,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 1.0,
+          "end": 24.7,
+          "duration": 23.7,
+          "line_times": [
+            2.0,
+            4.0,
+            5.0,
+            6.0,
+            8.0,
+            9.0,
+            10.0,
+            12.0,
+            16.0,
+            17.0,
+            19.0,
+            21.0,
+            22.0,
+            23.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 24.7,
+          "end": 37.7,
+          "duration": 13.0,
+          "line_times": [
+            25.0,
+            26.0,
+            28.0,
+            30.0,
+            32.0,
+            33.0,
+            37.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 37.7,
+          "end": 47.7,
+          "duration": 10.0,
+          "line_times": [
+            38.0,
+            40.0,
+            41.0,
+            43.0,
+            44.0,
+            45.0,
+            47.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 47.7,
+          "end": 70.7,
+          "duration": 23.0,
+          "line_times": [
+            48.0,
+            49.0,
+            50.0,
+            53.0,
+            54.0,
+            57.0,
+            58.0,
+            60.0,
+            61.0,
+            63.0,
+            64.0,
+            67.0,
+            68.0,
+            69.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 70.7,
+          "end": 82.7,
+          "duration": 12.0,
+          "line_times": [
+            71.0,
+            72.0,
+            74.0,
+            75.0,
+            77.0,
+            80.0,
+            81.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p06",
+          "start": 82.7,
+          "end": 97.7,
+          "duration": 15.0,
+          "line_times": [
+            83.0,
+            84.0,
+            86.0,
+            88.0,
+            89.0,
+            91.0,
+            94.0,
+            97.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "3": {
+      "duration": 86.05,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 4.0,
+          "end": 25.7,
+          "duration": 21.7,
+          "line_times": [
+            5.0,
+            6.0,
+            8.0,
+            9.0,
+            11.0,
+            13.0,
+            14.0,
+            16.0,
+            17.0,
+            19.0,
+            20.0,
+            21.0,
+            23.0,
+            24.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 25.7,
+          "end": 41.7,
+          "duration": 16.0,
+          "line_times": [
+            26.0,
+            30.0,
+            31.0,
+            32.0,
+            33.0,
+            37.0,
+            41.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 41.7,
+          "end": 56.7,
+          "duration": 15.0,
+          "line_times": [
+            42.0,
+            43.0,
+            45.0,
+            46.0,
+            47.0,
+            51.0,
+            52.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 57.0,
+          "end": 70.7,
+          "duration": 13.7,
+          "line_times": [
+            58.0,
+            59.0,
+            61.0,
+            62.0,
+            63.0,
+            64.0,
+            66.0,
+            67.0,
+            69.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 70.7,
+          "end": 86.0,
+          "duration": 15.3,
+          "line_times": [
+            71.0,
+            73.0,
+            74.0,
+            77.0,
+            78.0,
+            79.0,
+            80.0,
+            82.0,
+            84.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "4": {
+      "duration": 95.64,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 10.7,
+          "duration": 10.7,
+          "line_times": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            7.0,
+            9.0,
+            10.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 10.7,
+          "end": 24.7,
+          "duration": 14.0,
+          "line_times": [
+            11.0,
+            13.0,
+            14.0,
+            18.0,
+            20.0,
+            21.0,
+            23.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 24.7,
+          "end": 34.7,
+          "duration": 10.0,
+          "line_times": [
+            25.0,
+            27.0,
+            28.0,
+            30.0,
+            31.0,
+            33.0,
+            34.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 34.7,
+          "end": 54.7,
+          "duration": 20.0,
+          "line_times": [
+            35.0,
+            37.0,
+            39.0,
+            40.0,
+            44.0,
+            46.0,
+            48.0,
+            50.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 57.0,
+          "end": 73.7,
+          "duration": 16.7,
+          "line_times": [
+            58.0,
+            60.0,
+            63.0,
+            64.0,
+            66.0,
+            67.0,
+            69.0,
+            71.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p06",
+          "start": 73.7,
+          "end": 92.7,
+          "duration": 19.0,
+          "line_times": [
+            74.0,
+            76.0,
+            77.0,
+            80.0,
+            81.0,
+            83.0,
+            84.0,
+            86.0,
+            88.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p07",
+          "start": 92.7,
+          "end": 95.6,
+          "duration": 2.9,
+          "line_times": [
+            93.0,
+            94.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "5": {
+      "duration": 68.99,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 2.0,
+          "end": 17.7,
+          "duration": 15.7,
+          "line_times": [
+            3.0,
+            4.0,
+            7.0,
+            9.0,
+            10.0,
+            12.0,
+            14.0,
+            15.0,
+            16.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 17.7,
+          "end": 33.7,
+          "duration": 16.0,
+          "line_times": [
+            18.0,
+            19.0,
+            21.0,
+            22.0,
+            23.0,
+            24.0,
+            26.0,
+            27.0,
+            29.0,
+            33.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 33.7,
+          "end": 49.7,
+          "duration": 16.0,
+          "line_times": [
+            34.0,
+            35.0,
+            36.0,
+            37.0,
+            39.0,
+            41.0,
+            44.0,
+            46.0,
+            47.0,
+            49.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 49.7,
+          "end": 69.0,
+          "duration": 19.3,
+          "line_times": [
+            50.0,
+            54.0,
+            56.0,
+            57.0,
+            58.0,
+            60.0,
+            63.0,
+            64.0,
+            67.0,
+            68.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "6": {
+      "duration": 76.23,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 2.0,
+          "end": 24.7,
+          "duration": 22.7,
+          "line_times": [
+            3.0,
+            6.0,
+            7.0,
+            10.0,
+            11.0,
+            12.0,
+            14.0,
+            15.0,
+            19.0,
+            20.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 27.0,
+          "end": 46.7,
+          "duration": 19.7,
+          "line_times": [
+            28.0,
+            32.0,
+            34.0,
+            38.0,
+            40.0,
+            42.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 46.7,
+          "end": 65.7,
+          "duration": 19.0,
+          "line_times": [
+            47.0,
+            49.0,
+            53.0,
+            54.0,
+            56.0,
+            58.0,
+            59.0,
+            61.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 68.0,
+          "end": 76.2,
+          "duration": 8.2,
+          "line_times": [
+            69.0,
+            70.0,
+            71.0,
+            75.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "7": {
+      "duration": 58.84,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 23.7,
+          "duration": 23.7,
+          "line_times": [
+            0.0,
+            2.0,
+            4.0,
+            5.0,
+            7.0,
+            8.0,
+            10.0,
+            14.0,
+            16.0,
+            18.0,
+            19.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 24.0,
+          "end": 31.7,
+          "duration": 7.7,
+          "line_times": [
+            25.0,
+            27.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 32.0,
+          "end": 40.7,
+          "duration": 8.7,
+          "line_times": [
+            33.0,
+            34.0,
+            35.0,
+            36.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 41.0,
+          "end": 46.7,
+          "duration": 5.7,
+          "line_times": [
+            42.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 47.0,
+          "end": 55.7,
+          "duration": 8.7,
+          "line_times": [
+            48.0,
+            51.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p06",
+          "start": 57.0,
+          "end": 58.8,
+          "duration": 1.8,
+          "line_times": [
+            58.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "8": {
+      "duration": 66.99,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 2.0,
+          "end": 21.7,
+          "duration": 19.7,
+          "line_times": [
+            3.0,
+            5.0,
+            7.0,
+            8.0,
+            10.0,
+            11.0,
+            12.0,
+            14.0,
+            17.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 24.0,
+          "end": 29.7,
+          "duration": 5.7,
+          "line_times": [
+            25.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 30.0,
+          "end": 35.7,
+          "duration": 5.7,
+          "line_times": [
+            31.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 35.7,
+          "end": 51.7,
+          "duration": 16.0,
+          "line_times": [
+            36.0,
+            38.0,
+            41.0,
+            42.0,
+            44.0,
+            45.0,
+            47.0,
+            49.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 51.7,
+          "end": 67.0,
+          "duration": 15.3,
+          "line_times": [
+            52.0,
+            54.0,
+            55.0,
+            56.0,
+            58.0,
+            59.0,
+            60.0,
+            64.0,
+            65.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "9": {
+      "duration": 70.61,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 18.7,
+          "duration": 18.7,
+          "line_times": [
+            1.0,
+            3.0,
+            5.0,
+            7.0,
+            10.0,
+            12.0,
+            13.0,
+            15.0,
+            16.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 18.7,
+          "end": 36.7,
+          "duration": 18.0,
+          "line_times": [
+            19.0,
+            21.0,
+            22.0,
+            24.0,
+            25.0,
+            27.0,
+            29.0,
+            30.0,
+            32.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 37.0,
+          "end": 54.7,
+          "duration": 17.7,
+          "line_times": [
+            38.0,
+            40.0,
+            42.0,
+            43.0,
+            45.0,
+            48.0,
+            50.0,
+            52.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 54.7,
+          "end": 70.6,
+          "duration": 15.9,
+          "line_times": [
+            55.0,
+            57.0,
+            58.0,
+            59.0,
+            62.0,
+            64.0,
+            66.0,
+            68.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "10": {
+      "duration": 63.07,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 12.7,
+          "duration": 12.7,
+          "line_times": [
+            0.0,
+            3.0,
+            5.0,
+            7.0,
+            9.0,
+            11.0,
+            12.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 12.7,
+          "end": 26.7,
+          "duration": 14.0,
+          "line_times": [
+            13.0,
+            14.0,
+            17.0,
+            20.0,
+            22.0,
+            24.0,
+            25.0,
+            26.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 26.7,
+          "end": 39.7,
+          "duration": 13.0,
+          "line_times": [
+            27.0,
+            29.0,
+            30.0,
+            32.0,
+            35.0,
+            36.0,
+            38.0,
+            39.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 39.7,
+          "end": 56.7,
+          "duration": 17.0,
+          "line_times": [
+            40.0,
+            41.0,
+            43.0,
+            45.0,
+            48.0,
+            49.0,
+            51.0,
+            52.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 56.7,
+          "end": 63.1,
+          "duration": 6.4,
+          "line_times": [
+            57.0,
+            58.0,
+            60.0,
+            62.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "11": {
+      "duration": 76.65,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 14.7,
+          "duration": 14.7,
+          "line_times": [
+            1.0,
+            3.0,
+            4.0,
+            7.0,
+            9.0,
+            11.0,
+            12.0,
+            13.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 14.7,
+          "end": 29.7,
+          "duration": 15.0,
+          "line_times": [
+            15.0,
+            16.0,
+            18.0,
+            20.0,
+            21.0,
+            23.0,
+            24.0,
+            25.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 34.0,
+          "end": 55.7,
+          "duration": 21.7,
+          "line_times": [
+            35.0,
+            36.0,
+            39.0,
+            40.0,
+            42.0,
+            43.0,
+            45.0,
+            47.0,
+            49.0,
+            51.0,
+            53.0,
+            55.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 55.7,
+          "end": 76.7,
+          "duration": 21.0,
+          "line_times": [
+            56.0,
+            57.0,
+            59.0,
+            62.0,
+            63.0,
+            64.0,
+            66.0,
+            68.0,
+            69.0,
+            71.0,
+            73.0,
+            75.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "12": {
+      "duration": 64.34,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 9.0,
+          "end": 23.7,
+          "duration": 14.7,
+          "line_times": [
+            10.0,
+            11.0,
+            12.0,
+            14.0,
+            15.0,
+            18.0,
+            19.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 24.0,
+          "end": 39.7,
+          "duration": 15.7,
+          "line_times": [
+            25.0,
+            26.0,
+            28.0,
+            29.0,
+            32.0,
+            33.0,
+            35.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 39.7,
+          "end": 54.7,
+          "duration": 15.0,
+          "line_times": [
+            40.0,
+            41.0,
+            42.0,
+            45.0,
+            46.0,
+            48.0,
+            49.0,
+            50.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 54.7,
+          "end": 64.3,
+          "duration": 9.6,
+          "line_times": [
+            55.0,
+            57.0,
+            60.0,
+            62.0,
+            63.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "13": {
+      "duration": 68.01,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 3.0,
+          "end": 14.7,
+          "duration": 11.7,
+          "line_times": [
+            4.0,
+            6.0,
+            7.0,
+            10.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 14.7,
+          "end": 27.7,
+          "duration": 13.0,
+          "line_times": [
+            15.0,
+            16.0,
+            18.0,
+            19.0,
+            20.0,
+            21.0,
+            23.0,
+            24.0,
+            25.0,
+            27.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 27.7,
+          "end": 44.7,
+          "duration": 17.0,
+          "line_times": [
+            28.0,
+            30.0,
+            31.0,
+            32.0,
+            33.0,
+            35.0,
+            36.0,
+            37.0,
+            38.0,
+            39.0,
+            40.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 57.0,
+          "end": 68.0,
+          "duration": 11.0,
+          "line_times": [
+            58.0,
+            60.0,
+            61.0,
+            63.0,
+            65.0,
+            67.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "14": {
+      "duration": 74.95,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 12.7,
+          "duration": 12.7,
+          "line_times": [
+            1.0,
+            3.0,
+            5.0,
+            6.0,
+            8.0,
+            9.0,
+            11.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 12.7,
+          "end": 27.7,
+          "duration": 15.0,
+          "line_times": [
+            13.0,
+            14.0,
+            15.0,
+            18.0,
+            22.0,
+            24.0,
+            25.0,
+            26.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 27.7,
+          "end": 38.7,
+          "duration": 11.0,
+          "line_times": [
+            28.0,
+            29.0,
+            32.0,
+            34.0,
+            35.0,
+            36.0,
+            38.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 38.7,
+          "end": 59.7,
+          "duration": 21.0,
+          "line_times": [
+            39.0,
+            41.0,
+            43.0,
+            47.0,
+            48.0,
+            51.0,
+            53.0,
+            55.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p05",
+          "start": 63.0,
+          "end": 75.0,
+          "duration": 12.0,
+          "line_times": [
+            64.0,
+            67.0,
+            69.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "15": {
+      "duration": 64.74,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 17.7,
+          "duration": 17.7,
+          "line_times": [
+            0.0,
+            3.0,
+            5.0,
+            6.0,
+            9.0,
+            10.0,
+            11.0,
+            14.0,
+            16.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 17.7,
+          "end": 32.7,
+          "duration": 15.0,
+          "line_times": [
+            18.0,
+            20.0,
+            21.0,
+            22.0,
+            24.0,
+            26.0,
+            27.0,
+            30.0,
+            32.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 32.7,
+          "end": 45.7,
+          "duration": 13.0,
+          "line_times": [
+            33.0,
+            35.0,
+            36.0,
+            37.0,
+            38.0,
+            40.0,
+            41.0,
+            43.0,
+            45.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 45.7,
+          "end": 64.7,
+          "duration": 19.0,
+          "line_times": [
+            46.0,
+            47.0,
+            48.0,
+            49.0,
+            53.0,
+            54.0,
+            57.0,
+            58.0,
+            60.0,
+            63.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "16": {
+      "duration": 54.89,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 4.0,
+          "end": 13.7,
+          "duration": 9.7,
+          "line_times": [
+            5.0,
+            6.0,
+            7.0,
+            9.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p02",
+          "start": 13.7,
+          "end": 30.7,
+          "duration": 17.0,
+          "line_times": [
+            14.0,
+            15.0,
+            17.0,
+            20.0,
+            21.0,
+            22.0,
+            26.0,
+            27.0,
+            30.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 30.7,
+          "end": 49.7,
+          "duration": 19.0,
+          "line_times": [
+            31.0,
+            33.0,
+            35.0,
+            37.0,
+            38.0,
+            39.0,
+            40.0,
+            42.0,
+            44.0,
+            45.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p04",
+          "start": 51.0,
+          "end": 54.9,
+          "duration": 3.9,
+          "line_times": [
+            52.0,
+            53.0,
+            54.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "17": {
+      "duration": 48.79,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 16.7,
+          "duration": 16.7,
+          "line_times": [
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            5.0,
+            7.0,
+            9.0,
+            11.0,
+            12.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 16.7,
+          "end": 32.7,
+          "duration": 16.0,
+          "line_times": [
+            17.0,
+            18.0,
+            21.0,
+            24.0,
+            27.0,
+            29.0,
+            30.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 32.7,
+          "end": 48.8,
+          "duration": 16.1,
+          "line_times": [
+            33.0,
+            36.0,
+            37.0,
+            40.0,
+            43.0,
+            44.0,
+            45.0,
+            47.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    },
+    "18": {
+      "duration": 53.29,
+      "segments": [
+        {
+          "id": "p01",
+          "start": 0.0,
+          "end": 7.7,
+          "duration": 7.7,
+          "line_times": [
+            0.0,
+            1.0,
+            3.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "head_from_zero": true
+        },
+        {
+          "id": "p02",
+          "start": 14.0,
+          "end": 35.7,
+          "duration": 21.7,
+          "line_times": [
+            15.0,
+            16.0,
+            18.0,
+            19.0,
+            20.0,
+            22.0,
+            23.0,
+            25.0,
+            27.0,
+            30.0,
+            31.0,
+            33.0,
+            34.0
+          ],
+          "speakers": null,
+          "speakers_pending": true
+        },
+        {
+          "id": "p03",
+          "start": 35.7,
+          "end": 53.3,
+          "duration": 17.6,
+          "line_times": [
+            36.0,
+            38.0,
+            39.0,
+            40.0,
+            41.0,
+            43.0,
+            44.0,
+            45.0,
+            46.0,
+            47.0,
+            48.0,
+            49.0,
+            52.0
+          ],
+          "speakers": null,
+          "speakers_pending": true,
+          "tail_to_end": true
+        }
+      ]
+    }
+  }
+}

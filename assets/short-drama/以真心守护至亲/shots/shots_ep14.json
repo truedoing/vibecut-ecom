@@ -4,11 +4,11 @@
   "duration": 49.2,
   "shot_count": 15,
   "scene_threshold": 0.25,
-  "prompt_version": "sd-shot-v1",
+  "prompt_version": "sd-shot-v5",
   "usage": {
-    "prompt_tokens": 12135,
-    "completion_tokens": 4872,
-    "total_tokens": 17007
+    "prompt_tokens": 48435,
+    "completion_tokens": 21905,
+    "total_tokens": 70340
   },
   "shots": [
     {
@@ -18,32 +18,48 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 浅棕色夹克 内搭灰色T恤 短灰发 伸手指向前方"
+          "中年男性 浅棕色衬衫外套灰色T恤 短发花白 伸手指向镜头"
         ],
-        "action": "中年男性伸手指向前方，表情激动",
-        "place": "走廊",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，露出牙齿，像在说话",
+        "emotion": "愤怒",
+        "intensity": "强",
+        "action": "伸手指向镜头质问",
+        "place": "电梯间",
         "props": [],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
       },
-      "frame": "ep14_s000.jpg"
+      "frame": "ep14_s000_0.jpg"
     },
     {
       "start": 2.67,
       "end": 4.7,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "中年男性 浅棕色夹克 内搭灰色T恤 短灰发 伸手指向前方"
+          "年轻男性 浅蓝色长袖衬衫 棕色长裤 皱眉 双拳紧握"
         ],
-        "action": "中年男性伸手指向前方，表情激动",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，口腔可见",
+        "emotion": "愤怒",
+        "intensity": "强",
+        "action": "双拳紧握，开口质问对方",
         "place": "走廊",
-        "props": [],
-        "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "props": [
+          "消火栓箱"
+        ],
+        "scene_text": "消火栓",
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s001.jpg"
+      "frame": "ep14_s001_0.jpg"
     },
     {
       "start": 4.7,
@@ -52,15 +68,22 @@
         "shot_size": "中景",
         "people": 1,
         "who": [
-          "年轻男性 浅蓝色衬衫 衬衫带污渍 深棕色裤子 握拳站立"
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发佩戴珍珠发夹"
         ],
-        "action": "年轻男性握拳站立，表情严肃",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，嘴部清晰可见",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "侧头微张嘴向旁人讲话",
         "place": "走廊",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s002.jpg"
+      "frame": "ep14_s002_0.jpg"
     },
     {
       "start": 8.07,
@@ -69,52 +92,76 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 粉色连衣裙 长卷发 戴白色发夹"
+          "年轻女性 白色圆领T恤 高丸子头"
         ],
-        "action": "年轻女性惊讶张嘴，正在说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张呈说话状",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正面站立看向镜头",
         "place": "室内门口",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s003.jpg"
+      "frame": "ep14_s003_0.jpg"
     },
     {
       "start": 13.03,
       "end": 14.7,
       "tag": {
-        "shot_size": "特写",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "年轻女性 白色短袖T恤 头发扎起"
+          "老年女性 深色旧盘扣棉袄 坐轮椅 头发花白挽髻"
         ],
-        "action": "年轻女性表情错愕，张嘴说话",
-        "place": "室内门口",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部可见，双唇闭合，嘴角略微下垂",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "坐轮椅上双手握着塑料袋低头看",
+        "place": "室内民居",
+        "props": [
+          "塑料密封袋",
+          "轮椅",
+          "木鞋架"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s004.jpg"
+      "frame": "ep14_s004_0.jpg"
     },
     {
       "start": 14.7,
       "end": 17.07,
       "tag": {
-        "shot_size": "中景",
+        "shot_size": "近景",
         "people": 1,
         "who": [
-          "老年女性 深色盘扣棉服 坐轮椅 灰白盘发"
+          "年轻女性 白色圆领T恤 高马尾 泪流满面"
         ],
-        "action": "老年女性坐轮椅，手持透明密封袋",
-        "place": "室内房间",
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴巴微张，未见明确说话口型",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "低头看手中纸张流泪",
+        "place": "室内门口",
         "props": [
-          "轮椅",
-          "透明密封袋"
+          "纸张"
         ],
-        "scene_text": "",
-        "watermark": ""
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s005.jpg"
+      "frame": "ep14_s005_0.jpg"
     },
     {
       "start": 17.07,
@@ -123,70 +170,100 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "老年女性 深色盘扣立领上衣 灰白短发"
+          "老年女性 灰白发挽髻 深蓝色盘扣中式上衣"
         ],
-        "action": "正开口说话，神情难过",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪张口说话",
         "place": "未识别",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s006.jpg"
+      "frame": "ep14_s006_0.jpg"
     },
     {
       "start": 22.1,
       "end": 25.63,
       "tag": {
-        "shot_size": "近景",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 2,
         "who": [
-          "老年女性 深色盘扣立领上衣 灰白短发"
+          "年轻女性 白色T恤 蓝色牛仔裤 高马尾 白色运动鞋",
+          "中年男性 卡其色外套 灰色内搭 深色长裤 棕色皮鞋 手持文件"
         ],
-        "action": "正开口说话，神情难过",
-        "place": "未识别",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位（中年男性）嘴巴张开",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男性手持文件对女性说话",
+        "place": "室内卧室",
+        "props": [
+          "行李箱",
+          "文件"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s007.jpg"
+      "frame": "ep14_s007_0.jpg"
     },
     {
       "start": 25.63,
       "end": 28.3,
       "tag": {
-        "shot_size": "中景",
-        "people": 2,
+        "shot_size": "近景",
+        "people": 1,
         "who": [
-          "中年男性 卡其色夹克内搭灰色上衣 手持纸张",
-          "年轻女性 白色短袖牛仔裤 高马尾"
+          "中年男性 卡其色外套 灰色内搭 短发"
         ],
-        "action": "男性手持纸张与女性交谈",
-        "place": "室内卧室",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在室内开口说话",
+        "place": "室内房间",
         "props": [
-          "行李箱",
-          "纸张"
+          "带滚轮的行李箱"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s008.jpg"
+      "frame": "ep14_s008_0.jpg"
     },
     {
       "start": 28.3,
       "end": 31.3,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "中年男性 卡其色夹克内搭灰色上衣 短发"
+          "年轻女性 白色短袖T恤 高马尾白色发圈"
         ],
-        "action": "正开口说话",
-        "place": "未识别",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "平静",
+        "intensity": "中",
+        "action": "正在说话陈述观点",
+        "place": "室内客厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s009.jpg"
+      "frame": "ep14_s009_0.jpg"
     },
     {
       "start": 31.3,
@@ -195,96 +272,132 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色短袖牛仔裤 高马尾"
+          "中年男性 棕色夹克内搭灰色上衣 短发略带灰白"
         ],
-        "action": "站立倾听，神情惊讶",
-        "place": "室内书房",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "嘴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立看向镜头方向，表情平静",
+        "place": "室内房间",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s010.jpg"
+      "frame": "ep14_s010_0.jpg"
     },
     {
       "start": 36.17,
       "end": 40.7,
       "tag": {
-        "shot_size": "特写",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 2,
         "who": [
-          "中年男性 卡其色夹克内搭灰色上衣 短发"
+          "年轻女性 粉色荷叶边连衣裙 长卷发 手拿白色手提包",
+          "年轻男性 浅蓝色衬衫 卡其色长裤 短发"
         ],
-        "action": "正开口说话",
-        "place": "未识别",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴巴张开正在说话，第2位男性嘴巴微张",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "两人站立，女性开口说话神情焦急",
+        "place": "室内房间",
+        "props": [
+          "白色手提包",
+          "镜子",
+          "书架"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s011.jpg"
+      "frame": "ep14_s011_0.jpg"
     },
     {
       "start": 40.7,
       "end": 42.53,
       "tag": {
-        "shot_size": "近景",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "年轻女性 白色T恤 蓝色牛仔裤 高马尾带白色发圈"
+          "年轻女性 白色短袖T恤牛仔裤 半扎马尾白色发圈"
         ],
-        "action": "张嘴说话，看向画面右侧",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇张开，可见口腔",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站着对画面外的人说话",
         "place": "室内书房",
         "props": [
-          "木质书架",
-          "书本",
-          "书桌"
+          "书架",
+          "书桌",
+          "书"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s012.jpg"
+      "frame": "ep14_s012_0.jpg"
     },
     {
       "start": 42.53,
       "end": 46.37,
       "tag": {
-        "shot_size": "近景",
-        "people": 1,
+        "shot_size": "中景",
+        "people": 2,
         "who": [
-          "年轻女性 白色T恤 蓝色牛仔裤 高马尾带白色发圈"
+          "年轻女性 粉色荷叶边连衣裙 长发配珍珠发夹 手拿米色手包",
+          "年轻男性 浅蓝色衬衫 卡其色长裤"
         ],
-        "action": "张嘴说话，看向画面右侧",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位男性嘴巴张开，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "两人站立，男性开口说话",
         "place": "室内书房",
         "props": [
-          "木质书架",
-          "书本",
-          "书桌"
+          "米色手包"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s013.jpg"
+      "frame": "ep14_s013_0.jpg"
     },
     {
       "start": 46.37,
       "end": 49.2,
       "tag": {
-        "shot_size": "中景",
-        "people": 2,
-        "who": [
-          "年轻女性 粉色连衣裙 手持白色小包 长发配珍珠发夹",
-          "年轻男性 浅蓝色衬衫 卡其色长裤 短发"
-        ],
-        "action": "两人站立，男性张嘴说话",
-        "place": "室内客厅",
+        "shot_size": "近景",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里没有人，看不见嘴部",
+        "emotion": "无",
+        "intensity": "",
+        "action": "窗台绿植静置于夜景窗前",
+        "place": "室内卧室",
         "props": [
-          "墙面镜子",
-          "木质书架",
-          "书本"
+          "绿植",
+          "百叶窗",
+          "床"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep14_s014.jpg"
+      "frame": "ep14_s014_0.jpg"
     }
   ]
 }

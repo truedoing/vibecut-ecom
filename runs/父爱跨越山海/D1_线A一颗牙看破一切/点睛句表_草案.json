@@ -1,0 +1,118 @@
+{
+ "_说明": "文案层产物，只描述哪句该上屏、在第几秒；不进剪辑清单，不改段序段长。",
+ "_来源": {
+  "金句库": "packs/short-drama/父爱跨越山海/drama-pack.json → elements.golden_quotes",
+  "清单": "runs/父爱跨越山海/D1_线A一颗牙看破一切/plan.json（rev 3）"
+ },
+ "_对齐规矩": "金句集号与段集号相同、且时间点落在该段入出点之内，才算命中；命中后按成片时间轴换算。",
+ "_边界": "点睛句只能由选段结果推出，不能反过来影响选段；不为凑一句漂亮字幕多选一段戏。",
+ "_状态": "草案。还没生成 ASS、没烧进成片——等张老师判完内容再打，因为改选段会让时间轴全部作废。",
+ "统计": {
+  "金句库总数": 10,
+  "命中": 8,
+  "计划上屏": 6,
+  "成片总时长": 178.95
+ },
+ "开场": {
+  "text": "你牙呢",
+  "at": 1.5,
+  "fx": "pop",
+  "来源": "金句 gq_001，原片台词同时出现在画面上，位置要和原剧字幕错开"
+ },
+ "收尾": {
+  "text": "往下看，账还没算完",
+  "at": 175.7,
+  "fx": "type",
+  "来源": "收尾卡副标题"
+ },
+ "点睛句": [
+  {
+   "id": "gq_001",
+   "ep": 1,
+   "t_in_ep": 36,
+   "quote": "你牙呢",
+   "note": "三个字定全剧",
+   "seg": "S00_钩子_你牙呢",
+   "at_in_trailer": 1.5,
+   "matched": true,
+   "on_screen": true
+  },
+  {
+   "id": "gq_002",
+   "ep": 1,
+   "t_in_ep": 76,
+   "quote": "我心里彻底凉了",
+   "note": "父亲第一句实话",
+   "seg": "S03_一个啊字",
+   "at_in_trailer": 38.25,
+   "matched": true,
+   "on_screen": false
+  },
+  {
+   "id": "gq_003",
+   "ep": 4,
+   "t_in_ep": 34,
+   "quote": "不止一个",
+   "note": "四个字把格局打开",
+   "seg": "S05_铁皮屋不止一个",
+   "at_in_trailer": 50.0,
+   "matched": true,
+   "on_screen": true
+  },
+  {
+   "id": "gq_005",
+   "ep": 9,
+   "t_in_ep": 29,
+   "quote": "我全带走",
+   "note": "父亲的承诺",
+   "seg": "S11_我全带走",
+   "at_in_trailer": 105.88,
+   "matched": true,
+   "on_screen": true
+  },
+  {
+   "id": "gq_006",
+   "ep": 13,
+   "t_in_ep": 20,
+   "quote": "他们收了我护照",
+   "note": "受害者第一句当众陈述",
+   "seg": "S12_他们收了我护照",
+   "at_in_trailer": 114.13,
+   "matched": true,
+   "on_screen": false
+  },
+  {
+   "id": "gq_007",
+   "ep": 14,
+   "t_in_ep": 43,
+   "quote": "却差点没护住自己的闺女",
+   "note": "全片情绪最高点",
+   "seg": "S14_却差点没护住闺女",
+   "at_in_trailer": 130.02,
+   "matched": true,
+   "on_screen": true
+  },
+  {
+   "id": "gq_009",
+   "ep": 17,
+   "t_in_ep": 30,
+   "quote": "2万人正在看",
+   "note": "翻盘的一句",
+   "seg": "S16_2万人正在看",
+   "at_in_trailer": 144.67,
+   "matched": true,
+   "on_screen": true
+  },
+  {
+   "id": "gq_010",
+   "ep": 18,
+   "t_in_ep": 23,
+   "quote": "自愿打工要扣护照吗",
+   "note": "最整齐的一问",
+   "seg": "S17_自愿打工要扣护照吗",
+   "at_in_trailer": 156.07,
+   "matched": true,
+   "on_screen": true
+  }
+ ]
+}

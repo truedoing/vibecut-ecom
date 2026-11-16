@@ -1,0 +1,360 @@
+{
+  "ep": 8,
+  "file": "8.mp4",
+  "duration": 51.04,
+  "shot_count": 14,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v4",
+  "usage": {
+    "prompt_tokens": 41930,
+    "completion_tokens": 17245,
+    "total_tokens": 59175
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧中式上衣 坐轮椅",
+          "年轻女性 白色连衣裙 背对镜头（部分可见）"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微微张开，可见牙齿",
+        "action": "坐轮椅与人对话",
+        "place": "豪宅入口或室内大厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep08_s000_0.jpg"
+    },
+    {
+      "start": 2.57,
+      "end": 5.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧中式棉袄 坐轮椅 眼眶含泪"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，口腔可见",
+        "action": "坐着，面露悲伤地说话",
+        "place": "老式屋内（木质门旁）",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s001_0.jpg"
+    },
+    {
+      "start": 5.6,
+      "end": 8.53,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 黑色三件套西装 酒红色领带 发型后梳",
+          "年轻女性 白色蕾丝婚纱 头纱 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴巴张开，第2位背对镜头看不见嘴",
+        "action": "男性对面前的女性说话质问",
+        "place": "酒店宴会厅",
+        "props": [
+          "红酒杯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s002_0.jpg"
+    },
+    {
+      "start": 8.53,
+      "end": 10.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色蕾丝婚纱 带头纱"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面未显示嘴部",
+        "action": "站立",
+        "place": "室内婚礼场景",
+        "props": [
+          "头纱"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s003_0.jpg"
+    },
+    {
+      "start": 10.87,
+      "end": 15.33,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发配珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见牙齿",
+        "action": "面露焦急表情张口说话",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s004_0.jpg"
+    },
+    {
+      "start": 15.33,
+      "end": 20.93,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "老年女性 深色旧中式棉袄 坐轮椅 灰白发髻",
+          "年轻女性 白色高领蕾丝婚纱 头纱 披肩发",
+          "年轻女性 粉色连衣裙 长发戴珍珠发卡"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位新娘嘴唇微张，可见口型处于发音状态",
+        "action": "老人坐轮椅抬头望，新娘扶着轮椅说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s005_0.jpg"
+    },
+    {
+      "start": 20.93,
+      "end": 24.87,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色婚纱 手持黑伞柄 推轮椅",
+          "老年女性 深色中式上衣 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第一位嘴巴微张正在说话",
+        "action": "年轻女性推轮椅 老年女性坐着",
+        "place": "酒店宴会厅",
+        "props": [
+          "轮椅",
+          "黑伞柄"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s006_0.jpg"
+    },
+    {
+      "start": 24.87,
+      "end": 31.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发戴珍珠发夹",
+          "未识别年龄女性 米白蕾丝长袖连衣裙 背对镜头盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴唇微张可见牙齿，正在说话",
+        "action": "站着朝面前背对镜头的人说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "餐桌餐盘",
+          "高脚红酒杯",
+          "红色桌布",
+          "花束"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s007_0.jpg"
+    },
+    {
+      "start": 31.8,
+      "end": 37.27,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧中式棉袄 坐轮椅 灰白头发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "action": "老人坐在轮椅上抬头含泪说话",
+        "place": "室内大厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s008_0.jpg"
+    },
+    {
+      "start": 37.27,
+      "end": 40.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深蓝色西装白衬衫深色领带 背头短发",
+          "未识别年龄性别 仅露后脑勺 深色衣领"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张正在说话，第2位只见后脑勺看不见嘴",
+        "action": "站立俯视对方说话",
+        "place": "酒店宴会厅",
+        "props": [
+          "餐桌花艺",
+          "餐桌茶杯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s009_0.jpg"
+    },
+    {
+      "start": 40.17,
+      "end": 43.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅蓝色衬衫 深色领带 黑色背头发型"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开可见牙齿，正在说话",
+        "action": "站立正对镜头说话，神情严肃",
+        "place": "酒店宴会厅",
+        "props": [
+          "白色蜡烛台",
+          "花艺装饰"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s010_0.jpg"
+    },
+    {
+      "start": 43.0,
+      "end": 44.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 紫衬衫黑领带 背头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位嘴巴张开，可见牙齿",
+        "action": "神情严肃地站立注视前方",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s011_0.jpg"
+    },
+    {
+      "start": 44.8,
+      "end": 48.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 黑色西装三件套 酒红领带 白衬衫",
+          "男性 深色西装 画面右侧背影"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位正脸嘴部清晰，嘴唇闭合",
+        "action": "双手整理西装外套前襟",
+        "place": "酒店宴会厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s012_0.jpg"
+    },
+    {
+      "start": 48.4,
+      "end": 51.04,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 黑色西装白衬衫酒红色领带 黑色侧分短发 手持蓝色戒指盒"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "action": "手持打开的戒指盒向前递出并说话",
+        "place": "未识别",
+        "props": [
+          "蓝色戒指盒",
+          "戒指"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep08_s013_0.jpg"
+    }
+  ]
+}

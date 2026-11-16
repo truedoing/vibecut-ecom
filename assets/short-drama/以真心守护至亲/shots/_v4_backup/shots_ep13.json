@@ -1,0 +1,441 @@
+{
+  "ep": 13,
+  "file": "13.mp4",
+  "duration": 49.95,
+  "shot_count": 18,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v4",
+  "usage": {
+    "prompt_tokens": 53910,
+    "completion_tokens": 21170,
+    "total_tokens": 75080
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色上衣 长发戴珍珠发卡"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，正在说话",
+        "action": "对镜头说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep13_s000_0.jpg"
+    },
+    {
+      "start": 3.17,
+      "end": 4.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 蓝色牛仔裤 扎马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，似正开口说话",
+        "action": "站在走廊中看向一侧",
+        "place": "住宅走廊",
+        "props": [
+          "门上福字装饰"
+        ],
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s001_0.jpg"
+    },
+    {
+      "start": 4.8,
+      "end": 5.97,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色衬衫 黑发 侧头贴近女生额头",
+          "年轻女性 粉色睡衣 长发 侧躺被搂着"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "女生嘴部可见且闭合，男生嘴部被头发和角度遮挡",
+        "action": "手持手机展示男女床上拥抱的照片",
+        "place": "室内走廊",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "上个月",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s002_0.jpg"
+    },
+    {
+      "start": 5.97,
+      "end": 8.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶袖连衣裙 长卷发带珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，牙齿可见，正在说话",
+        "action": "举着手机向对面人展示照片并说话",
+        "place": "走廊",
+        "props": [
+          "智能手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s003_0.jpg"
+    },
+    {
+      "start": 8.87,
+      "end": 14.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色圆领T恤 蓝色牛仔裤 高马尾 面露惊讶"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴巴张开说话",
+        "action": "站立，面露惊讶地说话",
+        "place": "室内门口",
+        "props": [],
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s004_0.jpg"
+    },
+    {
+      "start": 14.7,
+      "end": 15.63,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里只有一只手，看不见嘴",
+        "action": "一只手从画面右下角伸向墙面柜子",
+        "place": "走廊",
+        "props": [
+          "消火栓箱"
+        ],
+        "scene_text": "消火栓 火警19",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s005_0.jpg"
+    },
+    {
+      "start": 15.63,
+      "end": 18.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 米白色宽松T恤 高马尾白色发圈 眼眶泛红"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，牙齿隐约可见，正在说话",
+        "action": "眼眶泛红，开口控诉",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s006_0.jpg"
+    },
+    {
+      "start": 18.6,
+      "end": 20.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发带发夹",
+          "未识别 浅灰色T恤 背对镜头只露肩头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸，嘴巴张开正在说话",
+        "action": "女生挥手与面前背影人物说话",
+        "place": "走廊",
+        "props": [
+          "红色消防箱",
+          "深色木门"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s007_0.jpg"
+    },
+    {
+      "start": 20.97,
+      "end": 23.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色牛仔裤 白色短袖T恤 手持黑色手机"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面仅显示躯干下部与手部，完全看不见嘴部",
+        "action": "手持黑色手机站立",
+        "place": "室内",
+        "props": [
+          "黑色手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s008_0.jpg"
+    },
+    {
+      "start": 23.9,
+      "end": 27.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边上衣 深色长卷发 佩戴珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见牙齿与口腔",
+        "action": "神情平静地直视前方",
+        "place": "室内",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s009_0.jpg"
+    },
+    {
+      "start": 27.37,
+      "end": 32.43,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 蓝色牛仔裤 高马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开在说话",
+        "action": "站在门口望向侧前方",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s010_0.jpg"
+    },
+    {
+      "start": 32.43,
+      "end": 35.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅色上衣 仅露出双手和手臂"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面仅露出双手和手臂，无可见嘴部",
+        "action": "双手持租赁单据查看",
+        "place": "室内客厅",
+        "props": [
+          "租赁单据"
+        ],
+        "scene_text": "租金支出租赁结算表，单据表格内的编号、金额等文字",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s011_0.jpg"
+    },
+    {
+      "start": 35.07,
+      "end": 36.6,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色T恤 蓝色牛仔裤 扎马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部可见但闭合",
+        "action": "低头查看手中的纸张",
+        "place": "室内门厅",
+        "props": [
+          "纸张",
+          "黑色手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s012_0.jpg"
+    },
+    {
+      "start": 36.6,
+      "end": 38.2,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "青年女性 白色上衣 仅露双手"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有双手和手机，完全看不见嘴部",
+        "action": "双手持手机查看房东服务页面",
+        "place": "室内",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "19:33 房东 蓝鲸客",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s013_0.jpg"
+    },
+    {
+      "start": 38.2,
+      "end": 44.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅色T恤 扎高马尾 戴白色发圈 双手持黑色手机"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "低头看手机，张嘴说话",
+        "place": "室内门口",
+        "props": [
+          "黑色智能手机",
+          "门上红色福字装饰"
+        ],
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s014_0.jpg"
+    },
+    {
+      "start": 44.1,
+      "end": 46.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 棕色夹克内搭灰色T恤 手持白纸 短发",
+          "年龄性别未识别 浅蓝色上衣 画面右下角模糊背影仅露肩膀"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴巴张开",
+        "action": "手持纸张边走边说话",
+        "place": "走廊",
+        "props": [
+          "纸张",
+          "木质鞋架",
+          "红色消防箱"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s015_0.jpg"
+    },
+    {
+      "start": 46.17,
+      "end": 47.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 短发 面向镜头偏左"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "站在门边对人说话",
+        "place": "室内走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s016_0.jpg"
+    },
+    {
+      "start": 47.83,
+      "end": 49.95,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 棕色外套 灰色内搭 手持纸张"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部可见但闭着",
+        "action": "手持纸张，嘴部闭合",
+        "place": "室内走廊",
+        "props": [
+          "纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep13_s017_0.jpg"
+    }
+  ]
+}

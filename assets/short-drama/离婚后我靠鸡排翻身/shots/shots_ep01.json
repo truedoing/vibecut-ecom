@@ -1,0 +1,509 @@
+{
+  "ep": 1,
+  "file": "1.mp4",
+  "duration": 60.29,
+  "shot_count": 18,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 58122,
+    "completion_tokens": 27224,
+    "total_tokens": 85346
+  },
+  "elapsed_sec": 601.0,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 4.82,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅灰长袖连衣裙 黑发扎马尾",
+          "年轻女性 黄色马甲配白色衬衫 黑发扎马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "顾客递出粉色纸巾盒，店员伸手接",
+        "place": "便利店",
+        "props": [
+          "收银台",
+          "粉色纸巾盒",
+          "收银机",
+          "冷藏柜"
+        ],
+        "scene_text": "本剧由AI创作 纯属虚构",
+        "watermark": "本剧由AI创作 纯属虚构",
+        "frames_used": 3
+      },
+      "frame": "ep01_s000_0.jpg"
+    },
+    {
+      "start": 4.82,
+      "end": 6.03,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "青年 性别未识别 双手持黑色手机 屏幕右上角碎裂"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有双手和手机，看不见任何人嘴部",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "双手握持碎屏手机，手指触碰屏幕",
+        "place": "便利店收银台",
+        "props": [
+          "碎屏黑色智能手机",
+          "粉色小物件"
+        ],
+        "scene_text": "12:37",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s001_0.jpg"
+    },
+    {
+      "start": 6.03,
+      "end": 9.02,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有一只手握着碎屏手机，看不见任何人的嘴",
+        "emotion": "无",
+        "intensity": "",
+        "action": "一只手举着碎屏手机展示支付界面",
+        "place": "未识别",
+        "props": [
+          "碎屏智能手机",
+          "粉色包装袋"
+        ],
+        "scene_text": "发付分信期 8.03元 该讨债",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s002_0.jpg"
+    },
+    {
+      "start": 9.02,
+      "end": 9.88,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "中年女性 浅灰色圆领上衣 眼眶泛红脸颊挂泪"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "流泪皱眉低头讲述",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s003_0.jpg"
+    },
+    {
+      "start": 9.88,
+      "end": 16.18,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年女性 灰色圆领连衣裙 深色扎发 手持手机和粉色包装袋"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，口型处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "站在货架旁手拿手机通话，神情焦虑",
+        "place": "便利店",
+        "props": [
+          "手机",
+          "粉色包装袋",
+          "货架商品"
+        ],
+        "scene_text": "19元",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s004_0.jpg"
+    },
+    {
+      "start": 16.18,
+      "end": 23.68,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年女性 灰色连衣裙 披肩黑发 手持黑屏手机贴耳"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露齿，正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "在超市货架边打电话，神情委屈焦急",
+        "place": "超市",
+        "props": [
+          "黑色手机",
+          "绿色纸盒",
+          "塑料袋",
+          "粉色包装物"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s005_0.jpg"
+    },
+    {
+      "start": 23.68,
+      "end": 32.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年女性 灰色系带连衣裙 手持裂屏手机和粉色卫生巾包装"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，似在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "在货架旁一边打电话一边拿着卫生巾包装",
+        "place": "超市货架区",
+        "props": [
+          "手机（屏幕碎裂）",
+          "粉色卫生巾包装"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s006_0.jpg"
+    },
+    {
+      "start": 32.77,
+      "end": 36.68,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年女性 灰色上衣 手持碎屏手机 眼眶红有泪痕"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "手持碎屏手机贴在耳边打电话",
+        "place": "超市/便利店",
+        "props": [
+          "碎屏手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s007_0.jpg"
+    },
+    {
+      "start": 36.68,
+      "end": 38.18,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "中年男性 灰色短袖 仅可见手部、躯干与腿部下侧"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面仅露出手部与躯干侧面，无法看到嘴部",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "提着购物袋站在超市货架旁",
+        "place": "超市",
+        "props": [
+          "白色塑料购物袋",
+          "粉色包装袋",
+          "带咖啡豆图案的深色包装盒"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s008_0.jpg"
+    },
+    {
+      "start": 38.18,
+      "end": 41.55,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年女性 灰色宽松上衣 手持碎屏手机 眼眶泛红"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "手持碎屏手机通话，神情哀伤",
+        "place": "便利店货架旁",
+        "props": [
+          "碎屏手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s009_0.jpg"
+    },
+    {
+      "start": 41.55,
+      "end": 43.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 灰色短袖 手持碎屏智能手机 用纸巾擦拭屏幕"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面仅显示手部与躯干局部，无法看清嘴部",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "用纸巾擦拭碎屏手机屏幕",
+        "place": "超市收银台",
+        "props": [
+          "碎屏智能手机",
+          "纸巾"
+        ],
+        "scene_text": "¥25.00",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s010_0.jpg"
+    },
+    {
+      "start": 43.2,
+      "end": 45.82,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年女性 灰色亚麻圆领上衣 扎马尾 眼眶泛红"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "低头看手机，手里攥着粉色纸巾包",
+        "place": "超市货架前",
+        "props": [
+          "手机",
+          "粉色小包装纸巾"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s011_0.jpg"
+    },
+    {
+      "start": 45.82,
+      "end": 48.58,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年女性 灰色上衣 手持两盒咖啡",
+          "背影人物 黄色背心灰色衬衫 只露背部"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手持咖啡盒向店员表示不要咖啡",
+        "place": "超市收银台",
+        "props": [
+          "两盒咖啡",
+          "纸巾",
+          "POS机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s012_0.jpg"
+    },
+    {
+      "start": 48.58,
+      "end": 50.15,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 灰色针织衣袖 双手递两盒深绿色礼盒",
+          "未识别年龄性别 黄色围裙白衬衫 手持小票接过商品"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有两双手和商品，看不见任何人的嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "顾客双手把两盒深绿色商品递给收银员",
+        "place": "超市收银台",
+        "props": [
+          "深绿色礼盒",
+          "小票",
+          "收银机显示器",
+          "粉白色纸巾包"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s013_0.jpg"
+    },
+    {
+      "start": 50.15,
+      "end": 51.1,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 灰色连衣裙 提着装有蔬菜的塑料袋 扎发",
+          "中年女性 黄色马甲配白衬衫 收银员"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "年轻女性嘴闭合，可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "提着蔬菜袋站在收银台前",
+        "place": "商店收银区",
+        "props": [
+          "塑料袋",
+          "蔬菜",
+          "收银台",
+          "货架商品"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s014_0.jpg"
+    },
+    {
+      "start": 51.1,
+      "end": 52.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 灰色系带连衣裙 手插裙侧兜"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面仅展示躯干和手部，无嘴部可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手插进裙子侧兜",
+        "place": "超市货架旁",
+        "props": [
+          "装有蔬菜的塑料袋"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s015_0.jpg"
+    },
+    {
+      "start": 52.07,
+      "end": 55.12,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 浅灰色上衣 双手持屏幕碎裂的手机"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "人物只露出耳朵和头发侧影，嘴部不在画面中",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "双手握着碎屏手机，手指点击屏幕",
+        "place": "超市",
+        "props": [
+          "屏幕碎裂的智能手机"
+        ],
+        "scene_text": "微信支付商家",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s016_0.jpg"
+    },
+    {
+      "start": 55.12,
+      "end": 60.29,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年女性 灰色长袖连衣裙 眼眶发红哭过",
+          "中年女性 黄色马甲白色内搭 超市收银员"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴张开说话，可见口腔",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "举着手机打电话预约咨询",
+        "place": "超市",
+        "props": [
+          "黑色手机",
+          "大葱"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep01_s017_0.jpg"
+    }
+  ]
+}

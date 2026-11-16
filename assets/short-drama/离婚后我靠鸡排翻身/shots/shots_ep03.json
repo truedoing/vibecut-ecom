@@ -1,0 +1,438 @@
+{
+  "ep": 3,
+  "file": "3.mp4",
+  "duration": 46.08,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 48435,
+    "completion_tokens": 23738,
+    "total_tokens": 72173
+  },
+  "elapsed_sec": 466.0,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 8.75,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "中年男性 浅蓝色衬衫黑裤 眼眶发红",
+          "中年女性 灰色连衣裙 侧脸长发",
+          "老年女性 深蓝色开衫 坐轮椅低头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男子嘴巴张开，第2位女子嘴微张但闭合中",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "男子摊手倾身对女子说话",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "纸张文件",
+          "玻璃茶几",
+          "金属餐盒"
+        ],
+        "scene_text": "",
+        "watermark": "本剧由AI创作 纯属虚构",
+        "frames_used": 3
+      },
+      "frame": "ep03_s000_0.jpg"
+    },
+    {
+      "start": 8.75,
+      "end": 19.67,
+      "tag": {
+        "shot_size": "全景",
+        "people": 3,
+        "who": [
+          "年轻女性 灰色长裙 扎马尾",
+          "中年男性 浅蓝衬衫 深色西裤",
+          "老年女性 深蓝色外套 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位年轻女性侧脸嘴部张开，第2位男性嘴部可见但闭合",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "年轻女子面向两人说话，另两人注视她",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "装饰画",
+          "吊灯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s001_0.jpg"
+    },
+    {
+      "start": 19.67,
+      "end": 20.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅灰色长裙 马尾辫 站立侧身",
+          "中年男性 浅蓝色衬衫 坐沙发仰头",
+          "老年女性 深色开衫 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "2",
+        "mouth_note": "第2位男子侧脸嘴巴张开，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "男子仰头对站立女子说话",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "玻璃茶几",
+          "茶杯",
+          "橙子",
+          "书本",
+          "吊灯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s002_0.jpg"
+    },
+    {
+      "start": 20.97,
+      "end": 24.02,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 浅蓝色长袖衬衫 眉头紧锁 眼眶红润",
+          "老年女性 深色针织外套 波点衬衫 低头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴巴微张",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "男性皱眉看着前方说话",
+        "place": "室内客厅",
+        "props": [
+          "电视",
+          "花瓶",
+          "绿植"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s003_0.jpg"
+    },
+    {
+      "start": 24.02,
+      "end": 27.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年女性 浅灰色圆领上衣 扎低马尾 眼眶泛红有泪痕"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开，正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "面露悲伤，眼含泪水站立",
+        "place": "室内客厅",
+        "props": [
+          "墙面花鸟装饰画"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s004_0.jpg"
+    },
+    {
+      "start": 27.47,
+      "end": 30.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年男性 浅灰色纽扣衬衫 眼眶发红有泪痕",
+          "老年女性 深色开衫内搭花纹衬衫 头发花白"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第一位中年男性嘴巴张开，第二位老年女性嘴部可见但未张开",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "坐着流泪开口说话",
+        "place": "室内客厅",
+        "props": [
+          "花瓶",
+          "装饰摆件",
+          "电视机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s005_0.jpg"
+    },
+    {
+      "start": 30.1,
+      "end": 31.25,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年女性 灰色圆领T恤 挎深棕色单肩包 眼眶泛红",
+          "中年男性 蓝色衬衫 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴巴闭合抿着，未说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "女性注视对面的人，手握肩包",
+        "place": "室内客厅",
+        "props": [
+          "单肩包"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s006_0.jpg"
+    },
+    {
+      "start": 31.25,
+      "end": 31.32,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年龄未识别 未识别性别 只见手部/手臂 服装未识别"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有手部和桌面，看不到脸和嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手置于桌边，文件散放在桌上",
+        "place": "室内客厅",
+        "props": [
+          "玻璃果盘",
+          "橘子",
+          "纸质文件",
+          "玻璃桌面"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s007_0.jpg"
+    },
+    {
+      "start": 31.32,
+      "end": 32.08,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里只有一只手按在协议书上，没有任何人的嘴部",
+        "emotion": "无",
+        "intensity": "",
+        "action": "一只手平按在离婚协议书上",
+        "place": "室内客厅",
+        "props": [
+          "离婚协议书",
+          "玻璃果盘",
+          "橘子"
+        ],
+        "scene_text": "离婚协议书",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s008_0.jpg"
+    },
+    {
+      "start": 32.08,
+      "end": 35.42,
+      "tag": {
+        "shot_size": "全景",
+        "people": 3,
+        "who": [
+          "年轻女性 灰色连衣裙 背挎包 站立",
+          "老年女性 深色上衣 坐轮椅",
+          "中年男性 浅蓝色衬衫 背对镜头短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位站立女性嘴巴张开，正在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "站立对坐着的男子说话",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "玻璃茶几",
+          "橘子"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s009_0.jpg"
+    },
+    {
+      "start": 35.42,
+      "end": 37.02,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 浅蓝色衬衫 黑色西裤 戴深色手表"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴巴张开，呈现说话口型",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "坐着仰头看向画面外，嘴巴张开",
+        "place": "室内客厅",
+        "props": [
+          "玻璃茶几",
+          "橙子",
+          "带红标的文件"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s010_0.jpg"
+    },
+    {
+      "start": 37.02,
+      "end": 38.15,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面中只有手，看不到嘴部",
+        "emotion": "无",
+        "intensity": "",
+        "action": "手持离婚协议书展示",
+        "place": "未识别",
+        "props": [
+          "离婚协议书"
+        ],
+        "scene_text": "离婚协议书\n姓名：________，婚姻名别：________\n姓名：________，余婚别：________\n____年____月____月二三丹，两公排解女书。\n进减十七个筒册，生意公过十步议：\n二、首婚设\n生！'按到南道育开书，你崖减藏能上刺史不可成我去个道。\n二、十公议\n木截三个个/次未，且生姻 五代/催享，幸子于人何二十/类学。\n去不！项仕，斥什重菜上教在不头的的成义书。\n三、敢子合\n小妻玉收后产己必养一次，截依的的花子藤十户产，二参、有蓄。\n被逃三如云产，他不们布，，于手话美。\n四、服面处理\n大星以由德康支回/成题事打，十人焦齐府子实年归。\n5、不提待完\n本就以遗允于金手二口意当直，旦子而能是组行，直却大/事好可。\n中成为有到作了重生上，什来罗认号秀来亿六心也雕斯是再大力。\n托：____________\n签马：____________\n日期：____________",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s011_0.jpg"
+    },
+    {
+      "start": 38.15,
+      "end": 41.28,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 浅蓝色衬衫 眼眶发红神情痛苦"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "低头盯着手中的离婚协议纸张",
+        "place": "室内客厅",
+        "props": [
+          "纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s012_0.jpg"
+    },
+    {
+      "start": 41.28,
+      "end": 44.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅灰色长袖上衣 扎马尾 眼眶泛红有泪痕",
+          "中年男性 浅蓝色衬衫 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "女性张口说话，男性背对站立",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s013_0.jpg"
+    },
+    {
+      "start": 44.57,
+      "end": 46.08,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深蓝色针织开衫内搭碎花衬衫 坐轮椅",
+          "青年女性 浅灰色短袖 只露出手臂和手"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老人嘴唇微张，口腔可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "青年的手轻搭上老人扶轮椅的手",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "金手镯",
+          "银手镯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep03_s014_0.jpg"
+    }
+  ]
+}

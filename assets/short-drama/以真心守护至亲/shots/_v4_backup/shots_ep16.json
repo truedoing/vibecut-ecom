@@ -1,0 +1,397 @@
+{
+  "ep": 16,
+  "file": "16.mp4",
+  "duration": 52.92,
+  "shot_count": 16,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v4",
+  "usage": {
+    "prompt_tokens": 47920,
+    "completion_tokens": 16573,
+    "total_tokens": 64493
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 浅蓝色牛仔裤"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，似乎在说话",
+        "action": "用纸巾擦拭证书",
+        "place": "室内书房",
+        "props": [
+          "蓝色证书",
+          "纸巾"
+        ],
+        "scene_text": "毕业证书 全国普通高等学校",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep16_s000_0.jpg"
+    },
+    {
+      "start": 3.9,
+      "end": 7.23,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色中式对襟上衣 头发灰白 面部有明显皱纹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "看着手中的蓝色文件夹说话",
+        "place": "室内书房",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s001_0.jpg"
+    },
+    {
+      "start": 7.23,
+      "end": 9.0,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有一只手握着证书，没有人脸，看不见嘴",
+        "action": "一只手握着获奖证书展示",
+        "place": "未识别",
+        "props": [
+          "获奖证书"
+        ],
+        "scene_text": "衍业人前崇学院 全国大学生创新大赛一等奖 等奖 赋、名",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s002_0.jpg"
+    },
+    {
+      "start": 9.0,
+      "end": 11.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深色外套 坐轮椅",
+          "年轻女性 白色T恤牛仔裤 马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位嘴巴张开",
+        "action": "年轻女性向老人展示文件夹并说话",
+        "place": "室内房间",
+        "props": [
+          "轮椅",
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s003_0.jpg"
+    },
+    {
+      "start": 11.77,
+      "end": 16.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 高马尾白色发圈 手持蓝色书籍"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见牙齿",
+        "action": "双手捧着蓝色书本，神情认真",
+        "place": "卧室",
+        "props": [
+          "蓝色书籍"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s004_0.jpg"
+    },
+    {
+      "start": 16.8,
+      "end": 19.8,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深色中式上衣 眼含泪水 皮肤有老年斑"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "嘴张开，牙齿可见，正在说话",
+        "action": "眼含泪水，表情悲伤",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s005_0.jpg"
+    },
+    {
+      "start": 19.8,
+      "end": 23.33,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 高马尾白发绳"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴闭着微笑",
+        "action": "拿着蓝色书微笑",
+        "place": "卧室",
+        "props": [
+          "蓝色书"
+        ],
+        "scene_text": "故宫日历",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s006_0.jpg"
+    },
+    {
+      "start": 23.33,
+      "end": 25.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色T恤+牛仔裤 马尾辫 侧身前倾伸手",
+          "老年女性 深灰盘扣棉衣 头发挽髻 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸嘴部微张在说话，第2位嘴闭合",
+        "action": "年轻女性向坐轮椅的老年女性伸手递物",
+        "place": "室内客厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s007_0.jpg"
+    },
+    {
+      "start": 25.8,
+      "end": 32.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深灰中式盘扣上衣 手持蓝色封面书籍",
+          "年轻女性 侧脸局部入镜 深色头发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位嘴张开露出牙齿，正在说话",
+        "action": "老人端坐手捧书，与对面人对视",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "蓝色封面书籍"
+        ],
+        "scene_text": "穴位按摩速查",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s008_0.jpg"
+    },
+    {
+      "start": 32.17,
+      "end": 34.53,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 米色圆领短袖T恤 高马尾白色发圈 坐床上"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴唇微张露齿，处于说话状态",
+        "action": "坐床上正对镜头开口说话",
+        "place": "卧室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s009_0.jpg"
+    },
+    {
+      "start": 34.53,
+      "end": 38.47,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色短袖牛仔裤 马尾 侧身坐着",
+          "老年女性 深灰色中式棉袄 坐轮椅 手持蓝色书本"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位侧脸嘴部张开，第1位侧背看不见嘴",
+        "action": "老人坐轮椅持书对年轻女性讲话",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "书本",
+          "笔记本电脑",
+          "书架",
+          "台灯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s010_0.jpg"
+    },
+    {
+      "start": 38.47,
+      "end": 39.83,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 浅色上衣 长发扎起碎发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未在说话",
+        "action": "侧目看向一旁，神情忧虑",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s011_0.jpg"
+    },
+    {
+      "start": 39.83,
+      "end": 42.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色短袖T恤 马尾辫扎白色发圈 面带泪痕"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "action": "情绪激动地含泪说话",
+        "place": "室内房间",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s012_0.jpg"
+    },
+    {
+      "start": 42.83,
+      "end": 45.37,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧上衣 灰白头发 面有斑点与皱纹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见牙齿",
+        "action": "侧头看向画面外说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s013_0.jpg"
+    },
+    {
+      "start": 45.37,
+      "end": 48.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深灰色旧中式盘扣棉袄 坐轮椅 头发花白挽髻",
+          "年龄感未识别 性别未识别 蓝色牛仔裤 仅露出一条腿"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老人嘴巴张开，正在说话",
+        "action": "老人坐在轮椅上讲话",
+        "place": "室内书房",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s014_0.jpg"
+    },
+    {
+      "start": 48.57,
+      "end": 52.92,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 白色圆领T恤 高马尾 眼眶泛红"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，正在说话",
+        "action": "含泪注视前方说话",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep16_s015_0.jpg"
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "ep": 17,
+  "drama": "以真心守护至亲",
+  "sources": {
+    "lines": "lines/lines_ep17.json",
+    "shots": "shots/shots_ep17.json",
+    "char_map": "char_map.json",
+    "shots_prompt": "sd-shot-v5"
+  },
+  "counts": {
+    "lines": 21,
+    "on_screen": 18,
+    "off_screen": 3,
+    "unknown": 0,
+    "named": 18
+  },
+  "dense_shots": [
+    {
+      "shot": "16.27-21.27",
+      "lines": 4
+    },
+    {
+      "shot": "33.97-39.47",
+      "lines": 4
+    }
+  ],
+  "rows": [
+    {
+      "t": 0.0,
+      "text": "电子资料我发给你",
+      "shot": [
+        0.0,
+        3.7
+      ],
+      "who": "年轻女性 白色短袖T恤 高马尾 白色发圈",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，可见牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 2.0,
+      "text": "分工和记录都齐",
+      "shot": [
+        0.0,
+        3.7
+      ],
+      "who": "年轻女性 白色短袖T恤 高马尾 白色发圈",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，可见牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 4.0,
+      "text": "岗位不合适也别为难人家",
+      "shot": [
+        3.7,
+        7.17
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴部抿闭，第2位侧脸嘴部闭合",
+      "cross": false
+    },
+    {
+      "t": 8.0,
+      "text": "好妈现在转过去",
+      "shot": [
+        7.17,
+        10.17
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "画面只有手和手机屏幕，看不见人脸和嘴部",
+      "cross": false
+    },
+    {
+      "t": 11.0,
+      "text": "明天证件带齐",
+      "shot": [
+        10.17,
+        14.07
+      ],
+      "who": "老年女性 灰白发髻 深色盘扣旧棉袄 坐轮椅",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 12.0,
+      "text": "做过什么就说什么",
+      "shot": [
+        10.17,
+        14.07
+      ],
+      "who": "老年女性 灰白发髻 深色盘扣旧棉袄 坐轮椅",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 16.0,
+      "text": "妈今晚你睡床",
+      "shot": [
+        16.27,
+        21.27
+      ],
+      "who": "年轻女性 白色短袖T恤 高马尾 白色发圈 身体前倾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位年轻女性嘴巴张开，正在说话；第2位只见侧后脸，看不清嘴",
+      "cross": true
+    },
+    {
+      "t": 18.0,
+      "text": "我打地铺",
+      "shot": [
+        16.27,
+        21.27
+      ],
+      "who": "年轻女性 白色短袖T恤 高马尾 白色发圈 身体前倾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位年轻女性嘴巴张开，正在说话；第2位只见侧后脸，看不清嘴",
+      "cross": false
+    },
+    {
+      "t": 19.0,
+      "text": "挪过去我扶着",
+      "shot": [
+        16.27,
+        21.27
+      ],
+      "who": "年轻女性 白色短袖T恤 高马尾 白色发圈 身体前倾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位年轻女性嘴巴张开，正在说话；第2位只见侧后脸，看不清嘴",
+      "cross": false
+    },
+    {
+      "t": 20.0,
+      "text": "你腿能使一点力吗",
+      "shot": [
+        16.27,
+        21.27
+      ],
+      "who": "年轻女性 白色短袖T恤 高马尾 白色发圈 身体前倾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位年轻女性嘴巴张开，正在说话；第2位只见侧后脸，看不清嘴",
+      "cross": true
+    },
+    {
+      "t": 24.0,
+      "text": "能扶着挪几步",
+      "shot": [
+        21.27,
+        25.43
+      ],
+      "who": "老年女性 深色中式上衣 灰白散发 眼眶发红",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张，牙齿隐约可见",
+      "cross": false
+    },
+    {
+      "t": 26.0,
+      "text": "洪水时伤的左腿",
+      "shot": [
+        25.43,
+        28.1
+      ],
+      "who": "老年女性 深色旧中式棉袄 坐轮椅 灰白头发盘起",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第2位老人正脸嘴张开，第1位侧脸嘴可见微张",
+      "cross": false
+    },
+    {
+      "t": 28.0,
+      "text": "久站久走就疼",
+      "shot": [
+        28.1,
+        31.3
+      ],
+      "who": "老年女性 深灰色中式对襟上衣 头发盘起 眼眶红润",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿和口腔可见，处于说话状态",
+      "cross": true
+    },
+    {
+      "t": 30.0,
+      "text": "出门靠轮椅",
+      "shot": [
+        28.1,
+        31.3
+      ],
+      "who": "老年女性 深灰色中式对襟上衣 头发盘起 眼眶红润",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿和口腔可见，处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 32.0,
+      "text": "你别慌慢一点就好",
+      "shot": [
+        31.3,
+        33.97
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "特写",
+      "evidence": "第1位嘴唇闭合，嘴角下垂，未见张口",
+      "cross": false
+    },
+    {
+      "t": 34.0,
+      "text": "那就按时复查",
+      "shot": [
+        33.97,
+        39.47
+      ],
+      "who": "年轻女性 白色短袖T恤牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，可见牙齿",
+      "cross": false
+    },
+    {
+      "t": 36.0,
+      "text": "疼了告诉我",
+      "shot": [
+        33.97,
+        39.47
+      ],
+      "who": "年轻女性 白色短袖T恤牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，可见牙齿",
+      "cross": false
+    },
+    {
+      "t": 37.0,
+      "text": "别为了少花钱硬撑",
+      "shot": [
+        33.97,
+        39.47
+      ],
+      "who": "年轻女性 白色短袖T恤牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，可见牙齿",
+      "cross": false
+    },
+    {
+      "t": 39.0,
+      "text": "床边给你留着灯",
+      "shot": [
+        33.97,
+        39.47
+      ],
+      "who": "年轻女性 白色短袖T恤牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，可见牙齿",
+      "cross": true
+    },
+    {
+      "t": 47.0,
+      "text": "好以后有事",
+      "shot": [
+        46.83,
+        51.69
+      ],
+      "who": "老年女性 灰色对襟扣中式上衣 躺床上 眼眶发红含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": false
+    },
+    {
+      "t": 50.0,
+      "text": "咱们一起想办法",
+      "shot": [
+        46.83,
+        51.69
+      ],
+      "who": "老年女性 灰色对襟扣中式上衣 躺床上 眼眶发红含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": false
+    }
+  ]
+}

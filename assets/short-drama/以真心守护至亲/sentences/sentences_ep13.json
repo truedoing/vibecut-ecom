@@ -1,0 +1,553 @@
+{
+  "ep": 13,
+  "drama": "以真心守护至亲",
+  "sources": {
+    "lines": "lines/lines_ep13.json",
+    "shots": "shots/shots_ep13.json",
+    "char_map": "char_map.json",
+    "shots_prompt": "sd-shot-v5"
+  },
+  "counts": {
+    "lines": 33,
+    "on_screen": 26,
+    "off_screen": 7,
+    "unknown": 0,
+    "named": 26
+  },
+  "dense_shots": [
+    {
+      "shot": "38.2-44.1",
+      "lines": 4
+    }
+  ],
+  "rows": [
+    {
+      "t": 0.0,
+      "text": "你不在的时候",
+      "shot": [
+        0.0,
+        3.17
+      ],
+      "who": "年轻女性 粉色上衣 长卷发 珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴巴张开，露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 1.0,
+      "text": "都是我在这里陪他",
+      "shot": [
+        0.0,
+        3.17
+      ],
+      "who": "年轻女性 粉色上衣 长卷发 珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴巴张开，露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 5.0,
+      "text": "看清楚不是今天你不嫁了 上个月",
+      "shot": [
+        5.97,
+        8.87
+      ],
+      "who": "年轻女性 浅粉色连衣裙 长卷发配珍珠发夹 手持手机展示照片",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴唇张开，牙齿可见，正在说话",
+      "cross": true
+    },
+    {
+      "t": 8.0,
+      "text": "他才要我",
+      "shot": [
+        5.97,
+        8.87
+      ],
+      "who": "年轻女性 浅粉色连衣裙 长卷发配珍珠发夹 手持手机展示照片",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴唇张开，牙齿可见，正在说话",
+      "cross": true
+    },
+    {
+      "t": 10.0,
+      "text": "上个月我去外地比赛",
+      "shot": [
+        8.87,
+        14.7
+      ],
+      "who": "年轻女性 白色圆领短袖T恤 蓝色牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，能看到牙齿",
+      "cross": false
+    },
+    {
+      "t": 12.0,
+      "text": "你说来帮我收衣服",
+      "shot": [
+        8.87,
+        14.7
+      ],
+      "who": "年轻女性 白色圆领短袖T恤 蓝色牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，能看到牙齿",
+      "cross": false
+    },
+    {
+      "t": 14.0,
+      "text": "事情都这样了",
+      "shot": [
+        8.87,
+        14.7
+      ],
+      "who": "年轻女性 白色圆领短袖T恤 蓝色牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，能看到牙齿",
+      "cross": false
+    },
+    {
+      "t": 15.0,
+      "text": "还翻这些干什么",
+      "shot": [
+        14.7,
+        15.63
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "",
+      "intensity": "",
+      "size": "特写",
+      "evidence": "画面右下角只露出手部，看不见嘴部",
+      "cross": false
+    },
+    {
+      "t": 16.0,
+      "text": "你们睡在我的屋里",
+      "shot": [
+        15.63,
+        18.6
+      ],
+      "who": "年轻女性 白色短袖T恤 黑发扎马尾 眼眶泛红有泪痕",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 17.0,
+      "text": "还让我替婚礼忙前忙后",
+      "shot": [
+        15.63,
+        18.6
+      ],
+      "who": "年轻女性 白色短袖T恤 黑发扎马尾 眼眶泛红有泪痕",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 19.0,
+      "text": "谁让你眼里只有比赛成绩",
+      "shot": [
+        18.6,
+        20.97
+      ],
+      "who": "年轻女性 粉色连衣裙 长卷发 白色发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位女子正脸嘴部张开，第2位男子背对镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 21.0,
+      "text": "他是你姐姐的未婚夫",
+      "shot": [
+        20.97,
+        23.9
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "画面未显示人物面部嘴部，仅能看到腰部以下",
+      "cross": false
+    },
+    {
+      "t": 22.0,
+      "text": "他把你当妹妹",
+      "shot": [
+        20.97,
+        23.9
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "画面未显示人物面部嘴部，仅能看到腰部以下",
+      "cross": false
+    },
+    {
+      "t": 23.0,
+      "text": "你就这么对他",
+      "shot": [
+        23.9,
+        27.37
+      ],
+      "who": "年轻女性 浅粉色上衣 长卷发两侧戴珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": true
+    },
+    {
+      "t": 25.0,
+      "text": "他什么都有",
+      "shot": [
+        23.9,
+        27.37
+      ],
+      "who": "年轻女性 浅粉色上衣 长卷发两侧戴珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 26.0,
+      "text": "我只要周承怎么了",
+      "shot": [
+        23.9,
+        27.37
+      ],
+      "who": "年轻女性 浅粉色上衣 长卷发两侧戴珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 27.0,
+      "text": "今天是他自己走的",
+      "shot": [
+        27.37,
+        32.43
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": true
+    },
+    {
+      "t": 29.0,
+      "text": "男人你留着",
+      "shot": [
+        27.37,
+        32.43
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 30.0,
+      "text": "我付钱的住处你们别想拿走",
+      "shot": [
+        27.37,
+        32.43
+      ],
+      "who": "年轻女性 白色短袖T恤 蓝色牛仔裤 高马尾",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 33.0,
+      "text": "押金3,000",
+      "shot": [
+        32.43,
+        35.07
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "画面只有双手和小臂，看不见嘴部",
+      "cross": false
+    },
+    {
+      "t": 34.0,
+      "text": "每月房租2,400",
+      "shot": [
+        32.43,
+        35.07
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "画面只有双手和小臂，看不见嘴部",
+      "cross": false
+    },
+    {
+      "t": 35.0,
+      "text": "合同写我的名字",
+      "shot": [
+        32.43,
+        35.07
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "画面只有双手和小臂，看不见嘴部",
+      "cross": true
+    },
+    {
+      "t": 36.0,
+      "text": "你付钱也没用",
+      "shot": [
+        35.07,
+        36.6
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "嘴唇微闭，低头看纸张，嘴部可见但未张开",
+      "cross": true
+    },
+    {
+      "t": 38.0,
+      "text": "房东周承没跟我说就换锁",
+      "shot": [
+        38.2,
+        44.1
+      ],
+      "who": "年轻女性 浅黄色短袖T恤 扎高马尾 手持手机",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开说话",
+      "cross": true
+    },
+    {
+      "t": 40.0,
+      "text": "把我的东西扔出来",
+      "shot": [
+        38.2,
+        44.1
+      ],
+      "who": "年轻女性 浅黄色短袖T恤 扎高马尾 手持手机",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开说话",
+      "cross": false
+    },
+    {
+      "t": 41.0,
+      "text": "补充页写着我是实际居住人",
+      "shot": [
+        38.2,
+        44.1
+      ],
+      "who": "年轻女性 浅黄色短袖T恤 扎高马尾 手持手机",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开说话",
+      "cross": false
+    },
+    {
+      "t": 43.0,
+      "text": "租金一直我交",
+      "shot": [
+        38.2,
+        44.1
+      ],
+      "who": "年轻女性 浅黄色短袖T恤 扎高马尾 手持手机",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开说话",
+      "cross": false
+    },
+    {
+      "t": 44.0,
+      "text": "记得谁让他换的",
+      "shot": [
+        44.1,
+        46.17
+      ],
+      "who": "中年男性 灰白短发 棕色夹克灰色T恤黑色长裤 手拿白纸",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位正脸可见，嘴巴张开说话",
+      "cross": true
+    },
+    {
+      "t": 45.0,
+      "text": "我拿合同过来",
+      "shot": [
+        44.1,
+        46.17
+      ],
+      "who": "中年男性 灰白短发 棕色夹克灰色T恤黑色长裤 手拿白纸",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "中景",
+      "evidence": "第1位正脸可见，嘴巴张开说话",
+      "cross": false
+    },
+    {
+      "t": 46.0,
+      "text": "我跟他已经分开了",
+      "shot": [
+        46.17,
+        47.83
+      ],
+      "who": "青年男性 浅蓝色衬衫 黑色短发 站立",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": true
+    },
+    {
+      "t": 47.0,
+      "text": "房子当然得重新安排",
+      "shot": [
+        46.17,
+        47.83
+      ],
+      "who": "青年男性 浅蓝色衬衫 黑色短发 站立",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 48.0,
+      "text": "那也得把合同钱和",
+      "shot": [
+        47.83,
+        49.95
+      ],
+      "who": "中年男性 棕色拉链夹克灰色T恤 手持纸张",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴微张正在说话，第2位仅见衣角看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 49.0,
+      "text": "居住的事说清楚",
+      "shot": [
+        47.83,
+        49.95
+      ],
+      "who": "中年男性 棕色拉链夹克灰色T恤 手持纸张",
+      "name": "周德海",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴微张正在说话，第2位仅见衣角看不见嘴",
+      "cross": false
+    }
+  ]
+}

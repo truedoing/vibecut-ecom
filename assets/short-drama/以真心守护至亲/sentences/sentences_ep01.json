@@ -1,0 +1,809 @@
+{
+  "ep": 1,
+  "drama": "以真心守护至亲",
+  "sources": {
+    "lines": "lines/lines_ep01.json",
+    "shots": "shots/shots_ep01.json",
+    "char_map": "char_map.json",
+    "shots_prompt": "sd-shot-v5"
+  },
+  "counts": {
+    "lines": 49,
+    "on_screen": 39,
+    "off_screen": 10,
+    "unknown": 0,
+    "named": 38
+  },
+  "dense_shots": [
+    {
+      "shot": "58.47-63.07",
+      "lines": 4
+    }
+  ],
+  "rows": [
+    {
+      "t": 1.0,
+      "text": "我把50斤黄金做成轮椅",
+      "shot": [
+        0.0,
+        2.57
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "",
+      "intensity": "",
+      "size": "特写",
+      "evidence": "画面中无人，没有可见嘴部",
+      "cross": false
+    },
+    {
+      "t": 3.0,
+      "text": "刷上黑漆",
+      "shot": [
+        2.57,
+        7.17
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴闭着，面部清楚可见",
+      "cross": false
+    },
+    {
+      "t": 5.0,
+      "text": "穿着破衣服去女儿的婚礼",
+      "shot": [
+        2.57,
+        7.17
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴闭着，面部清楚可见",
+      "cross": false
+    },
+    {
+      "t": 7.0,
+      "text": "就为了试试",
+      "shot": [
+        2.57,
+        7.17
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴闭着，面部清楚可见",
+      "cross": true
+    },
+    {
+      "t": 8.0,
+      "text": "失散17年的两个女儿",
+      "shot": [
+        7.17,
+        10.1
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "人物背对镜头，看不见嘴部",
+      "cross": false
+    },
+    {
+      "t": 10.0,
+      "text": "还认不认我这个穷妈",
+      "shot": [
+        7.17,
+        10.1
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "人物背对镜头，看不见嘴部",
+      "cross": true
+    },
+    {
+      "t": 11.0,
+      "text": "请新郎牵起新娘的手",
+      "shot": [
+        10.1,
+        13.77
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "全景",
+      "evidence": "第1位侧脸清晰，嘴唇闭合带浅笑，未见说话口型",
+      "cross": false
+    },
+    {
+      "t": 16.0,
+      "text": "我是妈妈",
+      "shot": [
+        13.77,
+        17.23
+      ],
+      "who": "老年女性 深色旧中式上衣 头发花白",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，可见牙齿",
+      "cross": false
+    },
+    {
+      "t": 17.0,
+      "text": "妈终于找到你了",
+      "shot": [
+        13.77,
+        17.23
+      ],
+      "who": "老年女性 深色旧中式上衣 头发花白",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，可见牙齿",
+      "cross": true
+    },
+    {
+      "t": 23.0,
+      "text": "可我妈妈17年前就没了",
+      "shot": [
+        20.33,
+        24.83
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "震惊",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位正脸可见，嘴微张似惊讶，未见明显发音口型",
+      "cross": false
+    },
+    {
+      "t": 25.0,
+      "text": "妈没死",
+      "shot": [
+        24.83,
+        28.13
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 灰白头发 眼眶泛红",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 27.0,
+      "text": "那年发大水",
+      "shot": [
+        24.83,
+        28.13
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 灰白头发 眼眶泛红",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 29.0,
+      "text": "妈把你和妹妹抱上救援船",
+      "shot": [
+        28.13,
+        30.7
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 长卷发戴头纱 正脸",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "震惊",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位正脸嘴巴微张，第2位只见后脑勺看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 31.0,
+      "text": "回头就被水冲走了",
+      "shot": [
+        30.7,
+        33.13
+      ],
+      "who": "老年女性 深灰色盘扣中式上衣 嘴唇微张",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "第1位嘴唇微张，口腔隐约可见",
+      "cross": false
+    },
+    {
+      "t": 34.0,
+      "text": "这17年妈一直在找你们",
+      "shot": [
+        33.13,
+        35.87
+      ],
+      "who": "老年女性 灰白发 深灰盘扣中式上衣 坐轮椅 眼含泪水",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张露出牙齿",
+      "cross": false
+    },
+    {
+      "t": 37.0,
+      "text": "找了17年",
+      "shot": [
+        35.87,
+        39.67
+      ],
+      "who": "年轻男性 黑色西装白衬衫深红领带 伸手向前",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位男性正脸嘴微张",
+      "cross": false
+    },
+    {
+      "t": 38.0,
+      "text": "偏偏挑我结婚这天来",
+      "shot": [
+        35.87,
+        39.67
+      ],
+      "who": "年轻男性 黑色西装白衬衫深红领带 伸手向前",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位男性正脸嘴微张",
+      "cross": false
+    },
+    {
+      "t": 40.0,
+      "text": "你推着把破轮椅",
+      "shot": [
+        39.67,
+        42.6
+      ],
+      "who": "年轻男性 深色西装白衬衫酒红领带 发型蓬松向后梳",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，口腔可见",
+      "cross": false
+    },
+    {
+      "t": 41.0,
+      "text": "张嘴就认女儿谁信",
+      "shot": [
+        39.67,
+        42.6
+      ],
+      "who": "年轻男性 深色西装白衬衫酒红领带 发型蓬松向后梳",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，口腔可见",
+      "cross": false
+    },
+    {
+      "t": 43.0,
+      "text": "女儿结婚",
+      "shot": [
+        42.6,
+        45.97
+      ],
+      "who": "老年女性 灰白头发 深色盘扣中式上衣 眼眶泛红含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 44.0,
+      "text": "我这个当妈的还不能来",
+      "shot": [
+        42.6,
+        45.97
+      ],
+      "who": "老年女性 灰白头发 深色盘扣中式上衣 眼眶泛红含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见，正在说话",
+      "cross": false
+    },
+    {
+      "t": 46.0,
+      "text": "来的都是亲戚领导",
+      "shot": [
+        45.97,
+        50.43
+      ],
+      "who": "年轻男性 深色三件套西装酒红领带 口袋巾 站立说话",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位男性正脸可见，嘴部张开说话",
+      "cross": false
+    },
+    {
+      "t": 48.0,
+      "text": "冒出你这么个亲家",
+      "shot": [
+        45.97,
+        50.43
+      ],
+      "who": "年轻男性 深色三件套西装酒红领带 口袋巾 站立说话",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位男性正脸可见，嘴部张开说话",
+      "cross": false
+    },
+    {
+      "t": 50.0,
+      "text": "让人怎么看",
+      "shot": [
+        50.43,
+        52.67
+      ],
+      "who": "年轻男性 深色三件套西装白衬衫酒红色领带 卷发半背头",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": true
+    },
+    {
+      "t": 51.0,
+      "text": "我们周家丢不起这个人",
+      "shot": [
+        50.43,
+        52.67
+      ],
+      "who": "年轻男性 深色三件套西装白衬衫酒红色领带 卷发半背头",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 53.0,
+      "text": "你也配",
+      "shot": [
+        52.67,
+        54.37
+      ],
+      "who": "年轻女性 粉色荷叶边连衣裙 长卷发戴发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位嘴大张呐喊，牙齿可见",
+      "cross": false
+    },
+    {
+      "t": 55.0,
+      "text": "哪来的老婆子",
+      "shot": [
+        54.37,
+        58.47
+      ],
+      "who": "年轻女性 粉色荷叶边连衣裙 长发带珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": false
+    },
+    {
+      "t": 56.0,
+      "text": "跑到我姐婚礼上认女儿",
+      "shot": [
+        54.37,
+        58.47
+      ],
+      "who": "年轻女性 粉色荷叶边连衣裙 长发带珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": false
+    },
+    {
+      "t": 57.0,
+      "text": "你当我们好骗",
+      "shot": [
+        54.37,
+        58.47
+      ],
+      "who": "年轻女性 粉色荷叶边连衣裙 长发带珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": false
+    },
+    {
+      "t": 59.0,
+      "text": "晴晴",
+      "shot": [
+        58.47,
+        63.07
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 盘发含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位老人嘴部微张在说话，第2位背对镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 60.0,
+      "text": "你是晴睛",
+      "shot": [
+        58.47,
+        63.07
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 盘发含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位老人嘴部微张在说话，第2位背对镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 61.0,
+      "text": "我是妈呀",
+      "shot": [
+        58.47,
+        63.07
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 盘发含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位老人嘴部微张在说话，第2位背对镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 62.0,
+      "text": "你仔细看看",
+      "shot": [
+        58.47,
+        63.07
+      ],
+      "who": "老年女性 深色旧棉袄 坐轮椅 盘发含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位老人嘴部微张在说话，第2位背对镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 63.0,
+      "text": "别叫我我们没妈",
+      "shot": [
+        63.07,
+        66.27
+      ],
+      "who": "年轻女性 浅粉色连衣裙 珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": true
+    },
+    {
+      "t": 65.0,
+      "text": "你少往自己脸上贴金",
+      "shot": [
+        63.07,
+        66.27
+      ],
+      "who": "年轻女性 浅粉色连衣裙 珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开",
+      "cross": false
+    },
+    {
+      "t": 67.0,
+      "text": "许宁工作是我爸替你安排的",
+      "shot": [
+        66.27,
+        70.37
+      ],
+      "who": "年轻男性 黑色西装 白衬衫 红色领带 侧脸面向右侧",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位侧脸清晰，嘴部张开可见",
+      "cross": false
+    },
+    {
+      "t": 69.0,
+      "text": "婚礼也是我们家办的",
+      "shot": [
+        66.27,
+        70.37
+      ],
+      "who": "年轻男性 黑色西装 白衬衫 红色领带 侧脸面向右侧",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位侧脸清晰，嘴部张开可见",
+      "cross": false
+    },
+    {
+      "t": 71.0,
+      "text": "你别为了他让我",
+      "shot": [
+        70.37,
+        72.87
+      ],
+      "who": "青年男性 深色西装白衬衫酒红色领带 黑色侧分短发",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴唇微张，正在说话",
+      "cross": false
+    },
+    {
+      "t": 72.0,
+      "text": "全家下不来台",
+      "shot": [
+        70.37,
+        72.87
+      ],
+      "who": "青年男性 深色西装白衬衫酒红色领带 黑色侧分短发",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴唇微张，正在说话",
+      "cross": true
+    },
+    {
+      "t": 75.0,
+      "text": "跟这种疯婆子有什么好说的",
+      "shot": [
+        72.87,
+        77.1
+      ],
+      "who": "年轻女性 粉色褶皱连衣裙 珍珠发夹长卷发",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位侧脸嘴张开正在说话",
+      "cross": false
+    },
+    {
+      "t": 76.0,
+      "text": "保安把她弄出去",
+      "shot": [
+        72.87,
+        77.1
+      ],
+      "who": "年轻女性 粉色褶皱连衣裙 珍珠发夹长卷发",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位侧脸嘴张开正在说话",
+      "cross": true
+    },
+    {
+      "t": 80.0,
+      "text": "先别推",
+      "shot": [
+        80.6,
+        83.43
+      ],
+      "who": "年轻女性 白色蕾丝长袖婚纱 盘发戴头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位女性嘴巴张开，正在说话",
+      "cross": true
+    },
+    {
+      "t": 81.0,
+      "text": "她坐着轮椅",
+      "shot": [
+        80.6,
+        83.43
+      ],
+      "who": "年轻女性 白色蕾丝长袖婚纱 盘发戴头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位女性嘴巴张开，正在说话",
+      "cross": false
+    },
+    {
+      "t": 84.0,
+      "text": "姐宾客都看着呢",
+      "shot": [
+        83.43,
+        86.7
+      ],
+      "who": "年轻女性 粉色连衣裙 长卷发佩戴珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴唇微张露出上排牙齿，处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 85.0,
+      "text": "你不要脸面也替周家想想",
+      "shot": [
+        83.43,
+        86.7
+      ],
+      "who": "年轻女性 粉色连衣裙 长卷发佩戴珍珠发夹",
+      "name": "许晴",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴唇微张露出上排牙齿，处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 87.0,
+      "text": "她没伤人也没要钱",
+      "shot": [
+        86.7,
+        90.57
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴部闭合，唇角微撇",
+      "cross": false
+    },
+    {
+      "t": 89.0,
+      "text": "是不是认错让我问清楚",
+      "shot": [
+        86.7,
+        90.57
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴部闭合，唇角微撇",
+      "cross": true
+    },
+    {
+      "t": 94.0,
+      "text": "这道疤是不是替我",
+      "shot": [
+        92.87,
+        94.87
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 白色头纱 长发 眼角挂泪",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张，正在说话",
+      "cross": true
+    },
+    {
+      "t": 97.0,
+      "text": "挡那锅热汤烫的",
+      "shot": [
+        94.87,
+        98.67
+      ],
+      "who": "年轻女性 深色上衣 手指修长洁净",
+      "name": "",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "特写",
+      "evidence": "第1位嘴部张开露出牙齿，正在说话",
+      "cross": false
+    }
+  ]
+}

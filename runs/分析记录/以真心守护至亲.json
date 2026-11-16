@@ -1,0 +1,24 @@
+[
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-13T17:18:18",
+    "elapsed_sec": 1260.0,
+    "eps": 17,
+    "items": 288,
+    "tokens": 1344279,
+    "source": "manual",
+    "note": "台账续九：v5 提示词重跑 17 集，21 分钟"
+  },
+  {
+    "stage": "build_sentences",
+    "label": "台词与画面对齐",
+    "at": "2026-11-13T17:18:19",
+    "elapsed_sec": 30.0,
+    "eps": 17,
+    "items": null,
+    "tokens": null,
+    "source": "manual",
+    "note": "19 集重建，17 个产物文件 3 秒内写完，含读文件"
+  }
+]

@@ -1,0 +1,386 @@
+{
+  "ep": 15,
+  "file": "15.mp4",
+  "duration": 54.4,
+  "shot_count": 15,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v2",
+  "usage": {
+    "prompt_tokens": 37690,
+    "completion_tokens": 14324,
+    "total_tokens": 52014
+  },
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.33,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发佩戴发夹 站立",
+          "老年女性 深色旧衣 坐轮椅 背对镜头"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "action": "年轻女性皱眉站立，对着轮椅上的人说话",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "笔记本电脑",
+          "书架",
+          "镜子"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep15_s000_0.jpg"
+    },
+    {
+      "start": 3.33,
+      "end": 6.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发佩戴发夹 站立",
+          "老年女性 深色旧衣 坐轮椅 背对镜头"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，牙齿可见",
+        "action": "年轻女性含泪说话，双手垂在身侧",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "笔记本电脑",
+          "书架",
+          "镜子"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep15_s001_0.jpg"
+    },
+    {
+      "start": 6.97,
+      "end": 9.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色短袖荷叶边连衣裙 长卷发别珍珠发夹",
+          "老年女性 深色上衣 发髻 坐轮椅 背对镜头"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位年轻女性嘴巴张开正在说话",
+        "action": "年轻女性站立向坐着的老人说话",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "书架",
+          "全身镜",
+          "笔记本电脑",
+          "书桌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s002_0.jpg"
+    },
+    {
+      "start": 9.83,
+      "end": 14.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色短袖荷叶边连衣裙 长卷发别珍珠发夹",
+          "老年女性 深色上衣 发髻 坐轮椅 背对镜头"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位年轻女性嘴巴张开正在说话",
+        "action": "年轻女性站立皱眉说话",
+        "place": "室内书房",
+        "props": [
+          "轮椅",
+          "书架",
+          "全身镜",
+          "笔记本电脑",
+          "书桌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s003_0.jpg"
+    },
+    {
+      "start": 14.07,
+      "end": 17.43,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫卡其裤 背黑色单肩包"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，处于说话状态",
+        "action": "手持单肩包对镜头外的人说话",
+        "place": "室内书房",
+        "props": [
+          "黑色单肩包",
+          "书架",
+          "笔记本电脑"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s004_0.jpg"
+    },
+    {
+      "start": 17.43,
+      "end": 19.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色衬衫卡其裤 背黑色单肩包 背对镜头",
+          "年轻女性 浅粉色连衣裙 长发夹发卡"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，处于说话状态",
+        "action": "两人一同走向房门",
+        "place": "室内书房",
+        "props": [
+          "黑色单肩包",
+          "全身镜",
+          "房门"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s005_0.jpg"
+    },
+    {
+      "start": 19.77,
+      "end": 23.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 棕色夹克 灰色内搭 灰白短发"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴闭合",
+        "action": "握住门把手准备开门",
+        "place": "室内房间",
+        "props": [
+          "门把手"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s006_0.jpg"
+    },
+    {
+      "start": 23.6,
+      "end": 29.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 棕色夹克 灰色内搭 灰白短发"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "action": "拿着钥匙向前递出",
+        "place": "室内房间",
+        "props": [
+          "钥匙"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s007_0.jpg"
+    },
+    {
+      "start": 29.13,
+      "end": 33.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 米白色T恤 高马尾 面有泪痕"
+        ],
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "嘴闭合，神情悲伤",
+        "action": "站在门口低头哭泣",
+        "place": "室内玄关",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s008_0.jpg"
+    },
+    {
+      "start": 33.73,
+      "end": 40.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 米白色T恤 高马尾 面有泪痕",
+          "中老年女性 灰白短发 深色上衣 背对镜头"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，口腔可见",
+        "action": "凑近对方含泪说话",
+        "place": "室内玄关",
+        "props": [
+          "书架",
+          "书堆"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s009_0.jpg"
+    },
+    {
+      "start": 40.77,
+      "end": 42.47,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧中式上衣 眼含泪水 面部布满皱纹"
+        ],
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "嘴部闭合，无发声状态",
+        "action": "含泪凝视前方",
+        "place": "室内未识别区域",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s010_0.jpg"
+    },
+    {
+      "start": 42.47,
+      "end": 45.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 米白色短袖T恤 扎高马尾 手持纸巾",
+          "老年女性 深色上衣 坐轮椅 仅露侧脸"
+        ],
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "嘴部闭合，未发声",
+        "action": "年轻女性低头擦拭眼泪",
+        "place": "室内未识别区域",
+        "props": [
+          "轮椅",
+          "纸巾"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s011_0.jpg"
+    },
+    {
+      "start": 45.7,
+      "end": 48.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧盘扣棉衣 灰白头发盘起 面带泪痕",
+          "年龄性别未识别 白色短袖上衣 仅见左侧背影"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老人嘴巴张开，正在说话",
+        "action": "老人含泪对面前的人说话",
+        "place": "室内书房",
+        "props": [
+          "书架",
+          "书籍"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s012_0.jpg"
+    },
+    {
+      "start": 48.53,
+      "end": 50.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 深色旧盘扣棉衣 灰白头发盘起 面带泪痕",
+          "年龄性别未识别 白色短袖上衣 仅见左侧背影"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老人嘴巴张开，牙齿可见",
+        "action": "老人含泪说话，神情难过",
+        "place": "室内书房",
+        "props": [
+          "书架",
+          "书籍"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s013_0.jpg"
+    },
+    {
+      "start": 50.7,
+      "end": 54.4,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色短袖T恤 马尾发含白色发圈 含泪哭泣",
+          "中老年人 性别未识别 深色上衣 仅见后脑背对镜头"
+        ],
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，上排牙齿可见，正在说话",
+        "action": "年轻女性含泪对面前的人说话",
+        "place": "室内房间",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep15_s014_0.jpg"
+    }
+  ]
+}

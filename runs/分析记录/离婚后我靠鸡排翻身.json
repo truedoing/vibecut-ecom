@@ -1,0 +1,79 @@
+[
+  {
+    "stage": "ocr_lines",
+    "label": "字幕识别",
+    "at": "2026-11-16T12:07:41",
+    "elapsed_sec": 74.2,
+    "eps": 1,
+    "items": 30,
+    "tokens": null,
+    "source": "auto",
+    "note": "抽帧间隔 2 秒，1 路并行"
+  },
+  {
+    "stage": "segment",
+    "label": "镜头切分",
+    "at": "2026-11-16T12:08:06",
+    "elapsed_sec": 0.1,
+    "eps": 1,
+    "items": 3,
+    "tokens": null,
+    "source": "auto",
+    "note": "间隔上限 4.5 秒，段长 8.0–26.0 秒"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-16T12:18:44",
+    "elapsed_sec": 601.0,
+    "eps": 1,
+    "items": 18,
+    "tokens": 85346,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 1 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-16T12:26:55",
+    "elapsed_sec": 466.0,
+    "eps": 1,
+    "items": 15,
+    "tokens": 72173,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 1 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-16T12:26:56",
+    "elapsed_sec": 467.4,
+    "eps": 1,
+    "items": 13,
+    "tokens": 65908,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 1 路，sd-shot-v5"
+  },
+  {
+    "stage": "build_sentences",
+    "label": "台词与画面对齐",
+    "at": "2026-11-16T12:27:07",
+    "elapsed_sec": 0.1,
+    "eps": 1,
+    "items": 21,
+    "tokens": null,
+    "source": "auto",
+    "note": "对齐 1 集 / 21 句"
+  },
+  {
+    "stage": "build_sentences",
+    "label": "台词与画面对齐",
+    "at": "2026-11-16T12:27:17",
+    "elapsed_sec": 0.1,
+    "eps": 1,
+    "items": 21,
+    "tokens": null,
+    "source": "auto",
+    "note": "对齐 1 集 / 21 句"
+  }
+]

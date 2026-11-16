@@ -1,0 +1,46 @@
+{
+ "_readme": "剧的编号与工作状态。只给在做（active）的剧编 J1..Jn，按 drama_order 的顺序；归档后号让出、后面的往前补，归档那一刻的号记在 archived_code 里。drama_order 是人工维护的名字顺序，理由见脚本 docstring。",
+ "drama_order": [
+  "八零憨妻",
+  "父爱跨越山海",
+  "离婚后我靠鸡排翻身",
+  "以真心守护至亲"
+ ],
+ "dramas": {
+  "八零憨妻": {
+   "status": "archived",
+   "code": null,
+   "archived_code": "J1",
+   "archived_at": "2026-11-13",
+   "aliases": [
+    "憨妻",
+    "八零"
+   ]
+  },
+  "父爱跨越山海": {
+   "status": "active",
+   "code": "J1",
+   "aliases": [
+    "父爱",
+    "山海"
+   ]
+  },
+  "离婚后我靠鸡排翻身": {
+   "status": "active",
+   "code": "J2",
+   "aliases": [
+    "鸡排",
+    "离婚后"
+   ]
+  },
+  "以真心守护至亲": {
+   "status": "active",
+   "code": "J3",
+   "aliases": [
+    "以真心",
+    "真心",
+    "至亲"
+   ]
+  }
+ }
+}

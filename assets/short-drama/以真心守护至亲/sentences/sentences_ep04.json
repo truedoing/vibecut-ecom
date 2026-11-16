@@ -1,0 +1,425 @@
+{
+  "ep": 4,
+  "drama": "以真心守护至亲",
+  "sources": {
+    "lines": "lines/lines_ep04.json",
+    "shots": "shots/shots_ep04.json",
+    "char_map": "char_map.json",
+    "shots_prompt": "sd-shot-v5"
+  },
+  "counts": {
+    "lines": 25,
+    "on_screen": 23,
+    "off_screen": 2,
+    "unknown": 0,
+    "named": 23
+  },
+  "dense_shots": [
+    {
+      "shot": "30.47-35.6",
+      "lines": 4
+    }
+  ],
+  "rows": [
+    {
+      "t": 0.0,
+      "text": "妈你慢点坐",
+      "shot": [
+        0.0,
+        2.77
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 长发带头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，处于说话状态",
+      "cross": false
+    },
+    {
+      "t": 2.0,
+      "text": "还確不",
+      "shot": [
+        0.0,
+        2.77
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 长发带头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，处于说话状态",
+      "cross": true
+    },
+    {
+      "t": 5.0,
+      "text": "不了",
+      "shot": [
+        2.77,
+        5.8
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位的嘴部可见但未张开",
+      "cross": false
+    },
+    {
+      "t": 6.0,
+      "text": "你刚才跑走就为拿这个",
+      "shot": [
+        5.8,
+        8.83
+      ],
+      "who": "老年女性 灰色旧中式盘扣上衣 灰白发髻 眼眶含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张，似在开口说话；另一只较年轻的手握着她的手",
+      "cross": false
+    },
+    {
+      "t": 9.0,
+      "text": "硬框都露出来了",
+      "shot": [
+        8.83,
+        11.87
+      ],
+      "who": "年轻女性 白色蕾丝高领长袖婚纱 戴头纱 黑色长卷发 眼眶泛红含泪",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位女性嘴唇微张，口腔隐约可见，呈说话口型",
+      "cross": false
+    },
+    {
+      "t": 11.0,
+      "text": "坐久了多疼",
+      "shot": [
+        8.83,
+        11.87
+      ],
+      "who": "年轻女性 白色蕾丝高领长袖婚纱 戴头纱 黑色长卷发 眼眶泛红含泪",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位女性嘴唇微张，口腔隐约可见，呈说话口型",
+      "cross": false
+    },
+    {
+      "t": 12.0,
+      "text": "妈还以为你也嫌我",
+      "shot": [
+        11.87,
+        15.7
+      ],
+      "who": "老年女性 灰白发 深灰色旧中式棉袄 眼眶含泪",
+      "name": "林秀兰",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴部微张，可见牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 16.0,
+      "text": "我嫌的是这硬框着你",
+      "shot": [
+        15.7,
+        16.93
+      ],
+      "who": "年轻女性 白色婚纱 长发披肩 戴头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第2位嘴巴张开",
+      "cross": true
+    },
+    {
+      "t": 18.0,
+      "text": "不是嫌你",
+      "shot": [
+        16.93,
+        18.6
+      ],
+      "who": "",
+      "name": "",
+      "kind": "off_screen",
+      "emotion": "平静",
+      "intensity": "弱",
+      "size": "特写",
+      "evidence": "画面仅呈现手部与躯干，无嘴部可见",
+      "cross": false
+    },
+    {
+      "t": 19.0,
+      "text": "妈我好不容易找到你",
+      "shot": [
+        18.6,
+        22.83
+      ],
+      "who": "年轻女性 白色蕾丝长袖婚纱 戴头纱 眼眶泛红含泪",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开说话，第2位背对镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 22.0,
+      "text": "怎么舍得不要你",
+      "shot": [
+        18.6,
+        22.83
+      ],
+      "who": "年轻女性 白色蕾丝长袖婚纱 戴头纱 眼眶泛红含泪",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "强",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开说话，第2位背对镜头看不见嘴",
+      "cross": false
+    },
+    {
+      "t": 23.0,
+      "text": "认完就行了",
+      "shot": [
+        22.83,
+        26.83
+      ],
+      "who": "青年男性 深色西装白衬衫酒红色领带 短黑发背梳",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 24.0,
+      "text": "让她去后面坐",
+      "shot": [
+        22.83,
+        26.83
+      ],
+      "who": "青年男性 深色西装白衬衫酒红色领带 短黑发背梳",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 26.0,
+      "text": "别耽误仪式",
+      "shot": [
+        22.83,
+        26.83
+      ],
+      "who": "青年男性 深色西装白衬衫酒红色领带 短黑发背梳",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "弱",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开露出牙齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 27.0,
+      "text": "家属都坐主桌",
+      "shot": [
+        26.83,
+        30.47
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 长卷发 戴头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "震惊",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开露齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 29.0,
+      "text": "我妈为什么坐后面",
+      "shot": [
+        26.83,
+        30.47
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 长卷发 戴头纱",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "震惊",
+      "intensity": "中",
+      "size": "中景",
+      "evidence": "第1位嘴巴张开露齿，正在说话",
+      "cross": false
+    },
+    {
+      "t": 31.0,
+      "text": "我爸旁边坐的都是领导",
+      "shot": [
+        30.47,
+        35.6
+      ],
+      "who": "年轻男性 黑色西装白衬衫红领带 黑发微乱 侧脸面向画面左侧",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见",
+      "cross": false
+    },
+    {
+      "t": 33.0,
+      "text": "她穿成这样",
+      "shot": [
+        30.47,
+        35.6
+      ],
+      "who": "年轻男性 黑色西装白衬衫红领带 黑发微乱 侧脸面向画面左侧",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见",
+      "cross": false
+    },
+    {
+      "t": 34.0,
+      "text": "让人问起来",
+      "shot": [
+        30.47,
+        35.6
+      ],
+      "who": "年轻男性 黑色西装白衬衫红领带 黑发微乱 侧脸面向画面左侧",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见",
+      "cross": false
+    },
+    {
+      "t": 35.0,
+      "text": "我怎么介绍",
+      "shot": [
+        30.47,
+        35.6
+      ],
+      "who": "年轻男性 黑色西装白衬衫红领带 黑发微乱 侧脸面向画面左侧",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴张开，牙齿可见",
+      "cross": false
+    },
+    {
+      "t": 36.0,
+      "text": "就说是我妈妈",
+      "shot": [
+        35.6,
+        40.2
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 披发戴头纱 站立推轮椅",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位（年轻女性）嘴巴张开、牙齿可见，正在说话；第2位嘴闭合",
+      "cross": false
+    },
+    {
+      "t": 38.0,
+      "text": "难道要我把她藏起来",
+      "shot": [
+        35.6,
+        40.2
+      ],
+      "who": "年轻女性 白色蕾丝婚纱 披发戴头纱 站立推轮椅",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "激动",
+      "intensity": "强",
+      "size": "中景",
+      "evidence": "第1位（年轻女性）嘴巴张开、牙齿可见，正在说话；第2位嘴闭合",
+      "cross": false
+    },
+    {
+      "t": 41.0,
+      "text": "晴晴把椅子往旁边挪一点",
+      "shot": [
+        40.2,
+        44.63
+      ],
+      "who": "年轻女性 白色婚纱 长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张",
+      "cross": false
+    },
+    {
+      "t": 43.0,
+      "text": "给妈留个位置",
+      "shot": [
+        40.2,
+        44.63
+      ],
+      "who": "年轻女性 白色婚纱 长卷发",
+      "name": "许宁",
+      "kind": "on_screen",
+      "emotion": "悲伤",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位嘴巴微张",
+      "cross": false
+    },
+    {
+      "t": 45.0,
+      "text": "我说了主桌不行",
+      "shot": [
+        44.63,
+        46.58
+      ],
+      "who": "年轻男性 黑色西装三件套 白衬衫配酒红领带 短发背头",
+      "name": "周承",
+      "kind": "on_screen",
+      "emotion": "愤怒",
+      "intensity": "中",
+      "size": "近景",
+      "evidence": "第1位男性侧脸可见，嘴巴张开呈圆形正在说话",
+      "cross": false
+    }
+  ]
+}

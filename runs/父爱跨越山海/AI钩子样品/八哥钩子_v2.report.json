@@ -1,0 +1,55 @@
+{
+  "name": "八哥钩子_v2",
+  "task": "父爱跨越山海 · AI 钩子（八哥视角）",
+  "made_at": "2026-11-15T17:41",
+  "deliverable": "runs/父爱跨越山海/AI钩子样品/八哥钩子_v2.mp4",
+  "spec": {
+    "duration_s": 8.2,
+    "size": "1080x1920",
+    "fps": 30,
+    "audio": "第 4 集原声，无任何合成配音"
+  },
+  "ai_generation": {
+    "tool": "short-drama-video/scripts/seedance.py",
+    "model": "doubao-seedance-2-0-mini-260615",
+    "task_id": "cgt-20261115173746-6lvvt",
+    "resolution": "480p",
+    "ratio": "9:16",
+    "duration": 10,
+    "seed": 20261115,
+    "audio_generated": false,
+    "ref_image": "第 8 集 4.4s 干净空镜帧（无人物、无字幕）",
+    "tokens": 100858,
+    "cost_rmb": 2.0,
+    "wall_time_s": 109
+  },
+  "audio_source": {
+    "episode": 4,
+    "range": "65.60-68.60",
+    "content": "女儿在门内哭喊「我错了……别打了」",
+    "treatment": "第一遍 lowpass 800Hz（隔着铁门，闷）0.30s 起；第二遍 带轻微房间回声（门外八哥复述）4.90s 起"
+  },
+  "asr_check": {
+    "engine": "AudioTranscribe",
+    "text": "我错了，别打了。 / 我错了，别打了。",
+    "timecodes": [[0.14, 2.54], [4.74, 7.14]],
+    "conclusion": "两遍均为第 4 集原声，逐字对得上，无合成语音"
+  },
+  "frame_check": {
+    "first_frame_vs_source": "与原剧第 8 集 4.4s 帧基本一致：同机位、铁链锁门、屋顶破洞漏光、凉席、饭碗位置相同",
+    "bird": "约 3 秒从破洞飞入，5 秒落在饭碗边，6-10 秒抬头看镜头",
+    "defects": ["八哥爪子踩在饭碗里，略不合理但 480p 下不明显", "门板与地面材质与原片有轻微差异"]
+  },
+  "human_review": {
+    "reviewer": "张老师",
+    "at": "2026-11-15T21:00",
+    "verdict": "不太好，先这样",
+    "meaning": "搁置，不进 D1 正片，不算通过。不自动修订，等他想接着做再动手",
+    "not_fixed": "未记录具体不满意的点，不替他猜"
+  },
+  "known_gaps": [
+    "还未接正片：接缝要不要黑场/叠化未定",
+    "开头空镜与 D1 正片 ep8 2.4-12.4 段重复，重叠问题仍未定解法",
+    "未做去重、未做文字动效（验钩子阶段有意去掉）"
+  ]
+}

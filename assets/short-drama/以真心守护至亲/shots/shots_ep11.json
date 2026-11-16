@@ -4,11 +4,11 @@
   "duration": 53.45,
   "shot_count": 15,
   "scene_threshold": 0.25,
-  "prompt_version": "sd-shot-v1",
+  "prompt_version": "sd-shot-v5",
   "usage": {
-    "prompt_tokens": 12135,
-    "completion_tokens": 4939,
-    "total_tokens": 17074
+    "prompt_tokens": 48435,
+    "completion_tokens": 19937,
+    "total_tokens": 68372
   },
   "shots": [
     {
@@ -18,32 +18,51 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 浅粉色荷叶边上衣 白色蕾丝头纱 长卷发"
+          "年轻女性 粉色荷叶边连衣裙 白色蕾丝头纱 长卷发 珍珠发夹"
         ],
-        "action": "皱眉张嘴，情绪激动地说话",
-        "place": "室内宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，处于说话口型",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "眼含泪水，张嘴委屈地质问",
+        "place": "户外花园",
         "props": [],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
       },
-      "frame": "ep11_s000.jpg"
+      "frame": "ep11_s000_0.jpg"
     },
     {
       "start": 2.57,
       "end": 5.9,
       "tag": {
         "shot_size": "近景",
-        "people": 1,
+        "people": 3,
         "who": [
-          "年轻女性 浅粉色荷叶边上衣 白色蕾丝头纱 长卷发"
+          "年轻女性 浅粉色连衣裙 白色头纱 长卷发 眼眶泛红",
+          "中年男性 深色西装 仅露出肩膀和手臂",
+          "青年女性 黑色长发 浅色无袖上衣 坐在背景宴席旁"
         ],
-        "action": "皱眉张嘴，情绪激动地说话",
-        "place": "室内宴会厅",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴巴张大露出牙齿",
+        "emotion": "震惊",
+        "intensity": "强",
+        "action": "震惊地张嘴望向前方",
+        "place": "酒店宴会厅",
+        "props": [
+          "白色头纱",
+          "餐桌花艺"
+        ],
         "scene_text": "",
-        "watermark": "热播漫剧ai生成请勿模仿"
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s001.jpg"
+      "frame": "ep11_s001_0.jpg"
     },
     {
       "start": 5.9,
@@ -52,15 +71,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 浅粉色连衣裙 白色蕾丝头纱 长卷发"
+          "年轻男性 深蓝色西装 浅色衬衫 深色领带 发型整齐 眼眶微红"
         ],
-        "action": "神情急切，情绪激动地说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开，牙齿可见，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "站立凝视，表情凝重",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s002.jpg"
+      "frame": "ep11_s002_0.jpg"
     },
     {
       "start": 8.87,
@@ -69,15 +95,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 深色西装 浅蓝条纹衬衫 深色领带"
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发披肩 戴白色头纱"
         ],
-        "action": "皱眉说话，神情严肃不满",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪侧头讲话，神情委屈",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s003.jpg"
+      "frame": "ep11_s003_0.jpg"
     },
     {
       "start": 11.7,
@@ -86,15 +119,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 浅粉色连衣裙 白色蕾丝头纱 长卷发"
+          "老年女性 深色中式盘扣上衣 灰白头发 面部有泪水"
         ],
-        "action": "神情委屈，情绪激动地说话",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，露出牙齿，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "带泪哭诉，神情痛苦",
+        "place": "室内房间",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s004.jpg"
+      "frame": "ep11_s004_0.jpg"
     },
     {
       "start": 14.7,
@@ -103,15 +143,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "老年女性 深色盘扣上衣 灰发"
+          "年轻女性 粉色连衣裙 白色蕾丝头纱 长卷发 眼含泪水"
         ],
-        "action": "含泪哭诉，神情悲痛",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "戴头纱的女子含泪诉说",
         "place": "酒店宴会厅",
         "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s005.jpg"
+      "frame": "ep11_s005_0.jpg"
     },
     {
       "start": 17.87,
@@ -120,19 +167,27 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 深色西装 白色衬衫 黑色领带 侧头开口"
+          "中年男性 深色西装 白色衬衫领带"
         ],
-        "action": "看向画面右侧开口说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "坐在餐桌前开口说话",
         "place": "酒店宴会厅",
         "props": [
           "酒杯",
           "红色餐巾",
-          "白色瓷盘"
+          "餐具",
+          "餐盘"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s006.jpg"
+      "frame": "ep11_s006_0.jpg"
     },
     {
       "start": 20.83,
@@ -141,19 +196,22 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "中年男性 深色西装 白色衬衫 黑色领带 侧头开口"
+          "年轻女性 粉色荷叶边连衣裙 白色蕾丝头纱 长卷发"
         ],
-        "action": "看向画面右侧开口说话",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，露出牙齿，正在说话",
+        "emotion": "激动",
+        "intensity": "强",
+        "action": "睁大眼睛张嘴质问对方",
         "place": "酒店宴会厅",
-        "props": [
-          "酒杯",
-          "红色餐巾",
-          "白色瓷盘"
-        ],
+        "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s007.jpg"
+      "frame": "ep11_s007_0.jpg"
     },
     {
       "start": 22.57,
@@ -162,57 +220,76 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "年轻女性 白色蕾丝头纱 浅粉色连衣裙 长发微卷"
+          "年轻男性 黑色三件套西装 深红领带 手持戒指"
         ],
-        "action": "惊讶张嘴看向画面右侧",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "激动",
+        "intensity": "强",
+        "action": "手持戒指对着前方说话",
         "place": "酒店宴会厅",
         "props": [
-          "白色蕾丝头纱"
+          "戒指"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s008.jpg"
+      "frame": "ep11_s008_0.jpg"
     },
     {
       "start": 25.17,
       "end": 39.13,
       "tag": {
         "shot_size": "近景",
-        "people": 1,
+        "people": 2,
         "who": [
-          "中年男性 深色西装 白色衬衫 酒红色领带 手持戒指"
+          "中年女性 白色蕾丝上衣 长卷发",
+          "老年女性 深色上衣 花白头发盘起"
         ],
-        "action": "手持戒指盒看向画面左侧说话",
-        "place": "酒店宴会厅",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸，嘴巴张开正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "推着轮椅上的老人，向对方说话",
+        "place": "室内住宅门口",
         "props": [
-          "戒指盒",
-          "钻戒"
+          "轮椅"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s009.jpg"
+      "frame": "ep11_s009_0.jpg"
     },
     {
       "start": 39.13,
       "end": 41.73,
       "tag": {
-        "shot_size": "中景",
+        "shot_size": "近景",
         "people": 2,
         "who": [
-          "年轻女性 白色蕾丝头纱 浅粉色连衣裙 长发微卷 微笑",
-          "未知人 深色长发 前景左侧头部背影"
+          "老年女性 深灰色中式对襟盘扣衫 灰白头发 坐着",
+          "年龄性别未识别 服装未识别 戴眼镜 仅露部分面部"
         ],
-        "action": "白纱裙女性微笑看向画面前方",
-        "place": "酒店宴会厅",
-        "props": [
-          "白色蕾丝头纱"
-        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老年女性嘴巴张开，牙齿可见，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "坐着张口说话，神情温和含泪",
+        "place": "室内房间",
+        "props": [],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s010.jpg"
+      "frame": "ep11_s010_0.jpg"
     },
     {
       "start": 41.73,
@@ -221,77 +298,109 @@
         "shot_size": "近景",
         "people": 1,
         "who": [
-          "老年女性 灰色中式盘扣上衣 灰发盘起"
+          "年轻女性 浅色T恤 扎高马尾"
         ],
-        "action": "抬头看向画面左侧说话",
-        "place": "室内客厅",
-        "props": [],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "侧脸嘴巴微张，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "用钥匙开锁",
+        "place": "室内门口",
+        "props": [
+          "钥匙",
+          "门锁",
+          "门把手"
+        ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s011.jpg"
+      "frame": "ep11_s011_0.jpg"
     },
     {
       "start": 45.13,
       "end": 46.37,
       "tag": {
         "shot_size": "特写",
-        "people": 1,
+        "people": 2,
         "who": [
-          "青年（性别未识别） 无可见服装 仅露出持钥匙开锁的手部"
+          "成年人 未识别性别 仅手部入镜 手握钥匙插锁",
+          "成年人 未识别性别 仅手部入镜 另一只手从旁伸入"
         ],
-        "action": "手持钥匙插入入户门锁中",
-        "place": "住宅入户门外",
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有手部，看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "把钥匙插进门锁锁孔",
+        "place": "未识别",
         "props": [
-          "金属钥匙",
-          "入户门锁（带蓝色锁芯）",
-          "入户门把手"
+          "银色钥匙",
+          "金属门锁",
+          "蓝色锁芯盖"
         ],
-        "scene_text": "",
-        "watermark": ""
+        "scene_text": "DEZZI",
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s012.jpg"
+      "frame": "ep11_s012_0.jpg"
     },
     {
       "start": 46.37,
       "end": 50.8,
       "tag": {
-        "shot_size": "特写",
+        "shot_size": "中景",
         "people": 1,
         "who": [
-          "青年（性别未识别） 无可见服装 仅露出持钥匙开锁的手部"
+          "年轻女性 粉色雪纺连衣裙 长卷发别发夹"
         ],
-        "action": "手持钥匙插入入户门锁中",
-        "place": "住宅入户门外",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张，露出牙齿，似在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "站在门口侧头微笑看着屋内",
+        "place": "住宅玄关",
         "props": [
-          "金属钥匙",
-          "入户门锁（带蓝色锁芯）",
-          "入户门把手"
+          "智能门锁面板",
+          "鞋架"
         ],
         "scene_text": "",
-        "watermark": ""
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s013.jpg"
+      "frame": "ep11_s013_0.jpg"
     },
     {
       "start": 50.8,
       "end": 53.45,
       "tag": {
-        "shot_size": "中景",
-        "people": 1,
+        "shot_size": "近景",
+        "people": 2,
         "who": [
-          "年轻女性 浅粉色蕾丝边连衣裙 长卷发别银色发卡"
+          "年轻女性 浅灰短袖T恤 黑色高马尾",
+          "年轻女性 浅粉色上衣 背对镜头"
         ],
-        "action": "站在玄关门边看向门外的人",
-        "place": "住宅入户玄关（室内）",
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "正面向对方争辩，强调居住权",
+        "place": "室内住宅门口",
         "props": [
-          "木质鞋架",
-          "多双鞋子"
+          "门上的福字挂饰"
         ],
-        "scene_text": "",
-        "watermark": ""
+        "scene_text": "福",
+        "watermark": "",
+        "frames_used": 3
       },
-      "frame": "ep11_s014.jpg"
+      "frame": "ep11_s014_0.jpg"
     }
   ]
 }

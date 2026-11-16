@@ -1,0 +1,24 @@
+[
+  {
+    "stage": "ocr_lines",
+    "label": "字幕识别",
+    "at": "2026-11-13T17:18:19",
+    "elapsed_sec": 1216.2,
+    "eps": 18,
+    "items": 1284,
+    "tokens": null,
+    "source": "manual",
+    "note": "台账续八：建库净 25:52，其中字幕识别 20:16"
+  },
+  {
+    "stage": "segment",
+    "label": "镜头切分",
+    "at": "2026-11-13T17:18:20",
+    "elapsed_sec": 66.0,
+    "eps": 18,
+    "items": null,
+    "tokens": null,
+    "source": "manual",
+    "note": "台账续八：切段 1:06"
+  }
+]
