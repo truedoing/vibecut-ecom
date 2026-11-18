@@ -31,14 +31,50 @@ plan 级字段：src_dir（剧集目录）、card（默认字幕卡图）、w/h/
   python3 mix_trailer.py --plan plan.json --out 成片.mp4 [--ff /path/ffmpeg] [--dry]
   python3 mix_trailer.py --plan plan.json --out 成片.mp4 --allow-mid-speech
   python3 mix_trailer.py --plan plan.json --out 成片.mp4 --dedup dedup_spec.json
+  python3 mix_trailer.py --plan plan.json --out 成片.mp4 --jobs 4
 
 --dry 只跑校验和段落表打印，不执行 ffmpeg。
+
+并行装配（2026-11-17 加）
+------------------------
+实测慢的根源不在编码（720p medium 和 360p veryfast 全片耗时几乎一样），
+在「几十路源片解码 + 滤镜链」挤在一个 ffmpeg 进程里串行走。
+--jobs N（默认 1 = 单进程）把段表按顺序切成 N*2 块，N 个 ffmpeg 进程并行渲染
+中间文件，再合并。分块必须连续，concat 顺序不能乱。
+11-17 在当前这台机器（16 vCPU、无 AVX2）实测：单路 x264 medium 就吃满 CPU，
+两路并行每路慢 1.7 倍、总吞吐只涨 15%；分块 veryfast + medium 终程加起来
+反而比单进程慢。**在本机上真正的提速开关是 --preset veryfast（2.1 倍）**；
+--jobs 留给核真的多、或上了硬编码器的机器。
+  · 挂了画面参数表（全局链/扫光/字幕）：中间块用 crf 10 veryfast 近无损画质，
+    终程统一过全局链再压定版 medium crf 19；音频中间块走无损 PCM，
+    alimiter/AAC 留给终程，跟老路径同源。
+  · 没挂参数表：中间块直接压定版参数，合并时纯复制，零再编码。
+--jobs 1 走原来的单进程单命令路径（行为与以前完全一致）。
+
+段间转场（2026-11-17 加，清单层决策、装配层执行）
+--------------------------------------------------
+段上写 `"out"` 字段选这一段结束后接什么转场（缺省 = "cut" 硬切，行为与以前一致）：
+  · "cut"  硬切，什么都不加。
+  · "black" 黑场一闪：前段尾淡出（视频 0.25s / 音频 0.30s）→ 0.45s 纯黑（静音）→
+           后段淡入。分章信号最明确。**切点被台词腰斩时，清单层应同时顺切点**
+           （把 b 延到台词说完，那是改清单数值，不是装配器的活）。
+  · "card"  文字卡：1.2s 黑底两行字（剧名 + 悬念句）整卡淡入淡出，顺便报剧名。
+plan 级配置（可选，全有默认值）：
+  "transitions": {
+    "black": {"d":0.45, "fade":0.25, "afade":0.30},
+    "card":  {"d":1.2, "title":"《剧名》", "sub":"默认副句", "font":"修饰/字体/xx.otf"},
+    "font":  "修饰/字体/xx.otf"      # card 字体也可放这层
+  }
+段级 `"out_sub"` 覆盖该接缝的文字卡副句。文字卡由 drawtext 预渲染成 PNG
+（临时目录 + 相对路径，规避盘符冒号转义坑），内容相同的卡自动复用。
+用哪种转场是排清单时的创作决策，见清单技能的决策规则；装配器只照单执行。
 
 画面层参数表（2026-11-14 加，可选）
 --------------------------------
 `--dedup <spec.json>` 挂技能产出的「画面参数表」：逐段可挑几段做 A1 包装、
 concat 之后挂一次全局参数包 + 循环扫光 + ASS 文字，全部并进同一张滤镜图，
-**全程只编码一次**，不对已经拼好的成片二次压制。
+**单进程路径只编码一次**，不对已经拼好的成片二次压制
+（--jobs 并行时中间块近无损 + 终程定版，两道，见文末）。
 
 spec 由两个可选技能共同产出：去重技能写 dedup 段（a1 / global / sweep），
 修饰技能写 decorate 段（ass 字幕文件）。装配器只负责「挂上去」，不做任何
@@ -58,6 +94,7 @@ spec 由两个可选技能共同产出：去重技能写 dedup 段（a1 / global
 --allow-mid-speech 明知有切半句也照装（给人自己定的时候用）。
 """
 import argparse
+import concurrent.futures
 import json
 import os
 import re
@@ -65,6 +102,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
@@ -78,6 +116,14 @@ except Exception:  # 极端情况兜底：至少别悄悄指到当前目录去
     def _data_root() -> Path:
         _docs = Path.home() / "Documents"
         return (_docs if _docs.is_dir() else Path.home()) / "短剧工作区"
+
+
+def _ffp(p):
+    """ffmpeg 滤镜里的路径：反斜杠换正斜杠、冒号转义。
+    否则 Windows 绝对路径 C:\\Users\\... 的冒号会被当参数分隔符、反斜杠被吃掉，
+    报 "Could not create a libass track" / "Unable to parse option value ... as
+    image size"（11-17 实测）。"""
+    return str(p).replace("\\", "/").replace(":", "\\\\:")
 
 
 def repo_root() -> Path:
@@ -379,9 +425,49 @@ def dedup_tail_chains(cfg, W, H, sweep_idx, ass_path, fontsdir):
         parts.append(f"[{vmap}][sw]overlay=0:0:shortest=1:eval=frame[vsw]")
         vmap = "vsw"
     if ass_path:
-        parts.append(f"[{vmap}]ass={ass_path}:fontsdir={fontsdir}[vout]")
+        _fd = f":fontsdir={_ffp(fontsdir)}" if fontsdir else ""
+        parts.append(f"[{vmap}]ass={_ffp(ass_path)}{_fd}[vout]")
         vmap = "vout"
     return parts, f"[{vmap}]"
+
+
+def shift_ass_events(src_ass, trans_offsets, out_ass):
+    """段间转场会把成片时间轴整体推后，ASS 字幕事件是按无转场时间轴写的，
+    得按每个转场的位置和时长平移，否则字幕全部错位（11-17 实测踩中）。
+    trans_offsets = [(转场在原时间轴的位置, 转场时长), ...]，
+    事件起始时间在哪个转场之后，就累加它前面的全部转场时长。"""
+    import re
+
+    def parse(ts):  # "0:00:09.02" → 秒
+        h, m, s = ts.split(":")
+        return int(h) * 3600 + int(m) * 60 + float(s)
+
+    def fmt(t):
+        h = int(t // 3600)
+        m = int(t % 3600 // 60)
+        return f"{h}:{m:02d}:{t % 60:05.2f}"
+
+    def offset_of(t):
+        return sum(d for (tt, d) in trans_offsets if tt <= t + 1e-6)
+
+    n = 0
+    with open(src_ass, encoding="utf-8-sig") as fi, \
+            open(out_ass, "w", encoding="utf-8") as fo:
+        for line in fi:
+            if line.startswith("Dialogue:"):
+                head, _, rest = line.partition(",")
+                t0s, _, rest2 = rest.partition(",")
+                t1s, _, _ = rest2.partition(",")
+                try:
+                    off = offset_of(parse(t0s))
+                    if off > 0:
+                        fo.write(f"{head},{fmt(parse(t0s) + off)},{fmt(parse(t1s) + off)},{rest2}")
+                        n += 1
+                        continue
+                except ValueError:
+                    pass
+            fo.write(line)
+    return n
 
 
 def freeze_check(path, ff, min_sec=1.0, sample_fps=4, w=32, h=56):
@@ -438,6 +524,16 @@ def main():
                     help="画面参数表 dedup_spec.json；不给则完全不挂画面处理")
     ap.add_argument("--preset", default=None,
                     help="覆盖 libx264 预设（默认 medium；全片带滤镜时可用 fast 提速）")
+    ap.add_argument("--jobs", type=int, default=1,
+                    help="并行装配的 ffmpeg 进程数（默认 1 = 单进程老路径。"
+                         "11-17 实测：本机单路 x264 已吃满 CPU，4 进程并行总吞吐只涨"
+                         " ~1.7 倍但终程还是串行，反而不划算；留给核多/硬编码的机器用）")
+    ap.add_argument("--vcodec", default=None,
+                    help="视频编码器（默认 libx264）。可用 h264_nvenc 等硬编码："
+                         "需要渲染机驱动 ≥570 且带 N 卡，本机（GTX 1050 + 560.94）实测"
+                         "带不动，未验证，仅在渲染机上启用）")
+    ap.add_argument("--vq", type=int, default=19,
+                    help="画质参数：libx264 时作 -crf，nvenc 时作 -cq（默认 19）")
     ap.add_argument("--allow-mid-speech", action="store_true",
                     help="明知刀口切在说话中间也照装")
     ap.add_argument("--no-cut-check", action="store_true",
@@ -571,148 +667,477 @@ def main():
             [ff, "-y", "-v", "error", "-f", "lavfi", "-i", f"color=black:s={W}x{H}",
              "-frames:v", "1", black_png], check=True)
 
-    # ---------- 组滤镜图 ----------
-    inputs, parts = [], []
-    special = {}  # input idx -> 展示时长（图片类）
-    loop_input = {}  # input idx -> 无限循环标记（扫光帧序列）
+    # ---------- 转场时间轴 + 段落时长表（两条装配路径共用；11-17 加段间转场） ----------
+    # 段上写 "out": "black" / "card" 表示这一段结束后插转场（缺省 = "cut" 硬切）。
+    # 用哪种转场是清单层的创作决策（排清单时定），装配器只照单执行；
+    # 顺切点（把切点延到台词说完）改的是清单里的切点数值，也不在这里做。
+    # plan.transitions = {
+    #   "black": {"d":0.45, "fade":0.25, "afade":0.30},
+    #   "card":  {"d":1.2, "title":"《剧名》", "sub":"默认副句", "font":"修饰/字体/xx.otf"},
+    #   "font": "修饰/字体/xx.otf"   # card 字体也可放这层
+    # }
+    # 段级：seg["out"]="card" 可加 seg["out_sub"]="这一接缝的悬念句" 覆盖默认副句。
+    TR = plan.get("transitions") or {}
+    bcfg = TR.get("black") or {}
+    BLACK_D = float(bcfg.get("d", 0.45))
+    V_FADE = float(bcfg.get("fade", 0.25))
+    A_FADE = float(bcfg.get("afade", 0.30))
+    ccfg = TR.get("card") or {}
+    CARD_D = float(ccfg.get("d", 1.2))
 
-    def add_input(p):
-        inputs.append(p)
-        return len(inputs) - 1
+    def seg_dur_of(s):
+        if s["type"] == "ep":
+            return round(s["b"] - s["a"], 3)
+        if s["type"] == "video":
+            if "a" in s and "b" in s:
+                return round(s["b"] - s["a"], 3)
+            d = stream_dur(fp, resolve(s["path"]), "v")
+            return round(d, 3) if d else 0.0
+        return round(s["d"], 3)
 
-    durations = []
-    for i, s in enumerate(plan["segs"]):
-        t = s["type"]
-        if t == "ep":
-            path = resolve(s["path"]) if s.get("path") else ep_file(src_dir, s["ep"])
-            a, b = s["a"], s["b"]
-            durations.append(round(b - a, 3))
-            idx = add_input(path)
-            if spec and s.get("label") in a1_labels:
-                parts.append(dedup_ep_chain(idx, i, a, b, W, H, FPS, spec))
+    timeline = []
+    for s in plan["segs"]:
+        t_out = s.get("out") or "cut"
+        if t_out not in ("cut", "black", "card"):
+            sys.exit(f"段 {s['label']} 的 out=\"{t_out}\" 无效（只认 cut/black/card）")
+        timeline.append({"kind": "seg", "seg": s, "dur": seg_dur_of(s),
+                         "fade_in": bool(timeline) and timeline[-1]["kind"] == "trans",
+                         "fade_out": t_out != "cut"})
+        if t_out == "black":
+            timeline.append({"kind": "trans", "type": "black",
+                             "dur": BLACK_D, "label": "转场黑场"})
+        elif t_out == "card":
+            timeline.append({"kind": "trans", "type": "card", "dur": CARD_D,
+                             "sub": s.get("out_sub") or ccfg.get("sub", ""),
+                             "label": "转场文字卡"})
+    if plan["segs"] and (plan["segs"][-1].get("out") or "cut") != "cut":
+        print("注意：最后一段的 out 转场不生效（后面没有段落了），已忽略")
+
+    # ASS 字幕事件是按无转场时间轴写的，插了转场后必须平移，否则全部错位
+    trans_offsets = []
+    _t = 0.0
+    for it in timeline:
+        if it["kind"] == "trans":
+            trans_offsets.append((_t, it["dur"]))
+        else:
+            _t += it["dur"]
+    if ass_path and trans_offsets:
+        # 文件名带偏移指纹：多条片子并发装配时各自的平移副本不互相覆盖
+        import hashlib
+        fp = hashlib.md5(str(trans_offsets).encode()).hexdigest()[:8]
+        shifted = os.path.join(base, f"build_ass_转场平移_{fp}.ass")
+        n = shift_ass_events(ass_path, trans_offsets, shifted)
+        print(f"字幕随转场平移：{n} 条事件整体后移 "
+              f"（累计 {sum(d for _, d in trans_offsets):.2f}s），副本 {shifted}")
+        ass_path = shifted
+
+    # 文字卡预渲染成 PNG（一段一张，内容相同的复用）。
+    # drawtext 的 fontfile/textfile 用绝对路径时，盘符冒号的转义在两层解析下
+    # 吃不全（11-17 实测报 "No option name"）；拷进临时目录用相对路径最稳。
+    if any(it["kind"] == "trans" and it["type"] == "card" for it in timeline):
+        title = ccfg.get("title", "")
+        if not title:
+            sys.exit("用了文字卡转场，但 plan.transitions.card.title 没写（一般是剧名）")
+        font = TR.get("font") or ccfg.get("font")
+        if font:
+            font = resolve(font)
+        elif fontsdir:
+            cand = os.path.join(fontsdir, "SourceHanSansSC-Heavy.otf")
+            font = cand if os.path.exists(cand) else None
+        if not font or not os.path.exists(font):
+            sys.exit("文字卡转场需要字体：plan.transitions.font 指到 .otf/.ttf 文件，"
+                     "或保证 fontsdir 里有 SourceHanSansSC-Heavy.otf")
+
+        import hashlib
+
+        def render_card_png(sub):
+            h = hashlib.md5((title + "|" + sub).encode("utf-8")).hexdigest()[:10]
+            out_png = os.path.join(base, f"build_card_{h}.png")
+            if os.path.exists(out_png):
+                return out_png
+            tdir = out_png + ".tmp"
+            os.makedirs(tdir, exist_ok=True)
+            shutil.copy(font, os.path.join(tdir, "font.otf"))
+            open(os.path.join(tdir, "t.txt"), "w", encoding="utf-8").write(title)
+            open(os.path.join(tdir, "s.txt"), "w", encoding="utf-8").write(sub)
+            vf = ("drawtext=fontfile=font.otf:textfile=t.txt:fontsize=54:"
+                  "fontcolor=white:x=(w-text_w)/2:y=500:expansion=none")
+            if sub:
+                vf += (",drawtext=fontfile=font.otf:textfile=s.txt:fontsize=40:"
+                       "fontcolor=0xD8D8D8:x=(w-text_w)/2:y=615:expansion=none")
+            r = subprocess.run(
+                [ff, "-y", "-v", "error", "-f", "lavfi",
+                 "-i", f"color=black:s={W}x{H}", "-frames:v", "1",
+                 "-vf", vf, "card.png"],
+                cwd=tdir, capture_output=True, text=True,
+                encoding="utf-8", errors="replace")
+            if r.returncode != 0:
+                sys.exit("文字卡渲染失败：" + (r.stderr or "")[:300])
+            shutil.move(os.path.join(tdir, "card.png"), out_png)
+            shutil.rmtree(tdir, ignore_errors=True)
+            return out_png
+
+        for it in timeline:
+            if it["kind"] == "trans" and it["type"] == "card":
+                it["png"] = render_card_png(it["sub"])
+
+    durations = [it["dur"] for it in timeline]
+    total = sum(durations)
+    n = len(timeline)
+
+    print("\n段落表：")
+    t = 0.0
+    for it in timeline:
+        if it["kind"] == "seg":
+            beats = it["seg"].get("beats", "")
+            print(f"  {it['seg']['label']:<14} {t:>8.2f} +{it['dur']:>6.2f}  {beats}")
+        else:
+            note = "黑场" if it["type"] == "black" else f"文字卡：{it['sub'] or '（仅剧名）'}"
+            print(f"  <{it['label']}>        {t:>8.2f} +{it['dur']:>6.2f}  {note}")
+        t += it["dur"]
+    print(f"  合计 {t:.2f}s")
+
+    def add_segment(k, item, inputs, parts, special):
+        """把一个时间轴项（段落或转场）的滤镜链追加进 inputs/parts/special，
+        返回 (视频标签, 音频标签)（k 是本图局部序号）。
+        单进程老路径和并行分块路径共用这一份，改一处两边都改到。"""
+        def add_input(p):
+            inputs.append(p)
+            return len(inputs) - 1
+
+        if item["kind"] == "trans":
+            # 段间转场：黑场或文字卡，无声。文字卡整卡淡入淡出。
+            d = item["dur"]
+            img = black_png if item["type"] == "black" else item["png"]
+            idx = add_input(img)
+            special[idx] = d
+            if item["type"] == "card":
+                parts.append(
+                    f"[{idx}:v]scale={W}:{H},setsar=1,fps={FPS},"
+                    f"fade=t=in:d=0.22,fade=t=out:st={max(d - 0.25, 0):.3f}:d=0.25,"
+                    f"format=yuv420p[v{k}]")
             else:
                 parts.append(
-                    f"{vhead(idx, a, b, W, H, FPS)},format=yuv420p[v{i}]")
+                    f"[{idx}:v]scale={W}:{H},setsar=1,fps={FPS},format=yuv420p[v{k}]")
+            parts.append(
+                f"anullsrc=r=48000:cl=stereo:d={d},"
+                f"aformat=sample_fmts=fltp:channel_layouts=stereo[a{k}]")
+            return f"[v{k}]", f"[a{k}]"
+
+        s = item["seg"]
+        typ = s["type"]
+        if typ == "ep":
+            path = resolve(s["path"]) if s.get("path") else ep_file(src_dir, s["ep"])
+            a, b = s["a"], s["b"]
+            idx = add_input(path)
+            if spec and s.get("label") in a1_labels:
+                parts.append(dedup_ep_chain(idx, k, a, b, W, H, FPS, spec))
+            else:
+                parts.append(
+                    f"{vhead(idx, a, b, W, H, FPS)},format=yuv420p[v{k}]")
             parts.append(
                 f"[{idx}:a]atrim=start={a}:end={b},asetpts=PTS-STARTPTS,"
                 f"aresample=48000,aformat=channel_layouts=stereo,"
                 f"loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000,"
-                f"aformat=sample_fmts=fltp:channel_layouts=stereo[a{i}]")
-        elif t == "video":
+                # 收口：loudnorm/重采样每段会多出十几毫秒，几十段叠起来音画能差半秒多。
+                # 每段音频强制截到清单段长，跟视频的规划时间轴对齐（11-17 实测修）。
+                f"aformat=sample_fmts=fltp:channel_layouts=stereo,"
+                f"apad,atrim=duration={round(b - a, 3):.3f}[a{k}]")
+        elif typ == "video":
             path = resolve(s["path"])
             if "a" in s and "b" in s:
                 a, b = s["a"], s["b"]
                 seg_dur = round(b - a, 3)
-                durations.append(seg_dur)
                 vtrim = f"trim=start={a}:end={b},setpts=PTS-STARTPTS,"
                 atrim = f"atrim=start={a}:end={b},asetpts=PTS-STARTPTS,"
             else:
-                d = stream_dur(fp, path, "v")
                 seg_dur = 0.0
-                durations.append(round(d, 3) if d else 0.0)
                 vtrim = atrim = ""
             idx = add_input(path)
             # 只有「从中间切」的段需要收口：整段从 0 开始，旧版 fps 不会补尾帧
             tail = f",trim=end={seg_dur},setpts=PTS-STARTPTS" if seg_dur else ""
             parts.append(
                 f"[{idx}:v]{vtrim}scale={W}:{H}:force_original_aspect_ratio=increase,"
-                f"crop={W}:{H},setsar=1,fps={FPS}{tail},format=yuv420p[v{i}]")
+                f"crop={W}:{H},setsar=1,fps={FPS}{tail},format=yuv420p[v{k}]")
+            adur = f",apad,atrim=duration={seg_dur:.3f}" if seg_dur else ""
             parts.append(
                 f"[{idx}:a]{atrim}aresample=48000,aformat=channel_layouts=stereo,"
                 f"loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000,"
-                f"aformat=sample_fmts=fltp:channel_layouts=stereo[a{i}]")
-        elif t in ("black", "card"):
+                f"aformat=sample_fmts=fltp:channel_layouts=stereo{adur}[a{k}]")
+        elif typ in ("black", "card"):
             d = s["d"]
-            durations.append(round(d, 3))
-            img = black_png if t == "black" else resolve(s.get("path") or card_default)
+            img = black_png if typ == "black" else resolve(s.get("path") or card_default)
             if not os.path.exists(img):
                 sys.exit(f"图片不存在：{img}")
             idx = add_input(img)
             special[idx] = d
             parts.append(
-                f"[{idx}:v]scale={W}:{H},setsar=1,fps={FPS},format=yuv420p[v{i}]")
+                f"[{idx}:v]scale={W}:{H},setsar=1,fps={FPS},format=yuv420p[v{k}]")
             parts.append(
                 f"anullsrc=r=48000:cl=stereo:d={d},"
-                f"aformat=sample_fmts=fltp:channel_layouts=stereo[a{i}]")
+                f"aformat=sample_fmts=fltp:channel_layouts=stereo[a{k}]")
         else:
-            sys.exit(f"未知段类型 {t}")
+            sys.exit(f"未知段类型 {typ}")
 
-    # 扫光帧序列作为额外输入挂在最后；-stream_loop -1 让它循环到全片结束
-    sweep_idx = None
-    if sweep_pattern:
-        sweep_idx = add_input(sweep_pattern)
-        loop_input[sweep_idx] = sweep_fr
+        # 段间淡入淡出（前一段 out=black/card 时本段淡入；本段 out!=cut 时本段淡出）。
+        # fade 比段长一半还长时收敛到一半，避免超短段整段都在渐变。
+        vl, al = f"[v{k}]", f"[a{k}]"
+        if item["fade_in"]:
+            parts.append(f"{vl}fade=t=in:d={V_FADE:.3f},format=yuv420p[vfi{k}]")
+            parts.append(f"{al}afade=t=in:d={A_FADE:.3f}[afi{k}]")
+            vl, al = f"[vfi{k}]", f"[afi{k}]"
+        if item["fade_out"]:
+            dur = item["dur"]
+            vd = min(V_FADE, dur / 2)
+            ad = min(A_FADE, dur / 2)
+            parts.append(f"{vl}fade=t=out:st={max(dur - vd, 0):.3f}:d={vd:.3f},"
+                         f"format=yuv420p[vfo{k}]")
+            parts.append(f"{al}afade=t=out:st={max(dur - ad, 0):.3f}:d={ad:.3f}[afo{k}]")
+            vl, al = f"[vfo{k}]", f"[afo{k}]"
+        return vl, al
 
-    n = len(plan["segs"])
-    vlist = "".join(f"[v{i}]" for i in range(n))
-    alist = "".join(f"[a{i}]" for i in range(n))
-    parts.append(f"{vlist}concat=n={n}:v=1:a=0[vcat]")
-    parts.append(f"{alist}concat=n={n}:v=0:a=1[acat]")
-    parts.append("[acat]alimiter=limit=0.891:attack=5:release=80[aout]")
+    ALIM = "alimiter=limit=0.891:attack=5:release=80"
 
-    vmap = "[vcat]"
-    if spec:
-        tail, vmap = dedup_tail_chains(spec, W, H, sweep_idx, ass_path, fontsdir)
-        parts.extend(tail)
+    def vcodec_args(preset, intermediate=False):
+        """视频编码参数：默认 libx264；--vcodec h264_nvenc 走硬编码。
+        nvenc 的 preset 体系不同（p1–p7），不传；质量用 -cq 且 -b:v 0 按质量走。
+        intermediate=True 是并行中间块，画质抬高一档。"""
+        vc = args.vcodec or "libx264"
+        vq = args.vq
+        if intermediate:
+            vq = 10 if vc == "libx264" else max(vq - 6, 10)
+        if vc == "libx264":
+            return ["-c:v", "libx264", "-preset", preset, "-crf", str(vq)]
+        return ["-c:v", vc, "-cq", str(vq), "-b:v", "0"]
 
-    total = sum(durations)
-    cmd = [ff, "-y", "-v", "warning", "-stats"]
-    for j, p in enumerate(inputs):
-        if j in special:
-            cmd += ["-loop", "1", "-t", f"{special[j]:.3f}", "-i", p]
-        elif j in loop_input:
-            # 帧序列循环输入容易被主线程队列卡住（ffmpeg 会提示 thread message queue
-            # blocking），给足缓冲，不然全片里每 5 秒都要白等一次
-            cmd += ["-stream_loop", "-1", "-thread_queue_size", "1024",
-                    "-framerate", str(loop_input[j]), "-i", p]
+    def build_chunk(idxs, out_path, preset, audio_pcm):
+        """把连续的 idxs（时间轴下标）渲染成一个独立 mov，返回完整 ffmpeg 命令和块时长。"""
+        cinputs, cparts, cspecial = [], [], []
+        vls, als = [], []
+        for k, i in enumerate(idxs):
+            vl, al = add_segment(k, timeline[i], cinputs, cparts, cspecial)
+            vls.append(vl)
+            als.append(al)
+        m = len(idxs)
+        vlist = "".join(vls)
+        alist = "".join(als)
+        cparts.append(f"{vlist}concat=n={m}:v=1:a=0[vcat]")
+        if audio_pcm:
+            # 终程还要过全局链：中间块音频走无损 PCM，alimiter/AAC 留给终程
+            cparts.append(f"{alist}concat=n={m}:v=0:a=1,"
+                          f"aformat=sample_fmts=s16:channel_layouts=stereo[acat]")
+            amap = "[acat]"
+            acodec = ["-c:a", "pcm_s16le"]
         else:
-            cmd += ["-i", p]
-    cmd += ["-filter_complex", ";".join(parts), "-map", vmap, "-map", "[aout]",
-            "-t", f"{total:.3f}",
-            "-c:v", "libx264", "-preset", args.preset or "medium", "-crf", "19",
-            "-pix_fmt", "yuv420p", "-r", str(FPS),
-            "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-            "-movflags", "+faststart", out]
-
-    print("\n段落表：")
-    t = 0.0
-    for s, d in zip(plan["segs"], durations):
-        beats = s.get("beats", "")
-        print(f"  {s['label']:<14} {t:>8.2f} +{d:>6.2f}  {beats}")
-        t += d
-    print(f"  合计 {t:.2f}s")
+            # 没有终程：块里直接出定版音频（alimiter 的 attack/release 只有 5/80ms，
+            # 块边界就是段边界、段都 ≥3s，分块限幅跟全片限幅听不出差别）
+            cparts.append(f"{alist}concat=n={m}:v=0:a=1[acat]")
+            cparts.append(f"[acat]{ALIM}[aout]")
+            amap = "[aout]"
+            acodec = ["-c:a", "aac", "-b:a", "192k", "-ar", "48000"]
+        dur = sum(durations[i] for i in idxs)
+        cmd = [ff, "-y", "-v", "warning", "-nostats"]
+        for j, p in enumerate(cinputs):
+            if j in cspecial:
+                cmd += ["-loop", "1", "-t", f"{cspecial[j]:.3f}", "-i", p]
+            else:
+                cmd += ["-i", p]
+        cmd += ["-filter_complex", ";".join(cparts), "-map", "[vcat]", "-map", amap,
+                "-t", f"{dur:.3f}",
+                "-pix_fmt", "yuv420p", "-r", str(FPS),
+                "-video_track_timescale", "15360"] + vcodec_args(preset) + acodec + [out_path]
+        return cmd, dur
 
     plan_path = Path(args.plan).resolve()
     drama = plan_path.parent.parent.name
     task = plan_path.parent.name
     progress.start("mix_trailer", drama, task, total=0, unit="次",
                    note=f"{n} 段 / {total:.1f}s")
-    # ffmpeg 可能跑 3–5 分钟；每 30 秒 touch 一次，页面不会误判成卡死
+    # ffmpeg 可能跑几分钟；每 30 秒 touch 一次，页面不会误判成卡死
     stop_beat = progress.heartbeat("mix_trailer", drama, task,
                                    every=30, note="ffmpeg 装配中")
+
+    def _fail(note, cmd=None):
+        # ffmpeg 有时把错因吞在 -v warning 之外（比如输入序列/滤镜图报错被管道截掉），
+        # 失败时把完整命令落盘，人可以直接复制重跑看原始报错，不用猜。
+        progress.fail("mix_trailer", drama, task, note=note)
+        if cmd:
+            cmd_log = Path(out).with_suffix(".ffmpeg_cmd.txt")
+            try:
+                cmd_log.parent.mkdir(parents=True, exist_ok=True)
+                cmd_log.write_text(" ".join(cmd), encoding="utf-8")
+                print(f"\n装配命令已存：{cmd_log}（复制它单独跑，能看到 ffmpeg 原始报错）")
+            except Exception:
+                pass
+
+    t_start = time.time()
     try:
-        r = subprocess.run(cmd)
-    except Exception as e:
-        progress.fail("mix_trailer", drama, task,
-                      note=f"{e.__class__.__name__}: {str(e)[:100]}")
-        raise
+        if args.jobs and args.jobs > 1 and n > 1:
+            # ================= 并行装配（11-17 加） =================
+            nchunks = min(n, args.jobs * 2)
+            target = total / nchunks
+            chunks, cur, acc = [], [], 0.0
+            for i, d in enumerate(durations):
+                cur.append(i)
+                acc += d
+                rest_chunks = nchunks - len(chunks) - 1
+                rest_segs = n - (i + 1)
+                if acc >= target and rest_chunks > 0 and rest_segs >= rest_chunks:
+                    chunks.append(cur)
+                    cur, acc = [], 0.0
+            if cur:
+                chunks.append(cur)
+            # 挂了画面参数表（全局链/扫光/字幕）就有终程：中间块用近无损画质
+            # （crf 10 veryfast），终程统一过全局链再压定版；没挂就直接在块里
+            # 压定版参数，合并时纯复制零再编码。
+            tail_needed = bool(spec and (spec.get("global") or sweep_pattern or ass_path))
+            # 中间块画质固定近无损（vcodec_args 里 intermediate=True），
+            # 这里只定 preset：有终程用 veryfast，没终程直接用定版 preset
+            cpreset = "veryfast" if tail_needed else (args.preset or "medium")
+            tmpdir = os.path.join(os.path.dirname(out) or ".",
+                                  f".parallel_{os.getpid()}")
+            os.makedirs(tmpdir, exist_ok=True)
+            print(f"\n并行装配：{len(chunks)} 块 / {args.jobs} 进程，"
+                  f"{'终程过全局链' if tail_needed else '块即定版、合并零再编码'}")
+            chunk_files = [os.path.join(tmpdir, f"chunk_{ci:03d}.mov")
+                           for ci in range(len(chunks))]
+
+            def run_chunk(ci):
+                cmd, dur = build_chunk(chunks[ci], chunk_files[ci],
+                                       cpreset, tail_needed)
+                log = chunk_files[ci] + ".log"
+                with open(log, "wb") as lf:
+                    r = subprocess.run(cmd, stdout=lf, stderr=lf)
+                return ci, r.returncode, cmd, log
+
+            failed = None
+            with concurrent.futures.ThreadPoolExecutor(max_workers=args.jobs) as ex:
+                futs = {ex.submit(run_chunk, ci): ci for ci in range(len(chunks))}
+                for f in concurrent.futures.as_completed(futs):
+                    ci, rc, cmd, log = f.result()
+                    if rc != 0:
+                        failed = (ci, rc, cmd, log)
+                        print(f"  ✗ 块 {ci + 1} 失败（退出码 {rc}），日志：{log}")
+                    else:
+                        print(f"  ✓ 块 {ci + 1}/{len(chunks)} 完成"
+                              f"（第 {chunks[ci][0] + 1}–{chunks[ci][-1] + 1} 段）")
+            if failed:
+                ci, rc, cmd, log = failed
+                try:
+                    print(open(log, encoding="utf-8", errors="replace").read()[-2000:])
+                except Exception:
+                    pass
+                _fail(f"并行块 {ci + 1} 失败 退出码 {rc}", cmd)
+                sys.exit(f"并行装配失败，中间产物保留在 {tmpdir}")
+            t_chunk = time.time() - t_start
+            print(f"分块渲染完成，用时 {t_chunk:.0f}s；开始合并")
+
+            if tail_needed:
+                # 终程：所有块解码 → concat 滤镜 → 全局参数包/扫光/字幕 → 定版编码。
+                # 音频在块里是无损 PCM，这里过 alimiter 后压 AAC，跟老路径同源。
+                K = len(chunks)
+                fparts = []
+                vlist = "".join(f"[{k}:v]" for k in range(K))
+                alist = "".join(f"[{k}:a]" for k in range(K))
+                fparts.append(f"{vlist}concat=n={K}:v=1:a=0[vcat]")
+                fparts.append(f"{alist}concat=n={K}:v=0:a=1[acat]")
+                fparts.append(f"[acat]{ALIM}[aout]")
+                cmd = [ff, "-y", "-v", "warning", "-stats"]
+                for p in chunk_files:
+                    cmd += ["-i", p]
+                sweep_idx = None
+                if sweep_pattern:
+                    sweep_idx = K
+                    # 帧序列循环输入容易被主线程队列卡住，给足缓冲
+                    cmd += ["-stream_loop", "-1", "-thread_queue_size", "1024",
+                            "-framerate", str(sweep_fr), "-i", sweep_pattern]
+                tailp, vmap = dedup_tail_chains(spec, W, H, sweep_idx,
+                                                ass_path, fontsdir)
+                fparts.extend(tailp)
+                cmd += ["-filter_complex", ";".join(fparts),
+                        "-map", vmap, "-map", "[aout]",
+                        "-t", f"{total:.3f}"] + vcodec_args(args.preset or "medium") + [
+                        "-pix_fmt", "yuv420p", "-r", str(FPS),
+                        "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                        "-movflags", "+faststart", out]
+                r = subprocess.run(cmd)
+                if r.returncode != 0:
+                    _fail(f"终程退出码 {r.returncode}", cmd)
+                    sys.exit(f"终程失败，中间产物保留在 {tmpdir}")
+            else:
+                # 没有全局链：concat 复制合并，零再编码
+                lst = os.path.join(tmpdir, "list.txt")
+                with open(lst, "w", encoding="utf-8") as f:
+                    for p in chunk_files:
+                        esc = p.replace("\\", "/").replace("'", "'\\''")
+                        f.write(f"file '{esc}'\n")
+                cmd = [ff, "-y", "-v", "error", "-f", "concat", "-safe", "0",
+                       "-i", lst, "-c", "copy", "-movflags", "+faststart", out]
+                r = subprocess.run(cmd)
+                if r.returncode != 0:
+                    _fail(f"合并退出码 {r.returncode}", cmd)
+                    sys.exit(f"合并失败，中间产物保留在 {tmpdir}")
+            shutil.rmtree(tmpdir, ignore_errors=True)
+        else:
+            # ============ 老的单进程路径（--jobs 1 时走这条，行为与以前一致） ============
+            inputs, parts = [], []
+            special = {}  # input idx -> 展示时长（图片类）
+            loop_input = {}  # input idx -> 无限循环标记（扫光帧序列）
+            vls, als = [], []  # 各时间轴项的最终画/声标签（带淡入淡出后缀）
+
+            def add_input(p):
+                inputs.append(p)
+                return len(inputs) - 1
+
+            for k, it in enumerate(timeline):
+                vl, al = add_segment(k, it, inputs, parts, special)
+                vls.append(vl)
+                als.append(al)
+
+            # 扫光帧序列作为额外输入挂在最后；-stream_loop -1 让它循环到全片结束
+            sweep_idx = None
+            if sweep_pattern:
+                sweep_idx = add_input(sweep_pattern)
+                loop_input[sweep_idx] = sweep_fr
+
+            vlist = "".join(vls)
+            alist = "".join(als)
+            parts.append(f"{vlist}concat=n={n}:v=1:a=0[vcat]")
+            parts.append(f"{alist}concat=n={n}:v=0:a=1[acat]")
+            parts.append(f"[acat]{ALIM}[aout]")
+
+            vmap = "[vcat]"
+            if spec:
+                tail, vmap = dedup_tail_chains(spec, W, H, sweep_idx,
+                                               ass_path, fontsdir)
+                parts.extend(tail)
+
+            cmd = [ff, "-y", "-v", "warning", "-stats"]
+            for j, p in enumerate(inputs):
+                if j in special:
+                    cmd += ["-loop", "1", "-t", f"{special[j]:.3f}", "-i", p]
+                elif j in loop_input:
+                    # 帧序列循环输入容易被主线程队列卡住（ffmpeg 会提示 thread message
+                    # queue blocking），给足缓冲，不然全片里每 5 秒都要白等一次
+                    cmd += ["-stream_loop", "-1", "-thread_queue_size", "1024",
+                            "-framerate", str(loop_input[j]), "-i", p]
+                else:
+                    cmd += ["-i", p]
+            cmd += ["-filter_complex", ";".join(parts), "-map", vmap, "-map", "[aout]",
+                    "-t", f"{total:.3f}"] + vcodec_args(args.preset or "medium") + [
+                    "-pix_fmt", "yuv420p", "-r", str(FPS),
+                    "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                    "-movflags", "+faststart", out]
+            r = subprocess.run(cmd)
+            if r.returncode != 0:
+                _fail(f"ffmpeg 退出码 {r.returncode}", cmd)
+                sys.exit("ffmpeg 失败")
     finally:
         if stop_beat:
             stop_beat()
-    if r.returncode != 0:
-        progress.fail("mix_trailer", drama, task, note=f"ffmpeg 退出码 {r.returncode}")
-        # 11-14：ffmpeg 有时把错因吞在 -v warning 之外（比如输入序列/滤镜图报错被管道截掉），
-        # 失败时把完整命令落盘，人可以直接复制重跑看原始报错，不用猜。
-        cmd_log = Path(out).with_suffix(".ffmpeg_cmd.txt")
-        try:
-            cmd_log.parent.mkdir(parents=True, exist_ok=True)
-            cmd_log.write_text(" ".join(cmd), encoding="utf-8")
-            print(f"\n装配命令已存：{cmd_log}（复制它单独跑，能看到 ffmpeg 原始报错）")
-        except Exception:
-            pass
-        sys.exit("ffmpeg 失败")
-    progress.finish("mix_trailer", drama, task, note=f"{total:.1f}s")
-    print(f"完成 {out}  {total:.2f}s")
+    took = time.time() - t_start
+    progress.finish("mix_trailer", drama, task, note=f"{total:.1f}s / 实耗 {took:.0f}s")
+    print(f"完成 {out}  {total:.2f}s（装配实耗 {took:.0f}s）")
     freeze_check(out, ff)
 
 

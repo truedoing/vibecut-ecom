@@ -161,7 +161,7 @@ def tool(name: str) -> str:
     if env_val and Path(env_val).exists():
         return env_val
 
-    candidates = [HOST / "bin" / exe, data_root() / "bin" / exe]
+    candidates = [data_root() / "bin" / exe, HOST / "bin" / exe]
     for cand in candidates:
         if cand.exists():
             return str(cand)

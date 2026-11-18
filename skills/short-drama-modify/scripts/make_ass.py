@@ -421,6 +421,8 @@ def main() -> int:
     ap.add_argument("--at-from-end", type=float, help="收尾句提前多少秒（默认取配置 3.73）")
     ap.add_argument("--names-at", type=float, help="人物名标签出现时刻（默认取配置 32.0）")
     ap.add_argument("--names", type=int, help="上屏几个人名（默认 3）")
+    ap.add_argument("--opening", help="自定义开场悬念短句（覆盖剧集包hook_map），控制在9字内避免超宽被切")
+    ap.add_argument("--quotes-file", help="自定义点睛句表(json数组:[{id,quote,ep,t}])，覆盖剧集包金句库；原片台词自带硬字幕时用它换原创点题句")
     ap.add_argument("--no", default="", help="关掉某几组文字，逗号分开：人名,刻度,角标,开场,收尾,金句")
     ap.add_argument("--drop", default="", help="手工不让某几条金句上屏，逗号分开金句 id")
     ap.add_argument("--acts", help='五幕的 pos 区间，如 "1-4,5-8,9-12,13-18,19-23"；'
@@ -461,12 +463,24 @@ def main() -> int:
     chars = [c.get("name") for c in (pack.get("characters") or []) if c.get("name")]
     els = pack.get("elements") or {}
     quotes = els.get("golden_quotes") or []
+    if args.quotes_file:
+        from pathlib import Path as _P
+        qf = _P(args.quotes_file)
+        if not qf.is_absolute():
+            qf = (plan_path.parent / args.quotes_file)
+        if not qf.exists():
+            sys.exit(f"找不到自定义点睛句表：{qf}")
+        quotes = json.loads(qf.read_text(encoding="utf-8"))
+        print(f"  · 点睛句用自定义表：{qf}（{len(quotes)} 条，覆盖剧集包金句库）")
     ctas = els.get("ctas") or []
 
     hook_full = ""
     if hook_map and (hook_map[0].get("opening_lines") or []):
         hook_full = str(hook_map[0]["opening_lines"][0])
     hook = hook_full.split("，")[-1].rstrip("。") if hook_full else ""
+    if getattr(args, "opening", None):
+        hook = args.opening
+        print(f"  · 开场句用自定义：{hook}")
     names = chars[: max(0, int(cfg["人物名标签"]["数量"]))]
     endline = str(ctas[0].get("text") or "") if ctas else ""
 
