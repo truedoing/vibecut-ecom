@@ -327,25 +327,34 @@ def cut_check(plan, plan_path, src_dir, cuts_dir=None, allow=False):
         return True
     errors, warns, n, no_table = [], [], 0, []
     for s in plan["segs"]:
-        if s.get("type") != "ep":
+        # ep 段：整段检查入点/出点
+        # broll 段：每个镜头也要查（垫画面是静音的，但切在话中间画面会跳）
+        if s.get("type") == "ep":
+            checks = [(s["ep"], s["a"], s["b"], s.get("label", ""))]
+        elif s.get("type") == "broll":
+            checks = [(c["ep"], float(c["a"]), float(c["b"]),
+                       f"{s.get('label', '')}·镜头{i + 1}")
+                      for i, c in enumerate(s.get("clips") or [])]
+        else:
             continue
-        c = cuts.get(s["ep"])
-        if not c:
-            no_table.append(s["ep"])
-            continue
-        vd = c.get("video_duration")
-        pauses = c.get("pauses") or []
-        for is_in, t, tag in ((True, s["a"], "入点"), (False, s["b"], "出点")):
-            n += 1
-            lvl, why, hint = judge_cut(pauses, t, vd, is_in)
-            if lvl == "error" and is_in:
-                # 入点落在连读中间（两句之间没静音）是真实现场常见切法，只警告不拦；
-                # 出点切在话中间才是「说完之前画面走了」。用户指出的三处全是出点。
-                lvl, why = "warn", "入点在连读中间：" + why
-            if lvl == "error":
-                errors.append((s["ep"], s["label"], tag, t, why, hint))
-            elif lvl == "warn" and why:
-                warns.append(f"ep{s['ep']:>2} {tag} {t:>6.2f}  {s['label']}  {why}")
+        for ep, a, b, lab in checks:
+            c = cuts.get(ep)
+            if not c:
+                no_table.append(ep)
+                continue
+            vd = c.get("video_duration")
+            pauses = c.get("pauses") or []
+            for is_in, t, tag in ((True, a, "入点"), (False, b, "出点")):
+                n += 1
+                lvl, why, hint = judge_cut(pauses, t, vd, is_in)
+                if lvl == "error" and is_in:
+                    # 入点落在连读中间（两句之间没静音）是真实现场常见切法，只警告不拦；
+                    # 出点切在话中间才是「说完之前画面走了」。用户指出的三处全是出点。
+                    lvl, why = "warn", "入点在连读中间：" + why
+                if lvl == "error":
+                    errors.append((ep, lab, tag, t, why, hint))
+                elif lvl == "warn" and why:
+                    warns.append(f"ep{ep:>2} {tag} {t:>6.2f}  {lab}  {why}")
     print(f"  {n} 个刀口：切在说话中间 {len(errors)} 处，贴边 {len(warns)} 处")
     for w in warns:
         print("  ⚠ " + w)
@@ -642,6 +651,26 @@ def main():
             path = resolve(s["path"])
             vd = stream_dur(fp, path, "v")
             print(f"  {s['label']:<14} video  video={vd}")
+        elif t == "broll":
+            # 垫画面段：每个镜头都要查出点上限（超出就是段尾带黑帧）
+            clips = s.get("clips") or []
+            total = 0.0
+            for j, c in enumerate(clips):
+                cpath = resolve(c["path"]) if c.get("path") else ep_file(src_dir, c["ep"])
+                if cpath not in ep_cache:
+                    ep_cache[cpath] = (stream_dur(fp, cpath, "v"),
+                                       stream_dur(fp, cpath, "a"))
+                vd, ad = ep_cache[cpath]
+                total += float(c["b"]) - float(c["a"])
+                flag = ""
+                if vd is not None and float(c["b"]) > vd + 0.001:
+                    problems.append(
+                        f"{s['label']} 第{j + 1}个镜头: 出点 {c['b']} > 视频流 {vd:.2f}"
+                        f"（{Path(cpath).name}）——段尾会带黑帧")
+                    flag = "  <-- 超限"
+                print(f"  {s['label']:<14} broll[{j+1}] ep{c.get('ep')} "
+                      f"{c['a']}-{c['b']} video={vd}{flag}")
+            print(f"  {'':<14} └─ 垫画面合计 {total:.2f}s（静音，解说垫在上面）")
         elif t in ("black", "card"):
             print(f"  {s['label']:<14} {t}  d={s['d']}")
     if problems:
@@ -684,16 +713,19 @@ def main():
     A_FADE = float(bcfg.get("afade", 0.30))
     ccfg = TR.get("card") or {}
     CARD_D = float(ccfg.get("d", 1.2))
+    CARD_FADE_IN = float(ccfg.get("fade_in", 0.22))
+    CARD_FADE_OUT = float(ccfg.get("fade_out", 0.25))
+
+    from timeline import seg_duration  # 时间轴唯一真源：段时长只准有一份算法
 
     def seg_dur_of(s):
-        if s["type"] == "ep":
-            return round(s["b"] - s["a"], 3)
-        if s["type"] == "video":
-            if "a" in s and "b" in s:
-                return round(s["b"] - s["a"], 3)
-            d = stream_dur(fp, resolve(s["path"]), "v")
-            return round(d, 3) if d else 0.0
-        return round(s["d"], 3)
+        d = seg_duration(s)
+        # 唯一例外：整段外部视频没给 a/b。真源不碰文件系统，这里探一次文件时长
+        # （装配器本来就要读这个文件），其余类型一律听真源的。
+        if s["type"] == "video" and "a" not in s and "b" not in s:
+            vd = stream_dur(fp, resolve(s["path"]), "v")
+            return round(vd, 3) if vd else 0.0
+        return d
 
     timeline = []
     for s in plan["segs"]:
@@ -707,8 +739,15 @@ def main():
             timeline.append({"kind": "trans", "type": "black",
                              "dur": BLACK_D, "label": "转场黑场"})
         elif t_out == "card":
-            timeline.append({"kind": "trans", "type": "card", "dur": CARD_D,
+            # 段级可覆盖：out_card_d（这张卡停多久）、out_title（这张卡的大标题）
+            cd = float(s["out_card_d"]) if s.get("out_card_d") is not None else CARD_D
+            timeline.append({"kind": "trans", "type": "card", "dur": cd,
                              "sub": s.get("out_sub") or ccfg.get("sub", ""),
+                             "title": s.get("out_title") or ccfg.get("title", ""),
+                             "seg_title": s.get("out_title"),
+                             "title_size": s.get("out_title_size"),
+                             "sub_size": s.get("out_sub_size"),
+                             "keep_sub": s.get("out_keep_sub"),
                              "label": "转场文字卡"})
     if plan["segs"] and (plan["segs"][-1].get("out") or "cut") != "cut":
         print("注意：最后一段的 out 转场不生效（后面没有段落了），已忽略")
@@ -735,9 +774,6 @@ def main():
     # drawtext 的 fontfile/textfile 用绝对路径时，盘符冒号的转义在两层解析下
     # 吃不全（11-17 实测报 "No option name"）；拷进临时目录用相对路径最稳。
     if any(it["kind"] == "trans" and it["type"] == "card" for it in timeline):
-        title = ccfg.get("title", "")
-        if not title:
-            sys.exit("用了文字卡转场，但 plan.transitions.card.title 没写（一般是剧名）")
         font = TR.get("font") or ccfg.get("font")
         if font:
             font = resolve(font)
@@ -750,36 +786,50 @@ def main():
 
         import hashlib
 
-        def render_card_png(sub):
-            h = hashlib.md5((title + "|" + sub).encode("utf-8")).hexdigest()[:10]
+        def render_card_png(card_title, sub, tsize=54, ssize=40):
+            """渲染一张文字卡。标题在上、副句在下；没有副句时标题垂直居中。
+
+            用 PIL 画字，不依赖 ffmpeg 的 drawtext 滤镜——本机 ffmpeg 没编这个滤镜。
+            """
+            key = f"{card_title}|{sub}|{tsize}|{ssize}"
+            h = hashlib.md5(key.encode("utf-8")).hexdigest()[:10]
             out_png = os.path.join(base, f"build_card_{h}.png")
             if os.path.exists(out_png):
                 return out_png
-            tdir = out_png + ".tmp"
-            os.makedirs(tdir, exist_ok=True)
-            shutil.copy(font, os.path.join(tdir, "font.otf"))
-            open(os.path.join(tdir, "t.txt"), "w", encoding="utf-8").write(title)
-            open(os.path.join(tdir, "s.txt"), "w", encoding="utf-8").write(sub)
-            vf = ("drawtext=fontfile=font.otf:textfile=t.txt:fontsize=54:"
-                  "fontcolor=white:x=(w-text_w)/2:y=500:expansion=none")
+            from PIL import Image, ImageDraw, ImageFont
+            img = Image.new("RGB", (W, H), (0, 0, 0))
+            draw = ImageDraw.Draw(img)
+            f_t = ImageFont.truetype(font, tsize)
             if sub:
-                vf += (",drawtext=fontfile=font.otf:textfile=s.txt:fontsize=40:"
-                       "fontcolor=0xD8D8D8:x=(w-text_w)/2:y=615:expansion=none")
-            r = subprocess.run(
-                [ff, "-y", "-v", "error", "-f", "lavfi",
-                 "-i", f"color=black:s={W}x{H}", "-frames:v", "1",
-                 "-vf", vf, "card.png"],
-                cwd=tdir, capture_output=True, text=True,
-                encoding="utf-8", errors="replace")
-            if r.returncode != 0:
-                sys.exit("文字卡渲染失败：" + (r.stderr or "")[:300])
-            shutil.move(os.path.join(tdir, "card.png"), out_png)
-            shutil.rmtree(tdir, ignore_errors=True)
+                y_t = int(H / 2 - tsize * 1.6)
+                y_s = int(H / 2 + tsize * 0.5)
+            else:
+                y_t = int(H / 2 - tsize * 0.7)
+            box = draw.textbbox((0, 0), card_title, font=f_t)
+            tw = box[2] - box[0]
+            draw.text(((W - tw) / 2, y_t), card_title, font=f_t, fill=(255, 255, 255))
+            if sub:
+                f_s = ImageFont.truetype(font, ssize)
+                box = draw.textbbox((0, 0), sub, font=f_s)
+                sw = box[2] - box[0]
+                draw.text(((W - sw) / 2, y_s), sub, font=f_s, fill=(216, 216, 216))
+            img.save(out_png)
             return out_png
 
         for it in timeline:
             if it["kind"] == "trans" and it["type"] == "card":
-                it["png"] = render_card_png(it["sub"])
+                card_title = it.get("title") or ""
+                if not card_title:
+                    sys.exit("用了文字卡转场，但 plan.transitions.card.title 没写"
+                             "（一般是剧名），段级可用 out_title 覆盖")
+                # 段级标题存在时，字号放大、副句省略——描述转场要一眼看清
+                is_seg_title = bool(it.get("seg_title"))
+                tsize = int(it.get("title_size") or (72 if is_seg_title else 54))
+                ssize = int(it.get("sub_size") or 40)
+                sub = it.get("sub") or ""
+                if is_seg_title and not it.get("keep_sub"):
+                    sub = ""
+                it["png"] = render_card_png(card_title, sub, tsize, ssize)
 
     durations = [it["dur"] for it in timeline]
     total = sum(durations)
@@ -790,9 +840,12 @@ def main():
     for it in timeline:
         if it["kind"] == "seg":
             beats = it["seg"].get("beats", "")
-            print(f"  {it['seg']['label']:<14} {t:>8.2f} +{it['dur']:>6.2f}  {beats}")
+            tag = "垫" if it["seg"].get("type") == "broll" else "  "
+            print(f" {tag}{it['seg']['label']:<16} {t:>8.2f} +{it['dur']:>6.2f}  {beats}")
         else:
             note = "黑场" if it["type"] == "black" else f"文字卡：{it['sub'] or '（仅剧名）'}"
+            if it["type"] == "card" and it.get("seg_title"):
+                note = f"文字卡：{it['seg_title']}"
             print(f"  <{it['label']}>        {t:>8.2f} +{it['dur']:>6.2f}  {note}")
         t += it["dur"]
     print(f"  合计 {t:.2f}s")
@@ -812,9 +865,13 @@ def main():
             idx = add_input(img)
             special[idx] = d
             if item["type"] == "card":
+                # 渐变时长可配（plan.transitions.card.fade_in / fade_out）。
+                # 描述转场（"几天前……"）要看得清，渐变就该比默认长。
+                fi = min(float(item.get("fade_in") or CARD_FADE_IN), d / 2)
+                fo = min(float(item.get("fade_out") or CARD_FADE_OUT), d / 2)
                 parts.append(
                     f"[{idx}:v]scale={W}:{H},setsar=1,fps={FPS},"
-                    f"fade=t=in:d=0.22,fade=t=out:st={max(d - 0.25, 0):.3f}:d=0.25,"
+                    f"fade=t=in:d={fi:.3f},fade=t=out:st={max(d - fo, 0):.3f}:d={fo:.3f},"
                     f"format=yuv420p[v{k}]")
             else:
                 parts.append(
@@ -864,6 +921,32 @@ def main():
                 f"[{idx}:a]{atrim}aresample=48000,aformat=channel_layouts=stereo,"
                 f"loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000,"
                 f"aformat=sample_fmts=fltp:channel_layouts=stereo{adur}[a{k}]")
+        elif typ == "broll":
+            # 垫画面段：一段里剪几个相关镜头拼起来放，**原声静音**，解说垫在上面。
+            # 为什么要有这个（2026-11-24）：
+            #   解说叠上去时原声会被压掉（duck=0），等于那段原声在成片里被删了。
+            #   用户的解法：既然要静音，那就**另外剪几个相关镜头**当垫画面，
+            #   主线原声一句不丢，解说还能写长写丰满。
+            clips = s.get("clips") or []
+            if not clips:
+                sys.exit(f"垫画面段 {s['label']} 没写 clips（至少要一个镜头）")
+            vid_labels = []
+            total_d = 0.0
+            for j, c in enumerate(clips):
+                cpath = resolve(c["path"]) if c.get("path") else ep_file(src_dir, c["ep"])
+                ca, cb = float(c["a"]), float(c["b"])
+                cdur = round(cb - ca, 3)
+                total_d += cdur
+                cidx = add_input(cpath)
+                parts.append(
+                    f"{vhead(cidx, ca, cb, W, H, FPS)},format=yuv420p[v{k}c{j}]")
+                vid_labels.append(f"[v{k}c{j}]")
+            parts.append(
+                f"{''.join(vid_labels)}concat=n={len(clips)}:v=1:a=0[v{k}]")
+            # 音轨：整段静音（这就是「反正也是静音」那句的落点）
+            parts.append(
+                f"anullsrc=r=48000:cl=stereo:d={round(total_d, 3):.3f},"
+                f"aformat=sample_fmts=fltp:channel_layouts=stereo[a{k}]")
         elif typ in ("black", "card"):
             d = s["d"]
             img = black_png if typ == "black" else resolve(s.get("path") or card_default)

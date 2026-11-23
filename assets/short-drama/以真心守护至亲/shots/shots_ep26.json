@@ -1,0 +1,397 @@
+{
+  "ep": 26,
+  "file": "26.mp4",
+  "duration": 52.31,
+  "shot_count": 14,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 25550,
+    "completion_tokens": 16861,
+    "total_tokens": 42411
+  },
+  "elapsed_sec": 167.6,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 5.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 灰色西装白衬衫深色领带 戴金丝眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，露出牙齿正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立并开口汇报情况",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep26_s000_0.jpg"
+    },
+    {
+      "start": 5.73,
+      "end": 10.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "老年女性 浅色盘扣中式上衣 灰白盘发 端坐办公椅",
+          "前景人物 深色衣物仅露肩背轮廓 虚化模糊"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴巴张开正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌后开口交代事情",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s001_0.jpg"
+    },
+    {
+      "start": 10.87,
+      "end": 12.43,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装白衬衫打领带 戴眼镜 站立",
+          "老年女性 米色西装外套 灰白短发 背对镜头坐着"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位正脸清晰，嘴部闭合未见明显张开",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立向桌前的人汇报工作",
+        "place": "办公室",
+        "props": [
+          "桌上的文件纸张",
+          "笔记本电脑"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s002_0.jpg"
+    },
+    {
+      "start": 12.43,
+      "end": 17.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式盘扣上衣 灰白发盘起 珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合抿着，未张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "端坐在办公椅上，神情严肃",
+        "place": "办公室",
+        "props": [
+          "黑色皮质办公椅",
+          "桌面纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s003_0.jpg"
+    },
+    {
+      "start": 17.17,
+      "end": 20.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装 内搭白衬衫 打深色领带 佩戴眼镜和手表",
+          "老年女性 浅棕色外套 背对镜头 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位（男性）嘴巴微张，正在说话",
+        "emotion": "愤怒",
+        "intensity": "强",
+        "action": "手指指向桌面文件质问对方",
+        "place": "办公室",
+        "props": [
+          "桌面文件",
+          "钢笔",
+          "平板电脑",
+          "公文包"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s004_0.jpg"
+    },
+    {
+      "start": 20.37,
+      "end": 22.6,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色中式立领盘扣上衣 灰发挽髻戴珍珠耳饰"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "侧脸嘴部清晰可见，双唇闭合",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公椅上双手交握于腿前",
+        "place": "办公室",
+        "props": [
+          "黑色皮质办公椅",
+          "深色托盘"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s005_0.jpg"
+    },
+    {
+      "start": 22.6,
+      "end": 31.97,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 浅色中式盘扣上衣 灰白盘发 戴珍珠耳环 眼眶发红"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴闭着，未张开说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "端坐看向对面，眼眶泛红强忍情绪",
+        "place": "办公室",
+        "props": [
+          "黑色皮质办公椅",
+          "深色办公桌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s006_0.jpg"
+    },
+    {
+      "start": 31.97,
+      "end": 33.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 浅米色中式立领上衣 银发 珍珠耳钉"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "坐在椅子上说话",
+        "place": "办公室",
+        "props": [
+          "黑色皮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s007_0.jpg"
+    },
+    {
+      "start": 33.43,
+      "end": 35.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 白色立领上衣 灰白盘发 坐在办公桌后"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌后侧头说话",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "黑色办公椅",
+          "文件夹",
+          "手机",
+          "绿植"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s008_0.jpg"
+    },
+    {
+      "start": 35.17,
+      "end": 38.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色盘扣立领上衣 灰白盘发 佩戴珍珠耳饰"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开，正在说话",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "坐着说话，手指轻点桌面",
+        "place": "办公室",
+        "props": [
+          "桌面手机",
+          "相框"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s009_0.jpg"
+    },
+    {
+      "start": 38.2,
+      "end": 39.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 白色立领衬衫 灰白盘发 坐于办公桌后"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸清晰，嘴巴微张正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌前讲话",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "笔记本电脑",
+          "绿植",
+          "办公椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s010_0.jpg"
+    },
+    {
+      "start": 39.83,
+      "end": 43.5,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色盘扣立领上衣 灰白盘发 佩戴珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "开口说话，神情认真",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s011_0.jpg"
+    },
+    {
+      "start": 43.5,
+      "end": 49.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 3,
+        "who": [
+          "年轻女性 米色西装外套 长发 坐在前台递出红色卡片",
+          "中年男性 深色制服 背对镜头站在闸机前",
+          "中年男性 深色制服 背对镜头 抬手指向墙上屏幕"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸可见，嘴巴张开露出牙齿正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "前台接待，笑着递出红色卡片",
+        "place": "公司前台大堂",
+        "props": [
+          "电脑显示器",
+          "键盘",
+          "红色卡片",
+          "办公电话",
+          "绿植",
+          "闸机"
+        ],
+        "scene_text": "弘业集团 HANGYE GROUP",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s012_0.jpg"
+    },
+    {
+      "start": 49.1,
+      "end": 52.31,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深色低盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸嘴部张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧身站立开口说话",
+        "place": "公司大厅",
+        "props": [],
+        "scene_text": "弘业集团",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep26_s013_0.jpg"
+    }
+  ]
+}

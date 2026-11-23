@@ -1,0 +1,505 @@
+{
+  "ep": 30,
+  "file": "30.mp4",
+  "duration": 50.94,
+  "shot_count": 19,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 34675,
+    "completion_tokens": 22852,
+    "total_tokens": 57527
+  },
+  "elapsed_sec": 188.2,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 1.43,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深蓝色西装 白衬衫深色领带 短背头"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "嘴部可见但双唇闭合，未在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立侧头望向右方",
+        "place": "办公室大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep30_s000_0.jpg"
+    },
+    {
+      "start": 1.43,
+      "end": 4.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫深色领带 背头短发 侧脸朝左"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧身站立，开口讲话",
+        "place": "公司大堂",
+        "props": [],
+        "scene_text": "弘立 集团",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep30_s001_0.jpg"
+    },
+    {
+      "start": 4.37,
+      "end": 9.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫深灰色长裤 低扎发手持文件"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手持文件站在大堂里说话",
+        "place": "写字楼大堂",
+        "props": [
+          "纸张文件"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s002_0.jpg"
+    },
+    {
+      "start": 9.23,
+      "end": 10.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 低盘发面颊垂落碎发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在原地平静注视前方",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s003_0.jpg"
+    },
+    {
+      "start": 10.87,
+      "end": 13.63,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫蓝领带 黑色背头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位侧脸嘴部张开，牙齿可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在前台前侧身向人讲话",
+        "place": "前台大厅",
+        "props": [
+          "电脑显示器",
+          "前台台面",
+          "绿植"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s004_0.jpg"
+    },
+    {
+      "start": 13.63,
+      "end": 15.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色长袖衬衫 黑色西裤 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未见张口",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在柜台前低头伸手拿工牌",
+        "place": "办公楼大堂",
+        "props": [
+          "工牌挂绳"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s005_0.jpg"
+    },
+    {
+      "start": 15.13,
+      "end": 18.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 灰色西装白衬衫深蓝领带 手腕戴银色手表"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "双手扶着桌上的一叠文件",
+        "place": "办公室",
+        "props": [
+          "文件",
+          "笔"
+        ],
+        "scene_text": "牛 集团",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s006_0.jpg"
+    },
+    {
+      "start": 18.57,
+      "end": 21.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深蓝领带 背头黑发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸，嘴巴张开露出牙齿，正在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "面对镜头开口陈述情况",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s007_0.jpg"
+    },
+    {
+      "start": 21.7,
+      "end": 23.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深灰色西裤 披肩盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部可见但闭合，未说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手持纸张站立看向旁侧",
+        "place": "办公楼大堂",
+        "props": [
+          "纸张",
+          "手提包"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s008_0.jpg"
+    },
+    {
+      "start": 23.97,
+      "end": 27.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张正在说话",
+        "emotion": "冷淡",
+        "intensity": "弱",
+        "action": "侧脸对画外人说话解释",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s009_0.jpg"
+    },
+    {
+      "start": 27.3,
+      "end": 30.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色连衣裙 珍珠发夹长卷发 面带担忧"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张，唇齿微露正在说话",
+        "emotion": "恐惧",
+        "intensity": "中",
+        "action": "坐在桌前双手握着卡片与对方交谈",
+        "place": "办公室",
+        "props": [
+          "卡片",
+          "桌面"
+        ],
+        "scene_text": "弘业集 DS",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s010_0.jpg"
+    },
+    {
+      "start": 30.37,
+      "end": 32.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发带碎发 眼角有痣"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正面朝镜头，嘴巴张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正面面对镜头开口说话",
+        "place": "办公楼大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s011_0.jpg"
+    },
+    {
+      "start": 32.57,
+      "end": 35.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色长袖衬衫 手挽棕色托特包 持白色卡片 松散低发髻"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部微张但未见口腔，不像正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧头望向一侧，双手扶着包和卡片",
+        "place": "写字楼大堂",
+        "props": [
+          "棕色托特包",
+          "白色卡片"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s012_0.jpg"
+    },
+    {
+      "start": 35.97,
+      "end": 38.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅米色西装外套内搭白色衬衫 中长发 面对镜头微笑"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开露齿，呈说话口型",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "坐着对镜头方向说话微笑",
+        "place": "办公室",
+        "props": [
+          "笔记本电脑"
+        ],
+        "scene_text": "H 弘",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s013_0.jpg"
+    },
+    {
+      "start": 38.47,
+      "end": 42.33,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色衬衫卡其裤 双手插兜",
+          "年轻女性 浅蓝衬衫深灰长裤 挎棕色包"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男人站在前台，女人跟在其身后",
+        "place": "办公楼大堂前台",
+        "props": [
+          "棕色手提包",
+          "笔记本电脑",
+          "白色前台台面"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s014_0.jpg"
+    },
+    {
+      "start": 42.33,
+      "end": 43.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 黑色短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张可见口腔",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "皱眉张口说话，神情紧张",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s015_0.jpg"
+    },
+    {
+      "start": 43.43,
+      "end": 46.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫+深灰西装裤 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "低头看向桌面，脸部朝下，嘴部看不清",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手插口袋低头看桌面",
+        "place": "办公楼大堂",
+        "props": [
+          "黑色小物件"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s016_0.jpg"
+    },
+    {
+      "start": 46.0,
+      "end": 49.6,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "青年女性 浅蓝色衬衫配黑色西裤 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "举着手机贴耳打电话",
+        "place": "办公楼大厅",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s017_0.jpg"
+    },
+    {
+      "start": 49.6,
+      "end": 50.94,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝衬衫 黑色盘发 手持智能手机打电话"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露出牙齿，正在说话",
+        "emotion": "喜悦",
+        "intensity": "中",
+        "action": "微笑打电话，面露惊喜",
+        "place": "未识别",
+        "props": [
+          "智能手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep30_s018_0.jpg"
+    }
+  ]
+}

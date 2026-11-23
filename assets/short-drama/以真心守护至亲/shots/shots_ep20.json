@@ -1,0 +1,464 @@
+{
+  "ep": 20,
+  "file": "20.mp4",
+  "duration": 45.84,
+  "shot_count": 16,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 29200,
+    "completion_tokens": 20474,
+    "total_tokens": 49674
+  },
+  "elapsed_sec": 204.0,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 4.63,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式盘扣上衣 腿盖灰色毛毯 坐黑色办公椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公椅上看向一侧",
+        "place": "办公室",
+        "props": [
+          "黑色办公椅",
+          "灰色腿毯",
+          "办公桌"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep20_s000_0.jpg"
+    },
+    {
+      "start": 4.63,
+      "end": 5.07,
+      "tag": {
+        "shot_size": "全景",
+        "people": 2,
+        "who": [
+          "年轻男性 深色西装站立于旁",
+          "老年女性 白色短发 浅色上衣 白色长裤 坐办公椅"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "人物距离太远，五官太小，看不清嘴部",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "年轻男性站在老年女性身旁",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "办公椅",
+          "台灯",
+          "茶几",
+          "沙发",
+          "墙面装饰牌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s001_0.jpg"
+    },
+    {
+      "start": 5.07,
+      "end": 9.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫深色长裤 盘发低头看文件夹"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里没有人，是城市空镜",
+        "emotion": "无",
+        "intensity": "",
+        "action": "低头翻看蓝色文件夹",
+        "place": "城市街景",
+        "props": [
+          "蓝色文件夹",
+          "手提包",
+          "笔记本电脑",
+          "盆栽"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s002_0.jpg"
+    },
+    {
+      "start": 9.0,
+      "end": 11.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色旧棉袄 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐轮椅，手持白色小卡片说话",
+        "place": "室内客厅",
+        "props": [
+          "轮椅",
+          "白色卡片"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s003_0.jpg"
+    },
+    {
+      "start": 11.27,
+      "end": 13.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 披散深色长发 脸颊有小痣"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "嘴被对方递来的纸条挡住，看不清",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "伸手接过别人递来的写有号码的纸条",
+        "place": "室内",
+        "props": [
+          "撕边纸条"
+        ],
+        "scene_text": "1533467759",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s004_0.jpg"
+    },
+    {
+      "start": 13.47,
+      "end": 17.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 深灰盘扣棉袄 坐轮椅 灰白发挽髻",
+          "年轻女性 浅灰上衣 深色马尾 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老年女性嘴微张正在说话，第2位背对镜头看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "老年女性在轮椅上向对方讲述情况",
+        "place": "室内病房",
+        "props": [
+          "轮椅",
+          "床",
+          "纸张",
+          "单肩包"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s005_0.jpg"
+    },
+    {
+      "start": 17.13,
+      "end": 18.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深色盘发 手拿纸张",
+          "未识别年龄男性 深色上衣 仅见后脑勺 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴部微张呈说话状，第2位只见后脑勺",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "女子手拿纸张与手提包面向对方站立",
+        "place": "办公室",
+        "props": [
+          "纸张",
+          "手提包"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s006_0.jpg"
+    },
+    {
+      "start": 18.93,
+      "end": 20.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 灰色旧棉袄 坐轮椅 灰发盘起",
+          "年轻女性 浅蓝色上衣 背对镜头 背米色单肩包"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老年女性嘴部微张正在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "老年女性坐轮椅对面前女性说话",
+        "place": "室内房间",
+        "props": [
+          "轮椅",
+          "床",
+          "单肩包",
+          "窗户"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s007_0.jpg"
+    },
+    {
+      "start": 20.7,
+      "end": 24.33,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝衬衫 松散盘发 手扶单肩包肩带",
+          "未识别年龄男性 深色上衣 背对镜头只见后脑勺"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，上排牙齿可见，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "扶着包带侧身与人交谈前微笑",
+        "place": "室内书房",
+        "props": [
+          "单肩包",
+          "书架",
+          "书籍"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s008_0.jpg"
+    },
+    {
+      "start": 24.33,
+      "end": 27.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫 灰色阔腿裤 长发挽起",
+          "老年女性 灰色头发 深色上衣 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话，第2位只见后脑勺看不见嘴",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "站着眉头微皱，对坐着的人开口劝说",
+        "place": "办公室",
+        "props": [
+          "书架",
+          "笔记本电脑",
+          "木桌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s009_0.jpg"
+    },
+    {
+      "start": 27.0,
+      "end": 29.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 深色对襟中式上衣 盘发 眼眶泛红"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "坐在窗边，望向一侧说话停顿",
+        "place": "室内房间",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s010_0.jpg"
+    },
+    {
+      "start": 29.7,
+      "end": 31.67,
+      "tag": {
+        "shot_size": "特写",
+        "people": 2,
+        "who": [
+          "青年 未识别性别 浅蓝色衬衫袖 仅露一只手轻覆他人手背",
+          "老年 未识别性别 深色旧外套 坐轮椅仅露手部"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有两只手和衣袖，看不见任何人的嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "一只手轻覆在轮椅上另一人的手上",
+        "place": "未识别",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s011_0.jpg"
+    },
+    {
+      "start": 31.67,
+      "end": 35.3,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝衬衫深灰长裙 盘发 手提白色包",
+          "老年女性 深灰色外套 坐姿 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位正侧脸可见，嘴闭着微笑",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "年轻女性提着包侧身站立微笑",
+        "place": "室内书房",
+        "props": [
+          "白色手提包",
+          "书架",
+          "木桌",
+          "椅子"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s012_0.jpg"
+    },
+    {
+      "start": 35.3,
+      "end": 38.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色雪纺连衣裙 长卷发戴发夹 挽着男伴手臂",
+          "年轻男性 浅蓝色衬衫 侧脸出镜"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女生正脸露齿，嘴巴张开正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "女生挽着男伴手臂笑着说台词",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s013_0.jpg"
+    },
+    {
+      "start": 38.17,
+      "end": 41.0,
+      "tag": {
+        "shot_size": "近景",
+        "people": 3,
+        "who": [
+          "中年男性 深色外套 露出侧脸轮廓",
+          "年轻女性 深色外套 长发 露出半张脸",
+          "年轻男性 浅蓝色衬衫 短发 露齿微笑"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 3,
+        "mouth_note": "第3位嘴张开露齿，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "年轻男性微笑面对身旁两人说话",
+        "place": "室内走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s014_0.jpg"
+    },
+    {
+      "start": 41.0,
+      "end": 45.84,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅粉色荷叶边上衣 背对镜头戴发夹",
+          "中年男性 深色西装打领带 手持纸张",
+          "青年男性 浅蓝色衬衫 侧脸站立"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第2位低头看纸，嘴闭合",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "低头皱眉查看手中纸张",
+        "place": "办公大楼走廊",
+        "props": [
+          "纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep20_s015_0.jpg"
+    }
+  ]
+}

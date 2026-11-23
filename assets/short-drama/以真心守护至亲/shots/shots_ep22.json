@@ -1,0 +1,490 @@
+{
+  "ep": 22,
+  "file": "22.mp4",
+  "duration": 49.02,
+  "shot_count": 18,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 32850,
+    "completion_tokens": 23185,
+    "total_tokens": 56035
+  },
+  "elapsed_sec": 317.2,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 米色西装外套白色衬衫 黑色齐肩中短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴巴张开露出牙齿",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌前对面前的人讲话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep22_s000_0.jpg"
+    },
+    {
+      "start": 3.4,
+      "end": 6.43,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色长袖衬衫+卡其裤 双臂交叉",
+          "中年男性 深色西装 背对镜头站在门口"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "双臂交叉站立，面带微笑说话",
+        "place": "写字楼大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s001_0.jpg"
+    },
+    {
+      "start": 6.43,
+      "end": 8.97,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝衬衫配黑色腰带 深色盘发 手拿蓝色文件夹",
+          "年轻女性 米白色外套 长发 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露出牙齿，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在前台柜台后手持文件夹说话",
+        "place": "办公楼前台大厅",
+        "props": [
+          "蓝色文件夹",
+          "白色柜台",
+          "纸杯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s002_0.jpg"
+    },
+    {
+      "start": 8.97,
+      "end": 11.83,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑发挽起夹发抓 中长发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "手持蓝色文件夹与对方对话",
+        "place": "走廊",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s003_0.jpg"
+    },
+    {
+      "start": 11.83,
+      "end": 14.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 深色西装 只露出部分侧脸和手臂",
+          "年轻女性 粉色连衣裙 长卷发 戴发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位嘴巴张开露出牙齿在说话，第1位嘴部不在画面内",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "挽着身旁人的手臂笑着说话",
+        "place": "写字楼大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s004_0.jpg"
+    },
+    {
+      "start": 14.57,
+      "end": 17.23,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边上衣 长卷发配珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴张开露出牙齿，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "侧头对身旁人微笑说话",
+        "place": "公司大楼门口",
+        "props": [],
+        "scene_text": "创业集团",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s005_0.jpg"
+    },
+    {
+      "start": 17.23,
+      "end": 21.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅灰色衬衫 盘发 手持简历文件"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸清晰，嘴唇微张正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "拿着简历侧身对人说话",
+        "place": "办公楼大堂",
+        "props": [
+          "简历文件"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s006_0.jpg"
+    },
+    {
+      "start": 21.7,
+      "end": 24.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "青年女性 米色西装外套 内搭白衬衫 坐在前台桌后",
+          "青年女性 浅蓝衬衫 深灰西裤 侧身站立"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸嘴部张开似在说话；第2位侧后方看不见嘴",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "前台女子低头微笑着看向桌面",
+        "place": "办公楼大厅前台",
+        "props": [
+          "笔记本电脑",
+          "显示器",
+          "键盘",
+          "记事本",
+          "绿植"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s007_0.jpg"
+    },
+    {
+      "start": 24.23,
+      "end": 26.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 米色西装外套内搭白衬衫 中长发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸对向右侧，嘴巴张开露出牙齿，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "微笑着说话",
+        "place": "办公室",
+        "props": [
+          "白色杯子"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s008_0.jpg"
+    },
+    {
+      "start": 26.3,
+      "end": 27.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里没有人，只有电脑屏幕和键盘",
+        "emotion": "无",
+        "intensity": "",
+        "action": "电脑屏幕显示办理人服务中弹窗",
+        "place": "办公室",
+        "props": [
+          "电脑显示器",
+          "键盘"
+        ],
+        "scene_text": "办理人服务中",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s009_0.jpg"
+    },
+    {
+      "start": 27.3,
+      "end": 29.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 米色西装外套内搭白衬衫 中长发 在柜台后坐着",
+          "背对镜头人士 白色衬衫 长发 持白色纸杯"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴部张开露出牙齿，处于说话状态",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "在前台微笑着对客人讲话并伸手示意",
+        "place": "办公楼前台接待处",
+        "props": [
+          "蓝色文件夹",
+          "白色纸杯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s010_0.jpg"
+    },
+    {
+      "start": 29.8,
+      "end": 32.63,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "低头看着桌上的咖啡杯",
+        "place": "写字楼大堂",
+        "props": [
+          "咖啡杯",
+          "碟子"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s011_0.jpg"
+    },
+    {
+      "start": 32.63,
+      "end": 37.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅灰色衬衫 深色半身裙 手拿白色咖啡杯",
+          "年轻男性 浅蓝色长袖衬衫 卡其色长裤 侧身站立"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性正面朝向镜头，嘴张开正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "女性端咖啡杯低头，男性看向她",
+        "place": "办公楼大堂",
+        "props": [
+          "白色咖啡杯",
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s012_0.jpg"
+    },
+    {
+      "start": 37.07,
+      "end": 38.13,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 手持蓝色文件夹"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只露出手部和躯干，看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手持蓝色文件夹站立",
+        "place": "未识别",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s013_0.jpg"
+    },
+    {
+      "start": 38.13,
+      "end": 43.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发戴珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正侧着头说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "抱臂站着，侧头抱怨着说话",
+        "place": "酒店电梯厅走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s014_0.jpg"
+    },
+    {
+      "start": 43.47,
+      "end": 45.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫黑色西裤 拿写字板 微卷中长发",
+          "年轻女性 粉色连衣裙 侧后身入镜 只露部分身体"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手持写字板与对方交谈",
+        "place": "写字楼大堂",
+        "props": [
+          "写字板",
+          "笔",
+          "闸机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s015_0.jpg"
+    },
+    {
+      "start": 45.4,
+      "end": 47.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑色盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，口腔微露，处于说话状态",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立着对镜头方向说话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s016_0.jpg"
+    },
+    {
+      "start": 47.63,
+      "end": 49.02,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深灰色阔腿裤 手拿蓝色文件夹 披肩发",
+          "年轻女性 粉色连衣裙 抱臂 仅侧身入镜"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位正侧脸可见，嘴唇闭合未张开",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "双手持文件夹站在闸机前看向对方",
+        "place": "办公楼大堂",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep22_s017_0.jpg"
+    }
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "ep": 29,
+  "file": "29.mp4",
+  "duration": 51.64,
+  "shot_count": 20,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 36500,
+    "completion_tokens": 25801,
+    "total_tokens": 62301
+  },
+  "elapsed_sec": 218.0,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深灰色西装蓝领带 手持文件夹低头看",
+          "年轻女性 浅蓝色衬衫 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "低头查看手中的文件夹",
+        "place": "公司前台",
+        "props": [
+          "文件夹",
+          "手表"
+        ],
+        "scene_text": "HONGYE 业集",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep29_s000_0.jpg"
+    },
+    {
+      "start": 2.83,
+      "end": 3.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻男性 深色西装 背对镜头只露后脑勺卷发",
+          "年轻女性 浅蓝色衬衫 长发扎起"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位女性低头，嘴部可见且微张呈说话状",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "女性低头看着文件夹，向对方说话",
+        "place": "办公室",
+        "props": [
+          "黑色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep29_s001_0.jpg"
+    },
+    {
+      "start": 3.8,
+      "end": 7.27,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "青年男性 深色西装白衬衫 侧身站立",
+          "青年女性 浅蓝色衬衫深灰阔腿裤 持文件夹"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "两人嘴部均闭合，未见说话口型",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "女子低头翻看文件夹，男子侧身注视",
+        "place": "写字楼大堂",
+        "props": [
+          "文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s002_0.jpg"
+    },
+    {
+      "start": 7.27,
+      "end": 8.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装白衬衫深色领带 持灰色文件板 正面朝向镜头",
+          "年轻女性 白色衬衫 马尾 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开正在说话，第2位背对镜头看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男性持文件板与对面女性交谈对峙",
+        "place": "办公室",
+        "props": [
+          "灰色文件板",
+          "文件纸张"
+        ],
+        "scene_text": "NGY 业",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s003_0.jpg"
+    },
+    {
+      "start": 8.97,
+      "end": 10.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发 手持灰色文件夹",
+          "中年男性 深色西装 背对镜头只见侧后脑"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第2位女性嘴部可见，双唇闭合带浅笑，未张口",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "女性双手捧着打开的灰色文件夹与对面男性交谈",
+        "place": "办公室",
+        "props": [
+          "灰色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s004_0.jpg"
+    },
+    {
+      "start": 10.07,
+      "end": 14.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发 手持白色纸张"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位低头念纸，嘴唇微张在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "低头念手中纸张上的内容",
+        "place": "办公楼大堂",
+        "props": [
+          "白色纸张"
+        ],
+        "scene_text": "背景楼栋索引牌文字模糊无法辨认",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s005_0.jpg"
+    },
+    {
+      "start": 14.77,
+      "end": 17.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深蓝色领带 背景为集团标识墙"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "端坐于桌前，双手交叠，正视前方",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "弘业集团",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s006_0.jpg"
+    },
+    {
+      "start": 17.13,
+      "end": 19.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 头发盘起带碎发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见牙齿",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "睁大眼睛张嘴质问",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s007_0.jpg"
+    },
+    {
+      "start": 19.07,
+      "end": 21.9,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "中年男性 深灰色西装配白衬衫蓝领带 站在台后低头指文件",
+          "年轻女性 粉色上衣 长发 背对镜头只见后脑勺",
+          "年龄性别未识别 蓝色衣物 画面左缘仅露肩袖"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸嘴张开可见牙齿，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站台后讲解文件内容",
+        "place": "公司前台",
+        "props": [
+          "文件夹",
+          "文件"
+        ],
+        "scene_text": "弘业集团 HONG GROUP",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s008_0.jpg"
+    },
+    {
+      "start": 21.9,
+      "end": 23.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发别珍珠发饰 眼神忧心"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未张口",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "站在闸机前凝视前方，似在劝阻对方",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s009_0.jpg"
+    },
+    {
+      "start": 23.43,
+      "end": 28.3,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色长袖衬衫卡其裤 黑发背梳 正脸",
+          "年轻女性 粉色连衣裙 长卷发 仅右侧半身入画"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性正脸，嘴巴微张可见唇间缝隙",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "男子边走边张口说话",
+        "place": "办公楼大堂",
+        "props": [
+          "闸机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s010_0.jpg"
+    },
+    {
+      "start": 28.3,
+      "end": 29.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边上衣 深棕色长卷发配珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，牙齿隐约可见",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "微微侧头看向别处，嘴唇微张",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s011_0.jpg"
+    },
+    {
+      "start": 29.93,
+      "end": 31.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深色半身裙 半扎发 手持文件"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "低头翻看手中的文件纸张",
+        "place": "办公楼大堂",
+        "props": [
+          "文件纸张",
+          "闸机",
+          "电脑显示器",
+          "台面上的资料夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s012_0.jpg"
+    },
+    {
+      "start": 31.57,
+      "end": 36.8,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "青年女性 浅蓝色衬衫 深色松散低盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正开口讲话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s013_0.jpg"
+    },
+    {
+      "start": 36.8,
+      "end": 39.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发 背对镜头",
+          "中年男性 深色西装 白衬衫打深色领带 正面站立"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位嘴部张开在说话，女性背对镜头看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "两人在前台相对站立交谈",
+        "place": "办公室前台大厅",
+        "props": [
+          "纸张"
+        ],
+        "scene_text": "弘业 HANG",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s014_0.jpg"
+    },
+    {
+      "start": 39.57,
+      "end": 40.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深蓝领带 背头短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正面站立讲话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s015_0.jpg"
+    },
+    {
+      "start": 40.77,
+      "end": 45.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深蓝领带 背头发型"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸可见，嘴部微张",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "站姿侧对镜头开口讲话",
+        "place": "办公室",
+        "props": [
+          "电脑显示器",
+          "办公桌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s016_0.jpg"
+    },
+    {
+      "start": 45.0,
+      "end": 47.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装浅蓝衬衫深色领带 梳背头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "皱眉张口质问，站在大厅中",
+        "place": "办公楼大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s017_0.jpg"
+    },
+    {
+      "start": 47.63,
+      "end": 49.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装 白衬衫 深蓝领带 短发 正面站立"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部闭合，未张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在公司标识墙前，神情严肃地看向对方",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "弘业集团",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s018_0.jpg"
+    },
+    {
+      "start": 49.7,
+      "end": 51.64,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白细条纹衬衫黑领带 发型向后梳 眉头紧锁"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部清晰可见但双唇紧闭",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "抿嘴皱眉，紧盯着前方",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep29_s019_0.jpg"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "_readme": "2026-11-22 新建。以真心守护至亲第 10 条片子。张老师 11-22 两条意见：①解说不要太琐碎，上次 11 段太密集，要增加原剧占比；②故事必须自己完整，要有策划完整的微剧本，前因后果交代清楚，冲突场景归类成套路。据此重做：按『打脸型』套路写完整微剧本（观众知道底牌、演员不知道），补进前因（ep1 婚礼受辱 / ep3 妈妈心声 / ep9 退婚 / ep16 撤推荐），解说砍到 7 段（原剧占 90%），时长 5 分 59.9 秒。",
+  "task": "D10_你妈给的工牌_你自己挣的",
+  "category": "以真心守护至亲",
+  "line": "short-drama",
+  "intent": "打脸型：观众第一秒就知道妈妈有 50 斤黄金底牌，演员全不知道。看她被当众羞辱、女儿为认妈退婚、推荐被撤、系统被塞进假记录——她一句底牌都不打，只在背后递材料把路铺好；而女儿不认这个关系，当着所有人把清白自己挣回来：『岗位是我争取的』『留不留下，不看你盼不盼着我走』。打脸闭环：两周前放话『她今天领不到工牌就从这头爬到那头』的周承被点名站到台前，妹妹亲口念欢迎词。",
+  "structure": "main",
+  "ai_strategy": "none",
+  "narration": {
+    "state": "on",
+    "voice": "说书人C",
+    "voice_rev": 1,
+    "engine": "MiMo mimo-v2.5-tts-voiceclone",
+    "segments": 7,
+    "total_sec": 33.82,
+    "density": "解说占成片 9.4%，原剧占 90.6%（D9 是解说 120.89s／成片 261.66s＝46%，本条按张老师要求压到 1/5）",
+    "tiers": {"deep": 3, "mid": 4, "blank": 11},
+    "cost": "付费接口，按 token 计；本次 7 段共 1255 tokens。不是零花费。"
+  },
+  "cycle_round": 1,
+  "shared_snapshot": {
+    "voice_assets": 1,
+    "drama_base": {"以真心守护至亲": null}
+  },
+  "updated_at": "2026-11-22 11:45",
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "runs/以真心守护至亲/选片结论.md",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "_inherit": "继承 D1–D9：11-11 张老师 GO。同一部戏换故事结构重做，不重走选片人审。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/以真心守护至亲/drama-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["select"],
+      "depends_rev": {"select": 1},
+      "_inherit": "继承 D1：剧集包 0 ERROR，11-11 approved；常量资料整部一份，十条共用。"
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "assets/short-drama/以真心守护至亲/",
+      "state": "done",
+      "rev": 1,
+      "depends_on": ["pack"],
+      "depends_rev": {"pack": 1},
+      "evidence": [
+        "台词库 60 集全部解析完成（本地 OCR 零费用）",
+        "句级表 1–18 集；画面打标 1–36 集，本条 ep1/ep3/ep9/ep16/ep20–31 的画面情绪证据取自 shots_*.json",
+        "停顿表 60 集，切点体检用",
+        "本条只换选段，未重跑 OCR 与打标，零花费"
+      ]
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "path": "",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["asset_index"],
+      "depends_rev": {"asset_index": 1},
+      "_note": "不点 AI 画面玩法，整环跳过。解说用的是配音音色资产，不是 AI 画面资产。"
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/以真心守护至亲/D10_你妈给的工牌_你自己挣的/plan.json",
+      "state": "done",
+      "rev": 1,
+      "depends_on": ["pack", "asset_index"],
+      "depends_rev": {"pack": 1, "asset_index": 1},
+      "direction_card": {
+        "path": "runs/以真心守护至亲/D10_你妈给的工牌_你自己挣的/spec.json",
+        "lines_offered": [
+          "打脸型·观众知道底牌演员不知道：完整微剧本（婚礼受辱→退婚→撤推荐→假记录→直签→闭环），本次采用",
+          "母亲独白型：全片只讲妈妈忍而不发（D8 方向，已作废）",
+          "职场明牌型：进公司当场亮身份（D9 方向，已作废）"
+        ],
+        "selected": "打脸型·完整微剧本",
+        "ai_strategy_selected": "none（纯画面剪），另开默认解说",
+        "circled_by": "张老师（11-22：方案 A——打脸型，观众知道演员不知道；解说减量、原剧占大头）",
+        "at": "2026-11-22T11:05",
+        "_note": "方向由张老师在对话里圈定（方案 A），未另出卡片；讲述稿与成片一并交人看，未回填 approved。"
+      },
+      "evidence": [
+        "29 段 + 1 处黑场，359.99 秒（5 分 59.9 秒），主线型五幕：Tease=S01 / Establish=S02–S08 / Escalate=S09–S25 / Brake=S24–S25 / Button=S26–S29",
+        "结构检查 6 项全过：出点不超视频流、总时长落 main 档 240–360s、三拍齐全、同集连拼≤2、前 45 秒有人说不（ep1 10.0s『还认不认我这个穷妈』、ep1 53.0s『你也配』）、与已出片子重叠不计",
+        "刀口体检：56 个刀口，切在说话中间 0 处、贴边 1 处（ep31 出点 51.75，末帧实证非黑帧）",
+        "片头从 ep1 第 0 帧起（黄金金条特写），观众第一秒看到底牌",
+        "说话人逐句核准（音频转写＋画面口型双证）：『岗位是我争取的』『两位办理人是我』『没做过的事我不认』『发生的事记到我名下』等关键句归属全部核死",
+        "订正两处：①『许宁今天真能领到工牌就从这头爬到那头』是周承说的、不是妹妹；②ep26『昨天她为了认我丢了婚礼』是妈妈的心声、不是叙述",
+        "内容补漏：ep25 题眼句『没做过的事我不认』(24.0s) 与『妈，董事办的待办还看不了』(26.0s) 原先落在段外，本条把 S18 出点延到 28.85s 收进来",
+        "落点全新：前 9 条收在认亲/轮椅/底牌/锁链/岗位是我争取的；本条收在『欢迎许宁女士正式入职红叶集团研发部』+ 妹妹替周承解扣子的画面",
+        "剧透纪律：只取 1/3/9/16/20–31 集，ep32–38 身份揭穿段全避开"
+      ],
+      "review": {
+        "path": "runs/以真心守护至亲/D10_你妈给的工牌_你自己挣的/讲述稿.md",
+        "state": "pending",
+        "by": "",
+        "at": "",
+        "note": "全自动出的片，讲述稿随成片一并交人看。张老师没说话，不回填 approved。"
+      }
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "path": "",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["script"],
+      "depends_rev": {"script": 1},
+      "_note": "不点 AI 画面玩法，整环跳过。"
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/以真心守护至亲/D10_你妈给的工牌_你自己挣的/你妈给的工牌_你自己挣的_成片_v1.mp4",
+      "state": "done",
+      "rev": 1,
+      "depends_on": ["script"],
+      "depends_rev": {"script": 1},
+      "evidence": [
+        "规格 1080×1920 / 30fps / 360.001 秒（6 分 0 秒）/ 175MB，h264+aac 48k 双声道",
+        "解说 7 段说书人C（MiMo 克隆，atempo1.28，loudnorm-16LUFS，gain1.32），7 段全部落在各自画面内，无互相重叠、无盖留白原声；总长 33.82 秒",
+        "音频包络：均值 -18.8dB / 峰值 -0.2dB，无爆音；静音检测无超 1.2 秒静音段",
+        "装配器音画自检：没发现超过 1 秒的静止段",
+        "关键帧实证：末帧是妹妹替周承解衬衫扣子、字幕『欢迎加入红叶集团』，非黑帧；340s 是妈妈在欢迎仪式现场、字幕『启动他昨天受了那么多委屈』",
+        "装配实耗 272 秒（veryfast 档）；进程末尾因沙箱拦进度临时文件清理报 failed，成片已写出并通过全部自检",
+        "成本：画面装配零花费；解说走 MiMo 付费接口（7 段 1255 tokens），非零"
+      ],
+      "_note": "当前唯一版本 v1，人还没看过片，未定版。停在成片人审。"
+    }
+  }
+}

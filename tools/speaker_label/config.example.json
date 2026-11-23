@@ -1,0 +1,21 @@
+{
+  "_说明": "复制成 config.json 后改两处路径。路径用正斜杠，Windows 写成 C:/xxx/yyy 或 C:\\\\xxx\\\\yyy 都可以。",
+  "drama": "以真心守护至亲",
+
+  "source_dir": "<素材根>/以真心守护至亲",
+  "lines_dir": "<仓库根>/assets/short-drama/以真心守护至亲/lines",
+
+  "episode_count": 60,
+  "sample_rate": 16000,
+  "clip_seconds": 2.4,
+
+  "hf_endpoint": "https://hf-mirror.com",
+  "model_source": "speechbrain/spkrec-ecapa-voxceleb",
+
+  "speakers": {
+    "林秀兰": "妈妈，老年女性，画外音多",
+    "许宁": "女儿，年轻女性",
+    "周承": "周家儿子，年轻男性",
+    "许晴": "妹妹，年轻女性"
+  }
+}

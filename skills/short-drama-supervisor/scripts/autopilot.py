@@ -440,7 +440,8 @@ def st_story(a) -> dict:
             return dict(status="fail", detail=f"冲突地图没出：{_tail(o)}")
     return dict(status="needs_model",
                 detail=f"冲突地图已出（{out.relative_to(ROOT)}）。"
-                       f"下一步要定几条故事线、每条讲谁跟谁较劲——这是全流程唯一必须人拍板的地方。")
+                       f"下一步派 short-drama-microscript 跟人把故事聊成微剧本（圈线→骨架→逐场定稿）"
+                       f"——这是全流程唯一必须人拍板的地方；微剧本没定稿，不许排剪辑清单。")
 
 
 def st_plan(a) -> dict:

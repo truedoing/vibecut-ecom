@@ -1,0 +1,502 @@
+{
+  "ep": 24,
+  "file": "24.mp4",
+  "duration": 50.71,
+  "shot_count": 18,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 32850,
+    "completion_tokens": 29694,
+    "total_tokens": 62544
+  },
+  "elapsed_sec": 288.8,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边上衣 珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "说话责备对方",
+        "place": "办公楼走廊",
+        "props": [
+          "珍珠发夹"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep24_s000_0.jpg"
+    },
+    {
+      "start": 3.53,
+      "end": 9.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫深灰色半裙 低盘发 抱文件夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "抱着文件夹侧身站立说话",
+        "place": "公司大堂",
+        "props": [
+          "文件夹"
+        ],
+        "scene_text": "兴业",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s001_0.jpg"
+    },
+    {
+      "start": 9.37,
+      "end": 10.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 内搭浅蓝衬衫系黑领带 短发背头 侧脸朝右"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "嘴部闭合，没有张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧身站立看向画面右侧",
+        "place": "室内大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s002_0.jpg"
+    },
+    {
+      "start": 10.83,
+      "end": 12.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 5,
+        "who": [
+          "中年男性 黑色保安制服 戴黑色大檐帽 站姿端正",
+          "年轻女性 米白色西装外套 长发 仅见背影",
+          "年轻女性 白色上衣灰色半身裙 高跟鞋 背对镜头",
+          "青年 深色上衣 弯腰低头在闸机前",
+          "中年男性 深色西装 侧身站在闸机旁低头看手中物品"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位保安嘴部微张，正开口说话；第2位为背影看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "保安站在前台前低头看向前台女子",
+        "place": "办公楼大堂",
+        "props": [
+          "闸机",
+          "前台打印机",
+          "电脑显示器",
+          "键盘"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s003_0.jpg"
+    },
+    {
+      "start": 12.0,
+      "end": 14.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 米色西装外套 白色衬衫 中长发 微笑"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸，嘴巴张开露出牙齿，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "坐在桌前张口向对面的人讲解",
+        "place": "公司前台",
+        "props": [],
+        "scene_text": "弘业集 HONGE GYE",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s004_0.jpg"
+    },
+    {
+      "start": 14.37,
+      "end": 18.53,
+      "tag": {
+        "shot_size": "中景",
+        "people": 6,
+        "who": [
+          "中年女性 米色西装 背对镜头仅露后脑与肩膀",
+          "青年女性 浅蓝色衬衫深灰色半身裙 手持文件 背黑色挎包",
+          "青年男性 黑色保安制服戴帽 胸前挂对讲机 侧脸",
+          "青年女性 浅蓝色衬衫灰色短裙 背对镜头走向闸机",
+          "青年男性 黑色西装 低头过闸机 仅露侧身",
+          "青年男性 黑色衣服 被闸机部分遮挡"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位女子嘴部微张在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "女子持文件向保安交代事项",
+        "place": "写字楼大堂",
+        "props": [
+          "文件",
+          "黑色挎包",
+          "对讲机",
+          "闸机",
+          "前台设备"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s005_0.jpg"
+    },
+    {
+      "start": 18.53,
+      "end": 20.9,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年龄感未识别 未识别性别 白衬衫袖口 双手入镜握持手机"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有双手和手机，脸部完全未入镜，看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "双手举着手机展示通知页面",
+        "place": "未识别",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "手机屏幕显示：推荐人撤回通知；通知时间：2023年6月17日；成就期间：2022年9月1日；正文为大段乱码文字",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s006_0.jpg"
+    },
+    {
+      "start": 20.9,
+      "end": 24.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 扎起盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "手拿平板站在前台说话",
+        "place": "办公楼大厅",
+        "props": [
+          "平板电脑",
+          "安检闸机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s007_0.jpg"
+    },
+    {
+      "start": 24.57,
+      "end": 27.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装浅蓝衬衫深色领带 短背头",
+          "未识别 浅色上衣 深色头发 背对镜头虚化"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位男性正脸嘴部张开，牙齿可见，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "皱眉紧盯着对方质问",
+        "place": "公司大堂",
+        "props": [
+          "黑色椅背"
+        ],
+        "scene_text": "弘业集团 含山M",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s008_0.jpg"
+    },
+    {
+      "start": 27.07,
+      "end": 29.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发 面向镜头",
+          "背影人物 深色西装 仅露肩背 面向镜头外"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张正在说话，第2位为背影看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "女子面朝前方与人对视",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s009_0.jpg"
+    },
+    {
+      "start": 29.77,
+      "end": 32.47,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 低马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正在说话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s010_0.jpg"
+    },
+    {
+      "start": 32.47,
+      "end": 35.93,
+      "tag": {
+        "shot_size": "中景",
+        "people": 6,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发戴银色发夹",
+          "中年男性 深色西装打深色领带 背头",
+          "年轻男性 浅蓝色衬衫 背对镜头虚化前景",
+          "中年男性 深色制服戴大檐帽 背景站立",
+          "中年女性 深色西装 背景闸机旁俯身",
+          "中年男性 深色制服 背景右侧站立"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性侧脸嘴巴张开露齿，正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "女性倾身向男性搭话",
+        "place": "写字楼大堂",
+        "props": [
+          "电脑显示器",
+          "闸机"
+        ],
+        "scene_text": "汇立集团",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s011_0.jpg"
+    },
+    {
+      "start": 35.93,
+      "end": 37.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发配珍珠发夹 眼眶泛红",
+          "中年男性 深色西装 侧脸"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴唇张开正在说话，第2位男性侧脸嘴闭合",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "女子仰头对男子哀求恳求",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s012_0.jpg"
+    },
+    {
+      "start": 37.87,
+      "end": 39.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅蓝衬衫 黑色腰带 手持黑色文件夹 正脸站立",
+          "年轻男性 深色西装 左侧侧脸 部分入画",
+          "年轻女性 粉色上衣 棕色长发 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位女性正脸嘴部可见，嘴唇微闭看不出说话口型",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立持文件夹面对两人",
+        "place": "办公大楼走廊",
+        "props": [
+          "黑色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s013_0.jpg"
+    },
+    {
+      "start": 39.83,
+      "end": 42.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装白衬衫领带 背头发型",
+          "年轻女性 浅粉色上衣 长发背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴巴张开，牙齿可见，正在说话；第2位背对镜头看不见嘴",
+        "emotion": "愤怒",
+        "intensity": "强",
+        "action": "男性对着面前的人张口说话",
+        "place": "室内厨房",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s014_0.jpg"
+    },
+    {
+      "start": 42.43,
+      "end": 47.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 深色西装 侧脸站立",
+          "年轻女性 粉色连衣裙 长卷发 别发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位女性嘴张开在说话，第1位男性侧脸嘴闭合",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "拉着男士手臂激动诉说",
+        "place": "酒店大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s015_0.jpg"
+    },
+    {
+      "start": 47.4,
+      "end": 49.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑色半身裙 深色松散盘发 戴金色耳饰",
+          "年轻女性 粉色荷叶边上衣 长卷发 侧脸朝右",
+          "未识别年龄 未知性别 深蓝色外套 仅露出右肩"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸嘴部微张，第2位侧脸嘴部可见但闭合",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "惊讶地看着对面女子说话",
+        "place": "写字楼大堂门口",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s016_0.jpg"
+    },
+    {
+      "start": 49.13,
+      "end": 50.71,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 粉色雪纺连衣裙 长卷发戴发夹",
+          "中年男性 深色西装 仅露手臂与手",
+          "青年 未识别性别 浅蓝色衬衫 仅见背影与后脑勺"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位侧脸嘴微张但无牙齿可见，判定未在说话",
+        "emotion": "震惊",
+        "intensity": "弱",
+        "action": "侧头望向旁边的人，手扶住对方手臂",
+        "place": "室内大厅闸机处",
+        "props": [
+          "闸机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep24_s017_0.jpg"
+    }
+  ]
+}

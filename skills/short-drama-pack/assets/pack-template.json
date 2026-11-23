@@ -716,7 +716,8 @@
     "audio": "no_bgm",
     "subtitle": "burned_in",
     "splittable": {
-      "usable_ep_range": "1-19",
+      "usable_ep_range": "1-12",
+      "usable_ep_range_rule": "前 60%：ceil(总集数 × 0.6)。本例 20 集 → 12 集 → 1-12。别再写「除掉大结局」——那是旧口径，会把该防的剧透放开。",
       "estimated_clips": 6
     }
   },

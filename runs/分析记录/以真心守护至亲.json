@@ -20,5 +20,104 @@
     "tokens": null,
     "source": "manual",
     "note": "19 集重建，17 个产物文件 3 秒内写完，含读文件"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-20T11:38:17",
+    "elapsed_sec": 223.4,
+    "eps": 1,
+    "items": 19,
+    "tokens": 84626,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 3 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-22T08:11:46",
+    "elapsed_sec": 143.3,
+    "eps": 1,
+    "items": 15,
+    "tokens": 57059,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 3 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-22T08:15:09",
+    "elapsed_sec": 161.9,
+    "eps": 1,
+    "items": 15,
+    "tokens": 68589,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 3 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-22T08:15:16",
+    "elapsed_sec": 183.0,
+    "eps": 1,
+    "items": 15,
+    "tokens": 49082,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 3 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-22T08:16:02",
+    "elapsed_sec": 229.2,
+    "eps": 1,
+    "items": 15,
+    "tokens": 40237,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 3 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-22T08:19:10",
+    "elapsed_sec": 161.4,
+    "eps": 1,
+    "items": 15,
+    "tokens": 35686,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 3 路，sd-shot-v5"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-22T08:19:44",
+    "elapsed_sec": 194.8,
+    "eps": 1,
+    "items": 15,
+    "tokens": 68920,
+    "source": "auto",
+    "note": "集间 1 路 × 集内 3 路，sd-shot-v5"
+  },
+  {
+    "stage": "ocr_lines",
+    "label": "字幕识别",
+    "at": "2026-11-22T08:36:56",
+    "elapsed_sec": 1203.2,
+    "eps": 41,
+    "items": 1022,
+    "tokens": null,
+    "source": "auto",
+    "note": "抽帧间隔 2 秒，4 路并行"
+  },
+  {
+    "stage": "tag_shots",
+    "label": "画面打标",
+    "at": "2026-11-22T08:41:55",
+    "elapsed_sec": 1075.9,
+    "eps": 18,
+    "items": 325,
+    "tokens": 1005690,
+    "source": "auto",
+    "note": "集间 4 路 × 集内 3 路，sd-shot-v5"
   }
 ]

@@ -57,8 +57,15 @@ except Exception:  # 没装这个模块、或换了目录结构，照样能跑
     analysis_log = None
 
 SCENE_THRESHOLD = 0.25   # 场景切换阈值：低于它会把人物小动作当成切镜头
-FRAME_SCALE = 640        # 缩图边长：只付 640px 的钱，原片不出本机
-FRAMES_PER_SHOT = 3      # 每镜头抽几帧：单帧会正好撞上闭嘴的那一下（11-12 实测）
+# 缩图边长：只付缩图后尺寸的钱，原片不出本机。
+# 图像 token 按 tile 数算（≈面积），边长 640 的竖屏是 6 个 tile；降到 512 只有 2 个，
+# 图像 token 直接降 67%（11-22 实测），比抽帧频率调低划算得多。
+# 11-22 实测六档：384×3 帧比 640×3 帧省 27.3%，质量与原档持平（嘴部判定 0 差异、
+# 说话人 1/15、情绪 8/15、地点 7/15，全部等于同参数重跑的随机性基线 55.8% 一致率）。
+# 降到 2 帧虽然省 40%，但说话人判定涨到 2–4/15、情绪涨到 10–12/15，不划算。
+# 默认值已从 640 改为 384；老参数仍可用环境变量覆盖。
+FRAME_SCALE = int(os.environ.get("SD_TAG_FRAME_SCALE", "384"))
+FRAMES_PER_SHOT = int(os.environ.get("SD_TAG_FRAMES_PER_SHOT", "3"))
 BATCH = 3                # 每次调用带几帧（3 帧 = 1 个镜头一组）
                          # 11-12 实测：一组带 2 个镜头时，后一个镜头的描述会抄前一个
                          # （ep15 9.8-14.1 画面只有手在装包，却报成“年轻女性正脸说话”）
@@ -221,7 +228,8 @@ def call_vlm(env: dict, frames: list[Path]) -> tuple[list[dict], dict]:
     content = [{"type": "image_url", "image_url": {"url": b64_url(p)}} for p in frames]
     content.append({"type": "text", "text": TAG_PROMPT.format(n=len(frames), k=FRAMES_PER_SHOT)})
     payload = {"model": model, "messages": [{"role": "user", "content": content}],
-               "temperature": 0.2, "max_tokens": 3000}
+               "temperature": float(os.environ.get("SD_TAG_TEMP", "0.2")),
+               "max_tokens": 3000}
     req = urllib.request.Request(url, data=json.dumps(payload).encode(),
                                 headers=headers, method="POST")
     with urllib.request.urlopen(req, timeout=180) as resp:
@@ -471,7 +479,7 @@ def main() -> None:
     if not drama_dir.exists():
         sys.exit(f"素材目录不存在：{drama_dir}")
 
-    out_dir = ROOT / "assets" / "short-drama" / args.drama / "shots"
+    out_dir = Path(os.environ.get("SD_TAG_OUT_DIR") or (ROOT / "assets" / "short-drama" / args.drama / "shots"))
     out_dir.mkdir(parents=True, exist_ok=True)
 
     use_vlm = not args.no_vlm

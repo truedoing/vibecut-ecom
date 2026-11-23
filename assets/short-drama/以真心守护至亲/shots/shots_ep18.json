@@ -1,0 +1,536 @@
+{
+  "ep": 18,
+  "file": "18.mp4",
+  "duration": 50.2,
+  "shot_count": 19,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 61351,
+    "completion_tokens": 23275,
+    "total_tokens": 84626
+  },
+  "elapsed_sec": 223.4,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.0,
+      "tag": {
+        "shot_size": "全景",
+        "people": 2,
+        "who": [
+          "青年男性 深色西装打领带 站在轮椅后方",
+          "老年女性 白色套装 白发 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "两人正脸朝向镜头，嘴部可见且闭合",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男子推着轮椅上的老妇走向桌前",
+        "place": "办公室",
+        "props": [
+          "轮椅",
+          "办公桌",
+          "台灯",
+          "绿植",
+          "书架",
+          "奖杯"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep18_s000_0.jpg"
+    },
+    {
+      "start": 2.0,
+      "end": 6.77,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深灰色西装 戴金丝眼镜 站立",
+          "老年男性 浅灰色西装 背对镜头坐于桌前"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位站立男性嘴巴张开正在说话，第2位只见后脑勺",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立向桌前的人汇报工作",
+        "place": "办公室",
+        "props": [
+          "蓝色文件夹",
+          "钢笔",
+          "木质办公桌"
+        ],
+        "scene_text": "H",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep18_s001_0.jpg"
+    },
+    {
+      "start": 6.77,
+      "end": 10.33,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色中式盘扣上衣 灰白盘发 珍珠耳饰"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "冷淡",
+        "intensity": "弱",
+        "action": "坐在办公桌前说话，手放在桌上",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "文件夹",
+          "办公椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s002_0.jpg"
+    },
+    {
+      "start": 10.33,
+      "end": 11.73,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "未识别年龄 未识别性别 未识别服装 只见一只手握着蓝色文件夹"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有一只手，看不见任何人的嘴部",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "一只手握着蓝色文件夹倾斜悬空",
+        "place": "办公室",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s003_0.jpg"
+    },
+    {
+      "start": 11.73,
+      "end": 15.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深灰色西装 白衬衫 深色领带 戴金丝眼镜 站立",
+          "老年男性 灰白头发 背对镜头 只见后脑勺"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立面向对方汇报工作",
+        "place": "办公室",
+        "props": [
+          "蓝色文件夹",
+          "黑色手机",
+          "办公桌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s004_0.jpg"
+    },
+    {
+      "start": 15.4,
+      "end": 16.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 米白中式盘扣上衣 盘发白发 珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部可见，双唇闭合",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "坐在办公椅上注视前方",
+        "place": "办公室",
+        "props": [
+          "黑色皮质办公椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s005_0.jpg"
+    },
+    {
+      "start": 16.37,
+      "end": 18.03,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深色领带 金丝眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴张开，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "双手撑桌俯身注视桌前的人",
+        "place": "办公室",
+        "props": [
+          "蓝色文件夹",
+          "办公桌",
+          "笔记本电脑"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s006_0.jpg"
+    },
+    {
+      "start": 18.03,
+      "end": 20.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 灰白盘发 米白色中式立领刺绣上衣 珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "平静",
+        "intensity": "中",
+        "action": "端坐发问",
+        "place": "办公室",
+        "props": [
+          "皮质办公椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s007_0.jpg"
+    },
+    {
+      "start": 20.1,
+      "end": 21.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫领带 戴金属框眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在办公桌后，双手垂放注视镜头",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "蓝色文件夹",
+          "金属台灯",
+          "墙面金色标识"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s008_0.jpg"
+    },
+    {
+      "start": 21.4,
+      "end": 25.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 灰色西装白衬衫深色领带 戴金属框眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立着开口讲话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s009_0.jpg"
+    },
+    {
+      "start": 25.7,
+      "end": 27.63,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装、白色衬衫、深色领带 戴金丝边眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部闭合，未张开",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正视前方",
+        "place": "室内办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s010_0.jpg"
+    },
+    {
+      "start": 27.63,
+      "end": 31.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式立领上衣 盘发 耳钉"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "严肃",
+        "intensity": "中",
+        "action": "坐在办公桌前说话",
+        "place": "办公室",
+        "props": [
+          "办公椅",
+          "键盘"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s011_0.jpg"
+    },
+    {
+      "start": 31.87,
+      "end": 34.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式立领绣花上衣 珍珠耳钉 灰白盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在发音",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "眉头紧锁、语气严厉地说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s012_0.jpg"
+    },
+    {
+      "start": 34.1,
+      "end": 36.57,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "中年男性 白色花纹衬衫 双手交握青筋明显"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有双手和衬衫袖口，看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "双手交握放在深色皮革桌面上",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s013_0.jpg"
+    },
+    {
+      "start": 36.57,
+      "end": 38.5,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年女性 白色中式立领上衣 灰白盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，处于说话状态",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌前，目光望向侧面",
+        "place": "办公室",
+        "props": [
+          "桌面文件",
+          "黑色文件架",
+          "文件夹",
+          "奖杯",
+          "办公椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s014_0.jpg"
+    },
+    {
+      "start": 38.5,
+      "end": 41.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深灰色西装配深蓝领带 金丝眼镜 短黑发",
+          "未识别年龄性别 只见一只手搭在椅子扶手上"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位正侧脸清晰，嘴唇闭合，未在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "单手拎起牛皮纸档案袋递向桌对面",
+        "place": "办公室",
+        "props": [
+          "牛皮纸档案袋",
+          "黑色公文包",
+          "蓝色文件夹板",
+          "黑色笔记本电脑",
+          "马克杯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s015_0.jpg"
+    },
+    {
+      "start": 41.07,
+      "end": 44.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫深色领带 金丝眼镜 梳背头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "平静",
+        "intensity": "中",
+        "action": "双手递出牛皮纸文件夹向对方说明方案",
+        "place": "办公室",
+        "props": [
+          "牛皮纸文件夹",
+          "腕表"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s016_0.jpg"
+    },
+    {
+      "start": 44.8,
+      "end": 47.17,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有手和文件袋，看不到任何嘴部",
+        "emotion": "无",
+        "intensity": "",
+        "action": "一只手放在棕色文件袋上方",
+        "place": "办公室",
+        "props": [
+          "棕色线扣文件袋",
+          "蓝色文件夹",
+          "黑色笔"
+        ],
+        "scene_text": "弘业袋",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s017_0.jpg"
+    },
+    {
+      "start": 47.17,
+      "end": 50.2,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 米白色中式盘扣外套 灰白盘发",
+          "中年男性 深色西装 戴眼镜 只露部分上身"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位老年女性嘴巴张开，可见口腔",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "坐着与对面人对峙说话",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "棕色文件夹",
+          "蓝色文件夹",
+          "背景文件架"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep18_s018_0.jpg"
+    }
+  ]
+}

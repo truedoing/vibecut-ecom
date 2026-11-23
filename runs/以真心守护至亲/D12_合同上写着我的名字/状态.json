@@ -1,0 +1,130 @@
+{
+  "_readme": "2026-11-23 新建。以真心守护至亲第 12 条片子。张老师 16:3x 原话「真心守护这部剧帮我出一份片子，全自动」——按此授权，选线（方向卡）由主管代选并全文记录理由，全程不打扰、不逐道等人放行；但人审结论不事后补造，成片状态一律 done 不回填 approved，等他看片。选线理由与说话人核验见 选题单.md / 微剧本.md。",
+  "task": "D12_合同上写着我的名字",
+  "category": "以真心守护至亲",
+  "line": "short-drama",
+  "intent": "打脸型·主线·解说型二次叙事：妹妹许晴婚礼上顶替出嫁、回头把姐姐租的房子换锁扔东西，许宁不吵不闹，拿押金三千、月租两千四、写着她名字的合同把房子一样样拿回来，妈与房东三方裁决把钥匙拿回。讲述顺序结果前置（合同摊牌当钩子）、背景后补、情感落点收尾。素材全在 ep10–15，远离 ep18–19 / ep32–38 两个剧透点。",
+  "structure": "main",
+  "narration": {
+    "state": "on",
+    "voice": "说书人C",
+    "voice_rev": 1,
+    "engine": "MiMo voiceclone",
+    "segments": 7,
+    "blank_segments": 7,
+    "chars": 245,
+    "spoken_seconds": 46.73,
+    "share_of_film": "245字/215.85s",
+    "speed": "成品语速 5.3 字/秒（纯字口径，含 1.28 变速）；实测 7 段共 46.73s，每段都在字数上限内",
+    "repetition": "同步复述率 0.0%（全片上限 8%、单段 15%）。结构性保证：7 块解说全落在静音垫画面段，12 段主线原声一句不盖",
+    "style": "7 块解说，说画面／说处境／说内心三手交替",
+    "key_protection": "解说全在静音垫画面段，主线 12 段原声完整保留，无需逐句电平比对",
+    "_note": "按 build_trailer --step caps 的字数上限表一次写到位；落点贴各垫画面段开头。11-23 修正一处内嵌字幕串线（B07 换成两个干净镜头），配音 7 段全部沿用、零额外花费。"
+  },
+  "ai_strategy": "none",
+  "cycle_round": 1,
+  "shared_snapshot": {
+    "voice_assets": 1,
+    "drama_base": {
+      "以真心守护至亲": null
+    }
+  },
+  "updated_at": "2026-11-23 17:0x",
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "runs/以真心守护至亲/选片结论.md",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "_inherit": "继承 D1–D11：11-11 张老师 GO，同一部戏换故事线不重走选片人审。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/以真心守护至亲/drama-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": ["select"],
+      "depends_rev": {"select": 1},
+      "_inherit": "继承 D1：剧集包 0 ERROR，11-11 approved，整部一份共用。",
+      "_note": "本剧剧集包实体待建；台账沿用继承口径，与 D10/D11 一致。"
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "assets/short-drama/以真心守护至亲/",
+      "state": "done",
+      "rev": 1,
+      "depends_on": ["pack"],
+      "depends_rev": {"pack": 1},
+      "_inherit": "继承 D1：台词库 60 集全解析、句级表 1–18、镜头表 1–34，本条只用到 ep1/10–15/17。"
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["asset_index", "script"],
+      "_note": "ai_strategy=none 纯剪，此环跳过。"
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/以真心守护至亲/D12_合同上写着我的名字/plan.json",
+      "state": "done",
+      "rev": 1,
+      "depends_on": ["pack", "asset_index"],
+      "depends_rev": {"pack": 1, "asset_index": 1},
+      "_note": "全自动授权版：方向卡（选题单.md）、完整微剧本（微剧本.md）、剪辑清单（plan.json）、解说配置（build/解说配置.json）四份齐。方向卡由主管代选，未经人圈定——这是本次「全自动」的定义边界，事后可推翻重做。",
+      "direction_card": {
+        "path": "runs/以真心守护至亲/D12_合同上写着我的名字/选题单.md",
+        "line": "合同上写着我的名字（3 条候选里选 1 条）",
+        "ai_strategy": "none",
+        "decided_by": "主管代选（张老师 2026-11-23「全自动」授权）",
+        "human_circled": false
+      },
+      "review": {
+        "state": "auto",
+        "_note": "无清单人审表——全自动模式下未逐道交人过目。按规矩成片停 done 等人看片；不回填 approved。"
+      }
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": ["script"],
+      "_note": "ai_strategy=none 纯剪，此环跳过、零花费。"
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/以真心守护至亲/D12_合同上写着我的名字/build/成片_带解说.mp4",
+      "state": "done",
+      "rev": 1,
+      "depends_on": ["script"],
+      "depends_rev": {"script": 1},
+      "duration_s": 215.87,
+      "resolution": "1080x1920",
+      "evidence": {
+        "cut_check": "82 个刀口，修正 5 处切半句后 0 处；贴边警示已按停顿点尽量收敛",
+        "caps": "7 块解说全部在字数上限内（实字 23–74 / 上限 29–93）",
+        "repetition": "同步复述率 0.0%，全片上限 8%",
+        "narration": "7 段配音实测 14.18/4.18/3.79/3.79/5.42/6.31/9.05s，各不超窗；tokens 1337（约几毛钱）",
+        "base_rebuild": "11-23 换 B07 一个垫画面镜头（内嵌字幕串到职场线），等时长替换，配音 7 段全沿用、零额外花费",
+        "spot_frames": "抽 16.95s / 205.4s 两帧看过：婚礼牵手、夜间扶妈起身，字幕不串线"
+      },
+      "_note": "产物齐、自检过、人还没判。等张老师看片给一句明确的话才能升 approved。"
+    }
+  },
+  "deviations": [
+    "【带伤·如实报】全自动模式下，落点句说话人只做了「语法与剧情证据」一道核验，没跑语音转写与镜头打标交叉（比四方交叉验证少两道）；已挑的落点句都是强语法指向句，风险低但非零。见 微剧本.md 第四节。",
+    "【带伤·如实报】垫画面音频静音，但原片硬字幕烧在画面里、仍会显示。多数对题（这不是周家的房子／押金3,000／合同写我的名字），B07 一处串到职场线已修；其余几处（如 ep1『妈终于找到你了』）与解说不是同一件事但同属婚礼背景，需人看片定夺，不假装全绿。",
+    "【带伤·如实报】未做留白区电平比对、未做解说 ASR 逐字核对、未做人看片（五幕／前 45 秒冲突密度／砍场前因）。程序只查得出「能装配」，查不出「剪得对」。"
+  ]
+}

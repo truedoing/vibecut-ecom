@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>解说音色试听 · 穷妈的底牌</title>
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#14161a;color:#e8eaed;font-family:-apple-system,"PingFang SC",sans-serif;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:32px 20px 60px}
+h1{font-size:26px;margin:0 0 6px}
+.sub{color:#9aa0a6;font-size:14px;margin-bottom:8px}
+.text{background:#1e2126;border-left:3px solid #5b8def;padding:12px 16px;border-radius:6px;color:#c9cdd4;font-size:14px;margin:16px 0 28px}
+.card{background:#1e2126;border:1px solid #2c3036;border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.badge{flex:0 0 34px;height:34px;border-radius:50%;background:#5b8def;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+h2{font-size:18px;margin:2px 0 4px}
+.head p{margin:0;color:#9aa0a6;font-size:13px}
+.players{display:grid;gap:12px}
+.p label{display:block;color:#8ab4f8;font-size:12px;margin-bottom:4px}
+audio{width:100%;height:40px}
+button{background:#5b8def;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:14px;cursor:pointer;margin-bottom:20px}
+.tip{color:#9aa0a6;font-size:13px;margin-top:24px;border-top:1px solid #2c3036;padding-top:16px}
+</style></head><body><div class="wrap">
+<h1>解说音色试听 · 穷妈的底牌</h1>
+<p class="sub">MiMo 语音合成 · 四种方向 · 都用这条片子真实的两句解说词念</p>
+<div class="text">试听词：「她找了十七年。可她一进门，这场婚礼就不再属于新人了。看走眼的，何止是周家。」<br>每条两个版本：推荐版是"先造声音样本、再照着念"（更像同一个人，成片就用这个）；备选是直接念。</div>
+<button onclick="document.querySelectorAll('audio').forEach(a=>a.pause())">全部停止</button>
+
+    <section class="card">
+      <div class="head"><span class="badge">A</span><div><h2>沉稳讲故事</h2><p>38岁男·中低音带沙，夜里慢慢讲一件旧事，压着情绪</p></div></div>
+      <div class="players">
+        <div class="p"><label>推荐 · 造锚再克隆（更像同一个人）</label><audio controls preload="none" src="A_沉稳讲故事_克隆版.mp3"></audio></div>
+        <div class="p"><label>备选 · 直接念</label><audio controls preload="none" src="A_沉稳讲故事.mp3"></audio></div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="head"><span class="badge">B</span><div><h2>利落吐槽</h2><p>30出头男·中音偏亮，语速快，带冷笑和反问的劲儿</p></div></div>
+      <div class="players">
+        <div class="p"><label>推荐 · 造锚再克隆（更像同一个人）</label><audio controls preload="none" src="B_利落吐槽_克隆版.mp3"></audio></div>
+        <div class="p"><label>备选 · 直接念</label><audio controls preload="none" src="B_利落吐槽.mp3"></audio></div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="head"><span class="badge">C</span><div><h2>说书人</h2><p>45岁男·中音有厚度，像茶馆讲奇闻，转折处压低卖关子</p></div></div>
+      <div class="players">
+        <div class="p"><label>推荐 · 造锚再克隆（更像同一个人）</label><audio controls preload="none" src="C_说书人_克隆版.mp3"></audio></div>
+        <div class="p"><label>备选 · 直接念</label><audio controls preload="none" src="C_说书人.mp3"></audio></div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="head"><span class="badge">D</span><div><h2>邻家大姐</h2><p>42岁女·中音偏亮，压着嗓子讲听来的事，带不可思议感</p></div></div>
+      <div class="players">
+        <div class="p"><label>推荐 · 造锚再克隆（更像同一个人）</label><audio controls preload="none" src="D_邻家大姐_克隆版.mp3"></audio></div>
+        <div class="p"><label>备选 · 直接念</label><audio controls preload="none" src="D_邻家大姐.mp3"></audio></div>
+      </div>
+    </section>
+<div class="tip">挑中哪条，回我一句"A/B/C/D + 推荐版还是备选"即可。定下来后我把那两句解说用选定的音色重新生成，替换进成片——画面不用动，几秒钟的事。音色描述已随每条候选存成 txt，挑中后照它固化成固定音色，保证前后是同一个人。</div>
+</div></body></html>

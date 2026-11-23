@@ -1,0 +1,553 @@
+{
+  "ep": 19,
+  "file": "19.mp4",
+  "duration": 51.11,
+  "shot_count": 20,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 36500,
+    "completion_tokens": 18776,
+    "total_tokens": 55276
+  },
+  "elapsed_sec": 213.8,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.43,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式盘扣上衣 盘发 眼神严肃"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "坐在办公桌前说话",
+        "place": "办公室",
+        "props": [
+          "黑色办公椅",
+          "黑色笔记本",
+          "黑色键盘"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep19_s000_0.jpg"
+    },
+    {
+      "start": 3.43,
+      "end": 6.43,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式立领上衣 灰白短发 泪流满面"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合抿着，没有张开说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪凝视前方低声诉说",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s001_0.jpg"
+    },
+    {
+      "start": 6.43,
+      "end": 8.67,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装 戴金丝眼镜",
+          "老年女性 灰白短发 浅色上衣 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴巴微张，正在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "站立并面对老年女性说话",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s002_0.jpg"
+    },
+    {
+      "start": 8.67,
+      "end": 10.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式盘扣外套 灰白盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，正在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "坐在办公桌后开口说话，眼帘低垂",
+        "place": "办公室",
+        "props": [
+          "办公椅",
+          "计算器",
+          "皮质桌垫"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s003_0.jpg"
+    },
+    {
+      "start": 10.9,
+      "end": 12.57,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "未识别年龄未识别性别 白衬衫袖口 一双手搓揉深色布料"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有双手，看不见脸和嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "双手捏住深色布料边缘揉搓",
+        "place": "未识别",
+        "props": [
+          "深色衣物布料"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s004_0.jpg"
+    },
+    {
+      "start": 12.57,
+      "end": 16.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 浅色中式盘扣上衣 灰白盘发 珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，处于说话口型",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌前讲话",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "办公椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s005_0.jpg"
+    },
+    {
+      "start": 16.13,
+      "end": 18.17,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年女性 白色中式立领上衣 灰白盘发 坐在皮椅上"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张可见口腔，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "端坐办公椅上开口讲话",
+        "place": "办公室",
+        "props": [
+          "皮质办公椅",
+          "办公桌",
+          "奖杯",
+          "台灯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s006_0.jpg"
+    },
+    {
+      "start": 18.17,
+      "end": 20.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色立领盘扣上衣 灰白盘发 坐皮质办公椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，可见口腔暗部",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公椅上讲话",
+        "place": "办公室",
+        "props": [
+          "皮质办公椅",
+          "木质办公桌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s007_0.jpg"
+    },
+    {
+      "start": 20.13,
+      "end": 24.2,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 米白色中式外套 灰白盘发",
+          "中年男性 深色西装 戴眼镜 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张正在说话，第2位是背影看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌后对站立者讲话",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "办公椅",
+          "灰色衣物"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s008_0.jpg"
+    },
+    {
+      "start": 24.2,
+      "end": 26.03,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 灰色西装白衬衫深蓝领带 侧分短发戴金丝眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部闭合，未见说话口型",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧脸低头，神情凝重地看向下方",
+        "place": "未识别",
+        "props": [
+          "眼镜"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s009_0.jpg"
+    },
+    {
+      "start": 26.03,
+      "end": 27.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色中式立领上衣 灰白发盘髻 耳戴耳钉"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张，似在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌前侧望窗外方向",
+        "place": "办公室",
+        "props": [
+          "办公椅",
+          "办公桌",
+          "笔筒",
+          "深灰色布料"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s010_0.jpg"
+    },
+    {
+      "start": 27.97,
+      "end": 31.0,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深蓝领带 金丝边眼镜 背头黑发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在书架前说话",
+        "place": "办公室",
+        "props": [
+          "眼镜"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s011_0.jpg"
+    },
+    {
+      "start": 31.0,
+      "end": 34.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 白色立领上衣 灰白盘发 坐办公椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸嘴部张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在办公桌前侧头说话",
+        "place": "办公室",
+        "props": [
+          "办公桌",
+          "办公椅",
+          "书架",
+          "书籍"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s012_0.jpg"
+    },
+    {
+      "start": 34.23,
+      "end": 36.23,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深色领带 金丝眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未张开说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "低头垂眼，神情忧伤地站着",
+        "place": "走廊",
+        "props": [
+          "眼镜"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s013_0.jpg"
+    },
+    {
+      "start": 36.23,
+      "end": 37.27,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只露出卷起衣袖的手臂和白色衣物，无人脸，看不见嘴",
+        "emotion": "无",
+        "intensity": "",
+        "action": "卷起的棕色衣袖下露出缠绷带的手臂",
+        "place": "未识别",
+        "props": [
+          "绷带",
+          "棕色衣袖"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s014_0.jpg"
+    },
+    {
+      "start": 37.27,
+      "end": 39.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深色领带 佩戴细框眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "低头看向下方，站着未动",
+        "place": "室内客厅",
+        "props": [
+          "细框眼镜",
+          "腕表"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s015_0.jpg"
+    },
+    {
+      "start": 39.37,
+      "end": 43.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式立领上衣 灰白盘发 手捧深色衣物"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张，眉头紧皱眼眶泛红",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "捧着深色衣物低头端详",
+        "place": "室内靠窗",
+        "props": [
+          "深色毛呢衣物"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s016_0.jpg"
+    },
+    {
+      "start": 43.73,
+      "end": 46.93,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 灰白短发 白色立领刺绣上衣 珍珠耳环 眼眶泛红含泪"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴巴闭着、嘴角下撇，眼泪挂在脸上",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "眼含泪水低头哽咽，眼泪滑落",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s017_0.jpg"
+    },
+    {
+      "start": 46.93,
+      "end": 48.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年女性 灰白盘发 白色立领衬衫 抱灰色外套"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇闭合，未说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "低头凝视手中的灰色外套",
+        "place": "办公室",
+        "props": [
+          "灰色外套",
+          "办公桌",
+          "办公椅",
+          "手机",
+          "台灯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s018_0.jpg"
+    },
+    {
+      "start": 48.73,
+      "end": 51.11,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色立领盘扣上衣 灰白盘发 落泪"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，似在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "抱着灰色衣物落泪，嘴唇微张",
+        "place": "未识别",
+        "props": [
+          "深灰色衣物"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep19_s019_0.jpg"
+    }
+  ]
+}

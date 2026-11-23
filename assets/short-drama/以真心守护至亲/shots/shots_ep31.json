@@ -1,0 +1,458 @@
+{
+  "ep": 31,
+  "file": "31.mp4",
+  "duration": 51.85,
+  "shot_count": 17,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 31025,
+    "completion_tokens": 19501,
+    "total_tokens": 50526
+  },
+  "elapsed_sec": 171.4,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 1.8,
+      "tag": {
+        "shot_size": "全景",
+        "people": 1,
+        "who": [
+          "老年女性 白色套装 灰白盘发 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张，似在通话说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐轮椅上低头看手机",
+        "place": "办公室",
+        "props": [
+          "轮椅",
+          "手机",
+          "沙发",
+          "绿植"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep31_s000_0.jpg"
+    },
+    {
+      "start": 1.8,
+      "end": 4.5,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 银灰盘发 白色中式盘扣套装 坐轮椅 手机贴耳"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，处于说话状态",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在轮椅上举着手机贴在耳边",
+        "place": "办公室",
+        "props": [
+          "轮椅",
+          "手机",
+          "书架摆件"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep31_s001_0.jpg"
+    },
+    {
+      "start": 4.5,
+      "end": 7.4,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式盘扣上衣 灰白盘发 耳戴珍珠耳饰"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张，似在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "手持手机贴近耳边打电话",
+        "place": "未识别",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s002_0.jpg"
+    },
+    {
+      "start": 7.4,
+      "end": 10.87,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 白色刺绣上衣 仅见躯干与双手持手机"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有躯干和双手，看不见脸部和嘴部",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在皮椅上双手持手机通话",
+        "place": "室内休息区",
+        "props": [
+          "智能手机",
+          "黑色皮质扶手椅"
+        ],
+        "scene_text": "宁宁 10:39",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s003_0.jpg"
+    },
+    {
+      "start": 10.87,
+      "end": 12.6,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色中式盘扣上衣 白发盘起 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部闭合，未见张口",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在轮椅上面朝前方",
+        "place": "办公室",
+        "props": [
+          "轮椅",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s004_0.jpg"
+    },
+    {
+      "start": 12.6,
+      "end": 19.53,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "老年女性 白色立领盘扣上衣 灰白盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴唇抿住闭合，没有张开",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪忍着不哭，嘴唇紧抿",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s005_0.jpg"
+    },
+    {
+      "start": 19.53,
+      "end": 21.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色暗花旗袍式上衣 灰白盘发 珍珠耳环 眼眶红含泪"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪凝视前方，嘴唇微抿",
+        "place": "室内",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s006_0.jpg"
+    },
+    {
+      "start": 21.73,
+      "end": 26.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式盘扣上衣 灰白发盘起 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸可见，嘴巴张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在轮椅上握着手机说话",
+        "place": "室内",
+        "props": [
+          "轮椅",
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s007_0.jpg"
+    },
+    {
+      "start": 26.23,
+      "end": 27.9,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色中式盘扣上衣 灰发盘髻 珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "侧头看向一侧开口说话",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s008_0.jpg"
+    },
+    {
+      "start": 27.9,
+      "end": 30.4,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装 打领带 戴眼镜 手持文件",
+          "老年女性 浅色上衣 白发盘起 坐轮椅背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性嘴部微张正在说话，第2位背对镜头看不见嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男子持文件站立对轮椅上的老人说话",
+        "place": "办公室",
+        "props": [
+          "轮椅",
+          "文件纸"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s009_0.jpg"
+    },
+    {
+      "start": 30.4,
+      "end": 33.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色盘扣上衣 灰白盘发 珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "眼眶泛红地开口说话",
+        "place": "室内客厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s010_0.jpg"
+    },
+    {
+      "start": 33.43,
+      "end": 35.0,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "老年女性 米白色中式盘扣上衣 灰白盘发 坐轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "坐在轮椅上注视前方说话前状态",
+        "place": "办公室",
+        "props": [
+          "轮椅",
+          "办公桌",
+          "办公椅",
+          "书架"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s011_0.jpg"
+    },
+    {
+      "start": 35.0,
+      "end": 36.97,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式立领上衣配珍珠盘扣 灰色盘发 戴珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，口型处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "正对镜头说话，表情凝重",
+        "place": "室内书房",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s012_0.jpg"
+    },
+    {
+      "start": 36.97,
+      "end": 40.97,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "老年女性 白色上衣 坐轮椅 银发盘发",
+          "中年男性 深色西装 戴眼镜"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "2",
+        "mouth_note": "第2位男性嘴部微张正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男子俯身向轮椅上的女性展示黑色文件夹",
+        "place": "办公室",
+        "props": [
+          "轮椅",
+          "文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s013_0.jpg"
+    },
+    {
+      "start": 40.97,
+      "end": 46.57,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发 带发夹",
+          "年轻男性 浅蓝色衬衫 卡其裤 短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴部张开正在说话，男性嘴微张",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "两人面对面站立对视",
+        "place": "写字楼大堂",
+        "props": [],
+        "scene_text": "A",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s014_0.jpg"
+    },
+    {
+      "start": 46.57,
+      "end": 50.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边上衣 长卷发配珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴张开露齿，处于说话状态",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "微笑着张嘴说话",
+        "place": "室内大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s015_0.jpg"
+    },
+    {
+      "start": 50.2,
+      "end": 51.85,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 手正在解衬衫扣"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "只露出下半张脸和颈部，嘴部被画面边缘截断，看不清嘴部状态",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正在解衬衫的扣子",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep31_s016_0.jpg"
+    }
+  ]
+}

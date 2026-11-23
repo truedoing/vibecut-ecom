@@ -64,6 +64,24 @@ assets/ai_assets/shots/*.mp4
 
 # AI 出片临时校验截图（可随时重新抽帧生成）
 assets/ai_assets/shots/_check_*.png
+assets/ai_assets/shots/_check_*.jpg
+
+# 文生图工具落盘的原图（提示词可复现，不进库）
+generated-images/
+
+# 标注实验（tools/）只入库脚本和结果表；抽帧、切片、试听音频、模型和虚拟环境都不入库
+*_env/
+tools/**/.venv/
+tools/**/models/
+tools/**/frames/
+tools/**/doubt_frames/
+tools/**/truth_frames/
+tools/**/truth_audio/
+tools/**/samples/
+tools/**/待听辨音频/
+
+# 标注工具的本机配置（含绝对路径，换机器只改它）；模板见 config.example.json
+tools/speaker_label/config.json
 
 # 注意：上面「成片可再生成、不进库」是给普通成片写的通用规则。
 # 去重专题六轮迭代的报告与成片原件是「怎么一步步改对」的证据，不按可再生素材清理：

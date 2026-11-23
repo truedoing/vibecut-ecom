@@ -985,14 +985,33 @@
     "audio": "no_bgm",
     "subtitle": "burned_in",
     "splittable": {
-      "usable_ep_range": "1-19",
+      "usable_ep_range": "1-12",
       "estimated_clips": 97,
-      "note": "19 集 97 段 / 45 锚点，以 index_path 指向的 asset_index.json 为准；第 20 集大结局只用于理解剧情，不进成片。2026-11-10 修正：原写「第 1 集 6 段、2–19 集待补」是 11-08 建包时的快照，索引做完后未回头更新。"
+      "note": "19 集 97 段 / 45 锚点，以 index_path 指向的 asset_index.json 为准；第 20 集大结局只用于理解剧情，不进成片。2026-11-10 修正：原写「第 1 集 6 段、2–19 集待补」是 11-08 建包时的快照，索引做完后未回头更新。",
+      "usable_ep_range_rule": "前 60%：ceil(总集数 × 0.6)。20 集 → 1-12。2026-11-23 起一条标准，不为泄底点单独切范围。"
     },
     "index_path": "assets/short-drama/八零憨妻的甜蜜日常/asset_index.json",
     "unit": "conflict_segment",
     "covered_episodes": [
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
     ],
     "_note": "episodes 数组是 11-08 素材体检的抽样登记（只列第 1、2、20 集），逐集文件与时长以素材目录及 asset_index.json 为准；本块其余字段为索引状态，不从抽样数组推断。"
   },

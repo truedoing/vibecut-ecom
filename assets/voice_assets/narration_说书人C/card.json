@@ -1,0 +1,28 @@
+{
+  "id": "narration_001",
+  "name": "说书人C",
+  "rev": 1,
+  "created": "2026-11-20",
+  "by": "张老师 11-20 从四个候选里挑定 C 推荐版",
+  "engine": "MiMo 语音合成（mimo-v2.5-tts-voicedesign 造锚 → mimo-v2.5-tts-voiceclone 克隆），不是 edge-tts",
+  "files": {
+    "anchor": "voice.mp3",
+    "sample": "sample.mp3"
+  },
+  "desc": "45岁上下的中国男性，中音，声音有厚度，像茶馆里说一段家长里短的奇闻：句子有起伏但不夸张，说到转折处压低嗓子卖个关子，尾音往下掉。语速中等偏快、时紧时松。离话筒近，不要演播室的干净播报声。",
+  "anchor_text": "哎，你先别急着走，听我说完。这个我真没想到，好家伙，一下就翻过来了！整整十七年，六千多天，就这么硬找过来了。你说这事儿巧不巧？",
+  "how_to_clone": {
+    "note": "下次要给任何片子配这个音色的解说，用 voice.mp3 当声音样本（锚），让 MiMo 照着它念新词，出来的就是同一个声音。不用重新描述、不用重造锚。",
+    "model": "mimo-v2.5-tts-voiceclone",
+    "request": "POST {MIMO_BASE_URL}/chat/completions，headers api-key={MIMO_API_KEY}，body: {model, messages:[{role:'assistant', content:新解说词}], audio:{format:'mp3', voice:'data:audio/mpeg;base64,{voice.mp3 的 base64}'}}，取 choices[0].message.audio.data 解码存 mp3",
+    "config": "读 .env 的 MIMO_BASE_URL / MIMO_API_KEY，别写死",
+    "cost": "走 MiMo 接口，按实际 token 计；新词克隆比造锚便宜。0 花钱的说法只对 edge-tts 成立，这个音色不适用"
+  },
+  "sample_text": "她找了十七年。可她一进门，这场婚礼就不再属于新人了。看走眼的，何止是周家。",
+  "status": "可用",
+  "_known_issues": [
+    "当前 duck_narration.py 只支持 edge-tts，不认这个 MiMo 音色资产；这次是先用 MiMo 克隆好 mp3、再用脚本的 audio 字段叠进去。要「以后配解说自动用这个音色」，得改脚本支持 MiMo，未做。",
+    "voice_audit 指标：起伏比直接念略好，但句间停顿偏多（尺子原是给一气呵成的声音样本用，解说词本身有句间停顿，不直接判好坏）；响度偏低，成片里靠 gain 1.25 补。",
+    "真人音色，用于二创解说前自行确认授权与平台规则。"
+  ]
+}

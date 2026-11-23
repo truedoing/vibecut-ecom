@@ -1,0 +1,155 @@
+{
+  "_readme": "2026-11-22 新建。以真心守护至亲第 8 条片子。张老师要求『以真心守护至亲这个剧，母亲视角线，全自动出一个片』——全程不中途停，一次性排清单＋装配成片交人看。纯剪、零解说、零 AI、零花费。剧集资料与素材索引整部沿用，不重建。",
+  "task": "D8_母亲视角",
+  "category": "以真心守护至亲",
+  "line": "short-drama",
+  "intent": "母亲视角·全知：观众第一秒就知道她把黄金做成轮椅、装穷试女儿；全片看她一次次能翻牌却不翻，把底牌全藏在『穷妈』两个字下面。落点收在女儿反过来让她睡床、留灯，妈含泪说『咱们一起想办法』。",
+  "structure": "repetition",
+  "ai_strategy": "none",
+  "cycle_round": 1,
+  "updated_at": "2026-11-22 10:28",
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判。机器可用，人不能依赖",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实，卡在谁要写清"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "runs/以真心守护至亲/选片结论.md",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "_inherit": "继承 D1–D7：11-11 张老师 GO。同一部戏换视角，不重走选片人审。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/以真心守护至亲/drama-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "select"
+      ],
+      "depends_rev": {
+        "select": 1
+      },
+      "_inherit": "继承 D1：剧集包 0 ERROR，11-11 approved。剧集资料整部一份，八条共用。"
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "assets/short-drama/以真心守护至亲/",
+      "state": "done",
+      "rev": 1,
+      "depends_on": [
+        "pack"
+      ],
+      "depends_rev": {
+        "pack": 1
+      },
+      "evidence": [
+        "台词库 60 集全部解析完成（11-22，本地 OCR 零费用）",
+        "句级表 1–18 集，含 who/name 说话人字段——本条落点判断靠它",
+        "画面打标 1–36 集",
+        "停顿表 60 集（切点体检用）"
+      ],
+      "_inherit": "继承 D1–D7，索引整部一份。本条只换选段，没重跑 OCR 与打标，零花费。"
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "path": "",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "asset_index"
+      ],
+      "depends_rev": {
+        "asset_index": 1
+      },
+      "_note": "纯剪不点玩法，整环跳过。"
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/以真心守护至亲/D8_母亲视角/plan.json",
+      "state": "superseded",
+      "rev": 1,
+      "depends_on": [
+        "pack",
+        "asset_index"
+      ],
+      "depends_rev": {
+        "pack": 1,
+        "asset_index": 1
+      },
+      "direction_card": {
+        "path": "runs/以真心守护至亲/D8_母亲视角/清单过目.md",
+        "lines_offered": [
+          "母亲视角·全知：她手里全是牌，一张都不为自己打（本次采用）",
+          "备份：她妈给的每一样也是锁链（独占料 ep19/32/35/51 全在剧透区，按 60% 边界做不成，未采用）"
+        ],
+        "selected": "母亲视角·全知",
+        "ai_strategy_selected": "none（纯剪）",
+        "circled_by": "张老师（原话指定『母亲视角线』『全自动出一个片』，授权不中途停、一次做到成片）",
+        "at": "2026-11-22T10:18",
+        "_note": "Director 11-22 明确指定剧、线、数量、全自动四件，视为一次性授权跳过中途过目；清单与成片仍一并交人看，未回填 approved。"
+      },
+      "evidence": [
+        "12 段 131.4 秒（2 分 11 秒），副线型三幕：Tease=S01 / Establish=S02-S04 / Escalate=S05-S09 / Brake=S10 / Button=S11-S12",
+        "结构检查通过：无整段包含、无段重叠、同集连拼不超 2 段；出点全在视频流时长内",
+        "刀口体检：初版 24 刀口中 3 处切在说话中间，已按停顿把出点挪到句尾（S01 10.7→11.45、S04 48.7→49.22、S06 56.6→55.75），修后 0 处切半句；7 处贴边警告（5 入 2 出，入点只警告、出点贴边不用管）",
+        "装配预检通过：视频流时长全部覆盖，出点无超限",
+        "落点说话人四方核对：ep17『床边给你留着灯』是女儿许宁说的；落点『咱们一起想办法』是妈林秀兰说的，画面是妈躺床上含泪。方向卡初稿把留灯写成妈做的，已按句级表纠正",
+        "落点避开前 7 条：D1 还剩几张牌 / D2 一笔笔算 / D3 没承认自己是谁 / D4 没有一样是她的 / D5 替你们挡的那一下 / D6 替你递材料 / D7 有人会看——本条『咱们一起想办法』未撞",
+        "剧透纪律：素材只取 1–17 集，范围守 1–36，ep18–19、ep32–38 身份揭穿段全避开",
+        "如实报：素材与前 7 条大量重叠（ep1/2/3/4/5/7/8/12/16/17），靠视角＋落点＋受力结构三者分开，是否像第 8 条要人眼判"
+      ],
+      "review": {
+        "path": "runs/以真心守护至亲/D8_母亲视角/清单过目.md",
+        "state": "pending",
+        "by": "",
+        "at": "",
+        "note": "全自动出的片，清单随成片一并交人看。张老师没说话，不回填 approved。"
+      }
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "path": "",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "script"
+      ],
+      "depends_rev": {
+        "script": 1
+      },
+      "_note": "纯剪不点玩法，整环跳过。"
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/以真心守护至亲/D8_母亲视角/母亲视角_成片_v1.mp4",
+      "state": "superseded",
+      "rev": 1,
+      "depends_on": [
+        "script"
+      ],
+      "depends_rev": {
+        "script": 1
+      },
+      "evidence": [
+        "规格 1080×1920 / 30fps / 131.82 秒（2 分 11.8 秒），65MB",
+        "音频 AAC 48k 双声道，131.82 秒；静音检测无超 1 秒静音段",
+        "装配器音画自检：没发现超过 1 秒的静止段",
+        "末帧实证：S12 出点贴视频流尾（差 0.07 秒），抽末帧见妈躺床上含泪、硬字幕『咱们一起想办法』在，正常画面无黑帧——贴尾警告虚惊",
+        "装配实耗 125 秒（veryfast 档）；装配器进程末尾因沙箱拦截进度临时文件清理报 failed，成片本身已写出并通过全部自检",
+        "成本：纯剪零花费（未点 AI 玩法、未加解说、MiMo 配音零 token）"
+      ],
+      "_note": "当前唯一版本 v1，人还没看过片，未定版。停在成片人审。"
+    }
+  },
+  "_superseded_by": "D9_自己争来的岗位",
+  "_superseded_reason": "张老师 11-22 三条意见：默认解说模式（D8 纯剪走偏）／时长加长／换选题与场景（婚礼线雷同）。D8 整条作废不删。"
+}

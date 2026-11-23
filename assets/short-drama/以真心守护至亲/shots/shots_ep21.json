@@ -1,0 +1,518 @@
+{
+  "ep": 21,
+  "file": "21.mp4",
+  "duration": 47.42,
+  "shot_count": 19,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 34675,
+    "completion_tokens": 29931,
+    "total_tokens": 64606
+  },
+  "elapsed_sec": 344.3,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.47,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装浅蓝衬衫领带 手拿白纸"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸，嘴巴张开露齿，正在说话",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "手持白纸低头看并开口说话",
+        "place": "办公楼走廊",
+        "props": [
+          "白纸"
+        ],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep21_s000_0.jpg"
+    },
+    {
+      "start": 2.47,
+      "end": 3.67,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣长发别发夹 挽着身旁男性的手臂",
+          "年轻男性 深色西装白衬衫 站在电梯前"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位嘴部微张可见牙齿，第1位嘴唇闭合微笑",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "女性笑着挽住男性手臂，男性微张嘴说话",
+        "place": "电梯间",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep21_s001_0.jpg"
+    },
+    {
+      "start": 3.67,
+      "end": 5.47,
+      "tag": {
+        "shot_size": "全景",
+        "people": 5,
+        "who": [
+          "年轻男性 深色西装 画面左侧侧脸出镜",
+          "中年男性 深色西装 背对镜头站蓝色指示牌旁",
+          "中年男性 深色西装 背对镜头站在指示牌另一侧",
+          "中年男性 深色西装 站在旋转门旁侧身而立",
+          "年轻女性 浅紫衬衫灰色阔腿裤 向镜头方向走来"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位侧脸可见嘴唇，闭着未动",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "女子在大堂走向镜头，数人围在指示牌旁",
+        "place": "办公楼大堂",
+        "props": [
+          "蓝色电子指示牌",
+          "旋转门"
+        ],
+        "scene_text": "欢迎",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s002_0.jpg"
+    },
+    {
+      "start": 5.47,
+      "end": 8.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发 珍珠发夹 手挽住身旁人手臂"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "挽着旁人手臂侧头说话",
+        "place": "室内大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s003_0.jpg"
+    },
+    {
+      "start": 8.53,
+      "end": 10.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "中年男性 深蓝色上衣 侧对镜头",
+          "年轻女性 浅蓝色衬衫 深灰色西裤 低扎发",
+          "年轻女性 棕色长发 浅粉色上衣 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "2",
+        "mouth_note": "第2位嘴巴微张，正在发音",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站定看向面前两人",
+        "place": "写字楼大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s004_0.jpg"
+    },
+    {
+      "start": 10.07,
+      "end": 12.93,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色长袖衬衫 深色短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，口腔可见，处于说话状态",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "侧头看向旁处说话",
+        "place": "办公楼大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s005_0.jpg"
+    },
+    {
+      "start": 12.93,
+      "end": 16.03,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻男性 深色西装 背对镜头只见后脑与侧脸",
+          "年轻女性 浅蓝衬衫深灰西裤 手持文件站姿挺直",
+          "年轻男性 浅蓝衬衫卡其裤 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位女性嘴张开在说话，第3位男性侧脸嘴闭合",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "女子站在两名男子中间等待",
+        "place": "办公楼大堂",
+        "props": [
+          "文件纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s006_0.jpg"
+    },
+    {
+      "start": 16.03,
+      "end": 18.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "中年男性 深色西装白衬衫领带 背头",
+          "年轻女性 白色上衣 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话，第2位背对镜头看不见嘴",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "严肃地告知对方内推被撤销",
+        "place": "办公楼走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s007_0.jpg"
+    },
+    {
+      "start": 18.73,
+      "end": 21.8,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻男性 深色西装 短发侧脸",
+          "年轻女性 浅蓝衬衫配黑色长裤 扎发手拿文件 背对镜头",
+          "年轻男性 浅蓝衬衫 卷发侧脸"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "两侧男性侧脸嘴部可见但闭合，中间女性背对镜头看不见嘴",
+        "emotion": "冷淡",
+        "intensity": "弱",
+        "action": "三人面对面站立对峙",
+        "place": "办公楼大堂",
+        "props": [
+          "文件纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s008_0.jpg"
+    },
+    {
+      "start": 21.8,
+      "end": 26.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发 珍珠发夹",
+          "年轻女性 蓝白条纹上衣 黑发扎起 画面右缘被裁切"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露出牙齿，正在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "侧头看向对方并笑着说话",
+        "place": "公寓楼道",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "D",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s009_0.jpg"
+    },
+    {
+      "start": 26.3,
+      "end": 27.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫深灰色长裤 低盘发",
+          "年轻女性 粉色连衣裙 长发戴珍珠发饰"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第一位正面偏侧，嘴部可见且闭合",
+        "emotion": "冷淡",
+        "intensity": "弱",
+        "action": "站定并看向左侧的女性",
+        "place": "公司前台",
+        "props": [],
+        "scene_text": "墙上有 H 标志及 HO 英文字样",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s010_0.jpg"
+    },
+    {
+      "start": 27.7,
+      "end": 28.53,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年龄性别未识别 浅灰衣袖 仅见一只手握蓝色文件夹"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面只有一只手握着文件夹，看不见脸和嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "一只手握住蓝色文件夹的提手",
+        "place": "未识别",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s011_0.jpg"
+    },
+    {
+      "start": 28.53,
+      "end": 29.63,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻男性 浅蓝色衬衫 短发 手持纸张",
+          "年轻女性 浅蓝色衬衫 盘发 手拿红色文件夹",
+          "年轻女性 白色西装 背对镜头 坐在柜台后"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位男性面带笑容、嘴张开露出牙齿在说话",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "两人站在前台柜台前递资料询问",
+        "place": "写字楼大堂前台",
+        "props": [
+          "纸张文件",
+          "红色文件夹",
+          "键盘",
+          "鼠标垫"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s012_0.jpg"
+    },
+    {
+      "start": 29.63,
+      "end": 30.67,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "成年人 手部指向从业资格证"
+        ],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "只可见手部，无嘴部",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手指向从业资格证",
+        "place": "室内",
+        "props": [
+          "从业资格证",
+          "桌子"
+        ],
+        "scene_text": "从业资格证 2024年1月1日",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s013_0.jpg"
+    },
+    {
+      "start": 30.67,
+      "end": 33.3,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 黑发侧分 食指用力点桌面"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "愤怒",
+        "intensity": "强",
+        "action": "俯身用手指点桌上的纸张并开口指责",
+        "place": "办公室",
+        "props": [
+          "纸张"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s014_0.jpg"
+    },
+    {
+      "start": 33.3,
+      "end": 35.47,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 米色西装外套白衬衫 短发 站在前台后",
+          "青年女性 浅色衬衫 深色扎发 背对镜头",
+          "青年男性 浅蓝色衬衫 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸可见，嘴张开露出上排牙齿",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "站在前台后微笑着接待来人",
+        "place": "办公楼前台",
+        "props": [
+          "白色前台接待台"
+        ],
+        "scene_text": "8",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s015_0.jpg"
+    },
+    {
+      "start": 35.47,
+      "end": 40.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 松散低盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸，嘴唇微张可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立面向镜头说话解释",
+        "place": "办公楼大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s016_0.jpg"
+    },
+    {
+      "start": 40.23,
+      "end": 42.5,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里没有人，只有电脑屏幕显示软件界面",
+        "emotion": "无",
+        "intensity": "",
+        "action": "屏幕显示招聘系统界面，鼠标停在文件夹上",
+        "place": "办公室",
+        "props": [
+          "电脑显示器",
+          "鼠标指针"
+        ],
+        "scene_text": "校园招聘 招聘产品 常规入职 部门待办 外包员工标准前置流程(请先填写此表然后再办理入职或工单等入职流程) 合同入离职签收 快速处理",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s017_0.jpg"
+    },
+    {
+      "start": 42.5,
+      "end": 47.42,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 米色西装外套白色衬衫 短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露出牙齿",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "坐在前台前低头看东西",
+        "place": "办公室",
+        "props": [
+          "电脑显示器"
+        ],
+        "scene_text": "R",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep21_s018_0.jpg"
+    }
+  ]
+}

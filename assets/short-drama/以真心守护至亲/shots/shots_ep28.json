@@ -1,0 +1,435 @@
+{
+  "ep": 28,
+  "file": "28.mp4",
+  "duration": 48.04,
+  "shot_count": 16,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 29200,
+    "completion_tokens": 19168,
+    "total_tokens": 48368
+  },
+  "elapsed_sec": 207.1,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 2.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边上衣 长卷发 带珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "惊讶地张嘴说话",
+        "place": "大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep28_s000_0.jpg"
+    },
+    {
+      "start": 2.43,
+      "end": 4.63,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅粉色荷叶边连衣裙 长发配珍珠发夹 背对镜头",
+          "年轻女性 浅蓝色衬衫 深色高腰长裤 深色盘发 正对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位嘴巴张开正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "两人隔着前台站立对视",
+        "place": "公司大堂前台",
+        "props": [
+          "纸质文件"
+        ],
+        "scene_text": "弘业集团",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep28_s001_0.jpg"
+    },
+    {
+      "start": 4.63,
+      "end": 8.57,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "面对镜头方向开口说话",
+        "place": "办公楼大堂",
+        "props": [
+          "闸机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s002_0.jpg"
+    },
+    {
+      "start": 8.57,
+      "end": 10.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫灰色高腰裤 盘发",
+          "年轻女性 粉色荷叶边连衣裙 长发背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸朝镜头，嘴巴张开",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在前台桌前与对面人交谈",
+        "place": "公司大堂前台",
+        "props": [
+          "前台桌上的文件册"
+        ],
+        "scene_text": "弘业集团 HONGYE GONTY、A座、XX与Logo",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s003_0.jpg"
+    },
+    {
+      "start": 10.07,
+      "end": 14.0,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 深色长卷发 别珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "女子张口说话，表情惊讶",
+        "place": "室内大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s004_0.jpg"
+    },
+    {
+      "start": 14.0,
+      "end": 18.47,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色衬衫 短黑发 正对镜头站立",
+          "年轻女性 粉色荷叶边上衣 珍珠发夹 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": "1",
+        "mouth_note": "第1位嘴巴张开正在说话，第2位背对镜头看不见嘴",
+        "emotion": "愤怒",
+        "intensity": "强",
+        "action": "站在前台前看着对面的人",
+        "place": "公司大堂前台",
+        "props": [
+          "牛皮纸文件袋"
+        ],
+        "scene_text": "弘业集",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s005_0.jpg"
+    },
+    {
+      "start": 18.47,
+      "end": 20.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 4,
+        "who": [
+          "年轻男性 浅蓝色长袖衬衫 黑色短发 手指指向桌上的牛皮纸信封",
+          "中年男性 深色保安制服 戴大檐帽 站在闸机旁",
+          "成年男性 白色上衣 站在远处电梯口",
+          "成年男性 深色衣服 站在远处电梯口"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "手指向桌面牛皮纸信封示意查看",
+        "place": "办公楼大堂",
+        "props": [
+          "牛皮纸信封"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s006_0.jpg"
+    },
+    {
+      "start": 20.13,
+      "end": 23.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 黑色短发向后梳"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，露出牙齿",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "张口说话，神情兴奋期待",
+        "place": "办公楼大厅",
+        "props": [
+          "闸机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s007_0.jpg"
+    },
+    {
+      "start": 23.87,
+      "end": 28.07,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝衬衫 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "emotion": "冷淡",
+        "intensity": "弱",
+        "action": "站在桌前对人说话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s008_0.jpg"
+    },
+    {
+      "start": 28.07,
+      "end": 32.7,
+      "tag": {
+        "shot_size": "近景",
+        "people": 4,
+        "who": [
+          "年轻男性 浅蓝色衬衫 短发 正脸朝向镜头",
+          "中年男性 深色西装 背对镜头 站在电梯口",
+          "男性 浅色上衣 身影模糊 位于画面左侧后景",
+          "男性 黑色安保制服 位于右侧后景"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "面带微笑对镜头外的人说话",
+        "place": "写字楼电梯厅",
+        "props": [
+          "蓝色文件夹"
+        ],
+        "scene_text": "D",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s009_0.jpg"
+    },
+    {
+      "start": 32.7,
+      "end": 34.27,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色衬衫 卡其色长裤",
+          "年轻女性 粉色连衣裙 长发披肩"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位女性嘴巴张开，第1位男性嘴闭合",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "两人并肩站立目视前方",
+        "place": "办公室大厅",
+        "props": [],
+        "scene_text": "弘业集团 HANETY GROUP",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s010_0.jpg"
+    },
+    {
+      "start": 34.27,
+      "end": 37.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发戴珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "面向对方开口质问说话",
+        "place": "室内玻璃窗前大厅",
+        "props": [
+          "珍珠发夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s011_0.jpg"
+    },
+    {
+      "start": 37.2,
+      "end": 42.27,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装白衬衫深蓝领带 背头黑发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴闭合未张开",
+        "emotion": "冷淡",
+        "intensity": "弱",
+        "action": "侧脸站立，神情严肃地注视前方",
+        "place": "办公楼大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s012_0.jpg"
+    },
+    {
+      "start": 42.27,
+      "end": 42.93,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫深色领带 黑色短发 站在前台后"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴巴闭合，未见张口",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在前台，手搭在文件夹上",
+        "place": "办公楼大堂",
+        "props": [
+          "文件夹",
+          "签字笔",
+          "大理石前台"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s013_0.jpg"
+    },
+    {
+      "start": 42.93,
+      "end": 47.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅条纹衬衫 黑色领带 眉头紧锁"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见牙齿，正在说话",
+        "emotion": "震惊",
+        "intensity": "强",
+        "action": "低头看向文件，震惊开口",
+        "place": "办公室",
+        "props": [
+          "纸质文件",
+          "文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s014_0.jpg"
+    },
+    {
+      "start": 47.1,
+      "end": 48.04,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面中无人，只有写字板与文件特写",
+        "emotion": "无",
+        "intensity": "",
+        "action": "无人，仅拍摄写字板上的文件",
+        "place": "办公室",
+        "props": [
+          "金属夹写字板",
+          "纸质表单文件",
+          "红色印章"
+        ],
+        "scene_text": "红色印章：董事办直签；表单标题及表格内容字迹模糊未识别",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep28_s015_0.jpg"
+    }
+  ]
+}

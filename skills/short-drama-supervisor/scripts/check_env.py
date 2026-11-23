@@ -12,15 +12,52 @@
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 from pathlib import Path
 
 SKILLS = ["short-drama-select", "short-drama-pack", "short-drama-asset-index",
-          "short-drama-ai-assets", "short-drama-script", "short-drama-video",
-          "short-drama-trailer", "short-drama-supervisor",
+          "short-drama-ai-assets", "short-drama-microscript", "short-drama-script",
+          "short-drama-video", "short-drama-trailer", "short-drama-supervisor",
           "short-drama-dedup", "short-drama-modify"]
-# 主管也算一个，对外说 10 个要对得上（去重 / 修饰 11-16 加，都不占流水线工位）
+# 主管也算一个，对外说 11 个要对得上（去重 / 修饰 11-16 加、微剧本 11-23 加，都不新增流水线环节）
+
+
+
+def _expert_version_lines(host: Path) -> list[tuple[str, bool]]:
+    """读本地已装专家版本，并核对各处登记是否一致。返回 (提示文字, 是否算问题)。"""
+    # 专家装在 WorkBuddy 自己的数据目录（~/.workbuddy），不是短剧仓库；
+    # 传进来的 host 是仓库根，这里另起 ~/.workbuddy，可被 WB_WORKDIR 覆盖便于测试。
+    base = Path(os.environ.get("WB_WORKDIR") or (Path.home() / ".workbuddy"))
+    base = base / "plugins" / "marketplaces" / "my-experts"
+    plugin = base / "plugins" / "short-drama-trailer-editor" / ".codebuddy-plugin" / "plugin.json"
+    market = base / ".codebuddy-plugin" / "marketplace.json"
+    out: list[tuple[str, bool]] = []
+    local_ver = None
+    try:
+        local_ver = json.loads(plugin.read_text(encoding="utf-8")).get("version")
+    except Exception:
+        out.append(("专家版本号读不到  ← 安装位 plugin.json 缺失或损坏", True))
+    if local_ver:
+        out.append((f"专家版本 v{local_ver}（权威源：安装位 plugin.json）", False))
+    try:
+        data = json.loads(market.read_text(encoding="utf-8"))
+        entry = next(
+            (p for p in data.get("plugins", [])
+             if p.get("name") == "short-drama-trailer-editor"
+             or str(p.get("source", "")).endswith("short-drama-trailer-editor")),
+            None,
+        )
+        reg_ver = entry.get("version") if entry else None
+        if entry is None:
+            out.append(("专家登记缺失  ← marketplace.json 里没有这条", True))
+        elif reg_ver != local_ver:
+            out.append((f"专家版本号对不上  ← plugin.json 是 v{local_ver}，登记处是 v{reg_ver}；以 plugin.json 为准", True))
+    except Exception:
+        out.append(("专家登记读不到  ← marketplace.json 缺失或损坏", True))
+    out.append(('资产库新版核对：助手开工时联网查「资产库/专家包/版本.json」，有新版会提示', False))
+    return out
 
 
 def main() -> int:
@@ -112,6 +149,15 @@ def main() -> int:
         bad.append("技能不齐  ← 缺 " + ", ".join(missing))
     else:
         ok.append(f"技能 {len(SKILLS)} 个齐全")
+
+    # 专家版本核对（11-18 张老师定）：版本号只认安装位的 plugin.json，
+    # 但登记处 marketplace.json 曾残留旧版本（装了 0.5 仍读到 0.1.0 那次），
+    # 所以两处一起读，不一致就报警——让"装了新版却读成旧版"当场现形。
+    # 资产库的版本联网核对由助手开工时做（脚本连不上需要登录的资产库），
+    # 有新版就提示人升级，不自动装。
+    ver_lines = _expert_version_lines(env_mod.HOST)
+    for line, is_bad in ver_lines:
+        (bad if is_bad else ok).append(line)
 
     print(f"数据目录：{root}")
     for line in ok:

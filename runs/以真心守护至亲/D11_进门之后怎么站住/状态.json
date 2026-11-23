@@ -1,0 +1,223 @@
+{
+  "_readme": "2026-11-23 新建。以真心守护至亲第 11 条片子，职场入职线的解说型二次叙事。张老师 11-23 定：走第一条线（她进门靠谁）＋解说；微剧本加『先写完整故事再拆剧本』，讲述顺序改结果前置、背景后补；后又定解说插哪归编排（导演）、四处留白给原声、收尾不配解说。清单按定稿微剧本七场排，扩全场景 10 段＋急停黑场，2 分 48 秒。",
+  "task": "D11_进门之后怎么站住",
+  "category": "以真心守护至亲",
+  "line": "short-drama",
+  "intent": "解说型·职场打脸·二次叙事：许宁顶着走后门的难听话进弘业，周承一路放话她领不到工牌、进不了弘业；她不吵，把后门关上按正常要求一关关考过去，最后放话的人自己收回话『办成了入职我认』。观众一开始知道角落那个穷妈有底、周承不知道，结尾妈一个字没出手——爽点全归许宁自己。讲述顺序结果前置、背景后补。",
+  "structure": "main",
+  "narration": {
+    "state": "on",
+    "voice": "说书人C",
+    "voice_rev": 2,
+    "engine": "MiMo voiceclone",
+    "segments": 8,
+    "blank_segments": 4,
+    "chars": 456,
+    "spoken_seconds": 74.14,
+    "share_of_film": "456字/246.93s",
+    "speed": "成品 5.3 字/秒（纯字口径）。带情绪指令的段会慢 12%–35%（实测 3.45–4.66 字/秒），排落点必须用实测时长",
+    "repetition": "全片平均 <8%（上限 8%，单段 15%）；跨段撞词 0 处（≥4 字）",
+    "style": "11 块解说，每块一段话；手法交替：台词关联／画面关联／内心解读",
+    "key_protection": "第三轮改为结构性保护：解说全在静音垫画面段，主线 10 段原声一句不丢，无需逐句电平比对",
+    "_note": "四轮迭代后定稿。要点：①解说不复述原声（复述=白说，且把原声静音掉等于删掉）；②解说落点由 narration_fit.py 自动排布，避开关键保护区、整块落在同一画面段内、贴着目标画面；③四处整段留白给原声：钩子原声、婚礼刺点『你也配』、底牌原声、认账落点。"
+  },
+  "ai_strategy": "none",
+  "cycle_round": 4,
+  "shared_snapshot": {
+    "voice_assets": 1,
+    "drama_base": {
+      "以真心守护至亲": null
+    }
+  },
+  "updated_at": "2026-11-23 15:02",
+  "rules": {
+    "pending": "未开工",
+    "in_progress": "在做，产物未成形",
+    "done": "产物在、自检过了，人还没判",
+    "approved": "人说过一句明确的话，下游可以依赖",
+    "stale": "由脚本按 depends_rev 算出来，不手写",
+    "superseded": "已废弃，绝不参与「下一步」推荐",
+    "blocked": "缺上游 / 有 blocking 冲突 / 缺关键事实"
+  },
+  "artifacts": {
+    "select": {
+      "skill": "short-drama-select",
+      "path": "runs/以真心守护至亲/选片结论.md",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [],
+      "depends_rev": {},
+      "_inherit": "继承 D1–D10：11-11 张老师 GO，同一部戏换故事线不重走选片人审。"
+    },
+    "pack": {
+      "skill": "short-drama-pack",
+      "path": "packs/short-drama/以真心守护至亲/drama-pack.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "select"
+      ],
+      "depends_rev": {
+        "select": 1
+      },
+      "_inherit": "继承 D1：剧集包 0 ERROR，11-11 approved，整部一份共用。",
+      "_note": "本剧剧集包实体待建；台账沿用继承口径，与 D10 一致。"
+    },
+    "asset_index": {
+      "skill": "short-drama-asset-index",
+      "path": "assets/short-drama/以真心守护至亲/",
+      "state": "done",
+      "rev": 1,
+      "depends_on": [
+        "pack"
+      ],
+      "depends_rev": {
+        "pack": 1
+      },
+      "_note": "台词库 ep01–ep60 已在；说话人表 tools/face_label/说话人表_修正后.csv 为定稿。"
+    },
+    "ai_assets": {
+      "skill": "short-drama-ai-assets",
+      "path": "assets/short-drama/ai_assets/registry.json",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "asset_index",
+        "script"
+      ],
+      "depends_rev": {
+        "asset_index": 1,
+        "script": 1
+      },
+      "_note": "本片 ai_strategy=none，整环跳过。"
+    },
+    "script": {
+      "skill": "short-drama-script",
+      "path": "runs/以真心守护至亲/D11_进门之后怎么站住/plan.json",
+      "state": "approved",
+      "rev": 1,
+      "depends_on": [
+        "pack",
+        "asset_index"
+      ],
+      "depends_rev": {
+        "pack": 1,
+        "asset_index": 1
+      },
+      "topic": {
+        "path": "runs/以真心守护至亲/D11_进门之后怎么站住/选题单.md",
+        "chosen": "第一条线——她进门到底靠谁",
+        "ai_strategy": "none",
+        "approved_by": "张老师",
+        "at": "2026-11-23"
+      },
+      "microscript": {
+        "skill": "short-drama-microscript",
+        "path": "runs/以真心守护至亲/D11_进门之后怎么站住/微剧本.md",
+        "state": "approved",
+        "style": "打脸型",
+        "main_or_side": "主线",
+        "rounds": 4,
+        "approved_by": "张老师",
+        "at": "2026-11-23",
+        "_note": "张老师 11-23『用这个剧本往下走』＝定稿。第 4 轮加完整故事＋二次叙事、删卡点旁白、收尾改原剧台词。"
+      },
+      "narration_doc": "runs/以真心守护至亲/D11_进门之后怎么站住/讲述稿_进门以后怎么站住_v1.md",
+      "narration_config": "runs/以真心守护至亲/D11_进门之后怎么站住/build/解说配置.json",
+      "evidence": [
+        "装配器 --dry 通过：出点全在视频流内，切在说话中间 0 处",
+        "复述率：全片平均 <8%（上限 8%）；跨段撞词 0 处（≥4 字，check_cross_echo.py）",
+        "11 块解说每块都在自己那段画面内结束，不跨段、不重叠（plan_timeline.py 实测时长校核）",
+        "关键台词保护：12 处刺点区，narration_fit.py 校验 0 处被盖；成片电平比对 12/12 原声完好",
+        "四处整段留白区电平与底片一致：钩子原声、婚礼刺点、底牌原声、认账落点",
+        "11 段配音逐字核对 ASR，与稿子一致（他/她、周承/周成属同音字，不算念错）",
+        "带伤：总时长 167.54s（2分48秒）低于 main 档 240–360s，素材所限，不回头加场（张老师已拍板）",
+        "带伤：3 句待听辨（妈有股份／按正常考我／说错了对不起）照原声剪入，未做人工听辨",
+        "带伤：本片用到 ep43/ep49/ep50/ep57，超出 1–36 的常规档，张老师本次特批；往后按 60% 执行",
+        "带伤：解说里用「周承」点名，ASR 认成「周成」（同音字），听感无碍；已把「他/她」代词改成名字，避免男声讲女主时的混淆",
+        "带伤：还没看片。五幕、前 45 秒冲突密度、砍场前因这些只有人能判，程序一项都不查"
+      ],
+      "review": {
+        "checklist": "runs/以真心守护至亲/D11_进门之后怎么站住/清单过目.md",
+        "conclusion": "四项全拍板，同意出片",
+        "approved_by": "张老师",
+        "at": "2026-11-23",
+        "_note": "张老师 11-23 拍板：①时长先这么着（2分48秒不回头加场）②这次先认，但往后剧透边界统一按 60%＝36 集执行，不再按「前19集」③3 句待听辨台词照原声剪入，不进解说 ④原剧占比没有硬指标了，解说按类型该厚就厚。同日口头授权「你就剪辑出片吧」。 第二轮补充拍板（同日）：解说不复述原声；解说的落点由工具按「关键台词保护区」自动排布，机器校验通过才进配音；解说不许盖住微剧本里标过的刺点。"
+      },
+      "by": "WorkBuddy",
+      "at": "2026-11-23",
+      "_note": "plan 顶层 notes_doc 已改为清单过目.md（新口径）；spec 留档在 specs/D11_v2.json，切点由 pickpoints.py 算出，S05 出点按装配器刀口体检由 39.70 收到 38.78s、解说起点随之平移 0.92s。"
+    },
+    "weave_video": {
+      "skill": "short-drama-video",
+      "path": "runs/以真心守护至亲/D11_进门之后怎么站住/wangshen_v1.mp4",
+      "state": "pending",
+      "rev": 0,
+      "depends_on": [
+        "script"
+      ],
+      "depends_rev": {
+        "script": 1
+      },
+      "_note": "本片 ai_strategy=none，整环跳过；path 仅占位。"
+    },
+    "trailer": {
+      "skill": "short-drama-trailer",
+      "path": "runs/以真心守护至亲/D11_进门之后怎么站住/build_r4/成片_带解说.mp4",
+      "state": "done",
+      "rev": 4,
+      "depends_on": [
+        "script"
+      ],
+      "depends_rev": {
+        "script": 1
+      },
+      "round": 1,
+      "_note": "11-23 第二轮定稿。底片复用（第一轮已装），11 块解说 MiMo 语音克隆，duck 叠音。产物在 build_r2/，第一轮 build/ 保留不删。",
+      "duration": 246.93,
+      "segments": 11,
+      "narration_blocks": 11,
+      "video": "1080x1920（竖屏）/ h264+aac / 81.7MB",
+      "_updated": "2026-11-23 第三轮：钩子后加「几天前……」文字渐变卡；解说搬到垫画面段，主线原声零重叠",
+      "evidence": {
+        "rev3_成片时长": 254.24,
+        "rev3_文字卡": "26.05–27.85s，黑底白字「几天前……」居中，淡入淡出各0.5s；抽帧已确认",
+        "rev3_垫画面段": 8,
+        "rev3_解说块": 8,
+        "rev3_解说字数": 407,
+        "rev3_解说实测总长": 74.14,
+        "rev3_原声保护": "结构性保证：8 块解说区间全部落在垫画面段，10 个主线原声段零重叠（时间轴比对）",
+        "rev3_刀口": "68 刀口，切半句 0 处，贴边 13 处",
+        "rev3_撞词": "同步复述率 0；跨段撞词 0（≥4 字 + 本片集 3 字）",
+        "rev3_配音tokens": 1872,
+        "rev3_装配耗时": "245s（首次）；底片复用后 35s + 增量重配 89s",
+        "rev3_耗时偏差": "首次装配 245s，超出 5–8 分钟目标的装配段预期——并行路径未启用（默认 --jobs 1），已如实记",
+        "rev4_选题": "穷妈的底牌（张老师 11-23 圈定，替换 D11 职场打脸线）",
+        "rev4_故事钩子": "底牌前置：宁宁妈在红叶有股份、陈立认识我（ep37，超60%边界，沿用D11特批）",
+        "rev4_成片时长": 246.93,
+        "rev4_主线段": 9,
+        "rev4_垫画面段": 8,
+        "rev4_解说块": 8,
+        "rev4_解说字数": 456,
+        "rev4_原声保护": "结构性：8块解说全在垫画面段，9段主线原声零重叠",
+        "rev4_文字卡": "15.13–16.93s「几天前……」抽帧确认",
+        "rev4_垫画面配对": "按8个场景分组（婚礼/戒指/轮椅妈/职场压/挡路/自己挣/含泪/收尾），每块同类镜头，减少跳跃；部分池跨集",
+        "rev4_刀口": "装配器体检通过，无切半句",
+        "rev4_撞词": "配音前拦1处（我手动检测漏算垫画面集），改后完整集列表复核0处",
+        "rev4_耗时": "装配277s + 配音99s + 叠音10s；复用底片重跑113s",
+        "rev4_带伤": "首次装配277s超5-8分钟目标；没逐字ASR核对；没看片；垫画面按场景粗配未逐块精修；跨集镜头仍可能有色调跳"
+      },
+      "_prev_rev": 3
+    }
+  },
+  "notes": [
+    "line=short-drama；状态真源是本文件，工作台 active 只记当前选中。",
+    "解说音频在 build_r2/配音输出/（mp3 + manifest + 解说配置），叠音用 build_r2/配音输出/解说配置.json。",
+    "关键台词保护区清单在 build_r2/关键台词.json（人标，工具读它校验解说落点）。",
+    "本片不点 AI 玩法、不做去重包装，ai_assets 与 weave_video 整环跳过。",
+    "配乐在剪映人工加，流程不生成、不验收。",
+    "11-23 第二轮出片耗时 20.9 秒（底片复用 + 重配 1 段 + 叠音）。第一轮 1 小时 24 分里 80% 是返工，整改后正常出片 5–8 分钟。",
+    "他/她同音：男声解说讲女主时 ASR 会把「她」认成「他」，是识别工具的同音字问题、不是配音问题。解说要指代谁就用角色名，别用代词。",
+    "新工具：narration_fit.py（解说的落点自动排布 + 关键台词保护校验）、narration_spots.py（扫底片上的无原声空档）、speech_runs.py（每段话说到哪儿停）。"
+  ]
+}

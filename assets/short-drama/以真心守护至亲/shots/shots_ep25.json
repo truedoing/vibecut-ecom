@@ -1,0 +1,534 @@
+{
+  "ep": 25,
+  "file": "25.mp4",
+  "duration": 52.69,
+  "shot_count": 20,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 36500,
+    "completion_tokens": 26727,
+    "total_tokens": 63227
+  },
+  "elapsed_sec": 235.9,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 1.73,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 低马尾"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部闭合，未见张口",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧身站立看向前方",
+        "place": "办公楼大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep25_s000_0.jpg"
+    },
+    {
+      "start": 1.73,
+      "end": 4.07,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发别发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露出牙齿，正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "抱臂皱眉与人争辩说话",
+        "place": "酒店大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep25_s001_0.jpg"
+    },
+    {
+      "start": 4.07,
+      "end": 9.37,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑色半身裙 盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张，能看到口腔缝隙",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站着面向前方的人说话",
+        "place": "办公楼大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s002_0.jpg"
+    },
+    {
+      "start": 9.37,
+      "end": 10.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发 戴发卡",
+          "年轻男性 浅蓝色衬衫 卡其色长裤 短发",
+          "未识别人物 浅蓝色上衣 仅露出肩背一角"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "两位正面人物嘴部都闭着，无人张嘴",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "两人并肩站立，女性抱臂看向前方",
+        "place": "酒店大堂",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s003_0.jpg"
+    },
+    {
+      "start": 10.83,
+      "end": 15.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 黑色短发 发型有刘海"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，可见牙齿，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "侧身站立，严肃地对人说话",
+        "place": "室内走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s004_0.jpg"
+    },
+    {
+      "start": 15.2,
+      "end": 17.13,
+      "tag": {
+        "shot_size": "中景",
+        "people": 4,
+        "who": [
+          "年轻男性 浅蓝色衬衫卡其裤 侧脸站立双手插兜",
+          "年轻女性 浅蓝衬衫深灰阔腿裤 低盘发 正侧脸对视",
+          "青年男性 深色上衣 站在背景闸机旁",
+          "青年男性 蓝色上衣 站在背景闸机旁"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位女性嘴张开说话，第1位男性侧脸嘴唇微闭",
+        "emotion": "冷淡",
+        "intensity": "弱",
+        "action": "两人面对面站着交谈，女方说话",
+        "place": "写字楼大堂",
+        "props": [
+          "安检闸机",
+          "红毯"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s005_0.jpg"
+    },
+    {
+      "start": 17.13,
+      "end": 19.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发额前垂落碎发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "睁大眼睛望向前方，神情错愕",
+        "place": "办公大楼大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s006_0.jpg"
+    },
+    {
+      "start": 19.43,
+      "end": 21.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻男性 浅蓝色长袖衬衫 卡其色长裤 短发",
+          "年轻女性 浅灰蓝色衬衫 深色阔腿裤 低盘发"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "两人侧脸嘴部可见，均闭唇未说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "男女面对面站立对视",
+        "place": "办公楼大厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s007_0.jpg"
+    },
+    {
+      "start": 21.7,
+      "end": 25.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发 手持手机贴耳"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，处于说话状态",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "举着手机贴耳打电话说话",
+        "place": "走廊",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s008_0.jpg"
+    },
+    {
+      "start": 25.1,
+      "end": 27.43,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑色长发扎起 手持手机贴耳"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴唇微张，口腔隐约可见，处于说话状态",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "手持手机贴耳通话，神情难过",
+        "place": "未识别",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s009_0.jpg"
+    },
+    {
+      "start": 27.43,
+      "end": 30.37,
+      "tag": {
+        "shot_size": "全景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑色阔腿裤 举手机贴耳",
+          "中年男性 深色上衣 坐在前台后方",
+          "中年男性 深色西装 站在闸机旁低头看屏幕"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在大堂里举着手机贴耳通话",
+        "place": "写字楼大堂",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "弘业集团 HONGTE GROUP",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s010_0.jpg"
+    },
+    {
+      "start": 30.37,
+      "end": 31.77,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑发低盘发 眼眶泛泪"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，露出牙齿，正在说话",
+        "emotion": "悲伤",
+        "intensity": "弱",
+        "action": "举手机贴耳打电话，眼含泪光",
+        "place": "走廊",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s011_0.jpg"
+    },
+    {
+      "start": 31.77,
+      "end": 34.83,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深色阔腿裤 短发 手机贴耳",
+          "中年男性 深色西装 站在前台前低头",
+          "年轻男性 深色西装 坐在前台后"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "举手机贴耳站立通话",
+        "place": "酒店大堂",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s012_0.jpg"
+    },
+    {
+      "start": 34.83,
+      "end": 37.8,
+      "tag": {
+        "shot_size": "特写",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深色盘发 手持白色手机"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位嘴部闭合，未见张口",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "手持白色手机贴耳通话",
+        "place": "未识别",
+        "props": [
+          "白色手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s013_0.jpg"
+    },
+    {
+      "start": 37.8,
+      "end": 39.93,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色长袖衬衫 深灰色高腰长裤 右手持手机贴耳 长发半扎",
+          "中年男性 黑色保安制服 站在背景玻璃门旁"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴部微张，正对着手机说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在大堂里举着手机通话",
+        "place": "办公楼大堂",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s014_0.jpg"
+    },
+    {
+      "start": 39.93,
+      "end": 42.6,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅灰色衬衫 深色微乱盘发 手持白色手机 脸颊有泪痕"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张，呈说话口型",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "流泪着把手机贴在耳边通话",
+        "place": "未识别",
+        "props": [
+          "白色智能手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s015_0.jpg"
+    },
+    {
+      "start": 42.6,
+      "end": 46.53,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 米白色外套 棕色中长发 背对镜头",
+          "年轻女性 浅蓝色衬衫深灰色百褶裙 黑发盘起"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位抬头正面朝向对方，嘴巴张开说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站在前台前低头看手机",
+        "place": "办公楼大堂",
+        "props": [
+          "手机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s016_0.jpg"
+    },
+    {
+      "start": 46.53,
+      "end": 49.17,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 松散低马尾 面颊有泪痕"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "低头垂眼，眼含泪光静静站立",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s017_0.jpg"
+    },
+    {
+      "start": 49.17,
+      "end": 50.83,
+      "tag": {
+        "shot_size": "特写",
+        "people": 0,
+        "who": [],
+        "mouth_visible": false,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "画面里没有人，只有显示器屏幕",
+        "emotion": "无",
+        "intensity": "",
+        "action": "屏幕显示入职信息卡片，反光晃动",
+        "place": "办公室",
+        "props": [
+          "戴尔显示器"
+        ],
+        "scene_text": "弘业集团 董事办入职急办 姓名 住址 工作地址 住宿地址 确认",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s018_0.jpg"
+    },
+    {
+      "start": 50.83,
+      "end": 52.69,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "青年女性 浅蓝色衬衫 背对镜头 头发挽起",
+          "年轻女性 米色西装外套内搭白衬衫 肩部短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位正脸可见，嘴巴张开正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "前台人员在电脑前抬头对来访者说话",
+        "place": "公司前台",
+        "props": [
+          "电脑显示器",
+          "键盘",
+          "前台柜台"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep25_s019_0.jpg"
+    }
+  ]
+}

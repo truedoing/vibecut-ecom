@@ -1,0 +1,503 @@
+{
+  "ep": 34,
+  "file": "34.mp4",
+  "duration": 53.71,
+  "shot_count": 19,
+  "scene_threshold": 0.25,
+  "prompt_version": "sd-shot-v5",
+  "usage": {
+    "prompt_tokens": 34675,
+    "completion_tokens": 24474,
+    "total_tokens": 59149
+  },
+  "elapsed_sec": 185.1,
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 1.3,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 白色衬衫 灰色长裤 盘发 背对镜头",
+          "年轻男性 浅蓝色衬衫 卡其色长裤 手扶行李推车"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "第2位正脸可见，嘴巴张开露齿；第1位背对镜头看不见嘴",
+        "emotion": "喜悦",
+        "intensity": "弱",
+        "action": "男性推着行李车笑着对女性说话",
+        "place": "电梯厅",
+        "props": [
+          "行李推车",
+          "黑色行李袋"
+        ],
+        "scene_text": "D",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep34_s000_0.jpg"
+    },
+    {
+      "start": 1.3,
+      "end": 2.4,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻男性 浅蓝色衬衫 短发梳背 侧头看向画面左侧"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露出牙齿，正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧头对着画面外的人说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "热播漫剧ai生成请勿模仿",
+        "frames_used": 3
+      },
+      "frame": "ep34_s001_0.jpg"
+    },
+    {
+      "start": 2.4,
+      "end": 7.7,
+      "tag": {
+        "shot_size": "中景",
+        "people": 3,
+        "who": [
+          "年轻男性 深色西装 侧脸站立",
+          "年轻女性 浅蓝色衬衫 挂工牌",
+          "年轻男性 浅蓝色衬衫 扶着轮椅"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 2,
+        "mouth_note": "中间女性嘴部张开正在说话",
+        "emotion": "平静",
+        "intensity": "中",
+        "action": "三人站立对视交谈",
+        "place": "酒店大堂",
+        "props": [
+          "轮椅",
+          "工牌"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s002_0.jpg"
+    },
+    {
+      "start": 7.7,
+      "end": 10.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 黑发微散 眼眶泛红"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部张开正在说话",
+        "emotion": "震惊",
+        "intensity": "中",
+        "action": "注视前方询问确认，嘴唇微张",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s003_0.jpg"
+    },
+    {
+      "start": 10.87,
+      "end": 13.1,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深灰色西装 白衬衫 深蓝色领带"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "张嘴讲话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "弘业集团",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s004_0.jpg"
+    },
+    {
+      "start": 13.1,
+      "end": 18.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫灰色西裤 盘发 手持盖红章文件"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位侧脸可见，嘴唇微张在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "侧身站立，手持文件说话",
+        "place": "写字楼大堂",
+        "props": [
+          "轮椅",
+          "盖红章的文件"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s005_0.jpg"
+    },
+    {
+      "start": 18.23,
+      "end": 20.27,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发带珍珠发夹",
+          "年轻女性 浅蓝色衬衫 长发侧脸入画"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开露出牙齿正在说话，第2位嘴部可见但闭着",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "抿嘴微笑看着面前的女性",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s006_0.jpg"
+    },
+    {
+      "start": 20.27,
+      "end": 22.27,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色荷叶边连衣裙 长卷发戴珍珠发夹 抱臂站立",
+          "未识别年龄性别 蓝色上衣 仅见画面左侧背影肩膀"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位女性嘴巴大张，牙齿口腔可见，正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "抱臂对面前人张大嘴说话",
+        "place": "写字楼大堂电梯厅",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s007_0.jpg"
+    },
+    {
+      "start": 22.27,
+      "end": 24.2,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅粉色荷叶边连衣裙 长卷发配珍珠发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "双臂抱胸侧头看向一侧",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s008_0.jpg"
+    },
+    {
+      "start": 24.2,
+      "end": 28.37,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅灰蓝衬衫配深色长裤 手持文件站姿",
+          "年轻女性 浅粉色连衣裙 珍珠发饰 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴部微张，呈说话状态",
+        "emotion": "平静",
+        "intensity": "中",
+        "action": "手持文件看向对面的人",
+        "place": "电梯厅",
+        "props": [
+          "轮椅",
+          "纸质文件"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s009_0.jpg"
+    },
+    {
+      "start": 28.37,
+      "end": 31.13,
+      "tag": {
+        "shot_size": "近景",
+        "people": 2,
+        "who": [
+          "年轻女性 浅蓝色衬衫 盘发 眼眶发红脸颊有泪痕",
+          "年轻女性 棕色长发 背影 头上别发夹"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸嘴部张开，牙齿可见，正在说话",
+        "emotion": "悲伤",
+        "intensity": "强",
+        "action": "含泪对面前的人说话",
+        "place": "未识别",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s010_0.jpg"
+    },
+    {
+      "start": 31.13,
+      "end": 34.23,
+      "tag": {
+        "shot_size": "中景",
+        "people": 2,
+        "who": [
+          "年轻女性 粉色连衣裙 长卷发带发夹",
+          "老年女性 白色上衣 坐轮椅 背对镜头"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴微张正在说话，第2位背对镜头看不见嘴",
+        "emotion": "悲伤",
+        "intensity": "中",
+        "action": "站着微皱眉对老人说话",
+        "place": "办公大楼大厅",
+        "props": [
+          "轮椅"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s011_0.jpg"
+    },
+    {
+      "start": 34.23,
+      "end": 38.4,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "老年女性 白色中式立领盘扣上衣 灰白盘发 珍珠耳环"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿可见，正在说话",
+        "emotion": "激动",
+        "intensity": "中",
+        "action": "开口说话，面露忧虑",
+        "place": "走廊",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s012_0.jpg"
+    },
+    {
+      "start": 38.4,
+      "end": 41.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 4,
+        "who": [
+          "中年男性 深蓝色西装领带 站立正对镜头",
+          "年轻女性 粉色连衣裙 长发站在后方",
+          "老年女性 灰白头发 白色上衣 坐轮椅背对镜头",
+          "中年女性 浅色上衣 画面右侧仅露半张脸"
+        ],
+        "mouth_visible": true,
+        "speaking": false,
+        "speaker": "none",
+        "mouth_note": "第1位正脸清晰，嘴部闭合未动",
+        "emotion": "冷淡",
+        "intensity": "中",
+        "action": "站立凝视前方坐轮椅的人",
+        "place": "写字楼大堂",
+        "props": [
+          "轮椅",
+          "闸机"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s013_0.jpg"
+    },
+    {
+      "start": 41.73,
+      "end": 42.87,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装浅蓝条纹衬衫深色领带 黑发背梳"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "皱眉注视前方开口说话",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s014_0.jpg"
+    },
+    {
+      "start": 42.87,
+      "end": 44.73,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装白衬衫领带 短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位正脸清晰，嘴巴微张露出牙齿",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "站立在大堂正视前方说话",
+        "place": "办公楼大堂",
+        "props": [],
+        "scene_text": "会A",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s015_0.jpg"
+    },
+    {
+      "start": 44.73,
+      "end": 46.53,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "中年男性 深色西装 浅蓝条纹衬衫 深色领带 背头短发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴微张，上排牙齿可见，正在说话",
+        "emotion": "愤怒",
+        "intensity": "中",
+        "action": "皱眉侧头质问对方",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s016_0.jpg"
+    },
+    {
+      "start": 46.53,
+      "end": 52.1,
+      "tag": {
+        "shot_size": "中景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色衬衫 深灰西裤 低扎发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开正在说话",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "推着轮椅站立望向侧方",
+        "place": "电梯厅",
+        "props": [
+          "轮椅",
+          "蓝色文件夹"
+        ],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s017_0.jpg"
+    },
+    {
+      "start": 52.1,
+      "end": 53.71,
+      "tag": {
+        "shot_size": "近景",
+        "people": 1,
+        "who": [
+          "年轻女性 浅蓝色竖条纹衬衫 低马尾碎发"
+        ],
+        "mouth_visible": true,
+        "speaking": true,
+        "speaker": 1,
+        "mouth_note": "第1位嘴巴张开，牙齿和口腔可见",
+        "emotion": "平静",
+        "intensity": "弱",
+        "action": "正面望向前方，神态平和",
+        "place": "办公室",
+        "props": [],
+        "scene_text": "",
+        "watermark": "",
+        "frames_used": 3
+      },
+      "frame": "ep34_s018_0.jpg"
+    }
+  ]
+}

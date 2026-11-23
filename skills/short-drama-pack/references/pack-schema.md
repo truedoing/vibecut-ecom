@@ -204,13 +204,16 @@
   "finale_episodes": [20],
   "audio": "no_bgm",
   "subtitle": "burned_in",
-  "splittable": { "usable_ep_range": "1-19", "estimated_clips": 6 }
+  "splittable": { "usable_ep_range": "1-12", "usable_ep_range_rule": "前 60%：ceil(总集数 × 0.6)。本例 20 集 → 12 集 → 1-12。", "estimated_clips": 6 }
 }
 ```
 
 - `mode` 枚举：`official_task_material`（任务内素材）/ `self_licensed`（自有授权）/ `no_license`。
 - `desub` 枚举：`done` / `pending` / `not_needed`。
 - **`finale_episodes` 必须非空**，且这些集不得出现在任何 `hook_map` 的 `ep` 里。
+- **`usable_ep_range` 按前 60% 算**：`ceil(总集数 × 0.6)`。60 集剧 → 1–36；30 集剧 → 1–18；20 集剧 → 1–12。
+  2026-11-23 张老师拍板：**一条标准，不为泄底点单独切范围**——泄底集标成「剧透点，选段避开」，
+  不许从范围里扣掉。旧口径「除掉大结局集」（20 集剧写成 1–19）已作废，会把该防的剧透放开。
 
 ## pending / conflicts
 
